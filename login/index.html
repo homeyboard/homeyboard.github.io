@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+
+		<!-- SMUI Styles -->
+		<link rel="stylesheet" href="../smui.css" media="(prefers-color-scheme: light)" />
+		<link rel="stylesheet" href="../smui-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+		<!-- Hint where we get fonts from. -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Material Icons, Roboto, and Roboto Mono fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons&Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+
+		
+		<link rel="modulepreload" href="../_app/immutable/entry/start.d1e4f407.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.80769ec7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.1831f9bd.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.d6993901.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.3d8cfafd.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_7lxsaj = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.d1e4f407.js"),
+						import("../_app/immutable/entry/app.d6993901.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

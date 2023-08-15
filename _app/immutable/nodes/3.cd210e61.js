@@ -1,8 +1,8 @@
 import { s as safe_not_equal, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, z as component_subscribe, L as setContext, O as onDestroy, R as set_store_value, D as assign, f as element, g as claim_element, h as children, d as detach, M as set_attributes, i as insert_hydration, x as append_hydration, I as action_destroyer, J as is_function, K as run_all, A as compute_rest_props, B as get_current_component, o as onMount, E as exclude_internal_props, p as binding_callbacks, q as construct_svelte_component, e as empty, C as getContext, a as space, c as claim_space, j as attr, N as listen, y as noop, T as bubble, Z as set_input_value, W as compute_slots, t as tick, l as text, m as claim_text, n as set_data, S as add_flush_callback, U as get_svelte_dataset, k as set_style } from "../chunks/scheduler.ede5dfaf.js";
-import { _ as __extends, b as __assign, M as MDCFoundation, c as classMap, p as prefixFilter, l as exclude, u as useActions, g as get_spread_update, f as forwardEventsBuilder, R as Ripple, a as get_spread_object, h as dispatch, S as SmuiElement, d as __read, m as ponyfill, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, i as classAdderBuilder, n as __values, v as events, F as FloatingLabel, N as NotchedOutline, L as LineRipple, s as apiKey, H as HomeyAPI, C as CommonLabel, B as Button, q as handle_promise, r as update_await_block_branch, t as CircularProgress } from "../chunks/HomeyAPI.bc525bf2.js";
+import { _ as __extends, b as __assign, M as MDCFoundation, c as classMap, p as prefixFilter, l as exclude, u as useActions, g as get_spread_update, f as forwardEventsBuilder, R as Ripple, a as get_spread_object, h as dispatch, S as SmuiElement, d as __read, m as ponyfill, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, i as classAdderBuilder, n as __values, v as events, F as FloatingLabel, N as NotchedOutline, L as LineRipple, s as apiKey, H as HomeyAPI, C as CommonLabel, B as Button, q as handle_promise, r as update_await_block_branch, t as CircularProgress } from "../chunks/HomeyAPI.99aefe66.js";
 import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.a7daac98.js";
-import { w as writable, e as base } from "../chunks/singletons.e6398b7a.js";
-import { i as baseUrl, h as homey, g as goto, A as AthomCloudAPI, c as clientId, e as clientSecret, j as AthomCloudAPI_1 } from "../chunks/AthomCloudAPI.19a94ac1.js";
+import { w as writable, e as base } from "../chunks/singletons.8dd58ae4.js";
+import { i as baseUrl, h as homey, g as goto, A as AthomCloudAPI, c as clientId, e as clientSecret, j as AthomCloudAPI_1 } from "../chunks/AthomCloudAPI.6a4b96d5.js";
 function create_fragment$a(ctx) {
   let current;
   const default_slot_template = (
@@ -12730,7 +12730,7 @@ function instance_1($$self, $$props, $$invalidate) {
   }
   async function setHomey(instance2) {
     homey.set(instance2);
-    await goto(base);
+    await goto(base + "/");
   }
   async function oauthLogin() {
     const cloudApi = new AthomCloudAPI({
@@ -12751,7 +12751,7 @@ function instance_1($$self, $$props, $$invalidate) {
     const firstHomey = await user.getFirstHomey();
     const homeyApi = await firstHomey.authenticate();
     homey.set(homeyApi);
-    await goto(base);
+    await goto(base + "/");
   }
   async function homeyInkLogin() {
     $$invalidate(5, inkUrlInvalid = false);

@@ -8,8 +8,8 @@ var __publicField = (obj2, key, value) => {
 };
 var __superGet = (cls, obj2, key) => __reflectGet(__getProtoOf(cls), key, obj2);
 var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-import { j as client_method, k as derived, w as writable } from "./singletons.e6398b7a.js";
-import { p as page } from "./stores.2a397950.js";
+import { j as client_method, k as derived, w as writable } from "./singletons.8dd58ae4.js";
+import { p as page } from "./stores.7ea2753a.js";
 const goto = /* @__PURE__ */ client_method("goto");
 function createBaseUrl() {
   return derived([homey, page], ([$homey, $page], set) => {
@@ -73,7 +73,7 @@ function createZones() {
 const homey = writable(void 0);
 const baseUrl = createBaseUrl();
 const session = writable(void 0);
-const scopes = derived(session, (s2) => s2 == null ? void 0 : s2.scopes, void 0);
+const scopes = derived(session, (s2) => s2 == null ? void 0 : s2.scopes, []);
 const devices = createDevices();
 const basicFlows = createBasicFlows();
 const advancedFlows = createAdvancedFlows();
@@ -4881,16 +4881,26 @@ let EventEmitter$3 = class EventEmitter2 {
 var EventEmitter_1 = EventEmitter$3;
 const EventEmitter$2 = EventEmitter_1;
 let Item$a = (_a = class extends EventEmitter$2 {
-  // Set by Manager.js
-  constructor({
-    id,
-    homey: homey2,
-    manager: manager2,
-    properties
-  }) {
+  constructor({ id, homey: homey2, manager: manager2, properties }) {
     super();
-    Object.defineProperty(this, "__id", {
+    // Set by Manager.js
+    /**
+     * The ID of the Item.
+     * @type {string}
+     */
+    __publicField(this, "id");
+    /**
+     * The URI of the Item, e.g. `homey:foo:bar`.
+     * @type {string}
+     */
+    __publicField(this, "uri");
+    Object.defineProperty(this, "id", {
       value: id,
+      enumerable: true,
+      writable: false
+    });
+    Object.defineProperty(this, "uri", {
+      value: `homey:${this.constructor.ID}:${this.id}`,
       enumerable: true,
       writable: false
     });
@@ -4918,20 +4928,6 @@ let Item$a = (_a = class extends EventEmitter$2 {
         writable: true
       });
     }
-  }
-  /**
-   * The ID of the Item.
-   * @type {String}
-   */
-  get id() {
-    return this.__id;
-  }
-  /**
-   * The URI of the Item, e.g. `homey:foo:bar`.
-   * @type {String}
-   */
-  get uri() {
-    return `homey:${this.constructor.ID}:${this.id}`;
   }
   /**
    * The Manager of the Item.
@@ -5212,7 +5208,7 @@ let Manager$8 = (_b = class extends EventEmitter$1 {
                       stack: err.stack,
                       error: err.error,
                       error_description: err.error_description
-                    }, err.statusCode || 500);
+                    }, err.statusCode || err.code || 500);
                     return reject(err);
                   }
                   return resolve(result2);
@@ -5668,7 +5664,8 @@ let DeviceCapability$1 = class DeviceCapability2 extends EventEmitter {
   /**
    * Sets a new capability value.
    * @param {boolean|number|string} value - The new capability value
-   * @param {object} opts
+   * @param {object} [opts]
+   * @param {number} [opts.duration]
    */
   async setValue(value, opts) {
     const transactionId = `homey-api-${Util$3.uuid()}`;
@@ -5686,7 +5683,7 @@ let DeviceCapability$1 = class DeviceCapability2 extends EventEmitter {
     const capabilityReference = this.device.capabilitiesObj && this.device.capabilitiesObj[this.id];
     if (capabilityReference) {
       capabilityReference.value = value;
-      capabilityReference.lastUpdated = this.__lastChanged.toISOString();
+      capabilityReference.lastUpdated = this.__lastChanged;
     }
   }
 };
@@ -5818,7 +5815,7 @@ let Device$5 = class Device2 extends Item$5 {
   }
   /**
    * Get the device's logs.
-   * @returns {Promise<{String, HomeyAPIV3.ManagerInsights.Log}>}
+   * @returns {Promise.<Object.<string, HomeyAPIV3.ManagerInsights.Log>>}
    */
   async getLogs() {
     const logs = await this.homey.insights.getLogs();
@@ -5829,7 +5826,7 @@ let Device$5 = class Device2 extends Item$5 {
   }
   /**
    * Get the device's flows.
-   * @returns {Promise<{String, HomeyAPIV3.ManagerFlow.Flow}>}
+   * @returns {Promise.<Object.<string, HomeyAPIV3.ManagerFlow.Flow>>}
    */
   async getFlows() {
     const flows = await this.homey.flow.getFlows();
@@ -5847,8 +5844,7 @@ let Device$5 = class Device2 extends Item$5 {
     }), {});
   }
   /**
-   * @returns {Promise<{String, HomeyAPIV3.ManagerFlow.AdvancedFlow}>}
-   * @returns {Promise<Object>}
+   * @returns {Promise.<Object.<string, HomeyAPIV3.ManagerFlow.AdvancedFlow>>}
    */
   async getAdvancedFlows() {
     const advancedFlows2 = await this.homey.flow.getAdvancedFlows();
@@ -12918,7 +12914,7 @@ function requireHomeyAPIV3() {
           return resolve(result);
         });
       }).catch(async (err) => {
-        if (err.statusCode === 401) {
+        if (err.statusCode === 401 || err.code === 401) {
           this.__debug("Token expired, refreshing...");
           await this.logout();
           await this.login();
@@ -22092,7 +22088,7 @@ function requireHomeyAPI() {
      * Creates a {@link HomeyAPIV3Local} or {@link HomeyAPIV2} instance for use in the Apps SDK.
      * @param {Object} opts
      * @param {Homey} opts.homey — Homey (Apps SDK) instance.
-     * @param {Function|null} opts.debug — Debug function, defaults to `null`.
+     * @param {Function|null} [opts.debug=null] — Debug function, defaults to `null`.
      * @example
      * const { HomeyAPI } = require('homey-api');
      *
@@ -22194,10 +22190,11 @@ function requireHomeyAPI() {
   }
   /**
    * Platforms
-   * @static
+   * @memberof HomeyAPI
    * @property {object} PLATFORMS
    * @property {string} PLATFORMS.LOCAL - Homey (2016 — 2019) & Homey Pro (2019 — 2023)
    * @property {string} PLATFORMS.CLOUD - Homey Cloud
+   * @static
    */
   __publicField(HomeyAPI2, "PLATFORMS", {
     LOCAL: "local",
@@ -22205,13 +22202,14 @@ function requireHomeyAPI() {
   });
   /**
    * Discovery Strategies
-   * @static
+   * @memberof HomeyAPI
    * @property {object} DISCOVERY_STRATEGIES
    * @property {string} DISCOVERY_STRATEGIES.CLOUD - Cloud HTTPS, e.g. `https://abcdef.connect.athom.com`.
    * @property {string} DISCOVERY_STRATEGIES.MDNS - Local HTTP, e.g. `http://homey-abcdef.local`
    * @property {string} DISCOVERY_STRATEGIES.LOCAL - Local HTTP, e.g. `http://192.168.1.100`.
    * @property {string} DISCOVERY_STRATEGIES.LOCAL_SECURE - Local HTTPS, e.g. `https://192-168-1-100.homey.homeylocal.com`.
    * @property {string} DISCOVERY_STRATEGIES.REMOTE_FORWARDED - Remote HTTPS, e.g. `https://12-34-56-78.homey.homeylocal.com:12345`.
+   * @static
    */
   __publicField(HomeyAPI2, "DISCOVERY_STRATEGIES", {
     MDNS: "mdns",
@@ -22414,6 +22412,7 @@ let API$1 = (_h = class {
       statusText
     });
   }
+  // eslint-disable-next-line no-unused-vars
   async onCallRequestHeaders({ request }) {
     return {};
   }
@@ -22430,14 +22429,18 @@ let API$1 = (_h = class {
     return responseText;
   }
   async onCallResponseOK({
+    // eslint-disable-next-line no-unused-vars
     context,
     body,
+    // eslint-disable-next-line no-unused-vars
     statusCode,
+    // eslint-disable-next-line no-unused-vars
     statusText
   }) {
     return body;
   }
   async onCallResponseNotOK({
+    // eslint-disable-next-line no-unused-vars
     context,
     body,
     statusCode,
@@ -22462,7 +22465,7 @@ let APIDefinition$3 = class APIDefinition2 {
   /**
    *
    * @param {object} opts
-   * @param {API} opts.api
+   * @param {import('./API.js')} opts.api
    * @param {object} opts.properties
    */
   constructor({
@@ -22539,8 +22542,8 @@ let Homey$2 = class Homey2 extends APIDefinition$2 {
   /**
    * This method returns a {@link HomeyAPI} instance matching the Homey's API level and platform.
    * Additionally, it ensures a session on the Homey during initialization.
-   * @param {object} opts
-   * @param {string|array} opts.strategy - One string, or an array of {@link HomeyAPI#DISCOVERY_STRATEGIES} strings, to connect to the Homey.
+   * @param {object} [opts]
+   * @param {string|array} [opts.strategy] - One string, or an array of {@link HomeyAPI#DISCOVERY_STRATEGIES} strings, to connect to the Homey.
    * @returns {Promise<HomeyAPI>}
    */
   async authenticate({ strategy } = {}) {
@@ -22661,6 +22664,7 @@ let StorageAdapter$3 = class StorageAdapter2 {
    * @param {object} value
    * @returns {Promise<void>}
    */
+  // eslint-disable-next-line no-unused-vars
   async set(value) {
     throw new Error("Not Implemented: StorageAdapter.set()");
   }
@@ -24030,6 +24034,7 @@ class AthomCloudAPI extends API {
   /*
    * API overloads
   */
+  // eslint-disable-next-line no-unused-vars
   async onCallRequestHeaders({ request }) {
     if (!this.__token) {
       const store = await this.__getStore();

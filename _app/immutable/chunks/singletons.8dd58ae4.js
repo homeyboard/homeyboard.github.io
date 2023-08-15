@@ -95,9 +95,9 @@ function derived(stores2, fn, initial_value) {
     };
   });
 }
-const base = ((_a = globalThis.__sveltekit_1a7nshf) == null ? void 0 : _a.base) ?? "";
-const assets = ((_b = globalThis.__sveltekit_1a7nshf) == null ? void 0 : _b.assets) ?? base;
-const version = "1692122470118";
+const base = ((_a = globalThis.__sveltekit_1lm0n9b) == null ? void 0 : _a.base) ?? "";
+const assets = ((_b = globalThis.__sveltekit_1lm0n9b) == null ? void 0 : _b.assets) ?? base;
+const version = "1692124117134";
 const SNAPSHOT_KEY = "sveltekit:snapshot";
 const SCROLL_KEY = "sveltekit:scroll";
 const INDEX_KEY = "sveltekit:index";

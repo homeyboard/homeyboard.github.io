@@ -8,15 +8,15 @@ var __publicField = (obj2, key, value) => {
 };
 var __superGet = (cls, obj2, key) => __reflectGet(__getProtoOf(cls), key, obj2);
 var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-import { j as client_method, k as derived, w as writable } from "./singletons.10d80f9d.js";
-import { p as page } from "./stores.b64b975b.js";
+import { j as client_method, k as derived, w as writable } from "./singletons.e6398b7a.js";
+import { p as page } from "./stores.2a397950.js";
 const goto = /* @__PURE__ */ client_method("goto");
 function createBaseUrl() {
   return derived([homey, page], ([$homey, $page], set) => {
-    if ({}.VITE_HOMEY_URL) {
-      set({}.VITE_HOMEY_URL);
-    } else if ($homey !== void 0) {
+    if ($homey !== void 0) {
       $homey.baseUrl.then((u) => set(u));
+    } else if ({}.VITE_HOMEY_URL) {
+      set({}.VITE_HOMEY_URL);
     } else {
       set($page.url.origin);
     }
@@ -63,6 +63,13 @@ function createAdvancedFlows() {
     })
   };
 }
+function createZones() {
+  const { subscribe, set, update } = writable({});
+  return {
+    subscribe,
+    set
+  };
+}
 const homey = writable(void 0);
 const baseUrl = createBaseUrl();
 const session = writable(void 0);
@@ -70,6 +77,9 @@ const scopes = derived(session, (s2) => s2 == null ? void 0 : s2.scopes, void 0)
 const devices = createDevices();
 const basicFlows = createBasicFlows();
 const advancedFlows = createAdvancedFlows();
+const zones = createZones();
+const clientId = "64db40c9dfd48293e883f17c";
+const clientSecret = "4bafb4b84b94c86bde946a085bec643e130df5c0";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -23889,8 +23899,8 @@ const StorageAdapterBrowser = StorageAdapterBrowser_1;
 const StorageAdapterMemory = StorageAdapterMemory_1;
 class AthomCloudAPI extends API {
   constructor({
-    clientId,
-    clientSecret,
+    clientId: clientId2,
+    clientSecret: clientSecret2,
     redirectUrl,
     autoRefreshTokens = true,
     token = null,
@@ -23898,8 +23908,8 @@ class AthomCloudAPI extends API {
     ...args
   } = {}) {
     super({ ...args });
-    this.__clientId = clientId;
-    this.__clientSecret = clientSecret;
+    this.__clientId = clientId2;
+    this.__clientSecret = clientSecret2;
     this.__redirectUrl = redirectUrl;
     this.__autoRefreshTokens = autoRefreshTokens;
     if (!(store instanceof StorageAdapter)) {
@@ -24382,13 +24392,16 @@ export {
   AthomCloudAPI$1 as A,
   advancedFlows as a,
   basicFlows as b,
-  session as c,
+  clientId as c,
   devices as d,
-  baseUrl as e,
-  AthomCloudAPI_1 as f,
+  clientSecret as e,
+  session as f,
   goto as g,
   homey as h,
-  getDefaultExportFromCjs as i,
+  baseUrl as i,
+  AthomCloudAPI_1 as j,
+  getDefaultExportFromCjs as k,
   requireHomeyAPI as r,
-  scopes as s
+  scopes as s,
+  zones as z
 };

@@ -1,8 +1,8 @@
 import { s as safe_not_equal, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, z as component_subscribe, L as setContext, O as onDestroy, R as set_store_value, D as assign, f as element, g as claim_element, h as children, d as detach, M as set_attributes, i as insert_hydration, x as append_hydration, I as action_destroyer, J as is_function, K as run_all, A as compute_rest_props, B as get_current_component, o as onMount, E as exclude_internal_props, p as binding_callbacks, q as construct_svelte_component, e as empty, C as getContext, a as space, c as claim_space, j as attr, N as listen, y as noop, T as bubble, Z as set_input_value, W as compute_slots, t as tick, l as text, m as claim_text, n as set_data, S as add_flush_callback, U as get_svelte_dataset, k as set_style } from "../chunks/scheduler.ede5dfaf.js";
-import { _ as __extends, b as __assign, M as MDCFoundation, c as classMap, p as prefixFilter, l as exclude, u as useActions, g as get_spread_update, f as forwardEventsBuilder, R as Ripple, a as get_spread_object, h as dispatch, S as SmuiElement, d as __read, m as ponyfill, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, i as classAdderBuilder, n as __values, v as events, F as FloatingLabel, N as NotchedOutline, L as LineRipple, s as apiKey, H as HomeyAPI, C as CommonLabel, B as Button, q as handle_promise, r as update_await_block_branch, t as CircularProgress } from "../chunks/HomeyAPI.71d7c96a.js";
+import { _ as __extends, b as __assign, M as MDCFoundation, c as classMap, p as prefixFilter, l as exclude, u as useActions, g as get_spread_update, f as forwardEventsBuilder, R as Ripple, a as get_spread_object, h as dispatch, S as SmuiElement, d as __read, m as ponyfill, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, i as classAdderBuilder, n as __values, v as events, F as FloatingLabel, N as NotchedOutline, L as LineRipple, s as apiKey, H as HomeyAPI, C as CommonLabel, B as Button, q as handle_promise, r as update_await_block_branch, t as CircularProgress } from "../chunks/HomeyAPI.bc525bf2.js";
 import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.a7daac98.js";
-import { w as writable } from "../chunks/singletons.10d80f9d.js";
-import { e as baseUrl, h as homey, g as goto, A as AthomCloudAPI, f as AthomCloudAPI_1 } from "../chunks/AthomCloudAPI.06203c9d.js";
+import { w as writable, e as base } from "../chunks/singletons.e6398b7a.js";
+import { i as baseUrl, h as homey, g as goto, A as AthomCloudAPI, c as clientId, e as clientSecret, j as AthomCloudAPI_1 } from "../chunks/AthomCloudAPI.19a94ac1.js";
 function create_fragment$a(ctx) {
   let current;
   const default_slot_template = (
@@ -10403,7 +10403,7 @@ function create_default_slot_11(ctx) {
   let textContent = "Online authentication can be used with both the newer Homey Pro 2023 and older models.";
   let t1;
   let p1;
-  let textContent_1 = "With online authentication, scopes cannot be selected individually. If you want to limit access, \r\n                        use the local login with API-key if the feature is available on your Homey.";
+  let textContent_1 = "With online authentication, scopes cannot be selected individually. If you want to limit access, \r\n                        use local login with API-key, only available for Homey Pro 2023.";
   let t3;
   let button;
   let current;
@@ -10434,7 +10434,7 @@ function create_default_slot_11(ctx) {
         p0.textContent = textContent;
       t1 = claim_space(nodes);
       p1 = claim_element(nodes, "P", { ["data-svelte-h"]: true });
-      if (get_svelte_dataset(p1) !== "svelte-ojlplo")
+      if (get_svelte_dataset(p1) !== "svelte-idyi3a")
         p1.textContent = textContent_1;
       t3 = claim_space(nodes);
       claim_component(button.$$.fragment, nodes);
@@ -12559,8 +12559,8 @@ function create_fragment(ctx) {
     ctx[11](value);
   }
   let tabbar_props = {
-    tabs: ["Url", "Local"],
-    /*, 'Online' */
+    tabs: ["Local", "Online"],
+    /*'Url',*/
     $$slots: {
       default: [
         create_default_slot_13,
@@ -12708,7 +12708,7 @@ function create_fragment(ctx) {
 function instance_1($$self, $$props, $$invalidate) {
   let $baseUrl;
   component_subscribe($$self, baseUrl, ($$value) => $$invalidate(17, $baseUrl = $$value));
-  let active = "Url";
+  let active = "Online";
   let localKey = "";
   let localKeyInvalid = false;
   let localKeyLoading;
@@ -12730,13 +12730,13 @@ function instance_1($$self, $$props, $$invalidate) {
   }
   async function setHomey(instance2) {
     homey.set(instance2);
-    await goto("/");
+    await goto(base);
   }
   async function oauthLogin() {
     const cloudApi = new AthomCloudAPI({
-      clientId: "5a8d4ca6eb9f7a2c9d6ccf6d",
-      clientSecret: "e3ace394af9f615857ceaa61b053f966ddcfb12a",
-      redirectUrl: "http://localhost/oauth2/callback"
+      clientId,
+      clientSecret,
+      redirectUrl: "https://homeyboard.github.io/oauth2/callback"
     });
     const loggedIn = await cloudApi.isLoggedIn();
     if (!loggedIn) {
@@ -12751,7 +12751,7 @@ function instance_1($$self, $$props, $$invalidate) {
     const firstHomey = await user.getFirstHomey();
     const homeyApi = await firstHomey.authenticate();
     homey.set(homeyApi);
-    await goto("/");
+    await goto(base);
   }
   async function homeyInkLogin() {
     $$invalidate(5, inkUrlInvalid = false);
@@ -12767,11 +12767,10 @@ function instance_1($$self, $$props, $$invalidate) {
       return;
     }
     const cloudApi = new AthomCloudAPI({
-      clientId: "5cbb504da1fc782009f52e46",
-      clientSecret: "gvhs0gebgir8vz8yo2l0jfb49u9xzzhrkuo1uvs8",
+      clientId,
+      clientSecret,
       token: new AthomCloudAPI_1.Token(jwt)
     });
-    console.log(await cloudApi.isLoggedIn());
     await cloudApi.authenticateWithRefreshToken(jwt.refresh_token);
     const user = await cloudApi.getAuthenticatedUser();
     const firstHomey = await user.getFirstHomey();

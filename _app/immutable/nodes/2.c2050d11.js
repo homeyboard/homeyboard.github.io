@@ -7,9 +7,9 @@ var __publicField = (obj, key, value) => {
 var _a2, _b2;
 import { s as safe_not_equal, q as construct_svelte_component, e as empty, i as insert_hydration, d as detach, A as compute_rest_props, B as get_current_component, C as getContext, D as assign$1, E as exclude_internal_props, p as binding_callbacks, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, F as svg_element, G as claim_svg_element, h as children, H as set_svg_attributes, I as action_destroyer, J as is_function, K as run_all, L as setContext, f as element, a as space, g as claim_element, c as claim_space, j as attr, M as set_attributes, N as listen, o as onMount, O as onDestroy, P as toggle_class, x as append_hydration, Q as createEventDispatcher, y as noop$1, k as set_style, z as component_subscribe, R as set_store_value, S as add_flush_callback, T as bubble, l as text, m as claim_text, n as set_data, U as get_svelte_dataset, V as set_data_maybe_contenteditable, W as compute_slots, X as destroy_each, Y as to_number, Z as set_input_value, _ as src_url_equal, $ as current_component, b as afterUpdate, a0 as init_binding_group } from "../chunks/scheduler.ede5dfaf.js";
 import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, g as group_outros, t as transition_out, e as destroy_component, c as check_outros, a as transition_in, f as bind } from "../chunks/index.a7daac98.js";
-import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, i as baseUrl } from "../chunks/AthomCloudAPI.e5d89d48.js";
-import { w as writable, e as base } from "../chunks/singletons.bd83494d.js";
-import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, R as Ripple, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, p as prefixFilter, l as exclude, m as ponyfill, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, q as handle_promise, r as update_await_block_branch, C as CommonLabel, B as Button, s as apiKey, H as HomeyAPI, t as CircularProgress } from "../chunks/HomeyAPI.bfa5e488.js";
+import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, i as baseUrl } from "../chunks/AthomCloudAPI.a85178bf.js";
+import { w as writable, e as base } from "../chunks/singletons.c125f7ea.js";
+import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, R as Ripple, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, p as prefixFilter, l as exclude, m as ponyfill, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, q as handle_promise, r as update_await_block_branch, C as CommonLabel, s as CircularProgress, B as Button, t as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.62809d6e.js";
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
   // @ts-ignore Node typings have this
   global
@@ -22113,9 +22113,9 @@ function create_else_block_3(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$2,
-    then: create_then_block$2,
-    catch: create_catch_block$2,
+    pending: create_pending_block$3,
+    then: create_then_block$3,
+    catch: create_catch_block$3,
     value: 12
   };
   handle_promise(promise = /*$homey*/
@@ -22219,7 +22219,7 @@ function create_if_block_7(ctx) {
     }
   };
 }
-function create_catch_block$2(ctx) {
+function create_catch_block$3(ctx) {
   return {
     c: noop$1,
     l: noop$1,
@@ -22228,7 +22228,7 @@ function create_catch_block$2(ctx) {
     d: noop$1
   };
 }
-function create_then_block$2(ctx) {
+function create_then_block$3(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -22275,7 +22275,7 @@ function create_then_block$2(ctx) {
     }
   };
 }
-function create_pending_block$2(ctx) {
+function create_pending_block$3(ctx) {
   let t2;
   return {
     c() {
@@ -23823,9 +23823,9 @@ function create_else_block_1$2(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$1,
-    then: create_then_block$1,
-    catch: create_catch_block$1,
+    pending: create_pending_block$2,
+    then: create_then_block$2,
+    catch: create_catch_block$2,
     value: 7
   };
   handle_promise(promise = /*$homey*/
@@ -23909,7 +23909,7 @@ function create_if_block$8(ctx) {
     }
   };
 }
-function create_catch_block$1(ctx) {
+function create_catch_block$2(ctx) {
   return {
     c: noop$1,
     l: noop$1,
@@ -23918,7 +23918,7 @@ function create_catch_block$1(ctx) {
     d: noop$1
   };
 }
-function create_then_block$1(ctx) {
+function create_then_block$2(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -23967,7 +23967,7 @@ function create_then_block$1(ctx) {
     }
   };
 }
-function create_pending_block$1(ctx) {
+function create_pending_block$2(ctx) {
   let t2;
   return {
     c() {
@@ -25482,9 +25482,9 @@ function create_else_block_1$1(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block,
-    then: create_then_block,
-    catch: create_catch_block,
+    pending: create_pending_block$1,
+    then: create_then_block$1,
+    catch: create_catch_block$1,
     value: 7
   };
   handle_promise(promise = /*$homey*/
@@ -25568,7 +25568,7 @@ function create_if_block$6(ctx) {
     }
   };
 }
-function create_catch_block(ctx) {
+function create_catch_block$1(ctx) {
   return {
     c: noop$1,
     l: noop$1,
@@ -25577,7 +25577,7 @@ function create_catch_block(ctx) {
     d: noop$1
   };
 }
-function create_then_block(ctx) {
+function create_then_block$1(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -25633,7 +25633,7 @@ function create_then_block(ctx) {
     }
   };
 }
-function create_pending_block(ctx) {
+function create_pending_block$1(ctx) {
   let t2;
   return {
     c() {
@@ -44824,14 +44824,14 @@ function create_else_block_2(ctx) {
   let div0;
   let t0_value = (
     /*device*/
-    ((_a3 = ctx[1]) == null ? void 0 : _a3.name) + ""
+    ((_a3 = ctx[0]) == null ? void 0 : _a3.name) + ""
   );
   let t0;
   let t1;
   let div1;
   let t2_value = (
     /*insight*/
-    ((_b3 = ctx[0]) == null ? void 0 : _b3.title) + ""
+    ((_b3 = ctx[3]) == null ? void 0 : _b3.title) + ""
   );
   let t2;
   return {
@@ -44860,8 +44860,8 @@ function create_else_block_2(ctx) {
       this.h();
     },
     h() {
-      attr(div1, "class", "subtitle svelte-4hrbdb");
-      attr(div2, "class", "header svelte-4hrbdb");
+      attr(div1, "class", "subtitle svelte-m3bos7");
+      attr(div2, "class", "header svelte-m3bos7");
     },
     m(target, anchor) {
       insert_hydration(target, div2, anchor);
@@ -44874,12 +44874,12 @@ function create_else_block_2(ctx) {
     p(ctx2, dirty) {
       var _a4, _b4;
       if (dirty & /*device*/
-      2 && t0_value !== (t0_value = /*device*/
-      ((_a4 = ctx2[1]) == null ? void 0 : _a4.name) + ""))
+      1 && t0_value !== (t0_value = /*device*/
+      ((_a4 = ctx2[0]) == null ? void 0 : _a4.name) + ""))
         set_data(t0, t0_value);
       if (dirty & /*insight*/
-      1 && t2_value !== (t2_value = /*insight*/
-      ((_b4 = ctx2[0]) == null ? void 0 : _b4.title) + ""))
+      8 && t2_value !== (t2_value = /*insight*/
+      ((_b4 = ctx2[3]) == null ? void 0 : _b4.title) + ""))
         set_data(t2, t2_value);
     },
     d(detaching) {
@@ -44915,68 +44915,76 @@ function create_if_block_2$1(ctx) {
 }
 function create_else_block_1(ctx) {
   let div;
-  let line;
+  let promise;
   let current;
-  line = new Line({
-    props: {
-      data: (
-        /*data*/
-        ctx[2]
-      ),
-      options: (
-        /*options*/
-        ctx[3]
-      )
-    }
-  });
+  let info = {
+    ctx,
+    current: null,
+    token: null,
+    hasCatch: true,
+    pending: create_pending_block,
+    then: create_then_block,
+    catch: create_catch_block,
+    value: 11,
+    error: 12,
+    blocks: [, , ,]
+  };
+  handle_promise(promise = /*loading*/
+  ctx[1], info);
   return {
     c() {
       div = element("div");
-      create_component(line.$$.fragment);
+      info.block.c();
       this.h();
     },
     l(nodes) {
       div = claim_element(nodes, "DIV", { class: true });
       var div_nodes = children(div);
-      claim_component(line.$$.fragment, div_nodes);
+      info.block.l(div_nodes);
       div_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(div, "class", "chart svelte-4hrbdb");
+      attr(div, "class", "chart svelte-m3bos7");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
-      mount_component(line, div, null);
+      info.block.m(div, info.anchor = null);
+      info.mount = () => div;
+      info.anchor = null;
       current = true;
     },
-    p(ctx2, dirty) {
-      const line_changes = {};
-      if (dirty & /*data*/
-      4)
-        line_changes.data = /*data*/
-        ctx2[2];
-      if (dirty & /*options*/
-      8)
-        line_changes.options = /*options*/
-        ctx2[3];
-      line.$set(line_changes);
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      info.ctx = ctx;
+      if (dirty & /*loading*/
+      2 && promise !== (promise = /*loading*/
+      ctx[1]) && handle_promise(promise, info))
+        ;
+      else {
+        update_await_block_branch(info, ctx, dirty);
+      }
     },
     i(local) {
       if (current)
         return;
-      transition_in(line.$$.fragment, local);
+      transition_in(info.block);
       current = true;
     },
     o(local) {
-      transition_out(line.$$.fragment, local);
+      for (let i2 = 0; i2 < 3; i2 += 1) {
+        const block = info.blocks[i2];
+        transition_out(block);
+      }
       current = false;
     },
     d(detaching) {
       if (detaching) {
         detach(div);
       }
-      destroy_component(line);
+      info.block.d();
+      info.token = null;
+      info = null;
     }
   };
 }
@@ -44985,7 +44993,7 @@ function create_if_block$5(ctx) {
   function select_block_type_2(ctx2, dirty) {
     if (
       /*device*/
-      ctx2[1] == void 0
+      ctx2[0] == void 0
     )
       return create_if_block_1$2;
     return create_else_block;
@@ -45022,6 +45030,140 @@ function create_if_block$5(ctx) {
         detach(if_block_anchor);
       }
       if_block.d(detaching);
+    }
+  };
+}
+function create_catch_block(ctx) {
+  let t_value = (
+    /*error*/
+    ctx[12] + ""
+  );
+  let t2;
+  return {
+    c() {
+      t2 = text(t_value);
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, t_value);
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*loading*/
+      2 && t_value !== (t_value = /*error*/
+      ctx2[12] + ""))
+        set_data(t2, t_value);
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_then_block(ctx) {
+  let line;
+  let current;
+  line = new Line({
+    props: {
+      data: (
+        /*data*/
+        ctx[2]
+      ),
+      options: (
+        /*options*/
+        ctx[4]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(line.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(line.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(line, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const line_changes = {};
+      if (dirty & /*data*/
+      4)
+        line_changes.data = /*data*/
+        ctx2[2];
+      if (dirty & /*options*/
+      16)
+        line_changes.options = /*options*/
+        ctx2[4];
+      line.$set(line_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(line.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(line.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(line, detaching);
+    }
+  };
+}
+function create_pending_block(ctx) {
+  let div;
+  let circularprogress;
+  let current;
+  circularprogress = new CircularProgress({
+    props: {
+      style: "height: 50%; width: 50%;",
+      indeterminate: true
+    }
+  });
+  return {
+    c() {
+      div = element("div");
+      create_component(circularprogress.$$.fragment);
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      var div_nodes = children(div);
+      claim_component(circularprogress.$$.fragment, div_nodes);
+      div_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(div, "class", "loading svelte-m3bos7");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+      mount_component(circularprogress, div, null);
+      current = true;
+    },
+    p: noop$1,
+    i(local) {
+      if (current)
+        return;
+      transition_in(circularprogress.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(circularprogress.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      destroy_component(circularprogress);
     }
   };
 }
@@ -45080,8 +45222,8 @@ function create_fragment$8(ctx) {
   function select_block_type(ctx2, dirty) {
     if (
       /*device*/
-      ctx2[1] == void 0 || /*insight*/
-      ctx2[0] == void 0
+      ctx2[0] == void 0 || /*insight*/
+      ctx2[3] == void 0
     )
       return create_if_block_2$1;
     return create_else_block_2;
@@ -45093,8 +45235,8 @@ function create_fragment$8(ctx) {
   function select_block_type_1(ctx2, dirty) {
     if (
       /*device*/
-      ctx2[1] == void 0 || /*insight*/
-      ctx2[0] == void 0
+      ctx2[0] == void 0 || /*insight*/
+      ctx2[3] == void 0
     )
       return 0;
     return 1;
@@ -45180,62 +45322,56 @@ function instance$5($$self, $$props, $$invalidate) {
   let $homey;
   let $devices;
   component_subscribe($$self, homey, ($$value) => $$invalidate(9, $homey = $$value));
-  component_subscribe($$self, devices, ($$value) => $$invalidate(5, $devices = $$value));
+  component_subscribe($$self, devices, ($$value) => $$invalidate(6, $devices = $$value));
   let { settings } = $$props;
-  let insightId;
-  let resolution;
-  let entries;
+  let loading;
   let data = {};
+  onMount(async () => {
+    $$invalidate(1, loading = getEntries(insight, settings.resolution));
+  });
   async function getEntries(i2, r) {
-    if (i2 && (!entries || insightId !== i2.id || resolution !== r)) {
-      insightId = i2.id;
-      resolution = r;
-      entries = await $homey.insights.getLogEntries({ id: i2.id, uri: i2.uri, resolution: r });
-      $$invalidate(2, data = {
-        datasets: [
-          {
-            label: insight == null ? void 0 : insight.title,
-            data: entries.values.map((entry) => ({
-              x: new Date(entry.t).getTime(),
-              y: entry.v
-            })),
-            tension: 0.4
-          }
-        ]
-      });
-    }
+    i2.id;
+    const entries = await $homey.insights.getLogEntries({ id: i2.id, uri: i2.uri, resolution: r });
+    $$invalidate(2, data = {
+      datasets: [
+        {
+          label: insight == null ? void 0 : insight.title,
+          data: entries.values.map((entry) => ({
+            x: new Date(entry.t).getTime(),
+            y: entry.v
+          })),
+          tension: 0.4
+        }
+      ]
+    });
   }
   $$self.$$set = ($$props2) => {
     if ("settings" in $$props2)
-      $$invalidate(4, settings = $$props2.settings);
+      $$invalidate(5, settings = $$props2.settings);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*$devices, settings*/
-    48) {
-      $$invalidate(1, device = $devices[settings.deviceId ?? ""]);
+    96) {
+      $$invalidate(0, device = $devices[settings.deviceId ?? ""]);
     }
     if ($$self.$$.dirty & /*device, settings*/
-    18) {
-      $$invalidate(0, insight = device == null ? void 0 : device.insights.find((i2) => i2.id === settings.insightId));
-    }
-    if ($$self.$$.dirty & /*insight, settings*/
-    17) {
-      getEntries(insight, settings.resolution);
+    33) {
+      $$invalidate(3, insight = device == null ? void 0 : device.insights.find((i2) => i2.id === settings.insightId));
     }
   };
-  $$invalidate(3, options = {
+  $$invalidate(4, options = {
     plugins: { legend: { display: false } },
     elements: { point: { radius: 0 } },
     scales: { x: { type: "timeseries" } },
     responsive: true,
     maintainAspectRatio: false
   });
-  return [insight, device, data, options, settings, $devices];
+  return [device, loading, data, insight, options, settings, $devices];
 }
 class InsightWidget extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$5, create_fragment$8, safe_not_equal, { settings: 4 });
+    init(this, options, instance$5, create_fragment$8, safe_not_equal, { settings: 5 });
   }
 }
 function get_each_context$1(ctx, list, i2) {
@@ -50371,7 +50507,7 @@ function instance($$self, $$props, $$invalidate) {
       const s3 = await $homey.sessions.getSessionMe();
       session.set(s3);
     } catch (e2) {
-      $$invalidate(1, error = e2);
+      $$invalidate(1, error = "Session: " + e2);
     }
     $$invalidate(0, loading = false);
   }
@@ -50428,7 +50564,7 @@ function instance($$self, $$props, $$invalidate) {
         devices.set(d3);
       }
     } catch (e2) {
-      $$invalidate(1, error = e2);
+      $$invalidate(1, error = "Devices: " + e2);
     }
   }
   async function loadFlows() {
@@ -50445,7 +50581,7 @@ function instance($$self, $$props, $$invalidate) {
         $homey.flow.on("advancedflow.delete", (e2) => advancedFlows.onDelete(e2));
       }
     } catch (e2) {
-      $$invalidate(1, error = e2);
+      $$invalidate(1, error = "Flows: " + e2);
     }
   }
   async function loadZones() {
@@ -50456,7 +50592,7 @@ function instance($$self, $$props, $$invalidate) {
         zones.set(z2);
       }
     } catch (e2) {
-      $$invalidate(1, error = e2);
+      $$invalidate(1, error = "Zones: " + e2);
     }
   }
   function toggleEdit() {

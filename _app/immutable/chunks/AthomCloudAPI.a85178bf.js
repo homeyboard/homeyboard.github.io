@@ -8,8 +8,8 @@ var __publicField = (obj2, key, value) => {
 };
 var __superGet = (cls, obj2, key) => __reflectGet(__getProtoOf(cls), key, obj2);
 var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-import { j as client_method, k as derived, w as writable } from "./singletons.bd83494d.js";
-import { p as page } from "./stores.8883e3d4.js";
+import { j as client_method, k as derived, w as writable } from "./singletons.c125f7ea.js";
+import { p as page } from "./stores.ac35caac.js";
 const goto = /* @__PURE__ */ client_method("goto");
 function createBaseUrl() {
   return derived([homey, page], ([$homey, $page], set) => {
@@ -73,7 +73,7 @@ function createZones() {
 const homey = writable(void 0);
 const baseUrl = createBaseUrl();
 const session = writable(void 0);
-const scopes = derived(session, (s2) => s2 == null ? void 0 : s2.scopes, []);
+const scopes = derived(session, (s2) => (s2 == null ? void 0 : s2.scopes) ?? [], []);
 const devices = createDevices();
 const basicFlows = createBasicFlows();
 const advancedFlows = createAdvancedFlows();

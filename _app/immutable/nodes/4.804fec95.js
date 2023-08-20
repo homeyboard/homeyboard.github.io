@@ -1,8 +1,8 @@
-import { s as safe_not_equal, z as component_subscribe, o as onMount } from "../chunks/scheduler.ede5dfaf.js";
-import { S as SvelteComponent, i as init } from "../chunks/index.a7daac98.js";
-import { p as page } from "../chunks/stores.ac35caac.js";
-import { g as goto, A as AthomCloudAPI, c as clientId, e as clientSecret, h as homey } from "../chunks/AthomCloudAPI.a85178bf.js";
-import { e as base } from "../chunks/singletons.c125f7ea.js";
+import { s as safe_not_equal, z as component_subscribe, o as onMount } from "../chunks/scheduler.77595e1a.js";
+import { S as SvelteComponent, i as init } from "../chunks/index.a69940bd.js";
+import { p as page } from "../chunks/stores.6959356d.js";
+import { g as goto, A as AthomCloudAPI, c as clientId, e as clientSecret, h as homey } from "../chunks/AthomCloudAPI.1c94a87e.js";
+import { e as base } from "../chunks/singletons.db48ae48.js";
 function instance($$self, $$props, $$invalidate) {
   let $page;
   component_subscribe($$self, page, ($$value) => $$invalidate(0, $page = $$value));
@@ -21,7 +21,6 @@ function instance($$self, $$props, $$invalidate) {
         }
       }
     }
-    console.log(base);
     await goto(base + "/");
   });
   $$self.$$.update = () => {

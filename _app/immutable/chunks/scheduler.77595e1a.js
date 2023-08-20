@@ -452,6 +452,25 @@ function toggle_class(element2, name, toggle) {
 function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
   return new CustomEvent(type, { detail, bubbles, cancelable });
 }
+function head_selector(nodeId, head) {
+  const result = [];
+  let started = 0;
+  for (const node of head.childNodes) {
+    if (node.nodeType === 8) {
+      const comment = node.textContent.trim();
+      if (comment === `HEAD_${nodeId}_END`) {
+        started -= 1;
+        result.push(node);
+      } else if (comment === `HEAD_${nodeId}_START`) {
+        started += 1;
+        result.push(node);
+      }
+    } else if (started > 0) {
+      result.push(node);
+    }
+  }
+  return result;
+}
 function construct_svelte_component(component, props) {
   return new component(props);
 }
@@ -616,20 +635,21 @@ export {
   src_url_equal as _,
   space as a,
   init_binding_group as a0,
-  is_promise as a1,
-  set_current_component as a2,
-  flush as a3,
-  set_dynamic_element_data as a4,
-  subscribe as a5,
-  blank_object as a6,
-  is_empty as a7,
-  add_render_callback as a8,
-  flush_render_callbacks as a9,
-  run as aa,
-  dirty_components as ab,
-  schedule_update as ac,
-  start_hydrating as ad,
-  end_hydrating as ae,
+  head_selector as a1,
+  is_promise as a2,
+  set_current_component as a3,
+  flush as a4,
+  set_dynamic_element_data as a5,
+  subscribe as a6,
+  blank_object as a7,
+  is_empty as a8,
+  add_render_callback as a9,
+  flush_render_callbacks as aa,
+  run as ab,
+  dirty_components as ac,
+  schedule_update as ad,
+  start_hydrating as ae,
+  end_hydrating as af,
   afterUpdate as b,
   claim_space as c,
   detach as d,

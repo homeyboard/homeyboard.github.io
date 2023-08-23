@@ -8,8 +8,8 @@ var __publicField = (obj2, key, value) => {
 };
 var __superGet = (cls, obj2, key) => __reflectGet(__getProtoOf(cls), key, obj2);
 var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-import { j as client_method, k as derived, w as writable } from "./singletons.db48ae48.js";
-import { p as page } from "./stores.6959356d.js";
+import { j as client_method, k as derived, w as writable } from "./singletons.ca53e4ea.js";
+import { p as page } from "./stores.71d20e14.js";
 const goto = /* @__PURE__ */ client_method("goto");
 function createBaseUrl() {
   return derived([homey, page], ([$homey, $page], set) => {
@@ -23777,6 +23777,10 @@ const operations = {
       },
       replyTo: {
         type: "string",
+        "in": "body"
+      },
+      logo: {
+        type: "object",
         "in": "body"
       },
       header: {

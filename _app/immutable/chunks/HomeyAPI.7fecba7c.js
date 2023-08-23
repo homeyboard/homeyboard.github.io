@@ -1,7 +1,7 @@
-import { a2 as is_promise, B as get_current_component, a3 as set_current_component, a4 as flush, K as run_all, C as getContext, s as safe_not_equal, q as construct_svelte_component, e as empty, i as insert_hydration, d as detach, A as compute_rest_props, D as assign, E as exclude_internal_props, p as binding_callbacks, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, y as noop, F as svg_element, G as claim_svg_element, h as children, H as set_svg_attributes, I as action_destroyer, J as is_function, f as element, g as claim_element, a5 as set_dynamic_element_data, a as space, c as claim_space, j as attr, M as set_attributes, x as append_hydration, X as destroy_each, o as onMount, U as get_svelte_dataset, L as setContext, O as onDestroy, N as listen$1 } from "./scheduler.77595e1a.js";
-import { g as group_outros, t as transition_out, c as check_outros, a as transition_in, S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "./index.a69940bd.js";
-import { w as writable } from "./singletons.db48ae48.js";
-import { k as getDefaultExportFromCjs, r as requireHomeyAPI } from "./AthomCloudAPI.1c94a87e.js";
+import { a3 as is_promise, B as get_current_component, a4 as set_current_component, a5 as flush, K as run_all, C as getContext, s as safe_not_equal, q as construct_svelte_component, e as empty, i as insert_hydration, d as detach, A as compute_rest_props, D as assign, E as exclude_internal_props, p as binding_callbacks, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, y as noop, F as svg_element, G as claim_svg_element, h as children, H as set_svg_attributes, I as action_destroyer, J as is_function, f as element, g as claim_element, a6 as set_dynamic_element_data, N as setContext, a as space, c as claim_space, j as attr, L as set_attributes, x as append_hydration, Y as destroy_each, o as onMount, V as get_svelte_dataset, O as onDestroy, M as listen$1 } from "./scheduler.98e41e63.js";
+import { g as group_outros, t as transition_out, c as check_outros, a as transition_in, S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "./index.5f86484a.js";
+import { w as writable } from "./singletons.ca53e4ea.js";
+import { k as getDefaultExportFromCjs, r as requireHomeyAPI } from "./AthomCloudAPI.22954863.js";
 function handle_promise(promise, info) {
   const token = info.token = {};
   function update(type, index, key, value) {
@@ -2468,6 +2468,722 @@ class SmuiElement extends SvelteComponent {
     return this.$$.ctx[6];
   }
 }
+function create_if_block$2(ctx) {
+  let div;
+  return {
+    c() {
+      div = element("div");
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      children(div).forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(div, "class", "mdc-button__touch");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+    }
+  };
+}
+function create_default_slot$1(ctx) {
+  let div;
+  let t;
+  let if_block_anchor;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[28].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[30],
+    null
+  );
+  let if_block = (
+    /*touch*/
+    ctx[6] && create_if_block$2()
+  );
+  return {
+    c() {
+      div = element("div");
+      t = space();
+      if (default_slot)
+        default_slot.c();
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      children(div).forEach(detach);
+      t = claim_space(nodes);
+      if (default_slot)
+        default_slot.l(nodes);
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+      this.h();
+    },
+    h() {
+      attr(div, "class", "mdc-button__ripple");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+      insert_hydration(target, t, anchor);
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty[0] & /*$$scope*/
+        1073741824)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[30],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[30]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[30],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (
+        /*touch*/
+        ctx2[6]
+      ) {
+        if (if_block)
+          ;
+        else {
+          if_block = create_if_block$2();
+          if_block.c();
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+        detach(t);
+        detach(if_block_anchor);
+      }
+      if (default_slot)
+        default_slot.d(detaching);
+      if (if_block)
+        if_block.d(detaching);
+    }
+  };
+}
+function create_fragment$5(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { tag: (
+      /*tag*/
+      ctx[10]
+    ) },
+    {
+      use: [
+        [
+          Ripple,
+          {
+            ripple: (
+              /*ripple*/
+              ctx[3]
+            ),
+            unbounded: false,
+            color: (
+              /*color*/
+              ctx[4]
+            ),
+            disabled: !!/*$$restProps*/
+            ctx[23].disabled,
+            addClass: (
+              /*addClass*/
+              ctx[19]
+            ),
+            removeClass: (
+              /*removeClass*/
+              ctx[20]
+            ),
+            addStyle: (
+              /*addStyle*/
+              ctx[21]
+            )
+          }
+        ],
+        /*forwardEvents*/
+        ctx[17],
+        .../*use*/
+        ctx[0]
+      ]
+    },
+    {
+      class: classMap({
+        [
+          /*className*/
+          ctx[1]
+        ]: true,
+        "mdc-button": true,
+        "mdc-button--raised": (
+          /*variant*/
+          ctx[5] === "raised"
+        ),
+        "mdc-button--unelevated": (
+          /*variant*/
+          ctx[5] === "unelevated"
+        ),
+        "mdc-button--outlined": (
+          /*variant*/
+          ctx[5] === "outlined"
+        ),
+        "smui-button--color-secondary": (
+          /*color*/
+          ctx[4] === "secondary"
+        ),
+        "mdc-button--touch": (
+          /*touch*/
+          ctx[6]
+        ),
+        "mdc-card__action": (
+          /*context*/
+          ctx[18] === "card:action"
+        ),
+        "mdc-card__action--button": (
+          /*context*/
+          ctx[18] === "card:action"
+        ),
+        "mdc-dialog__button": (
+          /*context*/
+          ctx[18] === "dialog:action"
+        ),
+        "mdc-top-app-bar__navigation-icon": (
+          /*context*/
+          ctx[18] === "top-app-bar:navigation"
+        ),
+        "mdc-top-app-bar__action-item": (
+          /*context*/
+          ctx[18] === "top-app-bar:action"
+        ),
+        "mdc-snackbar__action": (
+          /*context*/
+          ctx[18] === "snackbar:actions"
+        ),
+        "mdc-banner__secondary-action": (
+          /*context*/
+          ctx[18] === "banner" && /*secondary*/
+          ctx[8]
+        ),
+        "mdc-banner__primary-action": (
+          /*context*/
+          ctx[18] === "banner" && !/*secondary*/
+          ctx[8]
+        ),
+        "mdc-tooltip__action": (
+          /*context*/
+          ctx[18] === "tooltip:rich-actions"
+        ),
+        .../*internalClasses*/
+        ctx[12]
+      })
+    },
+    {
+      style: Object.entries(
+        /*internalStyles*/
+        ctx[13]
+      ).map(func$3).concat([
+        /*style*/
+        ctx[2]
+      ]).join(" ")
+    },
+    /*actionProp*/
+    ctx[16],
+    /*defaultProp*/
+    ctx[15],
+    /*secondaryProp*/
+    ctx[14],
+    { href: (
+      /*href*/
+      ctx[7]
+    ) },
+    /*$$restProps*/
+    ctx[23]
+  ];
+  var switch_value = (
+    /*component*/
+    ctx[9]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot$1] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[29](switch_instance);
+    switch_instance.$on(
+      "click",
+      /*handleClick*/
+      ctx[22]
+    );
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const switch_instance_changes = dirty[0] & /*tag, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use, className, variant, touch, context, secondary, internalClasses, internalStyles, style, actionProp, defaultProp, secondaryProp, href*/
+      12580351 ? get_spread_update(switch_instance_spread_levels, [
+        dirty[0] & /*tag*/
+        1024 && { tag: (
+          /*tag*/
+          ctx2[10]
+        ) },
+        dirty[0] & /*ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use*/
+        12189721 && {
+          use: [
+            [
+              Ripple,
+              {
+                ripple: (
+                  /*ripple*/
+                  ctx2[3]
+                ),
+                unbounded: false,
+                color: (
+                  /*color*/
+                  ctx2[4]
+                ),
+                disabled: !!/*$$restProps*/
+                ctx2[23].disabled,
+                addClass: (
+                  /*addClass*/
+                  ctx2[19]
+                ),
+                removeClass: (
+                  /*removeClass*/
+                  ctx2[20]
+                ),
+                addStyle: (
+                  /*addStyle*/
+                  ctx2[21]
+                )
+              }
+            ],
+            /*forwardEvents*/
+            ctx2[17],
+            .../*use*/
+            ctx2[0]
+          ]
+        },
+        dirty[0] & /*className, variant, color, touch, context, secondary, internalClasses*/
+        266610 && {
+          class: classMap({
+            [
+              /*className*/
+              ctx2[1]
+            ]: true,
+            "mdc-button": true,
+            "mdc-button--raised": (
+              /*variant*/
+              ctx2[5] === "raised"
+            ),
+            "mdc-button--unelevated": (
+              /*variant*/
+              ctx2[5] === "unelevated"
+            ),
+            "mdc-button--outlined": (
+              /*variant*/
+              ctx2[5] === "outlined"
+            ),
+            "smui-button--color-secondary": (
+              /*color*/
+              ctx2[4] === "secondary"
+            ),
+            "mdc-button--touch": (
+              /*touch*/
+              ctx2[6]
+            ),
+            "mdc-card__action": (
+              /*context*/
+              ctx2[18] === "card:action"
+            ),
+            "mdc-card__action--button": (
+              /*context*/
+              ctx2[18] === "card:action"
+            ),
+            "mdc-dialog__button": (
+              /*context*/
+              ctx2[18] === "dialog:action"
+            ),
+            "mdc-top-app-bar__navigation-icon": (
+              /*context*/
+              ctx2[18] === "top-app-bar:navigation"
+            ),
+            "mdc-top-app-bar__action-item": (
+              /*context*/
+              ctx2[18] === "top-app-bar:action"
+            ),
+            "mdc-snackbar__action": (
+              /*context*/
+              ctx2[18] === "snackbar:actions"
+            ),
+            "mdc-banner__secondary-action": (
+              /*context*/
+              ctx2[18] === "banner" && /*secondary*/
+              ctx2[8]
+            ),
+            "mdc-banner__primary-action": (
+              /*context*/
+              ctx2[18] === "banner" && !/*secondary*/
+              ctx2[8]
+            ),
+            "mdc-tooltip__action": (
+              /*context*/
+              ctx2[18] === "tooltip:rich-actions"
+            ),
+            .../*internalClasses*/
+            ctx2[12]
+          })
+        },
+        dirty[0] & /*internalStyles, style*/
+        8196 && {
+          style: Object.entries(
+            /*internalStyles*/
+            ctx2[13]
+          ).map(func$3).concat([
+            /*style*/
+            ctx2[2]
+          ]).join(" ")
+        },
+        dirty[0] & /*actionProp*/
+        65536 && get_spread_object(
+          /*actionProp*/
+          ctx2[16]
+        ),
+        dirty[0] & /*defaultProp*/
+        32768 && get_spread_object(
+          /*defaultProp*/
+          ctx2[15]
+        ),
+        dirty[0] & /*secondaryProp*/
+        16384 && get_spread_object(
+          /*secondaryProp*/
+          ctx2[14]
+        ),
+        dirty[0] & /*href*/
+        128 && { href: (
+          /*href*/
+          ctx2[7]
+        ) },
+        dirty[0] & /*$$restProps*/
+        8388608 && get_spread_object(
+          /*$$restProps*/
+          ctx2[23]
+        )
+      ]) : {};
+      if (dirty[0] & /*$$scope, touch*/
+      1073741888) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (dirty[0] & /*component*/
+      512 && switch_value !== (switch_value = /*component*/
+      ctx2[9])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[29](switch_instance);
+          switch_instance.$on(
+            "click",
+            /*handleClick*/
+            ctx2[22]
+          );
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      ctx[29](null);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+const func$3 = ([name, value]) => `${name}: ${value};`;
+function instance$1($$self, $$props, $$invalidate) {
+  let actionProp;
+  let defaultProp;
+  let secondaryProp;
+  const omit_props_names = [
+    "use",
+    "class",
+    "style",
+    "ripple",
+    "color",
+    "variant",
+    "touch",
+    "href",
+    "action",
+    "defaultAction",
+    "secondary",
+    "component",
+    "tag",
+    "getElement"
+  ];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { ripple = true } = $$props;
+  let { color = "primary" } = $$props;
+  let { variant = "text" } = $$props;
+  let { touch = false } = $$props;
+  let { href = void 0 } = $$props;
+  let { action = "close" } = $$props;
+  let { defaultAction = false } = $$props;
+  let { secondary = false } = $$props;
+  let element2;
+  let internalClasses = {};
+  let internalStyles = {};
+  let context = getContext("SMUI:button:context");
+  let { component = SmuiElement } = $$props;
+  let { tag = component === SmuiElement ? href == null ? "button" : "a" : void 0 } = $$props;
+  let previousDisabled = $$restProps.disabled;
+  setContext("SMUI:label:context", "button");
+  setContext("SMUI:icon:context", "button");
+  function addClass(className2) {
+    if (!internalClasses[className2]) {
+      $$invalidate(12, internalClasses[className2] = true, internalClasses);
+    }
+  }
+  function removeClass(className2) {
+    if (!(className2 in internalClasses) || internalClasses[className2]) {
+      $$invalidate(12, internalClasses[className2] = false, internalClasses);
+    }
+  }
+  function addStyle(name, value) {
+    if (internalStyles[name] != value) {
+      if (value === "" || value == null) {
+        delete internalStyles[name];
+        $$invalidate(13, internalStyles);
+      } else {
+        $$invalidate(13, internalStyles[name] = value, internalStyles);
+      }
+    }
+  }
+  function handleClick() {
+    if (context === "banner") {
+      dispatch(getElement(), secondary ? "SMUIBannerButton:secondaryActionClick" : "SMUIBannerButton:primaryActionClick");
+    }
+  }
+  function getElement() {
+    return element2.getElement();
+  }
+  function switch_instance_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(11, element2);
+    });
+  }
+  $$self.$$set = ($$new_props) => {
+    $$invalidate(31, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
+    $$invalidate(23, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(0, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(1, className = $$new_props.class);
+    if ("style" in $$new_props)
+      $$invalidate(2, style = $$new_props.style);
+    if ("ripple" in $$new_props)
+      $$invalidate(3, ripple = $$new_props.ripple);
+    if ("color" in $$new_props)
+      $$invalidate(4, color = $$new_props.color);
+    if ("variant" in $$new_props)
+      $$invalidate(5, variant = $$new_props.variant);
+    if ("touch" in $$new_props)
+      $$invalidate(6, touch = $$new_props.touch);
+    if ("href" in $$new_props)
+      $$invalidate(7, href = $$new_props.href);
+    if ("action" in $$new_props)
+      $$invalidate(24, action = $$new_props.action);
+    if ("defaultAction" in $$new_props)
+      $$invalidate(25, defaultAction = $$new_props.defaultAction);
+    if ("secondary" in $$new_props)
+      $$invalidate(8, secondary = $$new_props.secondary);
+    if ("component" in $$new_props)
+      $$invalidate(9, component = $$new_props.component);
+    if ("tag" in $$new_props)
+      $$invalidate(10, tag = $$new_props.tag);
+    if ("$$scope" in $$new_props)
+      $$invalidate(30, $$scope = $$new_props.$$scope);
+  };
+  $$self.$$.update = () => {
+    $$invalidate(16, actionProp = context === "dialog:action" && action != null ? { "data-mdc-dialog-action": action } : { action: $$props.action });
+    $$invalidate(15, defaultProp = context === "dialog:action" && defaultAction ? { "data-mdc-dialog-button-default": "" } : { default: $$props.default });
+    $$invalidate(14, secondaryProp = context === "banner" ? {} : { secondary: $$props.secondary });
+    if (previousDisabled !== $$restProps.disabled) {
+      const el = getElement();
+      if ("blur" in el) {
+        el.blur();
+      }
+      $$invalidate(27, previousDisabled = $$restProps.disabled);
+    }
+  };
+  $$props = exclude_internal_props($$props);
+  return [
+    use,
+    className,
+    style,
+    ripple,
+    color,
+    variant,
+    touch,
+    href,
+    secondary,
+    component,
+    tag,
+    element2,
+    internalClasses,
+    internalStyles,
+    secondaryProp,
+    defaultProp,
+    actionProp,
+    forwardEvents,
+    context,
+    addClass,
+    removeClass,
+    addStyle,
+    handleClick,
+    $$restProps,
+    action,
+    defaultAction,
+    getElement,
+    previousDisabled,
+    slots,
+    switch_instance_binding,
+    $$scope
+  ];
+}
+class Button extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(
+      this,
+      options,
+      instance$1,
+      create_fragment$5,
+      safe_not_equal,
+      {
+        use: 0,
+        class: 1,
+        style: 2,
+        ripple: 3,
+        color: 4,
+        variant: 5,
+        touch: 6,
+        href: 7,
+        action: 24,
+        defaultAction: 25,
+        secondary: 8,
+        component: 9,
+        tag: 10,
+        getElement: 26
+      },
+      null,
+      [-1, -1]
+    );
+  }
+  get getElement() {
+    return this.$$.ctx[26];
+  }
+}
 /**
  * @license
  * Copyright 2020 Google Inc.
@@ -2721,7 +3437,7 @@ function create_each_block(ctx) {
     }
   };
 }
-function create_fragment$5(ctx) {
+function create_fragment$4(ctx) {
   let div2;
   let div0;
   let svg;
@@ -3147,7 +3863,7 @@ function instance_1$3($$self, $$props, $$invalidate) {
 class CircularProgress extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$3, create_fragment$5, safe_not_equal, {
+    init(this, options, instance_1$3, create_fragment$4, safe_not_equal, {
       use: 0,
       class: 1,
       indeterminate: 2,
@@ -3161,7 +3877,7 @@ class CircularProgress extends SvelteComponent {
     return this.$$.ctx[13];
   }
 }
-function create_default_slot$1(ctx) {
+function create_default_slot(ctx) {
   let current;
   const default_slot_template = (
     /*#slots*/
@@ -3230,7 +3946,7 @@ function create_default_slot$1(ctx) {
     }
   };
 }
-function create_fragment$4(ctx) {
+function create_fragment$3(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -3272,7 +3988,7 @@ function create_fragment$4(ctx) {
   );
   function switch_props(ctx2) {
     let switch_instance_props = {
-      $$slots: { default: [create_default_slot$1] },
+      $$slots: { default: [create_default_slot] },
       $$scope: { ctx: ctx2 }
     };
     for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
@@ -3402,7 +4118,7 @@ const internals = {
   contexts: {},
   props: {}
 };
-function instance$1($$self, $$props, $$invalidate) {
+function instance($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "component", "tag", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -3478,7 +4194,7 @@ function instance$1($$self, $$props, $$invalidate) {
 class ClassAdder extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1, create_fragment$4, safe_not_equal, {
+    init(this, options, instance, create_fragment$3, safe_not_equal, {
       use: 0,
       class: 1,
       component: 2,
@@ -4081,7 +4797,7 @@ function create_else_block(ctx) {
     }
   };
 }
-function create_if_block$2(ctx) {
+function create_if_block$1(ctx) {
   let span;
   let span_class_value;
   let span_style_value;
@@ -4124,7 +4840,7 @@ function create_if_block$2(ctx) {
       style: span_style_value = Object.entries(
         /*internalStyles*/
         ctx[9]
-      ).map(func$3).concat([
+      ).map(func$2).concat([
         /*style*/
         ctx[4]
       ]).join(" ")
@@ -4224,7 +4940,7 @@ function create_if_block$2(ctx) {
         528 && span_style_value !== (span_style_value = Object.entries(
           /*internalStyles*/
           ctx2[9]
-        ).map(func$3).concat([
+        ).map(func$2).concat([
           /*style*/
           ctx2[4]
         ]).join(" "))) && { style: span_style_value },
@@ -4262,12 +4978,12 @@ function create_if_block$2(ctx) {
     }
   };
 }
-function create_fragment$3(ctx) {
+function create_fragment$2(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block$2, create_else_block];
+  const if_block_creators = [create_if_block$1, create_else_block];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -4333,7 +5049,7 @@ function create_fragment$3(ctx) {
     }
   };
 }
-const func$3 = ([name, value]) => `${name}: ${value};`;
+const func$2 = ([name, value]) => `${name}: ${value};`;
 const func_1 = ([name, value]) => `${name}: ${value};`;
 function instance_1$2($$self, $$props, $$invalidate) {
   const omit_props_names = [
@@ -4521,7 +5237,7 @@ function instance_1$2($$self, $$props, $$invalidate) {
 class FloatingLabel extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$2, create_fragment$3, safe_not_equal, {
+    init(this, options, instance_1$2, create_fragment$2, safe_not_equal, {
       use: 2,
       class: 3,
       style: 4,
@@ -4552,7 +5268,7 @@ class FloatingLabel extends SvelteComponent {
     return this.$$.ctx[17];
   }
 }
-function create_fragment$2(ctx) {
+function create_fragment$1(ctx) {
   let div;
   let div_class_value;
   let div_style_value;
@@ -4579,7 +5295,7 @@ function create_fragment$2(ctx) {
       style: div_style_value = Object.entries(
         /*internalStyles*/
         ctx[6]
-      ).map(func$2).concat([
+      ).map(func$1).concat([
         /*style*/
         ctx[2]
       ]).join(" ")
@@ -4643,7 +5359,7 @@ function create_fragment$2(ctx) {
         68 && div_style_value !== (div_style_value = Object.entries(
           /*internalStyles*/
           ctx2[6]
-        ).map(func$2).concat([
+        ).map(func$1).concat([
           /*style*/
           ctx2[2]
         ]).join(" ")) && { style: div_style_value },
@@ -4671,7 +5387,7 @@ function create_fragment$2(ctx) {
     }
   };
 }
-const func$2 = ([name, value]) => `${name}: ${value};`;
+const func$1 = ([name, value]) => `${name}: ${value};`;
 function instance_1$1($$self, $$props, $$invalidate) {
   const omit_props_names = [
     "use",
@@ -4780,7 +5496,7 @@ function instance_1$1($$self, $$props, $$invalidate) {
 class LineRipple extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$1, create_fragment$2, safe_not_equal, {
+    init(this, options, instance_1$1, create_fragment$1, safe_not_equal, {
       use: 0,
       class: 1,
       style: 2,
@@ -4804,7 +5520,7 @@ class LineRipple extends SvelteComponent {
     return this.$$.ctx[12];
   }
 }
-function create_if_block$1(ctx) {
+function create_if_block(ctx) {
   let div;
   let div_style_value;
   let current;
@@ -4839,7 +5555,7 @@ function create_if_block$1(ctx) {
       attr(div, "style", div_style_value = Object.entries(
         /*notchStyles*/
         ctx[7]
-      ).map(func$1).join(" "));
+      ).map(func).join(" "));
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -4876,7 +5592,7 @@ function create_if_block$1(ctx) {
       128 && div_style_value !== (div_style_value = Object.entries(
         /*notchStyles*/
         ctx2[7]
-      ).map(func$1).join(" "))) {
+      ).map(func).join(" "))) {
         attr(div, "style", div_style_value);
       }
     },
@@ -4899,7 +5615,7 @@ function create_if_block$1(ctx) {
     }
   };
 }
-function create_fragment$1(ctx) {
+function create_fragment(ctx) {
   let div2;
   let div0;
   let t0;
@@ -4911,7 +5627,7 @@ function create_fragment$1(ctx) {
   let mounted;
   let dispose;
   let if_block = !/*noLabel*/
-  ctx[3] && create_if_block$1(ctx);
+  ctx[3] && create_if_block(ctx);
   let div2_levels = [
     {
       class: div2_class_value = classMap({
@@ -5017,7 +5733,7 @@ function create_fragment$1(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$1(ctx2);
+          if_block = create_if_block(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div2, t1);
@@ -5082,7 +5798,7 @@ function create_fragment$1(ctx) {
     }
   };
 }
-const func$1 = ([name, value]) => `${name}: ${value};`;
+const func = ([name, value]) => `${name}: ${value};`;
 function instance_1($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "notched", "noLabel", "notch", "closeNotch", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
@@ -5208,7 +5924,7 @@ function instance_1($$self, $$props, $$invalidate) {
 class NotchedOutline extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1, create_fragment$1, safe_not_equal, {
+    init(this, options, instance_1, create_fragment, safe_not_equal, {
       use: 0,
       class: 1,
       notched: 2,
@@ -5226,722 +5942,6 @@ class NotchedOutline extends SvelteComponent {
   }
   get getElement() {
     return this.$$.ctx[13];
-  }
-}
-function create_if_block(ctx) {
-  let div;
-  return {
-    c() {
-      div = element("div");
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      children(div).forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div, "class", "mdc-button__touch");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-    }
-  };
-}
-function create_default_slot(ctx) {
-  let div;
-  let t;
-  let if_block_anchor;
-  let current;
-  const default_slot_template = (
-    /*#slots*/
-    ctx[28].default
-  );
-  const default_slot = create_slot(
-    default_slot_template,
-    ctx,
-    /*$$scope*/
-    ctx[30],
-    null
-  );
-  let if_block = (
-    /*touch*/
-    ctx[6] && create_if_block()
-  );
-  return {
-    c() {
-      div = element("div");
-      t = space();
-      if (default_slot)
-        default_slot.c();
-      if (if_block)
-        if_block.c();
-      if_block_anchor = empty();
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      children(div).forEach(detach);
-      t = claim_space(nodes);
-      if (default_slot)
-        default_slot.l(nodes);
-      if (if_block)
-        if_block.l(nodes);
-      if_block_anchor = empty();
-      this.h();
-    },
-    h() {
-      attr(div, "class", "mdc-button__ripple");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      insert_hydration(target, t, anchor);
-      if (default_slot) {
-        default_slot.m(target, anchor);
-      }
-      if (if_block)
-        if_block.m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty[0] & /*$$scope*/
-        1073741824)) {
-          update_slot_base(
-            default_slot,
-            default_slot_template,
-            ctx2,
-            /*$$scope*/
-            ctx2[30],
-            !current ? get_all_dirty_from_scope(
-              /*$$scope*/
-              ctx2[30]
-            ) : get_slot_changes(
-              default_slot_template,
-              /*$$scope*/
-              ctx2[30],
-              dirty,
-              null
-            ),
-            null
-          );
-        }
-      }
-      if (
-        /*touch*/
-        ctx2[6]
-      ) {
-        if (if_block)
-          ;
-        else {
-          if_block = create_if_block();
-          if_block.c();
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
-        }
-      } else if (if_block) {
-        if_block.d(1);
-        if_block = null;
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(default_slot, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(default_slot, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-        detach(t);
-        detach(if_block_anchor);
-      }
-      if (default_slot)
-        default_slot.d(detaching);
-      if (if_block)
-        if_block.d(detaching);
-    }
-  };
-}
-function create_fragment(ctx) {
-  let switch_instance;
-  let switch_instance_anchor;
-  let current;
-  const switch_instance_spread_levels = [
-    { tag: (
-      /*tag*/
-      ctx[10]
-    ) },
-    {
-      use: [
-        [
-          Ripple,
-          {
-            ripple: (
-              /*ripple*/
-              ctx[3]
-            ),
-            unbounded: false,
-            color: (
-              /*color*/
-              ctx[4]
-            ),
-            disabled: !!/*$$restProps*/
-            ctx[23].disabled,
-            addClass: (
-              /*addClass*/
-              ctx[19]
-            ),
-            removeClass: (
-              /*removeClass*/
-              ctx[20]
-            ),
-            addStyle: (
-              /*addStyle*/
-              ctx[21]
-            )
-          }
-        ],
-        /*forwardEvents*/
-        ctx[17],
-        .../*use*/
-        ctx[0]
-      ]
-    },
-    {
-      class: classMap({
-        [
-          /*className*/
-          ctx[1]
-        ]: true,
-        "mdc-button": true,
-        "mdc-button--raised": (
-          /*variant*/
-          ctx[5] === "raised"
-        ),
-        "mdc-button--unelevated": (
-          /*variant*/
-          ctx[5] === "unelevated"
-        ),
-        "mdc-button--outlined": (
-          /*variant*/
-          ctx[5] === "outlined"
-        ),
-        "smui-button--color-secondary": (
-          /*color*/
-          ctx[4] === "secondary"
-        ),
-        "mdc-button--touch": (
-          /*touch*/
-          ctx[6]
-        ),
-        "mdc-card__action": (
-          /*context*/
-          ctx[18] === "card:action"
-        ),
-        "mdc-card__action--button": (
-          /*context*/
-          ctx[18] === "card:action"
-        ),
-        "mdc-dialog__button": (
-          /*context*/
-          ctx[18] === "dialog:action"
-        ),
-        "mdc-top-app-bar__navigation-icon": (
-          /*context*/
-          ctx[18] === "top-app-bar:navigation"
-        ),
-        "mdc-top-app-bar__action-item": (
-          /*context*/
-          ctx[18] === "top-app-bar:action"
-        ),
-        "mdc-snackbar__action": (
-          /*context*/
-          ctx[18] === "snackbar:actions"
-        ),
-        "mdc-banner__secondary-action": (
-          /*context*/
-          ctx[18] === "banner" && /*secondary*/
-          ctx[8]
-        ),
-        "mdc-banner__primary-action": (
-          /*context*/
-          ctx[18] === "banner" && !/*secondary*/
-          ctx[8]
-        ),
-        "mdc-tooltip__action": (
-          /*context*/
-          ctx[18] === "tooltip:rich-actions"
-        ),
-        .../*internalClasses*/
-        ctx[12]
-      })
-    },
-    {
-      style: Object.entries(
-        /*internalStyles*/
-        ctx[13]
-      ).map(func).concat([
-        /*style*/
-        ctx[2]
-      ]).join(" ")
-    },
-    /*actionProp*/
-    ctx[16],
-    /*defaultProp*/
-    ctx[15],
-    /*secondaryProp*/
-    ctx[14],
-    { href: (
-      /*href*/
-      ctx[7]
-    ) },
-    /*$$restProps*/
-    ctx[23]
-  ];
-  var switch_value = (
-    /*component*/
-    ctx[9]
-  );
-  function switch_props(ctx2) {
-    let switch_instance_props = {
-      $$slots: { default: [create_default_slot] },
-      $$scope: { ctx: ctx2 }
-    };
-    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
-      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
-    }
-    return { props: switch_instance_props };
-  }
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-    ctx[29](switch_instance);
-    switch_instance.$on(
-      "click",
-      /*handleClick*/
-      ctx[22]
-    );
-  }
-  return {
-    c() {
-      if (switch_instance)
-        create_component(switch_instance.$$.fragment);
-      switch_instance_anchor = empty();
-    },
-    l(nodes) {
-      if (switch_instance)
-        claim_component(switch_instance.$$.fragment, nodes);
-      switch_instance_anchor = empty();
-    },
-    m(target, anchor) {
-      if (switch_instance)
-        mount_component(switch_instance, target, anchor);
-      insert_hydration(target, switch_instance_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const switch_instance_changes = dirty[0] & /*tag, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use, className, variant, touch, context, secondary, internalClasses, internalStyles, style, actionProp, defaultProp, secondaryProp, href*/
-      12580351 ? get_spread_update(switch_instance_spread_levels, [
-        dirty[0] & /*tag*/
-        1024 && { tag: (
-          /*tag*/
-          ctx2[10]
-        ) },
-        dirty[0] & /*ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use*/
-        12189721 && {
-          use: [
-            [
-              Ripple,
-              {
-                ripple: (
-                  /*ripple*/
-                  ctx2[3]
-                ),
-                unbounded: false,
-                color: (
-                  /*color*/
-                  ctx2[4]
-                ),
-                disabled: !!/*$$restProps*/
-                ctx2[23].disabled,
-                addClass: (
-                  /*addClass*/
-                  ctx2[19]
-                ),
-                removeClass: (
-                  /*removeClass*/
-                  ctx2[20]
-                ),
-                addStyle: (
-                  /*addStyle*/
-                  ctx2[21]
-                )
-              }
-            ],
-            /*forwardEvents*/
-            ctx2[17],
-            .../*use*/
-            ctx2[0]
-          ]
-        },
-        dirty[0] & /*className, variant, color, touch, context, secondary, internalClasses*/
-        266610 && {
-          class: classMap({
-            [
-              /*className*/
-              ctx2[1]
-            ]: true,
-            "mdc-button": true,
-            "mdc-button--raised": (
-              /*variant*/
-              ctx2[5] === "raised"
-            ),
-            "mdc-button--unelevated": (
-              /*variant*/
-              ctx2[5] === "unelevated"
-            ),
-            "mdc-button--outlined": (
-              /*variant*/
-              ctx2[5] === "outlined"
-            ),
-            "smui-button--color-secondary": (
-              /*color*/
-              ctx2[4] === "secondary"
-            ),
-            "mdc-button--touch": (
-              /*touch*/
-              ctx2[6]
-            ),
-            "mdc-card__action": (
-              /*context*/
-              ctx2[18] === "card:action"
-            ),
-            "mdc-card__action--button": (
-              /*context*/
-              ctx2[18] === "card:action"
-            ),
-            "mdc-dialog__button": (
-              /*context*/
-              ctx2[18] === "dialog:action"
-            ),
-            "mdc-top-app-bar__navigation-icon": (
-              /*context*/
-              ctx2[18] === "top-app-bar:navigation"
-            ),
-            "mdc-top-app-bar__action-item": (
-              /*context*/
-              ctx2[18] === "top-app-bar:action"
-            ),
-            "mdc-snackbar__action": (
-              /*context*/
-              ctx2[18] === "snackbar:actions"
-            ),
-            "mdc-banner__secondary-action": (
-              /*context*/
-              ctx2[18] === "banner" && /*secondary*/
-              ctx2[8]
-            ),
-            "mdc-banner__primary-action": (
-              /*context*/
-              ctx2[18] === "banner" && !/*secondary*/
-              ctx2[8]
-            ),
-            "mdc-tooltip__action": (
-              /*context*/
-              ctx2[18] === "tooltip:rich-actions"
-            ),
-            .../*internalClasses*/
-            ctx2[12]
-          })
-        },
-        dirty[0] & /*internalStyles, style*/
-        8196 && {
-          style: Object.entries(
-            /*internalStyles*/
-            ctx2[13]
-          ).map(func).concat([
-            /*style*/
-            ctx2[2]
-          ]).join(" ")
-        },
-        dirty[0] & /*actionProp*/
-        65536 && get_spread_object(
-          /*actionProp*/
-          ctx2[16]
-        ),
-        dirty[0] & /*defaultProp*/
-        32768 && get_spread_object(
-          /*defaultProp*/
-          ctx2[15]
-        ),
-        dirty[0] & /*secondaryProp*/
-        16384 && get_spread_object(
-          /*secondaryProp*/
-          ctx2[14]
-        ),
-        dirty[0] & /*href*/
-        128 && { href: (
-          /*href*/
-          ctx2[7]
-        ) },
-        dirty[0] & /*$$restProps*/
-        8388608 && get_spread_object(
-          /*$$restProps*/
-          ctx2[23]
-        )
-      ]) : {};
-      if (dirty[0] & /*$$scope, touch*/
-      1073741888) {
-        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      if (dirty[0] & /*component*/
-      512 && switch_value !== (switch_value = /*component*/
-      ctx2[9])) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
-          ctx2[29](switch_instance);
-          switch_instance.$on(
-            "click",
-            /*handleClick*/
-            ctx2[22]
-          );
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      if (switch_instance)
-        transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance)
-        transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(switch_instance_anchor);
-      }
-      ctx[29](null);
-      if (switch_instance)
-        destroy_component(switch_instance, detaching);
-    }
-  };
-}
-const func = ([name, value]) => `${name}: ${value};`;
-function instance($$self, $$props, $$invalidate) {
-  let actionProp;
-  let defaultProp;
-  let secondaryProp;
-  const omit_props_names = [
-    "use",
-    "class",
-    "style",
-    "ripple",
-    "color",
-    "variant",
-    "touch",
-    "href",
-    "action",
-    "defaultAction",
-    "secondary",
-    "component",
-    "tag",
-    "getElement"
-  ];
-  let $$restProps = compute_rest_props($$props, omit_props_names);
-  let { $$slots: slots = {}, $$scope } = $$props;
-  const forwardEvents = forwardEventsBuilder(get_current_component());
-  let { use = [] } = $$props;
-  let { class: className = "" } = $$props;
-  let { style = "" } = $$props;
-  let { ripple = true } = $$props;
-  let { color = "primary" } = $$props;
-  let { variant = "text" } = $$props;
-  let { touch = false } = $$props;
-  let { href = void 0 } = $$props;
-  let { action = "close" } = $$props;
-  let { defaultAction = false } = $$props;
-  let { secondary = false } = $$props;
-  let element2;
-  let internalClasses = {};
-  let internalStyles = {};
-  let context = getContext("SMUI:button:context");
-  let { component = SmuiElement } = $$props;
-  let { tag = component === SmuiElement ? href == null ? "button" : "a" : void 0 } = $$props;
-  let previousDisabled = $$restProps.disabled;
-  setContext("SMUI:label:context", "button");
-  setContext("SMUI:icon:context", "button");
-  function addClass(className2) {
-    if (!internalClasses[className2]) {
-      $$invalidate(12, internalClasses[className2] = true, internalClasses);
-    }
-  }
-  function removeClass(className2) {
-    if (!(className2 in internalClasses) || internalClasses[className2]) {
-      $$invalidate(12, internalClasses[className2] = false, internalClasses);
-    }
-  }
-  function addStyle(name, value) {
-    if (internalStyles[name] != value) {
-      if (value === "" || value == null) {
-        delete internalStyles[name];
-        $$invalidate(13, internalStyles);
-      } else {
-        $$invalidate(13, internalStyles[name] = value, internalStyles);
-      }
-    }
-  }
-  function handleClick() {
-    if (context === "banner") {
-      dispatch(getElement(), secondary ? "SMUIBannerButton:secondaryActionClick" : "SMUIBannerButton:primaryActionClick");
-    }
-  }
-  function getElement() {
-    return element2.getElement();
-  }
-  function switch_instance_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      element2 = $$value;
-      $$invalidate(11, element2);
-    });
-  }
-  $$self.$$set = ($$new_props) => {
-    $$invalidate(31, $$props = assign(assign({}, $$props), exclude_internal_props($$new_props)));
-    $$invalidate(23, $$restProps = compute_rest_props($$props, omit_props_names));
-    if ("use" in $$new_props)
-      $$invalidate(0, use = $$new_props.use);
-    if ("class" in $$new_props)
-      $$invalidate(1, className = $$new_props.class);
-    if ("style" in $$new_props)
-      $$invalidate(2, style = $$new_props.style);
-    if ("ripple" in $$new_props)
-      $$invalidate(3, ripple = $$new_props.ripple);
-    if ("color" in $$new_props)
-      $$invalidate(4, color = $$new_props.color);
-    if ("variant" in $$new_props)
-      $$invalidate(5, variant = $$new_props.variant);
-    if ("touch" in $$new_props)
-      $$invalidate(6, touch = $$new_props.touch);
-    if ("href" in $$new_props)
-      $$invalidate(7, href = $$new_props.href);
-    if ("action" in $$new_props)
-      $$invalidate(24, action = $$new_props.action);
-    if ("defaultAction" in $$new_props)
-      $$invalidate(25, defaultAction = $$new_props.defaultAction);
-    if ("secondary" in $$new_props)
-      $$invalidate(8, secondary = $$new_props.secondary);
-    if ("component" in $$new_props)
-      $$invalidate(9, component = $$new_props.component);
-    if ("tag" in $$new_props)
-      $$invalidate(10, tag = $$new_props.tag);
-    if ("$$scope" in $$new_props)
-      $$invalidate(30, $$scope = $$new_props.$$scope);
-  };
-  $$self.$$.update = () => {
-    $$invalidate(16, actionProp = context === "dialog:action" && action != null ? { "data-mdc-dialog-action": action } : { action: $$props.action });
-    $$invalidate(15, defaultProp = context === "dialog:action" && defaultAction ? { "data-mdc-dialog-button-default": "" } : { default: $$props.default });
-    $$invalidate(14, secondaryProp = context === "banner" ? {} : { secondary: $$props.secondary });
-    if (previousDisabled !== $$restProps.disabled) {
-      const el = getElement();
-      if ("blur" in el) {
-        el.blur();
-      }
-      $$invalidate(27, previousDisabled = $$restProps.disabled);
-    }
-  };
-  $$props = exclude_internal_props($$props);
-  return [
-    use,
-    className,
-    style,
-    ripple,
-    color,
-    variant,
-    touch,
-    href,
-    secondary,
-    component,
-    tag,
-    element2,
-    internalClasses,
-    internalStyles,
-    secondaryProp,
-    defaultProp,
-    actionProp,
-    forwardEvents,
-    context,
-    addClass,
-    removeClass,
-    addStyle,
-    handleClick,
-    $$restProps,
-    action,
-    defaultAction,
-    getElement,
-    previousDisabled,
-    slots,
-    switch_instance_binding,
-    $$scope
-  ];
-}
-class Button extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(
-      this,
-      options,
-      instance,
-      create_fragment,
-      safe_not_equal,
-      {
-        use: 0,
-        class: 1,
-        style: 2,
-        ripple: 3,
-        color: 4,
-        variant: 5,
-        touch: 6,
-        href: 7,
-        action: 24,
-        defaultAction: 25,
-        secondary: 8,
-        component: 9,
-        tag: 10,
-        getElement: 26
-      },
-      null,
-      [-1, -1]
-    );
-  }
-  get getElement() {
-    return this.$$.ctx[26];
   }
 }
 var HomeyAPIExports = requireHomeyAPI();

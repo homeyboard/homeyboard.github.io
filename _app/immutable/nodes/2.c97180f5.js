@@ -5,11 +5,11 @@ var __publicField = (obj, key, value) => {
   return value;
 };
 var _a2, _b2;
-import { s as safe_not_equal, q as construct_svelte_component, e as empty, i as insert_hydration, d as detach, A as compute_rest_props, B as get_current_component, C as getContext, D as assign$1, E as exclude_internal_props, p as binding_callbacks, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, F as svg_element, G as claim_svg_element, h as children, H as set_svg_attributes, I as action_destroyer, J as is_function, K as run_all, L as setContext, f as element, a as space, g as claim_element, c as claim_space, j as attr, M as set_attributes, N as listen, o as onMount, O as onDestroy, P as toggle_class, x as append_hydration, Q as createEventDispatcher, y as noop$1, k as set_style, z as component_subscribe, R as set_store_value, S as add_flush_callback, T as bubble, l as text, m as claim_text, n as set_data, U as get_svelte_dataset, V as set_data_maybe_contenteditable, W as compute_slots, X as destroy_each, Y as to_number, Z as set_input_value, _ as src_url_equal, $ as current_component, b as afterUpdate, a0 as init_binding_group, a1 as head_selector } from "../chunks/scheduler.77595e1a.js";
-import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, g as group_outros, t as transition_out, e as destroy_component, c as check_outros, a as transition_in, f as bind } from "../chunks/index.a69940bd.js";
-import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, i as baseUrl } from "../chunks/AthomCloudAPI.1c94a87e.js";
-import { w as writable, e as base } from "../chunks/singletons.db48ae48.js";
-import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, R as Ripple, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, p as prefixFilter, l as exclude, m as ponyfill, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, B as Button, C as CommonLabel, q as handle_promise, r as update_await_block_branch, s as CircularProgress, t as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.239832cf.js";
+import { s as safe_not_equal, q as construct_svelte_component, e as empty, i as insert_hydration, d as detach, A as compute_rest_props, B as get_current_component, C as getContext, D as assign$1, E as exclude_internal_props, p as binding_callbacks, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, F as svg_element, G as claim_svg_element, h as children, H as set_svg_attributes, I as action_destroyer, J as is_function, K as run_all, f as element, g as claim_element, L as set_attributes, M as listen, N as setContext, o as onMount, O as onDestroy, y as noop$1, P as subscribe, a as space, c as claim_space, j as attr, Q as toggle_class, x as append_hydration, R as createEventDispatcher, k as set_style, z as component_subscribe, S as set_store_value, T as add_flush_callback, U as bubble, l as text, m as claim_text, n as set_data, V as get_svelte_dataset, W as set_data_maybe_contenteditable, X as compute_slots, Y as destroy_each, Z as to_number, _ as set_input_value, $ as src_url_equal, a0 as current_component, b as afterUpdate, a1 as init_binding_group, a2 as head_selector } from "../chunks/scheduler.98e41e63.js";
+import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, g as group_outros, t as transition_out, e as destroy_component, c as check_outros, a as transition_in, f as bind } from "../chunks/index.5f86484a.js";
+import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, i as baseUrl } from "../chunks/AthomCloudAPI.22954863.js";
+import { w as writable, r as readable, e as base } from "../chunks/singletons.ca53e4ea.js";
+import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, R as Ripple, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, p as prefixFilter, l as exclude, m as ponyfill, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, B as Button, C as CommonLabel, q as handle_promise, r as update_await_block_branch, s as CircularProgress, t as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.7fecba7c.js";
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
   // @ts-ignore Node typings have this
   global
@@ -205,17 +205,17 @@ const breakpointColumns = [
   [xlargeBreakpoint, xlargeColumns]
 ];
 function createEditing() {
-  const { subscribe, set: set2, update } = writable(false);
+  const { subscribe: subscribe2, set: set2, update } = writable(false);
   return {
-    subscribe,
+    subscribe: subscribe2,
     set: set2,
     toggle: () => update((existing) => !existing)
   };
 }
 function createItems() {
-  const { subscribe, set: set2, update } = writable([]);
+  const { subscribe: subscribe2, set: set2, update } = writable([]);
   return {
-    subscribe,
+    subscribe: subscribe2,
     set: set2,
     addItem: (item) => {
       update((existing) => {
@@ -268,11 +268,11 @@ function createItems() {
   };
 }
 function createGrid() {
-  const { subscribe, set: set2, update } = writable({
+  const { subscribe: subscribe2, set: set2, update } = writable({
     gaps: [10, 10]
   });
   return {
-    subscribe,
+    subscribe: subscribe2,
     set: set2,
     updateSize: (e2) => update((existing) => ({ ...existing, columns: e2.cols, width: e2.width, pxX: e2.xPerPx, pxY: e2.yPerPx })),
     updateGap: (g) => update((existing) => ({ ...existing, gaps: [g, g] }))
@@ -492,7 +492,7 @@ function normalizeKey(evt) {
   }
   return KEY.UNKNOWN;
 }
-function create_default_slot$l(ctx) {
+function create_default_slot$m(ctx) {
   let current;
   const default_slot_template = (
     /*#slots*/
@@ -561,7 +561,7 @@ function create_default_slot$l(ctx) {
     }
   };
 }
-function create_fragment$I(ctx) {
+function create_fragment$L(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -627,7 +627,7 @@ function create_fragment$I(ctx) {
   );
   function switch_props(ctx2) {
     let switch_instance_props = {
-      $$slots: { default: [create_default_slot$l] },
+      $$slots: { default: [create_default_slot$m] },
       $$scope: { ctx: ctx2 }
     };
     for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
@@ -773,7 +773,7 @@ function create_fragment$I(ctx) {
     }
   };
 }
-function instance$t($$self, $$props, $$invalidate) {
+function instance$v($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "on", "component", "tag", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -831,7 +831,7 @@ function instance$t($$self, $$props, $$invalidate) {
 class CommonIcon extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$t, create_fragment$I, safe_not_equal, {
+    init(this, options, instance$v, create_fragment$L, safe_not_equal, {
       use: 0,
       class: 1,
       on: 2,
@@ -844,7 +844,7 @@ class CommonIcon extends SvelteComponent {
     return this.$$.ctx[10];
   }
 }
-function create_fragment$H(ctx) {
+function create_fragment$K(ctx) {
   let svg;
   let useActions_action;
   let current;
@@ -967,7 +967,7 @@ function create_fragment$H(ctx) {
     }
   };
 }
-function instance$s($$self, $$props, $$invalidate) {
+function instance$u($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -1008,638 +1008,10 @@ function instance$s($$self, $$props, $$invalidate) {
 class Svg extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$s, create_fragment$H, safe_not_equal, { use: 0, getElement: 4 });
+    init(this, options, instance$u, create_fragment$K, safe_not_equal, { use: 0, getElement: 4 });
   }
   get getElement() {
     return this.$$.ctx[4];
-  }
-}
-function create_if_block_1$d(ctx) {
-  let div;
-  return {
-    c() {
-      div = element("div");
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      children(div).forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div, "class", "mdc-fab__focus-ring");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-    }
-  };
-}
-function create_if_block$q(ctx) {
-  let div;
-  return {
-    c() {
-      div = element("div");
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      children(div).forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div, "class", "mdc-fab__touch");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-    }
-  };
-}
-function create_default_slot$k(ctx) {
-  let div;
-  let t0;
-  let t1;
-  let if_block1_anchor;
-  let current;
-  let if_block0 = (
-    /*focusRing*/
-    ctx[4] && create_if_block_1$d()
-  );
-  const default_slot_template = (
-    /*#slots*/
-    ctx[22].default
-  );
-  const default_slot = create_slot(
-    default_slot_template,
-    ctx,
-    /*$$scope*/
-    ctx[24],
-    null
-  );
-  let if_block1 = (
-    /*touch*/
-    ctx[9] && create_if_block$q()
-  );
-  return {
-    c() {
-      div = element("div");
-      t0 = space();
-      if (if_block0)
-        if_block0.c();
-      t1 = space();
-      if (default_slot)
-        default_slot.c();
-      if (if_block1)
-        if_block1.c();
-      if_block1_anchor = empty();
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      children(div).forEach(detach);
-      t0 = claim_space(nodes);
-      if (if_block0)
-        if_block0.l(nodes);
-      t1 = claim_space(nodes);
-      if (default_slot)
-        default_slot.l(nodes);
-      if (if_block1)
-        if_block1.l(nodes);
-      if_block1_anchor = empty();
-      this.h();
-    },
-    h() {
-      attr(div, "class", "mdc-fab__ripple");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      insert_hydration(target, t0, anchor);
-      if (if_block0)
-        if_block0.m(target, anchor);
-      insert_hydration(target, t1, anchor);
-      if (default_slot) {
-        default_slot.m(target, anchor);
-      }
-      if (if_block1)
-        if_block1.m(target, anchor);
-      insert_hydration(target, if_block1_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (
-        /*focusRing*/
-        ctx2[4]
-      ) {
-        if (if_block0)
-          ;
-        else {
-          if_block0 = create_if_block_1$d();
-          if_block0.c();
-          if_block0.m(t1.parentNode, t1);
-        }
-      } else if (if_block0) {
-        if_block0.d(1);
-        if_block0 = null;
-      }
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty & /*$$scope*/
-        16777216)) {
-          update_slot_base(
-            default_slot,
-            default_slot_template,
-            ctx2,
-            /*$$scope*/
-            ctx2[24],
-            !current ? get_all_dirty_from_scope(
-              /*$$scope*/
-              ctx2[24]
-            ) : get_slot_changes(
-              default_slot_template,
-              /*$$scope*/
-              ctx2[24],
-              dirty,
-              null
-            ),
-            null
-          );
-        }
-      }
-      if (
-        /*touch*/
-        ctx2[9]
-      ) {
-        if (if_block1)
-          ;
-        else {
-          if_block1 = create_if_block$q();
-          if_block1.c();
-          if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
-        }
-      } else if (if_block1) {
-        if_block1.d(1);
-        if_block1 = null;
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(default_slot, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(default_slot, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-        detach(t0);
-        detach(t1);
-        detach(if_block1_anchor);
-      }
-      if (if_block0)
-        if_block0.d(detaching);
-      if (default_slot)
-        default_slot.d(detaching);
-      if (if_block1)
-        if_block1.d(detaching);
-    }
-  };
-}
-function create_fragment$G(ctx) {
-  let switch_instance;
-  let switch_instance_anchor;
-  let current;
-  const switch_instance_spread_levels = [
-    { tag: (
-      /*tag*/
-      ctx[12]
-    ) },
-    {
-      use: [
-        [
-          Ripple,
-          {
-            ripple: (
-              /*ripple*/
-              ctx[3]
-            ),
-            unbounded: false,
-            color: (
-              /*color*/
-              ctx[5]
-            ),
-            disabled: !!/*$$restProps*/
-            ctx[20].disabled,
-            addClass: (
-              /*addClass*/
-              ctx[17]
-            ),
-            removeClass: (
-              /*removeClass*/
-              ctx[18]
-            ),
-            addStyle: (
-              /*addStyle*/
-              ctx[19]
-            )
-          }
-        ],
-        /*forwardEvents*/
-        ctx[16],
-        .../*use*/
-        ctx[0]
-      ]
-    },
-    {
-      class: classMap({
-        [
-          /*className*/
-          ctx[1]
-        ]: true,
-        "mdc-fab": true,
-        "mdc-fab--mini": (
-          /*mini*/
-          ctx[6]
-        ),
-        "mdc-fab--exited": (
-          /*exited*/
-          ctx[7]
-        ),
-        "mdc-fab--extended": (
-          /*extended*/
-          ctx[8]
-        ),
-        "smui-fab--color-primary": (
-          /*color*/
-          ctx[5] === "primary"
-        ),
-        "mdc-fab--touch": (
-          /*touch*/
-          ctx[9]
-        ),
-        .../*internalClasses*/
-        ctx[14]
-      })
-    },
-    {
-      style: Object.entries(
-        /*internalStyles*/
-        ctx[15]
-      ).map(func$7).concat([
-        /*style*/
-        ctx[2]
-      ]).join(" ")
-    },
-    { href: (
-      /*href*/
-      ctx[10]
-    ) },
-    /*$$restProps*/
-    ctx[20]
-  ];
-  var switch_value = (
-    /*component*/
-    ctx[11]
-  );
-  function switch_props(ctx2) {
-    let switch_instance_props = {
-      $$slots: { default: [create_default_slot$k] },
-      $$scope: { ctx: ctx2 }
-    };
-    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
-      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
-    }
-    return { props: switch_instance_props };
-  }
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-    ctx[23](switch_instance);
-  }
-  return {
-    c() {
-      if (switch_instance)
-        create_component(switch_instance.$$.fragment);
-      switch_instance_anchor = empty();
-    },
-    l(nodes) {
-      if (switch_instance)
-        claim_component(switch_instance.$$.fragment, nodes);
-      switch_instance_anchor = empty();
-    },
-    m(target, anchor) {
-      if (switch_instance)
-        mount_component(switch_instance, target, anchor);
-      insert_hydration(target, switch_instance_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, [dirty]) {
-      const switch_instance_changes = dirty & /*tag, Ripple, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use, classMap, className, mini, exited, extended, touch, internalClasses, Object, internalStyles, style, href*/
-      2086895 ? get_spread_update(switch_instance_spread_levels, [
-        dirty & /*tag*/
-        4096 && { tag: (
-          /*tag*/
-          ctx2[12]
-        ) },
-        dirty & /*Ripple, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use*/
-        2031657 && {
-          use: [
-            [
-              Ripple,
-              {
-                ripple: (
-                  /*ripple*/
-                  ctx2[3]
-                ),
-                unbounded: false,
-                color: (
-                  /*color*/
-                  ctx2[5]
-                ),
-                disabled: !!/*$$restProps*/
-                ctx2[20].disabled,
-                addClass: (
-                  /*addClass*/
-                  ctx2[17]
-                ),
-                removeClass: (
-                  /*removeClass*/
-                  ctx2[18]
-                ),
-                addStyle: (
-                  /*addStyle*/
-                  ctx2[19]
-                )
-              }
-            ],
-            /*forwardEvents*/
-            ctx2[16],
-            .../*use*/
-            ctx2[0]
-          ]
-        },
-        dirty & /*classMap, className, mini, exited, extended, color, touch, internalClasses*/
-        17378 && {
-          class: classMap({
-            [
-              /*className*/
-              ctx2[1]
-            ]: true,
-            "mdc-fab": true,
-            "mdc-fab--mini": (
-              /*mini*/
-              ctx2[6]
-            ),
-            "mdc-fab--exited": (
-              /*exited*/
-              ctx2[7]
-            ),
-            "mdc-fab--extended": (
-              /*extended*/
-              ctx2[8]
-            ),
-            "smui-fab--color-primary": (
-              /*color*/
-              ctx2[5] === "primary"
-            ),
-            "mdc-fab--touch": (
-              /*touch*/
-              ctx2[9]
-            ),
-            .../*internalClasses*/
-            ctx2[14]
-          })
-        },
-        dirty & /*Object, internalStyles, style*/
-        32772 && {
-          style: Object.entries(
-            /*internalStyles*/
-            ctx2[15]
-          ).map(func$7).concat([
-            /*style*/
-            ctx2[2]
-          ]).join(" ")
-        },
-        dirty & /*href*/
-        1024 && { href: (
-          /*href*/
-          ctx2[10]
-        ) },
-        dirty & /*$$restProps*/
-        1048576 && get_spread_object(
-          /*$$restProps*/
-          ctx2[20]
-        )
-      ]) : {};
-      if (dirty & /*$$scope, touch, focusRing*/
-      16777744) {
-        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      if (dirty & /*component*/
-      2048 && switch_value !== (switch_value = /*component*/
-      ctx2[11])) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
-          ctx2[23](switch_instance);
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      if (switch_instance)
-        transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance)
-        transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(switch_instance_anchor);
-      }
-      ctx[23](null);
-      if (switch_instance)
-        destroy_component(switch_instance, detaching);
-    }
-  };
-}
-const func$7 = ([name, value]) => `${name}: ${value};`;
-function instance$r($$self, $$props, $$invalidate) {
-  const omit_props_names = [
-    "use",
-    "class",
-    "style",
-    "ripple",
-    "focusRing",
-    "color",
-    "mini",
-    "exited",
-    "extended",
-    "touch",
-    "href",
-    "component",
-    "tag",
-    "getElement"
-  ];
-  let $$restProps = compute_rest_props($$props, omit_props_names);
-  let { $$slots: slots = {}, $$scope } = $$props;
-  const forwardEvents = forwardEventsBuilder(get_current_component());
-  let { use = [] } = $$props;
-  let { class: className = "" } = $$props;
-  let { style = "" } = $$props;
-  let { ripple = true } = $$props;
-  let { focusRing = false } = $$props;
-  let { color: color2 = "secondary" } = $$props;
-  let { mini = false } = $$props;
-  let { exited = false } = $$props;
-  let { extended = false } = $$props;
-  let { touch = false } = $$props;
-  let { href = void 0 } = $$props;
-  let element2;
-  let internalClasses = {};
-  let internalStyles = {};
-  let { component = SmuiElement } = $$props;
-  let { tag = component === SmuiElement ? href == null ? "button" : "a" : void 0 } = $$props;
-  setContext("SMUI:label:context", "fab");
-  setContext("SMUI:icon:context", "fab");
-  function addClass(className2) {
-    if (!internalClasses[className2]) {
-      $$invalidate(14, internalClasses[className2] = true, internalClasses);
-    }
-  }
-  function removeClass(className2) {
-    if (!(className2 in internalClasses) || internalClasses[className2]) {
-      $$invalidate(14, internalClasses[className2] = false, internalClasses);
-    }
-  }
-  function addStyle(name, value) {
-    if (internalStyles[name] != value) {
-      if (value === "" || value == null) {
-        delete internalStyles[name];
-        $$invalidate(15, internalStyles);
-      } else {
-        $$invalidate(15, internalStyles[name] = value, internalStyles);
-      }
-    }
-  }
-  function getElement() {
-    return element2.getElement();
-  }
-  function switch_instance_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      element2 = $$value;
-      $$invalidate(13, element2);
-    });
-  }
-  $$self.$$set = ($$new_props) => {
-    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
-    $$invalidate(20, $$restProps = compute_rest_props($$props, omit_props_names));
-    if ("use" in $$new_props)
-      $$invalidate(0, use = $$new_props.use);
-    if ("class" in $$new_props)
-      $$invalidate(1, className = $$new_props.class);
-    if ("style" in $$new_props)
-      $$invalidate(2, style = $$new_props.style);
-    if ("ripple" in $$new_props)
-      $$invalidate(3, ripple = $$new_props.ripple);
-    if ("focusRing" in $$new_props)
-      $$invalidate(4, focusRing = $$new_props.focusRing);
-    if ("color" in $$new_props)
-      $$invalidate(5, color2 = $$new_props.color);
-    if ("mini" in $$new_props)
-      $$invalidate(6, mini = $$new_props.mini);
-    if ("exited" in $$new_props)
-      $$invalidate(7, exited = $$new_props.exited);
-    if ("extended" in $$new_props)
-      $$invalidate(8, extended = $$new_props.extended);
-    if ("touch" in $$new_props)
-      $$invalidate(9, touch = $$new_props.touch);
-    if ("href" in $$new_props)
-      $$invalidate(10, href = $$new_props.href);
-    if ("component" in $$new_props)
-      $$invalidate(11, component = $$new_props.component);
-    if ("tag" in $$new_props)
-      $$invalidate(12, tag = $$new_props.tag);
-    if ("$$scope" in $$new_props)
-      $$invalidate(24, $$scope = $$new_props.$$scope);
-  };
-  return [
-    use,
-    className,
-    style,
-    ripple,
-    focusRing,
-    color2,
-    mini,
-    exited,
-    extended,
-    touch,
-    href,
-    component,
-    tag,
-    element2,
-    internalClasses,
-    internalStyles,
-    forwardEvents,
-    addClass,
-    removeClass,
-    addStyle,
-    $$restProps,
-    getElement,
-    slots,
-    switch_instance_binding,
-    $$scope
-  ];
-}
-class Fab extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$r, create_fragment$G, safe_not_equal, {
-      use: 0,
-      class: 1,
-      style: 2,
-      ripple: 3,
-      focusRing: 4,
-      color: 5,
-      mini: 6,
-      exited: 7,
-      extended: 8,
-      touch: 9,
-      href: 10,
-      component: 11,
-      tag: 12,
-      getElement: 21
-    });
-  }
-  get getElement() {
-    return this.$$.ctx[21];
   }
 }
 /**
@@ -1665,7 +1037,7 @@ class Fab extends SvelteComponent {
  * THE SOFTWARE.
  */
 var _a, _b;
-var cssClasses$b = {
+var cssClasses$c = {
   LIST_ITEM_ACTIVATED_CLASS: "mdc-list-item--activated",
   LIST_ITEM_CLASS: "mdc-list-item",
   LIST_ITEM_DISABLED_CLASS: "mdc-list-item--disabled",
@@ -1674,9 +1046,9 @@ var cssClasses$b = {
   LIST_ITEM_PRIMARY_TEXT_CLASS: "mdc-list-item__primary-text",
   ROOT: "mdc-list"
 };
-_a = {}, _a["" + cssClasses$b.LIST_ITEM_ACTIVATED_CLASS] = "mdc-list-item--activated", _a["" + cssClasses$b.LIST_ITEM_CLASS] = "mdc-list-item", _a["" + cssClasses$b.LIST_ITEM_DISABLED_CLASS] = "mdc-list-item--disabled", _a["" + cssClasses$b.LIST_ITEM_SELECTED_CLASS] = "mdc-list-item--selected", _a["" + cssClasses$b.LIST_ITEM_PRIMARY_TEXT_CLASS] = "mdc-list-item__primary-text", _a["" + cssClasses$b.ROOT] = "mdc-list", _a;
-var deprecatedClassNameMap = (_b = {}, _b["" + cssClasses$b.LIST_ITEM_ACTIVATED_CLASS] = "mdc-deprecated-list-item--activated", _b["" + cssClasses$b.LIST_ITEM_CLASS] = "mdc-deprecated-list-item", _b["" + cssClasses$b.LIST_ITEM_DISABLED_CLASS] = "mdc-deprecated-list-item--disabled", _b["" + cssClasses$b.LIST_ITEM_SELECTED_CLASS] = "mdc-deprecated-list-item--selected", _b["" + cssClasses$b.LIST_ITEM_TEXT_CLASS] = "mdc-deprecated-list-item__text", _b["" + cssClasses$b.LIST_ITEM_PRIMARY_TEXT_CLASS] = "mdc-deprecated-list-item__primary-text", _b["" + cssClasses$b.ROOT] = "mdc-deprecated-list", _b);
-var strings$b = {
+_a = {}, _a["" + cssClasses$c.LIST_ITEM_ACTIVATED_CLASS] = "mdc-list-item--activated", _a["" + cssClasses$c.LIST_ITEM_CLASS] = "mdc-list-item", _a["" + cssClasses$c.LIST_ITEM_DISABLED_CLASS] = "mdc-list-item--disabled", _a["" + cssClasses$c.LIST_ITEM_SELECTED_CLASS] = "mdc-list-item--selected", _a["" + cssClasses$c.LIST_ITEM_PRIMARY_TEXT_CLASS] = "mdc-list-item__primary-text", _a["" + cssClasses$c.ROOT] = "mdc-list", _a;
+var deprecatedClassNameMap = (_b = {}, _b["" + cssClasses$c.LIST_ITEM_ACTIVATED_CLASS] = "mdc-deprecated-list-item--activated", _b["" + cssClasses$c.LIST_ITEM_CLASS] = "mdc-deprecated-list-item", _b["" + cssClasses$c.LIST_ITEM_DISABLED_CLASS] = "mdc-deprecated-list-item--disabled", _b["" + cssClasses$c.LIST_ITEM_SELECTED_CLASS] = "mdc-deprecated-list-item--selected", _b["" + cssClasses$c.LIST_ITEM_TEXT_CLASS] = "mdc-deprecated-list-item__text", _b["" + cssClasses$c.LIST_ITEM_PRIMARY_TEXT_CLASS] = "mdc-deprecated-list-item__primary-text", _b["" + cssClasses$c.ROOT] = "mdc-deprecated-list", _b);
+var strings$c = {
   ACTION_EVENT: "MDCList:action",
   SELECTION_CHANGE_EVENT: "MDCList:selectionChange",
   ARIA_CHECKED: "aria-checked",
@@ -1692,13 +1064,13 @@ var strings$b = {
   ARIA_MULTI_SELECTABLE_SELECTOR: '[aria-multiselectable="true"]',
   CHECKBOX_RADIO_SELECTOR: 'input[type="checkbox"], input[type="radio"]',
   CHECKBOX_SELECTOR: 'input[type="checkbox"]',
-  CHILD_ELEMENTS_TO_TOGGLE_TABINDEX: "\n    ." + cssClasses$b.LIST_ITEM_CLASS + " button:not(:disabled),\n    ." + cssClasses$b.LIST_ITEM_CLASS + " a,\n    ." + deprecatedClassNameMap[cssClasses$b.LIST_ITEM_CLASS] + " button:not(:disabled),\n    ." + deprecatedClassNameMap[cssClasses$b.LIST_ITEM_CLASS] + " a\n  ",
+  CHILD_ELEMENTS_TO_TOGGLE_TABINDEX: "\n    ." + cssClasses$c.LIST_ITEM_CLASS + " button:not(:disabled),\n    ." + cssClasses$c.LIST_ITEM_CLASS + " a,\n    ." + deprecatedClassNameMap[cssClasses$c.LIST_ITEM_CLASS] + " button:not(:disabled),\n    ." + deprecatedClassNameMap[cssClasses$c.LIST_ITEM_CLASS] + " a\n  ",
   DEPRECATED_SELECTOR: ".mdc-deprecated-list",
-  FOCUSABLE_CHILD_ELEMENTS: "\n    ." + cssClasses$b.LIST_ITEM_CLASS + " button:not(:disabled),\n    ." + cssClasses$b.LIST_ITEM_CLASS + " a,\n    ." + cssClasses$b.LIST_ITEM_CLASS + ' input[type="radio"]:not(:disabled),\n    .' + cssClasses$b.LIST_ITEM_CLASS + ' input[type="checkbox"]:not(:disabled),\n    .' + deprecatedClassNameMap[cssClasses$b.LIST_ITEM_CLASS] + " button:not(:disabled),\n    ." + deprecatedClassNameMap[cssClasses$b.LIST_ITEM_CLASS] + " a,\n    ." + deprecatedClassNameMap[cssClasses$b.LIST_ITEM_CLASS] + ' input[type="radio"]:not(:disabled),\n    .' + deprecatedClassNameMap[cssClasses$b.LIST_ITEM_CLASS] + ' input[type="checkbox"]:not(:disabled)\n  ',
+  FOCUSABLE_CHILD_ELEMENTS: "\n    ." + cssClasses$c.LIST_ITEM_CLASS + " button:not(:disabled),\n    ." + cssClasses$c.LIST_ITEM_CLASS + " a,\n    ." + cssClasses$c.LIST_ITEM_CLASS + ' input[type="radio"]:not(:disabled),\n    .' + cssClasses$c.LIST_ITEM_CLASS + ' input[type="checkbox"]:not(:disabled),\n    .' + deprecatedClassNameMap[cssClasses$c.LIST_ITEM_CLASS] + " button:not(:disabled),\n    ." + deprecatedClassNameMap[cssClasses$c.LIST_ITEM_CLASS] + " a,\n    ." + deprecatedClassNameMap[cssClasses$c.LIST_ITEM_CLASS] + ' input[type="radio"]:not(:disabled),\n    .' + deprecatedClassNameMap[cssClasses$c.LIST_ITEM_CLASS] + ' input[type="checkbox"]:not(:disabled)\n  ',
   RADIO_SELECTOR: 'input[type="radio"]',
   SELECTED_ITEM_SELECTOR: '[aria-selected="true"], [aria-current="true"]'
 };
-var numbers$7 = {
+var numbers$8 = {
   UNSET_INDEX: -1,
   TYPEAHEAD_BUFFER_CLEAR_TIMEOUT_MS: 300
 };
@@ -1791,7 +1163,7 @@ function matchItem(opts, state) {
   clearTimeout(state.bufferClearTimeout);
   state.bufferClearTimeout = setTimeout(function() {
     clearBuffer(state);
-  }, numbers$7.TYPEAHEAD_BUFFER_CLEAR_TIMEOUT_MS);
+  }, numbers$8.TYPEAHEAD_BUFFER_CLEAR_TIMEOUT_MS);
   state.typeaheadBuffer = state.typeaheadBuffer + nextChar;
   var index2;
   if (state.typeaheadBuffer.length === 1) {
@@ -1964,8 +1336,8 @@ var MDCListFoundation = (
       _this.isVertical = true;
       _this.isSingleSelectionList = false;
       _this.areDisabledItemsFocusable = true;
-      _this.selectedIndex = numbers$7.UNSET_INDEX;
-      _this.focusedItemIndex = numbers$7.UNSET_INDEX;
+      _this.selectedIndex = numbers$8.UNSET_INDEX;
+      _this.focusedItemIndex = numbers$8.UNSET_INDEX;
       _this.useActivatedClass = false;
       _this.useSelectedAttr = false;
       _this.ariaCurrentAttrValue = null;
@@ -1979,21 +1351,21 @@ var MDCListFoundation = (
     }
     Object.defineProperty(MDCListFoundation2, "strings", {
       get: function() {
-        return strings$b;
+        return strings$c;
       },
       enumerable: false,
       configurable: true
     });
     Object.defineProperty(MDCListFoundation2, "cssClasses", {
       get: function() {
-        return cssClasses$b;
+        return cssClasses$c;
       },
       enumerable: false,
       configurable: true
     });
     Object.defineProperty(MDCListFoundation2, "numbers", {
       get: function() {
-        return numbers$7;
+        return numbers$8;
       },
       enumerable: false,
       configurable: true
@@ -2095,9 +1467,9 @@ var MDCListFoundation = (
     };
     MDCListFoundation2.prototype.maybeInitializeSingleSelection = function() {
       var selectedItemIndex = this.getSelectedIndexFromDOM();
-      if (selectedItemIndex === numbers$7.UNSET_INDEX)
+      if (selectedItemIndex === numbers$8.UNSET_INDEX)
         return;
-      var hasActivatedClass = this.adapter.listItemAtIndexHasClass(selectedItemIndex, cssClasses$b.LIST_ITEM_ACTIVATED_CLASS);
+      var hasActivatedClass = this.adapter.listItemAtIndexHasClass(selectedItemIndex, cssClasses$c.LIST_ITEM_ACTIVATED_CLASS);
       if (hasActivatedClass) {
         this.setUseActivatedClass(true);
       }
@@ -2105,11 +1477,11 @@ var MDCListFoundation = (
       this.selectedIndex = selectedItemIndex;
     };
     MDCListFoundation2.prototype.getSelectedIndexFromDOM = function() {
-      var selectedIndex = numbers$7.UNSET_INDEX;
+      var selectedIndex = numbers$8.UNSET_INDEX;
       var listItemsCount = this.adapter.getListItemCount();
       for (var i2 = 0; i2 < listItemsCount; i2++) {
-        var hasSelectedClass = this.adapter.listItemAtIndexHasClass(i2, cssClasses$b.LIST_ITEM_SELECTED_CLASS);
-        var hasActivatedClass = this.adapter.listItemAtIndexHasClass(i2, cssClasses$b.LIST_ITEM_ACTIVATED_CLASS);
+        var hasSelectedClass = this.adapter.listItemAtIndexHasClass(i2, cssClasses$c.LIST_ITEM_SELECTED_CLASS);
+        var hasActivatedClass = this.adapter.listItemAtIndexHasClass(i2, cssClasses$c.LIST_ITEM_ACTIVATED_CLASS);
         if (!(hasSelectedClass || hasActivatedClass)) {
           continue;
         }
@@ -2171,7 +1543,7 @@ var MDCListFoundation = (
       }, 0);
     };
     MDCListFoundation2.prototype.isIndexDisabled = function(index2) {
-      return this.adapter.listItemAtIndexHasClass(index2, cssClasses$b.LIST_ITEM_DISABLED_CLASS);
+      return this.adapter.listItemAtIndexHasClass(index2, cssClasses$c.LIST_ITEM_DISABLED_CLASS);
     };
     MDCListFoundation2.prototype.handleKeydown = function(event, isRootListItem, listItemIndex) {
       var _this = this;
@@ -2272,7 +1644,7 @@ var MDCListFoundation = (
         this.toggleCheckboxRange(currentIndex, this.adapter.getListItemCount() - 1, currentIndex);
       } else if (isLetterA && eventHasModifiers(["Control"]) && this.isCheckboxList) {
         event.preventDefault();
-        this.checkboxListToggleAll(this.selectedIndex === numbers$7.UNSET_INDEX ? [] : this.selectedIndex, true);
+        this.checkboxListToggleAll(this.selectedIndex === numbers$8.UNSET_INDEX ? [] : this.selectedIndex, true);
       } else if ((isEnter || isSpace) && eventHasModifiers([])) {
         if (isRootListItem) {
           var target = event.target;
@@ -2323,7 +1695,7 @@ var MDCListFoundation = (
     MDCListFoundation2.prototype.handleClick = function(index2, isCheckboxAlreadyUpdatedInAdapter, event) {
       var _a3;
       var eventHasModifiers = createModifierChecker(event);
-      if (index2 === numbers$7.UNSET_INDEX) {
+      if (index2 === numbers$8.UNSET_INDEX) {
         return;
       }
       if (this.isIndexDisabled(index2)) {
@@ -2397,11 +1769,11 @@ var MDCListFoundation = (
         return;
       }
       if (isEnabled) {
-        this.adapter.removeClassForElementIndex(itemIndex, cssClasses$b.LIST_ITEM_DISABLED_CLASS);
-        this.adapter.setAttributeForElementIndex(itemIndex, strings$b.ARIA_DISABLED, "false");
+        this.adapter.removeClassForElementIndex(itemIndex, cssClasses$c.LIST_ITEM_DISABLED_CLASS);
+        this.adapter.setAttributeForElementIndex(itemIndex, strings$c.ARIA_DISABLED, "false");
       } else {
-        this.adapter.addClassForElementIndex(itemIndex, cssClasses$b.LIST_ITEM_DISABLED_CLASS);
-        this.adapter.setAttributeForElementIndex(itemIndex, strings$b.ARIA_DISABLED, "true");
+        this.adapter.addClassForElementIndex(itemIndex, cssClasses$c.LIST_ITEM_DISABLED_CLASS);
+        this.adapter.setAttributeForElementIndex(itemIndex, strings$c.ARIA_DISABLED, "true");
       }
     };
     MDCListFoundation2.prototype.setSingleSelectionAtIndex = function(index2, options) {
@@ -2411,16 +1783,16 @@ var MDCListFoundation = (
       if (this.selectedIndex === index2 && !options.forceUpdate) {
         return;
       }
-      var selectedClassName = cssClasses$b.LIST_ITEM_SELECTED_CLASS;
+      var selectedClassName = cssClasses$c.LIST_ITEM_SELECTED_CLASS;
       if (this.useActivatedClass) {
-        selectedClassName = cssClasses$b.LIST_ITEM_ACTIVATED_CLASS;
+        selectedClassName = cssClasses$c.LIST_ITEM_ACTIVATED_CLASS;
       }
-      if (this.selectedIndex !== numbers$7.UNSET_INDEX) {
+      if (this.selectedIndex !== numbers$8.UNSET_INDEX) {
         this.adapter.removeClassForElementIndex(this.selectedIndex, selectedClassName);
       }
       this.setAriaForSingleSelectionAtIndex(index2);
       this.setTabindexAtIndex(index2);
-      if (index2 !== numbers$7.UNSET_INDEX) {
+      if (index2 !== numbers$8.UNSET_INDEX) {
         this.adapter.addClassForElementIndex(index2, selectedClassName);
       }
       this.selectedIndex = index2;
@@ -2429,21 +1801,21 @@ var MDCListFoundation = (
       }
     };
     MDCListFoundation2.prototype.setAriaForSingleSelectionAtIndex = function(index2) {
-      if (this.selectedIndex === numbers$7.UNSET_INDEX) {
-        this.ariaCurrentAttrValue = this.adapter.getAttributeForElementIndex(index2, strings$b.ARIA_CURRENT);
+      if (this.selectedIndex === numbers$8.UNSET_INDEX) {
+        this.ariaCurrentAttrValue = this.adapter.getAttributeForElementIndex(index2, strings$c.ARIA_CURRENT);
       }
       var isAriaCurrent = this.ariaCurrentAttrValue !== null;
-      var ariaAttribute = isAriaCurrent ? strings$b.ARIA_CURRENT : strings$b.ARIA_SELECTED;
-      if (this.selectedIndex !== numbers$7.UNSET_INDEX) {
+      var ariaAttribute = isAriaCurrent ? strings$c.ARIA_CURRENT : strings$c.ARIA_SELECTED;
+      if (this.selectedIndex !== numbers$8.UNSET_INDEX) {
         this.adapter.setAttributeForElementIndex(this.selectedIndex, ariaAttribute, "false");
       }
-      if (index2 !== numbers$7.UNSET_INDEX) {
+      if (index2 !== numbers$8.UNSET_INDEX) {
         var ariaAttributeValue = isAriaCurrent ? this.ariaCurrentAttrValue : "true";
         this.adapter.setAttributeForElementIndex(index2, ariaAttribute, ariaAttributeValue);
       }
     };
     MDCListFoundation2.prototype.getSelectionAttribute = function() {
-      return this.useSelectedAttr ? strings$b.ARIA_SELECTED : strings$b.ARIA_CHECKED;
+      return this.useSelectedAttr ? strings$c.ARIA_SELECTED : strings$c.ARIA_CHECKED;
     };
     MDCListFoundation2.prototype.setRadioAtIndex = function(index2, options) {
       if (options === void 0) {
@@ -2454,7 +1826,7 @@ var MDCListFoundation = (
       if (this.selectedIndex === index2 && !options.forceUpdate) {
         return;
       }
-      if (this.selectedIndex !== numbers$7.UNSET_INDEX) {
+      if (this.selectedIndex !== numbers$8.UNSET_INDEX) {
         this.adapter.setAttributeForElementIndex(this.selectedIndex, selectionAttribute, "false");
       }
       this.adapter.setAttributeForElementIndex(index2, selectionAttribute, "true");
@@ -2468,7 +1840,7 @@ var MDCListFoundation = (
         options = {};
       }
       var currentIndex = this.selectedIndex;
-      var currentlySelected = options.isUserInteraction ? new Set(currentIndex === numbers$7.UNSET_INDEX ? [] : currentIndex) : null;
+      var currentlySelected = options.isUserInteraction ? new Set(currentIndex === numbers$8.UNSET_INDEX ? [] : currentIndex) : null;
       var selectionAttribute = this.getSelectionAttribute();
       var changedIndices = [];
       for (var i2 = 0; i2 < this.adapter.getListItemCount(); i2++) {
@@ -2487,7 +1859,7 @@ var MDCListFoundation = (
     };
     MDCListFoundation2.prototype.toggleCheckboxRange = function(fromIndex, toIndex, toggleIndex) {
       this.lastSelectedIndex = toggleIndex;
-      var currentlySelected = new Set(this.selectedIndex === numbers$7.UNSET_INDEX ? [] : this.selectedIndex);
+      var currentlySelected = new Set(this.selectedIndex === numbers$8.UNSET_INDEX ? [] : this.selectedIndex);
       var newIsChecked = !(currentlySelected === null || currentlySelected === void 0 ? void 0 : currentlySelected.has(toggleIndex));
       var _a3 = __read([fromIndex, toIndex].sort(), 2), startIndex = _a3[0], endIndex = _a3[1];
       var selectionAttribute = this.getSelectionAttribute();
@@ -2514,7 +1886,7 @@ var MDCListFoundation = (
       }
     };
     MDCListFoundation2.prototype.setTabindexAtIndex = function(index2) {
-      if (this.focusedItemIndex === numbers$7.UNSET_INDEX && index2 !== 0) {
+      if (this.focusedItemIndex === numbers$8.UNSET_INDEX && index2 !== 0) {
         this.adapter.setAttributeForElementIndex(0, "tabindex", "-1");
       } else if (this.focusedItemIndex >= 0 && this.focusedItemIndex !== index2) {
         this.adapter.setAttributeForElementIndex(this.focusedItemIndex, "tabindex", "-1");
@@ -2522,7 +1894,7 @@ var MDCListFoundation = (
       if (!(this.selectedIndex instanceof Array) && this.selectedIndex !== index2) {
         this.adapter.setAttributeForElementIndex(this.selectedIndex, "tabindex", "-1");
       }
-      if (index2 !== numbers$7.UNSET_INDEX) {
+      if (index2 !== numbers$8.UNSET_INDEX) {
         this.adapter.setAttributeForElementIndex(index2, "tabindex", "0");
       }
     };
@@ -2537,7 +1909,7 @@ var MDCListFoundation = (
       if (!this.isSelectableList()) {
         return Math.max(this.focusedItemIndex, 0);
       }
-      if (typeof this.selectedIndex === "number" && this.selectedIndex !== numbers$7.UNSET_INDEX) {
+      if (typeof this.selectedIndex === "number" && this.selectedIndex !== numbers$8.UNSET_INDEX) {
         return this.selectedIndex;
       }
       if (isNumberArray(this.selectedIndex) && this.selectedIndex.length > 0) {
@@ -2567,7 +1939,7 @@ var MDCListFoundation = (
         if (this.isCheckboxList && validateListType) {
           throw new Error("MDCListFoundation: Expected array of index for checkbox based list but got number: " + index2);
         }
-        return this.isIndexInRange(index2) || this.isSingleSelectionList && index2 === numbers$7.UNSET_INDEX;
+        return this.isIndexInRange(index2) || this.isSingleSelectionList && index2 === numbers$8.UNSET_INDEX;
       } else {
         return false;
       }
@@ -2596,7 +1968,7 @@ var MDCListFoundation = (
         this.adapter.setCheckedCheckboxOrRadioAtIndex(index2, newCheckedValue);
       }
       this.adapter.setAttributeForElementIndex(index2, selectionAttribute, newCheckedValue ? "true" : "false");
-      var selectedIndexes = this.selectedIndex === numbers$7.UNSET_INDEX ? [] : this.selectedIndex.slice();
+      var selectedIndexes = this.selectedIndex === numbers$8.UNSET_INDEX ? [] : this.selectedIndex.slice();
       if (newCheckedValue) {
         selectedIndexes.push(index2);
       } else {
@@ -2674,7 +2046,7 @@ var MDCListFoundation = (
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-var cssClasses$a = {
+var cssClasses$b = {
   ANIMATE: "mdc-drawer--animate",
   CLOSING: "mdc-drawer--closing",
   DISMISSIBLE: "mdc-drawer--dismissible",
@@ -2683,7 +2055,7 @@ var cssClasses$a = {
   OPENING: "mdc-drawer--opening",
   ROOT: "mdc-drawer"
 };
-var strings$a = {
+var strings$b = {
   APP_CONTENT_SELECTOR: ".mdc-drawer-app-content",
   CLOSE_EVENT: "MDCDrawer:closed",
   OPEN_EVENT: "MDCDrawer:opened",
@@ -2725,14 +2097,14 @@ var MDCDismissibleDrawerFoundation = (
     }
     Object.defineProperty(MDCDismissibleDrawerFoundation2, "strings", {
       get: function() {
-        return strings$a;
+        return strings$b;
       },
       enumerable: false,
       configurable: true
     });
     Object.defineProperty(MDCDismissibleDrawerFoundation2, "cssClasses", {
       get: function() {
-        return cssClasses$a;
+        return cssClasses$b;
       },
       enumerable: false,
       configurable: true
@@ -2791,10 +2163,10 @@ var MDCDismissibleDrawerFoundation = (
       if (this.isOpen() || this.isOpening() || this.isClosing()) {
         return;
       }
-      this.adapter.addClass(cssClasses$a.OPEN);
-      this.adapter.addClass(cssClasses$a.ANIMATE);
+      this.adapter.addClass(cssClasses$b.OPEN);
+      this.adapter.addClass(cssClasses$b.ANIMATE);
       this.runNextAnimationFrame(function() {
-        _this.adapter.addClass(cssClasses$a.OPENING);
+        _this.adapter.addClass(cssClasses$b.OPENING);
       });
       this.adapter.saveFocus();
     };
@@ -2802,16 +2174,16 @@ var MDCDismissibleDrawerFoundation = (
       if (!this.isOpen() || this.isOpening() || this.isClosing()) {
         return;
       }
-      this.adapter.addClass(cssClasses$a.CLOSING);
+      this.adapter.addClass(cssClasses$b.CLOSING);
     };
     MDCDismissibleDrawerFoundation2.prototype.isOpen = function() {
-      return this.adapter.hasClass(cssClasses$a.OPEN);
+      return this.adapter.hasClass(cssClasses$b.OPEN);
     };
     MDCDismissibleDrawerFoundation2.prototype.isOpening = function() {
-      return this.adapter.hasClass(cssClasses$a.OPENING) || this.adapter.hasClass(cssClasses$a.ANIMATE);
+      return this.adapter.hasClass(cssClasses$b.OPENING) || this.adapter.hasClass(cssClasses$b.ANIMATE);
     };
     MDCDismissibleDrawerFoundation2.prototype.isClosing = function() {
-      return this.adapter.hasClass(cssClasses$a.CLOSING);
+      return this.adapter.hasClass(cssClasses$b.CLOSING);
     };
     MDCDismissibleDrawerFoundation2.prototype.handleKeydown = function(evt) {
       var keyCode = evt.keyCode, key = evt.key;
@@ -2821,7 +2193,7 @@ var MDCDismissibleDrawerFoundation = (
       }
     };
     MDCDismissibleDrawerFoundation2.prototype.handleTransitionEnd = function(evt) {
-      var OPENING = cssClasses$a.OPENING, CLOSING = cssClasses$a.CLOSING, OPEN = cssClasses$a.OPEN, ANIMATE = cssClasses$a.ANIMATE, ROOT = cssClasses$a.ROOT;
+      var OPENING = cssClasses$b.OPENING, CLOSING = cssClasses$b.CLOSING, OPEN = cssClasses$b.OPEN, ANIMATE = cssClasses$b.ANIMATE, ROOT = cssClasses$b.ROOT;
       var isRootElement = this.isElement(evt.target) && this.adapter.elementHasClass(evt.target, ROOT);
       if (!isRootElement) {
         return;
@@ -2900,7 +2272,7 @@ var MDCModalDrawerFoundation = (
     return MDCModalDrawerFoundation2;
   }(MDCDismissibleDrawerFoundation)
 );
-function create_fragment$F(ctx) {
+function create_fragment$J(ctx) {
   let aside;
   let aside_class_value;
   let useActions_action;
@@ -3106,7 +2478,7 @@ function create_fragment$F(ctx) {
     }
   };
 }
-function instance_1$c($$self, $$props, $$invalidate) {
+function instance_1$d($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "variant", "open", "fixed", "setOpen", "isOpen", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -3275,7 +2647,7 @@ function instance_1$c($$self, $$props, $$invalidate) {
 class Drawer extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$c, create_fragment$F, safe_not_equal, {
+    init(this, options, instance_1$d, create_fragment$J, safe_not_equal, {
       use: 0,
       class: 1,
       variant: 2,
@@ -3316,7 +2688,7 @@ const Subtitle = classAdderBuilder({
   class: "mdc-drawer__subtitle",
   tag: "h2"
 });
-function create_default_slot$j(ctx) {
+function create_default_slot$l(ctx) {
   let current;
   const default_slot_template = (
     /*#slots*/
@@ -3385,7 +2757,7 @@ function create_default_slot$j(ctx) {
     }
   };
 }
-function create_fragment$E(ctx) {
+function create_fragment$I(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -3422,7 +2794,7 @@ function create_fragment$E(ctx) {
   );
   function switch_props(ctx2) {
     let switch_instance_props = {
-      $$slots: { default: [create_default_slot$j] },
+      $$slots: { default: [create_default_slot$l] },
       $$scope: { ctx: ctx2 }
     };
     for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
@@ -3546,7 +2918,7 @@ function create_fragment$E(ctx) {
     }
   };
 }
-function instance$q($$self, $$props, $$invalidate) {
+function instance$t($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "fixed", "component", "tag", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -3604,7 +2976,7 @@ function instance$q($$self, $$props, $$invalidate) {
 class Scrim extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$q, create_fragment$E, safe_not_equal, {
+    init(this, options, instance$t, create_fragment$I, safe_not_equal, {
       use: 0,
       class: 1,
       fixed: 2,
@@ -3615,6 +2987,2477 @@ class Scrim extends SvelteComponent {
   }
   get getElement() {
     return this.$$.ctx[9];
+  }
+}
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var cssClasses$a = {
+  FIXED_CLASS: "mdc-top-app-bar--fixed",
+  FIXED_SCROLLED_CLASS: "mdc-top-app-bar--fixed-scrolled",
+  SHORT_CLASS: "mdc-top-app-bar--short",
+  SHORT_COLLAPSED_CLASS: "mdc-top-app-bar--short-collapsed",
+  SHORT_HAS_ACTION_ITEM_CLASS: "mdc-top-app-bar--short-has-action-item"
+};
+var numbers$7 = {
+  DEBOUNCE_THROTTLE_RESIZE_TIME_MS: 100,
+  MAX_TOP_APP_BAR_HEIGHT: 128
+};
+var strings$a = {
+  ACTION_ITEM_SELECTOR: ".mdc-top-app-bar__action-item",
+  NAVIGATION_EVENT: "MDCTopAppBar:nav",
+  NAVIGATION_ICON_SELECTOR: ".mdc-top-app-bar__navigation-icon",
+  ROOT_SELECTOR: ".mdc-top-app-bar",
+  TITLE_SELECTOR: ".mdc-top-app-bar__title"
+};
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var MDCTopAppBarBaseFoundation = (
+  /** @class */
+  function(_super) {
+    __extends(MDCTopAppBarBaseFoundation2, _super);
+    function MDCTopAppBarBaseFoundation2(adapter) {
+      return _super.call(this, __assign(__assign({}, MDCTopAppBarBaseFoundation2.defaultAdapter), adapter)) || this;
+    }
+    Object.defineProperty(MDCTopAppBarBaseFoundation2, "strings", {
+      get: function() {
+        return strings$a;
+      },
+      enumerable: false,
+      configurable: true
+    });
+    Object.defineProperty(MDCTopAppBarBaseFoundation2, "cssClasses", {
+      get: function() {
+        return cssClasses$a;
+      },
+      enumerable: false,
+      configurable: true
+    });
+    Object.defineProperty(MDCTopAppBarBaseFoundation2, "numbers", {
+      get: function() {
+        return numbers$7;
+      },
+      enumerable: false,
+      configurable: true
+    });
+    Object.defineProperty(MDCTopAppBarBaseFoundation2, "defaultAdapter", {
+      /**
+       * See {@link MDCTopAppBarAdapter} for typing information on parameters and return types.
+       */
+      get: function() {
+        return {
+          addClass: function() {
+            return void 0;
+          },
+          removeClass: function() {
+            return void 0;
+          },
+          hasClass: function() {
+            return false;
+          },
+          setStyle: function() {
+            return void 0;
+          },
+          getTopAppBarHeight: function() {
+            return 0;
+          },
+          notifyNavigationIconClicked: function() {
+            return void 0;
+          },
+          getViewportScrollY: function() {
+            return 0;
+          },
+          getTotalActionItems: function() {
+            return 0;
+          }
+        };
+      },
+      enumerable: false,
+      configurable: true
+    });
+    MDCTopAppBarBaseFoundation2.prototype.handleTargetScroll = function() {
+    };
+    MDCTopAppBarBaseFoundation2.prototype.handleWindowResize = function() {
+    };
+    MDCTopAppBarBaseFoundation2.prototype.handleNavigationClick = function() {
+      this.adapter.notifyNavigationIconClicked();
+    };
+    return MDCTopAppBarBaseFoundation2;
+  }(MDCFoundation)
+);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var INITIAL_VALUE = 0;
+var MDCTopAppBarFoundation = (
+  /** @class */
+  function(_super) {
+    __extends(MDCTopAppBarFoundation2, _super);
+    function MDCTopAppBarFoundation2(adapter) {
+      var _this = _super.call(this, adapter) || this;
+      _this.wasDocked = true;
+      _this.isDockedShowing = true;
+      _this.currentAppBarOffsetTop = 0;
+      _this.isCurrentlyBeingResized = false;
+      _this.resizeThrottleId = INITIAL_VALUE;
+      _this.resizeDebounceId = INITIAL_VALUE;
+      _this.lastScrollPosition = _this.adapter.getViewportScrollY();
+      _this.topAppBarHeight = _this.adapter.getTopAppBarHeight();
+      return _this;
+    }
+    MDCTopAppBarFoundation2.prototype.destroy = function() {
+      _super.prototype.destroy.call(this);
+      this.adapter.setStyle("top", "");
+    };
+    MDCTopAppBarFoundation2.prototype.handleTargetScroll = function() {
+      var currentScrollPosition = Math.max(this.adapter.getViewportScrollY(), 0);
+      var diff = currentScrollPosition - this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
+      if (!this.isCurrentlyBeingResized) {
+        this.currentAppBarOffsetTop -= diff;
+        if (this.currentAppBarOffsetTop > 0) {
+          this.currentAppBarOffsetTop = 0;
+        } else if (Math.abs(this.currentAppBarOffsetTop) > this.topAppBarHeight) {
+          this.currentAppBarOffsetTop = -this.topAppBarHeight;
+        }
+        this.moveTopAppBar();
+      }
+    };
+    MDCTopAppBarFoundation2.prototype.handleWindowResize = function() {
+      var _this = this;
+      if (!this.resizeThrottleId) {
+        this.resizeThrottleId = setTimeout(function() {
+          _this.resizeThrottleId = INITIAL_VALUE;
+          _this.throttledResizeHandler();
+        }, numbers$7.DEBOUNCE_THROTTLE_RESIZE_TIME_MS);
+      }
+      this.isCurrentlyBeingResized = true;
+      if (this.resizeDebounceId) {
+        clearTimeout(this.resizeDebounceId);
+      }
+      this.resizeDebounceId = setTimeout(function() {
+        _this.handleTargetScroll();
+        _this.isCurrentlyBeingResized = false;
+        _this.resizeDebounceId = INITIAL_VALUE;
+      }, numbers$7.DEBOUNCE_THROTTLE_RESIZE_TIME_MS);
+    };
+    MDCTopAppBarFoundation2.prototype.checkForUpdate = function() {
+      var offscreenBoundaryTop = -this.topAppBarHeight;
+      var hasAnyPixelsOffscreen = this.currentAppBarOffsetTop < 0;
+      var hasAnyPixelsOnscreen = this.currentAppBarOffsetTop > offscreenBoundaryTop;
+      var partiallyShowing = hasAnyPixelsOffscreen && hasAnyPixelsOnscreen;
+      if (partiallyShowing) {
+        this.wasDocked = false;
+      } else {
+        if (!this.wasDocked) {
+          this.wasDocked = true;
+          return true;
+        } else if (this.isDockedShowing !== hasAnyPixelsOnscreen) {
+          this.isDockedShowing = hasAnyPixelsOnscreen;
+          return true;
+        }
+      }
+      return partiallyShowing;
+    };
+    MDCTopAppBarFoundation2.prototype.moveTopAppBar = function() {
+      if (this.checkForUpdate()) {
+        var offset = this.currentAppBarOffsetTop;
+        if (Math.abs(offset) >= this.topAppBarHeight) {
+          offset = -numbers$7.MAX_TOP_APP_BAR_HEIGHT;
+        }
+        this.adapter.setStyle("top", offset + "px");
+      }
+    };
+    MDCTopAppBarFoundation2.prototype.throttledResizeHandler = function() {
+      var currentHeight = this.adapter.getTopAppBarHeight();
+      if (this.topAppBarHeight !== currentHeight) {
+        this.wasDocked = false;
+        this.currentAppBarOffsetTop -= this.topAppBarHeight - currentHeight;
+        this.topAppBarHeight = currentHeight;
+      }
+      this.handleTargetScroll();
+    };
+    return MDCTopAppBarFoundation2;
+  }(MDCTopAppBarBaseFoundation)
+);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var MDCFixedTopAppBarFoundation = (
+  /** @class */
+  function(_super) {
+    __extends(MDCFixedTopAppBarFoundation2, _super);
+    function MDCFixedTopAppBarFoundation2() {
+      var _this = _super !== null && _super.apply(this, arguments) || this;
+      _this.wasScrolled = false;
+      return _this;
+    }
+    MDCFixedTopAppBarFoundation2.prototype.handleTargetScroll = function() {
+      var currentScroll = this.adapter.getViewportScrollY();
+      if (currentScroll <= 0) {
+        if (this.wasScrolled) {
+          this.adapter.removeClass(cssClasses$a.FIXED_SCROLLED_CLASS);
+          this.wasScrolled = false;
+        }
+      } else {
+        if (!this.wasScrolled) {
+          this.adapter.addClass(cssClasses$a.FIXED_SCROLLED_CLASS);
+          this.wasScrolled = true;
+        }
+      }
+    };
+    return MDCFixedTopAppBarFoundation2;
+  }(MDCTopAppBarFoundation)
+);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var MDCShortTopAppBarFoundation = (
+  /** @class */
+  function(_super) {
+    __extends(MDCShortTopAppBarFoundation2, _super);
+    function MDCShortTopAppBarFoundation2(adapter) {
+      var _this = _super.call(this, adapter) || this;
+      _this.collapsed = false;
+      _this.isAlwaysCollapsed = false;
+      return _this;
+    }
+    Object.defineProperty(MDCShortTopAppBarFoundation2.prototype, "isCollapsed", {
+      // Public visibility for backward compatibility.
+      get: function() {
+        return this.collapsed;
+      },
+      enumerable: false,
+      configurable: true
+    });
+    MDCShortTopAppBarFoundation2.prototype.init = function() {
+      _super.prototype.init.call(this);
+      if (this.adapter.getTotalActionItems() > 0) {
+        this.adapter.addClass(cssClasses$a.SHORT_HAS_ACTION_ITEM_CLASS);
+      }
+      this.setAlwaysCollapsed(this.adapter.hasClass(cssClasses$a.SHORT_COLLAPSED_CLASS));
+    };
+    MDCShortTopAppBarFoundation2.prototype.setAlwaysCollapsed = function(value) {
+      this.isAlwaysCollapsed = !!value;
+      if (this.isAlwaysCollapsed) {
+        this.collapse();
+      } else {
+        this.maybeCollapseBar();
+      }
+    };
+    MDCShortTopAppBarFoundation2.prototype.getAlwaysCollapsed = function() {
+      return this.isAlwaysCollapsed;
+    };
+    MDCShortTopAppBarFoundation2.prototype.handleTargetScroll = function() {
+      this.maybeCollapseBar();
+    };
+    MDCShortTopAppBarFoundation2.prototype.maybeCollapseBar = function() {
+      if (this.isAlwaysCollapsed) {
+        return;
+      }
+      var currentScroll = this.adapter.getViewportScrollY();
+      if (currentScroll <= 0) {
+        if (this.collapsed) {
+          this.uncollapse();
+        }
+      } else {
+        if (!this.collapsed) {
+          this.collapse();
+        }
+      }
+    };
+    MDCShortTopAppBarFoundation2.prototype.uncollapse = function() {
+      this.adapter.removeClass(cssClasses$a.SHORT_COLLAPSED_CLASS);
+      this.collapsed = false;
+    };
+    MDCShortTopAppBarFoundation2.prototype.collapse = function() {
+      this.adapter.addClass(cssClasses$a.SHORT_COLLAPSED_CLASS);
+      this.collapsed = true;
+    };
+    return MDCShortTopAppBarFoundation2;
+  }(MDCTopAppBarBaseFoundation)
+);
+const { window: window_1$1 } = globals;
+function create_fragment$H(ctx) {
+  let header;
+  let header_class_value;
+  let header_style_value;
+  let useActions_action;
+  let current;
+  let mounted;
+  let dispose;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[22].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[21],
+    null
+  );
+  let header_levels = [
+    {
+      class: header_class_value = classMap({
+        [
+          /*className*/
+          ctx[2]
+        ]: true,
+        "mdc-top-app-bar": true,
+        "mdc-top-app-bar--short": (
+          /*variant*/
+          ctx[4] === "short"
+        ),
+        "mdc-top-app-bar--short-collapsed": (
+          /*collapsed*/
+          ctx[0]
+        ),
+        "mdc-top-app-bar--fixed": (
+          /*variant*/
+          ctx[4] === "fixed"
+        ),
+        "smui-top-app-bar--static": (
+          /*variant*/
+          ctx[4] === "static"
+        ),
+        "smui-top-app-bar--color-secondary": (
+          /*color*/
+          ctx[5] === "secondary"
+        ),
+        "mdc-top-app-bar--prominent": (
+          /*prominent*/
+          ctx[6]
+        ),
+        "mdc-top-app-bar--dense": (
+          /*dense*/
+          ctx[7]
+        ),
+        .../*internalClasses*/
+        ctx[11]
+      })
+    },
+    {
+      style: header_style_value = Object.entries(
+        /*internalStyles*/
+        ctx[12]
+      ).map(func$8).concat([
+        /*style*/
+        ctx[3]
+      ]).join(" ")
+    },
+    /*$$restProps*/
+    ctx[15]
+  ];
+  let header_data = {};
+  for (let i2 = 0; i2 < header_levels.length; i2 += 1) {
+    header_data = assign$1(header_data, header_levels[i2]);
+  }
+  return {
+    c() {
+      header = element("header");
+      if (default_slot)
+        default_slot.c();
+      this.h();
+    },
+    l(nodes) {
+      header = claim_element(nodes, "HEADER", { class: true, style: true });
+      var header_nodes = children(header);
+      if (default_slot)
+        default_slot.l(header_nodes);
+      header_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      set_attributes(header, header_data);
+    },
+    m(target, anchor) {
+      insert_hydration(target, header, anchor);
+      if (default_slot) {
+        default_slot.m(header, null);
+      }
+      ctx[25](header);
+      current = true;
+      if (!mounted) {
+        dispose = [
+          listen(
+            window_1$1,
+            "resize",
+            /*resize_handler*/
+            ctx[23]
+          ),
+          listen(
+            window_1$1,
+            "scroll",
+            /*scroll_handler*/
+            ctx[24]
+          ),
+          action_destroyer(useActions_action = useActions.call(
+            null,
+            header,
+            /*use*/
+            ctx[1]
+          )),
+          action_destroyer(
+            /*forwardEvents*/
+            ctx[13].call(null, header)
+          ),
+          listen(
+            header,
+            "SMUITopAppBarIconButton:nav",
+            /*SMUITopAppBarIconButton_nav_handler*/
+            ctx[26]
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty[0] & /*$$scope*/
+        2097152)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[21],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[21]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[21],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      set_attributes(header, header_data = get_spread_update(header_levels, [
+        (!current || dirty[0] & /*className, variant, collapsed, color, prominent, dense, internalClasses*/
+        2293 && header_class_value !== (header_class_value = classMap({
+          [
+            /*className*/
+            ctx2[2]
+          ]: true,
+          "mdc-top-app-bar": true,
+          "mdc-top-app-bar--short": (
+            /*variant*/
+            ctx2[4] === "short"
+          ),
+          "mdc-top-app-bar--short-collapsed": (
+            /*collapsed*/
+            ctx2[0]
+          ),
+          "mdc-top-app-bar--fixed": (
+            /*variant*/
+            ctx2[4] === "fixed"
+          ),
+          "smui-top-app-bar--static": (
+            /*variant*/
+            ctx2[4] === "static"
+          ),
+          "smui-top-app-bar--color-secondary": (
+            /*color*/
+            ctx2[5] === "secondary"
+          ),
+          "mdc-top-app-bar--prominent": (
+            /*prominent*/
+            ctx2[6]
+          ),
+          "mdc-top-app-bar--dense": (
+            /*dense*/
+            ctx2[7]
+          ),
+          .../*internalClasses*/
+          ctx2[11]
+        }))) && { class: header_class_value },
+        (!current || dirty[0] & /*internalStyles, style*/
+        4104 && header_style_value !== (header_style_value = Object.entries(
+          /*internalStyles*/
+          ctx2[12]
+        ).map(func$8).concat([
+          /*style*/
+          ctx2[3]
+        ]).join(" "))) && { style: header_style_value },
+        dirty[0] & /*$$restProps*/
+        32768 && /*$$restProps*/
+        ctx2[15]
+      ]));
+      if (useActions_action && is_function(useActions_action.update) && dirty[0] & /*use*/
+      2)
+        useActions_action.update.call(
+          null,
+          /*use*/
+          ctx2[1]
+        );
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(header);
+      }
+      if (default_slot)
+        default_slot.d(detaching);
+      ctx[25](null);
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+const func$8 = ([name, value]) => `${name}: ${value};`;
+function instance_1$c($$self, $$props, $$invalidate) {
+  const omit_props_names = [
+    "use",
+    "class",
+    "style",
+    "variant",
+    "color",
+    "collapsed",
+    "prominent",
+    "dense",
+    "scrollTarget",
+    "getPropStore",
+    "getElement"
+  ];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let uninitializedValue = () => {
+  };
+  function isUninitializedValue(value) {
+    return value === uninitializedValue;
+  }
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { variant = "standard" } = $$props;
+  let { color: color2 = "primary" } = $$props;
+  let { collapsed = uninitializedValue } = $$props;
+  const alwaysCollapsed = !isUninitializedValue(collapsed) && !!collapsed;
+  if (isUninitializedValue(collapsed)) {
+    collapsed = false;
+  }
+  let { prominent = false } = $$props;
+  let { dense = false } = $$props;
+  let { scrollTarget = void 0 } = $$props;
+  let element2;
+  let instance2;
+  let internalClasses = {};
+  let internalStyles = {};
+  let propStoreSet;
+  let propStore = readable({ variant, prominent, dense }, (set2) => {
+    $$invalidate(18, propStoreSet = set2);
+  });
+  let oldScrollTarget = void 0;
+  let oldVariant = variant;
+  onMount(() => {
+    $$invalidate(9, instance2 = getInstance());
+    instance2.init();
+    return () => {
+      instance2.destroy();
+    };
+  });
+  function getInstance() {
+    const Foundation = {
+      static: MDCTopAppBarBaseFoundation,
+      short: MDCShortTopAppBarFoundation,
+      fixed: MDCFixedTopAppBarFoundation,
+      standard: MDCTopAppBarFoundation
+    }[variant] || MDCTopAppBarFoundation;
+    return new Foundation({
+      hasClass,
+      addClass,
+      removeClass,
+      setStyle: addStyle,
+      getTopAppBarHeight: () => element2.clientHeight,
+      notifyNavigationIconClicked: () => dispatch(element2, "SMUITopAppBar:nav", void 0, void 0, true),
+      getViewportScrollY: () => scrollTarget == null ? window.pageYOffset : scrollTarget.scrollTop,
+      getTotalActionItems: () => element2.querySelectorAll(".mdc-top-app-bar__action-item").length
+    });
+  }
+  function hasClass(className2) {
+    return className2 in internalClasses ? internalClasses[className2] : getElement().classList.contains(className2);
+  }
+  function addClass(className2) {
+    if (!internalClasses[className2]) {
+      $$invalidate(11, internalClasses[className2] = true, internalClasses);
+    }
+  }
+  function removeClass(className2) {
+    if (!(className2 in internalClasses) || internalClasses[className2]) {
+      $$invalidate(11, internalClasses[className2] = false, internalClasses);
+    }
+  }
+  function addStyle(name, value) {
+    if (internalStyles[name] != value) {
+      if (value === "" || value == null) {
+        delete internalStyles[name];
+        $$invalidate(12, internalStyles), $$invalidate(20, oldVariant), $$invalidate(4, variant), $$invalidate(9, instance2);
+      } else {
+        $$invalidate(12, internalStyles[name] = value, internalStyles);
+      }
+    }
+  }
+  function handleTargetScroll() {
+    if (instance2) {
+      instance2.handleTargetScroll();
+      if (variant === "short") {
+        $$invalidate(0, collapsed = "isCollapsed" in instance2 && instance2.isCollapsed);
+      }
+    }
+  }
+  function getPropStore() {
+    return propStore;
+  }
+  function getElement() {
+    return element2;
+  }
+  const resize_handler = () => variant !== "short" && variant !== "fixed" && instance2 && instance2.handleWindowResize();
+  const scroll_handler = () => scrollTarget == null && handleTargetScroll();
+  function header_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(10, element2);
+    });
+  }
+  const SMUITopAppBarIconButton_nav_handler = () => instance2 && instance2.handleNavigationClick();
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(15, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(1, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(2, className = $$new_props.class);
+    if ("style" in $$new_props)
+      $$invalidate(3, style = $$new_props.style);
+    if ("variant" in $$new_props)
+      $$invalidate(4, variant = $$new_props.variant);
+    if ("color" in $$new_props)
+      $$invalidate(5, color2 = $$new_props.color);
+    if ("collapsed" in $$new_props)
+      $$invalidate(0, collapsed = $$new_props.collapsed);
+    if ("prominent" in $$new_props)
+      $$invalidate(6, prominent = $$new_props.prominent);
+    if ("dense" in $$new_props)
+      $$invalidate(7, dense = $$new_props.dense);
+    if ("scrollTarget" in $$new_props)
+      $$invalidate(8, scrollTarget = $$new_props.scrollTarget);
+    if ("$$scope" in $$new_props)
+      $$invalidate(21, $$scope = $$new_props.$$scope);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty[0] & /*propStoreSet, variant, prominent, dense*/
+    262352) {
+      if (propStoreSet) {
+        propStoreSet({ variant, prominent, dense });
+      }
+    }
+    if ($$self.$$.dirty[0] & /*oldVariant, variant, instance*/
+    1049104) {
+      if (oldVariant !== variant && instance2) {
+        $$invalidate(20, oldVariant = variant);
+        instance2.destroy();
+        $$invalidate(11, internalClasses = {});
+        $$invalidate(12, internalStyles = {});
+        $$invalidate(9, instance2 = getInstance());
+        instance2.init();
+      }
+    }
+    if ($$self.$$.dirty[0] & /*instance, variant*/
+    528) {
+      if (instance2 && variant === "short" && "setAlwaysCollapsed" in instance2) {
+        instance2.setAlwaysCollapsed(alwaysCollapsed);
+      }
+    }
+    if ($$self.$$.dirty[0] & /*oldScrollTarget, scrollTarget*/
+    524544) {
+      if (oldScrollTarget !== scrollTarget) {
+        if (oldScrollTarget) {
+          oldScrollTarget.removeEventListener("scroll", handleTargetScroll);
+        }
+        if (scrollTarget) {
+          scrollTarget.addEventListener("scroll", handleTargetScroll);
+        }
+        $$invalidate(19, oldScrollTarget = scrollTarget);
+      }
+    }
+  };
+  return [
+    collapsed,
+    use,
+    className,
+    style,
+    variant,
+    color2,
+    prominent,
+    dense,
+    scrollTarget,
+    instance2,
+    element2,
+    internalClasses,
+    internalStyles,
+    forwardEvents,
+    handleTargetScroll,
+    $$restProps,
+    getPropStore,
+    getElement,
+    propStoreSet,
+    oldScrollTarget,
+    oldVariant,
+    $$scope,
+    slots,
+    resize_handler,
+    scroll_handler,
+    header_binding,
+    SMUITopAppBarIconButton_nav_handler
+  ];
+}
+class TopAppBar extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(
+      this,
+      options,
+      instance_1$c,
+      create_fragment$H,
+      safe_not_equal,
+      {
+        use: 1,
+        class: 2,
+        style: 3,
+        variant: 4,
+        color: 5,
+        collapsed: 0,
+        prominent: 6,
+        dense: 7,
+        scrollTarget: 8,
+        getPropStore: 16,
+        getElement: 17
+      },
+      null,
+      [-1, -1]
+    );
+  }
+  get getPropStore() {
+    return this.$$.ctx[16];
+  }
+  get getElement() {
+    return this.$$.ctx[17];
+  }
+}
+const Row = classAdderBuilder({
+  class: "mdc-top-app-bar__row",
+  tag: "div"
+});
+function create_fragment$G(ctx) {
+  let section;
+  let section_class_value;
+  let useActions_action;
+  let current;
+  let mounted;
+  let dispose;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[9].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[8],
+    null
+  );
+  let section_levels = [
+    {
+      class: section_class_value = classMap({
+        [
+          /*className*/
+          ctx[1]
+        ]: true,
+        "mdc-top-app-bar__section": true,
+        "mdc-top-app-bar__section--align-start": (
+          /*align*/
+          ctx[2] === "start"
+        ),
+        "mdc-top-app-bar__section--align-end": (
+          /*align*/
+          ctx[2] === "end"
+        )
+      })
+    },
+    /*toolbar*/
+    ctx[3] ? { role: "toolbar" } : {},
+    /*$$restProps*/
+    ctx[6]
+  ];
+  let section_data = {};
+  for (let i2 = 0; i2 < section_levels.length; i2 += 1) {
+    section_data = assign$1(section_data, section_levels[i2]);
+  }
+  return {
+    c() {
+      section = element("section");
+      if (default_slot)
+        default_slot.c();
+      this.h();
+    },
+    l(nodes) {
+      section = claim_element(nodes, "SECTION", { class: true });
+      var section_nodes = children(section);
+      if (default_slot)
+        default_slot.l(section_nodes);
+      section_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      set_attributes(section, section_data);
+    },
+    m(target, anchor) {
+      insert_hydration(target, section, anchor);
+      if (default_slot) {
+        default_slot.m(section, null);
+      }
+      ctx[10](section);
+      current = true;
+      if (!mounted) {
+        dispose = [
+          action_destroyer(useActions_action = useActions.call(
+            null,
+            section,
+            /*use*/
+            ctx[0]
+          )),
+          action_destroyer(
+            /*forwardEvents*/
+            ctx[5].call(null, section)
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        256)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[8],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[8]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[8],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      set_attributes(section, section_data = get_spread_update(section_levels, [
+        (!current || dirty & /*className, align*/
+        6 && section_class_value !== (section_class_value = classMap({
+          [
+            /*className*/
+            ctx2[1]
+          ]: true,
+          "mdc-top-app-bar__section": true,
+          "mdc-top-app-bar__section--align-start": (
+            /*align*/
+            ctx2[2] === "start"
+          ),
+          "mdc-top-app-bar__section--align-end": (
+            /*align*/
+            ctx2[2] === "end"
+          )
+        }))) && { class: section_class_value },
+        dirty & /*toolbar*/
+        8 && /*toolbar*/
+        (ctx2[3] ? { role: "toolbar" } : {}),
+        dirty & /*$$restProps*/
+        64 && /*$$restProps*/
+        ctx2[6]
+      ]));
+      if (useActions_action && is_function(useActions_action.update) && dirty & /*use*/
+      1)
+        useActions_action.update.call(
+          null,
+          /*use*/
+          ctx2[0]
+        );
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(section);
+      }
+      if (default_slot)
+        default_slot.d(detaching);
+      ctx[10](null);
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+function instance$s($$self, $$props, $$invalidate) {
+  const omit_props_names = ["use", "class", "align", "toolbar", "getElement"];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { align = "start" } = $$props;
+  let { toolbar = false } = $$props;
+  let element2;
+  setContext("SMUI:icon-button:context", toolbar ? "top-app-bar:action" : "top-app-bar:navigation");
+  setContext("SMUI:button:context", toolbar ? "top-app-bar:action" : "top-app-bar:navigation");
+  function getElement() {
+    return element2;
+  }
+  function section_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(4, element2);
+    });
+  }
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(6, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(0, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(1, className = $$new_props.class);
+    if ("align" in $$new_props)
+      $$invalidate(2, align = $$new_props.align);
+    if ("toolbar" in $$new_props)
+      $$invalidate(3, toolbar = $$new_props.toolbar);
+    if ("$$scope" in $$new_props)
+      $$invalidate(8, $$scope = $$new_props.$$scope);
+  };
+  return [
+    use,
+    className,
+    align,
+    toolbar,
+    element2,
+    forwardEvents,
+    $$restProps,
+    getElement,
+    $$scope,
+    slots,
+    section_binding
+  ];
+}
+class Section extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$s, create_fragment$G, safe_not_equal, {
+      use: 0,
+      class: 1,
+      align: 2,
+      toolbar: 3,
+      getElement: 7
+    });
+  }
+  get getElement() {
+    return this.$$.ctx[7];
+  }
+}
+classAdderBuilder({
+  class: "mdc-top-app-bar__title",
+  tag: "span"
+});
+function create_default_slot$k(ctx) {
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[12].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[14],
+    null
+  );
+  return {
+    c() {
+      if (default_slot)
+        default_slot.c();
+    },
+    l(nodes) {
+      if (default_slot)
+        default_slot.l(nodes);
+    },
+    m(target, anchor) {
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16384)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[14],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[14]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[14],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (default_slot)
+        default_slot.d(detaching);
+    }
+  };
+}
+function create_fragment$F(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { tag: (
+      /*tag*/
+      ctx[3]
+    ) },
+    {
+      use: [
+        /*forwardEvents*/
+        ctx[7],
+        .../*use*/
+        ctx[0]
+      ]
+    },
+    {
+      class: classMap({
+        [
+          /*className*/
+          ctx[1]
+        ]: true,
+        [
+          /*adjustClass*/
+          ctx[6]
+        ]: true
+      })
+    },
+    /*$$restProps*/
+    ctx[8]
+  ];
+  var switch_value = (
+    /*component*/
+    ctx[2]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot$k] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
+      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
+    }
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[13](switch_instance);
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      const switch_instance_changes = dirty & /*tag, forwardEvents, use, classMap, className, adjustClass, $$restProps*/
+      459 ? get_spread_update(switch_instance_spread_levels, [
+        dirty & /*tag*/
+        8 && { tag: (
+          /*tag*/
+          ctx2[3]
+        ) },
+        dirty & /*forwardEvents, use*/
+        129 && {
+          use: [
+            /*forwardEvents*/
+            ctx2[7],
+            .../*use*/
+            ctx2[0]
+          ]
+        },
+        dirty & /*classMap, className, adjustClass*/
+        66 && {
+          class: classMap({
+            [
+              /*className*/
+              ctx2[1]
+            ]: true,
+            [
+              /*adjustClass*/
+              ctx2[6]
+            ]: true
+          })
+        },
+        dirty & /*$$restProps*/
+        256 && get_spread_object(
+          /*$$restProps*/
+          ctx2[8]
+        )
+      ]) : {};
+      if (dirty & /*$$scope*/
+      16384) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (dirty & /*component*/
+      4 && switch_value !== (switch_value = /*component*/
+      ctx2[2])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[13](switch_instance);
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      ctx[13](null);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+function instance$r($$self, $$props, $$invalidate) {
+  let propStore;
+  let adjustClass;
+  const omit_props_names = ["use", "class", "topAppBar", "component", "tag", "getElement"];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let $propStore, $$unsubscribe_propStore = noop$1, $$subscribe_propStore = () => ($$unsubscribe_propStore(), $$unsubscribe_propStore = subscribe(propStore, ($$value) => $$invalidate(11, $propStore = $$value)), propStore);
+  $$self.$$.on_destroy.push(() => $$unsubscribe_propStore());
+  let { $$slots: slots = {}, $$scope } = $$props;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { topAppBar } = $$props;
+  let element2;
+  let { component = SmuiElement } = $$props;
+  let { tag = component === SmuiElement ? "main" : void 0 } = $$props;
+  function getElement() {
+    return element2.getElement();
+  }
+  function switch_instance_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(5, element2);
+    });
+  }
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(8, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(0, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(1, className = $$new_props.class);
+    if ("topAppBar" in $$new_props)
+      $$invalidate(9, topAppBar = $$new_props.topAppBar);
+    if ("component" in $$new_props)
+      $$invalidate(2, component = $$new_props.component);
+    if ("tag" in $$new_props)
+      $$invalidate(3, tag = $$new_props.tag);
+    if ("$$scope" in $$new_props)
+      $$invalidate(14, $$scope = $$new_props.$$scope);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*topAppBar*/
+    512) {
+      $$subscribe_propStore($$invalidate(4, propStore = topAppBar && topAppBar.getPropStore()));
+    }
+    if ($$self.$$.dirty & /*propStore, $propStore*/
+    2064) {
+      $$invalidate(6, adjustClass = (() => {
+        if (!propStore || $propStore.variant === "static") {
+          return "";
+        }
+        if ($propStore.variant === "short") {
+          return "mdc-top-app-bar--short-fixed-adjust";
+        }
+        if ($propStore.prominent && $propStore.dense) {
+          return "mdc-top-app-bar--dense-prominent-fixed-adjust";
+        }
+        if ($propStore.prominent) {
+          return "mdc-top-app-bar--prominent-fixed-adjust";
+        }
+        if ($propStore.dense) {
+          return "mdc-top-app-bar--dense-fixed-adjust";
+        }
+        return "mdc-top-app-bar--fixed-adjust";
+      })());
+    }
+  };
+  return [
+    use,
+    className,
+    component,
+    tag,
+    propStore,
+    element2,
+    adjustClass,
+    forwardEvents,
+    $$restProps,
+    topAppBar,
+    getElement,
+    $propStore,
+    slots,
+    switch_instance_binding,
+    $$scope
+  ];
+}
+class AutoAdjust extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$r, create_fragment$F, safe_not_equal, {
+      use: 0,
+      class: 1,
+      topAppBar: 9,
+      component: 2,
+      tag: 3,
+      getElement: 10
+    });
+  }
+  get getElement() {
+    return this.$$.ctx[10];
+  }
+}
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var cssClasses$9 = {
+  ICON_BUTTON_ON: "mdc-icon-button--on",
+  ROOT: "mdc-icon-button"
+};
+var strings$9 = {
+  ARIA_LABEL: "aria-label",
+  ARIA_PRESSED: "aria-pressed",
+  DATA_ARIA_LABEL_OFF: "data-aria-label-off",
+  DATA_ARIA_LABEL_ON: "data-aria-label-on",
+  CHANGE_EVENT: "MDCIconButtonToggle:change"
+};
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var MDCIconButtonToggleFoundation = (
+  /** @class */
+  function(_super) {
+    __extends(MDCIconButtonToggleFoundation2, _super);
+    function MDCIconButtonToggleFoundation2(adapter) {
+      var _this = _super.call(this, __assign(__assign({}, MDCIconButtonToggleFoundation2.defaultAdapter), adapter)) || this;
+      _this.hasToggledAriaLabel = false;
+      return _this;
+    }
+    Object.defineProperty(MDCIconButtonToggleFoundation2, "cssClasses", {
+      get: function() {
+        return cssClasses$9;
+      },
+      enumerable: false,
+      configurable: true
+    });
+    Object.defineProperty(MDCIconButtonToggleFoundation2, "strings", {
+      get: function() {
+        return strings$9;
+      },
+      enumerable: false,
+      configurable: true
+    });
+    Object.defineProperty(MDCIconButtonToggleFoundation2, "defaultAdapter", {
+      get: function() {
+        return {
+          addClass: function() {
+            return void 0;
+          },
+          hasClass: function() {
+            return false;
+          },
+          notifyChange: function() {
+            return void 0;
+          },
+          removeClass: function() {
+            return void 0;
+          },
+          getAttr: function() {
+            return null;
+          },
+          setAttr: function() {
+            return void 0;
+          }
+        };
+      },
+      enumerable: false,
+      configurable: true
+    });
+    MDCIconButtonToggleFoundation2.prototype.init = function() {
+      var ariaLabelOn = this.adapter.getAttr(strings$9.DATA_ARIA_LABEL_ON);
+      var ariaLabelOff = this.adapter.getAttr(strings$9.DATA_ARIA_LABEL_OFF);
+      if (ariaLabelOn && ariaLabelOff) {
+        if (this.adapter.getAttr(strings$9.ARIA_PRESSED) !== null) {
+          throw new Error("MDCIconButtonToggleFoundation: Button should not set `aria-pressed` if it has a toggled aria label.");
+        }
+        this.hasToggledAriaLabel = true;
+      } else {
+        this.adapter.setAttr(strings$9.ARIA_PRESSED, String(this.isOn()));
+      }
+    };
+    MDCIconButtonToggleFoundation2.prototype.handleClick = function() {
+      this.toggle();
+      this.adapter.notifyChange({ isOn: this.isOn() });
+    };
+    MDCIconButtonToggleFoundation2.prototype.isOn = function() {
+      return this.adapter.hasClass(cssClasses$9.ICON_BUTTON_ON);
+    };
+    MDCIconButtonToggleFoundation2.prototype.toggle = function(isOn) {
+      if (isOn === void 0) {
+        isOn = !this.isOn();
+      }
+      if (isOn) {
+        this.adapter.addClass(cssClasses$9.ICON_BUTTON_ON);
+      } else {
+        this.adapter.removeClass(cssClasses$9.ICON_BUTTON_ON);
+      }
+      if (this.hasToggledAriaLabel) {
+        var ariaLabel = isOn ? this.adapter.getAttr(strings$9.DATA_ARIA_LABEL_ON) : this.adapter.getAttr(strings$9.DATA_ARIA_LABEL_OFF);
+        this.adapter.setAttr(strings$9.ARIA_LABEL, ariaLabel || "");
+      } else {
+        this.adapter.setAttr(strings$9.ARIA_PRESSED, "" + isOn);
+      }
+    };
+    return MDCIconButtonToggleFoundation2;
+  }(MDCFoundation)
+);
+function create_if_block$q(ctx) {
+  let div;
+  return {
+    c() {
+      div = element("div");
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      children(div).forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(div, "class", "mdc-icon-button__touch");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+    }
+  };
+}
+function create_default_slot$j(ctx) {
+  let div;
+  let t2;
+  let if_block_anchor;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[33].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[37],
+    null
+  );
+  let if_block = (
+    /*touch*/
+    ctx[8] && create_if_block$q()
+  );
+  return {
+    c() {
+      div = element("div");
+      t2 = space();
+      if (default_slot)
+        default_slot.c();
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      children(div).forEach(detach);
+      t2 = claim_space(nodes);
+      if (default_slot)
+        default_slot.l(nodes);
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+      this.h();
+    },
+    h() {
+      attr(div, "class", "mdc-icon-button__ripple");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+      insert_hydration(target, t2, anchor);
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty[1] & /*$$scope*/
+        64)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[37],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[37]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[37],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (
+        /*touch*/
+        ctx2[8]
+      ) {
+        if (if_block)
+          ;
+        else {
+          if_block = create_if_block$q();
+          if_block.c();
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+        detach(t2);
+        detach(if_block_anchor);
+      }
+      if (default_slot)
+        default_slot.d(detaching);
+      if (if_block)
+        if_block.d(detaching);
+    }
+  };
+}
+function create_fragment$E(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { tag: (
+      /*tag*/
+      ctx[14]
+    ) },
+    {
+      use: [
+        [
+          Ripple,
+          {
+            ripple: (
+              /*ripple*/
+              ctx[4]
+            ),
+            unbounded: true,
+            color: (
+              /*color*/
+              ctx[5]
+            ),
+            disabled: !!/*$$restProps*/
+            ctx[29].disabled,
+            addClass: (
+              /*addClass*/
+              ctx[26]
+            ),
+            removeClass: (
+              /*removeClass*/
+              ctx[27]
+            ),
+            addStyle: (
+              /*addStyle*/
+              ctx[28]
+            )
+          }
+        ],
+        /*forwardEvents*/
+        ctx[22],
+        .../*use*/
+        ctx[1]
+      ]
+    },
+    {
+      class: classMap({
+        [
+          /*className*/
+          ctx[2]
+        ]: true,
+        "mdc-icon-button": true,
+        "mdc-icon-button--on": !/*isUninitializedValue*/
+        ctx[23](
+          /*pressed*/
+          ctx[0]
+        ) && /*pressed*/
+        ctx[0],
+        "mdc-icon-button--touch": (
+          /*touch*/
+          ctx[8]
+        ),
+        "mdc-icon-button--display-flex": (
+          /*displayFlex*/
+          ctx[9]
+        ),
+        "smui-icon-button--size-button": (
+          /*size*/
+          ctx[10] === "button"
+        ),
+        "smui-icon-button--size-mini": (
+          /*size*/
+          ctx[10] === "mini"
+        ),
+        "mdc-icon-button--reduced-size": (
+          /*size*/
+          ctx[10] === "mini" || /*size*/
+          ctx[10] === "button"
+        ),
+        "mdc-card__action": (
+          /*context*/
+          ctx[24] === "card:action"
+        ),
+        "mdc-card__action--icon": (
+          /*context*/
+          ctx[24] === "card:action"
+        ),
+        "mdc-top-app-bar__navigation-icon": (
+          /*context*/
+          ctx[24] === "top-app-bar:navigation"
+        ),
+        "mdc-top-app-bar__action-item": (
+          /*context*/
+          ctx[24] === "top-app-bar:action"
+        ),
+        "mdc-snackbar__dismiss": (
+          /*context*/
+          ctx[24] === "snackbar:actions"
+        ),
+        "mdc-data-table__pagination-button": (
+          /*context*/
+          ctx[24] === "data-table:pagination"
+        ),
+        "mdc-data-table__sort-icon-button": (
+          /*context*/
+          ctx[24] === "data-table:sortable-header-cell"
+        ),
+        "mdc-dialog__close": (
+          /*context*/
+          (ctx[24] === "dialog:header" || /*context*/
+          ctx[24] === "dialog:sheet") && /*action*/
+          ctx[12] === "close"
+        ),
+        .../*internalClasses*/
+        ctx[18]
+      })
+    },
+    {
+      style: Object.entries(
+        /*internalStyles*/
+        ctx[19]
+      ).map(func$7).concat([
+        /*style*/
+        ctx[3]
+      ]).join(" ")
+    },
+    {
+      "aria-pressed": !/*isUninitializedValue*/
+      ctx[23](
+        /*pressed*/
+        ctx[0]
+      ) ? (
+        /*pressed*/
+        ctx[0] ? "true" : "false"
+      ) : null
+    },
+    {
+      "aria-label": (
+        /*pressed*/
+        ctx[0] ? (
+          /*ariaLabelOn*/
+          ctx[6]
+        ) : (
+          /*ariaLabelOff*/
+          ctx[7]
+        )
+      )
+    },
+    {
+      "data-aria-label-on": (
+        /*ariaLabelOn*/
+        ctx[6]
+      )
+    },
+    {
+      "data-aria-label-off": (
+        /*ariaLabelOff*/
+        ctx[7]
+      )
+    },
+    {
+      "aria-describedby": (
+        /*ariaDescribedby*/
+        ctx[25]
+      )
+    },
+    { href: (
+      /*href*/
+      ctx[11]
+    ) },
+    /*actionProp*/
+    ctx[21],
+    /*internalAttrs*/
+    ctx[20],
+    /*$$restProps*/
+    ctx[29]
+  ];
+  var switch_value = (
+    /*component*/
+    ctx[13]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot$j] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
+      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
+    }
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[34](switch_instance);
+    switch_instance.$on(
+      "click",
+      /*click_handler*/
+      ctx[35]
+    );
+    switch_instance.$on(
+      "click",
+      /*click_handler_1*/
+      ctx[36]
+    );
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const switch_instance_changes = dirty[0] & /*tag, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use, className, isUninitializedValue, pressed, touch, displayFlex, size, context, action, internalClasses, internalStyles, style, ariaLabelOn, ariaLabelOff, ariaDescribedby, href, actionProp, internalAttrs*/
+      1073504255 ? get_spread_update(switch_instance_spread_levels, [
+        dirty[0] & /*tag*/
+        16384 && { tag: (
+          /*tag*/
+          ctx2[14]
+        ) },
+        dirty[0] & /*ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use*/
+        1010827314 && {
+          use: [
+            [
+              Ripple,
+              {
+                ripple: (
+                  /*ripple*/
+                  ctx2[4]
+                ),
+                unbounded: true,
+                color: (
+                  /*color*/
+                  ctx2[5]
+                ),
+                disabled: !!/*$$restProps*/
+                ctx2[29].disabled,
+                addClass: (
+                  /*addClass*/
+                  ctx2[26]
+                ),
+                removeClass: (
+                  /*removeClass*/
+                  ctx2[27]
+                ),
+                addStyle: (
+                  /*addStyle*/
+                  ctx2[28]
+                )
+              }
+            ],
+            /*forwardEvents*/
+            ctx2[22],
+            .../*use*/
+            ctx2[1]
+          ]
+        },
+        dirty[0] & /*className, isUninitializedValue, pressed, touch, displayFlex, size, context, action, internalClasses*/
+        25433861 && {
+          class: classMap({
+            [
+              /*className*/
+              ctx2[2]
+            ]: true,
+            "mdc-icon-button": true,
+            "mdc-icon-button--on": !/*isUninitializedValue*/
+            ctx2[23](
+              /*pressed*/
+              ctx2[0]
+            ) && /*pressed*/
+            ctx2[0],
+            "mdc-icon-button--touch": (
+              /*touch*/
+              ctx2[8]
+            ),
+            "mdc-icon-button--display-flex": (
+              /*displayFlex*/
+              ctx2[9]
+            ),
+            "smui-icon-button--size-button": (
+              /*size*/
+              ctx2[10] === "button"
+            ),
+            "smui-icon-button--size-mini": (
+              /*size*/
+              ctx2[10] === "mini"
+            ),
+            "mdc-icon-button--reduced-size": (
+              /*size*/
+              ctx2[10] === "mini" || /*size*/
+              ctx2[10] === "button"
+            ),
+            "mdc-card__action": (
+              /*context*/
+              ctx2[24] === "card:action"
+            ),
+            "mdc-card__action--icon": (
+              /*context*/
+              ctx2[24] === "card:action"
+            ),
+            "mdc-top-app-bar__navigation-icon": (
+              /*context*/
+              ctx2[24] === "top-app-bar:navigation"
+            ),
+            "mdc-top-app-bar__action-item": (
+              /*context*/
+              ctx2[24] === "top-app-bar:action"
+            ),
+            "mdc-snackbar__dismiss": (
+              /*context*/
+              ctx2[24] === "snackbar:actions"
+            ),
+            "mdc-data-table__pagination-button": (
+              /*context*/
+              ctx2[24] === "data-table:pagination"
+            ),
+            "mdc-data-table__sort-icon-button": (
+              /*context*/
+              ctx2[24] === "data-table:sortable-header-cell"
+            ),
+            "mdc-dialog__close": (
+              /*context*/
+              (ctx2[24] === "dialog:header" || /*context*/
+              ctx2[24] === "dialog:sheet") && /*action*/
+              ctx2[12] === "close"
+            ),
+            .../*internalClasses*/
+            ctx2[18]
+          })
+        },
+        dirty[0] & /*internalStyles, style*/
+        524296 && {
+          style: Object.entries(
+            /*internalStyles*/
+            ctx2[19]
+          ).map(func$7).concat([
+            /*style*/
+            ctx2[3]
+          ]).join(" ")
+        },
+        dirty[0] & /*isUninitializedValue, pressed*/
+        8388609 && {
+          "aria-pressed": !/*isUninitializedValue*/
+          ctx2[23](
+            /*pressed*/
+            ctx2[0]
+          ) ? (
+            /*pressed*/
+            ctx2[0] ? "true" : "false"
+          ) : null
+        },
+        dirty[0] & /*pressed, ariaLabelOn, ariaLabelOff*/
+        193 && {
+          "aria-label": (
+            /*pressed*/
+            ctx2[0] ? (
+              /*ariaLabelOn*/
+              ctx2[6]
+            ) : (
+              /*ariaLabelOff*/
+              ctx2[7]
+            )
+          )
+        },
+        dirty[0] & /*ariaLabelOn*/
+        64 && {
+          "data-aria-label-on": (
+            /*ariaLabelOn*/
+            ctx2[6]
+          )
+        },
+        dirty[0] & /*ariaLabelOff*/
+        128 && {
+          "data-aria-label-off": (
+            /*ariaLabelOff*/
+            ctx2[7]
+          )
+        },
+        dirty[0] & /*ariaDescribedby*/
+        33554432 && {
+          "aria-describedby": (
+            /*ariaDescribedby*/
+            ctx2[25]
+          )
+        },
+        dirty[0] & /*href*/
+        2048 && { href: (
+          /*href*/
+          ctx2[11]
+        ) },
+        dirty[0] & /*actionProp*/
+        2097152 && get_spread_object(
+          /*actionProp*/
+          ctx2[21]
+        ),
+        dirty[0] & /*internalAttrs*/
+        1048576 && get_spread_object(
+          /*internalAttrs*/
+          ctx2[20]
+        ),
+        dirty[0] & /*$$restProps*/
+        536870912 && get_spread_object(
+          /*$$restProps*/
+          ctx2[29]
+        )
+      ]) : {};
+      if (dirty[0] & /*touch*/
+      256 | dirty[1] & /*$$scope*/
+      64) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (dirty[0] & /*component*/
+      8192 && switch_value !== (switch_value = /*component*/
+      ctx2[13])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[34](switch_instance);
+          switch_instance.$on(
+            "click",
+            /*click_handler*/
+            ctx2[35]
+          );
+          switch_instance.$on(
+            "click",
+            /*click_handler_1*/
+            ctx2[36]
+          );
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      ctx[34](null);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+const func$7 = ([name, value]) => `${name}: ${value};`;
+function instance_1$b($$self, $$props, $$invalidate) {
+  let actionProp;
+  const omit_props_names = [
+    "use",
+    "class",
+    "style",
+    "ripple",
+    "color",
+    "toggle",
+    "pressed",
+    "ariaLabelOn",
+    "ariaLabelOff",
+    "touch",
+    "displayFlex",
+    "size",
+    "href",
+    "action",
+    "component",
+    "tag",
+    "getElement"
+  ];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let uninitializedValue = () => {
+  };
+  function isUninitializedValue(value) {
+    return value === uninitializedValue;
+  }
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { ripple = true } = $$props;
+  let { color: color2 = void 0 } = $$props;
+  let { toggle = false } = $$props;
+  let { pressed = uninitializedValue } = $$props;
+  let { ariaLabelOn = void 0 } = $$props;
+  let { ariaLabelOff = void 0 } = $$props;
+  let { touch = false } = $$props;
+  let { displayFlex = true } = $$props;
+  let { size = "normal" } = $$props;
+  let { href = void 0 } = $$props;
+  let { action = void 0 } = $$props;
+  let element2;
+  let instance2;
+  let internalClasses = {};
+  let internalStyles = {};
+  let internalAttrs = {};
+  let context = getContext("SMUI:icon-button:context");
+  let ariaDescribedby = getContext("SMUI:icon-button:aria-describedby");
+  let { component = SmuiElement } = $$props;
+  let { tag = component === SmuiElement ? href == null ? "button" : "a" : void 0 } = $$props;
+  let previousDisabled = $$restProps.disabled;
+  setContext("SMUI:icon:context", "icon-button");
+  let oldToggle = null;
+  onDestroy(() => {
+    instance2 && instance2.destroy();
+  });
+  function hasClass(className2) {
+    return className2 in internalClasses ? internalClasses[className2] : getElement().classList.contains(className2);
+  }
+  function addClass(className2) {
+    if (!internalClasses[className2]) {
+      $$invalidate(18, internalClasses[className2] = true, internalClasses);
+    }
+  }
+  function removeClass(className2) {
+    if (!(className2 in internalClasses) || internalClasses[className2]) {
+      $$invalidate(18, internalClasses[className2] = false, internalClasses);
+    }
+  }
+  function addStyle(name, value) {
+    if (internalStyles[name] != value) {
+      if (value === "" || value == null) {
+        delete internalStyles[name];
+        $$invalidate(19, internalStyles);
+      } else {
+        $$invalidate(19, internalStyles[name] = value, internalStyles);
+      }
+    }
+  }
+  function getAttr(name) {
+    var _a3;
+    return name in internalAttrs ? (_a3 = internalAttrs[name]) !== null && _a3 !== void 0 ? _a3 : null : getElement().getAttribute(name);
+  }
+  function addAttr(name, value) {
+    if (internalAttrs[name] !== value) {
+      $$invalidate(20, internalAttrs[name] = value, internalAttrs);
+    }
+  }
+  function handleChange(evtData) {
+    $$invalidate(0, pressed = evtData.isOn);
+  }
+  function getElement() {
+    return element2.getElement();
+  }
+  function switch_instance_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(16, element2);
+    });
+  }
+  const click_handler = () => instance2 && instance2.handleClick();
+  const click_handler_1 = () => context === "top-app-bar:navigation" && dispatch(getElement(), "SMUITopAppBarIconButton:nav");
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(29, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(1, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(2, className = $$new_props.class);
+    if ("style" in $$new_props)
+      $$invalidate(3, style = $$new_props.style);
+    if ("ripple" in $$new_props)
+      $$invalidate(4, ripple = $$new_props.ripple);
+    if ("color" in $$new_props)
+      $$invalidate(5, color2 = $$new_props.color);
+    if ("toggle" in $$new_props)
+      $$invalidate(30, toggle = $$new_props.toggle);
+    if ("pressed" in $$new_props)
+      $$invalidate(0, pressed = $$new_props.pressed);
+    if ("ariaLabelOn" in $$new_props)
+      $$invalidate(6, ariaLabelOn = $$new_props.ariaLabelOn);
+    if ("ariaLabelOff" in $$new_props)
+      $$invalidate(7, ariaLabelOff = $$new_props.ariaLabelOff);
+    if ("touch" in $$new_props)
+      $$invalidate(8, touch = $$new_props.touch);
+    if ("displayFlex" in $$new_props)
+      $$invalidate(9, displayFlex = $$new_props.displayFlex);
+    if ("size" in $$new_props)
+      $$invalidate(10, size = $$new_props.size);
+    if ("href" in $$new_props)
+      $$invalidate(11, href = $$new_props.href);
+    if ("action" in $$new_props)
+      $$invalidate(12, action = $$new_props.action);
+    if ("component" in $$new_props)
+      $$invalidate(13, component = $$new_props.component);
+    if ("tag" in $$new_props)
+      $$invalidate(14, tag = $$new_props.tag);
+    if ("$$scope" in $$new_props)
+      $$invalidate(37, $$scope = $$new_props.$$scope);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty[0] & /*action*/
+    4096) {
+      $$invalidate(21, actionProp = (() => {
+        if (context === "data-table:pagination") {
+          switch (action) {
+            case "first-page":
+              return { "data-first-page": "true" };
+            case "prev-page":
+              return { "data-prev-page": "true" };
+            case "next-page":
+              return { "data-next-page": "true" };
+            case "last-page":
+              return { "data-last-page": "true" };
+            default:
+              return { "data-action": "true" };
+          }
+        } else if (context === "dialog:header" || context === "dialog:sheet") {
+          return { "data-mdc-dialog-action": action };
+        } else {
+          return { action };
+        }
+      })());
+    }
+    if (previousDisabled !== $$restProps.disabled) {
+      const elem = getElement();
+      if ("blur" in elem) {
+        elem.blur();
+      }
+      $$invalidate(31, previousDisabled = $$restProps.disabled);
+    }
+    if ($$self.$$.dirty[0] & /*element, toggle, instance*/
+    1073938432 | $$self.$$.dirty[1] & /*oldToggle*/
+    2) {
+      if (element2 && getElement() && toggle !== oldToggle) {
+        if (toggle && !instance2) {
+          $$invalidate(17, instance2 = new MDCIconButtonToggleFoundation({
+            addClass,
+            hasClass,
+            notifyChange: (evtData) => {
+              handleChange(evtData);
+              dispatch(getElement(), "SMUIIconButtonToggle:change", evtData, void 0, true);
+            },
+            removeClass,
+            getAttr,
+            setAttr: addAttr
+          }));
+          instance2.init();
+        } else if (!toggle && instance2) {
+          instance2.destroy();
+          $$invalidate(17, instance2 = void 0);
+          $$invalidate(18, internalClasses = {});
+          $$invalidate(20, internalAttrs = {});
+        }
+        $$invalidate(32, oldToggle = toggle);
+      }
+    }
+    if ($$self.$$.dirty[0] & /*instance, pressed*/
+    131073) {
+      if (instance2 && !isUninitializedValue(pressed) && instance2.isOn() !== pressed) {
+        instance2.toggle(pressed);
+      }
+    }
+  };
+  return [
+    pressed,
+    use,
+    className,
+    style,
+    ripple,
+    color2,
+    ariaLabelOn,
+    ariaLabelOff,
+    touch,
+    displayFlex,
+    size,
+    href,
+    action,
+    component,
+    tag,
+    getElement,
+    element2,
+    instance2,
+    internalClasses,
+    internalStyles,
+    internalAttrs,
+    actionProp,
+    forwardEvents,
+    isUninitializedValue,
+    context,
+    ariaDescribedby,
+    addClass,
+    removeClass,
+    addStyle,
+    $$restProps,
+    toggle,
+    previousDisabled,
+    oldToggle,
+    slots,
+    switch_instance_binding,
+    click_handler,
+    click_handler_1,
+    $$scope
+  ];
+}
+class IconButton extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(
+      this,
+      options,
+      instance_1$b,
+      create_fragment$E,
+      safe_not_equal,
+      {
+        use: 1,
+        class: 2,
+        style: 3,
+        ripple: 4,
+        color: 5,
+        toggle: 30,
+        pressed: 0,
+        ariaLabelOn: 6,
+        ariaLabelOff: 7,
+        touch: 8,
+        displayFlex: 9,
+        size: 10,
+        href: 11,
+        action: 12,
+        component: 13,
+        tag: 14,
+        getElement: 15
+      },
+      null,
+      [-1, -1]
+    );
+  }
+  get getElement() {
+    return this.$$.ctx[15];
   }
 }
 function throttle(func2, timeFrame) {
@@ -3838,7 +5681,7 @@ function create_if_block_1$c(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "svlt-grid-resizer svelte-x23om8");
+      attr(div, "class", "svlt-grid-resizer svelte-1iyj4z4");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -3875,7 +5718,7 @@ function create_if_block$p(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "svlt-grid-shadow shadow-active svelte-x23om8");
+      attr(div, "class", "svlt-grid-shadow shadow-active svelte-1iyj4z4");
       set_style(
         div,
         "width",
@@ -4011,7 +5854,7 @@ function create_fragment$D(ctx) {
     },
     h() {
       attr(div, "draggable", false);
-      attr(div, "class", "svlt-grid-item svelte-x23om8");
+      attr(div, "class", "svlt-grid-item svelte-1iyj4z4");
       attr(div, "style", div_style_value = "width: " + /*active*/
       (ctx[13] ? (
         /*newSize*/
@@ -4046,6 +5889,12 @@ function create_fragment$D(ctx) {
         ctx[13] || /*trans*/
         ctx[16] && /*rect*/
         ctx[17]
+      );
+      toggle_class(
+        div,
+        "touch-none",
+        /*draggable*/
+        ctx[5]
       );
     },
     m(target, anchor) {
@@ -4165,6 +6014,15 @@ function create_fragment$D(ctx) {
           ctx[17]
         );
       }
+      if (!current || dirty[0] & /*draggable*/
+      32) {
+        toggle_class(
+          div,
+          "touch-none",
+          /*draggable*/
+          ctx[5]
+        );
+      }
       if (
         /*active*/
         ctx[13] || /*trans*/
@@ -4209,7 +6067,7 @@ function create_fragment$D(ctx) {
     }
   };
 }
-function instance$p($$self, $$props, $$invalidate) {
+function instance$q($$self, $$props, $$invalidate) {
   let { $$slots: slots = {}, $$scope } = $$props;
   const dispatch2 = createEventDispatcher();
   let { sensor } = $$props;
@@ -4481,7 +6339,7 @@ class MoveResize extends SvelteComponent {
     init(
       this,
       options,
-      instance$p,
+      instance$q,
       create_fragment$D,
       safe_not_equal,
       {
@@ -5226,7 +7084,7 @@ function create_fragment$C(ctx) {
     }
   };
 }
-function instance$o($$self, $$props, $$invalidate) {
+function instance$p($$self, $$props, $$invalidate) {
   let gapX;
   let gapY;
   let containerHeight;
@@ -5379,13 +7237,13 @@ function instance$o($$self, $$props, $$invalidate) {
     $$scope
   ];
 }
-class Src extends SvelteComponent {
+class Grid extends SvelteComponent {
   constructor(options) {
     super();
     init(
       this,
       options,
-      instance$o,
+      instance$p,
       create_fragment$C,
       safe_not_equal,
       {
@@ -5525,7 +7383,7 @@ var AnimationFrame = (
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-var cssClasses$9 = {
+var cssClasses$8 = {
   CLOSING: "mdc-dialog--closing",
   OPEN: "mdc-dialog--open",
   OPENING: "mdc-dialog--opening",
@@ -5559,7 +7417,7 @@ var cssClasses$9 = {
   // scrim clicks.
   SCRIM_HIDDEN: "mdc-dialog__scrim--hidden"
 };
-var strings$9 = {
+var strings$8 = {
   ACTION_ATTRIBUTE: "data-mdc-dialog-action",
   BUTTON_DEFAULT_ATTRIBUTE: "data-mdc-dialog-button-default",
   BUTTON_SELECTOR: ".mdc-dialog__button",
@@ -5621,11 +7479,11 @@ var MDCDialogFoundation = (
       _this.isFullscreen = false;
       _this.animationFrame = 0;
       _this.animationTimer = 0;
-      _this.escapeKeyAction = strings$9.CLOSE_ACTION;
-      _this.scrimClickAction = strings$9.CLOSE_ACTION;
+      _this.escapeKeyAction = strings$8.CLOSE_ACTION;
+      _this.scrimClickAction = strings$8.CLOSE_ACTION;
       _this.autoStackButtons = true;
       _this.areButtonsStacked = false;
-      _this.suppressDefaultPressSelector = strings$9.SUPPRESS_DEFAULT_PRESS_SELECTOR;
+      _this.suppressDefaultPressSelector = strings$8.SUPPRESS_DEFAULT_PRESS_SELECTOR;
       _this.animFrame = new AnimationFrame();
       _this.contentScrollHandler = function() {
         _this.handleScrollEvent();
@@ -5640,14 +7498,14 @@ var MDCDialogFoundation = (
     }
     Object.defineProperty(MDCDialogFoundation2, "cssClasses", {
       get: function() {
-        return cssClasses$9;
+        return cssClasses$8;
       },
       enumerable: false,
       configurable: true
     });
     Object.defineProperty(MDCDialogFoundation2, "strings", {
       get: function() {
-        return strings$9;
+        return strings$8;
       },
       enumerable: false,
       configurable: true
@@ -5740,10 +7598,10 @@ var MDCDialogFoundation = (
       configurable: true
     });
     MDCDialogFoundation2.prototype.init = function() {
-      if (this.adapter.hasClass(cssClasses$9.STACKED)) {
+      if (this.adapter.hasClass(cssClasses$8.STACKED)) {
         this.setAutoStackButtons(false);
       }
-      this.isFullscreen = this.adapter.hasClass(cssClasses$9.FULLSCREEN);
+      this.isFullscreen = this.adapter.hasClass(cssClasses$8.FULLSCREEN);
     };
     MDCDialogFoundation2.prototype.destroy = function() {
       if (this.animationTimer) {
@@ -5761,18 +7619,18 @@ var MDCDialogFoundation = (
       var _this = this;
       this.dialogOpen = true;
       this.adapter.notifyOpening();
-      this.adapter.addClass(cssClasses$9.OPENING);
+      this.adapter.addClass(cssClasses$8.OPENING);
       if (this.isFullscreen) {
         this.adapter.registerContentEventHandler("scroll", this.contentScrollHandler);
       }
       if (dialogOptions && dialogOptions.isAboveFullscreenDialog) {
-        this.adapter.addClass(cssClasses$9.SCRIM_HIDDEN);
+        this.adapter.addClass(cssClasses$8.SCRIM_HIDDEN);
       }
       this.adapter.registerWindowEventHandler("resize", this.windowResizeHandler);
       this.adapter.registerWindowEventHandler("orientationchange", this.windowOrientationChangeHandler);
       this.runNextAnimationFrame(function() {
-        _this.adapter.addClass(cssClasses$9.OPEN);
-        _this.adapter.addBodyClass(cssClasses$9.SCROLL_LOCK);
+        _this.adapter.addClass(cssClasses$8.OPEN);
+        _this.adapter.addBodyClass(cssClasses$8.SCROLL_LOCK);
         _this.layout();
         _this.animationTimer = setTimeout(function() {
           _this.handleAnimationTimerEnd();
@@ -5791,9 +7649,9 @@ var MDCDialogFoundation = (
       }
       this.dialogOpen = false;
       this.adapter.notifyClosing(action);
-      this.adapter.addClass(cssClasses$9.CLOSING);
-      this.adapter.removeClass(cssClasses$9.OPEN);
-      this.adapter.removeBodyClass(cssClasses$9.SCROLL_LOCK);
+      this.adapter.addClass(cssClasses$8.CLOSING);
+      this.adapter.removeClass(cssClasses$8.OPEN);
+      this.adapter.removeBodyClass(cssClasses$8.SCROLL_LOCK);
       if (this.isFullscreen) {
         this.adapter.deregisterContentEventHandler("scroll", this.contentScrollHandler);
       }
@@ -5810,18 +7668,18 @@ var MDCDialogFoundation = (
     };
     MDCDialogFoundation2.prototype.showSurfaceScrim = function() {
       var _this = this;
-      this.adapter.addClass(cssClasses$9.SURFACE_SCRIM_SHOWING);
+      this.adapter.addClass(cssClasses$8.SURFACE_SCRIM_SHOWING);
       this.runNextAnimationFrame(function() {
-        _this.adapter.addClass(cssClasses$9.SURFACE_SCRIM_SHOWN);
+        _this.adapter.addClass(cssClasses$8.SURFACE_SCRIM_SHOWN);
       });
     };
     MDCDialogFoundation2.prototype.hideSurfaceScrim = function() {
-      this.adapter.removeClass(cssClasses$9.SURFACE_SCRIM_SHOWN);
-      this.adapter.addClass(cssClasses$9.SURFACE_SCRIM_HIDING);
+      this.adapter.removeClass(cssClasses$8.SURFACE_SCRIM_SHOWN);
+      this.adapter.addClass(cssClasses$8.SURFACE_SCRIM_HIDING);
     };
     MDCDialogFoundation2.prototype.handleSurfaceScrimTransitionEnd = function() {
-      this.adapter.removeClass(cssClasses$9.SURFACE_SCRIM_HIDING);
-      this.adapter.removeClass(cssClasses$9.SURFACE_SCRIM_SHOWING);
+      this.adapter.removeClass(cssClasses$8.SURFACE_SCRIM_HIDING);
+      this.adapter.removeClass(cssClasses$8.SURFACE_SCRIM_SHOWING);
     };
     MDCDialogFoundation2.prototype.isOpen = function() {
       return this.dialogOpen;
@@ -5857,7 +7715,7 @@ var MDCDialogFoundation = (
       });
     };
     MDCDialogFoundation2.prototype.handleClick = function(evt) {
-      var isScrim = this.adapter.eventTargetMatches(evt.target, strings$9.SCRIM_SELECTOR);
+      var isScrim = this.adapter.eventTargetMatches(evt.target, strings$8.SCRIM_SELECTOR);
       if (isScrim && this.scrimClickAction !== "") {
         this.close(this.scrimClickAction);
       } else {
@@ -5903,8 +7761,8 @@ var MDCDialogFoundation = (
     };
     MDCDialogFoundation2.prototype.handleAnimationTimerEnd = function() {
       this.animationTimer = 0;
-      this.adapter.removeClass(cssClasses$9.OPENING);
-      this.adapter.removeClass(cssClasses$9.CLOSING);
+      this.adapter.removeClass(cssClasses$8.OPENING);
+      this.adapter.removeClass(cssClasses$8.CLOSING);
     };
     MDCDialogFoundation2.prototype.runNextAnimationFrame = function(callback2) {
       var _this = this;
@@ -5916,10 +7774,10 @@ var MDCDialogFoundation = (
       });
     };
     MDCDialogFoundation2.prototype.detectStackedButtons = function() {
-      this.adapter.removeClass(cssClasses$9.STACKED);
+      this.adapter.removeClass(cssClasses$8.STACKED);
       var areButtonsStacked = this.adapter.areButtonsStacked();
       if (areButtonsStacked) {
-        this.adapter.addClass(cssClasses$9.STACKED);
+        this.adapter.addClass(cssClasses$8.STACKED);
       }
       if (areButtonsStacked !== this.areButtonsStacked) {
         this.adapter.reverseButtons();
@@ -5927,9 +7785,9 @@ var MDCDialogFoundation = (
       }
     };
     MDCDialogFoundation2.prototype.toggleScrollableClasses = function() {
-      this.adapter.removeClass(cssClasses$9.SCROLLABLE);
+      this.adapter.removeClass(cssClasses$8.SCROLLABLE);
       if (this.adapter.isContentScrollable()) {
-        this.adapter.addClass(cssClasses$9.SCROLLABLE);
+        this.adapter.addClass(cssClasses$8.SCROLLABLE);
         if (this.isFullscreen) {
           this.toggleScrollDividerHeader();
           this.toggleScrollDividerFooter();
@@ -5938,16 +7796,16 @@ var MDCDialogFoundation = (
     };
     MDCDialogFoundation2.prototype.toggleScrollDividerHeader = function() {
       if (!this.adapter.isScrollableContentAtTop()) {
-        this.adapter.addClass(cssClasses$9.SCROLL_DIVIDER_HEADER);
-      } else if (this.adapter.hasClass(cssClasses$9.SCROLL_DIVIDER_HEADER)) {
-        this.adapter.removeClass(cssClasses$9.SCROLL_DIVIDER_HEADER);
+        this.adapter.addClass(cssClasses$8.SCROLL_DIVIDER_HEADER);
+      } else if (this.adapter.hasClass(cssClasses$8.SCROLL_DIVIDER_HEADER)) {
+        this.adapter.removeClass(cssClasses$8.SCROLL_DIVIDER_HEADER);
       }
     };
     MDCDialogFoundation2.prototype.toggleScrollDividerFooter = function() {
       if (!this.adapter.isScrollableContentAtBottom()) {
-        this.adapter.addClass(cssClasses$9.SCROLL_DIVIDER_FOOTER);
-      } else if (this.adapter.hasClass(cssClasses$9.SCROLL_DIVIDER_FOOTER)) {
-        this.adapter.removeClass(cssClasses$9.SCROLL_DIVIDER_FOOTER);
+        this.adapter.addClass(cssClasses$8.SCROLL_DIVIDER_FOOTER);
+      } else if (this.adapter.hasClass(cssClasses$8.SCROLL_DIVIDER_FOOTER)) {
+        this.adapter.removeClass(cssClasses$8.SCROLL_DIVIDER_FOOTER);
       }
     };
     return MDCDialogFoundation2;
@@ -6463,7 +8321,7 @@ function create_fragment$B(ctx) {
     }
   };
 }
-function instance_1$b($$self, $$props, $$invalidate) {
+function instance_1$a($$self, $$props, $$invalidate) {
   const omit_props_names = [
     "use",
     "class",
@@ -6797,7 +8655,7 @@ class Dialog extends SvelteComponent {
     init(
       this,
       options,
-      instance_1$b,
+      instance_1$a,
       create_fragment$B,
       safe_not_equal,
       {
@@ -6860,1054 +8718,7 @@ const Actions = classAdderBuilder({
     "SMUI:button:context": "dialog:action"
   }
 });
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var cssClasses$8 = {
-  ICON_BUTTON_ON: "mdc-icon-button--on",
-  ROOT: "mdc-icon-button"
-};
-var strings$8 = {
-  ARIA_LABEL: "aria-label",
-  ARIA_PRESSED: "aria-pressed",
-  DATA_ARIA_LABEL_OFF: "data-aria-label-off",
-  DATA_ARIA_LABEL_ON: "data-aria-label-on",
-  CHANGE_EVENT: "MDCIconButtonToggle:change"
-};
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var MDCIconButtonToggleFoundation = (
-  /** @class */
-  function(_super) {
-    __extends(MDCIconButtonToggleFoundation2, _super);
-    function MDCIconButtonToggleFoundation2(adapter) {
-      var _this = _super.call(this, __assign(__assign({}, MDCIconButtonToggleFoundation2.defaultAdapter), adapter)) || this;
-      _this.hasToggledAriaLabel = false;
-      return _this;
-    }
-    Object.defineProperty(MDCIconButtonToggleFoundation2, "cssClasses", {
-      get: function() {
-        return cssClasses$8;
-      },
-      enumerable: false,
-      configurable: true
-    });
-    Object.defineProperty(MDCIconButtonToggleFoundation2, "strings", {
-      get: function() {
-        return strings$8;
-      },
-      enumerable: false,
-      configurable: true
-    });
-    Object.defineProperty(MDCIconButtonToggleFoundation2, "defaultAdapter", {
-      get: function() {
-        return {
-          addClass: function() {
-            return void 0;
-          },
-          hasClass: function() {
-            return false;
-          },
-          notifyChange: function() {
-            return void 0;
-          },
-          removeClass: function() {
-            return void 0;
-          },
-          getAttr: function() {
-            return null;
-          },
-          setAttr: function() {
-            return void 0;
-          }
-        };
-      },
-      enumerable: false,
-      configurable: true
-    });
-    MDCIconButtonToggleFoundation2.prototype.init = function() {
-      var ariaLabelOn = this.adapter.getAttr(strings$8.DATA_ARIA_LABEL_ON);
-      var ariaLabelOff = this.adapter.getAttr(strings$8.DATA_ARIA_LABEL_OFF);
-      if (ariaLabelOn && ariaLabelOff) {
-        if (this.adapter.getAttr(strings$8.ARIA_PRESSED) !== null) {
-          throw new Error("MDCIconButtonToggleFoundation: Button should not set `aria-pressed` if it has a toggled aria label.");
-        }
-        this.hasToggledAriaLabel = true;
-      } else {
-        this.adapter.setAttr(strings$8.ARIA_PRESSED, String(this.isOn()));
-      }
-    };
-    MDCIconButtonToggleFoundation2.prototype.handleClick = function() {
-      this.toggle();
-      this.adapter.notifyChange({ isOn: this.isOn() });
-    };
-    MDCIconButtonToggleFoundation2.prototype.isOn = function() {
-      return this.adapter.hasClass(cssClasses$8.ICON_BUTTON_ON);
-    };
-    MDCIconButtonToggleFoundation2.prototype.toggle = function(isOn) {
-      if (isOn === void 0) {
-        isOn = !this.isOn();
-      }
-      if (isOn) {
-        this.adapter.addClass(cssClasses$8.ICON_BUTTON_ON);
-      } else {
-        this.adapter.removeClass(cssClasses$8.ICON_BUTTON_ON);
-      }
-      if (this.hasToggledAriaLabel) {
-        var ariaLabel = isOn ? this.adapter.getAttr(strings$8.DATA_ARIA_LABEL_ON) : this.adapter.getAttr(strings$8.DATA_ARIA_LABEL_OFF);
-        this.adapter.setAttr(strings$8.ARIA_LABEL, ariaLabel || "");
-      } else {
-        this.adapter.setAttr(strings$8.ARIA_PRESSED, "" + isOn);
-      }
-    };
-    return MDCIconButtonToggleFoundation2;
-  }(MDCFoundation)
-);
-function create_if_block$m(ctx) {
-  let div;
-  return {
-    c() {
-      div = element("div");
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      children(div).forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div, "class", "mdc-icon-button__touch");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-    }
-  };
-}
-function create_default_slot$h(ctx) {
-  let div;
-  let t2;
-  let if_block_anchor;
-  let current;
-  const default_slot_template = (
-    /*#slots*/
-    ctx[33].default
-  );
-  const default_slot = create_slot(
-    default_slot_template,
-    ctx,
-    /*$$scope*/
-    ctx[37],
-    null
-  );
-  let if_block = (
-    /*touch*/
-    ctx[8] && create_if_block$m()
-  );
-  return {
-    c() {
-      div = element("div");
-      t2 = space();
-      if (default_slot)
-        default_slot.c();
-      if (if_block)
-        if_block.c();
-      if_block_anchor = empty();
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      children(div).forEach(detach);
-      t2 = claim_space(nodes);
-      if (default_slot)
-        default_slot.l(nodes);
-      if (if_block)
-        if_block.l(nodes);
-      if_block_anchor = empty();
-      this.h();
-    },
-    h() {
-      attr(div, "class", "mdc-icon-button__ripple");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      insert_hydration(target, t2, anchor);
-      if (default_slot) {
-        default_slot.m(target, anchor);
-      }
-      if (if_block)
-        if_block.m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty[1] & /*$$scope*/
-        64)) {
-          update_slot_base(
-            default_slot,
-            default_slot_template,
-            ctx2,
-            /*$$scope*/
-            ctx2[37],
-            !current ? get_all_dirty_from_scope(
-              /*$$scope*/
-              ctx2[37]
-            ) : get_slot_changes(
-              default_slot_template,
-              /*$$scope*/
-              ctx2[37],
-              dirty,
-              null
-            ),
-            null
-          );
-        }
-      }
-      if (
-        /*touch*/
-        ctx2[8]
-      ) {
-        if (if_block)
-          ;
-        else {
-          if_block = create_if_block$m();
-          if_block.c();
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
-        }
-      } else if (if_block) {
-        if_block.d(1);
-        if_block = null;
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(default_slot, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(default_slot, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-        detach(t2);
-        detach(if_block_anchor);
-      }
-      if (default_slot)
-        default_slot.d(detaching);
-      if (if_block)
-        if_block.d(detaching);
-    }
-  };
-}
 function create_fragment$A(ctx) {
-  let switch_instance;
-  let switch_instance_anchor;
-  let current;
-  const switch_instance_spread_levels = [
-    { tag: (
-      /*tag*/
-      ctx[14]
-    ) },
-    {
-      use: [
-        [
-          Ripple,
-          {
-            ripple: (
-              /*ripple*/
-              ctx[4]
-            ),
-            unbounded: true,
-            color: (
-              /*color*/
-              ctx[5]
-            ),
-            disabled: !!/*$$restProps*/
-            ctx[29].disabled,
-            addClass: (
-              /*addClass*/
-              ctx[26]
-            ),
-            removeClass: (
-              /*removeClass*/
-              ctx[27]
-            ),
-            addStyle: (
-              /*addStyle*/
-              ctx[28]
-            )
-          }
-        ],
-        /*forwardEvents*/
-        ctx[22],
-        .../*use*/
-        ctx[1]
-      ]
-    },
-    {
-      class: classMap({
-        [
-          /*className*/
-          ctx[2]
-        ]: true,
-        "mdc-icon-button": true,
-        "mdc-icon-button--on": !/*isUninitializedValue*/
-        ctx[23](
-          /*pressed*/
-          ctx[0]
-        ) && /*pressed*/
-        ctx[0],
-        "mdc-icon-button--touch": (
-          /*touch*/
-          ctx[8]
-        ),
-        "mdc-icon-button--display-flex": (
-          /*displayFlex*/
-          ctx[9]
-        ),
-        "smui-icon-button--size-button": (
-          /*size*/
-          ctx[10] === "button"
-        ),
-        "smui-icon-button--size-mini": (
-          /*size*/
-          ctx[10] === "mini"
-        ),
-        "mdc-icon-button--reduced-size": (
-          /*size*/
-          ctx[10] === "mini" || /*size*/
-          ctx[10] === "button"
-        ),
-        "mdc-card__action": (
-          /*context*/
-          ctx[24] === "card:action"
-        ),
-        "mdc-card__action--icon": (
-          /*context*/
-          ctx[24] === "card:action"
-        ),
-        "mdc-top-app-bar__navigation-icon": (
-          /*context*/
-          ctx[24] === "top-app-bar:navigation"
-        ),
-        "mdc-top-app-bar__action-item": (
-          /*context*/
-          ctx[24] === "top-app-bar:action"
-        ),
-        "mdc-snackbar__dismiss": (
-          /*context*/
-          ctx[24] === "snackbar:actions"
-        ),
-        "mdc-data-table__pagination-button": (
-          /*context*/
-          ctx[24] === "data-table:pagination"
-        ),
-        "mdc-data-table__sort-icon-button": (
-          /*context*/
-          ctx[24] === "data-table:sortable-header-cell"
-        ),
-        "mdc-dialog__close": (
-          /*context*/
-          (ctx[24] === "dialog:header" || /*context*/
-          ctx[24] === "dialog:sheet") && /*action*/
-          ctx[12] === "close"
-        ),
-        .../*internalClasses*/
-        ctx[18]
-      })
-    },
-    {
-      style: Object.entries(
-        /*internalStyles*/
-        ctx[19]
-      ).map(func$6).concat([
-        /*style*/
-        ctx[3]
-      ]).join(" ")
-    },
-    {
-      "aria-pressed": !/*isUninitializedValue*/
-      ctx[23](
-        /*pressed*/
-        ctx[0]
-      ) ? (
-        /*pressed*/
-        ctx[0] ? "true" : "false"
-      ) : null
-    },
-    {
-      "aria-label": (
-        /*pressed*/
-        ctx[0] ? (
-          /*ariaLabelOn*/
-          ctx[6]
-        ) : (
-          /*ariaLabelOff*/
-          ctx[7]
-        )
-      )
-    },
-    {
-      "data-aria-label-on": (
-        /*ariaLabelOn*/
-        ctx[6]
-      )
-    },
-    {
-      "data-aria-label-off": (
-        /*ariaLabelOff*/
-        ctx[7]
-      )
-    },
-    {
-      "aria-describedby": (
-        /*ariaDescribedby*/
-        ctx[25]
-      )
-    },
-    { href: (
-      /*href*/
-      ctx[11]
-    ) },
-    /*actionProp*/
-    ctx[21],
-    /*internalAttrs*/
-    ctx[20],
-    /*$$restProps*/
-    ctx[29]
-  ];
-  var switch_value = (
-    /*component*/
-    ctx[13]
-  );
-  function switch_props(ctx2) {
-    let switch_instance_props = {
-      $$slots: { default: [create_default_slot$h] },
-      $$scope: { ctx: ctx2 }
-    };
-    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
-      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
-    }
-    return { props: switch_instance_props };
-  }
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-    ctx[34](switch_instance);
-    switch_instance.$on(
-      "click",
-      /*click_handler*/
-      ctx[35]
-    );
-    switch_instance.$on(
-      "click",
-      /*click_handler_1*/
-      ctx[36]
-    );
-  }
-  return {
-    c() {
-      if (switch_instance)
-        create_component(switch_instance.$$.fragment);
-      switch_instance_anchor = empty();
-    },
-    l(nodes) {
-      if (switch_instance)
-        claim_component(switch_instance.$$.fragment, nodes);
-      switch_instance_anchor = empty();
-    },
-    m(target, anchor) {
-      if (switch_instance)
-        mount_component(switch_instance, target, anchor);
-      insert_hydration(target, switch_instance_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const switch_instance_changes = dirty[0] & /*tag, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use, className, isUninitializedValue, pressed, touch, displayFlex, size, context, action, internalClasses, internalStyles, style, ariaLabelOn, ariaLabelOff, ariaDescribedby, href, actionProp, internalAttrs*/
-      1073504255 ? get_spread_update(switch_instance_spread_levels, [
-        dirty[0] & /*tag*/
-        16384 && { tag: (
-          /*tag*/
-          ctx2[14]
-        ) },
-        dirty[0] & /*ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use*/
-        1010827314 && {
-          use: [
-            [
-              Ripple,
-              {
-                ripple: (
-                  /*ripple*/
-                  ctx2[4]
-                ),
-                unbounded: true,
-                color: (
-                  /*color*/
-                  ctx2[5]
-                ),
-                disabled: !!/*$$restProps*/
-                ctx2[29].disabled,
-                addClass: (
-                  /*addClass*/
-                  ctx2[26]
-                ),
-                removeClass: (
-                  /*removeClass*/
-                  ctx2[27]
-                ),
-                addStyle: (
-                  /*addStyle*/
-                  ctx2[28]
-                )
-              }
-            ],
-            /*forwardEvents*/
-            ctx2[22],
-            .../*use*/
-            ctx2[1]
-          ]
-        },
-        dirty[0] & /*className, isUninitializedValue, pressed, touch, displayFlex, size, context, action, internalClasses*/
-        25433861 && {
-          class: classMap({
-            [
-              /*className*/
-              ctx2[2]
-            ]: true,
-            "mdc-icon-button": true,
-            "mdc-icon-button--on": !/*isUninitializedValue*/
-            ctx2[23](
-              /*pressed*/
-              ctx2[0]
-            ) && /*pressed*/
-            ctx2[0],
-            "mdc-icon-button--touch": (
-              /*touch*/
-              ctx2[8]
-            ),
-            "mdc-icon-button--display-flex": (
-              /*displayFlex*/
-              ctx2[9]
-            ),
-            "smui-icon-button--size-button": (
-              /*size*/
-              ctx2[10] === "button"
-            ),
-            "smui-icon-button--size-mini": (
-              /*size*/
-              ctx2[10] === "mini"
-            ),
-            "mdc-icon-button--reduced-size": (
-              /*size*/
-              ctx2[10] === "mini" || /*size*/
-              ctx2[10] === "button"
-            ),
-            "mdc-card__action": (
-              /*context*/
-              ctx2[24] === "card:action"
-            ),
-            "mdc-card__action--icon": (
-              /*context*/
-              ctx2[24] === "card:action"
-            ),
-            "mdc-top-app-bar__navigation-icon": (
-              /*context*/
-              ctx2[24] === "top-app-bar:navigation"
-            ),
-            "mdc-top-app-bar__action-item": (
-              /*context*/
-              ctx2[24] === "top-app-bar:action"
-            ),
-            "mdc-snackbar__dismiss": (
-              /*context*/
-              ctx2[24] === "snackbar:actions"
-            ),
-            "mdc-data-table__pagination-button": (
-              /*context*/
-              ctx2[24] === "data-table:pagination"
-            ),
-            "mdc-data-table__sort-icon-button": (
-              /*context*/
-              ctx2[24] === "data-table:sortable-header-cell"
-            ),
-            "mdc-dialog__close": (
-              /*context*/
-              (ctx2[24] === "dialog:header" || /*context*/
-              ctx2[24] === "dialog:sheet") && /*action*/
-              ctx2[12] === "close"
-            ),
-            .../*internalClasses*/
-            ctx2[18]
-          })
-        },
-        dirty[0] & /*internalStyles, style*/
-        524296 && {
-          style: Object.entries(
-            /*internalStyles*/
-            ctx2[19]
-          ).map(func$6).concat([
-            /*style*/
-            ctx2[3]
-          ]).join(" ")
-        },
-        dirty[0] & /*isUninitializedValue, pressed*/
-        8388609 && {
-          "aria-pressed": !/*isUninitializedValue*/
-          ctx2[23](
-            /*pressed*/
-            ctx2[0]
-          ) ? (
-            /*pressed*/
-            ctx2[0] ? "true" : "false"
-          ) : null
-        },
-        dirty[0] & /*pressed, ariaLabelOn, ariaLabelOff*/
-        193 && {
-          "aria-label": (
-            /*pressed*/
-            ctx2[0] ? (
-              /*ariaLabelOn*/
-              ctx2[6]
-            ) : (
-              /*ariaLabelOff*/
-              ctx2[7]
-            )
-          )
-        },
-        dirty[0] & /*ariaLabelOn*/
-        64 && {
-          "data-aria-label-on": (
-            /*ariaLabelOn*/
-            ctx2[6]
-          )
-        },
-        dirty[0] & /*ariaLabelOff*/
-        128 && {
-          "data-aria-label-off": (
-            /*ariaLabelOff*/
-            ctx2[7]
-          )
-        },
-        dirty[0] & /*ariaDescribedby*/
-        33554432 && {
-          "aria-describedby": (
-            /*ariaDescribedby*/
-            ctx2[25]
-          )
-        },
-        dirty[0] & /*href*/
-        2048 && { href: (
-          /*href*/
-          ctx2[11]
-        ) },
-        dirty[0] & /*actionProp*/
-        2097152 && get_spread_object(
-          /*actionProp*/
-          ctx2[21]
-        ),
-        dirty[0] & /*internalAttrs*/
-        1048576 && get_spread_object(
-          /*internalAttrs*/
-          ctx2[20]
-        ),
-        dirty[0] & /*$$restProps*/
-        536870912 && get_spread_object(
-          /*$$restProps*/
-          ctx2[29]
-        )
-      ]) : {};
-      if (dirty[0] & /*touch*/
-      256 | dirty[1] & /*$$scope*/
-      64) {
-        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      if (dirty[0] & /*component*/
-      8192 && switch_value !== (switch_value = /*component*/
-      ctx2[13])) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
-          ctx2[34](switch_instance);
-          switch_instance.$on(
-            "click",
-            /*click_handler*/
-            ctx2[35]
-          );
-          switch_instance.$on(
-            "click",
-            /*click_handler_1*/
-            ctx2[36]
-          );
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      if (switch_instance)
-        transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance)
-        transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(switch_instance_anchor);
-      }
-      ctx[34](null);
-      if (switch_instance)
-        destroy_component(switch_instance, detaching);
-    }
-  };
-}
-const func$6 = ([name, value]) => `${name}: ${value};`;
-function instance_1$a($$self, $$props, $$invalidate) {
-  let actionProp;
-  const omit_props_names = [
-    "use",
-    "class",
-    "style",
-    "ripple",
-    "color",
-    "toggle",
-    "pressed",
-    "ariaLabelOn",
-    "ariaLabelOff",
-    "touch",
-    "displayFlex",
-    "size",
-    "href",
-    "action",
-    "component",
-    "tag",
-    "getElement"
-  ];
-  let $$restProps = compute_rest_props($$props, omit_props_names);
-  let { $$slots: slots = {}, $$scope } = $$props;
-  const forwardEvents = forwardEventsBuilder(get_current_component());
-  let uninitializedValue = () => {
-  };
-  function isUninitializedValue(value) {
-    return value === uninitializedValue;
-  }
-  let { use = [] } = $$props;
-  let { class: className = "" } = $$props;
-  let { style = "" } = $$props;
-  let { ripple = true } = $$props;
-  let { color: color2 = void 0 } = $$props;
-  let { toggle = false } = $$props;
-  let { pressed = uninitializedValue } = $$props;
-  let { ariaLabelOn = void 0 } = $$props;
-  let { ariaLabelOff = void 0 } = $$props;
-  let { touch = false } = $$props;
-  let { displayFlex = true } = $$props;
-  let { size = "normal" } = $$props;
-  let { href = void 0 } = $$props;
-  let { action = void 0 } = $$props;
-  let element2;
-  let instance2;
-  let internalClasses = {};
-  let internalStyles = {};
-  let internalAttrs = {};
-  let context = getContext("SMUI:icon-button:context");
-  let ariaDescribedby = getContext("SMUI:icon-button:aria-describedby");
-  let { component = SmuiElement } = $$props;
-  let { tag = component === SmuiElement ? href == null ? "button" : "a" : void 0 } = $$props;
-  let previousDisabled = $$restProps.disabled;
-  setContext("SMUI:icon:context", "icon-button");
-  let oldToggle = null;
-  onDestroy(() => {
-    instance2 && instance2.destroy();
-  });
-  function hasClass(className2) {
-    return className2 in internalClasses ? internalClasses[className2] : getElement().classList.contains(className2);
-  }
-  function addClass(className2) {
-    if (!internalClasses[className2]) {
-      $$invalidate(18, internalClasses[className2] = true, internalClasses);
-    }
-  }
-  function removeClass(className2) {
-    if (!(className2 in internalClasses) || internalClasses[className2]) {
-      $$invalidate(18, internalClasses[className2] = false, internalClasses);
-    }
-  }
-  function addStyle(name, value) {
-    if (internalStyles[name] != value) {
-      if (value === "" || value == null) {
-        delete internalStyles[name];
-        $$invalidate(19, internalStyles);
-      } else {
-        $$invalidate(19, internalStyles[name] = value, internalStyles);
-      }
-    }
-  }
-  function getAttr(name) {
-    var _a3;
-    return name in internalAttrs ? (_a3 = internalAttrs[name]) !== null && _a3 !== void 0 ? _a3 : null : getElement().getAttribute(name);
-  }
-  function addAttr(name, value) {
-    if (internalAttrs[name] !== value) {
-      $$invalidate(20, internalAttrs[name] = value, internalAttrs);
-    }
-  }
-  function handleChange(evtData) {
-    $$invalidate(0, pressed = evtData.isOn);
-  }
-  function getElement() {
-    return element2.getElement();
-  }
-  function switch_instance_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      element2 = $$value;
-      $$invalidate(16, element2);
-    });
-  }
-  const click_handler = () => instance2 && instance2.handleClick();
-  const click_handler_1 = () => context === "top-app-bar:navigation" && dispatch(getElement(), "SMUITopAppBarIconButton:nav");
-  $$self.$$set = ($$new_props) => {
-    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
-    $$invalidate(29, $$restProps = compute_rest_props($$props, omit_props_names));
-    if ("use" in $$new_props)
-      $$invalidate(1, use = $$new_props.use);
-    if ("class" in $$new_props)
-      $$invalidate(2, className = $$new_props.class);
-    if ("style" in $$new_props)
-      $$invalidate(3, style = $$new_props.style);
-    if ("ripple" in $$new_props)
-      $$invalidate(4, ripple = $$new_props.ripple);
-    if ("color" in $$new_props)
-      $$invalidate(5, color2 = $$new_props.color);
-    if ("toggle" in $$new_props)
-      $$invalidate(30, toggle = $$new_props.toggle);
-    if ("pressed" in $$new_props)
-      $$invalidate(0, pressed = $$new_props.pressed);
-    if ("ariaLabelOn" in $$new_props)
-      $$invalidate(6, ariaLabelOn = $$new_props.ariaLabelOn);
-    if ("ariaLabelOff" in $$new_props)
-      $$invalidate(7, ariaLabelOff = $$new_props.ariaLabelOff);
-    if ("touch" in $$new_props)
-      $$invalidate(8, touch = $$new_props.touch);
-    if ("displayFlex" in $$new_props)
-      $$invalidate(9, displayFlex = $$new_props.displayFlex);
-    if ("size" in $$new_props)
-      $$invalidate(10, size = $$new_props.size);
-    if ("href" in $$new_props)
-      $$invalidate(11, href = $$new_props.href);
-    if ("action" in $$new_props)
-      $$invalidate(12, action = $$new_props.action);
-    if ("component" in $$new_props)
-      $$invalidate(13, component = $$new_props.component);
-    if ("tag" in $$new_props)
-      $$invalidate(14, tag = $$new_props.tag);
-    if ("$$scope" in $$new_props)
-      $$invalidate(37, $$scope = $$new_props.$$scope);
-  };
-  $$self.$$.update = () => {
-    if ($$self.$$.dirty[0] & /*action*/
-    4096) {
-      $$invalidate(21, actionProp = (() => {
-        if (context === "data-table:pagination") {
-          switch (action) {
-            case "first-page":
-              return { "data-first-page": "true" };
-            case "prev-page":
-              return { "data-prev-page": "true" };
-            case "next-page":
-              return { "data-next-page": "true" };
-            case "last-page":
-              return { "data-last-page": "true" };
-            default:
-              return { "data-action": "true" };
-          }
-        } else if (context === "dialog:header" || context === "dialog:sheet") {
-          return { "data-mdc-dialog-action": action };
-        } else {
-          return { action };
-        }
-      })());
-    }
-    if (previousDisabled !== $$restProps.disabled) {
-      const elem = getElement();
-      if ("blur" in elem) {
-        elem.blur();
-      }
-      $$invalidate(31, previousDisabled = $$restProps.disabled);
-    }
-    if ($$self.$$.dirty[0] & /*element, toggle, instance*/
-    1073938432 | $$self.$$.dirty[1] & /*oldToggle*/
-    2) {
-      if (element2 && getElement() && toggle !== oldToggle) {
-        if (toggle && !instance2) {
-          $$invalidate(17, instance2 = new MDCIconButtonToggleFoundation({
-            addClass,
-            hasClass,
-            notifyChange: (evtData) => {
-              handleChange(evtData);
-              dispatch(getElement(), "SMUIIconButtonToggle:change", evtData, void 0, true);
-            },
-            removeClass,
-            getAttr,
-            setAttr: addAttr
-          }));
-          instance2.init();
-        } else if (!toggle && instance2) {
-          instance2.destroy();
-          $$invalidate(17, instance2 = void 0);
-          $$invalidate(18, internalClasses = {});
-          $$invalidate(20, internalAttrs = {});
-        }
-        $$invalidate(32, oldToggle = toggle);
-      }
-    }
-    if ($$self.$$.dirty[0] & /*instance, pressed*/
-    131073) {
-      if (instance2 && !isUninitializedValue(pressed) && instance2.isOn() !== pressed) {
-        instance2.toggle(pressed);
-      }
-    }
-  };
-  return [
-    pressed,
-    use,
-    className,
-    style,
-    ripple,
-    color2,
-    ariaLabelOn,
-    ariaLabelOff,
-    touch,
-    displayFlex,
-    size,
-    href,
-    action,
-    component,
-    tag,
-    getElement,
-    element2,
-    instance2,
-    internalClasses,
-    internalStyles,
-    internalAttrs,
-    actionProp,
-    forwardEvents,
-    isUninitializedValue,
-    context,
-    ariaDescribedby,
-    addClass,
-    removeClass,
-    addStyle,
-    $$restProps,
-    toggle,
-    previousDisabled,
-    oldToggle,
-    slots,
-    switch_instance_binding,
-    click_handler,
-    click_handler_1,
-    $$scope
-  ];
-}
-class IconButton extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(
-      this,
-      options,
-      instance_1$a,
-      create_fragment$A,
-      safe_not_equal,
-      {
-        use: 1,
-        class: 2,
-        style: 3,
-        ripple: 4,
-        color: 5,
-        toggle: 30,
-        pressed: 0,
-        ariaLabelOn: 6,
-        ariaLabelOff: 7,
-        touch: 8,
-        displayFlex: 9,
-        size: 10,
-        href: 11,
-        action: 12,
-        component: 13,
-        tag: 14,
-        getElement: 15
-      },
-      null,
-      [-1, -1]
-    );
-  }
-  get getElement() {
-    return this.$$.ctx[15];
-  }
-}
-function create_fragment$z(ctx) {
   let div;
   let div_class_value;
   let useActions_action;
@@ -8066,7 +8877,7 @@ function create_fragment$z(ctx) {
     }
   };
 }
-function instance$n($$self, $$props, $$invalidate) {
+function instance$o($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "variant", "padded", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -8116,7 +8927,7 @@ function instance$n($$self, $$props, $$invalidate) {
 class Card extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$n, create_fragment$z, safe_not_equal, {
+    init(this, options, instance$o, create_fragment$A, safe_not_equal, {
       use: 0,
       class: 1,
       variant: 2,
@@ -8144,6 +8955,634 @@ classAdderBuilder({
   class: "mdc-card__action-icons",
   tag: "div"
 });
+function create_if_block_1$a(ctx) {
+  let div;
+  return {
+    c() {
+      div = element("div");
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      children(div).forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(div, "class", "mdc-fab__focus-ring");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+    }
+  };
+}
+function create_if_block$m(ctx) {
+  let div;
+  return {
+    c() {
+      div = element("div");
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      children(div).forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(div, "class", "mdc-fab__touch");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+    }
+  };
+}
+function create_default_slot$h(ctx) {
+  let div;
+  let t0;
+  let t1;
+  let if_block1_anchor;
+  let current;
+  let if_block0 = (
+    /*focusRing*/
+    ctx[4] && create_if_block_1$a()
+  );
+  const default_slot_template = (
+    /*#slots*/
+    ctx[22].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[24],
+    null
+  );
+  let if_block1 = (
+    /*touch*/
+    ctx[9] && create_if_block$m()
+  );
+  return {
+    c() {
+      div = element("div");
+      t0 = space();
+      if (if_block0)
+        if_block0.c();
+      t1 = space();
+      if (default_slot)
+        default_slot.c();
+      if (if_block1)
+        if_block1.c();
+      if_block1_anchor = empty();
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { class: true });
+      children(div).forEach(detach);
+      t0 = claim_space(nodes);
+      if (if_block0)
+        if_block0.l(nodes);
+      t1 = claim_space(nodes);
+      if (default_slot)
+        default_slot.l(nodes);
+      if (if_block1)
+        if_block1.l(nodes);
+      if_block1_anchor = empty();
+      this.h();
+    },
+    h() {
+      attr(div, "class", "mdc-fab__ripple");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+      insert_hydration(target, t0, anchor);
+      if (if_block0)
+        if_block0.m(target, anchor);
+      insert_hydration(target, t1, anchor);
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      if (if_block1)
+        if_block1.m(target, anchor);
+      insert_hydration(target, if_block1_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (
+        /*focusRing*/
+        ctx2[4]
+      ) {
+        if (if_block0)
+          ;
+        else {
+          if_block0 = create_if_block_1$a();
+          if_block0.c();
+          if_block0.m(t1.parentNode, t1);
+        }
+      } else if (if_block0) {
+        if_block0.d(1);
+        if_block0 = null;
+      }
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16777216)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[24],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[24]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[24],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (
+        /*touch*/
+        ctx2[9]
+      ) {
+        if (if_block1)
+          ;
+        else {
+          if_block1 = create_if_block$m();
+          if_block1.c();
+          if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
+        }
+      } else if (if_block1) {
+        if_block1.d(1);
+        if_block1 = null;
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+        detach(t0);
+        detach(t1);
+        detach(if_block1_anchor);
+      }
+      if (if_block0)
+        if_block0.d(detaching);
+      if (default_slot)
+        default_slot.d(detaching);
+      if (if_block1)
+        if_block1.d(detaching);
+    }
+  };
+}
+function create_fragment$z(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { tag: (
+      /*tag*/
+      ctx[12]
+    ) },
+    {
+      use: [
+        [
+          Ripple,
+          {
+            ripple: (
+              /*ripple*/
+              ctx[3]
+            ),
+            unbounded: false,
+            color: (
+              /*color*/
+              ctx[5]
+            ),
+            disabled: !!/*$$restProps*/
+            ctx[20].disabled,
+            addClass: (
+              /*addClass*/
+              ctx[17]
+            ),
+            removeClass: (
+              /*removeClass*/
+              ctx[18]
+            ),
+            addStyle: (
+              /*addStyle*/
+              ctx[19]
+            )
+          }
+        ],
+        /*forwardEvents*/
+        ctx[16],
+        .../*use*/
+        ctx[0]
+      ]
+    },
+    {
+      class: classMap({
+        [
+          /*className*/
+          ctx[1]
+        ]: true,
+        "mdc-fab": true,
+        "mdc-fab--mini": (
+          /*mini*/
+          ctx[6]
+        ),
+        "mdc-fab--exited": (
+          /*exited*/
+          ctx[7]
+        ),
+        "mdc-fab--extended": (
+          /*extended*/
+          ctx[8]
+        ),
+        "smui-fab--color-primary": (
+          /*color*/
+          ctx[5] === "primary"
+        ),
+        "mdc-fab--touch": (
+          /*touch*/
+          ctx[9]
+        ),
+        .../*internalClasses*/
+        ctx[14]
+      })
+    },
+    {
+      style: Object.entries(
+        /*internalStyles*/
+        ctx[15]
+      ).map(func$6).concat([
+        /*style*/
+        ctx[2]
+      ]).join(" ")
+    },
+    { href: (
+      /*href*/
+      ctx[10]
+    ) },
+    /*$$restProps*/
+    ctx[20]
+  ];
+  var switch_value = (
+    /*component*/
+    ctx[11]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot$h] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
+      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
+    }
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[23](switch_instance);
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      const switch_instance_changes = dirty & /*tag, Ripple, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use, classMap, className, mini, exited, extended, touch, internalClasses, Object, internalStyles, style, href*/
+      2086895 ? get_spread_update(switch_instance_spread_levels, [
+        dirty & /*tag*/
+        4096 && { tag: (
+          /*tag*/
+          ctx2[12]
+        ) },
+        dirty & /*Ripple, ripple, color, $$restProps, addClass, removeClass, addStyle, forwardEvents, use*/
+        2031657 && {
+          use: [
+            [
+              Ripple,
+              {
+                ripple: (
+                  /*ripple*/
+                  ctx2[3]
+                ),
+                unbounded: false,
+                color: (
+                  /*color*/
+                  ctx2[5]
+                ),
+                disabled: !!/*$$restProps*/
+                ctx2[20].disabled,
+                addClass: (
+                  /*addClass*/
+                  ctx2[17]
+                ),
+                removeClass: (
+                  /*removeClass*/
+                  ctx2[18]
+                ),
+                addStyle: (
+                  /*addStyle*/
+                  ctx2[19]
+                )
+              }
+            ],
+            /*forwardEvents*/
+            ctx2[16],
+            .../*use*/
+            ctx2[0]
+          ]
+        },
+        dirty & /*classMap, className, mini, exited, extended, color, touch, internalClasses*/
+        17378 && {
+          class: classMap({
+            [
+              /*className*/
+              ctx2[1]
+            ]: true,
+            "mdc-fab": true,
+            "mdc-fab--mini": (
+              /*mini*/
+              ctx2[6]
+            ),
+            "mdc-fab--exited": (
+              /*exited*/
+              ctx2[7]
+            ),
+            "mdc-fab--extended": (
+              /*extended*/
+              ctx2[8]
+            ),
+            "smui-fab--color-primary": (
+              /*color*/
+              ctx2[5] === "primary"
+            ),
+            "mdc-fab--touch": (
+              /*touch*/
+              ctx2[9]
+            ),
+            .../*internalClasses*/
+            ctx2[14]
+          })
+        },
+        dirty & /*Object, internalStyles, style*/
+        32772 && {
+          style: Object.entries(
+            /*internalStyles*/
+            ctx2[15]
+          ).map(func$6).concat([
+            /*style*/
+            ctx2[2]
+          ]).join(" ")
+        },
+        dirty & /*href*/
+        1024 && { href: (
+          /*href*/
+          ctx2[10]
+        ) },
+        dirty & /*$$restProps*/
+        1048576 && get_spread_object(
+          /*$$restProps*/
+          ctx2[20]
+        )
+      ]) : {};
+      if (dirty & /*$$scope, touch, focusRing*/
+      16777744) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (dirty & /*component*/
+      2048 && switch_value !== (switch_value = /*component*/
+      ctx2[11])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[23](switch_instance);
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      ctx[23](null);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+const func$6 = ([name, value]) => `${name}: ${value};`;
+function instance$n($$self, $$props, $$invalidate) {
+  const omit_props_names = [
+    "use",
+    "class",
+    "style",
+    "ripple",
+    "focusRing",
+    "color",
+    "mini",
+    "exited",
+    "extended",
+    "touch",
+    "href",
+    "component",
+    "tag",
+    "getElement"
+  ];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { ripple = true } = $$props;
+  let { focusRing = false } = $$props;
+  let { color: color2 = "secondary" } = $$props;
+  let { mini = false } = $$props;
+  let { exited = false } = $$props;
+  let { extended = false } = $$props;
+  let { touch = false } = $$props;
+  let { href = void 0 } = $$props;
+  let element2;
+  let internalClasses = {};
+  let internalStyles = {};
+  let { component = SmuiElement } = $$props;
+  let { tag = component === SmuiElement ? href == null ? "button" : "a" : void 0 } = $$props;
+  setContext("SMUI:label:context", "fab");
+  setContext("SMUI:icon:context", "fab");
+  function addClass(className2) {
+    if (!internalClasses[className2]) {
+      $$invalidate(14, internalClasses[className2] = true, internalClasses);
+    }
+  }
+  function removeClass(className2) {
+    if (!(className2 in internalClasses) || internalClasses[className2]) {
+      $$invalidate(14, internalClasses[className2] = false, internalClasses);
+    }
+  }
+  function addStyle(name, value) {
+    if (internalStyles[name] != value) {
+      if (value === "" || value == null) {
+        delete internalStyles[name];
+        $$invalidate(15, internalStyles);
+      } else {
+        $$invalidate(15, internalStyles[name] = value, internalStyles);
+      }
+    }
+  }
+  function getElement() {
+    return element2.getElement();
+  }
+  function switch_instance_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(13, element2);
+    });
+  }
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(20, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(0, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(1, className = $$new_props.class);
+    if ("style" in $$new_props)
+      $$invalidate(2, style = $$new_props.style);
+    if ("ripple" in $$new_props)
+      $$invalidate(3, ripple = $$new_props.ripple);
+    if ("focusRing" in $$new_props)
+      $$invalidate(4, focusRing = $$new_props.focusRing);
+    if ("color" in $$new_props)
+      $$invalidate(5, color2 = $$new_props.color);
+    if ("mini" in $$new_props)
+      $$invalidate(6, mini = $$new_props.mini);
+    if ("exited" in $$new_props)
+      $$invalidate(7, exited = $$new_props.exited);
+    if ("extended" in $$new_props)
+      $$invalidate(8, extended = $$new_props.extended);
+    if ("touch" in $$new_props)
+      $$invalidate(9, touch = $$new_props.touch);
+    if ("href" in $$new_props)
+      $$invalidate(10, href = $$new_props.href);
+    if ("component" in $$new_props)
+      $$invalidate(11, component = $$new_props.component);
+    if ("tag" in $$new_props)
+      $$invalidate(12, tag = $$new_props.tag);
+    if ("$$scope" in $$new_props)
+      $$invalidate(24, $$scope = $$new_props.$$scope);
+  };
+  return [
+    use,
+    className,
+    style,
+    ripple,
+    focusRing,
+    color2,
+    mini,
+    exited,
+    extended,
+    touch,
+    href,
+    component,
+    tag,
+    element2,
+    internalClasses,
+    internalStyles,
+    forwardEvents,
+    addClass,
+    removeClass,
+    addStyle,
+    $$restProps,
+    getElement,
+    slots,
+    switch_instance_binding,
+    $$scope
+  ];
+}
+class Fab extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$n, create_fragment$z, safe_not_equal, {
+      use: 0,
+      class: 1,
+      style: 2,
+      ripple: 3,
+      focusRing: 4,
+      color: 5,
+      mini: 6,
+      exited: 7,
+      extended: 8,
+      touch: 9,
+      href: 10,
+      component: 11,
+      tag: 12,
+      getElement: 21
+    });
+  }
+  get getElement() {
+    return this.$$.ctx[21];
+  }
+}
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -8988,10 +10427,10 @@ var MDCMenuFoundation = (
     MDCMenuFoundation2.prototype.setEnabled = function(index2, isEnabled) {
       this.validatedIndex(index2);
       if (isEnabled) {
-        this.adapter.removeClassFromElementAtIndex(index2, cssClasses$b.LIST_ITEM_DISABLED_CLASS);
+        this.adapter.removeClassFromElementAtIndex(index2, cssClasses$c.LIST_ITEM_DISABLED_CLASS);
         this.adapter.addAttributeToElementAtIndex(index2, strings$6.ARIA_DISABLED_ATTR, "false");
       } else {
-        this.adapter.addClassToElementAtIndex(index2, cssClasses$b.LIST_ITEM_DISABLED_CLASS);
+        this.adapter.addClassToElementAtIndex(index2, cssClasses$c.LIST_ITEM_DISABLED_CLASS);
         this.adapter.addAttributeToElementAtIndex(index2, strings$6.ARIA_DISABLED_ATTR, "true");
       }
     };
@@ -12431,7 +13870,7 @@ function create_default_slot_5$6(ctx) {
     }
   };
 }
-function create_default_slot_4$7(ctx) {
+function create_default_slot_4$6(ctx) {
   let span;
   let textContent = "Delete";
   return {
@@ -12465,7 +13904,7 @@ function create_default_slot_3$7(ctx) {
   let current;
   text_1 = new Text({
     props: {
-      $$slots: { default: [create_default_slot_4$7] },
+      $$slots: { default: [create_default_slot_4$6] },
       $$scope: { ctx }
     }
   });
@@ -14080,7 +15519,7 @@ function create_if_block_6(ctx) {
     }
   };
 }
-function create_if_block_5$1(ctx) {
+function create_if_block_5$2(ctx) {
   let span;
   return {
     c() {
@@ -14105,7 +15544,7 @@ function create_if_block_5$1(ctx) {
     }
   };
 }
-function create_if_block_4$2(ctx) {
+function create_if_block_4$3(ctx) {
   let floatinglabel;
   let current;
   const floatinglabel_spread_levels = [
@@ -14290,7 +15729,7 @@ function create_default_slot_5$5(ctx) {
     }
   };
 }
-function create_if_block_2$8(ctx) {
+function create_if_block_2$7(ctx) {
   let notchedoutline;
   let current;
   const notchedoutline_spread_levels = [
@@ -14398,7 +15837,7 @@ function create_if_block_3$4(ctx) {
     )
   ];
   let floatinglabel_props = {
-    $$slots: { default: [create_default_slot_4$6] },
+    $$slots: { default: [create_default_slot_4$5] },
     $$scope: { ctx }
   };
   for (let i2 = 0; i2 < floatinglabel_spread_levels.length; i2 += 1) {
@@ -14468,7 +15907,7 @@ function create_if_block_3$4(ctx) {
     }
   };
 }
-function create_default_slot_4$6(ctx) {
+function create_default_slot_4$5(ctx) {
   let t_value = (
     /*label*/
     (ctx[9] == null ? "" : (
@@ -14627,7 +16066,7 @@ function create_default_slot_3$6(ctx) {
     }
   };
 }
-function create_if_block_1$a(ctx) {
+function create_if_block_1$9(ctx) {
   let lineripple;
   let current;
   const lineripple_spread_levels = [prefixFilter(
@@ -15027,18 +16466,18 @@ function create_fragment$r(ctx) {
   );
   let if_block1 = (
     /*variant*/
-    ctx[7] === "filled" && create_if_block_5$1()
+    ctx[7] === "filled" && create_if_block_5$2()
   );
   let if_block2 = (
     /*variant*/
     ctx[7] !== "outlined" && !/*noLabel*/
     ctx[8] && /*label*/
     (ctx[9] != null || /*$$slots*/
-    ctx[52].label) && create_if_block_4$2(ctx)
+    ctx[52].label) && create_if_block_4$3(ctx)
   );
   let if_block3 = (
     /*variant*/
-    ctx[7] === "outlined" && create_if_block_2$8(ctx)
+    ctx[7] === "outlined" && create_if_block_2$7(ctx)
   );
   const leadingIcon_slot_template = (
     /*#slots*/
@@ -15124,7 +16563,7 @@ function create_fragment$r(ctx) {
   let if_block4 = (
     /*variant*/
     ctx[7] !== "outlined" && /*ripple*/
-    ctx[5] && create_if_block_1$a(ctx)
+    ctx[5] && create_if_block_1$9(ctx)
   );
   let div0_levels = [
     {
@@ -15659,7 +17098,7 @@ function create_fragment$r(ctx) {
         if (if_block1)
           ;
         else {
-          if_block1 = create_if_block_5$1();
+          if_block1 = create_if_block_5$2();
           if_block1.c();
           if_block1.m(div0, t1);
         }
@@ -15682,7 +17121,7 @@ function create_fragment$r(ctx) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block_4$2(ctx);
+          if_block2 = create_if_block_4$3(ctx);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(div0, t2);
@@ -15705,7 +17144,7 @@ function create_fragment$r(ctx) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block_2$8(ctx);
+          if_block3 = create_if_block_2$7(ctx);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(div0, t3);
@@ -15839,7 +17278,7 @@ function create_fragment$r(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block_1$a(ctx);
+          if_block4 = create_if_block_1$9(ctx);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div0, null);
@@ -17183,7 +18622,7 @@ function create_default_slot_8$4(ctx) {
     }
   };
 }
-function create_if_block_2$7(ctx) {
+function create_if_block_2$6(ctx) {
   let select;
   let updating_value;
   let current;
@@ -17441,7 +18880,7 @@ function create_default_slot_5$4(ctx) {
     }
   };
 }
-function create_if_block_1$9(ctx) {
+function create_if_block_1$8(ctx) {
   let iconbutton;
   let current;
   function click_handler() {
@@ -17457,7 +18896,7 @@ function create_if_block_1$9(ctx) {
     props: {
       size: "button",
       class: "material-icons",
-      $$slots: { default: [create_default_slot_4$5] },
+      $$slots: { default: [create_default_slot_4$4] },
       $$scope: { ctx }
     }
   });
@@ -17497,7 +18936,7 @@ function create_if_block_1$9(ctx) {
     }
   };
 }
-function create_default_slot_4$5(ctx) {
+function create_default_slot_4$4(ctx) {
   let t2;
   return {
     c() {
@@ -17663,7 +19102,7 @@ function create_default_slot_1$a(ctx) {
   });
   let if_block0 = (
     /*i*/
-    ctx[23] > 0 && create_if_block_1$9(ctx)
+    ctx[23] > 0 && create_if_block_1$8(ctx)
   );
   const if_block_creators = [create_if_block$h, create_else_block$9];
   const if_blocks = [];
@@ -17976,7 +19415,7 @@ function create_fragment$p(ctx) {
   binding_callbacks.push(() => bind(select, "value", select_value_binding));
   let if_block = (
     /*device*/
-    ctx[1] && create_if_block_2$7(ctx)
+    ctx[1] && create_if_block_2$6(ctx)
   );
   list = new List({
     props: {
@@ -18051,7 +19490,7 @@ function create_fragment$p(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block_2$7(ctx2);
+          if_block = create_if_block_2$6(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div1, null);
@@ -19207,7 +20646,7 @@ function get_each_context$5(ctx, list, i2) {
   child_ctx[92] = list[i2];
   return child_ctx;
 }
-function create_else_block_1$4(ctx) {
+function create_else_block_1$3(ctx) {
   let input_1;
   let input_1_class_value;
   let mounted;
@@ -19373,7 +20812,7 @@ function create_else_block_1$4(ctx) {
     }
   };
 }
-function create_if_block_5(ctx) {
+function create_if_block_5$1(ctx) {
   let input0;
   let input0_class_value;
   let t2;
@@ -19677,7 +21116,7 @@ function create_if_block_5(ctx) {
     }
   };
 }
-function create_if_block_4$1(ctx) {
+function create_if_block_4$2(ctx) {
   let div;
   let each_value = ensure_array_like(
     /*currentTickMarks*/
@@ -19965,11 +21404,11 @@ function create_if_block$g(ctx) {
   let dispose;
   let if_block0 = (
     /*discrete*/
-    ctx[7] && create_if_block_2$6(ctx)
+    ctx[7] && create_if_block_2$5(ctx)
   );
   let if_block1 = (
     /*discrete*/
-    ctx[7] && create_if_block_1$8(ctx)
+    ctx[7] && create_if_block_1$7(ctx)
   );
   return {
     c() {
@@ -20120,7 +21559,7 @@ function create_if_block$g(ctx) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_2$6(ctx2);
+          if_block0 = create_if_block_2$5(ctx2);
           if_block0.c();
           if_block0.m(div1, t0);
         }
@@ -20183,7 +21622,7 @@ function create_if_block$g(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block_1$8(ctx2);
+          if_block1 = create_if_block_1$7(ctx2);
           if_block1.c();
           if_block1.m(div3, t2);
         }
@@ -20320,7 +21759,7 @@ function create_if_block_3$3(ctx) {
     }
   };
 }
-function create_if_block_2$6(ctx) {
+function create_if_block_2$5(ctx) {
   let div1;
   let div0;
   let span;
@@ -20381,7 +21820,7 @@ function create_if_block_2$6(ctx) {
     }
   };
 }
-function create_if_block_1$8(ctx) {
+function create_if_block_1$7(ctx) {
   let div1;
   let div0;
   let span;
@@ -20462,8 +21901,8 @@ function create_fragment$o(ctx) {
       /*range*/
       ctx2[6]
     )
-      return create_if_block_5;
-    return create_else_block_1$4;
+      return create_if_block_5$1;
+    return create_else_block_1$3;
   }
   let current_block_type = select_block_type(ctx);
   let if_block0 = current_block_type(ctx);
@@ -20471,7 +21910,7 @@ function create_fragment$o(ctx) {
     /*discrete*/
     ctx[7] && /*tickMarks*/
     ctx[8] && /*step*/
-    ctx[9] > 0 && create_if_block_4$1(ctx)
+    ctx[9] > 0 && create_if_block_4$2(ctx)
   );
   function select_block_type_1(ctx2, dirty) {
     if (
@@ -20637,7 +22076,7 @@ function create_fragment$o(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block_4$1(ctx2);
+          if_block1 = create_if_block_4$2(ctx2);
           if_block1.c();
           if_block1.m(div3, null);
         }
@@ -21665,7 +23104,7 @@ function create_if_block$e(ctx) {
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block_1$7, create_if_block_3$2, create_else_block_1$3];
+  const if_block_creators = [create_if_block_1$6, create_if_block_3$2, create_else_block_1$2];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (dirty & /*capability*/
@@ -21739,7 +23178,7 @@ function create_if_block$e(ctx) {
     }
   };
 }
-function create_else_block_1$3(ctx) {
+function create_else_block_1$2(ctx) {
   var _a3;
   let span;
   let t0;
@@ -21837,12 +23276,12 @@ function create_if_block_3$2(ctx) {
     }
   };
 }
-function create_if_block_1$7(ctx) {
+function create_if_block_1$6(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block_2$5, create_else_block$6];
+  const if_block_creators = [create_if_block_2$4, create_else_block$6];
   const if_blocks = [];
   function select_block_type_1(ctx2, dirty) {
     if (
@@ -21940,7 +23379,7 @@ function create_else_block$6(ctx) {
     }
   };
 }
-function create_if_block_2$5(ctx) {
+function create_if_block_2$4(ctx) {
   let icon;
   let current;
   icon = new CommonIcon({
@@ -22465,7 +23904,7 @@ var MDCSwitchRenderFoundation = (
     return MDCSwitchRenderFoundation2;
   }(MDCSwitchFoundation)
 );
-function create_if_block_1$6(ctx) {
+function create_if_block_1$5(ctx) {
   let div;
   let svg0;
   let path0;
@@ -22631,7 +24070,7 @@ function create_fragment$l(ctx) {
   let dispose;
   let if_block0 = (
     /*icons*/
-    ctx[6] && create_if_block_1$6(ctx)
+    ctx[6] && create_if_block_1$5(ctx)
   );
   let if_block1 = (
     /*focusRing*/
@@ -22820,7 +24259,7 @@ function create_fragment$l(ctx) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_1$6(ctx2);
+          if_block0 = create_if_block_1$5(ctx2);
           if_block0.c();
           if_block0.m(div4, null);
         }
@@ -23662,7 +25101,7 @@ function get_each_context$4(ctx, list, i2) {
   child_ctx[10] = list[i2];
   return child_ctx;
 }
-function create_else_block_1$2(ctx) {
+function create_else_block_1$1(ctx) {
   var _a3;
   let promise;
   let t0;
@@ -23744,7 +25183,7 @@ function create_if_block_3$1(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settings*/
-    ((_a3 = ctx[0]) == null ? void 0 : _a3.deviceId) !== void 0 && create_if_block_4()
+    ((_a3 = ctx[0]) == null ? void 0 : _a3.deviceId) !== void 0 && create_if_block_4$1()
   );
   return {
     c() {
@@ -23771,7 +25210,7 @@ function create_if_block_3$1(ctx) {
         if (if_block)
           ;
         else {
-          if_block = create_if_block_4();
+          if_block = create_if_block_4$1();
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -23865,7 +25304,7 @@ function create_pending_block$3(ctx) {
     }
   };
 }
-function create_if_block_4(ctx) {
+function create_if_block_4$1(ctx) {
   let span;
   let textContent = "Error";
   return {
@@ -23985,7 +25424,7 @@ function create_if_block$a(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settings*/
-    ctx[0].deviceId !== void 0 && create_if_block_1$5()
+    ctx[0].deviceId !== void 0 && create_if_block_1$4()
   );
   return {
     c() {
@@ -24011,7 +25450,7 @@ function create_if_block$a(ctx) {
         if (if_block)
           ;
         else {
-          if_block = create_if_block_1$5();
+          if_block = create_if_block_1$4();
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -24031,7 +25470,7 @@ function create_if_block$a(ctx) {
     }
   };
 }
-function create_if_block_2$4(ctx) {
+function create_if_block_2$3(ctx) {
   let div;
   let span;
   let t0_value = (
@@ -24185,7 +25624,7 @@ function create_each_block$4(ctx) {
   let current;
   let if_block = (
     /*capability*/
-    ctx[10] !== void 0 && create_if_block_2$4(ctx)
+    ctx[10] !== void 0 && create_if_block_2$3(ctx)
   );
   return {
     c() {
@@ -24216,7 +25655,7 @@ function create_each_block$4(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block_2$4(ctx2);
+          if_block = create_if_block_2$3(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -24248,7 +25687,7 @@ function create_each_block$4(ctx) {
     }
   };
 }
-function create_if_block_1$5(ctx) {
+function create_if_block_1$4(ctx) {
   let span;
   let textContent = "Device not found.";
   return {
@@ -24289,7 +25728,7 @@ function create_fragment$i(ctx) {
       ctx2[1] == void 0
     )
       return create_if_block_3$1;
-    return create_else_block_1$2;
+    return create_else_block_1$1;
   }
   let current_block_type = select_block_type(ctx);
   let if_block0 = current_block_type(ctx);
@@ -25261,12 +26700,12 @@ function create_if_block$8(ctx) {
       /*device*/
       ctx2[0] === void 0
     )
-      return create_if_block_1$4;
+      return create_if_block_1$3;
     if (
       /*image*/
       ctx2[4] === void 0
     )
-      return create_if_block_2$3;
+      return create_if_block_2$2;
   }
   let current_block_type = select_block_type_1(ctx);
   let if_block = current_block_type && current_block_type(ctx);
@@ -25385,7 +26824,7 @@ function create_pending_block$2(ctx) {
     }
   };
 }
-function create_if_block_2$3(ctx) {
+function create_if_block_2$2(ctx) {
   let span;
   let textContent = "Error: image not found";
   return {
@@ -25408,7 +26847,7 @@ function create_if_block_2$3(ctx) {
     }
   };
 }
-function create_if_block_1$4(ctx) {
+function create_if_block_1$3(ctx) {
   let span;
   let textContent = "Error: device not found";
   return {
@@ -27029,7 +28468,7 @@ function get_each_context_1$1(ctx, list, i2) {
   child_ctx[24] = list[i2];
   return child_ctx;
 }
-function create_default_slot_23(ctx) {
+function create_default_slot_25(ctx) {
   let t_value = (
     /*imageDevice*/
     ctx[24].name + ""
@@ -27067,7 +28506,7 @@ function create_each_block_1$1(ctx) {
         /*imageDevice*/
         ctx[24].id
       ),
-      $$slots: { default: [create_default_slot_23] },
+      $$slots: { default: [create_default_slot_25] },
       $$scope: { ctx }
     }
   });
@@ -27109,7 +28548,7 @@ function create_each_block_1$1(ctx) {
     }
   };
 }
-function create_default_slot_22(ctx) {
+function create_default_slot_24(ctx) {
   let each_1_anchor;
   let current;
   let each_value_1 = ensure_array_like(
@@ -27204,7 +28643,7 @@ function create_if_block$7(ctx) {
   }
   let select_props = {
     label: "Image",
-    $$slots: { default: [create_default_slot_20] },
+    $$slots: { default: [create_default_slot_22] },
     $$scope: { ctx }
   };
   if (
@@ -27257,7 +28696,7 @@ function create_if_block$7(ctx) {
     }
   };
 }
-function create_default_slot_21(ctx) {
+function create_default_slot_23(ctx) {
   let t_value = (
     /*img*/
     ctx[21].title + ""
@@ -27295,7 +28734,7 @@ function create_each_block$2(ctx) {
         /*img*/
         ctx[21].id
       ),
-      $$slots: { default: [create_default_slot_21] },
+      $$slots: { default: [create_default_slot_23] },
       $$scope: { ctx }
     }
   });
@@ -27337,7 +28776,7 @@ function create_each_block$2(ctx) {
     }
   };
 }
-function create_default_slot_20(ctx) {
+function create_default_slot_22(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
@@ -27423,7 +28862,7 @@ function create_default_slot_20(ctx) {
     }
   };
 }
-function create_default_slot_19$1(ctx) {
+function create_default_slot_21(ctx) {
   let t2;
   return {
     c() {
@@ -27442,7 +28881,77 @@ function create_default_slot_19$1(ctx) {
     }
   };
 }
-function create_default_slot_18$1(ctx) {
+function create_default_slot_20(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("warning");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "warning");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_19$2(ctx) {
+  let t2;
+  let icon;
+  let current;
+  icon = new CommonIcon({
+    props: {
+      class: "material-icons",
+      $$slots: { default: [create_default_slot_20] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      t2 = text("1 second");
+      create_component(icon.$$.fragment);
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "1 second");
+      claim_component(icon.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+      mount_component(icon, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const icon_changes = {};
+      if (dirty & /*$$scope*/
+      134217728) {
+        icon_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      icon.$set(icon_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(icon.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(icon.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+      destroy_component(icon, detaching);
+    }
+  };
+}
+function create_default_slot_18$2(ctx) {
   let t2;
   return {
     c() {
@@ -27461,7 +28970,7 @@ function create_default_slot_18$1(ctx) {
     }
   };
 }
-function create_default_slot_17$1(ctx) {
+function create_default_slot_17$2(ctx) {
   let t2;
   return {
     c() {
@@ -27480,7 +28989,7 @@ function create_default_slot_17$1(ctx) {
     }
   };
 }
-function create_default_slot_16$1(ctx) {
+function create_default_slot_16$2(ctx) {
   let t2;
   return {
     c() {
@@ -27499,7 +29008,7 @@ function create_default_slot_16$1(ctx) {
     }
   };
 }
-function create_default_slot_15$1(ctx) {
+function create_default_slot_15$2(ctx) {
   let t2;
   return {
     c() {
@@ -27518,7 +29027,7 @@ function create_default_slot_15$1(ctx) {
     }
   };
 }
-function create_default_slot_14$1(ctx) {
+function create_default_slot_14$2(ctx) {
   let t2;
   return {
     c() {
@@ -27537,7 +29046,7 @@ function create_default_slot_14$1(ctx) {
     }
   };
 }
-function create_default_slot_13$1(ctx) {
+function create_default_slot_13$2(ctx) {
   let t2;
   return {
     c() {
@@ -27556,7 +29065,7 @@ function create_default_slot_13$1(ctx) {
     }
   };
 }
-function create_default_slot_12$1(ctx) {
+function create_default_slot_12$2(ctx) {
   let t2;
   return {
     c() {
@@ -27675,85 +29184,94 @@ function create_default_slot_7$3(ctx) {
   let option10;
   let t10;
   let option11;
+  let t11;
+  let option12;
   let current;
   option0 = new Option({
     props: {
       value: "0",
-      $$slots: { default: [create_default_slot_19$1] },
+      $$slots: { default: [create_default_slot_21] },
       $$scope: { ctx }
     }
   });
   option1 = new Option({
     props: {
-      value: "5",
-      $$slots: { default: [create_default_slot_18$1] },
+      value: "1",
+      $$slots: { default: [create_default_slot_19$2] },
       $$scope: { ctx }
     }
   });
   option2 = new Option({
     props: {
-      value: "15",
-      $$slots: { default: [create_default_slot_17$1] },
+      value: "5",
+      $$slots: { default: [create_default_slot_18$2] },
       $$scope: { ctx }
     }
   });
   option3 = new Option({
     props: {
-      value: "30",
-      $$slots: { default: [create_default_slot_16$1] },
+      value: "15",
+      $$slots: { default: [create_default_slot_17$2] },
       $$scope: { ctx }
     }
   });
   option4 = new Option({
     props: {
-      value: "60",
-      $$slots: { default: [create_default_slot_15$1] },
+      value: "30",
+      $$slots: { default: [create_default_slot_16$2] },
       $$scope: { ctx }
     }
   });
   option5 = new Option({
     props: {
-      value: "300",
-      $$slots: { default: [create_default_slot_14$1] },
+      value: "60",
+      $$slots: { default: [create_default_slot_15$2] },
       $$scope: { ctx }
     }
   });
   option6 = new Option({
     props: {
-      value: "600",
-      $$slots: { default: [create_default_slot_13$1] },
+      value: "300",
+      $$slots: { default: [create_default_slot_14$2] },
       $$scope: { ctx }
     }
   });
   option7 = new Option({
     props: {
-      value: "1800",
-      $$slots: { default: [create_default_slot_12$1] },
+      value: "600",
+      $$slots: { default: [create_default_slot_13$2] },
       $$scope: { ctx }
     }
   });
   option8 = new Option({
+    props: {
+      value: "1800",
+      $$slots: { default: [create_default_slot_12$2] },
+      $$scope: { ctx }
+    }
+  });
+  option9 = new Option({
     props: {
       value: "3600",
       $$slots: { default: [create_default_slot_11$3] },
       $$scope: { ctx }
     }
   });
-  option9 = new Option({
+  option10 = new Option({
     props: {
       value: "21600",
       $$slots: { default: [create_default_slot_10$3] },
       $$scope: { ctx }
     }
   });
-  option10 = new Option({
+  option11 = new Option({
     props: {
       value: "43200",
       $$slots: { default: [create_default_slot_9$3] },
       $$scope: { ctx }
     }
   });
-  option11 = new Option({
+  option12 = new Option({
     props: {
       value: "86400",
       $$slots: { default: [create_default_slot_8$3] },
@@ -27785,6 +29303,8 @@ function create_default_slot_7$3(ctx) {
       create_component(option10.$$.fragment);
       t10 = space();
       create_component(option11.$$.fragment);
+      t11 = space();
+      create_component(option12.$$.fragment);
     },
     l(nodes) {
       claim_component(option0.$$.fragment, nodes);
@@ -27810,6 +29330,8 @@ function create_default_slot_7$3(ctx) {
       claim_component(option10.$$.fragment, nodes);
       t10 = claim_space(nodes);
       claim_component(option11.$$.fragment, nodes);
+      t11 = claim_space(nodes);
+      claim_component(option12.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(option0, target, anchor);
@@ -27835,6 +29357,8 @@ function create_default_slot_7$3(ctx) {
       mount_component(option10, target, anchor);
       insert_hydration(target, t10, anchor);
       mount_component(option11, target, anchor);
+      insert_hydration(target, t11, anchor);
+      mount_component(option12, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
@@ -27910,6 +29434,12 @@ function create_default_slot_7$3(ctx) {
         option11_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option11.$set(option11_changes);
+      const option12_changes = {};
+      if (dirty & /*$$scope*/
+      134217728) {
+        option12_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option12.$set(option12_changes);
     },
     i(local) {
       if (current)
@@ -27926,6 +29456,7 @@ function create_default_slot_7$3(ctx) {
       transition_in(option9.$$.fragment, local);
       transition_in(option10.$$.fragment, local);
       transition_in(option11.$$.fragment, local);
+      transition_in(option12.$$.fragment, local);
       current = true;
     },
     o(local) {
@@ -27941,6 +29472,7 @@ function create_default_slot_7$3(ctx) {
       transition_out(option9.$$.fragment, local);
       transition_out(option10.$$.fragment, local);
       transition_out(option11.$$.fragment, local);
+      transition_out(option12.$$.fragment, local);
       current = false;
     },
     d(detaching) {
@@ -27956,6 +29488,7 @@ function create_default_slot_7$3(ctx) {
         detach(t8);
         detach(t9);
         detach(t10);
+        detach(t11);
       }
       destroy_component(option0, detaching);
       destroy_component(option1, detaching);
@@ -27969,6 +29502,7 @@ function create_default_slot_7$3(ctx) {
       destroy_component(option9, detaching);
       destroy_component(option10, detaching);
       destroy_component(option11, detaching);
+      destroy_component(option12, detaching);
     }
   };
 }
@@ -28010,7 +29544,7 @@ function create_default_slot_5$3(ctx) {
     }
   };
 }
-function create_default_slot_4$4(ctx) {
+function create_default_slot_4$3(ctx) {
   let t2;
   return {
     c() {
@@ -28095,7 +29629,7 @@ function create_default_slot_1$5(ctx) {
   option2 = new Option({
     props: {
       value: "red",
-      $$slots: { default: [create_default_slot_4$4] },
+      $$slots: { default: [create_default_slot_4$3] },
       $$scope: { ctx }
     }
   });
@@ -28316,7 +29850,7 @@ function create_fragment$c(ctx) {
   }
   let select0_props = {
     label: "Device",
-    $$slots: { default: [create_default_slot_22] },
+    $$slots: { default: [create_default_slot_24] },
     $$scope: { ctx }
   };
   if (
@@ -28669,107 +30203,7 @@ class ImageEditor extends SvelteComponent {
   }
 }
 const ImageView_svelte_svelte_type_style_lang = "";
-function create_else_block_2$1(ctx) {
-  var _a3, _b3;
-  let div2;
-  let div0;
-  let t0_value = (
-    /*device*/
-    ((_a3 = ctx[0]) == null ? void 0 : _a3.name) + ""
-  );
-  let t0;
-  let t1;
-  let div1;
-  let t2_value = (
-    /*image*/
-    ((_b3 = ctx[2]) == null ? void 0 : _b3.title) + ""
-  );
-  let t2;
-  return {
-    c() {
-      div2 = element("div");
-      div0 = element("div");
-      t0 = text(t0_value);
-      t1 = space();
-      div1 = element("div");
-      t2 = text(t2_value);
-      this.h();
-    },
-    l(nodes) {
-      div2 = claim_element(nodes, "DIV", { class: true });
-      var div2_nodes = children(div2);
-      div0 = claim_element(div2_nodes, "DIV", {});
-      var div0_nodes = children(div0);
-      t0 = claim_text(div0_nodes, t0_value);
-      div0_nodes.forEach(detach);
-      t1 = claim_space(div2_nodes);
-      div1 = claim_element(div2_nodes, "DIV", { class: true });
-      var div1_nodes = children(div1);
-      t2 = claim_text(div1_nodes, t2_value);
-      div1_nodes.forEach(detach);
-      div2_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div1, "class", "subtitle svelte-17514nh");
-      attr(div2, "class", "header svelte-17514nh");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div2, anchor);
-      append_hydration(div2, div0);
-      append_hydration(div0, t0);
-      append_hydration(div2, t1);
-      append_hydration(div2, div1);
-      append_hydration(div1, t2);
-    },
-    p(ctx2, dirty) {
-      var _a4, _b4;
-      if (dirty & /*device*/
-      1 && t0_value !== (t0_value = /*device*/
-      ((_a4 = ctx2[0]) == null ? void 0 : _a4.name) + ""))
-        set_data(t0, t0_value);
-      if (dirty & /*image*/
-      4 && t2_value !== (t2_value = /*image*/
-      ((_b4 = ctx2[2]) == null ? void 0 : _b4.title) + ""))
-        set_data(t2, t2_value);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div2);
-      }
-    }
-  };
-}
-function create_if_block_2$2(ctx) {
-  let span;
-  let textContent = "Error";
-  return {
-    c() {
-      span = element("span");
-      span.textContent = textContent;
-      this.h();
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { class: true, ["data-svelte-h"]: true });
-      if (get_svelte_dataset(span) !== "svelte-p7s96s")
-        span.textContent = textContent;
-      this.h();
-    },
-    h() {
-      attr(span, "class", "header svelte-17514nh");
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-    },
-    p: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-    }
-  };
-}
-function create_else_block_1$1(ctx) {
+function create_if_block$6(ctx) {
   let await_block_anchor;
   let promise;
   let info = {
@@ -28783,7 +30217,7 @@ function create_else_block_1$1(ctx) {
     value: 7
   };
   handle_promise(promise = /*$homey*/
-  ctx[3].baseUrl, info);
+  ctx[2].baseUrl, info);
   return {
     c() {
       await_block_anchor = empty();
@@ -28803,8 +30237,8 @@ function create_else_block_1$1(ctx) {
       ctx = new_ctx;
       info.ctx = ctx;
       if (dirty & /*$homey*/
-      8 && promise !== (promise = /*$homey*/
-      ctx[3].baseUrl) && handle_promise(promise, info))
+      4 && promise !== (promise = /*$homey*/
+      ctx[2].baseUrl) && handle_promise(promise, info))
         ;
       else {
         update_await_block_branch(info, ctx, dirty);
@@ -28817,49 +30251,6 @@ function create_else_block_1$1(ctx) {
       info.block.d(detaching);
       info.token = null;
       info = null;
-    }
-  };
-}
-function create_if_block$6(ctx) {
-  let if_block_anchor;
-  function select_block_type_2(ctx2, dirty) {
-    if (
-      /*device*/
-      ctx2[0] == void 0
-    )
-      return create_if_block_1$3;
-    return create_else_block$1;
-  }
-  let current_block_type = select_block_type_2(ctx);
-  let if_block = current_block_type(ctx);
-  return {
-    c() {
-      if_block.c();
-      if_block_anchor = empty();
-    },
-    l(nodes) {
-      if_block.l(nodes);
-      if_block_anchor = empty();
-    },
-    m(target, anchor) {
-      if_block.m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
-    },
-    p(ctx2, dirty) {
-      if (current_block_type !== (current_block_type = select_block_type_2(ctx2))) {
-        if_block.d(1);
-        if_block = current_block_type(ctx2);
-        if (if_block) {
-          if_block.c();
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
-        }
-      }
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(if_block_anchor);
-      }
-      if_block.d(detaching);
     }
   };
 }
@@ -28891,16 +30282,16 @@ function create_then_block$1(ctx) {
       this.h();
     },
     h() {
-      attr(img, "class", "image svelte-17514nh");
+      attr(img, "class", "image svelte-1hfvdhg");
       if (!src_url_equal(img.src, img_src_value = /*url*/
       ctx[7] + /*image*/
-      ctx[2].imageObj.url + "?v=" + /*refreshSlug*/
-      ctx[1]))
+      ctx[1].imageObj.url + "?v=" + /*refreshSlug*/
+      ctx[0]))
         attr(img, "src", img_src_value);
       attr(img, "alt", img_alt_value = /*image*/
-      ctx[2].title + " refreshed: " + /*refreshSlug*/
-      ctx[1]);
-      attr(div, "class", "image-container svelte-17514nh");
+      ctx[1].title + " refreshed: " + /*refreshSlug*/
+      ctx[0]);
+      attr(div, "class", "image-container svelte-1hfvdhg");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -28908,16 +30299,16 @@ function create_then_block$1(ctx) {
     },
     p(ctx2, dirty) {
       if (dirty & /*$homey, image, refreshSlug*/
-      14 && !src_url_equal(img.src, img_src_value = /*url*/
+      7 && !src_url_equal(img.src, img_src_value = /*url*/
       ctx2[7] + /*image*/
-      ctx2[2].imageObj.url + "?v=" + /*refreshSlug*/
-      ctx2[1])) {
+      ctx2[1].imageObj.url + "?v=" + /*refreshSlug*/
+      ctx2[0])) {
         attr(img, "src", img_src_value);
       }
       if (dirty & /*image, refreshSlug*/
-      6 && img_alt_value !== (img_alt_value = /*image*/
-      ctx2[2].title + " refreshed: " + /*refreshSlug*/
-      ctx2[1])) {
+      3 && img_alt_value !== (img_alt_value = /*image*/
+      ctx2[1].title + " refreshed: " + /*refreshSlug*/
+      ctx2[0])) {
         attr(img, "alt", img_alt_value);
       }
     },
@@ -28948,127 +30339,53 @@ function create_pending_block$1(ctx) {
     }
   };
 }
-function create_else_block$1(ctx) {
-  let span;
-  let textContent = "Image not found.";
-  return {
-    c() {
-      span = element("span");
-      span.textContent = textContent;
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { ["data-svelte-h"]: true });
-      if (get_svelte_dataset(span) !== "svelte-bo6kng")
-        span.textContent = textContent;
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-    }
-  };
-}
-function create_if_block_1$3(ctx) {
-  let span;
-  let textContent = "Device not found.";
-  return {
-    c() {
-      span = element("span");
-      span.textContent = textContent;
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { ["data-svelte-h"]: true });
-      if (get_svelte_dataset(span) !== "svelte-146fvvr")
-        span.textContent = textContent;
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-    }
-  };
-}
 function create_fragment$b(ctx) {
-  let t2;
-  let if_block1_anchor;
-  function select_block_type(ctx2, dirty) {
-    if (
-      /*device*/
-      ctx2[0] == void 0 || /*image*/
-      ctx2[2] == void 0
-    )
-      return create_if_block_2$2;
-    return create_else_block_2$1;
-  }
-  let current_block_type = select_block_type(ctx);
-  let if_block0 = current_block_type(ctx);
-  function select_block_type_1(ctx2, dirty) {
-    if (
-      /*device*/
-      ctx2[0] == void 0 || /*image*/
-      ctx2[2] == void 0
-    )
-      return create_if_block$6;
-    return create_else_block_1$1;
-  }
-  let current_block_type_1 = select_block_type_1(ctx);
-  let if_block1 = current_block_type_1(ctx);
+  let if_block_anchor;
+  let if_block = (
+    /*image*/
+    ctx[1] !== void 0 && create_if_block$6(ctx)
+  );
   return {
     c() {
-      if_block0.c();
-      t2 = space();
-      if_block1.c();
-      if_block1_anchor = empty();
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
     },
     l(nodes) {
-      if_block0.l(nodes);
-      t2 = claim_space(nodes);
-      if_block1.l(nodes);
-      if_block1_anchor = empty();
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
     },
     m(target, anchor) {
-      if_block0.m(target, anchor);
-      insert_hydration(target, t2, anchor);
-      if_block1.m(target, anchor);
-      insert_hydration(target, if_block1_anchor, anchor);
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
     },
     p(ctx2, [dirty]) {
-      if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block0) {
-        if_block0.p(ctx2, dirty);
-      } else {
-        if_block0.d(1);
-        if_block0 = current_block_type(ctx2);
-        if (if_block0) {
-          if_block0.c();
-          if_block0.m(t2.parentNode, t2);
+      if (
+        /*image*/
+        ctx2[1] !== void 0
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+        } else {
+          if_block = create_if_block$6(ctx2);
+          if_block.c();
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
-      }
-      if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx2)) && if_block1) {
-        if_block1.p(ctx2, dirty);
-      } else {
-        if_block1.d(1);
-        if_block1 = current_block_type_1(ctx2);
-        if (if_block1) {
-          if_block1.c();
-          if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
-        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
       }
     },
     i: noop$1,
     o: noop$1,
     d(detaching) {
       if (detaching) {
-        detach(t2);
-        detach(if_block1_anchor);
+        detach(if_block_anchor);
       }
-      if_block0.d(detaching);
-      if_block1.d(detaching);
+      if (if_block)
+        if_block.d(detaching);
     }
   };
 }
@@ -29078,32 +30395,32 @@ function instance$8($$self, $$props, $$invalidate) {
   let $devices;
   let $homey;
   component_subscribe($$self, devices, ($$value) => $$invalidate(6, $devices = $$value));
-  component_subscribe($$self, homey, ($$value) => $$invalidate(3, $homey = $$value));
+  component_subscribe($$self, homey, ($$value) => $$invalidate(2, $homey = $$value));
   let { settings } = $$props;
   let refreshSlug = 0;
   let refreshClear;
   $$self.$$set = ($$props2) => {
     if ("settings" in $$props2)
-      $$invalidate(4, settings = $$props2.settings);
+      $$invalidate(3, settings = $$props2.settings);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*$devices, settings*/
-    80) {
-      $$invalidate(0, device = $devices[settings.deviceId ?? ""]);
+    72) {
+      $$invalidate(5, device = $devices[settings.deviceId ?? ""]);
     }
     if ($$self.$$.dirty & /*device, settings*/
-    17) {
-      $$invalidate(2, image = device == null ? void 0 : device.images.find((image2) => image2.id === settings.imageId));
+    40) {
+      $$invalidate(1, image = device == null ? void 0 : device.images.find((image2) => image2.id === settings.imageId));
     }
     if ($$self.$$.dirty & /*refreshClear, settings*/
-    48) {
+    24) {
       {
         if (refreshClear !== void 0)
           clearInterval(refreshClear);
         if (settings.refresh !== null && settings.refresh > 0) {
-          $$invalidate(5, refreshClear = setInterval(
+          $$invalidate(4, refreshClear = setInterval(
             () => {
-              $$invalidate(1, refreshSlug = Date.now());
+              $$invalidate(0, refreshSlug = Date.now());
             },
             settings.refresh * 1e3
           ));
@@ -29111,12 +30428,12 @@ function instance$8($$self, $$props, $$invalidate) {
       }
     }
   };
-  return [device, refreshSlug, image, $homey, settings, refreshClear, $devices];
+  return [refreshSlug, image, $homey, settings, refreshClear, device, $devices];
 }
 class ImageView extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$8, create_fragment$b, safe_not_equal, { settings: 4 });
+    init(this, options, instance$8, create_fragment$b, safe_not_equal, { settings: 3 });
   }
 }
 /*!
@@ -48291,7 +49608,7 @@ function create_if_block$5(ctx) {
       ctx2[1] == void 0
     )
       return create_if_block_1$2;
-    return create_else_block;
+    return create_else_block$1;
   }
   let current_block_type = select_block_type_2(ctx);
   let if_block = current_block_type(ctx);
@@ -48462,7 +49779,7 @@ function create_pending_block(ctx) {
     }
   };
 }
-function create_else_block(ctx) {
+function create_else_block$1(ctx) {
   let span;
   let textContent = "Insight not found.";
   return {
@@ -48646,7 +49963,8 @@ function instance$5($$self, $$props, $$invalidate) {
     }
   }
   async function getEntries(i2, r) {
-    const entries = await $homey.insights.getLogEntries({ id: i2.id, uri: i2.uri, resolution: r });
+    const id = i2.id.startsWith("homey:") ? i2.id : i2.uri + ":" + i2.id;
+    const entries = await $homey.insights.getLogEntries({ id, uri: i2.uri, resolution: r });
     $$invalidate(3, data = {
       datasets: [
         {
@@ -48722,7 +50040,7 @@ function get_each_context_1(ctx, list, i2) {
   child_ctx[18] = list[i2];
   return child_ctx;
 }
-function create_default_slot_19(ctx) {
+function create_default_slot_19$1(ctx) {
   let t_value = (
     /*flatDevice*/
     ctx[18].name + ""
@@ -48760,7 +50078,7 @@ function create_each_block_1(ctx) {
         /*flatDevice*/
         ctx[18].id
       ),
-      $$slots: { default: [create_default_slot_19] },
+      $$slots: { default: [create_default_slot_19$1] },
       $$scope: { ctx }
     }
   });
@@ -48802,7 +50120,7 @@ function create_each_block_1(ctx) {
     }
   };
 }
-function create_default_slot_18(ctx) {
+function create_default_slot_18$1(ctx) {
   let each_1_anchor;
   let current;
   let each_value_1 = ensure_array_like(
@@ -48897,7 +50215,7 @@ function create_if_block_1$1(ctx) {
   }
   let select_props = {
     label: "Insight",
-    $$slots: { default: [create_default_slot_16] },
+    $$slots: { default: [create_default_slot_16$1] },
     $$scope: { ctx }
   };
   if (
@@ -48950,7 +50268,7 @@ function create_if_block_1$1(ctx) {
     }
   };
 }
-function create_default_slot_17(ctx) {
+function create_default_slot_17$1(ctx) {
   let t_value = (
     /*insight*/
     ctx[15].title + ""
@@ -48988,7 +50306,7 @@ function create_each_block$1(ctx) {
         /*insight*/
         ctx[15].id
       ),
-      $$slots: { default: [create_default_slot_17] },
+      $$slots: { default: [create_default_slot_17$1] },
       $$scope: { ctx }
     }
   });
@@ -49030,7 +50348,7 @@ function create_each_block$1(ctx) {
     }
   };
 }
-function create_default_slot_16(ctx) {
+function create_default_slot_16$1(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
@@ -49178,7 +50496,7 @@ function create_if_block$4(ctx) {
     }
   };
 }
-function create_default_slot_15(ctx) {
+function create_default_slot_15$1(ctx) {
   let t2;
   return {
     c() {
@@ -49197,7 +50515,7 @@ function create_default_slot_15(ctx) {
     }
   };
 }
-function create_default_slot_14(ctx) {
+function create_default_slot_14$1(ctx) {
   let t2;
   return {
     c() {
@@ -49216,7 +50534,7 @@ function create_default_slot_14(ctx) {
     }
   };
 }
-function create_default_slot_13(ctx) {
+function create_default_slot_13$1(ctx) {
   let t2;
   return {
     c() {
@@ -49235,7 +50553,7 @@ function create_default_slot_13(ctx) {
     }
   };
 }
-function create_default_slot_12(ctx) {
+function create_default_slot_12$1(ctx) {
   let t2;
   return {
     c() {
@@ -49387,7 +50705,7 @@ function create_default_slot_5$2(ctx) {
     }
   };
 }
-function create_default_slot_4$3(ctx) {
+function create_default_slot_4$2(ctx) {
   let t2;
   return {
     c() {
@@ -49497,28 +50815,28 @@ function create_default_slot$4(ctx) {
   option0 = new Option({
     props: {
       value: "lastHour",
-      $$slots: { default: [create_default_slot_15] },
+      $$slots: { default: [create_default_slot_15$1] },
       $$scope: { ctx }
     }
   });
   option1 = new Option({
     props: {
       value: "last6Hours",
-      $$slots: { default: [create_default_slot_14] },
+      $$slots: { default: [create_default_slot_14$1] },
       $$scope: { ctx }
     }
   });
   option2 = new Option({
     props: {
       value: "last24Hours",
-      $$slots: { default: [create_default_slot_13] },
+      $$slots: { default: [create_default_slot_13$1] },
       $$scope: { ctx }
     }
   });
   option3 = new Option({
     props: {
       value: "last7Days",
-      $$slots: { default: [create_default_slot_12] },
+      $$slots: { default: [create_default_slot_12$1] },
       $$scope: { ctx }
     }
   });
@@ -49574,7 +50892,7 @@ function create_default_slot$4(ctx) {
   option11 = new Option({
     props: {
       value: "lastWeek",
-      $$slots: { default: [create_default_slot_4$3] },
+      $$slots: { default: [create_default_slot_4$2] },
       $$scope: { ctx }
     }
   });
@@ -49873,7 +51191,7 @@ function create_fragment$7(ctx) {
   }
   let select_props = {
     label: "Device",
-    $$slots: { default: [create_default_slot_18] },
+    $$slots: { default: [create_default_slot_18$1] },
     $$scope: { ctx }
   };
   if (
@@ -50290,7 +51608,7 @@ function hasRequiredScopes(type, scopes2) {
   }
   return requirements.every((requirement) => requirement.oneOf.some((r) => scopes2.includes(r)));
 }
-function create_default_slot_4$2(ctx) {
+function create_default_slot_3$2(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -50378,7 +51696,7 @@ function create_default_slot_4$2(ctx) {
     }
   };
 }
-function create_default_slot_3$2(ctx) {
+function create_default_slot_2$3(ctx) {
   let widgetcontainer;
   let current;
   function fixed_handler(...args) {
@@ -50424,7 +51742,7 @@ function create_default_slot_3$2(ctx) {
         /*item*/
         ctx[16].fixed ?? false
       ),
-      $$slots: { default: [create_default_slot_4$2] },
+      $$slots: { default: [create_default_slot_3$2] },
       $$scope: { ctx }
     }
   });
@@ -50471,7 +51789,7 @@ function create_default_slot_3$2(ctx) {
     }
   };
 }
-function create_default_slot_2$3(ctx) {
+function create_default_slot_1$3(ctx) {
   let t2;
   return {
     c() {
@@ -50576,16 +51894,17 @@ function create_if_block$3(ctx) {
     }
   };
 }
-function create_default_slot_1$3(ctx) {
+function create_default_slot$3(ctx) {
+  let div;
   let iconbutton;
   let t2;
-  let if_block_anchor;
   let current;
   iconbutton = new IconButton({
     props: {
+      style: "position: absolute; top: 0px; right: 0px;",
       action: "close",
       class: "material-icons",
-      $$slots: { default: [create_default_slot_2$3] },
+      $$slots: { default: [create_default_slot_1$3] },
       $$scope: { ctx }
     }
   });
@@ -50596,25 +51915,32 @@ function create_default_slot_1$3(ctx) {
   );
   return {
     c() {
+      div = element("div");
       create_component(iconbutton.$$.fragment);
       t2 = space();
       if (if_block)
         if_block.c();
-      if_block_anchor = empty();
+      this.h();
     },
     l(nodes) {
-      claim_component(iconbutton.$$.fragment, nodes);
-      t2 = claim_space(nodes);
+      div = claim_element(nodes, "DIV", { style: true });
+      var div_nodes = children(div);
+      claim_component(iconbutton.$$.fragment, div_nodes);
+      t2 = claim_space(div_nodes);
       if (if_block)
-        if_block.l(nodes);
-      if_block_anchor = empty();
+        if_block.l(div_nodes);
+      div_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      set_style(div, "position", "relative");
     },
     m(target, anchor) {
-      mount_component(iconbutton, target, anchor);
-      insert_hydration(target, t2, anchor);
+      insert_hydration(target, div, anchor);
+      mount_component(iconbutton, div, null);
+      append_hydration(div, t2);
       if (if_block)
-        if_block.m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
+        if_block.m(div, null);
       current = true;
     },
     p(ctx2, dirty) {
@@ -50639,7 +51965,7 @@ function create_default_slot_1$3(ctx) {
           if_block = create_if_block$3(ctx2);
           if_block.c();
           transition_in(if_block, 1);
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+          if_block.m(div, null);
         }
       } else if (if_block) {
         group_outros();
@@ -50663,55 +51989,11 @@ function create_default_slot_1$3(ctx) {
     },
     d(detaching) {
       if (detaching) {
-        detach(t2);
-        detach(if_block_anchor);
+        detach(div);
       }
-      destroy_component(iconbutton, detaching);
+      destroy_component(iconbutton);
       if (if_block)
-        if_block.d(detaching);
-    }
-  };
-}
-function create_default_slot$3(ctx) {
-  let content;
-  let current;
-  content = new Content({
-    props: {
-      $$slots: { default: [create_default_slot_1$3] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      create_component(content.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(content.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(content, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const content_changes = {};
-      if (dirty & /*$$scope, viewComponent, viewItem*/
-      262150) {
-        content_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      content.$set(content_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(content.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(content.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(content, detaching);
+        if_block.d();
     }
   };
 }
@@ -50735,7 +52017,7 @@ function create_fragment$4(ctx) {
     rowHeight: 50,
     $$slots: {
       default: [
-        create_default_slot_3$2,
+        create_default_slot_2$3,
         ({ item, dataItem }) => ({ 16: item, 17: dataItem }),
         ({ item, dataItem }) => (item ? 65536 : 0) | (dataItem ? 131072 : 0)
       ]
@@ -50749,7 +52031,7 @@ function create_fragment$4(ctx) {
     grid_1_props.items = /*$items*/
     ctx[4];
   }
-  grid_1 = new Src({ props: grid_1_props });
+  grid_1 = new Grid({ props: grid_1_props });
   binding_callbacks.push(() => bind(grid_1, "items", grid_1_items_binding));
   grid_1.$on(
     "mount",
@@ -52824,19 +54106,19 @@ function create_if_block_1(ctx) {
   let appcontent;
   let current;
   function drawer_open_binding(value) {
-    ctx[13](value);
+    ctx[15](value);
   }
   let drawer_props = {
     variant: "modal",
-    $$slots: { default: [create_default_slot_7] },
+    $$slots: { default: [create_default_slot_15] },
     $$scope: { ctx }
   };
   if (
     /*editOpen*/
-    ctx[2] !== void 0
+    ctx[4] !== void 0
   ) {
     drawer_props.open = /*editOpen*/
-    ctx[2];
+    ctx[4];
   }
   drawer = new Drawer({ props: drawer_props });
   binding_callbacks.push(() => bind(drawer, "open", drawer_open_binding));
@@ -52873,22 +54155,22 @@ function create_if_block_1(ctx) {
     p(ctx2, dirty) {
       const drawer_changes = {};
       if (dirty[0] & /*editItem*/
-      8 | dirty[1] & /*$$scope*/
-      1) {
+      32 | dirty[1] & /*$$scope*/
+      16) {
         drawer_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_open && dirty[0] & /*editOpen*/
-      4) {
+      16) {
         updating_open = true;
         drawer_changes.open = /*editOpen*/
-        ctx2[2];
+        ctx2[4];
         add_flush_callback(() => updating_open = false);
       }
       drawer.$set(drawer_changes);
       const appcontent_changes = {};
-      if (dirty[0] & /*addOpen, error, $editing*/
-      50 | dirty[1] & /*$$scope*/
-      1) {
+      if (dirty[0] & /*addOpen, error, topAppBar, topAppBarCollapsed, $editing*/
+      203 | dirty[1] & /*$$scope*/
+      16) {
         appcontent_changes.$$scope = { dirty, ctx: ctx2 };
       }
       appcontent.$set(appcontent_changes);
@@ -52942,7 +54224,7 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "loading svelte-xblbkz");
+      attr(div, "class", "loading svelte-1fwqr5l");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -52968,7 +54250,7 @@ function create_if_block(ctx) {
     }
   };
 }
-function create_default_slot_11(ctx) {
+function create_default_slot_19(ctx) {
   let t2;
   return {
     c() {
@@ -52987,12 +54269,12 @@ function create_default_slot_11(ctx) {
     }
   };
 }
-function create_default_slot_10(ctx) {
+function create_default_slot_18(ctx) {
   var _a3, _b3;
   let t0;
   let t1_value = findLabel(
     /*editItem*/
-    (_b3 = (_a3 = ctx[3]) == null ? void 0 : _a3.settings) == null ? void 0 : _b3.type
+    (_b3 = (_a3 = ctx[5]) == null ? void 0 : _a3.settings) == null ? void 0 : _b3.type
   ) + "";
   let t1;
   let t2;
@@ -53015,9 +54297,9 @@ function create_default_slot_10(ctx) {
     p(ctx2, dirty) {
       var _a4, _b4;
       if (dirty[0] & /*editItem*/
-      8 && t1_value !== (t1_value = findLabel(
+      32 && t1_value !== (t1_value = findLabel(
         /*editItem*/
-        (_b4 = (_a4 = ctx2[3]) == null ? void 0 : _a4.settings) == null ? void 0 : _b4.type
+        (_b4 = (_a4 = ctx2[5]) == null ? void 0 : _a4.settings) == null ? void 0 : _b4.type
       ) + ""))
         set_data(t1, t1_value);
     },
@@ -53030,20 +54312,20 @@ function create_default_slot_10(ctx) {
     }
   };
 }
-function create_default_slot_9(ctx) {
+function create_default_slot_17(ctx) {
   let title;
   let t2;
   let subtitle;
   let current;
   title = new Title$2({
     props: {
-      $$slots: { default: [create_default_slot_11] },
+      $$slots: { default: [create_default_slot_19] },
       $$scope: { ctx }
     }
   });
   subtitle = new Subtitle({
     props: {
-      $$slots: { default: [create_default_slot_10] },
+      $$slots: { default: [create_default_slot_18] },
       $$scope: { ctx }
     }
   });
@@ -53067,14 +54349,14 @@ function create_default_slot_9(ctx) {
     p(ctx2, dirty) {
       const title_changes = {};
       if (dirty[1] & /*$$scope*/
-      1) {
+      16) {
         title_changes.$$scope = { dirty, ctx: ctx2 };
       }
       title.$set(title_changes);
       const subtitle_changes = {};
       if (dirty[0] & /*editItem*/
-      8 | dirty[1] & /*$$scope*/
-      1) {
+      32 | dirty[1] & /*$$scope*/
+      16) {
         subtitle_changes.$$scope = { dirty, ctx: ctx2 };
       }
       subtitle.$set(subtitle_changes);
@@ -53100,17 +54382,17 @@ function create_default_slot_9(ctx) {
     }
   };
 }
-function create_default_slot_8(ctx) {
+function create_default_slot_16(ctx) {
   let editview;
   let current;
   editview = new EditView({ props: { item: (
     /*editItem*/
-    ctx[3]
+    ctx[5]
   ) } });
   editview.$on(
     "settings",
     /*settings_handler*/
-    ctx[12]
+    ctx[14]
   );
   return {
     c() {
@@ -53126,9 +54408,9 @@ function create_default_slot_8(ctx) {
     p(ctx2, dirty) {
       const editview_changes = {};
       if (dirty[0] & /*editItem*/
-      8)
+      32)
         editview_changes.item = /*editItem*/
-        ctx2[3];
+        ctx2[5];
       editview.$set(editview_changes);
     },
     i(local) {
@@ -53146,20 +54428,20 @@ function create_default_slot_8(ctx) {
     }
   };
 }
-function create_default_slot_7(ctx) {
+function create_default_slot_15(ctx) {
   let header;
   let t2;
   let content;
   let current;
   header = new Header({
     props: {
-      $$slots: { default: [create_default_slot_9] },
+      $$slots: { default: [create_default_slot_17] },
       $$scope: { ctx }
     }
   });
   content = new Content$1({
     props: {
-      $$slots: { default: [create_default_slot_8] },
+      $$slots: { default: [create_default_slot_16] },
       $$scope: { ctx }
     }
   });
@@ -53183,15 +54465,15 @@ function create_default_slot_7(ctx) {
     p(ctx2, dirty) {
       const header_changes = {};
       if (dirty[0] & /*editItem*/
-      8 | dirty[1] & /*$$scope*/
-      1) {
+      32 | dirty[1] & /*$$scope*/
+      16) {
         header_changes.$$scope = { dirty, ctx: ctx2 };
       }
       header.$set(header_changes);
       const content_changes = {};
       if (dirty[0] & /*editItem*/
-      8 | dirty[1] & /*$$scope*/
-      1) {
+      32 | dirty[1] & /*$$scope*/
+      16) {
         content_changes.$$scope = { dirty, ctx: ctx2 };
       }
       content.$set(content_changes);
@@ -53217,88 +54499,248 @@ function create_default_slot_7(ctx) {
     }
   };
 }
-function create_if_block_3(ctx) {
-  let fab0;
+function create_default_slot_14(ctx) {
   let t2;
-  let fab1;
+  return {
+    c() {
+      t2 = text("menu");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "menu");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_13(ctx) {
+  let iconbutton;
   let current;
-  fab0 = new Fab({
+  iconbutton = new IconButton({
     props: {
-      color: "secondary",
-      $$slots: { default: [create_default_slot_5] },
+      class: "material-icons",
+      $$slots: { default: [create_default_slot_14] },
       $$scope: { ctx }
     }
   });
-  fab0.$on(
+  iconbutton.$on(
     "click",
     /*click_handler*/
-    ctx[14]
-  );
-  fab1 = new Fab({
-    props: {
-      color: "secondary",
-      $$slots: { default: [create_default_slot_3] },
-      $$scope: { ctx }
-    }
-  });
-  fab1.$on(
-    "click",
-    /*click_handler_1*/
-    ctx[15]
+    ctx[16]
   );
   return {
     c() {
-      create_component(fab0.$$.fragment);
-      t2 = space();
-      create_component(fab1.$$.fragment);
+      create_component(iconbutton.$$.fragment);
     },
     l(nodes) {
-      claim_component(fab0.$$.fragment, nodes);
-      t2 = claim_space(nodes);
-      claim_component(fab1.$$.fragment, nodes);
+      claim_component(iconbutton.$$.fragment, nodes);
     },
     m(target, anchor) {
-      mount_component(fab0, target, anchor);
-      insert_hydration(target, t2, anchor);
-      mount_component(fab1, target, anchor);
+      mount_component(iconbutton, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
-      const fab0_changes = {};
+      const iconbutton_changes = {};
       if (dirty[1] & /*$$scope*/
-      1) {
-        fab0_changes.$$scope = { dirty, ctx: ctx2 };
+      16) {
+        iconbutton_changes.$$scope = { dirty, ctx: ctx2 };
       }
-      fab0.$set(fab0_changes);
-      const fab1_changes = {};
-      if (dirty[1] & /*$$scope*/
-      1) {
-        fab1_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      fab1.$set(fab1_changes);
+      iconbutton.$set(iconbutton_changes);
     },
     i(local) {
       if (current)
         return;
-      transition_in(fab0.$$.fragment, local);
-      transition_in(fab1.$$.fragment, local);
+      transition_in(iconbutton.$$.fragment, local);
       current = true;
     },
     o(local) {
-      transition_out(fab0.$$.fragment, local);
-      transition_out(fab1.$$.fragment, local);
+      transition_out(iconbutton.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(iconbutton, detaching);
+    }
+  };
+}
+function create_if_block_4(ctx) {
+  let section;
+  let current;
+  section = new Section({
+    props: {
+      align: "end",
+      toolbar: true,
+      $$slots: { default: [create_default_slot_3] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      create_component(section.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(section.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(section, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const section_changes = {};
+      if (dirty[0] & /*$editing, addOpen*/
+      192 | dirty[1] & /*$$scope*/
+      16) {
+        section_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      section.$set(section_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(section.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(section.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(section, detaching);
+    }
+  };
+}
+function create_else_block(ctx) {
+  let button0;
+  let t2;
+  let button1;
+  let current;
+  button0 = new Button({
+    props: {
+      $$slots: { default: [create_default_slot_10] },
+      $$scope: { ctx }
+    }
+  });
+  button0.$on(
+    "click",
+    /*click_handler_2*/
+    ctx[18]
+  );
+  button1 = new Button({
+    props: {
+      $$slots: { default: [create_default_slot_7] },
+      $$scope: { ctx }
+    }
+  });
+  button1.$on(
+    "click",
+    /*click_handler_3*/
+    ctx[19]
+  );
+  return {
+    c() {
+      create_component(button0.$$.fragment);
+      t2 = space();
+      create_component(button1.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(button0.$$.fragment, nodes);
+      t2 = claim_space(nodes);
+      claim_component(button1.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(button0, target, anchor);
+      insert_hydration(target, t2, anchor);
+      mount_component(button1, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const button0_changes = {};
+      if (dirty[1] & /*$$scope*/
+      16) {
+        button0_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      button0.$set(button0_changes);
+      const button1_changes = {};
+      if (dirty[1] & /*$$scope*/
+      16) {
+        button1_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      button1.$set(button1_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(button0.$$.fragment, local);
+      transition_in(button1.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(button0.$$.fragment, local);
+      transition_out(button1.$$.fragment, local);
       current = false;
     },
     d(detaching) {
       if (detaching) {
         detach(t2);
       }
-      destroy_component(fab0, detaching);
-      destroy_component(fab1, detaching);
+      destroy_component(button0, detaching);
+      destroy_component(button1, detaching);
     }
   };
 }
-function create_default_slot_6(ctx) {
+function create_if_block_5(ctx) {
+  let button;
+  let current;
+  button = new Button({
+    props: {
+      $$slots: { default: [create_default_slot_4] },
+      $$scope: { ctx }
+    }
+  });
+  button.$on(
+    "click",
+    /*click_handler_1*/
+    ctx[17]
+  );
+  return {
+    c() {
+      create_component(button.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(button.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(button, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const button_changes = {};
+      if (dirty[1] & /*$$scope*/
+      16) {
+        button_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      button.$set(button_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(button.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(button.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(button, detaching);
+    }
+  };
+}
+function create_default_slot_12(ctx) {
   let t2;
   return {
     c() {
@@ -53317,51 +54759,96 @@ function create_default_slot_6(ctx) {
     }
   };
 }
-function create_default_slot_5(ctx) {
+function create_default_slot_11(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Add");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Add");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_10(ctx) {
   let icon;
+  let t2;
+  let label;
   let current;
   icon = new CommonIcon({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_6] },
+      $$slots: { default: [create_default_slot_12] },
+      $$scope: { ctx }
+    }
+  });
+  label = new CommonLabel({
+    props: {
+      $$slots: { default: [create_default_slot_11] },
       $$scope: { ctx }
     }
   });
   return {
     c() {
       create_component(icon.$$.fragment);
+      t2 = space();
+      create_component(label.$$.fragment);
     },
     l(nodes) {
       claim_component(icon.$$.fragment, nodes);
+      t2 = claim_space(nodes);
+      claim_component(label.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(icon, target, anchor);
+      insert_hydration(target, t2, anchor);
+      mount_component(label, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[1] & /*$$scope*/
-      1) {
+      16) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
+      const label_changes = {};
+      if (dirty[1] & /*$$scope*/
+      16) {
+        label_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      label.$set(label_changes);
     },
     i(local) {
       if (current)
         return;
       transition_in(icon.$$.fragment, local);
+      transition_in(label.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(icon.$$.fragment, local);
+      transition_out(label.$$.fragment, local);
       current = false;
     },
     d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
       destroy_component(icon, detaching);
+      destroy_component(label, detaching);
     }
   };
 }
-function create_default_slot_4(ctx) {
+function create_default_slot_9(ctx) {
   let t2;
   return {
     c() {
@@ -53380,51 +54867,96 @@ function create_default_slot_4(ctx) {
     }
   };
 }
-function create_default_slot_3(ctx) {
+function create_default_slot_8(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Save");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Save");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_7(ctx) {
   let icon;
+  let t2;
+  let label;
   let current;
   icon = new CommonIcon({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_4] },
+      $$slots: { default: [create_default_slot_9] },
+      $$scope: { ctx }
+    }
+  });
+  label = new CommonLabel({
+    props: {
+      $$slots: { default: [create_default_slot_8] },
       $$scope: { ctx }
     }
   });
   return {
     c() {
       create_component(icon.$$.fragment);
+      t2 = space();
+      create_component(label.$$.fragment);
     },
     l(nodes) {
       claim_component(icon.$$.fragment, nodes);
+      t2 = claim_space(nodes);
+      claim_component(label.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(icon, target, anchor);
+      insert_hydration(target, t2, anchor);
+      mount_component(label, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[1] & /*$$scope*/
-      1) {
+      16) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
+      const label_changes = {};
+      if (dirty[1] & /*$$scope*/
+      16) {
+        label_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      label.$set(label_changes);
     },
     i(local) {
       if (current)
         return;
       transition_in(icon.$$.fragment, local);
+      transition_in(label.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(icon.$$.fragment, local);
+      transition_out(label.$$.fragment, local);
       current = false;
     },
     d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
       destroy_component(icon, detaching);
+      destroy_component(label, detaching);
     }
   };
 }
-function create_default_slot_2(ctx) {
+function create_default_slot_6(ctx) {
   let t2;
   return {
     c() {
@@ -53443,47 +54975,337 @@ function create_default_slot_2(ctx) {
     }
   };
 }
-function create_default_slot_1(ctx) {
+function create_default_slot_5(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Edit");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Edit");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_4(ctx) {
   let icon;
+  let t2;
+  let label;
   let current;
   icon = new CommonIcon({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_2] },
+      $$slots: { default: [create_default_slot_6] },
+      $$scope: { ctx }
+    }
+  });
+  label = new CommonLabel({
+    props: {
+      $$slots: { default: [create_default_slot_5] },
       $$scope: { ctx }
     }
   });
   return {
     c() {
       create_component(icon.$$.fragment);
+      t2 = space();
+      create_component(label.$$.fragment);
     },
     l(nodes) {
       claim_component(icon.$$.fragment, nodes);
+      t2 = claim_space(nodes);
+      claim_component(label.$$.fragment, nodes);
     },
     m(target, anchor) {
       mount_component(icon, target, anchor);
+      insert_hydration(target, t2, anchor);
+      mount_component(label, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[1] & /*$$scope*/
-      1) {
+      16) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
+      const label_changes = {};
+      if (dirty[1] & /*$$scope*/
+      16) {
+        label_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      label.$set(label_changes);
     },
     i(local) {
       if (current)
         return;
       transition_in(icon.$$.fragment, local);
+      transition_in(label.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(icon.$$.fragment, local);
+      transition_out(label.$$.fragment, local);
       current = false;
     },
     d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
       destroy_component(icon, detaching);
+      destroy_component(label, detaching);
+    }
+  };
+}
+function create_default_slot_3(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [create_if_block_5, create_else_block];
+  const if_blocks = [];
+  function select_block_type_1(ctx2, dirty) {
+    if (!/*$editing*/
+    ctx2[7])
+      return 0;
+    return 1;
+  }
+  current_block_type_index = select_block_type_1(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  return {
+    c() {
+      if_block.c();
+      if_block_anchor = empty();
+    },
+    l(nodes) {
+      if_block.l(nodes);
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type_1(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
+    }
+  };
+}
+function create_default_slot_2(ctx) {
+  let section;
+  let t2;
+  let if_block_anchor;
+  let current;
+  section = new Section({
+    props: {
+      $$slots: { default: [create_default_slot_13] },
+      $$scope: { ctx }
+    }
+  });
+  let if_block = !/*topAppBarCollapsed*/
+  ctx[1] && create_if_block_4(ctx);
+  return {
+    c() {
+      create_component(section.$$.fragment);
+      t2 = space();
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+    },
+    l(nodes) {
+      claim_component(section.$$.fragment, nodes);
+      t2 = claim_space(nodes);
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      mount_component(section, target, anchor);
+      insert_hydration(target, t2, anchor);
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const section_changes = {};
+      if (dirty[0] & /*topAppBarCollapsed*/
+      2 | dirty[1] & /*$$scope*/
+      16) {
+        section_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      section.$set(section_changes);
+      if (!/*topAppBarCollapsed*/
+      ctx2[1]) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty[0] & /*topAppBarCollapsed*/
+          2) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block_4(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(section.$$.fragment, local);
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(section.$$.fragment, local);
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+        detach(if_block_anchor);
+      }
+      destroy_component(section, detaching);
+      if (if_block)
+        if_block.d(detaching);
+    }
+  };
+}
+function create_default_slot_1(ctx) {
+  let row;
+  let current;
+  row = new Row({
+    props: {
+      $$slots: { default: [create_default_slot_2] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      create_component(row.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(row.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(row, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const row_changes = {};
+      if (dirty[0] & /*$editing, addOpen, topAppBarCollapsed*/
+      194 | dirty[1] & /*$$scope*/
+      16) {
+        row_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      row.$set(row_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(row.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(row.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(row, detaching);
+    }
+  };
+}
+function create_if_block_3(ctx) {
+  let autoadjust;
+  let current;
+  autoadjust = new AutoAdjust({
+    props: { topAppBar: (
+      /*topAppBar*/
+      ctx[0]
+    ) }
+  });
+  return {
+    c() {
+      create_component(autoadjust.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(autoadjust.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(autoadjust, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const autoadjust_changes = {};
+      if (dirty[0] & /*topAppBar*/
+      1)
+        autoadjust_changes.topAppBar = /*topAppBar*/
+        ctx2[0];
+      autoadjust.$set(autoadjust_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(autoadjust.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(autoadjust.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(autoadjust, detaching);
     }
   };
 }
@@ -53495,7 +55317,7 @@ function create_if_block_2(ctx) {
       div = element("div");
       t2 = text(
         /*error*/
-        ctx[1]
+        ctx[3]
       );
       this.h();
     },
@@ -53505,13 +55327,13 @@ function create_if_block_2(ctx) {
       t2 = claim_text(
         div_nodes,
         /*error*/
-        ctx[1]
+        ctx[3]
       );
       div_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(div, "class", "error svelte-xblbkz");
+      attr(div, "class", "error svelte-1fwqr5l");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -53519,11 +55341,11 @@ function create_if_block_2(ctx) {
     },
     p(ctx2, dirty) {
       if (dirty[0] & /*error*/
-      2)
+      8)
         set_data(
           t2,
           /*error*/
-          ctx2[1]
+          ctx2[3]
         );
     },
     d(detaching) {
@@ -53534,10 +55356,8 @@ function create_if_block_2(ctx) {
   };
 }
 function create_default_slot(ctx) {
-  let div1;
-  let div0;
+  let topappbar;
   let t0;
-  let fab;
   let t1;
   let t2;
   let dashboard;
@@ -53545,58 +55365,53 @@ function create_default_slot(ctx) {
   let adddialog;
   let updating_open;
   let current;
-  let if_block0 = (
-    /*$editing*/
-    ctx[5] && create_if_block_3(ctx)
-  );
-  fab = new Fab({
-    props: {
-      color: "primary",
-      $$slots: { default: [create_default_slot_1] },
-      $$scope: { ctx }
-    }
-  });
-  fab.$on(
-    "click",
-    /*click_handler_2*/
-    ctx[16]
-  );
+  let topappbar_props = {
+    collapsed: (
+      /*topAppBarCollapsed*/
+      ctx[1]
+    ),
+    dense: true,
+    $$slots: { default: [create_default_slot_1] },
+    $$scope: { ctx }
+  };
+  topappbar = new TopAppBar({ props: topappbar_props });
+  ctx[20](topappbar);
+  let if_block0 = !/*topAppBarCollapsed*/
+  ctx[1] && create_if_block_3(ctx);
   let if_block1 = (
     /*error*/
-    ctx[1] !== void 0 && create_if_block_2(ctx)
+    ctx[3] !== void 0 && create_if_block_2(ctx)
   );
   dashboard = new Dashboard({});
   dashboard.$on(
     "edit",
     /*edit_handler*/
-    ctx[17]
+    ctx[21]
   );
   function adddialog_open_binding(value) {
-    ctx[18](value);
+    ctx[22](value);
   }
   let adddialog_props = {};
   if (
     /*addOpen*/
-    ctx[4] !== void 0
+    ctx[6] !== void 0
   ) {
     adddialog_props.open = /*addOpen*/
-    ctx[4];
+    ctx[6];
   }
   adddialog = new AddDialog({ props: adddialog_props });
   binding_callbacks.push(() => bind(adddialog, "open", adddialog_open_binding));
   adddialog.$on(
     "selected",
     /*selected_handler*/
-    ctx[19]
+    ctx[23]
   );
   return {
     c() {
-      div1 = element("div");
-      div0 = element("div");
+      create_component(topappbar.$$.fragment);
+      t0 = space();
       if (if_block0)
         if_block0.c();
-      t0 = space();
-      create_component(fab.$$.fragment);
       t1 = space();
       if (if_block1)
         if_block1.c();
@@ -53604,64 +55419,59 @@ function create_default_slot(ctx) {
       create_component(dashboard.$$.fragment);
       t3 = space();
       create_component(adddialog.$$.fragment);
-      this.h();
     },
     l(nodes) {
-      div1 = claim_element(nodes, "DIV", { class: true });
-      var div1_nodes = children(div1);
-      div0 = claim_element(div1_nodes, "DIV", { class: true });
-      var div0_nodes = children(div0);
+      claim_component(topappbar.$$.fragment, nodes);
+      t0 = claim_space(nodes);
       if (if_block0)
-        if_block0.l(div0_nodes);
-      t0 = claim_space(div0_nodes);
-      claim_component(fab.$$.fragment, div0_nodes);
-      div0_nodes.forEach(detach);
-      t1 = claim_space(div1_nodes);
+        if_block0.l(nodes);
+      t1 = claim_space(nodes);
       if (if_block1)
-        if_block1.l(div1_nodes);
-      t2 = claim_space(div1_nodes);
-      claim_component(dashboard.$$.fragment, div1_nodes);
-      t3 = claim_space(div1_nodes);
-      claim_component(adddialog.$$.fragment, div1_nodes);
-      div1_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div0, "class", "header svelte-xblbkz");
-      attr(div1, "class", "container svelte-xblbkz");
+        if_block1.l(nodes);
+      t2 = claim_space(nodes);
+      claim_component(dashboard.$$.fragment, nodes);
+      t3 = claim_space(nodes);
+      claim_component(adddialog.$$.fragment, nodes);
     },
     m(target, anchor) {
-      insert_hydration(target, div1, anchor);
-      append_hydration(div1, div0);
+      mount_component(topappbar, target, anchor);
+      insert_hydration(target, t0, anchor);
       if (if_block0)
-        if_block0.m(div0, null);
-      append_hydration(div0, t0);
-      mount_component(fab, div0, null);
-      append_hydration(div1, t1);
+        if_block0.m(target, anchor);
+      insert_hydration(target, t1, anchor);
       if (if_block1)
-        if_block1.m(div1, null);
-      append_hydration(div1, t2);
-      mount_component(dashboard, div1, null);
-      append_hydration(div1, t3);
-      mount_component(adddialog, div1, null);
+        if_block1.m(target, anchor);
+      insert_hydration(target, t2, anchor);
+      mount_component(dashboard, target, anchor);
+      insert_hydration(target, t3, anchor);
+      mount_component(adddialog, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
-      if (
-        /*$editing*/
-        ctx2[5]
-      ) {
+      const topappbar_changes = {};
+      if (dirty[0] & /*topAppBarCollapsed*/
+      2)
+        topappbar_changes.collapsed = /*topAppBarCollapsed*/
+        ctx2[1];
+      if (dirty[0] & /*$editing, addOpen, topAppBarCollapsed*/
+      194 | dirty[1] & /*$$scope*/
+      16) {
+        topappbar_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      topappbar.$set(topappbar_changes);
+      if (!/*topAppBarCollapsed*/
+      ctx2[1]) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
-          if (dirty[0] & /*$editing*/
-          32) {
+          if (dirty[0] & /*topAppBarCollapsed*/
+          2) {
             transition_in(if_block0, 1);
           }
         } else {
           if_block0 = create_if_block_3(ctx2);
           if_block0.c();
           transition_in(if_block0, 1);
-          if_block0.m(div0, t0);
+          if_block0.m(t1.parentNode, t1);
         }
       } else if (if_block0) {
         group_outros();
@@ -53670,22 +55480,16 @@ function create_default_slot(ctx) {
         });
         check_outros();
       }
-      const fab_changes = {};
-      if (dirty[1] & /*$$scope*/
-      1) {
-        fab_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      fab.$set(fab_changes);
       if (
         /*error*/
-        ctx2[1] !== void 0
+        ctx2[3] !== void 0
       ) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
           if_block1 = create_if_block_2(ctx2);
           if_block1.c();
-          if_block1.m(div1, t2);
+          if_block1.m(t2.parentNode, t2);
         }
       } else if (if_block1) {
         if_block1.d(1);
@@ -53693,10 +55497,10 @@ function create_default_slot(ctx) {
       }
       const adddialog_changes = {};
       if (!updating_open && dirty[0] & /*addOpen*/
-      16) {
+      64) {
         updating_open = true;
         adddialog_changes.open = /*addOpen*/
-        ctx2[4];
+        ctx2[6];
         add_flush_callback(() => updating_open = false);
       }
       adddialog.$set(adddialog_changes);
@@ -53704,30 +55508,34 @@ function create_default_slot(ctx) {
     i(local) {
       if (current)
         return;
+      transition_in(topappbar.$$.fragment, local);
       transition_in(if_block0);
-      transition_in(fab.$$.fragment, local);
       transition_in(dashboard.$$.fragment, local);
       transition_in(adddialog.$$.fragment, local);
       current = true;
     },
     o(local) {
+      transition_out(topappbar.$$.fragment, local);
       transition_out(if_block0);
-      transition_out(fab.$$.fragment, local);
       transition_out(dashboard.$$.fragment, local);
       transition_out(adddialog.$$.fragment, local);
       current = false;
     },
     d(detaching) {
       if (detaching) {
-        detach(div1);
+        detach(t0);
+        detach(t1);
+        detach(t2);
+        detach(t3);
       }
+      ctx[20](null);
+      destroy_component(topappbar, detaching);
       if (if_block0)
-        if_block0.d();
-      destroy_component(fab);
+        if_block0.d(detaching);
       if (if_block1)
-        if_block1.d();
-      destroy_component(dashboard);
-      destroy_component(adddialog);
+        if_block1.d(detaching);
+      destroy_component(dashboard, detaching);
+      destroy_component(adddialog, detaching);
     }
   };
 }
@@ -53742,12 +55550,12 @@ function create_fragment(ctx) {
   function select_block_type(ctx2, dirty) {
     if (
       /*loading*/
-      ctx2[0]
+      ctx2[2]
     )
       return 0;
     if (
       /*$homey*/
-      ctx2[6] !== void 0
+      ctx2[8] !== void 0
     )
       return 1;
     return -1;
@@ -53841,12 +55649,14 @@ function instance($$self, $$props, $$invalidate) {
   let $items;
   let $apiKey;
   let $baseUrl;
-  component_subscribe($$self, editing, ($$value) => $$invalidate(5, $editing = $$value));
-  component_subscribe($$self, homey, ($$value) => $$invalidate(6, $homey = $$value));
-  component_subscribe($$self, scopes, ($$value) => $$invalidate(20, $scopes = $$value));
-  component_subscribe($$self, items, ($$value) => $$invalidate(21, $items = $$value));
-  component_subscribe($$self, apiKey, ($$value) => $$invalidate(22, $apiKey = $$value));
-  component_subscribe($$self, baseUrl, ($$value) => $$invalidate(23, $baseUrl = $$value));
+  component_subscribe($$self, editing, ($$value) => $$invalidate(7, $editing = $$value));
+  component_subscribe($$self, homey, ($$value) => $$invalidate(8, $homey = $$value));
+  component_subscribe($$self, scopes, ($$value) => $$invalidate(24, $scopes = $$value));
+  component_subscribe($$self, items, ($$value) => $$invalidate(25, $items = $$value));
+  component_subscribe($$self, apiKey, ($$value) => $$invalidate(26, $apiKey = $$value));
+  component_subscribe($$self, baseUrl, ($$value) => $$invalidate(27, $baseUrl = $$value));
+  let topAppBar;
+  let topAppBarCollapsed = true;
   let loading = true;
   let error = void 0;
   let editOpen = false;
@@ -53860,7 +55670,7 @@ function instance($$self, $$props, $$invalidate) {
     await loadZones();
     await loadAppSettings();
     await migrateAppSettings();
-    $$invalidate(0, loading = false);
+    $$invalidate(2, loading = false);
   });
   async function connectHomey() {
     if ($homey === void 0) {
@@ -53886,9 +55696,9 @@ function instance($$self, $$props, $$invalidate) {
       const s3 = await $homey.sessions.getSessionMe();
       session.set(s3);
     } catch (e2) {
-      $$invalidate(1, error = "Session: " + e2);
+      $$invalidate(3, error = "Session: " + e2);
     }
-    $$invalidate(0, loading = false);
+    $$invalidate(2, loading = false);
   }
   async function loadAppSettings() {
     let app;
@@ -53909,12 +55719,12 @@ function instance($$self, $$props, $$invalidate) {
         }
       }
     } catch (e2) {
-      $$invalidate(1, error = e2);
+      $$invalidate(3, error = e2);
     }
     if (result != void 0 && Array.isArray(result)) {
       items.set(result);
     }
-    $$invalidate(0, loading = false);
+    $$invalidate(2, loading = false);
   }
   async function saveAppSettings() {
     toggleEdit();
@@ -53935,7 +55745,8 @@ function instance($$self, $$props, $$invalidate) {
     const result = [];
     let changes = false;
     for (let item of $items) {
-      const migrated = findMigration(item.settings.type)(item.settings);
+      const migration = findMigration(item.settings.type);
+      const migrated = migration !== void 0 ? migration(item.settings) : item.settings;
       if (migrated !== item.settings) {
         changes = true;
       }
@@ -53958,7 +55769,7 @@ function instance($$self, $$props, $$invalidate) {
         devices.set(d3);
       }
     } catch (e2) {
-      $$invalidate(1, error = "Devices: " + e2);
+      $$invalidate(3, error = "Devices: " + e2);
     }
   }
   async function loadFlows() {
@@ -53975,7 +55786,7 @@ function instance($$self, $$props, $$invalidate) {
         $homey.flow.on("advancedflow.delete", (e2) => advancedFlows.onDelete(e2));
       }
     } catch (e2) {
-      $$invalidate(1, error = "Flows: " + e2);
+      $$invalidate(3, error = "Flows: " + e2);
     }
   }
   async function loadZones() {
@@ -53986,7 +55797,7 @@ function instance($$self, $$props, $$invalidate) {
         zones.set(z2);
       }
     } catch (e2) {
-      $$invalidate(1, error = "Zones: " + e2);
+      $$invalidate(3, error = "Zones: " + e2);
     }
   }
   function toggleEdit() {
@@ -54001,33 +55812,42 @@ function instance($$self, $$props, $$invalidate) {
     if (create2 !== void 0) {
       const settings = create2();
       const item = { id: settings == null ? void 0 : settings.id, settings };
-      $$invalidate(3, editItem = items.addItem(item));
-      $$invalidate(2, editOpen = true);
+      $$invalidate(5, editItem = items.addItem(item));
+      $$invalidate(4, editOpen = true);
     }
   }
   function editWidget(item) {
-    $$invalidate(3, editItem = item);
-    $$invalidate(2, editOpen = true);
+    $$invalidate(5, editItem = item);
+    $$invalidate(4, editOpen = true);
   }
   function saveWidget(settings) {
-    $$invalidate(2, editOpen = false);
+    $$invalidate(4, editOpen = false);
     items.setSettings(editItem.id, settings);
   }
   const settings_handler = (e2) => saveWidget(e2.detail);
   function drawer_open_binding(value) {
     editOpen = value;
-    $$invalidate(2, editOpen);
+    $$invalidate(4, editOpen);
   }
-  const click_handler = () => $$invalidate(4, addOpen = true);
-  const click_handler_1 = () => saveAppSettings();
-  const click_handler_2 = () => toggleEdit();
+  const click_handler = () => $$invalidate(1, topAppBarCollapsed = !topAppBarCollapsed);
+  const click_handler_1 = () => toggleEdit();
+  const click_handler_2 = () => $$invalidate(6, addOpen = true);
+  const click_handler_3 = () => saveAppSettings();
+  function topappbar_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      topAppBar = $$value;
+      $$invalidate(0, topAppBar);
+    });
+  }
   const edit_handler = (e2) => editWidget(e2.detail);
   function adddialog_open_binding(value) {
     addOpen = value;
-    $$invalidate(4, addOpen);
+    $$invalidate(6, addOpen);
   }
   const selected_handler = (e2) => addWidget(e2.detail);
   return [
+    topAppBar,
+    topAppBarCollapsed,
     loading,
     error,
     editOpen,
@@ -54045,6 +55865,8 @@ function instance($$self, $$props, $$invalidate) {
     click_handler,
     click_handler_1,
     click_handler_2,
+    click_handler_3,
+    topappbar_binding,
     edit_handler,
     adddialog_open_binding,
     selected_handler

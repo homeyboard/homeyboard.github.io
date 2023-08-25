@@ -7,9 +7,9 @@ var __publicField = (obj, key, value) => {
 var _a2, _b2;
 import { s as safe_not_equal, q as construct_svelte_component, e as empty, i as insert_hydration, d as detach, A as compute_rest_props, B as get_current_component, C as getContext, D as assign$1, E as exclude_internal_props, p as binding_callbacks, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, F as svg_element, G as claim_svg_element, h as children, H as set_svg_attributes, I as action_destroyer, J as is_function, K as run_all, f as element, g as claim_element, L as set_attributes, M as listen, N as setContext, o as onMount, O as onDestroy, y as noop$1, P as subscribe, a as space, c as claim_space, j as attr, Q as toggle_class, x as append_hydration, R as createEventDispatcher, k as set_style, z as component_subscribe, S as set_store_value, T as add_flush_callback, U as bubble, l as text, m as claim_text, n as set_data, V as get_svelte_dataset, W as set_data_maybe_contenteditable, X as compute_slots, Y as destroy_each, Z as to_number, _ as set_input_value, $ as src_url_equal, a0 as current_component, b as afterUpdate, a1 as init_binding_group, a2 as head_selector } from "../chunks/scheduler.98e41e63.js";
 import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, g as group_outros, t as transition_out, e as destroy_component, c as check_outros, a as transition_in, f as bind } from "../chunks/index.5f86484a.js";
-import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, i as insights, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, j as dashboards, k as baseUrl } from "../chunks/AthomCloudAPI.2fee2da9.js";
-import { w as writable, r as readable, e as base } from "../chunks/singletons.37a2ce62.js";
-import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, R as Ripple, p as ponyfill, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, l as prefixFilter, m as exclude, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, B as Button, C as CommonLabel, q as handle_promise, r as update_await_block_branch, s as apiKey, H as HomeyAPI, t as CircularProgress } from "../chunks/HomeyAPI.ea6d76d2.js";
+import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, i as insights, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, j as dashboards, k as baseUrl } from "../chunks/AthomCloudAPI.6af6ad9f.js";
+import { w as writable, r as readable, e as base } from "../chunks/singletons.e78ae40c.js";
+import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, R as Ripple, p as ponyfill, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, l as prefixFilter, m as exclude, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, B as Button, C as CommonLabel, q as handle_promise, r as update_await_block_branch, s as apiKey, H as HomeyAPI, t as CircularProgress } from "../chunks/HomeyAPI.2d1cb0d4.js";
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
   // @ts-ignore Node typings have this
   global
@@ -25908,23 +25908,23 @@ class CapabilityWidget extends SvelteComponent {
     init(this, options, instance$c, create_fragment$h, safe_not_equal, { settings: 0 });
   }
 }
-function create() {
+function create$1() {
   return {
     id: v4(),
     type: "capability",
     version: 2
   };
 }
-function migrate(settings) {
+function migrate$1(settings) {
   switch (settings.version) {
     case 2:
       return settings;
     case 1:
     default:
-      return migrate_v1_v2(settings);
+      return migrate_v1_v2$1(settings);
   }
 }
-function migrate_v1_v2(v1) {
+function migrate_v1_v2$1(v1) {
   const settings = {
     id: v1.id,
     type: v1.type,
@@ -52485,6 +52485,35 @@ class InsightEditor extends SvelteComponent {
     init(this, options, instance$4, create_fragment$7, safe_not_equal, { settings: 9 });
   }
 }
+function create() {
+  return {
+    id: v4(),
+    type: "insight",
+    version: 2
+  };
+}
+function migrate(settings) {
+  switch (settings.version) {
+    case 2:
+      return settings;
+    case 1:
+    default:
+      return migrate_v1_v2(settings);
+  }
+}
+function migrate_v1_v2(v1) {
+  var _a3;
+  const settings = {
+    id: v1.id,
+    type: v1.type,
+    version: 2,
+    insightId: ((_a3 = v1.insightId) == null ? void 0 : _a3.startsWith("homey:")) ? v1.insightId : "homey:device:" + v1.deviceId + ":" + v1.insightId,
+    resolution: v1.resolution,
+    aggregation: "none",
+    sampleRate: void 0
+  };
+  return settings;
+}
 function create_fragment$6(ctx) {
   let div;
   let textContent = "Unknown widget type";
@@ -52559,8 +52588,8 @@ const widgets = [
     scopes: [
       { oneOf: ["homey", "homey.device", "homey.device.readonly", "homey.device.control"] }
     ],
-    create,
-    migration: migrate
+    create: create$1,
+    migration: migrate$1
   },
   {
     type: "flow",
@@ -52596,8 +52625,8 @@ const widgets = [
       { oneOf: ["homey", "homey.device", "homey.device.readonly", "homey.device.control"] },
       { oneOf: ["homey", "homey.insights.readonly"] }
     ],
-    create: () => ({ id: v4(), type: "insight", version: 1 }),
-    migration: (e2) => e2
+    create,
+    migration: migrate
   }
 ];
 function findLabel(type) {

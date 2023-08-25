@@ -8,8 +8,8 @@ var __publicField = (obj2, key, value) => {
 };
 var __superGet = (cls, obj2, key) => __reflectGet(__getProtoOf(cls), key, obj2);
 var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-import { j as client_method, k as derived, w as writable } from "./singletons.ca53e4ea.js";
-import { p as page } from "./stores.71d20e14.js";
+import { j as client_method, k as derived, w as writable } from "./singletons.37a2ce62.js";
+import { p as page } from "./stores.e01f3bc8.js";
 const goto = /* @__PURE__ */ client_method("goto");
 function createBaseUrl() {
   return derived([homey, page], ([$homey, $page], set) => {
@@ -75,9 +75,11 @@ const baseUrl = createBaseUrl();
 const session = writable(void 0);
 const scopes = derived(session, (s2) => (s2 == null ? void 0 : s2.scopes) ?? [], []);
 const devices = createDevices();
+const dashboards = derived(devices, (d2) => Object.values(d2).filter((e) => e.driverId === "homey:app:skogsaas.dashboards:dashboard") ?? [], []);
 const basicFlows = createBasicFlows();
 const advancedFlows = createAdvancedFlows();
 const zones = createZones();
+const insights = writable({});
 const clientId = "64db40c9dfd48293e883f17c";
 const clientSecret = "4bafb4b84b94c86bde946a085bec643e130df5c0";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
@@ -1321,9 +1323,9 @@ var componentEmitter = { exports: {} };
 })(componentEmitter);
 var componentEmitterExports = componentEmitter.exports;
 var binary = {};
-var toString$2 = {}.toString;
+var toString$1 = {}.toString;
 var isarray = Array.isArray || function(arr) {
-  return toString$2.call(arr) == "[object Array]";
+  return toString$1.call(arr) == "[object Array]";
 };
 var isBuffer = isBuf$1;
 var withNativeBuffer = typeof Buffer === "function" && typeof Buffer.isBuffer === "function";
@@ -1334,11 +1336,11 @@ var isView = function(obj2) {
 function isBuf$1(obj2) {
   return withNativeBuffer && Buffer.isBuffer(obj2) || withNativeArrayBuffer && (obj2 instanceof ArrayBuffer || isView(obj2));
 }
-var isArray$1 = isarray;
+var isArray = isarray;
 var isBuf = isBuffer;
-var toString$1 = Object.prototype.toString;
-var withNativeBlob$1 = typeof Blob === "function" || typeof Blob !== "undefined" && toString$1.call(Blob) === "[object BlobConstructor]";
-var withNativeFile$1 = typeof File === "function" || typeof File !== "undefined" && toString$1.call(File) === "[object FileConstructor]";
+var toString = Object.prototype.toString;
+var withNativeBlob = typeof Blob === "function" || typeof Blob !== "undefined" && toString.call(Blob) === "[object BlobConstructor]";
+var withNativeFile = typeof File === "function" || typeof File !== "undefined" && toString.call(File) === "[object FileConstructor]";
 binary.deconstructPacket = function(packet) {
   var buffers = [];
   var packetData = packet.data;
@@ -1354,7 +1356,7 @@ function _deconstructPacket(data, buffers) {
     var placeholder = { _placeholder: true, num: buffers.length };
     buffers.push(data);
     return placeholder;
-  } else if (isArray$1(data)) {
+  } else if (isArray(data)) {
     var newData = new Array(data.length);
     for (var i2 = 0; i2 < data.length; i2++) {
       newData[i2] = _deconstructPacket(data[i2], buffers);
@@ -1384,7 +1386,7 @@ function _reconstructPacket(data, buffers) {
     } else {
       throw new Error("illegal attachments");
     }
-  } else if (isArray$1(data)) {
+  } else if (isArray(data)) {
     for (var i2 = 0; i2 < data.length; i2++) {
       data[i2] = _reconstructPacket(data[i2], buffers);
     }
@@ -1399,7 +1401,7 @@ binary.removeBlobs = function(data, callback) {
   function _removeBlobs(obj2, curKey, containingObject) {
     if (!obj2)
       return obj2;
-    if (withNativeBlob$1 && obj2 instanceof Blob || withNativeFile$1 && obj2 instanceof File) {
+    if (withNativeBlob && obj2 instanceof Blob || withNativeFile && obj2 instanceof File) {
       pendingBlobs++;
       var fileReader = new FileReader();
       fileReader.onload = function() {
@@ -1413,7 +1415,7 @@ binary.removeBlobs = function(data, callback) {
         }
       };
       fileReader.readAsArrayBuffer(obj2);
-    } else if (isArray$1(obj2)) {
+    } else if (isArray(obj2)) {
       for (var i2 = 0; i2 < obj2.length; i2++) {
         _removeBlobs(obj2[i2], i2, obj2);
       }
@@ -1687,35 +1689,43 @@ var keys = Object.keys || function keys2(obj2) {
   }
   return arr;
 };
-var isArray = isarray;
-var toString = Object.prototype.toString;
-var withNativeBlob = typeof Blob === "function" || typeof Blob !== "undefined" && toString.call(Blob) === "[object BlobConstructor]";
-var withNativeFile = typeof File === "function" || typeof File !== "undefined" && toString.call(File) === "[object FileConstructor]";
-var hasBinary2 = hasBinary;
-function hasBinary(obj2) {
-  if (!obj2 || typeof obj2 !== "object") {
-    return false;
-  }
-  if (isArray(obj2)) {
-    for (var i2 = 0, l = obj2.length; i2 < l; i2++) {
-      if (hasBinary(obj2[i2])) {
+var hasBinary2;
+var hasRequiredHasBinary2;
+function requireHasBinary2() {
+  if (hasRequiredHasBinary2)
+    return hasBinary2;
+  hasRequiredHasBinary2 = 1;
+  var isArray2 = isarray;
+  var toString2 = Object.prototype.toString;
+  var withNativeBlob2 = typeof Blob === "function" || typeof Blob !== "undefined" && toString2.call(Blob) === "[object BlobConstructor]";
+  var withNativeFile2 = typeof File === "function" || typeof File !== "undefined" && toString2.call(File) === "[object FileConstructor]";
+  hasBinary2 = hasBinary;
+  function hasBinary(obj2) {
+    if (!obj2 || typeof obj2 !== "object") {
+      return false;
+    }
+    if (isArray2(obj2)) {
+      for (var i2 = 0, l = obj2.length; i2 < l; i2++) {
+        if (hasBinary(obj2[i2])) {
+          return true;
+        }
+      }
+      return false;
+    }
+    if (typeof Buffer === "function" && Buffer.isBuffer && Buffer.isBuffer(obj2) || typeof ArrayBuffer === "function" && obj2 instanceof ArrayBuffer || withNativeBlob2 && obj2 instanceof Blob || withNativeFile2 && obj2 instanceof File) {
+      return true;
+    }
+    if (obj2.toJSON && typeof obj2.toJSON === "function" && arguments.length === 1) {
+      return hasBinary(obj2.toJSON(), true);
+    }
+    for (var key in obj2) {
+      if (Object.prototype.hasOwnProperty.call(obj2, key) && hasBinary(obj2[key])) {
         return true;
       }
     }
     return false;
   }
-  if (typeof Buffer === "function" && Buffer.isBuffer && Buffer.isBuffer(obj2) || typeof ArrayBuffer === "function" && obj2 instanceof ArrayBuffer || withNativeBlob && obj2 instanceof Blob || withNativeFile && obj2 instanceof File) {
-    return true;
-  }
-  if (obj2.toJSON && typeof obj2.toJSON === "function" && arguments.length === 1) {
-    return hasBinary(obj2.toJSON(), true);
-  }
-  for (var key in obj2) {
-    if (Object.prototype.hasOwnProperty.call(obj2, key) && hasBinary(obj2[key])) {
-      return true;
-    }
-  }
-  return false;
+  return hasBinary2;
 }
 var arraybuffer_slice = function(arraybuffer, start, end) {
   var bytes = arraybuffer.byteLength;
@@ -2044,7 +2054,7 @@ function requireBlob() {
 }
 (function(exports) {
   var keys$1 = keys;
-  var hasBinary3 = hasBinary2;
+  var hasBinary = requireHasBinary2();
   var sliceBuffer = arraybuffer_slice;
   var after2 = after_1;
   var utf8$1 = utf8;
@@ -2211,7 +2221,7 @@ function requireBlob() {
       callback = supportsBinary;
       supportsBinary = null;
     }
-    var isBinary = hasBinary3(packets2);
+    var isBinary = hasBinary(packets2);
     if (supportsBinary && isBinary) {
       if (Blob2 && !dontSendBlobs) {
         return exports.encodePayloadAsBlob(packets2, callback);
@@ -2491,26 +2501,33 @@ function requireTransport() {
   return transport;
 }
 var parseqs$3 = {};
-parseqs$3.encode = function(obj2) {
-  var str = "";
-  for (var i2 in obj2) {
-    if (obj2.hasOwnProperty(i2)) {
-      if (str.length)
-        str += "&";
-      str += encodeURIComponent(i2) + "=" + encodeURIComponent(obj2[i2]);
+var hasRequiredParseqs;
+function requireParseqs() {
+  if (hasRequiredParseqs)
+    return parseqs$3;
+  hasRequiredParseqs = 1;
+  parseqs$3.encode = function(obj2) {
+    var str = "";
+    for (var i2 in obj2) {
+      if (obj2.hasOwnProperty(i2)) {
+        if (str.length)
+          str += "&";
+        str += encodeURIComponent(i2) + "=" + encodeURIComponent(obj2[i2]);
+      }
     }
-  }
-  return str;
-};
-parseqs$3.decode = function(qs) {
-  var qry = {};
-  var pairs = qs.split("&");
-  for (var i2 = 0, l = pairs.length; i2 < l; i2++) {
-    var pair = pairs[i2].split("=");
-    qry[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
-  }
-  return qry;
-};
+    return str;
+  };
+  parseqs$3.decode = function(qs) {
+    var qry = {};
+    var pairs = qs.split("&");
+    for (var i2 = 0, l = pairs.length; i2 < l; i2++) {
+      var pair = pairs[i2].split("=");
+      qry[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+    }
+    return qry;
+  };
+  return parseqs$3;
+}
 var componentInherit = function(a, b) {
   var fn = function() {
   };
@@ -2928,7 +2945,7 @@ var debugExports = debug$5.exports;
 })(browser$1, browser$1.exports);
 var browserExports = browser$1.exports;
 var Transport$1 = requireTransport();
-var parseqs$2 = parseqs$3;
+var parseqs$2 = requireParseqs();
 var parser$3 = browser$2;
 var inherit$3 = componentInherit;
 var yeast$1 = yeast_1;
@@ -3451,7 +3468,7 @@ const __viteBrowserExternal$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Ob
 const require$$6 = /* @__PURE__ */ getAugmentedNamespace(__viteBrowserExternal$1);
 var Transport = requireTransport();
 var parser$2 = browser$2;
-var parseqs$1 = parseqs$3;
+var parseqs$1 = requireParseqs();
 var inherit = componentInherit;
 var yeast = yeast_1;
 var debug$2 = browserExports("engine.io-client:websocket");
@@ -3658,7 +3675,7 @@ var debug$1 = browserExports("engine.io-client:socket");
 var index = indexof;
 var parser$1 = browser$2;
 var parseuri = parseuri$2;
-var parseqs = parseqs$3;
+var parseqs = requireParseqs();
 var socket$1 = Socket$1;
 function Socket$1(uri, opts) {
   if (!(this instanceof Socket$1))
@@ -4117,14 +4134,22 @@ lib.exports = socket$1;
 lib.exports.parser = browser$2;
 var libExports$1 = lib.exports;
 var socket = { exports: {} };
-var toArray_1 = toArray;
-function toArray(list, index2) {
-  var array = [];
-  index2 = index2 || 0;
-  for (var i2 = index2 || 0; i2 < list.length; i2++) {
-    array[i2 - index2] = list[i2];
+var toArray_1;
+var hasRequiredToArray;
+function requireToArray() {
+  if (hasRequiredToArray)
+    return toArray_1;
+  hasRequiredToArray = 1;
+  toArray_1 = toArray;
+  function toArray(list, index2) {
+    var array = [];
+    index2 = index2 || 0;
+    for (var i2 = index2 || 0; i2 < list.length; i2++) {
+      array[i2 - index2] = list[i2];
+    }
+    return array;
   }
-  return array;
+  return toArray_1;
 }
 var on_1 = on$1;
 function on$1(obj2, ev, fn) {
@@ -4146,245 +4171,251 @@ var componentBind = function(obj2, fn) {
     return fn.apply(obj2, args.concat(slice.call(arguments)));
   };
 };
-(function(module, exports) {
-  var parser2 = socket_ioParser;
-  var Emitter2 = componentEmitterExports;
-  var toArray2 = toArray_1;
-  var on2 = on_1;
-  var bind2 = componentBind;
-  var debug2 = browserExports$2("socket.io-client:socket");
-  var parseqs2 = parseqs$3;
-  var hasBin = hasBinary2;
-  module.exports = Socket2;
-  var events = {
-    connect: 1,
-    connect_error: 1,
-    connect_timeout: 1,
-    connecting: 1,
-    disconnect: 1,
-    error: 1,
-    reconnect: 1,
-    reconnect_attempt: 1,
-    reconnect_failed: 1,
-    reconnect_error: 1,
-    reconnecting: 1,
-    ping: 1,
-    pong: 1
-  };
-  var emit = Emitter2.prototype.emit;
-  function Socket2(io, nsp, opts) {
-    this.io = io;
-    this.nsp = nsp;
-    this.json = this;
-    this.ids = 0;
-    this.acks = {};
-    this.receiveBuffer = [];
-    this.sendBuffer = [];
-    this.connected = false;
-    this.disconnected = true;
-    this.flags = {};
-    if (opts && opts.query) {
-      this.query = opts.query;
-    }
-    if (this.io.autoConnect)
-      this.open();
-  }
-  Emitter2(Socket2.prototype);
-  Socket2.prototype.subEvents = function() {
-    if (this.subs)
-      return;
-    var io = this.io;
-    this.subs = [
-      on2(io, "open", bind2(this, "onopen")),
-      on2(io, "packet", bind2(this, "onpacket")),
-      on2(io, "close", bind2(this, "onclose"))
-    ];
-  };
-  Socket2.prototype.open = Socket2.prototype.connect = function() {
-    if (this.connected)
-      return this;
-    this.subEvents();
-    if (!this.io.reconnecting)
-      this.io.open();
-    if ("open" === this.io.readyState)
-      this.onopen();
-    this.emit("connecting");
-    return this;
-  };
-  Socket2.prototype.send = function() {
-    var args = toArray2(arguments);
-    args.unshift("message");
-    this.emit.apply(this, args);
-    return this;
-  };
-  Socket2.prototype.emit = function(ev) {
-    if (events.hasOwnProperty(ev)) {
-      emit.apply(this, arguments);
-      return this;
-    }
-    var args = toArray2(arguments);
-    var packet = {
-      type: (this.flags.binary !== void 0 ? this.flags.binary : hasBin(args)) ? parser2.BINARY_EVENT : parser2.EVENT,
-      data: args
+var hasRequiredSocket;
+function requireSocket() {
+  if (hasRequiredSocket)
+    return socket.exports;
+  hasRequiredSocket = 1;
+  (function(module, exports) {
+    var parser2 = socket_ioParser;
+    var Emitter2 = componentEmitterExports;
+    var toArray = requireToArray();
+    var on2 = on_1;
+    var bind2 = componentBind;
+    var debug2 = browserExports$2("socket.io-client:socket");
+    var parseqs2 = requireParseqs();
+    var hasBin = requireHasBinary2();
+    module.exports = Socket2;
+    var events = {
+      connect: 1,
+      connect_error: 1,
+      connect_timeout: 1,
+      connecting: 1,
+      disconnect: 1,
+      error: 1,
+      reconnect: 1,
+      reconnect_attempt: 1,
+      reconnect_failed: 1,
+      reconnect_error: 1,
+      reconnecting: 1,
+      ping: 1,
+      pong: 1
     };
-    packet.options = {};
-    packet.options.compress = !this.flags || false !== this.flags.compress;
-    if ("function" === typeof args[args.length - 1]) {
-      debug2("emitting packet with ack id %d", this.ids);
-      this.acks[this.ids] = args.pop();
-      packet.id = this.ids++;
-    }
-    if (this.connected) {
-      this.packet(packet);
-    } else {
-      this.sendBuffer.push(packet);
-    }
-    this.flags = {};
-    return this;
-  };
-  Socket2.prototype.packet = function(packet) {
-    packet.nsp = this.nsp;
-    this.io.packet(packet);
-  };
-  Socket2.prototype.onopen = function() {
-    debug2("transport is open - connecting");
-    if ("/" !== this.nsp) {
-      if (this.query) {
-        var query = typeof this.query === "object" ? parseqs2.encode(this.query) : this.query;
-        debug2("sending connect packet with query %s", query);
-        this.packet({ type: parser2.CONNECT, query });
-      } else {
-        this.packet({ type: parser2.CONNECT });
+    var emit = Emitter2.prototype.emit;
+    function Socket2(io, nsp, opts) {
+      this.io = io;
+      this.nsp = nsp;
+      this.json = this;
+      this.ids = 0;
+      this.acks = {};
+      this.receiveBuffer = [];
+      this.sendBuffer = [];
+      this.connected = false;
+      this.disconnected = true;
+      this.flags = {};
+      if (opts && opts.query) {
+        this.query = opts.query;
       }
+      if (this.io.autoConnect)
+        this.open();
     }
-  };
-  Socket2.prototype.onclose = function(reason) {
-    debug2("close (%s)", reason);
-    this.connected = false;
-    this.disconnected = true;
-    delete this.id;
-    this.emit("disconnect", reason);
-  };
-  Socket2.prototype.onpacket = function(packet) {
-    var sameNamespace = packet.nsp === this.nsp;
-    var rootNamespaceError = packet.type === parser2.ERROR && packet.nsp === "/";
-    if (!sameNamespace && !rootNamespaceError)
-      return;
-    switch (packet.type) {
-      case parser2.CONNECT:
-        this.onconnect();
-        break;
-      case parser2.EVENT:
-        this.onevent(packet);
-        break;
-      case parser2.BINARY_EVENT:
-        this.onevent(packet);
-        break;
-      case parser2.ACK:
-        this.onack(packet);
-        break;
-      case parser2.BINARY_ACK:
-        this.onack(packet);
-        break;
-      case parser2.DISCONNECT:
-        this.ondisconnect();
-        break;
-      case parser2.ERROR:
-        this.emit("error", packet.data);
-        break;
-    }
-  };
-  Socket2.prototype.onevent = function(packet) {
-    var args = packet.data || [];
-    debug2("emitting event %j", args);
-    if (null != packet.id) {
-      debug2("attaching ack callback to event");
-      args.push(this.ack(packet.id));
-    }
-    if (this.connected) {
-      emit.apply(this, args);
-    } else {
-      this.receiveBuffer.push(args);
-    }
-  };
-  Socket2.prototype.ack = function(id) {
-    var self2 = this;
-    var sent = false;
-    return function() {
-      if (sent)
+    Emitter2(Socket2.prototype);
+    Socket2.prototype.subEvents = function() {
+      if (this.subs)
         return;
-      sent = true;
-      var args = toArray2(arguments);
-      debug2("sending ack %j", args);
-      self2.packet({
-        type: hasBin(args) ? parser2.BINARY_ACK : parser2.ACK,
-        id,
-        data: args
-      });
+      var io = this.io;
+      this.subs = [
+        on2(io, "open", bind2(this, "onopen")),
+        on2(io, "packet", bind2(this, "onpacket")),
+        on2(io, "close", bind2(this, "onclose"))
+      ];
     };
-  };
-  Socket2.prototype.onack = function(packet) {
-    var ack = this.acks[packet.id];
-    if ("function" === typeof ack) {
-      debug2("calling ack %s with %j", packet.id, packet.data);
-      ack.apply(this, packet.data);
-      delete this.acks[packet.id];
-    } else {
-      debug2("bad ack %s", packet.id);
-    }
-  };
-  Socket2.prototype.onconnect = function() {
-    this.connected = true;
-    this.disconnected = false;
-    this.emitBuffered();
-    this.emit("connect");
-  };
-  Socket2.prototype.emitBuffered = function() {
-    var i2;
-    for (i2 = 0; i2 < this.receiveBuffer.length; i2++) {
-      emit.apply(this, this.receiveBuffer[i2]);
-    }
-    this.receiveBuffer = [];
-    for (i2 = 0; i2 < this.sendBuffer.length; i2++) {
-      this.packet(this.sendBuffer[i2]);
-    }
-    this.sendBuffer = [];
-  };
-  Socket2.prototype.ondisconnect = function() {
-    debug2("server disconnect (%s)", this.nsp);
-    this.destroy();
-    this.onclose("io server disconnect");
-  };
-  Socket2.prototype.destroy = function() {
-    if (this.subs) {
-      for (var i2 = 0; i2 < this.subs.length; i2++) {
-        this.subs[i2].destroy();
+    Socket2.prototype.open = Socket2.prototype.connect = function() {
+      if (this.connected)
+        return this;
+      this.subEvents();
+      if (!this.io.reconnecting)
+        this.io.open();
+      if ("open" === this.io.readyState)
+        this.onopen();
+      this.emit("connecting");
+      return this;
+    };
+    Socket2.prototype.send = function() {
+      var args = toArray(arguments);
+      args.unshift("message");
+      this.emit.apply(this, args);
+      return this;
+    };
+    Socket2.prototype.emit = function(ev) {
+      if (events.hasOwnProperty(ev)) {
+        emit.apply(this, arguments);
+        return this;
       }
-      this.subs = null;
-    }
-    this.io.destroy(this);
-  };
-  Socket2.prototype.close = Socket2.prototype.disconnect = function() {
-    if (this.connected) {
-      debug2("performing disconnect (%s)", this.nsp);
-      this.packet({ type: parser2.DISCONNECT });
-    }
-    this.destroy();
-    if (this.connected) {
-      this.onclose("io client disconnect");
-    }
-    return this;
-  };
-  Socket2.prototype.compress = function(compress) {
-    this.flags.compress = compress;
-    return this;
-  };
-  Socket2.prototype.binary = function(binary2) {
-    this.flags.binary = binary2;
-    return this;
-  };
-})(socket);
-var socketExports = socket.exports;
+      var args = toArray(arguments);
+      var packet = {
+        type: (this.flags.binary !== void 0 ? this.flags.binary : hasBin(args)) ? parser2.BINARY_EVENT : parser2.EVENT,
+        data: args
+      };
+      packet.options = {};
+      packet.options.compress = !this.flags || false !== this.flags.compress;
+      if ("function" === typeof args[args.length - 1]) {
+        debug2("emitting packet with ack id %d", this.ids);
+        this.acks[this.ids] = args.pop();
+        packet.id = this.ids++;
+      }
+      if (this.connected) {
+        this.packet(packet);
+      } else {
+        this.sendBuffer.push(packet);
+      }
+      this.flags = {};
+      return this;
+    };
+    Socket2.prototype.packet = function(packet) {
+      packet.nsp = this.nsp;
+      this.io.packet(packet);
+    };
+    Socket2.prototype.onopen = function() {
+      debug2("transport is open - connecting");
+      if ("/" !== this.nsp) {
+        if (this.query) {
+          var query = typeof this.query === "object" ? parseqs2.encode(this.query) : this.query;
+          debug2("sending connect packet with query %s", query);
+          this.packet({ type: parser2.CONNECT, query });
+        } else {
+          this.packet({ type: parser2.CONNECT });
+        }
+      }
+    };
+    Socket2.prototype.onclose = function(reason) {
+      debug2("close (%s)", reason);
+      this.connected = false;
+      this.disconnected = true;
+      delete this.id;
+      this.emit("disconnect", reason);
+    };
+    Socket2.prototype.onpacket = function(packet) {
+      var sameNamespace = packet.nsp === this.nsp;
+      var rootNamespaceError = packet.type === parser2.ERROR && packet.nsp === "/";
+      if (!sameNamespace && !rootNamespaceError)
+        return;
+      switch (packet.type) {
+        case parser2.CONNECT:
+          this.onconnect();
+          break;
+        case parser2.EVENT:
+          this.onevent(packet);
+          break;
+        case parser2.BINARY_EVENT:
+          this.onevent(packet);
+          break;
+        case parser2.ACK:
+          this.onack(packet);
+          break;
+        case parser2.BINARY_ACK:
+          this.onack(packet);
+          break;
+        case parser2.DISCONNECT:
+          this.ondisconnect();
+          break;
+        case parser2.ERROR:
+          this.emit("error", packet.data);
+          break;
+      }
+    };
+    Socket2.prototype.onevent = function(packet) {
+      var args = packet.data || [];
+      debug2("emitting event %j", args);
+      if (null != packet.id) {
+        debug2("attaching ack callback to event");
+        args.push(this.ack(packet.id));
+      }
+      if (this.connected) {
+        emit.apply(this, args);
+      } else {
+        this.receiveBuffer.push(args);
+      }
+    };
+    Socket2.prototype.ack = function(id) {
+      var self2 = this;
+      var sent = false;
+      return function() {
+        if (sent)
+          return;
+        sent = true;
+        var args = toArray(arguments);
+        debug2("sending ack %j", args);
+        self2.packet({
+          type: hasBin(args) ? parser2.BINARY_ACK : parser2.ACK,
+          id,
+          data: args
+        });
+      };
+    };
+    Socket2.prototype.onack = function(packet) {
+      var ack = this.acks[packet.id];
+      if ("function" === typeof ack) {
+        debug2("calling ack %s with %j", packet.id, packet.data);
+        ack.apply(this, packet.data);
+        delete this.acks[packet.id];
+      } else {
+        debug2("bad ack %s", packet.id);
+      }
+    };
+    Socket2.prototype.onconnect = function() {
+      this.connected = true;
+      this.disconnected = false;
+      this.emitBuffered();
+      this.emit("connect");
+    };
+    Socket2.prototype.emitBuffered = function() {
+      var i2;
+      for (i2 = 0; i2 < this.receiveBuffer.length; i2++) {
+        emit.apply(this, this.receiveBuffer[i2]);
+      }
+      this.receiveBuffer = [];
+      for (i2 = 0; i2 < this.sendBuffer.length; i2++) {
+        this.packet(this.sendBuffer[i2]);
+      }
+      this.sendBuffer = [];
+    };
+    Socket2.prototype.ondisconnect = function() {
+      debug2("server disconnect (%s)", this.nsp);
+      this.destroy();
+      this.onclose("io server disconnect");
+    };
+    Socket2.prototype.destroy = function() {
+      if (this.subs) {
+        for (var i2 = 0; i2 < this.subs.length; i2++) {
+          this.subs[i2].destroy();
+        }
+        this.subs = null;
+      }
+      this.io.destroy(this);
+    };
+    Socket2.prototype.close = Socket2.prototype.disconnect = function() {
+      if (this.connected) {
+        debug2("performing disconnect (%s)", this.nsp);
+        this.packet({ type: parser2.DISCONNECT });
+      }
+      this.destroy();
+      if (this.connected) {
+        this.onclose("io client disconnect");
+      }
+      return this;
+    };
+    Socket2.prototype.compress = function(compress) {
+      this.flags.compress = compress;
+      return this;
+    };
+    Socket2.prototype.binary = function(binary2) {
+      this.flags.binary = binary2;
+      return this;
+    };
+  })(socket);
+  return socket.exports;
+}
 var backo2 = Backoff$1;
 function Backoff$1(opts) {
   opts = opts || {};
@@ -4416,7 +4447,7 @@ Backoff$1.prototype.setJitter = function(jitter) {
   this.jitter = jitter;
 };
 var eio = libExports$1;
-var Socket = socketExports;
+var Socket = requireSocket();
 var Emitter = componentEmitterExports;
 var parser = socket_ioParser;
 var on = on_1;
@@ -4777,7 +4808,7 @@ Manager$9.prototype.onreconnect = function() {
   exports.protocol = parser2.protocol;
   exports.connect = lookup;
   exports.Manager = manager;
-  exports.Socket = socketExports;
+  exports.Socket = requireSocket();
 })(lib$1, lib$1.exports);
 var libExports = lib$1.exports;
 const APIError$3 = APIError_1;
@@ -24407,9 +24438,11 @@ export {
   session as f,
   goto as g,
   homey as h,
-  baseUrl as i,
-  AthomCloudAPI_1 as j,
-  getDefaultExportFromCjs as k,
+  insights as i,
+  dashboards as j,
+  baseUrl as k,
+  AthomCloudAPI_1 as l,
+  getDefaultExportFromCjs as m,
   requireHomeyAPI as r,
   scopes as s,
   zones as z

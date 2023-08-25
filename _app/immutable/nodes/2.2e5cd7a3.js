@@ -7,9 +7,9 @@ var __publicField = (obj, key, value) => {
 var _a2, _b2;
 import { s as safe_not_equal, q as construct_svelte_component, e as empty, i as insert_hydration, d as detach, A as compute_rest_props, B as get_current_component, C as getContext, D as assign$1, E as exclude_internal_props, p as binding_callbacks, r as create_slot, u as update_slot_base, v as get_all_dirty_from_scope, w as get_slot_changes, F as svg_element, G as claim_svg_element, h as children, H as set_svg_attributes, I as action_destroyer, J as is_function, K as run_all, f as element, g as claim_element, L as set_attributes, M as listen, N as setContext, o as onMount, O as onDestroy, y as noop$1, P as subscribe, a as space, c as claim_space, j as attr, Q as toggle_class, x as append_hydration, R as createEventDispatcher, k as set_style, z as component_subscribe, S as set_store_value, T as add_flush_callback, U as bubble, l as text, m as claim_text, n as set_data, V as get_svelte_dataset, W as set_data_maybe_contenteditable, X as compute_slots, Y as destroy_each, Z as to_number, _ as set_input_value, $ as src_url_equal, a0 as current_component, b as afterUpdate, a1 as init_binding_group, a2 as head_selector } from "../chunks/scheduler.98e41e63.js";
 import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, g as group_outros, t as transition_out, e as destroy_component, c as check_outros, a as transition_in, f as bind } from "../chunks/index.5f86484a.js";
-import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, i as baseUrl } from "../chunks/AthomCloudAPI.22954863.js";
-import { w as writable, r as readable, e as base } from "../chunks/singletons.ca53e4ea.js";
-import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, R as Ripple, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, p as prefixFilter, l as exclude, m as ponyfill, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, B as Button, C as CommonLabel, q as handle_promise, r as update_await_block_branch, s as CircularProgress, t as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.7fecba7c.js";
+import { d as devices, s as scopes, h as homey, a as advancedFlows, b as basicFlows, i as insights, A as AthomCloudAPI, c as clientId, e as clientSecret, g as goto, f as session, z as zones, j as dashboards, k as baseUrl } from "../chunks/AthomCloudAPI.2fee2da9.js";
+import { w as writable, r as readable, e as base } from "../chunks/singletons.37a2ce62.js";
+import { c as classMap, g as get_spread_update, a as get_spread_object, f as forwardEventsBuilder, S as SmuiElement, u as useActions, _ as __extends, b as __assign, d as __read, e as __spreadArray, M as MDCFoundation, h as dispatch, i as classAdderBuilder, R as Ripple, p as ponyfill, j as ensure_array_like, k as update_keyed_each, o as outro_and_destroy_block, l as prefixFilter, m as exclude, n as __values, F as FloatingLabel, N as NotchedOutline, L as LineRipple, B as Button, C as CommonLabel, q as handle_promise, r as update_await_block_branch, s as apiKey, H as HomeyAPI, t as CircularProgress } from "../chunks/HomeyAPI.ea6d76d2.js";
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
   // @ts-ignore Node typings have this
   global
@@ -561,7 +561,7 @@ function create_default_slot$m(ctx) {
     }
   };
 }
-function create_fragment$L(ctx) {
+function create_fragment$K(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -773,7 +773,7 @@ function create_fragment$L(ctx) {
     }
   };
 }
-function instance$v($$self, $$props, $$invalidate) {
+function instance$u($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "on", "component", "tag", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -831,7 +831,7 @@ function instance$v($$self, $$props, $$invalidate) {
 class CommonIcon extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$v, create_fragment$L, safe_not_equal, {
+    init(this, options, instance$u, create_fragment$K, safe_not_equal, {
       use: 0,
       class: 1,
       on: 2,
@@ -844,7 +844,7 @@ class CommonIcon extends SvelteComponent {
     return this.$$.ctx[10];
   }
 }
-function create_fragment$K(ctx) {
+function create_fragment$J(ctx) {
   let svg;
   let useActions_action;
   let current;
@@ -967,7 +967,7 @@ function create_fragment$K(ctx) {
     }
   };
 }
-function instance$u($$self, $$props, $$invalidate) {
+function instance$t($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -1008,7 +1008,7 @@ function instance$u($$self, $$props, $$invalidate) {
 class Svg extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$u, create_fragment$K, safe_not_equal, { use: 0, getElement: 4 });
+    init(this, options, instance$t, create_fragment$J, safe_not_equal, { use: 0, getElement: 4 });
   }
   get getElement() {
     return this.$$.ctx[4];
@@ -2272,7 +2272,7 @@ var MDCModalDrawerFoundation = (
     return MDCModalDrawerFoundation2;
   }(MDCDismissibleDrawerFoundation)
 );
-function create_fragment$J(ctx) {
+function create_fragment$I(ctx) {
   let aside;
   let aside_class_value;
   let useActions_action;
@@ -2647,7 +2647,7 @@ function instance_1$d($$self, $$props, $$invalidate) {
 class Drawer extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$d, create_fragment$J, safe_not_equal, {
+    init(this, options, instance_1$d, create_fragment$I, safe_not_equal, {
       use: 0,
       class: 1,
       variant: 2,
@@ -2757,7 +2757,7 @@ function create_default_slot$l(ctx) {
     }
   };
 }
-function create_fragment$I(ctx) {
+function create_fragment$H(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -2918,7 +2918,7 @@ function create_fragment$I(ctx) {
     }
   };
 }
-function instance$t($$self, $$props, $$invalidate) {
+function instance$s($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "fixed", "component", "tag", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -2976,7 +2976,7 @@ function instance$t($$self, $$props, $$invalidate) {
 class Scrim extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$t, create_fragment$I, safe_not_equal, {
+    init(this, options, instance$s, create_fragment$H, safe_not_equal, {
       use: 0,
       class: 1,
       fixed: 2,
@@ -3374,7 +3374,7 @@ var MDCShortTopAppBarFoundation = (
   }(MDCTopAppBarBaseFoundation)
 );
 const { window: window_1$1 } = globals;
-function create_fragment$H(ctx) {
+function create_fragment$G(ctx) {
   let header;
   let header_class_value;
   let header_style_value;
@@ -3828,7 +3828,7 @@ class TopAppBar extends SvelteComponent {
       this,
       options,
       instance_1$c,
-      create_fragment$H,
+      create_fragment$G,
       safe_not_equal,
       {
         use: 1,
@@ -3858,7 +3858,7 @@ const Row = classAdderBuilder({
   class: "mdc-top-app-bar__row",
   tag: "div"
 });
-function create_fragment$G(ctx) {
+function create_fragment$F(ctx) {
   let section;
   let section_class_value;
   let useActions_action;
@@ -4022,7 +4022,7 @@ function create_fragment$G(ctx) {
     }
   };
 }
-function instance$s($$self, $$props, $$invalidate) {
+function instance$r($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "align", "toolbar", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -4074,7 +4074,7 @@ function instance$s($$self, $$props, $$invalidate) {
 class Section extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$s, create_fragment$G, safe_not_equal, {
+    init(this, options, instance$r, create_fragment$F, safe_not_equal, {
       use: 0,
       class: 1,
       align: 2,
@@ -4159,7 +4159,7 @@ function create_default_slot$k(ctx) {
     }
   };
 }
-function create_fragment$F(ctx) {
+function create_fragment$E(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -4312,7 +4312,7 @@ function create_fragment$F(ctx) {
     }
   };
 }
-function instance$r($$self, $$props, $$invalidate) {
+function instance$q($$self, $$props, $$invalidate) {
   let propStore;
   let adjustClass;
   const omit_props_names = ["use", "class", "topAppBar", "component", "tag", "getElement"];
@@ -4400,7 +4400,7 @@ function instance$r($$self, $$props, $$invalidate) {
 class AutoAdjust extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$r, create_fragment$F, safe_not_equal, {
+    init(this, options, instance$q, create_fragment$E, safe_not_equal, {
       use: 0,
       class: 1,
       topAppBar: 9,
@@ -4699,7 +4699,7 @@ function create_default_slot$j(ctx) {
     }
   };
 }
-function create_fragment$E(ctx) {
+function create_fragment$D(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -5431,7 +5431,7 @@ class IconButton extends SvelteComponent {
       this,
       options,
       instance_1$b,
-      create_fragment$E,
+      create_fragment$D,
       safe_not_equal,
       {
         use: 1,
@@ -5460,6 +5460,2078 @@ class IconButton extends SvelteComponent {
     return this.$$.ctx[15];
   }
 }
+function create_default_slot$i(ctx) {
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[42].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[44],
+    null
+  );
+  return {
+    c() {
+      if (default_slot)
+        default_slot.c();
+    },
+    l(nodes) {
+      if (default_slot)
+        default_slot.l(nodes);
+    },
+    m(target, anchor) {
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty[1] & /*$$scope*/
+        8192)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[44],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[44]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[44],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (default_slot)
+        default_slot.d(detaching);
+    }
+  };
+}
+function create_fragment$C(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { tag: (
+      /*tag*/
+      ctx[13]
+    ) },
+    {
+      use: [
+        /*forwardEvents*/
+        ctx[16],
+        .../*use*/
+        ctx[0]
+      ]
+    },
+    {
+      class: classMap({
+        [
+          /*className*/
+          ctx[1]
+        ]: true,
+        "mdc-deprecated-list": true,
+        "mdc-deprecated-list--non-interactive": (
+          /*nonInteractive*/
+          ctx[2]
+        ),
+        "mdc-deprecated-list--dense": (
+          /*dense*/
+          ctx[3]
+        ),
+        "mdc-deprecated-list--textual-list": (
+          /*textualList*/
+          ctx[4]
+        ),
+        "mdc-deprecated-list--avatar-list": (
+          /*avatarList*/
+          ctx[5] || /*selectionDialog*/
+          ctx[17]
+        ),
+        "mdc-deprecated-list--icon-list": (
+          /*iconList*/
+          ctx[6]
+        ),
+        "mdc-deprecated-list--image-list": (
+          /*imageList*/
+          ctx[7]
+        ),
+        "mdc-deprecated-list--thumbnail-list": (
+          /*thumbnailList*/
+          ctx[8]
+        ),
+        "mdc-deprecated-list--video-list": (
+          /*videoList*/
+          ctx[9]
+        ),
+        "mdc-deprecated-list--two-line": (
+          /*twoLine*/
+          ctx[10]
+        ),
+        "smui-list--three-line": (
+          /*threeLine*/
+          ctx[11] && !/*twoLine*/
+          ctx[10]
+        )
+      })
+    },
+    { role: (
+      /*role*/
+      ctx[15]
+    ) },
+    /*$$restProps*/
+    ctx[25]
+  ];
+  var switch_value = (
+    /*component*/
+    ctx[12]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot$i] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
+      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
+    }
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[43](switch_instance);
+    switch_instance.$on(
+      "keydown",
+      /*handleKeydown*/
+      ctx[20]
+    );
+    switch_instance.$on(
+      "focusin",
+      /*handleFocusin*/
+      ctx[21]
+    );
+    switch_instance.$on(
+      "focusout",
+      /*handleFocusout*/
+      ctx[22]
+    );
+    switch_instance.$on(
+      "click",
+      /*handleClick*/
+      ctx[23]
+    );
+    switch_instance.$on(
+      "SMUIListItem:mount",
+      /*handleItemMount*/
+      ctx[18]
+    );
+    switch_instance.$on(
+      "SMUIListItem:unmount",
+      /*handleItemUnmount*/
+      ctx[19]
+    );
+    switch_instance.$on(
+      "SMUI:action",
+      /*handleAction*/
+      ctx[24]
+    );
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const switch_instance_changes = dirty[0] & /*tag, forwardEvents, use, className, nonInteractive, dense, textualList, avatarList, selectionDialog, iconList, imageList, thumbnailList, videoList, twoLine, threeLine, role, $$restProps*/
+      33796095 ? get_spread_update(switch_instance_spread_levels, [
+        dirty[0] & /*tag*/
+        8192 && { tag: (
+          /*tag*/
+          ctx2[13]
+        ) },
+        dirty[0] & /*forwardEvents, use*/
+        65537 && {
+          use: [
+            /*forwardEvents*/
+            ctx2[16],
+            .../*use*/
+            ctx2[0]
+          ]
+        },
+        dirty[0] & /*className, nonInteractive, dense, textualList, avatarList, selectionDialog, iconList, imageList, thumbnailList, videoList, twoLine, threeLine*/
+        135166 && {
+          class: classMap({
+            [
+              /*className*/
+              ctx2[1]
+            ]: true,
+            "mdc-deprecated-list": true,
+            "mdc-deprecated-list--non-interactive": (
+              /*nonInteractive*/
+              ctx2[2]
+            ),
+            "mdc-deprecated-list--dense": (
+              /*dense*/
+              ctx2[3]
+            ),
+            "mdc-deprecated-list--textual-list": (
+              /*textualList*/
+              ctx2[4]
+            ),
+            "mdc-deprecated-list--avatar-list": (
+              /*avatarList*/
+              ctx2[5] || /*selectionDialog*/
+              ctx2[17]
+            ),
+            "mdc-deprecated-list--icon-list": (
+              /*iconList*/
+              ctx2[6]
+            ),
+            "mdc-deprecated-list--image-list": (
+              /*imageList*/
+              ctx2[7]
+            ),
+            "mdc-deprecated-list--thumbnail-list": (
+              /*thumbnailList*/
+              ctx2[8]
+            ),
+            "mdc-deprecated-list--video-list": (
+              /*videoList*/
+              ctx2[9]
+            ),
+            "mdc-deprecated-list--two-line": (
+              /*twoLine*/
+              ctx2[10]
+            ),
+            "smui-list--three-line": (
+              /*threeLine*/
+              ctx2[11] && !/*twoLine*/
+              ctx2[10]
+            )
+          })
+        },
+        dirty[0] & /*role*/
+        32768 && { role: (
+          /*role*/
+          ctx2[15]
+        ) },
+        dirty[0] & /*$$restProps*/
+        33554432 && get_spread_object(
+          /*$$restProps*/
+          ctx2[25]
+        )
+      ]) : {};
+      if (dirty[1] & /*$$scope*/
+      8192) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (dirty[0] & /*component*/
+      4096 && switch_value !== (switch_value = /*component*/
+      ctx2[12])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[43](switch_instance);
+          switch_instance.$on(
+            "keydown",
+            /*handleKeydown*/
+            ctx2[20]
+          );
+          switch_instance.$on(
+            "focusin",
+            /*handleFocusin*/
+            ctx2[21]
+          );
+          switch_instance.$on(
+            "focusout",
+            /*handleFocusout*/
+            ctx2[22]
+          );
+          switch_instance.$on(
+            "click",
+            /*handleClick*/
+            ctx2[23]
+          );
+          switch_instance.$on(
+            "SMUIListItem:mount",
+            /*handleItemMount*/
+            ctx2[18]
+          );
+          switch_instance.$on(
+            "SMUIListItem:unmount",
+            /*handleItemUnmount*/
+            ctx2[19]
+          );
+          switch_instance.$on(
+            "SMUI:action",
+            /*handleAction*/
+            ctx2[24]
+          );
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      ctx[43](null);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+function instance_1$a($$self, $$props, $$invalidate) {
+  const omit_props_names = [
+    "use",
+    "class",
+    "nonInteractive",
+    "dense",
+    "textualList",
+    "avatarList",
+    "iconList",
+    "imageList",
+    "thumbnailList",
+    "videoList",
+    "twoLine",
+    "threeLine",
+    "vertical",
+    "wrapFocus",
+    "singleSelection",
+    "disabledItemsFocusable",
+    "selectedIndex",
+    "radioList",
+    "checkList",
+    "hasTypeahead",
+    "component",
+    "tag",
+    "layout",
+    "setEnabled",
+    "getTypeaheadInProgress",
+    "getSelectedIndex",
+    "getFocusedItemIndex",
+    "focusItemAtIndex",
+    "getElement"
+  ];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  var _a3;
+  const { closest, matches } = ponyfill;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { nonInteractive = false } = $$props;
+  let { dense = false } = $$props;
+  let { textualList = false } = $$props;
+  let { avatarList = false } = $$props;
+  let { iconList = false } = $$props;
+  let { imageList = false } = $$props;
+  let { thumbnailList = false } = $$props;
+  let { videoList = false } = $$props;
+  let { twoLine = false } = $$props;
+  let { threeLine = false } = $$props;
+  let { vertical = true } = $$props;
+  let { wrapFocus = (_a3 = getContext("SMUI:list:wrapFocus")) !== null && _a3 !== void 0 ? _a3 : false } = $$props;
+  let { singleSelection = false } = $$props;
+  let { disabledItemsFocusable = false } = $$props;
+  let { selectedIndex = -1 } = $$props;
+  let { radioList = false } = $$props;
+  let { checkList = false } = $$props;
+  let { hasTypeahead = false } = $$props;
+  let element2;
+  let instance2;
+  let items2 = [];
+  let role = getContext("SMUI:list:role");
+  let nav = getContext("SMUI:list:nav");
+  const itemAccessorMap = /* @__PURE__ */ new WeakMap();
+  let selectionDialog = getContext("SMUI:dialog:selection");
+  let addLayoutListener = getContext("SMUI:addLayoutListener");
+  let removeLayoutListener;
+  let { component = SmuiElement } = $$props;
+  let { tag = component === SmuiElement ? nav ? "nav" : "ul" : void 0 } = $$props;
+  setContext("SMUI:list:nonInteractive", nonInteractive);
+  setContext("SMUI:separator:context", "list");
+  if (!role) {
+    if (singleSelection) {
+      role = "listbox";
+      setContext("SMUI:list:item:role", "option");
+    } else if (radioList) {
+      role = "radiogroup";
+      setContext("SMUI:list:item:role", "radio");
+    } else if (checkList) {
+      role = "group";
+      setContext("SMUI:list:item:role", "checkbox");
+    } else {
+      role = "list";
+      setContext("SMUI:list:item:role", void 0);
+    }
+  }
+  if (addLayoutListener) {
+    removeLayoutListener = addLayoutListener(layout);
+  }
+  onMount(() => {
+    $$invalidate(41, instance2 = new MDCListFoundation({
+      addClassForElementIndex,
+      focusItemAtIndex,
+      getAttributeForElementIndex: (index2, name) => {
+        var _a4, _b3;
+        return (_b3 = (_a4 = getOrderedList()[index2]) === null || _a4 === void 0 ? void 0 : _a4.getAttr(name)) !== null && _b3 !== void 0 ? _b3 : null;
+      },
+      getFocusedElementIndex: () => document.activeElement ? getOrderedList().map((accessor2) => accessor2.element).indexOf(document.activeElement) : -1,
+      getListItemCount: () => items2.length,
+      getPrimaryTextAtIndex,
+      hasCheckboxAtIndex: (index2) => {
+        var _a4, _b3;
+        return (_b3 = (_a4 = getOrderedList()[index2]) === null || _a4 === void 0 ? void 0 : _a4.hasCheckbox) !== null && _b3 !== void 0 ? _b3 : false;
+      },
+      hasRadioAtIndex: (index2) => {
+        var _a4, _b3;
+        return (_b3 = (_a4 = getOrderedList()[index2]) === null || _a4 === void 0 ? void 0 : _a4.hasRadio) !== null && _b3 !== void 0 ? _b3 : false;
+      },
+      isCheckboxCheckedAtIndex: (index2) => {
+        var _a4;
+        const listItem = getOrderedList()[index2];
+        return (_a4 = (listItem === null || listItem === void 0 ? void 0 : listItem.hasCheckbox) && listItem.checked) !== null && _a4 !== void 0 ? _a4 : false;
+      },
+      isFocusInsideList: () => element2 != null && getElement() !== document.activeElement && getElement().contains(document.activeElement),
+      isRootFocused: () => element2 != null && document.activeElement === getElement(),
+      listItemAtIndexHasClass,
+      notifyAction: (index2) => {
+        $$invalidate(26, selectedIndex = index2);
+        if (element2 != null) {
+          dispatch(getElement(), "SMUIList:action", { index: index2 }, void 0, true);
+        }
+      },
+      notifySelectionChange: (changedIndices) => {
+        if (element2 != null) {
+          dispatch(getElement(), "SMUIList:selectionChange", { changedIndices });
+        }
+      },
+      removeClassForElementIndex,
+      setAttributeForElementIndex,
+      setCheckedCheckboxOrRadioAtIndex: (index2, isChecked) => {
+        getOrderedList()[index2].checked = isChecked;
+      },
+      setTabIndexForListItemChildren: (listItemIndex, tabIndexValue) => {
+        const listItem = getOrderedList()[listItemIndex];
+        const selector = "button:not(:disabled), a";
+        Array.prototype.forEach.call(listItem.element.querySelectorAll(selector), (el) => {
+          el.setAttribute("tabindex", tabIndexValue);
+        });
+      }
+    }));
+    const accessor = {
+      get element() {
+        return getElement();
+      },
+      get items() {
+        return items2;
+      },
+      get typeaheadInProgress() {
+        return instance2.isTypeaheadInProgress();
+      },
+      typeaheadMatchItem(nextChar, startingIndex) {
+        return instance2.typeaheadMatchItem(
+          nextChar,
+          startingIndex,
+          /** skipFocus */
+          true
+        );
+      },
+      getOrderedList,
+      focusItemAtIndex,
+      addClassForElementIndex,
+      removeClassForElementIndex,
+      setAttributeForElementIndex,
+      removeAttributeForElementIndex,
+      getAttributeFromElementIndex,
+      getPrimaryTextAtIndex
+    };
+    dispatch(getElement(), "SMUIList:mount", accessor);
+    instance2.init();
+    instance2.layout();
+    return () => {
+      instance2.destroy();
+    };
+  });
+  onDestroy(() => {
+    if (removeLayoutListener) {
+      removeLayoutListener();
+    }
+  });
+  function handleItemMount(event) {
+    items2.push(event.detail);
+    itemAccessorMap.set(event.detail.element, event.detail);
+    if (singleSelection && event.detail.selected) {
+      $$invalidate(26, selectedIndex = getListItemIndex(event.detail.element));
+    }
+    event.stopPropagation();
+  }
+  function handleItemUnmount(event) {
+    var _a4;
+    const idx = (_a4 = event.detail && items2.indexOf(event.detail)) !== null && _a4 !== void 0 ? _a4 : -1;
+    if (idx !== -1) {
+      items2.splice(idx, 1);
+      items2 = items2;
+      itemAccessorMap.delete(event.detail.element);
+    }
+    event.stopPropagation();
+  }
+  function handleKeydown2(event) {
+    if (instance2 && event.target) {
+      instance2.handleKeydown(event, event.target.classList.contains("mdc-deprecated-list-item"), getListItemIndex(event.target));
+    }
+  }
+  function handleFocusin(event) {
+    if (instance2 && event.target) {
+      instance2.handleFocusIn(getListItemIndex(event.target));
+    }
+  }
+  function handleFocusout(event) {
+    if (instance2 && event.target) {
+      instance2.handleFocusOut(getListItemIndex(event.target));
+    }
+  }
+  function handleClick(event) {
+    if (instance2 && event.target) {
+      instance2.handleClick(getListItemIndex(event.target), !matches(event.target, 'input[type="checkbox"], input[type="radio"]'), event);
+    }
+  }
+  function handleAction(event) {
+    if (radioList || checkList) {
+      const index2 = getListItemIndex(event.target);
+      if (index2 !== -1) {
+        const item = getOrderedList()[index2];
+        if (item && (radioList && !item.checked || checkList)) {
+          if (!matches(event.detail.target, 'input[type="checkbox"], input[type="radio"]')) {
+            item.checked = !item.checked;
+          }
+          item.activateRipple();
+          window.requestAnimationFrame(() => {
+            item.deactivateRipple();
+          });
+        }
+      }
+    }
+  }
+  function getOrderedList() {
+    if (element2 == null) {
+      return [];
+    }
+    return [...getElement().children].map((element3) => itemAccessorMap.get(element3)).filter((accessor) => accessor && accessor._smui_list_item_accessor);
+  }
+  function listItemAtIndexHasClass(index2, className2) {
+    var _a4;
+    const accessor = getOrderedList()[index2];
+    return (_a4 = accessor && accessor.hasClass(className2)) !== null && _a4 !== void 0 ? _a4 : false;
+  }
+  function addClassForElementIndex(index2, className2) {
+    const accessor = getOrderedList()[index2];
+    accessor && accessor.addClass(className2);
+  }
+  function removeClassForElementIndex(index2, className2) {
+    const accessor = getOrderedList()[index2];
+    accessor && accessor.removeClass(className2);
+  }
+  function setAttributeForElementIndex(index2, name, value) {
+    const accessor = getOrderedList()[index2];
+    accessor && accessor.addAttr(name, value);
+  }
+  function removeAttributeForElementIndex(index2, name) {
+    const accessor = getOrderedList()[index2];
+    accessor && accessor.removeAttr(name);
+  }
+  function getAttributeFromElementIndex(index2, name) {
+    const accessor = getOrderedList()[index2];
+    if (accessor) {
+      return accessor.getAttr(name);
+    } else {
+      return null;
+    }
+  }
+  function getPrimaryTextAtIndex(index2) {
+    var _a4;
+    const accessor = getOrderedList()[index2];
+    return (_a4 = accessor && accessor.getPrimaryText()) !== null && _a4 !== void 0 ? _a4 : "";
+  }
+  function getListItemIndex(element3) {
+    const nearestParent = closest(element3, ".mdc-deprecated-list-item, .mdc-deprecated-list");
+    if (nearestParent && matches(nearestParent, ".mdc-deprecated-list-item")) {
+      return getOrderedList().map((item) => item === null || item === void 0 ? void 0 : item.element).indexOf(nearestParent);
+    }
+    return -1;
+  }
+  function layout() {
+    return instance2.layout();
+  }
+  function setEnabled(itemIndex, isEnabled) {
+    return instance2.setEnabled(itemIndex, isEnabled);
+  }
+  function getTypeaheadInProgress() {
+    return instance2.isTypeaheadInProgress();
+  }
+  function getSelectedIndex() {
+    return instance2.getSelectedIndex();
+  }
+  function getFocusedItemIndex() {
+    return instance2.getFocusedItemIndex();
+  }
+  function focusItemAtIndex(index2) {
+    const accessor = getOrderedList()[index2];
+    accessor && "focus" in accessor.element && accessor.element.focus();
+  }
+  function getElement() {
+    return element2.getElement();
+  }
+  function switch_instance_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(14, element2);
+    });
+  }
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(25, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(0, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(1, className = $$new_props.class);
+    if ("nonInteractive" in $$new_props)
+      $$invalidate(2, nonInteractive = $$new_props.nonInteractive);
+    if ("dense" in $$new_props)
+      $$invalidate(3, dense = $$new_props.dense);
+    if ("textualList" in $$new_props)
+      $$invalidate(4, textualList = $$new_props.textualList);
+    if ("avatarList" in $$new_props)
+      $$invalidate(5, avatarList = $$new_props.avatarList);
+    if ("iconList" in $$new_props)
+      $$invalidate(6, iconList = $$new_props.iconList);
+    if ("imageList" in $$new_props)
+      $$invalidate(7, imageList = $$new_props.imageList);
+    if ("thumbnailList" in $$new_props)
+      $$invalidate(8, thumbnailList = $$new_props.thumbnailList);
+    if ("videoList" in $$new_props)
+      $$invalidate(9, videoList = $$new_props.videoList);
+    if ("twoLine" in $$new_props)
+      $$invalidate(10, twoLine = $$new_props.twoLine);
+    if ("threeLine" in $$new_props)
+      $$invalidate(11, threeLine = $$new_props.threeLine);
+    if ("vertical" in $$new_props)
+      $$invalidate(27, vertical = $$new_props.vertical);
+    if ("wrapFocus" in $$new_props)
+      $$invalidate(28, wrapFocus = $$new_props.wrapFocus);
+    if ("singleSelection" in $$new_props)
+      $$invalidate(29, singleSelection = $$new_props.singleSelection);
+    if ("disabledItemsFocusable" in $$new_props)
+      $$invalidate(30, disabledItemsFocusable = $$new_props.disabledItemsFocusable);
+    if ("selectedIndex" in $$new_props)
+      $$invalidate(26, selectedIndex = $$new_props.selectedIndex);
+    if ("radioList" in $$new_props)
+      $$invalidate(31, radioList = $$new_props.radioList);
+    if ("checkList" in $$new_props)
+      $$invalidate(32, checkList = $$new_props.checkList);
+    if ("hasTypeahead" in $$new_props)
+      $$invalidate(33, hasTypeahead = $$new_props.hasTypeahead);
+    if ("component" in $$new_props)
+      $$invalidate(12, component = $$new_props.component);
+    if ("tag" in $$new_props)
+      $$invalidate(13, tag = $$new_props.tag);
+    if ("$$scope" in $$new_props)
+      $$invalidate(44, $$scope = $$new_props.$$scope);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty[0] & /*vertical*/
+    134217728 | $$self.$$.dirty[1] & /*instance*/
+    1024) {
+      if (instance2) {
+        instance2.setVerticalOrientation(vertical);
+      }
+    }
+    if ($$self.$$.dirty[0] & /*wrapFocus*/
+    268435456 | $$self.$$.dirty[1] & /*instance*/
+    1024) {
+      if (instance2) {
+        instance2.setWrapFocus(wrapFocus);
+      }
+    }
+    if ($$self.$$.dirty[1] & /*instance, hasTypeahead*/
+    1028) {
+      if (instance2) {
+        instance2.setHasTypeahead(hasTypeahead);
+      }
+    }
+    if ($$self.$$.dirty[0] & /*singleSelection*/
+    536870912 | $$self.$$.dirty[1] & /*instance*/
+    1024) {
+      if (instance2) {
+        instance2.setSingleSelection(singleSelection);
+      }
+    }
+    if ($$self.$$.dirty[0] & /*disabledItemsFocusable*/
+    1073741824 | $$self.$$.dirty[1] & /*instance*/
+    1024) {
+      if (instance2) {
+        instance2.setDisabledItemsFocusable(disabledItemsFocusable);
+      }
+    }
+    if ($$self.$$.dirty[0] & /*singleSelection, selectedIndex*/
+    603979776 | $$self.$$.dirty[1] & /*instance*/
+    1024) {
+      if (instance2 && singleSelection && getSelectedIndex() !== selectedIndex) {
+        instance2.setSelectedIndex(selectedIndex);
+      }
+    }
+  };
+  return [
+    use,
+    className,
+    nonInteractive,
+    dense,
+    textualList,
+    avatarList,
+    iconList,
+    imageList,
+    thumbnailList,
+    videoList,
+    twoLine,
+    threeLine,
+    component,
+    tag,
+    element2,
+    role,
+    forwardEvents,
+    selectionDialog,
+    handleItemMount,
+    handleItemUnmount,
+    handleKeydown2,
+    handleFocusin,
+    handleFocusout,
+    handleClick,
+    handleAction,
+    $$restProps,
+    selectedIndex,
+    vertical,
+    wrapFocus,
+    singleSelection,
+    disabledItemsFocusable,
+    radioList,
+    checkList,
+    hasTypeahead,
+    layout,
+    setEnabled,
+    getTypeaheadInProgress,
+    getSelectedIndex,
+    getFocusedItemIndex,
+    focusItemAtIndex,
+    getElement,
+    instance2,
+    slots,
+    switch_instance_binding,
+    $$scope
+  ];
+}
+class List extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(
+      this,
+      options,
+      instance_1$a,
+      create_fragment$C,
+      safe_not_equal,
+      {
+        use: 0,
+        class: 1,
+        nonInteractive: 2,
+        dense: 3,
+        textualList: 4,
+        avatarList: 5,
+        iconList: 6,
+        imageList: 7,
+        thumbnailList: 8,
+        videoList: 9,
+        twoLine: 10,
+        threeLine: 11,
+        vertical: 27,
+        wrapFocus: 28,
+        singleSelection: 29,
+        disabledItemsFocusable: 30,
+        selectedIndex: 26,
+        radioList: 31,
+        checkList: 32,
+        hasTypeahead: 33,
+        component: 12,
+        tag: 13,
+        layout: 34,
+        setEnabled: 35,
+        getTypeaheadInProgress: 36,
+        getSelectedIndex: 37,
+        getFocusedItemIndex: 38,
+        focusItemAtIndex: 39,
+        getElement: 40
+      },
+      null,
+      [-1, -1]
+    );
+  }
+  get layout() {
+    return this.$$.ctx[34];
+  }
+  get setEnabled() {
+    return this.$$.ctx[35];
+  }
+  get getTypeaheadInProgress() {
+    return this.$$.ctx[36];
+  }
+  get getSelectedIndex() {
+    return this.$$.ctx[37];
+  }
+  get getFocusedItemIndex() {
+    return this.$$.ctx[38];
+  }
+  get focusItemAtIndex() {
+    return this.$$.ctx[39];
+  }
+  get getElement() {
+    return this.$$.ctx[40];
+  }
+}
+function create_if_block$p(ctx) {
+  let span;
+  return {
+    c() {
+      span = element("span");
+      this.h();
+    },
+    l(nodes) {
+      span = claim_element(nodes, "SPAN", { class: true });
+      children(span).forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(span, "class", "mdc-deprecated-list-item__ripple");
+    },
+    m(target, anchor) {
+      insert_hydration(target, span, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
+    }
+  };
+}
+function create_default_slot$h(ctx) {
+  let if_block_anchor;
+  let current;
+  let if_block = (
+    /*ripple*/
+    ctx[7] && create_if_block$p()
+  );
+  const default_slot_template = (
+    /*#slots*/
+    ctx[34].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[37],
+    null
+  );
+  return {
+    c() {
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+      if (default_slot)
+        default_slot.c();
+    },
+    l(nodes) {
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+      if (default_slot)
+        default_slot.l(nodes);
+    },
+    m(target, anchor) {
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (
+        /*ripple*/
+        ctx2[7]
+      ) {
+        if (if_block)
+          ;
+        else {
+          if_block = create_if_block$p();
+          if_block.c();
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty[1] & /*$$scope*/
+        64)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[37],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[37]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[37],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if (if_block)
+        if_block.d(detaching);
+      if (default_slot)
+        default_slot.d(detaching);
+    }
+  };
+}
+function create_fragment$B(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { tag: (
+      /*tag*/
+      ctx[14]
+    ) },
+    {
+      use: [
+        .../*nonInteractive*/
+        ctx[6] ? [] : [
+          [
+            Ripple,
+            {
+              ripple: !/*input*/
+              ctx[16],
+              unbounded: false,
+              color: (
+                /*activated*/
+                (ctx[1] || /*selected*/
+                ctx[0]) && /*color*/
+                ctx[5] == null ? "primary" : (
+                  /*color*/
+                  ctx[5]
+                )
+              ),
+              disabled: (
+                /*disabled*/
+                ctx[10]
+              ),
+              addClass: (
+                /*addClass*/
+                ctx[24]
+              ),
+              removeClass: (
+                /*removeClass*/
+                ctx[25]
+              ),
+              addStyle: (
+                /*addStyle*/
+                ctx[26]
+              )
+            }
+          ]
+        ],
+        /*forwardEvents*/
+        ctx[22],
+        .../*use*/
+        ctx[2]
+      ]
+    },
+    {
+      class: classMap({
+        [
+          /*className*/
+          ctx[3]
+        ]: true,
+        "mdc-deprecated-list-item": !/*wrapper*/
+        ctx[8],
+        "mdc-deprecated-list-item__wrapper": (
+          /*wrapper*/
+          ctx[8]
+        ),
+        "mdc-deprecated-list-item--activated": (
+          /*activated*/
+          ctx[1]
+        ),
+        "mdc-deprecated-list-item--selected": (
+          /*selected*/
+          ctx[0]
+        ),
+        "mdc-deprecated-list-item--disabled": (
+          /*disabled*/
+          ctx[10]
+        ),
+        "mdc-menu-item--selected": !/*nav*/
+        ctx[23] && /*role*/
+        ctx[9] === "menuitem" && /*selected*/
+        ctx[0],
+        "smui-menu-item--non-interactive": (
+          /*nonInteractive*/
+          ctx[6]
+        ),
+        .../*internalClasses*/
+        ctx[18]
+      })
+    },
+    {
+      style: Object.entries(
+        /*internalStyles*/
+        ctx[19]
+      ).map(func$6).concat([
+        /*style*/
+        ctx[4]
+      ]).join(" ")
+    },
+    /*nav*/
+    ctx[23] && /*activated*/
+    ctx[1] ? { "aria-current": "page" } : {},
+    !/*nav*/
+    ctx[23] || /*wrapper*/
+    ctx[8] ? { role: (
+      /*role*/
+      ctx[9]
+    ) } : {},
+    !/*nav*/
+    ctx[23] && /*role*/
+    ctx[9] === "option" ? {
+      "aria-selected": (
+        /*selected*/
+        ctx[0] ? "true" : "false"
+      )
+    } : {},
+    !/*nav*/
+    ctx[23] && /*role*/
+    (ctx[9] === "radio" || /*role*/
+    ctx[9] === "checkbox") ? {
+      "aria-checked": (
+        /*input*/
+        ctx[16] && /*input*/
+        ctx[16].checked ? "true" : "false"
+      )
+    } : {},
+    !/*nav*/
+    ctx[23] ? {
+      "aria-disabled": (
+        /*disabled*/
+        ctx[10] ? "true" : "false"
+      )
+    } : {},
+    {
+      "data-menu-item-skip-restore-focus": (
+        /*skipRestoreFocus*/
+        ctx[11] || void 0
+      )
+    },
+    { tabindex: (
+      /*tabindex*/
+      ctx[21]
+    ) },
+    { href: (
+      /*href*/
+      ctx[12]
+    ) },
+    /*internalAttrs*/
+    ctx[20],
+    /*$$restProps*/
+    ctx[29]
+  ];
+  var switch_value = (
+    /*component*/
+    ctx[13]
+  );
+  function switch_props(ctx2) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot$h] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
+      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
+    }
+    return { props: switch_instance_props };
+  }
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+    ctx[35](switch_instance);
+    switch_instance.$on(
+      "click",
+      /*action*/
+      ctx[15]
+    );
+    switch_instance.$on(
+      "keydown",
+      /*handleKeydown*/
+      ctx[27]
+    );
+    switch_instance.$on(
+      "SMUIGenericInput:mount",
+      /*handleInputMount*/
+      ctx[28]
+    );
+    switch_instance.$on(
+      "SMUIGenericInput:unmount",
+      /*SMUIGenericInput_unmount_handler*/
+      ctx[36]
+    );
+  }
+  return {
+    c() {
+      if (switch_instance)
+        create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    l(nodes) {
+      if (switch_instance)
+        claim_component(switch_instance.$$.fragment, nodes);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance)
+        mount_component(switch_instance, target, anchor);
+      insert_hydration(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const switch_instance_changes = dirty[0] & /*tag, nonInteractive, input, activated, selected, color, disabled, addClass, removeClass, addStyle, forwardEvents, use, className, wrapper, nav, role, internalClasses, internalStyles, style, skipRestoreFocus, tabindex, href, internalAttrs, $$restProps*/
+      670916479 ? get_spread_update(switch_instance_spread_levels, [
+        dirty[0] & /*tag*/
+        16384 && { tag: (
+          /*tag*/
+          ctx2[14]
+        ) },
+        dirty[0] & /*nonInteractive, input, activated, selected, color, disabled, addClass, removeClass, addStyle, forwardEvents, use*/
+        121701479 && {
+          use: [
+            .../*nonInteractive*/
+            ctx2[6] ? [] : [
+              [
+                Ripple,
+                {
+                  ripple: !/*input*/
+                  ctx2[16],
+                  unbounded: false,
+                  color: (
+                    /*activated*/
+                    (ctx2[1] || /*selected*/
+                    ctx2[0]) && /*color*/
+                    ctx2[5] == null ? "primary" : (
+                      /*color*/
+                      ctx2[5]
+                    )
+                  ),
+                  disabled: (
+                    /*disabled*/
+                    ctx2[10]
+                  ),
+                  addClass: (
+                    /*addClass*/
+                    ctx2[24]
+                  ),
+                  removeClass: (
+                    /*removeClass*/
+                    ctx2[25]
+                  ),
+                  addStyle: (
+                    /*addStyle*/
+                    ctx2[26]
+                  )
+                }
+              ]
+            ],
+            /*forwardEvents*/
+            ctx2[22],
+            .../*use*/
+            ctx2[2]
+          ]
+        },
+        dirty[0] & /*className, wrapper, activated, selected, disabled, nav, role, nonInteractive, internalClasses*/
+        8652619 && {
+          class: classMap({
+            [
+              /*className*/
+              ctx2[3]
+            ]: true,
+            "mdc-deprecated-list-item": !/*wrapper*/
+            ctx2[8],
+            "mdc-deprecated-list-item__wrapper": (
+              /*wrapper*/
+              ctx2[8]
+            ),
+            "mdc-deprecated-list-item--activated": (
+              /*activated*/
+              ctx2[1]
+            ),
+            "mdc-deprecated-list-item--selected": (
+              /*selected*/
+              ctx2[0]
+            ),
+            "mdc-deprecated-list-item--disabled": (
+              /*disabled*/
+              ctx2[10]
+            ),
+            "mdc-menu-item--selected": !/*nav*/
+            ctx2[23] && /*role*/
+            ctx2[9] === "menuitem" && /*selected*/
+            ctx2[0],
+            "smui-menu-item--non-interactive": (
+              /*nonInteractive*/
+              ctx2[6]
+            ),
+            .../*internalClasses*/
+            ctx2[18]
+          })
+        },
+        dirty[0] & /*internalStyles, style*/
+        524304 && {
+          style: Object.entries(
+            /*internalStyles*/
+            ctx2[19]
+          ).map(func$6).concat([
+            /*style*/
+            ctx2[4]
+          ]).join(" ")
+        },
+        dirty[0] & /*nav, activated*/
+        8388610 && get_spread_object(
+          /*nav*/
+          ctx2[23] && /*activated*/
+          ctx2[1] ? { "aria-current": "page" } : {}
+        ),
+        dirty[0] & /*nav, wrapper, role*/
+        8389376 && get_spread_object(!/*nav*/
+        ctx2[23] || /*wrapper*/
+        ctx2[8] ? { role: (
+          /*role*/
+          ctx2[9]
+        ) } : {}),
+        dirty[0] & /*nav, role, selected*/
+        8389121 && get_spread_object(!/*nav*/
+        ctx2[23] && /*role*/
+        ctx2[9] === "option" ? {
+          "aria-selected": (
+            /*selected*/
+            ctx2[0] ? "true" : "false"
+          )
+        } : {}),
+        dirty[0] & /*nav, role, input*/
+        8454656 && get_spread_object(!/*nav*/
+        ctx2[23] && /*role*/
+        (ctx2[9] === "radio" || /*role*/
+        ctx2[9] === "checkbox") ? {
+          "aria-checked": (
+            /*input*/
+            ctx2[16] && /*input*/
+            ctx2[16].checked ? "true" : "false"
+          )
+        } : {}),
+        dirty[0] & /*nav, disabled*/
+        8389632 && get_spread_object(!/*nav*/
+        ctx2[23] ? {
+          "aria-disabled": (
+            /*disabled*/
+            ctx2[10] ? "true" : "false"
+          )
+        } : {}),
+        dirty[0] & /*skipRestoreFocus*/
+        2048 && {
+          "data-menu-item-skip-restore-focus": (
+            /*skipRestoreFocus*/
+            ctx2[11] || void 0
+          )
+        },
+        dirty[0] & /*tabindex*/
+        2097152 && { tabindex: (
+          /*tabindex*/
+          ctx2[21]
+        ) },
+        dirty[0] & /*href*/
+        4096 && { href: (
+          /*href*/
+          ctx2[12]
+        ) },
+        dirty[0] & /*internalAttrs*/
+        1048576 && get_spread_object(
+          /*internalAttrs*/
+          ctx2[20]
+        ),
+        dirty[0] & /*$$restProps*/
+        536870912 && get_spread_object(
+          /*$$restProps*/
+          ctx2[29]
+        )
+      ]) : {};
+      if (dirty[0] & /*ripple*/
+      128 | dirty[1] & /*$$scope*/
+      64) {
+        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (dirty[0] & /*component*/
+      8192 && switch_value !== (switch_value = /*component*/
+      ctx2[13])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          ctx2[35](switch_instance);
+          switch_instance.$on(
+            "click",
+            /*action*/
+            ctx2[15]
+          );
+          switch_instance.$on(
+            "keydown",
+            /*handleKeydown*/
+            ctx2[27]
+          );
+          switch_instance.$on(
+            "SMUIGenericInput:mount",
+            /*handleInputMount*/
+            ctx2[28]
+          );
+          switch_instance.$on(
+            "SMUIGenericInput:unmount",
+            /*SMUIGenericInput_unmount_handler*/
+            ctx2[36]
+          );
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      if (switch_instance)
+        transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance)
+        transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      ctx[35](null);
+      if (switch_instance)
+        destroy_component(switch_instance, detaching);
+    }
+  };
+}
+let counter$3 = 0;
+const func$6 = ([name, value]) => `${name}: ${value};`;
+function instance$p($$self, $$props, $$invalidate) {
+  let tabindex;
+  const omit_props_names = [
+    "use",
+    "class",
+    "style",
+    "color",
+    "nonInteractive",
+    "ripple",
+    "wrapper",
+    "activated",
+    "role",
+    "selected",
+    "disabled",
+    "skipRestoreFocus",
+    "tabindex",
+    "inputId",
+    "href",
+    "component",
+    "tag",
+    "action",
+    "getPrimaryText",
+    "getElement"
+  ];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  var _a3;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let uninitializedValue = () => {
+  };
+  function isUninitializedValue(value) {
+    return value === uninitializedValue;
+  }
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { color: color2 = void 0 } = $$props;
+  let { nonInteractive = (_a3 = getContext("SMUI:list:nonInteractive")) !== null && _a3 !== void 0 ? _a3 : false } = $$props;
+  setContext("SMUI:list:nonInteractive", void 0);
+  let { ripple = !nonInteractive } = $$props;
+  let { wrapper = false } = $$props;
+  let { activated = false } = $$props;
+  let { role = wrapper ? "presentation" : getContext("SMUI:list:item:role") } = $$props;
+  setContext("SMUI:list:item:role", void 0);
+  let { selected = false } = $$props;
+  let { disabled = false } = $$props;
+  let { skipRestoreFocus = false } = $$props;
+  let { tabindex: tabindexProp = uninitializedValue } = $$props;
+  let { inputId = "SMUI-form-field-list-" + counter$3++ } = $$props;
+  let { href = void 0 } = $$props;
+  let element2;
+  let internalClasses = {};
+  let internalStyles = {};
+  let internalAttrs = {};
+  let input;
+  let addTabindexIfNoItemsSelectedRaf;
+  let nav = getContext("SMUI:list:item:nav");
+  let { component = SmuiElement } = $$props;
+  let { tag = component === SmuiElement ? nav ? href ? "a" : "span" : "li" : void 0 } = $$props;
+  setContext("SMUI:generic:input:props", { id: inputId });
+  setContext("SMUI:separator:context", void 0);
+  onMount(() => {
+    if (!selected && !nonInteractive) {
+      let first = true;
+      let el = element2.getElement();
+      while (el.previousSibling) {
+        el = el.previousSibling;
+        if (el.nodeType === 1 && el.classList.contains("mdc-deprecated-list-item") && !el.classList.contains("mdc-deprecated-list-item--disabled")) {
+          first = false;
+          break;
+        }
+      }
+      if (first) {
+        addTabindexIfNoItemsSelectedRaf = window.requestAnimationFrame(() => addTabindexIfNoItemsSelected(el));
+      }
+    }
+    const accessor = {
+      _smui_list_item_accessor: true,
+      get element() {
+        return getElement();
+      },
+      get selected() {
+        return selected;
+      },
+      set selected(value) {
+        $$invalidate(0, selected = value);
+      },
+      hasClass,
+      addClass,
+      removeClass,
+      getAttr,
+      addAttr,
+      removeAttr,
+      getPrimaryText,
+      // For inputs within item.
+      get checked() {
+        var _a4;
+        return (_a4 = input && input.checked) !== null && _a4 !== void 0 ? _a4 : false;
+      },
+      set checked(value) {
+        if (input) {
+          $$invalidate(16, input.checked = !!value, input);
+        }
+      },
+      get hasCheckbox() {
+        return !!(input && "_smui_checkbox_accessor" in input);
+      },
+      get hasRadio() {
+        return !!(input && "_smui_radio_accessor" in input);
+      },
+      activateRipple() {
+        if (input) {
+          input.activateRipple();
+        }
+      },
+      deactivateRipple() {
+        if (input) {
+          input.deactivateRipple();
+        }
+      },
+      // For select options.
+      getValue() {
+        return $$restProps.value;
+      },
+      // For autocomplete
+      action,
+      get tabindex() {
+        return tabindex;
+      },
+      set tabindex(value) {
+        $$invalidate(30, tabindexProp = value);
+      },
+      get disabled() {
+        return disabled;
+      },
+      get activated() {
+        return activated;
+      },
+      set activated(value) {
+        $$invalidate(1, activated = value);
+      }
+    };
+    dispatch(getElement(), "SMUIListItem:mount", accessor);
+    return () => {
+      dispatch(getElement(), "SMUIListItem:unmount", accessor);
+    };
+  });
+  onDestroy(() => {
+    if (addTabindexIfNoItemsSelectedRaf) {
+      window.cancelAnimationFrame(addTabindexIfNoItemsSelectedRaf);
+    }
+  });
+  function hasClass(className2) {
+    return className2 in internalClasses ? internalClasses[className2] : getElement().classList.contains(className2);
+  }
+  function addClass(className2) {
+    if (!internalClasses[className2]) {
+      $$invalidate(18, internalClasses[className2] = true, internalClasses);
+    }
+  }
+  function removeClass(className2) {
+    if (!(className2 in internalClasses) || internalClasses[className2]) {
+      $$invalidate(18, internalClasses[className2] = false, internalClasses);
+    }
+  }
+  function addStyle(name, value) {
+    if (internalStyles[name] != value) {
+      if (value === "" || value == null) {
+        delete internalStyles[name];
+        $$invalidate(19, internalStyles);
+      } else {
+        $$invalidate(19, internalStyles[name] = value, internalStyles);
+      }
+    }
+  }
+  function getAttr(name) {
+    var _a4;
+    return name in internalAttrs ? (_a4 = internalAttrs[name]) !== null && _a4 !== void 0 ? _a4 : null : getElement().getAttribute(name);
+  }
+  function addAttr(name, value) {
+    if (internalAttrs[name] !== value) {
+      $$invalidate(20, internalAttrs[name] = value, internalAttrs);
+    }
+  }
+  function removeAttr(name) {
+    if (!(name in internalAttrs) || internalAttrs[name] != null) {
+      $$invalidate(20, internalAttrs[name] = void 0, internalAttrs);
+    }
+  }
+  function addTabindexIfNoItemsSelected(el) {
+    let noneSelected = true;
+    while (el.nextElementSibling) {
+      el = el.nextElementSibling;
+      if (el.nodeType === 1 && el.classList.contains("mdc-deprecated-list-item")) {
+        const tabindexAttr = el.attributes.getNamedItem("tabindex");
+        if (tabindexAttr && tabindexAttr.value === "0") {
+          noneSelected = false;
+          break;
+        }
+      }
+    }
+    if (noneSelected) {
+      $$invalidate(21, tabindex = 0);
+    }
+  }
+  function handleKeydown2(e2) {
+    const isEnter = e2.key === "Enter";
+    const isSpace = e2.key === "Space";
+    if (isEnter || isSpace) {
+      action(e2);
+    }
+  }
+  function handleInputMount(e2) {
+    if ("_smui_checkbox_accessor" in e2.detail || "_smui_radio_accessor" in e2.detail) {
+      $$invalidate(16, input = e2.detail);
+    }
+  }
+  function action(e2) {
+    if (!disabled) {
+      dispatch(getElement(), "SMUI:action", e2);
+    }
+  }
+  function getPrimaryText() {
+    var _a4, _b3, _c;
+    const element3 = getElement();
+    const primaryText = element3.querySelector(".mdc-deprecated-list-item__primary-text");
+    if (primaryText) {
+      return (_a4 = primaryText.textContent) !== null && _a4 !== void 0 ? _a4 : "";
+    }
+    const text2 = element3.querySelector(".mdc-deprecated-list-item__text");
+    if (text2) {
+      return (_b3 = text2.textContent) !== null && _b3 !== void 0 ? _b3 : "";
+    }
+    return (_c = element3.textContent) !== null && _c !== void 0 ? _c : "";
+  }
+  function getElement() {
+    return element2.getElement();
+  }
+  function switch_instance_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(17, element2);
+    });
+  }
+  const SMUIGenericInput_unmount_handler = () => $$invalidate(16, input = void 0);
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(29, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(2, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(3, className = $$new_props.class);
+    if ("style" in $$new_props)
+      $$invalidate(4, style = $$new_props.style);
+    if ("color" in $$new_props)
+      $$invalidate(5, color2 = $$new_props.color);
+    if ("nonInteractive" in $$new_props)
+      $$invalidate(6, nonInteractive = $$new_props.nonInteractive);
+    if ("ripple" in $$new_props)
+      $$invalidate(7, ripple = $$new_props.ripple);
+    if ("wrapper" in $$new_props)
+      $$invalidate(8, wrapper = $$new_props.wrapper);
+    if ("activated" in $$new_props)
+      $$invalidate(1, activated = $$new_props.activated);
+    if ("role" in $$new_props)
+      $$invalidate(9, role = $$new_props.role);
+    if ("selected" in $$new_props)
+      $$invalidate(0, selected = $$new_props.selected);
+    if ("disabled" in $$new_props)
+      $$invalidate(10, disabled = $$new_props.disabled);
+    if ("skipRestoreFocus" in $$new_props)
+      $$invalidate(11, skipRestoreFocus = $$new_props.skipRestoreFocus);
+    if ("tabindex" in $$new_props)
+      $$invalidate(30, tabindexProp = $$new_props.tabindex);
+    if ("inputId" in $$new_props)
+      $$invalidate(31, inputId = $$new_props.inputId);
+    if ("href" in $$new_props)
+      $$invalidate(12, href = $$new_props.href);
+    if ("component" in $$new_props)
+      $$invalidate(13, component = $$new_props.component);
+    if ("tag" in $$new_props)
+      $$invalidate(14, tag = $$new_props.tag);
+    if ("$$scope" in $$new_props)
+      $$invalidate(37, $$scope = $$new_props.$$scope);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty[0] & /*tabindexProp, nonInteractive, disabled, selected, input*/
+    1073808449) {
+      $$invalidate(21, tabindex = isUninitializedValue(tabindexProp) ? !nonInteractive && !disabled && (selected || input && input.checked) ? 0 : -1 : tabindexProp);
+    }
+  };
+  return [
+    selected,
+    activated,
+    use,
+    className,
+    style,
+    color2,
+    nonInteractive,
+    ripple,
+    wrapper,
+    role,
+    disabled,
+    skipRestoreFocus,
+    href,
+    component,
+    tag,
+    action,
+    input,
+    element2,
+    internalClasses,
+    internalStyles,
+    internalAttrs,
+    tabindex,
+    forwardEvents,
+    nav,
+    addClass,
+    removeClass,
+    addStyle,
+    handleKeydown2,
+    handleInputMount,
+    $$restProps,
+    tabindexProp,
+    inputId,
+    getPrimaryText,
+    getElement,
+    slots,
+    switch_instance_binding,
+    SMUIGenericInput_unmount_handler,
+    $$scope
+  ];
+}
+class Item extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(
+      this,
+      options,
+      instance$p,
+      create_fragment$B,
+      safe_not_equal,
+      {
+        use: 2,
+        class: 3,
+        style: 4,
+        color: 5,
+        nonInteractive: 6,
+        ripple: 7,
+        wrapper: 8,
+        activated: 1,
+        role: 9,
+        selected: 0,
+        disabled: 10,
+        skipRestoreFocus: 11,
+        tabindex: 30,
+        inputId: 31,
+        href: 12,
+        component: 13,
+        tag: 14,
+        action: 15,
+        getPrimaryText: 32,
+        getElement: 33
+      },
+      null,
+      [-1, -1]
+    );
+  }
+  get action() {
+    return this.$$.ctx[15];
+  }
+  get getPrimaryText() {
+    return this.$$.ctx[32];
+  }
+  get getElement() {
+    return this.$$.ctx[33];
+  }
+}
+const Text = classAdderBuilder({
+  class: "mdc-deprecated-list-item__text",
+  tag: "span"
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-item__primary-text",
+  tag: "span"
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-item__secondary-text",
+  tag: "span"
+});
+function create_fragment$A(ctx) {
+  let span;
+  let span_class_value;
+  let useActions_action;
+  let current;
+  let mounted;
+  let dispose;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[8].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[7],
+    null
+  );
+  let span_levels = [
+    {
+      class: span_class_value = classMap({
+        [
+          /*className*/
+          ctx[1]
+        ]: true,
+        "mdc-deprecated-list-item__graphic": true,
+        "mdc-menu__selection-group-icon": (
+          /*menuSelectionGroup*/
+          ctx[4]
+        )
+      })
+    },
+    /*$$restProps*/
+    ctx[5]
+  ];
+  let span_data = {};
+  for (let i2 = 0; i2 < span_levels.length; i2 += 1) {
+    span_data = assign$1(span_data, span_levels[i2]);
+  }
+  return {
+    c() {
+      span = element("span");
+      if (default_slot)
+        default_slot.c();
+      this.h();
+    },
+    l(nodes) {
+      span = claim_element(nodes, "SPAN", { class: true });
+      var span_nodes = children(span);
+      if (default_slot)
+        default_slot.l(span_nodes);
+      span_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      set_attributes(span, span_data);
+    },
+    m(target, anchor) {
+      insert_hydration(target, span, anchor);
+      if (default_slot) {
+        default_slot.m(span, null);
+      }
+      ctx[9](span);
+      current = true;
+      if (!mounted) {
+        dispose = [
+          action_destroyer(useActions_action = useActions.call(
+            null,
+            span,
+            /*use*/
+            ctx[0]
+          )),
+          action_destroyer(
+            /*forwardEvents*/
+            ctx[3].call(null, span)
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        128)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[7],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[7]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[7],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      set_attributes(span, span_data = get_spread_update(span_levels, [
+        (!current || dirty & /*className*/
+        2 && span_class_value !== (span_class_value = classMap({
+          [
+            /*className*/
+            ctx2[1]
+          ]: true,
+          "mdc-deprecated-list-item__graphic": true,
+          "mdc-menu__selection-group-icon": (
+            /*menuSelectionGroup*/
+            ctx2[4]
+          )
+        }))) && { class: span_class_value },
+        dirty & /*$$restProps*/
+        32 && /*$$restProps*/
+        ctx2[5]
+      ]));
+      if (useActions_action && is_function(useActions_action.update) && dirty & /*use*/
+      1)
+        useActions_action.update.call(
+          null,
+          /*use*/
+          ctx2[0]
+        );
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
+      if (default_slot)
+        default_slot.d(detaching);
+      ctx[9](null);
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+function instance$o($$self, $$props, $$invalidate) {
+  const omit_props_names = ["use", "class", "getElement"];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { $$slots: slots = {}, $$scope } = $$props;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let element2;
+  let menuSelectionGroup = getContext("SMUI:list:graphic:menu-selection-group");
+  function getElement() {
+    return element2;
+  }
+  function span_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      element2 = $$value;
+      $$invalidate(2, element2);
+    });
+  }
+  $$self.$$set = ($$new_props) => {
+    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(5, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("use" in $$new_props)
+      $$invalidate(0, use = $$new_props.use);
+    if ("class" in $$new_props)
+      $$invalidate(1, className = $$new_props.class);
+    if ("$$scope" in $$new_props)
+      $$invalidate(7, $$scope = $$new_props.$$scope);
+  };
+  return [
+    use,
+    className,
+    element2,
+    forwardEvents,
+    menuSelectionGroup,
+    $$restProps,
+    getElement,
+    $$scope,
+    slots,
+    span_binding
+  ];
+}
+class Graphic extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$o, create_fragment$A, safe_not_equal, { use: 0, class: 1, getElement: 6 });
+  }
+  get getElement() {
+    return this.$$.ctx[6];
+  }
+}
+classAdderBuilder({
+  class: "mdc-deprecated-list-item__meta",
+  tag: "span"
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-group",
+  tag: "div"
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-group__subheader",
+  tag: "h3"
+});
 function throttle(func2, timeFrame) {
   let lastTime = 0;
   return function(...args) {
@@ -5705,7 +7777,7 @@ function create_if_block_1$c(ctx) {
     }
   };
 }
-function create_if_block$p(ctx) {
+function create_if_block$o(ctx) {
   let div;
   return {
     c() {
@@ -5789,7 +7861,7 @@ function create_if_block$p(ctx) {
     }
   };
 }
-function create_fragment$D(ctx) {
+function create_fragment$z(ctx) {
   let div;
   let t0;
   let div_style_value;
@@ -5817,7 +7889,7 @@ function create_fragment$D(ctx) {
   let if_block1 = (
     /*active*/
     (ctx[13] || /*trans*/
-    ctx[16]) && create_if_block$p(ctx)
+    ctx[16]) && create_if_block$o(ctx)
   );
   return {
     c() {
@@ -6031,7 +8103,7 @@ function create_fragment$D(ctx) {
         if (if_block1) {
           if_block1.p(ctx, dirty);
         } else {
-          if_block1 = create_if_block$p(ctx);
+          if_block1 = create_if_block$o(ctx);
           if_block1.c();
           if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
         }
@@ -6067,7 +8139,7 @@ function create_fragment$D(ctx) {
     }
   };
 }
-function instance$q($$self, $$props, $$invalidate) {
+function instance$n($$self, $$props, $$invalidate) {
   let { $$slots: slots = {}, $$scope } = $$props;
   const dispatch2 = createEventDispatcher();
   let { sensor } = $$props;
@@ -6339,8 +8411,8 @@ class MoveResize extends SvelteComponent {
     init(
       this,
       options,
-      instance$q,
-      create_fragment$D,
+      instance$n,
+      create_fragment$z,
       safe_not_equal,
       {
         sensor: 20,
@@ -6411,7 +8483,7 @@ const get_default_slot_context = (ctx) => ({
     ctx[30]
   )
 });
-function create_if_block$o(ctx) {
+function create_if_block$n(ctx) {
   let each_blocks = [];
   let each_1_lookup = /* @__PURE__ */ new Map();
   let each_1_anchor;
@@ -6558,7 +8630,7 @@ function create_if_block_1$b(ctx) {
     }
   };
 }
-function create_default_slot$i(ctx) {
+function create_default_slot$g(ctx) {
   let t2;
   let current;
   let if_block = (
@@ -6781,7 +8853,7 @@ function create_each_block$7(key_1, ctx) {
       ),
       $$slots: {
         default: [
-          create_default_slot$i,
+          create_default_slot$g,
           ({ resizePointerDown, movePointerDown }) => ({
             31: resizePointerDown,
             32: movePointerDown
@@ -6990,13 +9062,13 @@ function create_each_block$7(key_1, ctx) {
     }
   };
 }
-function create_fragment$C(ctx) {
+function create_fragment$y(ctx) {
   let div;
   let current;
   let if_block = (
     /*xPerPx*/
     (ctx[6] || !/*fastStart*/
-    ctx[1]) && create_if_block$o(ctx)
+    ctx[1]) && create_if_block$n(ctx)
   );
   return {
     c() {
@@ -7042,7 +9114,7 @@ function create_fragment$C(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$o(ctx2);
+          if_block = create_if_block$n(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div, null);
@@ -7084,7 +9156,7 @@ function create_fragment$C(ctx) {
     }
   };
 }
-function instance$p($$self, $$props, $$invalidate) {
+function instance$m($$self, $$props, $$invalidate) {
   let gapX;
   let gapY;
   let containerHeight;
@@ -7243,8 +9315,8 @@ class Grid extends SvelteComponent {
     init(
       this,
       options,
-      instance$p,
-      create_fragment$C,
+      instance$m,
+      create_fragment$y,
       safe_not_equal,
       {
         fillSpace: 13,
@@ -7814,7 +9886,7 @@ var MDCDialogFoundation = (
 const { document: document_1$1, window: window_1 } = globals;
 const get_over_slot_changes = (dirty) => ({});
 const get_over_slot_context = (ctx) => ({});
-function create_if_block$n(ctx) {
+function create_if_block$m(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -7853,7 +9925,7 @@ function create_if_block$n(ctx) {
     }
   };
 }
-function create_fragment$B(ctx) {
+function create_fragment$x(ctx) {
   let t0;
   let div3;
   let div1;
@@ -7882,7 +9954,7 @@ function create_fragment$B(ctx) {
   );
   let if_block = (
     /*fullscreen*/
-    ctx[5] && create_if_block$n(ctx)
+    ctx[5] && create_if_block$m(ctx)
   );
   let div0_levels = [
     {
@@ -8180,7 +10252,7 @@ function create_fragment$B(ctx) {
         if (if_block) {
           if_block.p(ctx, dirty);
         } else {
-          if_block = create_if_block$n(ctx);
+          if_block = create_if_block$m(ctx);
           if_block.c();
           if_block.m(div0, null);
         }
@@ -8321,7 +10393,7 @@ function create_fragment$B(ctx) {
     }
   };
 }
-function instance_1$a($$self, $$props, $$invalidate) {
+function instance_1$9($$self, $$props, $$invalidate) {
   const omit_props_names = [
     "use",
     "class",
@@ -8655,8 +10727,8 @@ class Dialog extends SvelteComponent {
     init(
       this,
       options,
-      instance_1$a,
-      create_fragment$B,
+      instance_1$9,
+      create_fragment$x,
       safe_not_equal,
       {
         use: 1,
@@ -8718,7 +10790,7 @@ const Actions = classAdderBuilder({
     "SMUI:button:context": "dialog:action"
   }
 });
-function create_fragment$A(ctx) {
+function create_fragment$w(ctx) {
   let div;
   let div_class_value;
   let useActions_action;
@@ -8877,7 +10949,7 @@ function create_fragment$A(ctx) {
     }
   };
 }
-function instance$o($$self, $$props, $$invalidate) {
+function instance$l($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "variant", "padded", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -8927,7 +10999,7 @@ function instance$o($$self, $$props, $$invalidate) {
 class Card extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$o, create_fragment$A, safe_not_equal, {
+    init(this, options, instance$l, create_fragment$w, safe_not_equal, {
       use: 0,
       class: 1,
       variant: 2,
@@ -8980,7 +11052,7 @@ function create_if_block_1$a(ctx) {
     }
   };
 }
-function create_if_block$m(ctx) {
+function create_if_block$l(ctx) {
   let div;
   return {
     c() {
@@ -9005,7 +11077,7 @@ function create_if_block$m(ctx) {
     }
   };
 }
-function create_default_slot$h(ctx) {
+function create_default_slot$f(ctx) {
   let div;
   let t0;
   let t1;
@@ -9028,7 +11100,7 @@ function create_default_slot$h(ctx) {
   );
   let if_block1 = (
     /*touch*/
-    ctx[9] && create_if_block$m()
+    ctx[9] && create_if_block$l()
   );
   return {
     c() {
@@ -9121,7 +11193,7 @@ function create_default_slot$h(ctx) {
         if (if_block1)
           ;
         else {
-          if_block1 = create_if_block$m();
+          if_block1 = create_if_block$l();
           if_block1.c();
           if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
         }
@@ -9156,7 +11228,7 @@ function create_default_slot$h(ctx) {
     }
   };
 }
-function create_fragment$z(ctx) {
+function create_fragment$v(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -9236,7 +11308,7 @@ function create_fragment$z(ctx) {
       style: Object.entries(
         /*internalStyles*/
         ctx[15]
-      ).map(func$6).concat([
+      ).map(func$5).concat([
         /*style*/
         ctx[2]
       ]).join(" ")
@@ -9254,7 +11326,7 @@ function create_fragment$z(ctx) {
   );
   function switch_props(ctx2) {
     let switch_instance_props = {
-      $$slots: { default: [create_default_slot$h] },
+      $$slots: { default: [create_default_slot$f] },
       $$scope: { ctx: ctx2 }
     };
     for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
@@ -9365,7 +11437,7 @@ function create_fragment$z(ctx) {
           style: Object.entries(
             /*internalStyles*/
             ctx2[15]
-          ).map(func$6).concat([
+          ).map(func$5).concat([
             /*style*/
             ctx2[2]
           ]).join(" ")
@@ -9431,8 +11503,8 @@ function create_fragment$z(ctx) {
     }
   };
 }
-const func$6 = ([name, value]) => `${name}: ${value};`;
-function instance$n($$self, $$props, $$invalidate) {
+const func$5 = ([name, value]) => `${name}: ${value};`;
+function instance$k($$self, $$props, $$invalidate) {
   const omit_props_names = [
     "use",
     "class",
@@ -9562,7 +11634,7 @@ function instance$n($$self, $$props, $$invalidate) {
 class Fab extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$n, create_fragment$z, safe_not_equal, {
+    init(this, options, instance$k, create_fragment$v, safe_not_equal, {
       use: 0,
       class: 1,
       style: 2,
@@ -10445,7 +12517,7 @@ var MDCMenuFoundation = (
   }(MDCFoundation)
 );
 const { document: document_1 } = globals;
-function create_fragment$y(ctx) {
+function create_fragment$u(ctx) {
   let t2;
   let div;
   let div_class_value;
@@ -10497,7 +12569,7 @@ function create_fragment$y(ctx) {
       style: div_style_value = Object.entries(
         /*internalStyles*/
         ctx[9]
-      ).map(func$5).concat([
+      ).map(func$4).concat([
         /*style*/
         ctx[2]
       ]).join(" ")
@@ -10632,7 +12704,7 @@ function create_fragment$y(ctx) {
         516 && div_style_value !== (div_style_value = Object.entries(
           /*internalStyles*/
           ctx[9]
-        ).map(func$5).concat([
+        ).map(func$4).concat([
           /*style*/
           ctx[2]
         ]).join(" "))) && { style: div_style_value },
@@ -10671,8 +12743,8 @@ function create_fragment$y(ctx) {
     }
   };
 }
-const func$5 = ([name, value]) => `${name}: ${value};`;
-function instance_1$9($$self, $$props, $$invalidate) {
+const func$4 = ([name, value]) => `${name}: ${value};`;
+function instance_1$8($$self, $$props, $$invalidate) {
   const omit_props_names = [
     "use",
     "class",
@@ -11035,8 +13107,8 @@ class MenuSurface extends SvelteComponent {
     init(
       this,
       options,
-      instance_1$9,
-      create_fragment$y,
+      instance_1$8,
+      create_fragment$u,
       safe_not_equal,
       {
         use: 0,
@@ -11094,7 +13166,7 @@ function Anchor(node, { addClass = (className) => node.classList.add(className),
     }
   };
 }
-function create_default_slot$g(ctx) {
+function create_default_slot$e(ctx) {
   let current;
   const default_slot_template = (
     /*#slots*/
@@ -11163,7 +13235,7 @@ function create_default_slot$g(ctx) {
     }
   };
 }
-function create_fragment$x(ctx) {
+function create_fragment$t(ctx) {
   let menusurface;
   let updating_open;
   let current;
@@ -11188,7 +13260,7 @@ function create_fragment$x(ctx) {
     ctx[19](value);
   }
   let menusurface_props = {
-    $$slots: { default: [create_default_slot$g] },
+    $$slots: { default: [create_default_slot$e] },
     $$scope: { ctx }
   };
   for (let i2 = 0; i2 < menusurface_spread_levels.length; i2 += 1) {
@@ -11293,7 +13365,7 @@ function create_fragment$x(ctx) {
     }
   };
 }
-function instance_1$8($$self, $$props, $$invalidate) {
+function instance_1$7($$self, $$props, $$invalidate) {
   let usePass;
   const omit_props_names = [
     "use",
@@ -11455,7 +13527,7 @@ function instance_1$8($$self, $$props, $$invalidate) {
 class Menu extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$8, create_fragment$x, safe_not_equal, {
+    init(this, options, instance_1$7, create_fragment$t, safe_not_equal, {
       use: 10,
       class: 1,
       open: 0,
@@ -11486,2078 +13558,6 @@ class Menu extends SvelteComponent {
     return this.$$.ctx[16];
   }
 }
-function create_default_slot$f(ctx) {
-  let current;
-  const default_slot_template = (
-    /*#slots*/
-    ctx[42].default
-  );
-  const default_slot = create_slot(
-    default_slot_template,
-    ctx,
-    /*$$scope*/
-    ctx[44],
-    null
-  );
-  return {
-    c() {
-      if (default_slot)
-        default_slot.c();
-    },
-    l(nodes) {
-      if (default_slot)
-        default_slot.l(nodes);
-    },
-    m(target, anchor) {
-      if (default_slot) {
-        default_slot.m(target, anchor);
-      }
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty[1] & /*$$scope*/
-        8192)) {
-          update_slot_base(
-            default_slot,
-            default_slot_template,
-            ctx2,
-            /*$$scope*/
-            ctx2[44],
-            !current ? get_all_dirty_from_scope(
-              /*$$scope*/
-              ctx2[44]
-            ) : get_slot_changes(
-              default_slot_template,
-              /*$$scope*/
-              ctx2[44],
-              dirty,
-              null
-            ),
-            null
-          );
-        }
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(default_slot, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(default_slot, local);
-      current = false;
-    },
-    d(detaching) {
-      if (default_slot)
-        default_slot.d(detaching);
-    }
-  };
-}
-function create_fragment$w(ctx) {
-  let switch_instance;
-  let switch_instance_anchor;
-  let current;
-  const switch_instance_spread_levels = [
-    { tag: (
-      /*tag*/
-      ctx[13]
-    ) },
-    {
-      use: [
-        /*forwardEvents*/
-        ctx[16],
-        .../*use*/
-        ctx[0]
-      ]
-    },
-    {
-      class: classMap({
-        [
-          /*className*/
-          ctx[1]
-        ]: true,
-        "mdc-deprecated-list": true,
-        "mdc-deprecated-list--non-interactive": (
-          /*nonInteractive*/
-          ctx[2]
-        ),
-        "mdc-deprecated-list--dense": (
-          /*dense*/
-          ctx[3]
-        ),
-        "mdc-deprecated-list--textual-list": (
-          /*textualList*/
-          ctx[4]
-        ),
-        "mdc-deprecated-list--avatar-list": (
-          /*avatarList*/
-          ctx[5] || /*selectionDialog*/
-          ctx[17]
-        ),
-        "mdc-deprecated-list--icon-list": (
-          /*iconList*/
-          ctx[6]
-        ),
-        "mdc-deprecated-list--image-list": (
-          /*imageList*/
-          ctx[7]
-        ),
-        "mdc-deprecated-list--thumbnail-list": (
-          /*thumbnailList*/
-          ctx[8]
-        ),
-        "mdc-deprecated-list--video-list": (
-          /*videoList*/
-          ctx[9]
-        ),
-        "mdc-deprecated-list--two-line": (
-          /*twoLine*/
-          ctx[10]
-        ),
-        "smui-list--three-line": (
-          /*threeLine*/
-          ctx[11] && !/*twoLine*/
-          ctx[10]
-        )
-      })
-    },
-    { role: (
-      /*role*/
-      ctx[15]
-    ) },
-    /*$$restProps*/
-    ctx[25]
-  ];
-  var switch_value = (
-    /*component*/
-    ctx[12]
-  );
-  function switch_props(ctx2) {
-    let switch_instance_props = {
-      $$slots: { default: [create_default_slot$f] },
-      $$scope: { ctx: ctx2 }
-    };
-    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
-      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
-    }
-    return { props: switch_instance_props };
-  }
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-    ctx[43](switch_instance);
-    switch_instance.$on(
-      "keydown",
-      /*handleKeydown*/
-      ctx[20]
-    );
-    switch_instance.$on(
-      "focusin",
-      /*handleFocusin*/
-      ctx[21]
-    );
-    switch_instance.$on(
-      "focusout",
-      /*handleFocusout*/
-      ctx[22]
-    );
-    switch_instance.$on(
-      "click",
-      /*handleClick*/
-      ctx[23]
-    );
-    switch_instance.$on(
-      "SMUIListItem:mount",
-      /*handleItemMount*/
-      ctx[18]
-    );
-    switch_instance.$on(
-      "SMUIListItem:unmount",
-      /*handleItemUnmount*/
-      ctx[19]
-    );
-    switch_instance.$on(
-      "SMUI:action",
-      /*handleAction*/
-      ctx[24]
-    );
-  }
-  return {
-    c() {
-      if (switch_instance)
-        create_component(switch_instance.$$.fragment);
-      switch_instance_anchor = empty();
-    },
-    l(nodes) {
-      if (switch_instance)
-        claim_component(switch_instance.$$.fragment, nodes);
-      switch_instance_anchor = empty();
-    },
-    m(target, anchor) {
-      if (switch_instance)
-        mount_component(switch_instance, target, anchor);
-      insert_hydration(target, switch_instance_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const switch_instance_changes = dirty[0] & /*tag, forwardEvents, use, className, nonInteractive, dense, textualList, avatarList, selectionDialog, iconList, imageList, thumbnailList, videoList, twoLine, threeLine, role, $$restProps*/
-      33796095 ? get_spread_update(switch_instance_spread_levels, [
-        dirty[0] & /*tag*/
-        8192 && { tag: (
-          /*tag*/
-          ctx2[13]
-        ) },
-        dirty[0] & /*forwardEvents, use*/
-        65537 && {
-          use: [
-            /*forwardEvents*/
-            ctx2[16],
-            .../*use*/
-            ctx2[0]
-          ]
-        },
-        dirty[0] & /*className, nonInteractive, dense, textualList, avatarList, selectionDialog, iconList, imageList, thumbnailList, videoList, twoLine, threeLine*/
-        135166 && {
-          class: classMap({
-            [
-              /*className*/
-              ctx2[1]
-            ]: true,
-            "mdc-deprecated-list": true,
-            "mdc-deprecated-list--non-interactive": (
-              /*nonInteractive*/
-              ctx2[2]
-            ),
-            "mdc-deprecated-list--dense": (
-              /*dense*/
-              ctx2[3]
-            ),
-            "mdc-deprecated-list--textual-list": (
-              /*textualList*/
-              ctx2[4]
-            ),
-            "mdc-deprecated-list--avatar-list": (
-              /*avatarList*/
-              ctx2[5] || /*selectionDialog*/
-              ctx2[17]
-            ),
-            "mdc-deprecated-list--icon-list": (
-              /*iconList*/
-              ctx2[6]
-            ),
-            "mdc-deprecated-list--image-list": (
-              /*imageList*/
-              ctx2[7]
-            ),
-            "mdc-deprecated-list--thumbnail-list": (
-              /*thumbnailList*/
-              ctx2[8]
-            ),
-            "mdc-deprecated-list--video-list": (
-              /*videoList*/
-              ctx2[9]
-            ),
-            "mdc-deprecated-list--two-line": (
-              /*twoLine*/
-              ctx2[10]
-            ),
-            "smui-list--three-line": (
-              /*threeLine*/
-              ctx2[11] && !/*twoLine*/
-              ctx2[10]
-            )
-          })
-        },
-        dirty[0] & /*role*/
-        32768 && { role: (
-          /*role*/
-          ctx2[15]
-        ) },
-        dirty[0] & /*$$restProps*/
-        33554432 && get_spread_object(
-          /*$$restProps*/
-          ctx2[25]
-        )
-      ]) : {};
-      if (dirty[1] & /*$$scope*/
-      8192) {
-        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      if (dirty[0] & /*component*/
-      4096 && switch_value !== (switch_value = /*component*/
-      ctx2[12])) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
-          ctx2[43](switch_instance);
-          switch_instance.$on(
-            "keydown",
-            /*handleKeydown*/
-            ctx2[20]
-          );
-          switch_instance.$on(
-            "focusin",
-            /*handleFocusin*/
-            ctx2[21]
-          );
-          switch_instance.$on(
-            "focusout",
-            /*handleFocusout*/
-            ctx2[22]
-          );
-          switch_instance.$on(
-            "click",
-            /*handleClick*/
-            ctx2[23]
-          );
-          switch_instance.$on(
-            "SMUIListItem:mount",
-            /*handleItemMount*/
-            ctx2[18]
-          );
-          switch_instance.$on(
-            "SMUIListItem:unmount",
-            /*handleItemUnmount*/
-            ctx2[19]
-          );
-          switch_instance.$on(
-            "SMUI:action",
-            /*handleAction*/
-            ctx2[24]
-          );
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      if (switch_instance)
-        transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance)
-        transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(switch_instance_anchor);
-      }
-      ctx[43](null);
-      if (switch_instance)
-        destroy_component(switch_instance, detaching);
-    }
-  };
-}
-function instance_1$7($$self, $$props, $$invalidate) {
-  const omit_props_names = [
-    "use",
-    "class",
-    "nonInteractive",
-    "dense",
-    "textualList",
-    "avatarList",
-    "iconList",
-    "imageList",
-    "thumbnailList",
-    "videoList",
-    "twoLine",
-    "threeLine",
-    "vertical",
-    "wrapFocus",
-    "singleSelection",
-    "disabledItemsFocusable",
-    "selectedIndex",
-    "radioList",
-    "checkList",
-    "hasTypeahead",
-    "component",
-    "tag",
-    "layout",
-    "setEnabled",
-    "getTypeaheadInProgress",
-    "getSelectedIndex",
-    "getFocusedItemIndex",
-    "focusItemAtIndex",
-    "getElement"
-  ];
-  let $$restProps = compute_rest_props($$props, omit_props_names);
-  let { $$slots: slots = {}, $$scope } = $$props;
-  var _a3;
-  const { closest, matches } = ponyfill;
-  const forwardEvents = forwardEventsBuilder(get_current_component());
-  let { use = [] } = $$props;
-  let { class: className = "" } = $$props;
-  let { nonInteractive = false } = $$props;
-  let { dense = false } = $$props;
-  let { textualList = false } = $$props;
-  let { avatarList = false } = $$props;
-  let { iconList = false } = $$props;
-  let { imageList = false } = $$props;
-  let { thumbnailList = false } = $$props;
-  let { videoList = false } = $$props;
-  let { twoLine = false } = $$props;
-  let { threeLine = false } = $$props;
-  let { vertical = true } = $$props;
-  let { wrapFocus = (_a3 = getContext("SMUI:list:wrapFocus")) !== null && _a3 !== void 0 ? _a3 : false } = $$props;
-  let { singleSelection = false } = $$props;
-  let { disabledItemsFocusable = false } = $$props;
-  let { selectedIndex = -1 } = $$props;
-  let { radioList = false } = $$props;
-  let { checkList = false } = $$props;
-  let { hasTypeahead = false } = $$props;
-  let element2;
-  let instance2;
-  let items2 = [];
-  let role = getContext("SMUI:list:role");
-  let nav = getContext("SMUI:list:nav");
-  const itemAccessorMap = /* @__PURE__ */ new WeakMap();
-  let selectionDialog = getContext("SMUI:dialog:selection");
-  let addLayoutListener = getContext("SMUI:addLayoutListener");
-  let removeLayoutListener;
-  let { component = SmuiElement } = $$props;
-  let { tag = component === SmuiElement ? nav ? "nav" : "ul" : void 0 } = $$props;
-  setContext("SMUI:list:nonInteractive", nonInteractive);
-  setContext("SMUI:separator:context", "list");
-  if (!role) {
-    if (singleSelection) {
-      role = "listbox";
-      setContext("SMUI:list:item:role", "option");
-    } else if (radioList) {
-      role = "radiogroup";
-      setContext("SMUI:list:item:role", "radio");
-    } else if (checkList) {
-      role = "group";
-      setContext("SMUI:list:item:role", "checkbox");
-    } else {
-      role = "list";
-      setContext("SMUI:list:item:role", void 0);
-    }
-  }
-  if (addLayoutListener) {
-    removeLayoutListener = addLayoutListener(layout);
-  }
-  onMount(() => {
-    $$invalidate(41, instance2 = new MDCListFoundation({
-      addClassForElementIndex,
-      focusItemAtIndex,
-      getAttributeForElementIndex: (index2, name) => {
-        var _a4, _b3;
-        return (_b3 = (_a4 = getOrderedList()[index2]) === null || _a4 === void 0 ? void 0 : _a4.getAttr(name)) !== null && _b3 !== void 0 ? _b3 : null;
-      },
-      getFocusedElementIndex: () => document.activeElement ? getOrderedList().map((accessor2) => accessor2.element).indexOf(document.activeElement) : -1,
-      getListItemCount: () => items2.length,
-      getPrimaryTextAtIndex,
-      hasCheckboxAtIndex: (index2) => {
-        var _a4, _b3;
-        return (_b3 = (_a4 = getOrderedList()[index2]) === null || _a4 === void 0 ? void 0 : _a4.hasCheckbox) !== null && _b3 !== void 0 ? _b3 : false;
-      },
-      hasRadioAtIndex: (index2) => {
-        var _a4, _b3;
-        return (_b3 = (_a4 = getOrderedList()[index2]) === null || _a4 === void 0 ? void 0 : _a4.hasRadio) !== null && _b3 !== void 0 ? _b3 : false;
-      },
-      isCheckboxCheckedAtIndex: (index2) => {
-        var _a4;
-        const listItem = getOrderedList()[index2];
-        return (_a4 = (listItem === null || listItem === void 0 ? void 0 : listItem.hasCheckbox) && listItem.checked) !== null && _a4 !== void 0 ? _a4 : false;
-      },
-      isFocusInsideList: () => element2 != null && getElement() !== document.activeElement && getElement().contains(document.activeElement),
-      isRootFocused: () => element2 != null && document.activeElement === getElement(),
-      listItemAtIndexHasClass,
-      notifyAction: (index2) => {
-        $$invalidate(26, selectedIndex = index2);
-        if (element2 != null) {
-          dispatch(getElement(), "SMUIList:action", { index: index2 }, void 0, true);
-        }
-      },
-      notifySelectionChange: (changedIndices) => {
-        if (element2 != null) {
-          dispatch(getElement(), "SMUIList:selectionChange", { changedIndices });
-        }
-      },
-      removeClassForElementIndex,
-      setAttributeForElementIndex,
-      setCheckedCheckboxOrRadioAtIndex: (index2, isChecked) => {
-        getOrderedList()[index2].checked = isChecked;
-      },
-      setTabIndexForListItemChildren: (listItemIndex, tabIndexValue) => {
-        const listItem = getOrderedList()[listItemIndex];
-        const selector = "button:not(:disabled), a";
-        Array.prototype.forEach.call(listItem.element.querySelectorAll(selector), (el) => {
-          el.setAttribute("tabindex", tabIndexValue);
-        });
-      }
-    }));
-    const accessor = {
-      get element() {
-        return getElement();
-      },
-      get items() {
-        return items2;
-      },
-      get typeaheadInProgress() {
-        return instance2.isTypeaheadInProgress();
-      },
-      typeaheadMatchItem(nextChar, startingIndex) {
-        return instance2.typeaheadMatchItem(
-          nextChar,
-          startingIndex,
-          /** skipFocus */
-          true
-        );
-      },
-      getOrderedList,
-      focusItemAtIndex,
-      addClassForElementIndex,
-      removeClassForElementIndex,
-      setAttributeForElementIndex,
-      removeAttributeForElementIndex,
-      getAttributeFromElementIndex,
-      getPrimaryTextAtIndex
-    };
-    dispatch(getElement(), "SMUIList:mount", accessor);
-    instance2.init();
-    instance2.layout();
-    return () => {
-      instance2.destroy();
-    };
-  });
-  onDestroy(() => {
-    if (removeLayoutListener) {
-      removeLayoutListener();
-    }
-  });
-  function handleItemMount(event) {
-    items2.push(event.detail);
-    itemAccessorMap.set(event.detail.element, event.detail);
-    if (singleSelection && event.detail.selected) {
-      $$invalidate(26, selectedIndex = getListItemIndex(event.detail.element));
-    }
-    event.stopPropagation();
-  }
-  function handleItemUnmount(event) {
-    var _a4;
-    const idx = (_a4 = event.detail && items2.indexOf(event.detail)) !== null && _a4 !== void 0 ? _a4 : -1;
-    if (idx !== -1) {
-      items2.splice(idx, 1);
-      items2 = items2;
-      itemAccessorMap.delete(event.detail.element);
-    }
-    event.stopPropagation();
-  }
-  function handleKeydown2(event) {
-    if (instance2 && event.target) {
-      instance2.handleKeydown(event, event.target.classList.contains("mdc-deprecated-list-item"), getListItemIndex(event.target));
-    }
-  }
-  function handleFocusin(event) {
-    if (instance2 && event.target) {
-      instance2.handleFocusIn(getListItemIndex(event.target));
-    }
-  }
-  function handleFocusout(event) {
-    if (instance2 && event.target) {
-      instance2.handleFocusOut(getListItemIndex(event.target));
-    }
-  }
-  function handleClick(event) {
-    if (instance2 && event.target) {
-      instance2.handleClick(getListItemIndex(event.target), !matches(event.target, 'input[type="checkbox"], input[type="radio"]'), event);
-    }
-  }
-  function handleAction(event) {
-    if (radioList || checkList) {
-      const index2 = getListItemIndex(event.target);
-      if (index2 !== -1) {
-        const item = getOrderedList()[index2];
-        if (item && (radioList && !item.checked || checkList)) {
-          if (!matches(event.detail.target, 'input[type="checkbox"], input[type="radio"]')) {
-            item.checked = !item.checked;
-          }
-          item.activateRipple();
-          window.requestAnimationFrame(() => {
-            item.deactivateRipple();
-          });
-        }
-      }
-    }
-  }
-  function getOrderedList() {
-    if (element2 == null) {
-      return [];
-    }
-    return [...getElement().children].map((element3) => itemAccessorMap.get(element3)).filter((accessor) => accessor && accessor._smui_list_item_accessor);
-  }
-  function listItemAtIndexHasClass(index2, className2) {
-    var _a4;
-    const accessor = getOrderedList()[index2];
-    return (_a4 = accessor && accessor.hasClass(className2)) !== null && _a4 !== void 0 ? _a4 : false;
-  }
-  function addClassForElementIndex(index2, className2) {
-    const accessor = getOrderedList()[index2];
-    accessor && accessor.addClass(className2);
-  }
-  function removeClassForElementIndex(index2, className2) {
-    const accessor = getOrderedList()[index2];
-    accessor && accessor.removeClass(className2);
-  }
-  function setAttributeForElementIndex(index2, name, value) {
-    const accessor = getOrderedList()[index2];
-    accessor && accessor.addAttr(name, value);
-  }
-  function removeAttributeForElementIndex(index2, name) {
-    const accessor = getOrderedList()[index2];
-    accessor && accessor.removeAttr(name);
-  }
-  function getAttributeFromElementIndex(index2, name) {
-    const accessor = getOrderedList()[index2];
-    if (accessor) {
-      return accessor.getAttr(name);
-    } else {
-      return null;
-    }
-  }
-  function getPrimaryTextAtIndex(index2) {
-    var _a4;
-    const accessor = getOrderedList()[index2];
-    return (_a4 = accessor && accessor.getPrimaryText()) !== null && _a4 !== void 0 ? _a4 : "";
-  }
-  function getListItemIndex(element3) {
-    const nearestParent = closest(element3, ".mdc-deprecated-list-item, .mdc-deprecated-list");
-    if (nearestParent && matches(nearestParent, ".mdc-deprecated-list-item")) {
-      return getOrderedList().map((item) => item === null || item === void 0 ? void 0 : item.element).indexOf(nearestParent);
-    }
-    return -1;
-  }
-  function layout() {
-    return instance2.layout();
-  }
-  function setEnabled(itemIndex, isEnabled) {
-    return instance2.setEnabled(itemIndex, isEnabled);
-  }
-  function getTypeaheadInProgress() {
-    return instance2.isTypeaheadInProgress();
-  }
-  function getSelectedIndex() {
-    return instance2.getSelectedIndex();
-  }
-  function getFocusedItemIndex() {
-    return instance2.getFocusedItemIndex();
-  }
-  function focusItemAtIndex(index2) {
-    const accessor = getOrderedList()[index2];
-    accessor && "focus" in accessor.element && accessor.element.focus();
-  }
-  function getElement() {
-    return element2.getElement();
-  }
-  function switch_instance_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      element2 = $$value;
-      $$invalidate(14, element2);
-    });
-  }
-  $$self.$$set = ($$new_props) => {
-    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
-    $$invalidate(25, $$restProps = compute_rest_props($$props, omit_props_names));
-    if ("use" in $$new_props)
-      $$invalidate(0, use = $$new_props.use);
-    if ("class" in $$new_props)
-      $$invalidate(1, className = $$new_props.class);
-    if ("nonInteractive" in $$new_props)
-      $$invalidate(2, nonInteractive = $$new_props.nonInteractive);
-    if ("dense" in $$new_props)
-      $$invalidate(3, dense = $$new_props.dense);
-    if ("textualList" in $$new_props)
-      $$invalidate(4, textualList = $$new_props.textualList);
-    if ("avatarList" in $$new_props)
-      $$invalidate(5, avatarList = $$new_props.avatarList);
-    if ("iconList" in $$new_props)
-      $$invalidate(6, iconList = $$new_props.iconList);
-    if ("imageList" in $$new_props)
-      $$invalidate(7, imageList = $$new_props.imageList);
-    if ("thumbnailList" in $$new_props)
-      $$invalidate(8, thumbnailList = $$new_props.thumbnailList);
-    if ("videoList" in $$new_props)
-      $$invalidate(9, videoList = $$new_props.videoList);
-    if ("twoLine" in $$new_props)
-      $$invalidate(10, twoLine = $$new_props.twoLine);
-    if ("threeLine" in $$new_props)
-      $$invalidate(11, threeLine = $$new_props.threeLine);
-    if ("vertical" in $$new_props)
-      $$invalidate(27, vertical = $$new_props.vertical);
-    if ("wrapFocus" in $$new_props)
-      $$invalidate(28, wrapFocus = $$new_props.wrapFocus);
-    if ("singleSelection" in $$new_props)
-      $$invalidate(29, singleSelection = $$new_props.singleSelection);
-    if ("disabledItemsFocusable" in $$new_props)
-      $$invalidate(30, disabledItemsFocusable = $$new_props.disabledItemsFocusable);
-    if ("selectedIndex" in $$new_props)
-      $$invalidate(26, selectedIndex = $$new_props.selectedIndex);
-    if ("radioList" in $$new_props)
-      $$invalidate(31, radioList = $$new_props.radioList);
-    if ("checkList" in $$new_props)
-      $$invalidate(32, checkList = $$new_props.checkList);
-    if ("hasTypeahead" in $$new_props)
-      $$invalidate(33, hasTypeahead = $$new_props.hasTypeahead);
-    if ("component" in $$new_props)
-      $$invalidate(12, component = $$new_props.component);
-    if ("tag" in $$new_props)
-      $$invalidate(13, tag = $$new_props.tag);
-    if ("$$scope" in $$new_props)
-      $$invalidate(44, $$scope = $$new_props.$$scope);
-  };
-  $$self.$$.update = () => {
-    if ($$self.$$.dirty[0] & /*vertical*/
-    134217728 | $$self.$$.dirty[1] & /*instance*/
-    1024) {
-      if (instance2) {
-        instance2.setVerticalOrientation(vertical);
-      }
-    }
-    if ($$self.$$.dirty[0] & /*wrapFocus*/
-    268435456 | $$self.$$.dirty[1] & /*instance*/
-    1024) {
-      if (instance2) {
-        instance2.setWrapFocus(wrapFocus);
-      }
-    }
-    if ($$self.$$.dirty[1] & /*instance, hasTypeahead*/
-    1028) {
-      if (instance2) {
-        instance2.setHasTypeahead(hasTypeahead);
-      }
-    }
-    if ($$self.$$.dirty[0] & /*singleSelection*/
-    536870912 | $$self.$$.dirty[1] & /*instance*/
-    1024) {
-      if (instance2) {
-        instance2.setSingleSelection(singleSelection);
-      }
-    }
-    if ($$self.$$.dirty[0] & /*disabledItemsFocusable*/
-    1073741824 | $$self.$$.dirty[1] & /*instance*/
-    1024) {
-      if (instance2) {
-        instance2.setDisabledItemsFocusable(disabledItemsFocusable);
-      }
-    }
-    if ($$self.$$.dirty[0] & /*singleSelection, selectedIndex*/
-    603979776 | $$self.$$.dirty[1] & /*instance*/
-    1024) {
-      if (instance2 && singleSelection && getSelectedIndex() !== selectedIndex) {
-        instance2.setSelectedIndex(selectedIndex);
-      }
-    }
-  };
-  return [
-    use,
-    className,
-    nonInteractive,
-    dense,
-    textualList,
-    avatarList,
-    iconList,
-    imageList,
-    thumbnailList,
-    videoList,
-    twoLine,
-    threeLine,
-    component,
-    tag,
-    element2,
-    role,
-    forwardEvents,
-    selectionDialog,
-    handleItemMount,
-    handleItemUnmount,
-    handleKeydown2,
-    handleFocusin,
-    handleFocusout,
-    handleClick,
-    handleAction,
-    $$restProps,
-    selectedIndex,
-    vertical,
-    wrapFocus,
-    singleSelection,
-    disabledItemsFocusable,
-    radioList,
-    checkList,
-    hasTypeahead,
-    layout,
-    setEnabled,
-    getTypeaheadInProgress,
-    getSelectedIndex,
-    getFocusedItemIndex,
-    focusItemAtIndex,
-    getElement,
-    instance2,
-    slots,
-    switch_instance_binding,
-    $$scope
-  ];
-}
-class List extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(
-      this,
-      options,
-      instance_1$7,
-      create_fragment$w,
-      safe_not_equal,
-      {
-        use: 0,
-        class: 1,
-        nonInteractive: 2,
-        dense: 3,
-        textualList: 4,
-        avatarList: 5,
-        iconList: 6,
-        imageList: 7,
-        thumbnailList: 8,
-        videoList: 9,
-        twoLine: 10,
-        threeLine: 11,
-        vertical: 27,
-        wrapFocus: 28,
-        singleSelection: 29,
-        disabledItemsFocusable: 30,
-        selectedIndex: 26,
-        radioList: 31,
-        checkList: 32,
-        hasTypeahead: 33,
-        component: 12,
-        tag: 13,
-        layout: 34,
-        setEnabled: 35,
-        getTypeaheadInProgress: 36,
-        getSelectedIndex: 37,
-        getFocusedItemIndex: 38,
-        focusItemAtIndex: 39,
-        getElement: 40
-      },
-      null,
-      [-1, -1]
-    );
-  }
-  get layout() {
-    return this.$$.ctx[34];
-  }
-  get setEnabled() {
-    return this.$$.ctx[35];
-  }
-  get getTypeaheadInProgress() {
-    return this.$$.ctx[36];
-  }
-  get getSelectedIndex() {
-    return this.$$.ctx[37];
-  }
-  get getFocusedItemIndex() {
-    return this.$$.ctx[38];
-  }
-  get focusItemAtIndex() {
-    return this.$$.ctx[39];
-  }
-  get getElement() {
-    return this.$$.ctx[40];
-  }
-}
-function create_if_block$l(ctx) {
-  let span;
-  return {
-    c() {
-      span = element("span");
-      this.h();
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { class: true });
-      children(span).forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(span, "class", "mdc-deprecated-list-item__ripple");
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-    }
-  };
-}
-function create_default_slot$e(ctx) {
-  let if_block_anchor;
-  let current;
-  let if_block = (
-    /*ripple*/
-    ctx[7] && create_if_block$l()
-  );
-  const default_slot_template = (
-    /*#slots*/
-    ctx[34].default
-  );
-  const default_slot = create_slot(
-    default_slot_template,
-    ctx,
-    /*$$scope*/
-    ctx[37],
-    null
-  );
-  return {
-    c() {
-      if (if_block)
-        if_block.c();
-      if_block_anchor = empty();
-      if (default_slot)
-        default_slot.c();
-    },
-    l(nodes) {
-      if (if_block)
-        if_block.l(nodes);
-      if_block_anchor = empty();
-      if (default_slot)
-        default_slot.l(nodes);
-    },
-    m(target, anchor) {
-      if (if_block)
-        if_block.m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
-      if (default_slot) {
-        default_slot.m(target, anchor);
-      }
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (
-        /*ripple*/
-        ctx2[7]
-      ) {
-        if (if_block)
-          ;
-        else {
-          if_block = create_if_block$l();
-          if_block.c();
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
-        }
-      } else if (if_block) {
-        if_block.d(1);
-        if_block = null;
-      }
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty[1] & /*$$scope*/
-        64)) {
-          update_slot_base(
-            default_slot,
-            default_slot_template,
-            ctx2,
-            /*$$scope*/
-            ctx2[37],
-            !current ? get_all_dirty_from_scope(
-              /*$$scope*/
-              ctx2[37]
-            ) : get_slot_changes(
-              default_slot_template,
-              /*$$scope*/
-              ctx2[37],
-              dirty,
-              null
-            ),
-            null
-          );
-        }
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(default_slot, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(default_slot, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(if_block_anchor);
-      }
-      if (if_block)
-        if_block.d(detaching);
-      if (default_slot)
-        default_slot.d(detaching);
-    }
-  };
-}
-function create_fragment$v(ctx) {
-  let switch_instance;
-  let switch_instance_anchor;
-  let current;
-  const switch_instance_spread_levels = [
-    { tag: (
-      /*tag*/
-      ctx[14]
-    ) },
-    {
-      use: [
-        .../*nonInteractive*/
-        ctx[6] ? [] : [
-          [
-            Ripple,
-            {
-              ripple: !/*input*/
-              ctx[16],
-              unbounded: false,
-              color: (
-                /*activated*/
-                (ctx[1] || /*selected*/
-                ctx[0]) && /*color*/
-                ctx[5] == null ? "primary" : (
-                  /*color*/
-                  ctx[5]
-                )
-              ),
-              disabled: (
-                /*disabled*/
-                ctx[10]
-              ),
-              addClass: (
-                /*addClass*/
-                ctx[24]
-              ),
-              removeClass: (
-                /*removeClass*/
-                ctx[25]
-              ),
-              addStyle: (
-                /*addStyle*/
-                ctx[26]
-              )
-            }
-          ]
-        ],
-        /*forwardEvents*/
-        ctx[22],
-        .../*use*/
-        ctx[2]
-      ]
-    },
-    {
-      class: classMap({
-        [
-          /*className*/
-          ctx[3]
-        ]: true,
-        "mdc-deprecated-list-item": !/*wrapper*/
-        ctx[8],
-        "mdc-deprecated-list-item__wrapper": (
-          /*wrapper*/
-          ctx[8]
-        ),
-        "mdc-deprecated-list-item--activated": (
-          /*activated*/
-          ctx[1]
-        ),
-        "mdc-deprecated-list-item--selected": (
-          /*selected*/
-          ctx[0]
-        ),
-        "mdc-deprecated-list-item--disabled": (
-          /*disabled*/
-          ctx[10]
-        ),
-        "mdc-menu-item--selected": !/*nav*/
-        ctx[23] && /*role*/
-        ctx[9] === "menuitem" && /*selected*/
-        ctx[0],
-        "smui-menu-item--non-interactive": (
-          /*nonInteractive*/
-          ctx[6]
-        ),
-        .../*internalClasses*/
-        ctx[18]
-      })
-    },
-    {
-      style: Object.entries(
-        /*internalStyles*/
-        ctx[19]
-      ).map(func$4).concat([
-        /*style*/
-        ctx[4]
-      ]).join(" ")
-    },
-    /*nav*/
-    ctx[23] && /*activated*/
-    ctx[1] ? { "aria-current": "page" } : {},
-    !/*nav*/
-    ctx[23] || /*wrapper*/
-    ctx[8] ? { role: (
-      /*role*/
-      ctx[9]
-    ) } : {},
-    !/*nav*/
-    ctx[23] && /*role*/
-    ctx[9] === "option" ? {
-      "aria-selected": (
-        /*selected*/
-        ctx[0] ? "true" : "false"
-      )
-    } : {},
-    !/*nav*/
-    ctx[23] && /*role*/
-    (ctx[9] === "radio" || /*role*/
-    ctx[9] === "checkbox") ? {
-      "aria-checked": (
-        /*input*/
-        ctx[16] && /*input*/
-        ctx[16].checked ? "true" : "false"
-      )
-    } : {},
-    !/*nav*/
-    ctx[23] ? {
-      "aria-disabled": (
-        /*disabled*/
-        ctx[10] ? "true" : "false"
-      )
-    } : {},
-    {
-      "data-menu-item-skip-restore-focus": (
-        /*skipRestoreFocus*/
-        ctx[11] || void 0
-      )
-    },
-    { tabindex: (
-      /*tabindex*/
-      ctx[21]
-    ) },
-    { href: (
-      /*href*/
-      ctx[12]
-    ) },
-    /*internalAttrs*/
-    ctx[20],
-    /*$$restProps*/
-    ctx[29]
-  ];
-  var switch_value = (
-    /*component*/
-    ctx[13]
-  );
-  function switch_props(ctx2) {
-    let switch_instance_props = {
-      $$slots: { default: [create_default_slot$e] },
-      $$scope: { ctx: ctx2 }
-    };
-    for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
-      switch_instance_props = assign$1(switch_instance_props, switch_instance_spread_levels[i2]);
-    }
-    return { props: switch_instance_props };
-  }
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-    ctx[35](switch_instance);
-    switch_instance.$on(
-      "click",
-      /*action*/
-      ctx[15]
-    );
-    switch_instance.$on(
-      "keydown",
-      /*handleKeydown*/
-      ctx[27]
-    );
-    switch_instance.$on(
-      "SMUIGenericInput:mount",
-      /*handleInputMount*/
-      ctx[28]
-    );
-    switch_instance.$on(
-      "SMUIGenericInput:unmount",
-      /*SMUIGenericInput_unmount_handler*/
-      ctx[36]
-    );
-  }
-  return {
-    c() {
-      if (switch_instance)
-        create_component(switch_instance.$$.fragment);
-      switch_instance_anchor = empty();
-    },
-    l(nodes) {
-      if (switch_instance)
-        claim_component(switch_instance.$$.fragment, nodes);
-      switch_instance_anchor = empty();
-    },
-    m(target, anchor) {
-      if (switch_instance)
-        mount_component(switch_instance, target, anchor);
-      insert_hydration(target, switch_instance_anchor, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const switch_instance_changes = dirty[0] & /*tag, nonInteractive, input, activated, selected, color, disabled, addClass, removeClass, addStyle, forwardEvents, use, className, wrapper, nav, role, internalClasses, internalStyles, style, skipRestoreFocus, tabindex, href, internalAttrs, $$restProps*/
-      670916479 ? get_spread_update(switch_instance_spread_levels, [
-        dirty[0] & /*tag*/
-        16384 && { tag: (
-          /*tag*/
-          ctx2[14]
-        ) },
-        dirty[0] & /*nonInteractive, input, activated, selected, color, disabled, addClass, removeClass, addStyle, forwardEvents, use*/
-        121701479 && {
-          use: [
-            .../*nonInteractive*/
-            ctx2[6] ? [] : [
-              [
-                Ripple,
-                {
-                  ripple: !/*input*/
-                  ctx2[16],
-                  unbounded: false,
-                  color: (
-                    /*activated*/
-                    (ctx2[1] || /*selected*/
-                    ctx2[0]) && /*color*/
-                    ctx2[5] == null ? "primary" : (
-                      /*color*/
-                      ctx2[5]
-                    )
-                  ),
-                  disabled: (
-                    /*disabled*/
-                    ctx2[10]
-                  ),
-                  addClass: (
-                    /*addClass*/
-                    ctx2[24]
-                  ),
-                  removeClass: (
-                    /*removeClass*/
-                    ctx2[25]
-                  ),
-                  addStyle: (
-                    /*addStyle*/
-                    ctx2[26]
-                  )
-                }
-              ]
-            ],
-            /*forwardEvents*/
-            ctx2[22],
-            .../*use*/
-            ctx2[2]
-          ]
-        },
-        dirty[0] & /*className, wrapper, activated, selected, disabled, nav, role, nonInteractive, internalClasses*/
-        8652619 && {
-          class: classMap({
-            [
-              /*className*/
-              ctx2[3]
-            ]: true,
-            "mdc-deprecated-list-item": !/*wrapper*/
-            ctx2[8],
-            "mdc-deprecated-list-item__wrapper": (
-              /*wrapper*/
-              ctx2[8]
-            ),
-            "mdc-deprecated-list-item--activated": (
-              /*activated*/
-              ctx2[1]
-            ),
-            "mdc-deprecated-list-item--selected": (
-              /*selected*/
-              ctx2[0]
-            ),
-            "mdc-deprecated-list-item--disabled": (
-              /*disabled*/
-              ctx2[10]
-            ),
-            "mdc-menu-item--selected": !/*nav*/
-            ctx2[23] && /*role*/
-            ctx2[9] === "menuitem" && /*selected*/
-            ctx2[0],
-            "smui-menu-item--non-interactive": (
-              /*nonInteractive*/
-              ctx2[6]
-            ),
-            .../*internalClasses*/
-            ctx2[18]
-          })
-        },
-        dirty[0] & /*internalStyles, style*/
-        524304 && {
-          style: Object.entries(
-            /*internalStyles*/
-            ctx2[19]
-          ).map(func$4).concat([
-            /*style*/
-            ctx2[4]
-          ]).join(" ")
-        },
-        dirty[0] & /*nav, activated*/
-        8388610 && get_spread_object(
-          /*nav*/
-          ctx2[23] && /*activated*/
-          ctx2[1] ? { "aria-current": "page" } : {}
-        ),
-        dirty[0] & /*nav, wrapper, role*/
-        8389376 && get_spread_object(!/*nav*/
-        ctx2[23] || /*wrapper*/
-        ctx2[8] ? { role: (
-          /*role*/
-          ctx2[9]
-        ) } : {}),
-        dirty[0] & /*nav, role, selected*/
-        8389121 && get_spread_object(!/*nav*/
-        ctx2[23] && /*role*/
-        ctx2[9] === "option" ? {
-          "aria-selected": (
-            /*selected*/
-            ctx2[0] ? "true" : "false"
-          )
-        } : {}),
-        dirty[0] & /*nav, role, input*/
-        8454656 && get_spread_object(!/*nav*/
-        ctx2[23] && /*role*/
-        (ctx2[9] === "radio" || /*role*/
-        ctx2[9] === "checkbox") ? {
-          "aria-checked": (
-            /*input*/
-            ctx2[16] && /*input*/
-            ctx2[16].checked ? "true" : "false"
-          )
-        } : {}),
-        dirty[0] & /*nav, disabled*/
-        8389632 && get_spread_object(!/*nav*/
-        ctx2[23] ? {
-          "aria-disabled": (
-            /*disabled*/
-            ctx2[10] ? "true" : "false"
-          )
-        } : {}),
-        dirty[0] & /*skipRestoreFocus*/
-        2048 && {
-          "data-menu-item-skip-restore-focus": (
-            /*skipRestoreFocus*/
-            ctx2[11] || void 0
-          )
-        },
-        dirty[0] & /*tabindex*/
-        2097152 && { tabindex: (
-          /*tabindex*/
-          ctx2[21]
-        ) },
-        dirty[0] & /*href*/
-        4096 && { href: (
-          /*href*/
-          ctx2[12]
-        ) },
-        dirty[0] & /*internalAttrs*/
-        1048576 && get_spread_object(
-          /*internalAttrs*/
-          ctx2[20]
-        ),
-        dirty[0] & /*$$restProps*/
-        536870912 && get_spread_object(
-          /*$$restProps*/
-          ctx2[29]
-        )
-      ]) : {};
-      if (dirty[0] & /*ripple*/
-      128 | dirty[1] & /*$$scope*/
-      64) {
-        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      if (dirty[0] & /*component*/
-      8192 && switch_value !== (switch_value = /*component*/
-      ctx2[13])) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
-          ctx2[35](switch_instance);
-          switch_instance.$on(
-            "click",
-            /*action*/
-            ctx2[15]
-          );
-          switch_instance.$on(
-            "keydown",
-            /*handleKeydown*/
-            ctx2[27]
-          );
-          switch_instance.$on(
-            "SMUIGenericInput:mount",
-            /*handleInputMount*/
-            ctx2[28]
-          );
-          switch_instance.$on(
-            "SMUIGenericInput:unmount",
-            /*SMUIGenericInput_unmount_handler*/
-            ctx2[36]
-          );
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current)
-        return;
-      if (switch_instance)
-        transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance)
-        transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(switch_instance_anchor);
-      }
-      ctx[35](null);
-      if (switch_instance)
-        destroy_component(switch_instance, detaching);
-    }
-  };
-}
-let counter$3 = 0;
-const func$4 = ([name, value]) => `${name}: ${value};`;
-function instance$m($$self, $$props, $$invalidate) {
-  let tabindex;
-  const omit_props_names = [
-    "use",
-    "class",
-    "style",
-    "color",
-    "nonInteractive",
-    "ripple",
-    "wrapper",
-    "activated",
-    "role",
-    "selected",
-    "disabled",
-    "skipRestoreFocus",
-    "tabindex",
-    "inputId",
-    "href",
-    "component",
-    "tag",
-    "action",
-    "getPrimaryText",
-    "getElement"
-  ];
-  let $$restProps = compute_rest_props($$props, omit_props_names);
-  let { $$slots: slots = {}, $$scope } = $$props;
-  var _a3;
-  const forwardEvents = forwardEventsBuilder(get_current_component());
-  let uninitializedValue = () => {
-  };
-  function isUninitializedValue(value) {
-    return value === uninitializedValue;
-  }
-  let { use = [] } = $$props;
-  let { class: className = "" } = $$props;
-  let { style = "" } = $$props;
-  let { color: color2 = void 0 } = $$props;
-  let { nonInteractive = (_a3 = getContext("SMUI:list:nonInteractive")) !== null && _a3 !== void 0 ? _a3 : false } = $$props;
-  setContext("SMUI:list:nonInteractive", void 0);
-  let { ripple = !nonInteractive } = $$props;
-  let { wrapper = false } = $$props;
-  let { activated = false } = $$props;
-  let { role = wrapper ? "presentation" : getContext("SMUI:list:item:role") } = $$props;
-  setContext("SMUI:list:item:role", void 0);
-  let { selected = false } = $$props;
-  let { disabled = false } = $$props;
-  let { skipRestoreFocus = false } = $$props;
-  let { tabindex: tabindexProp = uninitializedValue } = $$props;
-  let { inputId = "SMUI-form-field-list-" + counter$3++ } = $$props;
-  let { href = void 0 } = $$props;
-  let element2;
-  let internalClasses = {};
-  let internalStyles = {};
-  let internalAttrs = {};
-  let input;
-  let addTabindexIfNoItemsSelectedRaf;
-  let nav = getContext("SMUI:list:item:nav");
-  let { component = SmuiElement } = $$props;
-  let { tag = component === SmuiElement ? nav ? href ? "a" : "span" : "li" : void 0 } = $$props;
-  setContext("SMUI:generic:input:props", { id: inputId });
-  setContext("SMUI:separator:context", void 0);
-  onMount(() => {
-    if (!selected && !nonInteractive) {
-      let first = true;
-      let el = element2.getElement();
-      while (el.previousSibling) {
-        el = el.previousSibling;
-        if (el.nodeType === 1 && el.classList.contains("mdc-deprecated-list-item") && !el.classList.contains("mdc-deprecated-list-item--disabled")) {
-          first = false;
-          break;
-        }
-      }
-      if (first) {
-        addTabindexIfNoItemsSelectedRaf = window.requestAnimationFrame(() => addTabindexIfNoItemsSelected(el));
-      }
-    }
-    const accessor = {
-      _smui_list_item_accessor: true,
-      get element() {
-        return getElement();
-      },
-      get selected() {
-        return selected;
-      },
-      set selected(value) {
-        $$invalidate(0, selected = value);
-      },
-      hasClass,
-      addClass,
-      removeClass,
-      getAttr,
-      addAttr,
-      removeAttr,
-      getPrimaryText,
-      // For inputs within item.
-      get checked() {
-        var _a4;
-        return (_a4 = input && input.checked) !== null && _a4 !== void 0 ? _a4 : false;
-      },
-      set checked(value) {
-        if (input) {
-          $$invalidate(16, input.checked = !!value, input);
-        }
-      },
-      get hasCheckbox() {
-        return !!(input && "_smui_checkbox_accessor" in input);
-      },
-      get hasRadio() {
-        return !!(input && "_smui_radio_accessor" in input);
-      },
-      activateRipple() {
-        if (input) {
-          input.activateRipple();
-        }
-      },
-      deactivateRipple() {
-        if (input) {
-          input.deactivateRipple();
-        }
-      },
-      // For select options.
-      getValue() {
-        return $$restProps.value;
-      },
-      // For autocomplete
-      action,
-      get tabindex() {
-        return tabindex;
-      },
-      set tabindex(value) {
-        $$invalidate(30, tabindexProp = value);
-      },
-      get disabled() {
-        return disabled;
-      },
-      get activated() {
-        return activated;
-      },
-      set activated(value) {
-        $$invalidate(1, activated = value);
-      }
-    };
-    dispatch(getElement(), "SMUIListItem:mount", accessor);
-    return () => {
-      dispatch(getElement(), "SMUIListItem:unmount", accessor);
-    };
-  });
-  onDestroy(() => {
-    if (addTabindexIfNoItemsSelectedRaf) {
-      window.cancelAnimationFrame(addTabindexIfNoItemsSelectedRaf);
-    }
-  });
-  function hasClass(className2) {
-    return className2 in internalClasses ? internalClasses[className2] : getElement().classList.contains(className2);
-  }
-  function addClass(className2) {
-    if (!internalClasses[className2]) {
-      $$invalidate(18, internalClasses[className2] = true, internalClasses);
-    }
-  }
-  function removeClass(className2) {
-    if (!(className2 in internalClasses) || internalClasses[className2]) {
-      $$invalidate(18, internalClasses[className2] = false, internalClasses);
-    }
-  }
-  function addStyle(name, value) {
-    if (internalStyles[name] != value) {
-      if (value === "" || value == null) {
-        delete internalStyles[name];
-        $$invalidate(19, internalStyles);
-      } else {
-        $$invalidate(19, internalStyles[name] = value, internalStyles);
-      }
-    }
-  }
-  function getAttr(name) {
-    var _a4;
-    return name in internalAttrs ? (_a4 = internalAttrs[name]) !== null && _a4 !== void 0 ? _a4 : null : getElement().getAttribute(name);
-  }
-  function addAttr(name, value) {
-    if (internalAttrs[name] !== value) {
-      $$invalidate(20, internalAttrs[name] = value, internalAttrs);
-    }
-  }
-  function removeAttr(name) {
-    if (!(name in internalAttrs) || internalAttrs[name] != null) {
-      $$invalidate(20, internalAttrs[name] = void 0, internalAttrs);
-    }
-  }
-  function addTabindexIfNoItemsSelected(el) {
-    let noneSelected = true;
-    while (el.nextElementSibling) {
-      el = el.nextElementSibling;
-      if (el.nodeType === 1 && el.classList.contains("mdc-deprecated-list-item")) {
-        const tabindexAttr = el.attributes.getNamedItem("tabindex");
-        if (tabindexAttr && tabindexAttr.value === "0") {
-          noneSelected = false;
-          break;
-        }
-      }
-    }
-    if (noneSelected) {
-      $$invalidate(21, tabindex = 0);
-    }
-  }
-  function handleKeydown2(e2) {
-    const isEnter = e2.key === "Enter";
-    const isSpace = e2.key === "Space";
-    if (isEnter || isSpace) {
-      action(e2);
-    }
-  }
-  function handleInputMount(e2) {
-    if ("_smui_checkbox_accessor" in e2.detail || "_smui_radio_accessor" in e2.detail) {
-      $$invalidate(16, input = e2.detail);
-    }
-  }
-  function action(e2) {
-    if (!disabled) {
-      dispatch(getElement(), "SMUI:action", e2);
-    }
-  }
-  function getPrimaryText() {
-    var _a4, _b3, _c;
-    const element3 = getElement();
-    const primaryText = element3.querySelector(".mdc-deprecated-list-item__primary-text");
-    if (primaryText) {
-      return (_a4 = primaryText.textContent) !== null && _a4 !== void 0 ? _a4 : "";
-    }
-    const text2 = element3.querySelector(".mdc-deprecated-list-item__text");
-    if (text2) {
-      return (_b3 = text2.textContent) !== null && _b3 !== void 0 ? _b3 : "";
-    }
-    return (_c = element3.textContent) !== null && _c !== void 0 ? _c : "";
-  }
-  function getElement() {
-    return element2.getElement();
-  }
-  function switch_instance_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      element2 = $$value;
-      $$invalidate(17, element2);
-    });
-  }
-  const SMUIGenericInput_unmount_handler = () => $$invalidate(16, input = void 0);
-  $$self.$$set = ($$new_props) => {
-    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
-    $$invalidate(29, $$restProps = compute_rest_props($$props, omit_props_names));
-    if ("use" in $$new_props)
-      $$invalidate(2, use = $$new_props.use);
-    if ("class" in $$new_props)
-      $$invalidate(3, className = $$new_props.class);
-    if ("style" in $$new_props)
-      $$invalidate(4, style = $$new_props.style);
-    if ("color" in $$new_props)
-      $$invalidate(5, color2 = $$new_props.color);
-    if ("nonInteractive" in $$new_props)
-      $$invalidate(6, nonInteractive = $$new_props.nonInteractive);
-    if ("ripple" in $$new_props)
-      $$invalidate(7, ripple = $$new_props.ripple);
-    if ("wrapper" in $$new_props)
-      $$invalidate(8, wrapper = $$new_props.wrapper);
-    if ("activated" in $$new_props)
-      $$invalidate(1, activated = $$new_props.activated);
-    if ("role" in $$new_props)
-      $$invalidate(9, role = $$new_props.role);
-    if ("selected" in $$new_props)
-      $$invalidate(0, selected = $$new_props.selected);
-    if ("disabled" in $$new_props)
-      $$invalidate(10, disabled = $$new_props.disabled);
-    if ("skipRestoreFocus" in $$new_props)
-      $$invalidate(11, skipRestoreFocus = $$new_props.skipRestoreFocus);
-    if ("tabindex" in $$new_props)
-      $$invalidate(30, tabindexProp = $$new_props.tabindex);
-    if ("inputId" in $$new_props)
-      $$invalidate(31, inputId = $$new_props.inputId);
-    if ("href" in $$new_props)
-      $$invalidate(12, href = $$new_props.href);
-    if ("component" in $$new_props)
-      $$invalidate(13, component = $$new_props.component);
-    if ("tag" in $$new_props)
-      $$invalidate(14, tag = $$new_props.tag);
-    if ("$$scope" in $$new_props)
-      $$invalidate(37, $$scope = $$new_props.$$scope);
-  };
-  $$self.$$.update = () => {
-    if ($$self.$$.dirty[0] & /*tabindexProp, nonInteractive, disabled, selected, input*/
-    1073808449) {
-      $$invalidate(21, tabindex = isUninitializedValue(tabindexProp) ? !nonInteractive && !disabled && (selected || input && input.checked) ? 0 : -1 : tabindexProp);
-    }
-  };
-  return [
-    selected,
-    activated,
-    use,
-    className,
-    style,
-    color2,
-    nonInteractive,
-    ripple,
-    wrapper,
-    role,
-    disabled,
-    skipRestoreFocus,
-    href,
-    component,
-    tag,
-    action,
-    input,
-    element2,
-    internalClasses,
-    internalStyles,
-    internalAttrs,
-    tabindex,
-    forwardEvents,
-    nav,
-    addClass,
-    removeClass,
-    addStyle,
-    handleKeydown2,
-    handleInputMount,
-    $$restProps,
-    tabindexProp,
-    inputId,
-    getPrimaryText,
-    getElement,
-    slots,
-    switch_instance_binding,
-    SMUIGenericInput_unmount_handler,
-    $$scope
-  ];
-}
-class Item extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(
-      this,
-      options,
-      instance$m,
-      create_fragment$v,
-      safe_not_equal,
-      {
-        use: 2,
-        class: 3,
-        style: 4,
-        color: 5,
-        nonInteractive: 6,
-        ripple: 7,
-        wrapper: 8,
-        activated: 1,
-        role: 9,
-        selected: 0,
-        disabled: 10,
-        skipRestoreFocus: 11,
-        tabindex: 30,
-        inputId: 31,
-        href: 12,
-        component: 13,
-        tag: 14,
-        action: 15,
-        getPrimaryText: 32,
-        getElement: 33
-      },
-      null,
-      [-1, -1]
-    );
-  }
-  get action() {
-    return this.$$.ctx[15];
-  }
-  get getPrimaryText() {
-    return this.$$.ctx[32];
-  }
-  get getElement() {
-    return this.$$.ctx[33];
-  }
-}
-const Text = classAdderBuilder({
-  class: "mdc-deprecated-list-item__text",
-  tag: "span"
-});
-classAdderBuilder({
-  class: "mdc-deprecated-list-item__primary-text",
-  tag: "span"
-});
-classAdderBuilder({
-  class: "mdc-deprecated-list-item__secondary-text",
-  tag: "span"
-});
-function create_fragment$u(ctx) {
-  let span;
-  let span_class_value;
-  let useActions_action;
-  let current;
-  let mounted;
-  let dispose;
-  const default_slot_template = (
-    /*#slots*/
-    ctx[8].default
-  );
-  const default_slot = create_slot(
-    default_slot_template,
-    ctx,
-    /*$$scope*/
-    ctx[7],
-    null
-  );
-  let span_levels = [
-    {
-      class: span_class_value = classMap({
-        [
-          /*className*/
-          ctx[1]
-        ]: true,
-        "mdc-deprecated-list-item__graphic": true,
-        "mdc-menu__selection-group-icon": (
-          /*menuSelectionGroup*/
-          ctx[4]
-        )
-      })
-    },
-    /*$$restProps*/
-    ctx[5]
-  ];
-  let span_data = {};
-  for (let i2 = 0; i2 < span_levels.length; i2 += 1) {
-    span_data = assign$1(span_data, span_levels[i2]);
-  }
-  return {
-    c() {
-      span = element("span");
-      if (default_slot)
-        default_slot.c();
-      this.h();
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { class: true });
-      var span_nodes = children(span);
-      if (default_slot)
-        default_slot.l(span_nodes);
-      span_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      set_attributes(span, span_data);
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-      if (default_slot) {
-        default_slot.m(span, null);
-      }
-      ctx[9](span);
-      current = true;
-      if (!mounted) {
-        dispose = [
-          action_destroyer(useActions_action = useActions.call(
-            null,
-            span,
-            /*use*/
-            ctx[0]
-          )),
-          action_destroyer(
-            /*forwardEvents*/
-            ctx[3].call(null, span)
-          )
-        ];
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if (default_slot) {
-        if (default_slot.p && (!current || dirty & /*$$scope*/
-        128)) {
-          update_slot_base(
-            default_slot,
-            default_slot_template,
-            ctx2,
-            /*$$scope*/
-            ctx2[7],
-            !current ? get_all_dirty_from_scope(
-              /*$$scope*/
-              ctx2[7]
-            ) : get_slot_changes(
-              default_slot_template,
-              /*$$scope*/
-              ctx2[7],
-              dirty,
-              null
-            ),
-            null
-          );
-        }
-      }
-      set_attributes(span, span_data = get_spread_update(span_levels, [
-        (!current || dirty & /*className*/
-        2 && span_class_value !== (span_class_value = classMap({
-          [
-            /*className*/
-            ctx2[1]
-          ]: true,
-          "mdc-deprecated-list-item__graphic": true,
-          "mdc-menu__selection-group-icon": (
-            /*menuSelectionGroup*/
-            ctx2[4]
-          )
-        }))) && { class: span_class_value },
-        dirty & /*$$restProps*/
-        32 && /*$$restProps*/
-        ctx2[5]
-      ]));
-      if (useActions_action && is_function(useActions_action.update) && dirty & /*use*/
-      1)
-        useActions_action.update.call(
-          null,
-          /*use*/
-          ctx2[0]
-        );
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(default_slot, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(default_slot, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-      if (default_slot)
-        default_slot.d(detaching);
-      ctx[9](null);
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-function instance$l($$self, $$props, $$invalidate) {
-  const omit_props_names = ["use", "class", "getElement"];
-  let $$restProps = compute_rest_props($$props, omit_props_names);
-  let { $$slots: slots = {}, $$scope } = $$props;
-  const forwardEvents = forwardEventsBuilder(get_current_component());
-  let { use = [] } = $$props;
-  let { class: className = "" } = $$props;
-  let element2;
-  let menuSelectionGroup = getContext("SMUI:list:graphic:menu-selection-group");
-  function getElement() {
-    return element2;
-  }
-  function span_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      element2 = $$value;
-      $$invalidate(2, element2);
-    });
-  }
-  $$self.$$set = ($$new_props) => {
-    $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props));
-    $$invalidate(5, $$restProps = compute_rest_props($$props, omit_props_names));
-    if ("use" in $$new_props)
-      $$invalidate(0, use = $$new_props.use);
-    if ("class" in $$new_props)
-      $$invalidate(1, className = $$new_props.class);
-    if ("$$scope" in $$new_props)
-      $$invalidate(7, $$scope = $$new_props.$$scope);
-  };
-  return [
-    use,
-    className,
-    element2,
-    forwardEvents,
-    menuSelectionGroup,
-    $$restProps,
-    getElement,
-    $$scope,
-    slots,
-    span_binding
-  ];
-}
-class Graphic extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$l, create_fragment$u, safe_not_equal, { use: 0, class: 1, getElement: 6 });
-  }
-  get getElement() {
-    return this.$$.ctx[6];
-  }
-}
-classAdderBuilder({
-  class: "mdc-deprecated-list-item__meta",
-  tag: "span"
-});
-classAdderBuilder({
-  class: "mdc-deprecated-list-group",
-  tag: "div"
-});
-classAdderBuilder({
-  class: "mdc-deprecated-list-group__subheader",
-  tag: "h3"
-});
 classAdderBuilder({
   class: "mdc-menu__selection-group-icon",
   component: Graphic
@@ -14206,7 +14206,7 @@ function create_default_slot$d(ctx) {
     }
   };
 }
-function create_fragment$t(ctx) {
+function create_fragment$s(ctx) {
   let card;
   let current;
   card = new Card({
@@ -14255,7 +14255,7 @@ function create_fragment$t(ctx) {
     }
   };
 }
-function instance$k($$self, $$props, $$invalidate) {
+function instance$j($$self, $$props, $$invalidate) {
   let $editing;
   component_subscribe($$self, editing, ($$value) => $$invalidate(2, $editing = $$value));
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -14301,7 +14301,7 @@ function instance$k($$self, $$props, $$invalidate) {
 class WidgetContainer extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$k, create_fragment$t, safe_not_equal, { fixed: 0 });
+    init(this, options, instance$j, create_fragment$s, safe_not_equal, { fixed: 0 });
   }
 }
 let getRandomValues;
@@ -15127,7 +15127,7 @@ function create_if_block$j(ctx) {
     }
   };
 }
-function create_fragment$s(ctx) {
+function create_fragment$r(ctx) {
   let div;
   let current_block_type_index;
   let if_block;
@@ -15422,7 +15422,7 @@ function instance_1$6($$self, $$props, $$invalidate) {
 class HelperText extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$6, create_fragment$s, safe_not_equal, {
+    init(this, options, instance_1$6, create_fragment$r, safe_not_equal, {
       use: 0,
       class: 1,
       id: 2,
@@ -15443,7 +15443,7 @@ const get_label_slot_changes_1 = (dirty) => ({});
 const get_label_slot_context_1 = (ctx) => ({});
 const get_label_slot_changes$1 = (dirty) => ({});
 const get_label_slot_context$1 = (ctx) => ({});
-function create_if_block_6(ctx) {
+function create_if_block_6$1(ctx) {
   let input;
   let input_levels = [
     { type: "hidden" },
@@ -16419,7 +16419,7 @@ function create_default_slot$c(ctx) {
     }
   };
 }
-function create_fragment$r(ctx) {
+function create_fragment$q(ctx) {
   let div1;
   let t0;
   let div0;
@@ -16462,7 +16462,7 @@ function create_fragment$r(ctx) {
   let dispose;
   let if_block0 = (
     /*hiddenInput*/
-    ctx[12] && create_if_block_6(ctx)
+    ctx[12] && create_if_block_6$1(ctx)
   );
   let if_block1 = (
     /*variant*/
@@ -17083,7 +17083,7 @@ function create_fragment$r(ctx) {
         if (if_block0) {
           if_block0.p(ctx, dirty);
         } else {
-          if_block0 = create_if_block_6(ctx);
+          if_block0 = create_if_block_6$1(ctx);
           if_block0.c();
           if_block0.m(div1, t0);
         }
@@ -18134,7 +18134,7 @@ class Select extends SvelteComponent {
       this,
       options,
       instance_1$5,
-      create_fragment$r,
+      create_fragment$q,
       safe_not_equal,
       {
         use: 2,
@@ -18258,7 +18258,7 @@ function create_default_slot$b(ctx) {
     }
   };
 }
-function create_fragment$q(ctx) {
+function create_fragment$p(ctx) {
   let item;
   let current;
   const item_spread_levels = [
@@ -18352,7 +18352,7 @@ function create_fragment$q(ctx) {
     }
   };
 }
-function instance$j($$self, $$props, $$invalidate) {
+function instance$i($$self, $$props, $$invalidate) {
   let usePass;
   let selected;
   const omit_props_names = ["use", "class", "value", "getElement"];
@@ -18426,7 +18426,7 @@ function instance$j($$self, $$props, $$invalidate) {
 class Option extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$j, create_fragment$q, safe_not_equal, {
+    init(this, options, instance$i, create_fragment$p, safe_not_equal, {
       use: 7,
       class: 8,
       value: 0,
@@ -19385,7 +19385,7 @@ function create_default_slot$a(ctx) {
     }
   };
 }
-function create_fragment$p(ctx) {
+function create_fragment$o(ctx) {
   let div0;
   let select;
   let updating_value;
@@ -19538,7 +19538,7 @@ function create_fragment$p(ctx) {
     }
   };
 }
-function instance$i($$self, $$props, $$invalidate) {
+function instance$h($$self, $$props, $$invalidate) {
   let flatDevices;
   let flatCapabilities;
   let $devices;
@@ -19680,7 +19680,7 @@ function instance$i($$self, $$props, $$invalidate) {
 class CapabilityEditor extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$i, create_fragment$p, safe_not_equal, { settings: 9 });
+    init(this, options, instance$h, create_fragment$o, safe_not_equal, { settings: 9 });
   }
 }
 /**
@@ -21881,7 +21881,7 @@ function create_if_block_1$7(ctx) {
     }
   };
 }
-function create_fragment$o(ctx) {
+function create_fragment$n(ctx) {
   let div4;
   let t0;
   let div3;
@@ -22841,7 +22841,7 @@ class Slider extends SvelteComponent {
       this,
       options,
       instance_1$4,
-      create_fragment$o,
+      create_fragment$n,
       safe_not_equal,
       {
         use: 3,
@@ -22982,7 +22982,7 @@ function create_if_block$f(ctx) {
     }
   };
 }
-function create_fragment$n(ctx) {
+function create_fragment$m(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
@@ -23054,7 +23054,7 @@ function create_fragment$n(ctx) {
     }
   };
 }
-function instance$h($$self, $$props, $$invalidate) {
+function instance$g($$self, $$props, $$invalidate) {
   let value;
   let disabled;
   let $editing;
@@ -23095,7 +23095,7 @@ function instance$h($$self, $$props, $$invalidate) {
 class Slider_1 extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$h, create_fragment$n, safe_not_equal, { capability: 0, controllable: 4 });
+    init(this, options, instance$g, create_fragment$m, safe_not_equal, { capability: 0, controllable: 4 });
   }
 }
 function create_if_block$e(ctx) {
@@ -23454,7 +23454,7 @@ function create_default_slot$9(ctx) {
     }
   };
 }
-function create_fragment$m(ctx) {
+function create_fragment$l(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
@@ -23522,7 +23522,7 @@ function create_fragment$m(ctx) {
     }
   };
 }
-function instance$g($$self, $$props, $$invalidate) {
+function instance$f($$self, $$props, $$invalidate) {
   let value;
   let { capability } = $$props;
   let { controllable } = $$props;
@@ -23543,7 +23543,7 @@ function instance$g($$self, $$props, $$invalidate) {
 class Sensor extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$g, create_fragment$m, safe_not_equal, { capability: 0, controllable: 2 });
+    init(this, options, instance$f, create_fragment$l, safe_not_equal, { capability: 0, controllable: 2 });
   }
 }
 /**
@@ -24050,7 +24050,7 @@ function create_if_block$d(ctx) {
     }
   };
 }
-function create_fragment$l(ctx) {
+function create_fragment$k(ctx) {
   let button;
   let div0;
   let t0;
@@ -24643,7 +24643,7 @@ class Switch extends SvelteComponent {
       this,
       options,
       instance_1$3,
-      create_fragment$l,
+      create_fragment$k,
       safe_not_equal,
       {
         use: 2,
@@ -24752,7 +24752,7 @@ function create_if_block$c(ctx) {
     }
   };
 }
-function create_fragment$k(ctx) {
+function create_fragment$j(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
@@ -24824,7 +24824,7 @@ function create_fragment$k(ctx) {
     }
   };
 }
-function instance$f($$self, $$props, $$invalidate) {
+function instance$e($$self, $$props, $$invalidate) {
   let value;
   let disabled;
   let $editing;
@@ -24865,7 +24865,7 @@ function instance$f($$self, $$props, $$invalidate) {
 class Toggle extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$f, create_fragment$k, safe_not_equal, { capability: 0, controllable: 4 });
+    init(this, options, instance$e, create_fragment$j, safe_not_equal, { capability: 0, controllable: 4 });
   }
 }
 function create_if_block$b(ctx) {
@@ -24996,7 +24996,7 @@ function create_default_slot$8(ctx) {
     }
   };
 }
-function create_fragment$j(ctx) {
+function create_fragment$i(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
@@ -25064,7 +25064,7 @@ function create_fragment$j(ctx) {
     }
   };
 }
-function instance$e($$self, $$props, $$invalidate) {
+function instance$d($$self, $$props, $$invalidate) {
   let disabled;
   let $editing;
   component_subscribe($$self, editing, ($$value) => $$invalidate(4, $editing = $$value));
@@ -25092,7 +25092,7 @@ function instance$e($$self, $$props, $$invalidate) {
 class Button_1 extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$e, create_fragment$j, safe_not_equal, { capability: 0, controllable: 3 });
+    init(this, options, instance$d, create_fragment$i, safe_not_equal, { capability: 0, controllable: 3 });
   }
 }
 const CapabilityWidget_svelte_svelte_type_style_lang = "";
@@ -25116,9 +25116,9 @@ function create_else_block_1$1(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$3,
-    then: create_then_block$3,
-    catch: create_catch_block$3,
+    pending: create_pending_block$2,
+    then: create_then_block$2,
+    catch: create_catch_block$2,
     value: 13
   };
   handle_promise(promise = /*$homey*/
@@ -25228,7 +25228,7 @@ function create_if_block_3$1(ctx) {
     }
   };
 }
-function create_catch_block$3(ctx) {
+function create_catch_block$2(ctx) {
   return {
     c: noop$1,
     l: noop$1,
@@ -25237,7 +25237,7 @@ function create_catch_block$3(ctx) {
     d: noop$1
   };
 }
-function create_then_block$3(ctx) {
+function create_then_block$2(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -25284,7 +25284,7 @@ function create_then_block$3(ctx) {
     }
   };
 }
-function create_pending_block$3(ctx) {
+function create_pending_block$2(ctx) {
   let t2;
   return {
     c() {
@@ -25715,7 +25715,7 @@ function create_if_block_1$4(ctx) {
     }
   };
 }
-function create_fragment$i(ctx) {
+function create_fragment$h(ctx) {
   let div0;
   let t2;
   let div1;
@@ -25830,7 +25830,7 @@ function create_fragment$i(ctx) {
     }
   };
 }
-function instance$d($$self, $$props, $$invalidate) {
+function instance$c($$self, $$props, $$invalidate) {
   let capabilities;
   let controllable;
   let $scopes;
@@ -25905,7 +25905,7 @@ function instance$d($$self, $$props, $$invalidate) {
 class CapabilityWidget extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$d, create_fragment$i, safe_not_equal, { settings: 0 });
+    init(this, options, instance$c, create_fragment$h, safe_not_equal, { settings: 0 });
   }
 }
 function create() {
@@ -26105,7 +26105,7 @@ function create_default_slot$7(ctx) {
     }
   };
 }
-function create_fragment$h(ctx) {
+function create_fragment$g(ctx) {
   let div;
   let select;
   let updating_value;
@@ -26176,7 +26176,7 @@ function create_fragment$h(ctx) {
     }
   };
 }
-function instance$c($$self, $$props, $$invalidate) {
+function instance$b($$self, $$props, $$invalidate) {
   let flows;
   let $advancedFlows;
   let $basicFlows;
@@ -26226,7 +26226,7 @@ function instance$c($$self, $$props, $$invalidate) {
 class FlowEditor extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$c, create_fragment$h, safe_not_equal, { settings: 2 });
+    init(this, options, instance$b, create_fragment$g, safe_not_equal, { settings: 2 });
   }
 }
 const FlowWidget_svelte_svelte_type_style_lang = "";
@@ -26441,7 +26441,7 @@ function create_default_slot$6(ctx) {
     }
   };
 }
-function create_fragment$g(ctx) {
+function create_fragment$f(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
@@ -26512,7 +26512,7 @@ function create_fragment$g(ctx) {
     }
   };
 }
-function instance$b($$self, $$props, $$invalidate) {
+function instance$a($$self, $$props, $$invalidate) {
   let flow;
   let $homey;
   let $advancedFlows;
@@ -26548,7 +26548,7 @@ function instance$b($$self, $$props, $$invalidate) {
 class FlowWidget extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$b, create_fragment$g, safe_not_equal, { settings: 2 });
+    init(this, options, instance$a, create_fragment$f, safe_not_equal, { settings: 2 });
   }
 }
 const ImageWidget_svelte_svelte_type_style_lang = "";
@@ -26576,9 +26576,9 @@ function create_else_block$2(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$2,
-    then: create_then_block$2,
-    catch: create_catch_block$2,
+    pending: create_pending_block$1,
+    then: create_then_block$1,
+    catch: create_catch_block$1,
     value: 9
   };
   handle_promise(promise = /*$homey*/
@@ -26746,7 +26746,7 @@ function create_if_block$8(ctx) {
     }
   };
 }
-function create_catch_block$2(ctx) {
+function create_catch_block$1(ctx) {
   return {
     c: noop$1,
     l: noop$1,
@@ -26755,7 +26755,7 @@ function create_catch_block$2(ctx) {
     d: noop$1
   };
 }
-function create_then_block$2(ctx) {
+function create_then_block$1(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -26804,7 +26804,7 @@ function create_then_block$2(ctx) {
     }
   };
 }
-function create_pending_block$2(ctx) {
+function create_pending_block$1(ctx) {
   let t2;
   return {
     c() {
@@ -26870,7 +26870,7 @@ function create_if_block_1$3(ctx) {
     }
   };
 }
-function create_fragment$f(ctx) {
+function create_fragment$e(ctx) {
   let div;
   function select_block_type(ctx2, dirty) {
     if (
@@ -26925,7 +26925,7 @@ function create_fragment$f(ctx) {
     }
   };
 }
-function instance$a($$self, $$props, $$invalidate) {
+function instance$9($$self, $$props, $$invalidate) {
   let device;
   let image;
   let fontColor;
@@ -26989,7 +26989,7 @@ function instance$a($$self, $$props, $$invalidate) {
 class ImageWidget extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$a, create_fragment$f, safe_not_equal, { settings: 6 });
+    init(this, options, instance$9, create_fragment$e, safe_not_equal, { settings: 6 });
   }
 }
 /**
@@ -27105,7 +27105,7 @@ var MDCFormFieldFoundation = (
 );
 const get_label_slot_changes = (dirty) => ({});
 const get_label_slot_context = (ctx) => ({});
-function create_fragment$e(ctx) {
+function create_fragment$d(ctx) {
   let div;
   let t2;
   let label_1;
@@ -27481,7 +27481,7 @@ function instance_1$2($$self, $$props, $$invalidate) {
 class FormField extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$2, create_fragment$e, safe_not_equal, {
+    init(this, options, instance_1$2, create_fragment$d, safe_not_equal, {
       use: 0,
       class: 1,
       align: 2,
@@ -27735,7 +27735,7 @@ var MDCCheckboxFoundation = (
     return MDCCheckboxFoundation2;
   }(MDCFoundation)
 );
-function create_fragment$d(ctx) {
+function create_fragment$c(ctx) {
   let div3;
   let input;
   let input_class_value;
@@ -28429,7 +28429,7 @@ class Checkbox extends SvelteComponent {
       this,
       options,
       instance_1$1,
-      create_fragment$d,
+      create_fragment$c,
       safe_not_equal,
       {
         use: 2,
@@ -28468,7 +28468,7 @@ function get_each_context_1$1(ctx, list, i2) {
   child_ctx[24] = list[i2];
   return child_ctx;
 }
-function create_default_slot_25(ctx) {
+function create_default_slot_25$1(ctx) {
   let t_value = (
     /*imageDevice*/
     ctx[24].name + ""
@@ -28506,7 +28506,7 @@ function create_each_block_1$1(ctx) {
         /*imageDevice*/
         ctx[24].id
       ),
-      $$slots: { default: [create_default_slot_25] },
+      $$slots: { default: [create_default_slot_25$1] },
       $$scope: { ctx }
     }
   });
@@ -28548,7 +28548,7 @@ function create_each_block_1$1(ctx) {
     }
   };
 }
-function create_default_slot_24(ctx) {
+function create_default_slot_24$1(ctx) {
   let each_1_anchor;
   let current;
   let each_value_1 = ensure_array_like(
@@ -28643,7 +28643,7 @@ function create_if_block$7(ctx) {
   }
   let select_props = {
     label: "Image",
-    $$slots: { default: [create_default_slot_22] },
+    $$slots: { default: [create_default_slot_22$1] },
     $$scope: { ctx }
   };
   if (
@@ -28696,7 +28696,7 @@ function create_if_block$7(ctx) {
     }
   };
 }
-function create_default_slot_23(ctx) {
+function create_default_slot_23$1(ctx) {
   let t_value = (
     /*img*/
     ctx[21].title + ""
@@ -28734,7 +28734,7 @@ function create_each_block$2(ctx) {
         /*img*/
         ctx[21].id
       ),
-      $$slots: { default: [create_default_slot_23] },
+      $$slots: { default: [create_default_slot_23$1] },
       $$scope: { ctx }
     }
   });
@@ -28776,7 +28776,7 @@ function create_each_block$2(ctx) {
     }
   };
 }
-function create_default_slot_22(ctx) {
+function create_default_slot_22$1(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
@@ -28862,7 +28862,7 @@ function create_default_slot_22(ctx) {
     }
   };
 }
-function create_default_slot_21(ctx) {
+function create_default_slot_21$1(ctx) {
   let t2;
   return {
     c() {
@@ -28881,7 +28881,7 @@ function create_default_slot_21(ctx) {
     }
   };
 }
-function create_default_slot_20(ctx) {
+function create_default_slot_20$1(ctx) {
   let t2;
   return {
     c() {
@@ -28907,7 +28907,7 @@ function create_default_slot_19$2(ctx) {
   icon = new CommonIcon({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_20] },
+      $$slots: { default: [create_default_slot_20$1] },
       $$scope: { ctx }
     }
   });
@@ -29190,7 +29190,7 @@ function create_default_slot_7$3(ctx) {
   option0 = new Option({
     props: {
       value: "0",
-      $$slots: { default: [create_default_slot_21] },
+      $$slots: { default: [create_default_slot_21$1] },
       $$scope: { ctx }
     }
   });
@@ -29830,7 +29830,7 @@ function create_label_slot(ctx) {
     }
   };
 }
-function create_fragment$c(ctx) {
+function create_fragment$b(ctx) {
   let div0;
   let select0;
   let updating_value;
@@ -29850,7 +29850,7 @@ function create_fragment$c(ctx) {
   }
   let select0_props = {
     label: "Device",
-    $$slots: { default: [create_default_slot_24] },
+    $$slots: { default: [create_default_slot_24$1] },
     $$scope: { ctx }
   };
   if (
@@ -30063,7 +30063,7 @@ function create_fragment$c(ctx) {
     }
   };
 }
-function instance$9($$self, $$props, $$invalidate) {
+function instance$8($$self, $$props, $$invalidate) {
   let imageDevices;
   let images;
   let $devices;
@@ -30199,7 +30199,7 @@ function instance$9($$self, $$props, $$invalidate) {
 class ImageEditor extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$9, create_fragment$c, safe_not_equal, { settings: 7 });
+    init(this, options, instance$8, create_fragment$b, safe_not_equal, { settings: 7 });
   }
 }
 const ImageView_svelte_svelte_type_style_lang = "";
@@ -30211,9 +30211,9 @@ function create_if_block$6(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$1,
-    then: create_then_block$1,
-    catch: create_catch_block$1,
+    pending: create_pending_block,
+    then: create_then_block,
+    catch: create_catch_block,
     value: 7
   };
   handle_promise(promise = /*$homey*/
@@ -30254,7 +30254,7 @@ function create_if_block$6(ctx) {
     }
   };
 }
-function create_catch_block$1(ctx) {
+function create_catch_block(ctx) {
   return {
     c: noop$1,
     l: noop$1,
@@ -30263,7 +30263,7 @@ function create_catch_block$1(ctx) {
     d: noop$1
   };
 }
-function create_then_block$1(ctx) {
+function create_then_block(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -30319,7 +30319,7 @@ function create_then_block$1(ctx) {
     }
   };
 }
-function create_pending_block$1(ctx) {
+function create_pending_block(ctx) {
   let t2;
   return {
     c() {
@@ -30339,7 +30339,7 @@ function create_pending_block$1(ctx) {
     }
   };
 }
-function create_fragment$b(ctx) {
+function create_fragment$a(ctx) {
   let if_block_anchor;
   let if_block = (
     /*image*/
@@ -30389,7 +30389,7 @@ function create_fragment$b(ctx) {
     }
   };
 }
-function instance$8($$self, $$props, $$invalidate) {
+function instance$7($$self, $$props, $$invalidate) {
   let device;
   let image;
   let $devices;
@@ -30433,7 +30433,7 @@ function instance$8($$self, $$props, $$invalidate) {
 class ImageView extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$8, create_fragment$b, safe_not_equal, { settings: 3 });
+    init(this, options, instance$7, create_fragment$a, safe_not_equal, { settings: 3 });
   }
 }
 /*!
@@ -44708,7 +44708,7 @@ function useForwardEvents(getRef) {
     }
   });
 }
-function create_fragment$a(ctx) {
+function create_fragment$9(ctx) {
   let canvas;
   let canvas_levels = [
     /*props*/
@@ -44750,7 +44750,7 @@ function clean(props) {
   let { data, type, options, plugins: plugins2, children: children2, $$scope, $$slots, ...rest } = props;
   return rest;
 }
-function instance$7($$self, $$props, $$invalidate) {
+function instance$6($$self, $$props, $$invalidate) {
   let { type } = $$props;
   let { data = { datasets: [] } } = $$props;
   let { options = {} } = $$props;
@@ -44812,7 +44812,7 @@ function instance$7($$self, $$props, $$invalidate) {
 class Chart extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$7, create_fragment$a, safe_not_equal, {
+    init(this, options, instance$6, create_fragment$9, safe_not_equal, {
       type: 3,
       data: 4,
       options: 5,
@@ -44820,107 +44820,6 @@ class Chart extends SvelteComponent {
       updateMode: 7,
       chart: 2
     });
-  }
-}
-function create_fragment$9(ctx) {
-  let chart_1;
-  let updating_chart;
-  let current;
-  const chart_1_spread_levels = [
-    { type: "line" },
-    /*props*/
-    ctx[1]
-  ];
-  function chart_1_chart_binding(value) {
-    ctx[4](value);
-  }
-  let chart_1_props = {};
-  for (let i2 = 0; i2 < chart_1_spread_levels.length; i2 += 1) {
-    chart_1_props = assign$1(chart_1_props, chart_1_spread_levels[i2]);
-  }
-  if (
-    /*chart*/
-    ctx[0] !== void 0
-  ) {
-    chart_1_props.chart = /*chart*/
-    ctx[0];
-  }
-  chart_1 = new Chart({ props: chart_1_props });
-  ctx[3](chart_1);
-  binding_callbacks.push(() => bind(chart_1, "chart", chart_1_chart_binding));
-  return {
-    c() {
-      create_component(chart_1.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(chart_1.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(chart_1, target, anchor);
-      current = true;
-    },
-    p(ctx2, [dirty]) {
-      const chart_1_changes = dirty & /*props*/
-      2 ? get_spread_update(chart_1_spread_levels, [chart_1_spread_levels[0], get_spread_object(
-        /*props*/
-        ctx2[1]
-      )]) : {};
-      if (!updating_chart && dirty & /*chart*/
-      1) {
-        updating_chart = true;
-        chart_1_changes.chart = /*chart*/
-        ctx2[0];
-        add_flush_callback(() => updating_chart = false);
-      }
-      chart_1.$set(chart_1_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(chart_1.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(chart_1.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      ctx[3](null);
-      destroy_component(chart_1, detaching);
-    }
-  };
-}
-function instance$6($$self, $$props, $$invalidate) {
-  Chart$1.register(LineController);
-  let { chart = null } = $$props;
-  let props;
-  let baseChartRef;
-  useForwardEvents(() => baseChartRef);
-  function chart_1_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      baseChartRef = $$value;
-      $$invalidate(2, baseChartRef);
-    });
-  }
-  function chart_1_chart_binding(value) {
-    chart = value;
-    $$invalidate(0, chart);
-  }
-  $$self.$$set = ($$new_props) => {
-    $$invalidate(5, $$props = assign$1(assign$1({}, $$props), exclude_internal_props($$new_props)));
-    if ("chart" in $$new_props)
-      $$invalidate(0, chart = $$new_props.chart);
-  };
-  $$self.$$.update = () => {
-    $$invalidate(1, props = $$props);
-  };
-  $$props = exclude_internal_props($$props);
-  return [chart, props, baseChartRef, chart_1_binding, chart_1_chart_binding];
-}
-class Line extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$6, create_fragment$9, safe_not_equal, { chart: 0 });
   }
 }
 Chart$1.register(...registerables);
@@ -49430,20 +49329,22 @@ adapters._date.override({
   }
 });
 const InsightWidget_svelte_svelte_type_style_lang = "";
-function create_else_block_2(ctx) {
-  var _a3, _b3;
+function create_else_block_1(ctx) {
   let div2;
   let div0;
   let t0_value = (
-    /*device*/
-    ((_a3 = ctx[1]) == null ? void 0 : _a3.name) + ""
+    /*log*/
+    ctx[0].title + ""
   );
   let t0;
   let t1;
   let div1;
   let t2_value = (
-    /*insight*/
-    ((_b3 = ctx[0]) == null ? void 0 : _b3.title) + ""
+    /*getOwnerUriName*/
+    ctx[4](
+      /*log*/
+      ctx[0].ownerUri
+    ) + ""
   );
   let t2;
   return {
@@ -49472,8 +49373,8 @@ function create_else_block_2(ctx) {
       this.h();
     },
     h() {
-      attr(div1, "class", "subtitle svelte-m3bos7");
-      attr(div2, "class", "header svelte-m3bos7");
+      attr(div1, "class", "subtitle svelte-4hrbdb");
+      attr(div2, "class", "header svelte-4hrbdb");
     },
     m(target, anchor) {
       insert_hydration(target, div2, anchor);
@@ -49484,14 +49385,16 @@ function create_else_block_2(ctx) {
       append_hydration(div1, t2);
     },
     p(ctx2, dirty) {
-      var _a4, _b4;
-      if (dirty & /*device*/
-      2 && t0_value !== (t0_value = /*device*/
-      ((_a4 = ctx2[1]) == null ? void 0 : _a4.name) + ""))
+      if (dirty & /*log*/
+      1 && t0_value !== (t0_value = /*log*/
+      ctx2[0].title + ""))
         set_data(t0, t0_value);
-      if (dirty & /*insight*/
-      1 && t2_value !== (t2_value = /*insight*/
-      ((_b4 = ctx2[0]) == null ? void 0 : _b4.title) + ""))
+      if (dirty & /*log*/
+      1 && t2_value !== (t2_value = /*getOwnerUriName*/
+      ctx2[4](
+        /*log*/
+        ctx2[0].ownerUri
+      ) + ""))
         set_data(t2, t2_value);
     },
     d(detaching) {
@@ -49501,7 +49404,7 @@ function create_else_block_2(ctx) {
     }
   };
 }
-function create_if_block_2$1(ctx) {
+function create_if_block_1$2(ctx) {
   let span;
   let textContent = "Error";
   return {
@@ -49525,299 +49428,111 @@ function create_if_block_2$1(ctx) {
     }
   };
 }
-function create_else_block_1(ctx) {
+function create_else_block$1(ctx) {
   let div;
-  let promise;
+  let chart_1;
+  let updating_chart;
   let current;
-  let info = {
-    ctx,
-    current: null,
-    token: null,
-    hasCatch: true,
-    pending: create_pending_block,
-    then: create_then_block,
-    catch: create_catch_block,
-    value: 17,
-    error: 18,
-    blocks: [, , ,]
+  function chart_1_chart_binding(value) {
+    ctx[6](value);
+  }
+  let chart_1_props = {
+    type: "line",
+    data: (
+      /*data*/
+      ctx[2]
+    ),
+    options: (
+      /*options*/
+      ctx[3]
+    )
   };
-  handle_promise(promise = /*loading*/
-  ctx[2], info);
+  if (
+    /*chart*/
+    ctx[1] !== void 0
+  ) {
+    chart_1_props.chart = /*chart*/
+    ctx[1];
+  }
+  chart_1 = new Chart({ props: chart_1_props });
+  binding_callbacks.push(() => bind(chart_1, "chart", chart_1_chart_binding));
   return {
     c() {
       div = element("div");
-      info.block.c();
+      create_component(chart_1.$$.fragment);
       this.h();
     },
     l(nodes) {
       div = claim_element(nodes, "DIV", { class: true });
       var div_nodes = children(div);
-      info.block.l(div_nodes);
+      claim_component(chart_1.$$.fragment, div_nodes);
       div_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(div, "class", "chart svelte-m3bos7");
+      attr(div, "class", "chart svelte-4hrbdb");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
-      info.block.m(div, info.anchor = null);
-      info.mount = () => div;
-      info.anchor = null;
+      mount_component(chart_1, div, null);
       current = true;
     },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      info.ctx = ctx;
-      if (dirty & /*loading*/
-      4 && promise !== (promise = /*loading*/
-      ctx[2]) && handle_promise(promise, info))
-        ;
-      else {
-        update_await_block_branch(info, ctx, dirty);
+    p(ctx2, dirty) {
+      const chart_1_changes = {};
+      if (dirty & /*data*/
+      4)
+        chart_1_changes.data = /*data*/
+        ctx2[2];
+      if (dirty & /*options*/
+      8)
+        chart_1_changes.options = /*options*/
+        ctx2[3];
+      if (!updating_chart && dirty & /*chart*/
+      2) {
+        updating_chart = true;
+        chart_1_changes.chart = /*chart*/
+        ctx2[1];
+        add_flush_callback(() => updating_chart = false);
       }
+      chart_1.$set(chart_1_changes);
     },
     i(local) {
       if (current)
         return;
-      transition_in(info.block);
+      transition_in(chart_1.$$.fragment, local);
       current = true;
     },
     o(local) {
-      for (let i2 = 0; i2 < 3; i2 += 1) {
-        const block = info.blocks[i2];
-        transition_out(block);
-      }
+      transition_out(chart_1.$$.fragment, local);
       current = false;
     },
     d(detaching) {
       if (detaching) {
         detach(div);
       }
-      info.block.d();
-      info.token = null;
-      info = null;
+      destroy_component(chart_1);
     }
   };
 }
 function create_if_block$5(ctx) {
-  let if_block_anchor;
-  function select_block_type_2(ctx2, dirty) {
-    if (
-      /*device*/
-      ctx2[1] == void 0
-    )
-      return create_if_block_1$2;
-    return create_else_block$1;
-  }
-  let current_block_type = select_block_type_2(ctx);
-  let if_block = current_block_type(ctx);
+  let span;
+  let textContent = "Log not found.";
   return {
     c() {
-      if_block.c();
-      if_block_anchor = empty();
+      span = element("span");
+      span.textContent = textContent;
     },
     l(nodes) {
-      if_block.l(nodes);
-      if_block_anchor = empty();
+      span = claim_element(nodes, "SPAN", { ["data-svelte-h"]: true });
+      if (get_svelte_dataset(span) !== "svelte-gmvfkt")
+        span.textContent = textContent;
     },
     m(target, anchor) {
-      if_block.m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
-    },
-    p(ctx2, dirty) {
-      if (current_block_type !== (current_block_type = select_block_type_2(ctx2))) {
-        if_block.d(1);
-        if_block = current_block_type(ctx2);
-        if (if_block) {
-          if_block.c();
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
-        }
-      }
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(if_block_anchor);
-      }
-      if_block.d(detaching);
-    }
-  };
-}
-function create_catch_block(ctx) {
-  let t_value = (
-    /*error*/
-    ctx[18] + ""
-  );
-  let t2;
-  return {
-    c() {
-      t2 = text(t_value);
-    },
-    l(nodes) {
-      t2 = claim_text(nodes, t_value);
-    },
-    m(target, anchor) {
-      insert_hydration(target, t2, anchor);
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*loading*/
-      4 && t_value !== (t_value = /*error*/
-      ctx2[18] + ""))
-        set_data(t2, t_value);
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-    }
-  };
-}
-function create_then_block(ctx) {
-  let line;
-  let current;
-  line = new Line({
-    props: {
-      data: (
-        /*data*/
-        ctx[3]
-      ),
-      options: (
-        /*options*/
-        ctx[4]
-      )
-    }
-  });
-  return {
-    c() {
-      create_component(line.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(line.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(line, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const line_changes = {};
-      if (dirty & /*data*/
-      8)
-        line_changes.data = /*data*/
-        ctx2[3];
-      if (dirty & /*options*/
-      16)
-        line_changes.options = /*options*/
-        ctx2[4];
-      line.$set(line_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(line.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(line.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(line, detaching);
-    }
-  };
-}
-function create_pending_block(ctx) {
-  let div;
-  let circularprogress;
-  let current;
-  circularprogress = new CircularProgress({
-    props: {
-      style: "height: 50%; width: 50%;",
-      indeterminate: true
-    }
-  });
-  return {
-    c() {
-      div = element("div");
-      create_component(circularprogress.$$.fragment);
-      this.h();
-    },
-    l(nodes) {
-      div = claim_element(nodes, "DIV", { class: true });
-      var div_nodes = children(div);
-      claim_component(circularprogress.$$.fragment, div_nodes);
-      div_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div, "class", "loading svelte-m3bos7");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div, anchor);
-      mount_component(circularprogress, div, null);
-      current = true;
+      insert_hydration(target, span, anchor);
     },
     p: noop$1,
-    i(local) {
-      if (current)
-        return;
-      transition_in(circularprogress.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(circularprogress.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      destroy_component(circularprogress);
-    }
-  };
-}
-function create_else_block$1(ctx) {
-  let span;
-  let textContent = "Insight not found.";
-  return {
-    c() {
-      span = element("span");
-      span.textContent = textContent;
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { ["data-svelte-h"]: true });
-      if (get_svelte_dataset(span) !== "svelte-1mne90b")
-        span.textContent = textContent;
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-    }
-  };
-}
-function create_if_block_1$2(ctx) {
-  let span;
-  let textContent = "Device not found.";
-  return {
-    c() {
-      span = element("span");
-      span.textContent = textContent;
-    },
-    l(nodes) {
-      span = claim_element(nodes, "SPAN", { ["data-svelte-h"]: true });
-      if (get_svelte_dataset(span) !== "svelte-146fvvr")
-        span.textContent = textContent;
-    },
-    m(target, anchor) {
-      insert_hydration(target, span, anchor);
-    },
+    i: noop$1,
+    o: noop$1,
     d(detaching) {
       if (detaching) {
         detach(span);
@@ -49833,22 +49548,20 @@ function create_fragment$8(ctx) {
   let current;
   function select_block_type(ctx2, dirty) {
     if (
-      /*device*/
-      ctx2[1] == void 0 || /*insight*/
-      ctx2[0] == void 0
+      /*log*/
+      ctx2[0] === void 0
     )
-      return create_if_block_2$1;
-    return create_else_block_2;
+      return create_if_block_1$2;
+    return create_else_block_1;
   }
   let current_block_type = select_block_type(ctx);
   let if_block0 = current_block_type(ctx);
-  const if_block_creators = [create_if_block$5, create_else_block_1];
+  const if_block_creators = [create_if_block$5, create_else_block$1];
   const if_blocks = [];
   function select_block_type_1(ctx2, dirty) {
     if (
-      /*device*/
-      ctx2[1] == void 0 || /*insight*/
-      ctx2[0] == void 0
+      /*log*/
+      ctx2[0] === void 0
     )
       return 0;
     return 1;
@@ -49928,54 +49641,159 @@ function create_fragment$8(ctx) {
   };
 }
 function instance$5($$self, $$props, $$invalidate) {
-  let device;
-  let insight;
-  let resolution;
   let options;
-  let $homey;
   let $devices;
-  component_subscribe($$self, homey, ($$value) => $$invalidate(13, $homey = $$value));
-  component_subscribe($$self, devices, ($$value) => $$invalidate(10, $devices = $$value));
+  let $homey;
+  let $insights;
+  component_subscribe($$self, devices, ($$value) => $$invalidate(14, $devices = $$value));
+  component_subscribe($$self, homey, ($$value) => $$invalidate(15, $homey = $$value));
+  component_subscribe($$self, insights, ($$value) => $$invalidate(16, $insights = $$value));
   let { settings } = $$props;
-  let renderSettings;
-  let renderDeviceId;
-  let renderInsightId;
-  let renderInsight;
-  let renderResolution;
-  let loading;
-  let data = {};
-  function onSettings(s3) {
-    if (renderSettings !== s3) {
-      $$invalidate(6, renderSettings = s3);
-      if (renderDeviceId !== s3.deviceId) {
-        $$invalidate(7, renderDeviceId = s3.deviceId);
-      }
-      if (renderInsightId !== s3.insightId) {
-        $$invalidate(8, renderInsightId = s3.insightId);
-      }
+  let insightId;
+  let resolution;
+  let aggregation;
+  let sampleRate;
+  let log;
+  let entries;
+  let timeout;
+  let chart;
+  let data = { datasets: [] };
+  onDestroy(() => {
+    if (timeout !== void 0) {
+      clearTimeout(timeout);
+    }
+  });
+  async function onSettings(s3) {
+    let load = false;
+    if (insightId !== s3.insightId) {
+      insightId = s3.insightId;
+      load = true;
+    }
+    if (resolution === void 0 || resolution !== s3.resolution) {
+      resolution = s3.resolution ?? "today";
+      load = true;
+    }
+    if (aggregation === void 0 || aggregation !== s3.aggregation) {
+      aggregation = s3.aggregation ?? "none";
+      load = true;
+    }
+    if (sampleRate === void 0 || sampleRate !== s3.sampleRate) {
+      sampleRate = s3.sampleRate ?? 60;
+      load = true;
+    }
+    if (load && insightId) {
+      $$invalidate(0, log = $insights[insightId]);
+      reload();
     }
   }
-  function onLoad(i2, r) {
-    if (i2 !== void 0 && (renderInsight !== i2 || renderResolution !== r)) {
-      renderInsight = i2;
-      renderResolution = r;
-      $$invalidate(2, loading = getEntries(i2, r));
+  function reload() {
+    if (timeout !== void 0) {
+      clearTimeout(timeout);
+    }
+    getEntries();
+  }
+  async function getEntries() {
+    if (log === void 0) {
+      return;
+    }
+    entries = await $homey.insights.getLogEntries({ id: log.id, uri: log.uri, resolution });
+    const series = createTimeSeries(entries);
+    timeout = setTimeout(
+      () => {
+        getEntries();
+      },
+      entries.step - entries.updatesIn
+    );
+    if (data.datasets.length === 0) {
+      data.datasets.push({
+        label: log.title,
+        type: "line",
+        data: series,
+        tension: 0.5
+      });
+    } else {
+      $$invalidate(2, data.datasets[0].data = series, data);
+    }
+    if (chart) {
+      chart.update();
     }
   }
-  async function getEntries(i2, r) {
-    const id = i2.id.startsWith("homey:") ? i2.id : i2.uri + ":" + i2.id;
-    const entries = await $homey.insights.getLogEntries({ id, uri: i2.uri, resolution: r });
-    $$invalidate(3, data = {
-      datasets: [
-        {
-          label: insight == null ? void 0 : insight.title,
-          data: entries.values.map((entry) => ({
-            x: new Date(entry.t).getTime(),
-            y: entry.v
-          }))
+  function createTimeSeries(entries2) {
+    console.log(entries2, aggregation, sampleRate);
+    if (aggregation === void 0 || aggregation === "none" || entries2.step / 1e3 >= sampleRate) {
+      return entries2.values.map((entry) => ({
+        x: new Date(entry.t).getTime(),
+        y: entry.v
+      }));
+    } else {
+      const buckets = entries2.values.reduce(
+        (timeBuckets, entry) => {
+          const time = new Date(entry.t);
+          const value = entry.v;
+          const timeOfDay = time.getHours() * 3600 + time.getMinutes() * 60 + time.getSeconds();
+          const timestamp = time.getTime() - timeOfDay % sampleRate * 1e3;
+          const bucket = timeBuckets[timestamp] = timeBuckets[timestamp] ?? [];
+          bucket.push(value);
+          return timeBuckets;
+        },
+        {}
+      );
+      const result = Object.keys(buckets).map((timestamp) => {
+        const values = buckets[timestamp];
+        switch (aggregation) {
+          case "min":
+            return {
+              x: Number(timestamp),
+              y: Math.min(...values)
+            };
+          case "max":
+            return {
+              x: Number(timestamp),
+              y: Math.max(...values)
+            };
+          case "sum":
+            return {
+              x: Number(timestamp),
+              y: values.reduce((a3, b2) => a3 + b2, 0)
+            };
+          case "avg":
+            return {
+              x: Number(timestamp),
+              y: values.reduce((a3, b2) => a3 + b2, 0) / values.length
+            };
+          case "first":
+            return { x: Number(timestamp), y: values[0] };
+          case "last":
+            return {
+              x: Number(timestamp),
+              y: values[values.length - 1]
+            };
         }
-      ]
-    });
+      });
+      console.log(result);
+      return result;
+    }
+  }
+  function getOwnerUriName(uri) {
+    if (uri.startsWith("homey:device:")) {
+      const prefix = "homey:device:";
+      const id = uri.slice(prefix.length);
+      return $devices[id].name;
+    } else if (uri.startsWith("homey:manager:apps")) {
+      return "Homey Applications";
+    } else if (uri.startsWith("homey:manager:system")) {
+      return "Homey System";
+    } else if (uri.startsWith("homey:manager:weather")) {
+      return "Homey Weather";
+    } else if (uri.startsWith("homey:manager:logic")) {
+      return "Homey Logic";
+    } else {
+      return uri;
+    }
+  }
+  function chart_1_chart_binding(value) {
+    chart = value;
+    $$invalidate(1, chart);
   }
   $$self.$$set = ($$props2) => {
     if ("settings" in $$props2)
@@ -49986,43 +49804,16 @@ function instance$5($$self, $$props, $$invalidate) {
     32) {
       onSettings(settings);
     }
-    if ($$self.$$.dirty & /*$devices, renderDeviceId*/
-    1152) {
-      $$invalidate(1, device = $devices[renderDeviceId ?? ""]);
-    }
-    if ($$self.$$.dirty & /*device, renderInsightId*/
-    258) {
-      $$invalidate(0, insight = device == null ? void 0 : device.insights.find((i2) => i2.id === renderInsightId));
-    }
-    if ($$self.$$.dirty & /*renderSettings*/
-    64) {
-      $$invalidate(9, resolution = (renderSettings == null ? void 0 : renderSettings.resolution) ?? "today");
-    }
-    if ($$self.$$.dirty & /*insight, resolution*/
-    513) {
-      onLoad(insight, resolution);
-    }
   };
-  $$invalidate(4, options = {
+  $$invalidate(3, options = {
     plugins: { legend: { display: false } },
     elements: { point: { radius: 0 } },
     scales: { x: { type: "timeseries" } },
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    animation: false
   });
-  return [
-    insight,
-    device,
-    loading,
-    data,
-    options,
-    settings,
-    renderSettings,
-    renderDeviceId,
-    renderInsightId,
-    resolution,
-    $devices
-  ];
+  return [log, chart, data, options, getOwnerUriName, settings, chart_1_chart_binding];
 }
 class InsightWidget extends SvelteComponent {
   constructor(options) {
@@ -50032,18 +49823,21 @@ class InsightWidget extends SvelteComponent {
 }
 function get_each_context$1(ctx, list, i2) {
   const child_ctx = ctx.slice();
-  child_ctx[15] = list[i2];
+  child_ctx[24] = list[i2];
   return child_ctx;
 }
 function get_each_context_1(ctx, list, i2) {
   const child_ctx = ctx.slice();
-  child_ctx[18] = list[i2];
+  child_ctx[27] = list[i2];
   return child_ctx;
 }
-function create_default_slot_19$1(ctx) {
+function create_default_slot_43(ctx) {
   let t_value = (
-    /*flatDevice*/
-    ctx[18].name + ""
+    /*getOwnerUriName*/
+    ctx[8](
+      /*owner*/
+      ctx[27]
+    ) + ""
   );
   let t2;
   return {
@@ -50057,9 +49851,12 @@ function create_default_slot_19$1(ctx) {
       insert_hydration(target, t2, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & /*flatDevices*/
-      16 && t_value !== (t_value = /*flatDevice*/
-      ctx2[18].name + ""))
+      if (dirty & /*owners*/
+      128 && t_value !== (t_value = /*getOwnerUriName*/
+      ctx2[8](
+        /*owner*/
+        ctx2[27]
+      ) + ""))
         set_data(t2, t_value);
     },
     d(detaching) {
@@ -50075,10 +49872,10 @@ function create_each_block_1(ctx) {
   option = new Option({
     props: {
       value: (
-        /*flatDevice*/
-        ctx[18].id
+        /*owner*/
+        ctx[27]
       ),
-      $$slots: { default: [create_default_slot_19$1] },
+      $$slots: { default: [create_default_slot_43] },
       $$scope: { ctx }
     }
   });
@@ -50095,12 +49892,12 @@ function create_each_block_1(ctx) {
     },
     p(ctx2, dirty) {
       const option_changes = {};
-      if (dirty & /*flatDevices*/
-      16)
-        option_changes.value = /*flatDevice*/
-        ctx2[18].id;
-      if (dirty & /*$$scope, flatDevices*/
-      2097168) {
+      if (dirty & /*owners*/
+      128)
+        option_changes.value = /*owner*/
+        ctx2[27];
+      if (dirty & /*$$scope, owners*/
+      1073741952) {
         option_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option.$set(option_changes);
@@ -50120,12 +49917,12 @@ function create_each_block_1(ctx) {
     }
   };
 }
-function create_default_slot_18$1(ctx) {
+function create_default_slot_42(ctx) {
   let each_1_anchor;
   let current;
   let each_value_1 = ensure_array_like(
-    /*flatDevices*/
-    ctx[4]
+    /*owners*/
+    ctx[7]
   );
   let each_blocks = [];
   for (let i2 = 0; i2 < each_value_1.length; i2 += 1) {
@@ -50157,11 +49954,11 @@ function create_default_slot_18$1(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (dirty & /*flatDevices*/
-      16) {
+      if (dirty & /*owners, getOwnerUriName*/
+      384) {
         each_value_1 = ensure_array_like(
-          /*flatDevices*/
-          ctx2[4]
+          /*owners*/
+          ctx2[7]
         );
         let i2;
         for (i2 = 0; i2 < each_value_1.length; i2 += 1) {
@@ -50206,16 +50003,16 @@ function create_default_slot_18$1(ctx) {
     }
   };
 }
-function create_if_block_1$1(ctx) {
+function create_if_block_2$1(ctx) {
   let select;
   let updating_value;
   let current;
   function select_value_binding_1(value) {
-    ctx[8](value);
+    ctx[12](value);
   }
   let select_props = {
     label: "Insight",
-    $$slots: { default: [create_default_slot_16$1] },
+    $$slots: { default: [create_default_slot_40] },
     $$scope: { ctx }
   };
   if (
@@ -50240,8 +50037,8 @@ function create_if_block_1$1(ctx) {
     },
     p(ctx2, dirty) {
       const select_changes = {};
-      if (dirty & /*$$scope, insights*/
-      2097160) {
+      if (dirty & /*$$scope, ownerLogs, ownerUri*/
+      1073741920) {
         select_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_value && dirty & /*insightId*/
@@ -50268,10 +50065,10 @@ function create_if_block_1$1(ctx) {
     }
   };
 }
-function create_default_slot_17$1(ctx) {
+function create_default_slot_41(ctx) {
   let t_value = (
     /*insight*/
-    ctx[15].title + ""
+    ctx[24].title + ""
   );
   let t2;
   return {
@@ -50285,9 +50082,9 @@ function create_default_slot_17$1(ctx) {
       insert_hydration(target, t2, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & /*insights*/
-      8 && t_value !== (t_value = /*insight*/
-      ctx2[15].title + ""))
+      if (dirty & /*ownerLogs, ownerUri*/
+      96 && t_value !== (t_value = /*insight*/
+      ctx2[24].title + ""))
         set_data(t2, t_value);
     },
     d(detaching) {
@@ -50304,9 +50101,9 @@ function create_each_block$1(ctx) {
     props: {
       value: (
         /*insight*/
-        ctx[15].id
+        ctx[24].id
       ),
-      $$slots: { default: [create_default_slot_17$1] },
+      $$slots: { default: [create_default_slot_41] },
       $$scope: { ctx }
     }
   });
@@ -50323,12 +50120,12 @@ function create_each_block$1(ctx) {
     },
     p(ctx2, dirty) {
       const option_changes = {};
-      if (dirty & /*insights*/
-      8)
+      if (dirty & /*ownerLogs, ownerUri*/
+      96)
         option_changes.value = /*insight*/
-        ctx2[15].id;
-      if (dirty & /*$$scope, insights*/
-      2097160) {
+        ctx2[24].id;
+      if (dirty & /*$$scope, ownerLogs, ownerUri*/
+      1073741920) {
         option_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option.$set(option_changes);
@@ -50348,12 +50145,15 @@ function create_each_block$1(ctx) {
     }
   };
 }
-function create_default_slot_16$1(ctx) {
+function create_default_slot_40(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
-    /*insights*/
-    ctx[3]
+    /*ownerLogs*/
+    ctx[5][
+      /*ownerUri*/
+      ctx[6]
+    ]
   );
   let each_blocks = [];
   for (let i2 = 0; i2 < each_value.length; i2 += 1) {
@@ -50385,11 +50185,14 @@ function create_default_slot_16$1(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      if (dirty & /*insights*/
-      8) {
+      if (dirty & /*ownerLogs, ownerUri*/
+      96) {
         each_value = ensure_array_like(
-          /*insights*/
-          ctx2[3]
+          /*ownerLogs*/
+          ctx2[5][
+            /*ownerUri*/
+            ctx2[6]
+          ]
         );
         let i2;
         for (i2 = 0; i2 < each_value.length; i2 += 1) {
@@ -50435,23 +50238,1195 @@ function create_default_slot_16$1(ctx) {
   };
 }
 function create_if_block$4(ctx) {
-  let select;
+  let div0;
+  let select0;
   let updating_value;
+  let t0;
+  let div1;
+  let select1;
+  let updating_value_1;
+  let t1;
   let current;
-  function select_value_binding_2(value) {
-    ctx[9](value);
+  function select0_value_binding(value) {
+    ctx[13](value);
   }
-  let select_props = {
+  let select0_props = {
     label: "Resolution",
-    $$slots: { default: [create_default_slot$4] },
+    $$slots: { default: [create_default_slot_24] },
     $$scope: { ctx }
   };
   if (
     /*resolution*/
     ctx[2] !== void 0
   ) {
-    select_props.value = /*resolution*/
+    select0_props.value = /*resolution*/
     ctx[2];
+  }
+  select0 = new Select({ props: select0_props });
+  binding_callbacks.push(() => bind(select0, "value", select0_value_binding));
+  function select1_value_binding(value) {
+    ctx[14](value);
+  }
+  let select1_props = {
+    label: "Aggregation",
+    $$slots: { default: [create_default_slot_16$1] },
+    $$scope: { ctx }
+  };
+  if (
+    /*aggregation*/
+    ctx[3] !== void 0
+  ) {
+    select1_props.value = /*aggregation*/
+    ctx[3];
+  }
+  select1 = new Select({ props: select1_props });
+  binding_callbacks.push(() => bind(select1, "value", select1_value_binding));
+  let if_block = (
+    /*aggregation*/
+    ctx[3] !== "none" && create_if_block_1$1(ctx)
+  );
+  return {
+    c() {
+      div0 = element("div");
+      create_component(select0.$$.fragment);
+      t0 = space();
+      div1 = element("div");
+      create_component(select1.$$.fragment);
+      t1 = space();
+      if (if_block)
+        if_block.c();
+    },
+    l(nodes) {
+      div0 = claim_element(nodes, "DIV", {});
+      var div0_nodes = children(div0);
+      claim_component(select0.$$.fragment, div0_nodes);
+      div0_nodes.forEach(detach);
+      t0 = claim_space(nodes);
+      div1 = claim_element(nodes, "DIV", {});
+      var div1_nodes = children(div1);
+      claim_component(select1.$$.fragment, div1_nodes);
+      t1 = claim_space(div1_nodes);
+      if (if_block)
+        if_block.l(div1_nodes);
+      div1_nodes.forEach(detach);
+    },
+    m(target, anchor) {
+      insert_hydration(target, div0, anchor);
+      mount_component(select0, div0, null);
+      insert_hydration(target, t0, anchor);
+      insert_hydration(target, div1, anchor);
+      mount_component(select1, div1, null);
+      append_hydration(div1, t1);
+      if (if_block)
+        if_block.m(div1, null);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const select0_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        select0_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (!updating_value && dirty & /*resolution*/
+      4) {
+        updating_value = true;
+        select0_changes.value = /*resolution*/
+        ctx2[2];
+        add_flush_callback(() => updating_value = false);
+      }
+      select0.$set(select0_changes);
+      const select1_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        select1_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      if (!updating_value_1 && dirty & /*aggregation*/
+      8) {
+        updating_value_1 = true;
+        select1_changes.value = /*aggregation*/
+        ctx2[3];
+        add_flush_callback(() => updating_value_1 = false);
+      }
+      select1.$set(select1_changes);
+      if (
+        /*aggregation*/
+        ctx2[3] !== "none"
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty & /*aggregation*/
+          8) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block_1$1(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(div1, null);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(select0.$$.fragment, local);
+      transition_in(select1.$$.fragment, local);
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(select0.$$.fragment, local);
+      transition_out(select1.$$.fragment, local);
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div0);
+        detach(t0);
+        detach(div1);
+      }
+      destroy_component(select0);
+      destroy_component(select1);
+      if (if_block)
+        if_block.d();
+    }
+  };
+}
+function create_default_slot_39(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last hour");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last hour");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_38(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last 6 hours");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last 6 hours");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_37(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last 24 hours");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last 24 hours");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_36(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last 7 days");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last 7 days");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_35(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last 14 days");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last 14 days");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_34(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last 31 days");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last 31 days");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_33(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Today");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Today");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_32(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("This week");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "This week");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_31(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("This month");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "This month");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_30(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("This year");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "This year");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_29(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Yesterday");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Yesterday");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_28(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last week");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last week");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_27(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last month");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last month");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_26(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last year");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last year");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_25(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last 2 years");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last 2 years");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_24(ctx) {
+  let option0;
+  let t0;
+  let option1;
+  let t1;
+  let option2;
+  let t2;
+  let option3;
+  let t3;
+  let option4;
+  let t4;
+  let option5;
+  let t5;
+  let option6;
+  let t6;
+  let option7;
+  let t7;
+  let option8;
+  let t8;
+  let option9;
+  let t9;
+  let option10;
+  let t10;
+  let option11;
+  let t11;
+  let option12;
+  let t12;
+  let option13;
+  let t13;
+  let option14;
+  let current;
+  option0 = new Option({
+    props: {
+      value: "lastHour",
+      $$slots: { default: [create_default_slot_39] },
+      $$scope: { ctx }
+    }
+  });
+  option1 = new Option({
+    props: {
+      value: "last6Hours",
+      $$slots: { default: [create_default_slot_38] },
+      $$scope: { ctx }
+    }
+  });
+  option2 = new Option({
+    props: {
+      value: "last24Hours",
+      $$slots: { default: [create_default_slot_37] },
+      $$scope: { ctx }
+    }
+  });
+  option3 = new Option({
+    props: {
+      value: "last7Days",
+      $$slots: { default: [create_default_slot_36] },
+      $$scope: { ctx }
+    }
+  });
+  option4 = new Option({
+    props: {
+      value: "last14Days",
+      $$slots: { default: [create_default_slot_35] },
+      $$scope: { ctx }
+    }
+  });
+  option5 = new Option({
+    props: {
+      value: "last31Days",
+      $$slots: { default: [create_default_slot_34] },
+      $$scope: { ctx }
+    }
+  });
+  option6 = new Option({
+    props: {
+      value: "today",
+      $$slots: { default: [create_default_slot_33] },
+      $$scope: { ctx }
+    }
+  });
+  option7 = new Option({
+    props: {
+      value: "thisWeek",
+      $$slots: { default: [create_default_slot_32] },
+      $$scope: { ctx }
+    }
+  });
+  option8 = new Option({
+    props: {
+      value: "thisMonth",
+      $$slots: { default: [create_default_slot_31] },
+      $$scope: { ctx }
+    }
+  });
+  option9 = new Option({
+    props: {
+      value: "thisYear",
+      $$slots: { default: [create_default_slot_30] },
+      $$scope: { ctx }
+    }
+  });
+  option10 = new Option({
+    props: {
+      value: "yesterday",
+      $$slots: { default: [create_default_slot_29] },
+      $$scope: { ctx }
+    }
+  });
+  option11 = new Option({
+    props: {
+      value: "lastWeek",
+      $$slots: { default: [create_default_slot_28] },
+      $$scope: { ctx }
+    }
+  });
+  option12 = new Option({
+    props: {
+      value: "lastMonth",
+      $$slots: { default: [create_default_slot_27] },
+      $$scope: { ctx }
+    }
+  });
+  option13 = new Option({
+    props: {
+      value: "lastYear",
+      $$slots: { default: [create_default_slot_26] },
+      $$scope: { ctx }
+    }
+  });
+  option14 = new Option({
+    props: {
+      value: "last2Years",
+      $$slots: { default: [create_default_slot_25] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      create_component(option0.$$.fragment);
+      t0 = space();
+      create_component(option1.$$.fragment);
+      t1 = space();
+      create_component(option2.$$.fragment);
+      t2 = space();
+      create_component(option3.$$.fragment);
+      t3 = space();
+      create_component(option4.$$.fragment);
+      t4 = space();
+      create_component(option5.$$.fragment);
+      t5 = space();
+      create_component(option6.$$.fragment);
+      t6 = space();
+      create_component(option7.$$.fragment);
+      t7 = space();
+      create_component(option8.$$.fragment);
+      t8 = space();
+      create_component(option9.$$.fragment);
+      t9 = space();
+      create_component(option10.$$.fragment);
+      t10 = space();
+      create_component(option11.$$.fragment);
+      t11 = space();
+      create_component(option12.$$.fragment);
+      t12 = space();
+      create_component(option13.$$.fragment);
+      t13 = space();
+      create_component(option14.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(option0.$$.fragment, nodes);
+      t0 = claim_space(nodes);
+      claim_component(option1.$$.fragment, nodes);
+      t1 = claim_space(nodes);
+      claim_component(option2.$$.fragment, nodes);
+      t2 = claim_space(nodes);
+      claim_component(option3.$$.fragment, nodes);
+      t3 = claim_space(nodes);
+      claim_component(option4.$$.fragment, nodes);
+      t4 = claim_space(nodes);
+      claim_component(option5.$$.fragment, nodes);
+      t5 = claim_space(nodes);
+      claim_component(option6.$$.fragment, nodes);
+      t6 = claim_space(nodes);
+      claim_component(option7.$$.fragment, nodes);
+      t7 = claim_space(nodes);
+      claim_component(option8.$$.fragment, nodes);
+      t8 = claim_space(nodes);
+      claim_component(option9.$$.fragment, nodes);
+      t9 = claim_space(nodes);
+      claim_component(option10.$$.fragment, nodes);
+      t10 = claim_space(nodes);
+      claim_component(option11.$$.fragment, nodes);
+      t11 = claim_space(nodes);
+      claim_component(option12.$$.fragment, nodes);
+      t12 = claim_space(nodes);
+      claim_component(option13.$$.fragment, nodes);
+      t13 = claim_space(nodes);
+      claim_component(option14.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(option0, target, anchor);
+      insert_hydration(target, t0, anchor);
+      mount_component(option1, target, anchor);
+      insert_hydration(target, t1, anchor);
+      mount_component(option2, target, anchor);
+      insert_hydration(target, t2, anchor);
+      mount_component(option3, target, anchor);
+      insert_hydration(target, t3, anchor);
+      mount_component(option4, target, anchor);
+      insert_hydration(target, t4, anchor);
+      mount_component(option5, target, anchor);
+      insert_hydration(target, t5, anchor);
+      mount_component(option6, target, anchor);
+      insert_hydration(target, t6, anchor);
+      mount_component(option7, target, anchor);
+      insert_hydration(target, t7, anchor);
+      mount_component(option8, target, anchor);
+      insert_hydration(target, t8, anchor);
+      mount_component(option9, target, anchor);
+      insert_hydration(target, t9, anchor);
+      mount_component(option10, target, anchor);
+      insert_hydration(target, t10, anchor);
+      mount_component(option11, target, anchor);
+      insert_hydration(target, t11, anchor);
+      mount_component(option12, target, anchor);
+      insert_hydration(target, t12, anchor);
+      mount_component(option13, target, anchor);
+      insert_hydration(target, t13, anchor);
+      mount_component(option14, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const option0_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option0_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option0.$set(option0_changes);
+      const option1_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option1_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option1.$set(option1_changes);
+      const option2_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option2_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option2.$set(option2_changes);
+      const option3_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option3_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option3.$set(option3_changes);
+      const option4_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option4_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option4.$set(option4_changes);
+      const option5_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option5_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option5.$set(option5_changes);
+      const option6_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option6_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option6.$set(option6_changes);
+      const option7_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option7_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option7.$set(option7_changes);
+      const option8_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option8_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option8.$set(option8_changes);
+      const option9_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option9_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option9.$set(option9_changes);
+      const option10_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option10_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option10.$set(option10_changes);
+      const option11_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option11_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option11.$set(option11_changes);
+      const option12_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option12_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option12.$set(option12_changes);
+      const option13_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option13_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option13.$set(option13_changes);
+      const option14_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option14_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option14.$set(option14_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(option0.$$.fragment, local);
+      transition_in(option1.$$.fragment, local);
+      transition_in(option2.$$.fragment, local);
+      transition_in(option3.$$.fragment, local);
+      transition_in(option4.$$.fragment, local);
+      transition_in(option5.$$.fragment, local);
+      transition_in(option6.$$.fragment, local);
+      transition_in(option7.$$.fragment, local);
+      transition_in(option8.$$.fragment, local);
+      transition_in(option9.$$.fragment, local);
+      transition_in(option10.$$.fragment, local);
+      transition_in(option11.$$.fragment, local);
+      transition_in(option12.$$.fragment, local);
+      transition_in(option13.$$.fragment, local);
+      transition_in(option14.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(option0.$$.fragment, local);
+      transition_out(option1.$$.fragment, local);
+      transition_out(option2.$$.fragment, local);
+      transition_out(option3.$$.fragment, local);
+      transition_out(option4.$$.fragment, local);
+      transition_out(option5.$$.fragment, local);
+      transition_out(option6.$$.fragment, local);
+      transition_out(option7.$$.fragment, local);
+      transition_out(option8.$$.fragment, local);
+      transition_out(option9.$$.fragment, local);
+      transition_out(option10.$$.fragment, local);
+      transition_out(option11.$$.fragment, local);
+      transition_out(option12.$$.fragment, local);
+      transition_out(option13.$$.fragment, local);
+      transition_out(option14.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t0);
+        detach(t1);
+        detach(t2);
+        detach(t3);
+        detach(t4);
+        detach(t5);
+        detach(t6);
+        detach(t7);
+        detach(t8);
+        detach(t9);
+        detach(t10);
+        detach(t11);
+        detach(t12);
+        detach(t13);
+      }
+      destroy_component(option0, detaching);
+      destroy_component(option1, detaching);
+      destroy_component(option2, detaching);
+      destroy_component(option3, detaching);
+      destroy_component(option4, detaching);
+      destroy_component(option5, detaching);
+      destroy_component(option6, detaching);
+      destroy_component(option7, detaching);
+      destroy_component(option8, detaching);
+      destroy_component(option9, detaching);
+      destroy_component(option10, detaching);
+      destroy_component(option11, detaching);
+      destroy_component(option12, detaching);
+      destroy_component(option13, detaching);
+      destroy_component(option14, detaching);
+    }
+  };
+}
+function create_default_slot_23(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("No aggregation");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "No aggregation");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_22(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Min");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Min");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_21(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Max");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Max");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_20(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Sum");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Sum");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_19$1(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Avg");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Avg");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_18$1(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("First");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "First");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_17$1(ctx) {
+  let t2;
+  return {
+    c() {
+      t2 = text("Last");
+    },
+    l(nodes) {
+      t2 = claim_text(nodes, "Last");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t2, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t2);
+      }
+    }
+  };
+}
+function create_default_slot_16$1(ctx) {
+  let option0;
+  let t0;
+  let option1;
+  let t1;
+  let option2;
+  let t2;
+  let option3;
+  let t3;
+  let option4;
+  let t4;
+  let option5;
+  let t5;
+  let option6;
+  let current;
+  option0 = new Option({
+    props: {
+      value: "none",
+      $$slots: { default: [create_default_slot_23] },
+      $$scope: { ctx }
+    }
+  });
+  option1 = new Option({
+    props: {
+      value: "min",
+      $$slots: { default: [create_default_slot_22] },
+      $$scope: { ctx }
+    }
+  });
+  option2 = new Option({
+    props: {
+      value: "max",
+      $$slots: { default: [create_default_slot_21] },
+      $$scope: { ctx }
+    }
+  });
+  option3 = new Option({
+    props: {
+      value: "sum",
+      $$slots: { default: [create_default_slot_20] },
+      $$scope: { ctx }
+    }
+  });
+  option4 = new Option({
+    props: {
+      value: "avg",
+      $$slots: { default: [create_default_slot_19$1] },
+      $$scope: { ctx }
+    }
+  });
+  option5 = new Option({
+    props: {
+      value: "first",
+      $$slots: { default: [create_default_slot_18$1] },
+      $$scope: { ctx }
+    }
+  });
+  option6 = new Option({
+    props: {
+      value: "last",
+      $$slots: { default: [create_default_slot_17$1] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      create_component(option0.$$.fragment);
+      t0 = space();
+      create_component(option1.$$.fragment);
+      t1 = space();
+      create_component(option2.$$.fragment);
+      t2 = space();
+      create_component(option3.$$.fragment);
+      t3 = space();
+      create_component(option4.$$.fragment);
+      t4 = space();
+      create_component(option5.$$.fragment);
+      t5 = space();
+      create_component(option6.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(option0.$$.fragment, nodes);
+      t0 = claim_space(nodes);
+      claim_component(option1.$$.fragment, nodes);
+      t1 = claim_space(nodes);
+      claim_component(option2.$$.fragment, nodes);
+      t2 = claim_space(nodes);
+      claim_component(option3.$$.fragment, nodes);
+      t3 = claim_space(nodes);
+      claim_component(option4.$$.fragment, nodes);
+      t4 = claim_space(nodes);
+      claim_component(option5.$$.fragment, nodes);
+      t5 = claim_space(nodes);
+      claim_component(option6.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(option0, target, anchor);
+      insert_hydration(target, t0, anchor);
+      mount_component(option1, target, anchor);
+      insert_hydration(target, t1, anchor);
+      mount_component(option2, target, anchor);
+      insert_hydration(target, t2, anchor);
+      mount_component(option3, target, anchor);
+      insert_hydration(target, t3, anchor);
+      mount_component(option4, target, anchor);
+      insert_hydration(target, t4, anchor);
+      mount_component(option5, target, anchor);
+      insert_hydration(target, t5, anchor);
+      mount_component(option6, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const option0_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option0_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option0.$set(option0_changes);
+      const option1_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option1_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option1.$set(option1_changes);
+      const option2_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option2_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option2.$set(option2_changes);
+      const option3_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option3_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option3.$set(option3_changes);
+      const option4_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option4_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option4.$set(option4_changes);
+      const option5_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option5_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option5.$set(option5_changes);
+      const option6_changes = {};
+      if (dirty & /*$$scope*/
+      1073741824) {
+        option6_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      option6.$set(option6_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(option0.$$.fragment, local);
+      transition_in(option1.$$.fragment, local);
+      transition_in(option2.$$.fragment, local);
+      transition_in(option3.$$.fragment, local);
+      transition_in(option4.$$.fragment, local);
+      transition_in(option5.$$.fragment, local);
+      transition_in(option6.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(option0.$$.fragment, local);
+      transition_out(option1.$$.fragment, local);
+      transition_out(option2.$$.fragment, local);
+      transition_out(option3.$$.fragment, local);
+      transition_out(option4.$$.fragment, local);
+      transition_out(option5.$$.fragment, local);
+      transition_out(option6.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t0);
+        detach(t1);
+        detach(t2);
+        detach(t3);
+        detach(t4);
+        detach(t5);
+      }
+      destroy_component(option0, detaching);
+      destroy_component(option1, detaching);
+      destroy_component(option2, detaching);
+      destroy_component(option3, detaching);
+      destroy_component(option4, detaching);
+      destroy_component(option5, detaching);
+      destroy_component(option6, detaching);
+    }
+  };
+}
+function create_if_block_1$1(ctx) {
+  let select;
+  let updating_value;
+  let current;
+  function select_value_binding_2(value) {
+    ctx[15](value);
+  }
+  let select_props = {
+    label: "Sample rate",
+    $$slots: { default: [create_default_slot$4] },
+    $$scope: { ctx }
+  };
+  if (
+    /*sampleRate*/
+    ctx[4] !== void 0
+  ) {
+    select_props.value = /*sampleRate*/
+    ctx[4];
   }
   select = new Select({ props: select_props });
   binding_callbacks.push(() => bind(select, "value", select_value_binding_2));
@@ -50469,14 +51444,14 @@ function create_if_block$4(ctx) {
     p(ctx2, dirty) {
       const select_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         select_changes.$$scope = { dirty, ctx: ctx2 };
       }
-      if (!updating_value && dirty & /*resolution*/
-      4) {
+      if (!updating_value && dirty & /*sampleRate*/
+      16) {
         updating_value = true;
-        select_changes.value = /*resolution*/
-        ctx2[2];
+        select_changes.value = /*sampleRate*/
+        ctx2[4];
         add_flush_callback(() => updating_value = false);
       }
       select.$set(select_changes);
@@ -50500,10 +51475,10 @@ function create_default_slot_15$1(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last hour");
+      t2 = text("10 seconds");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last hour");
+      t2 = claim_text(nodes, "10 seconds");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50519,10 +51494,10 @@ function create_default_slot_14$1(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last 6 hours");
+      t2 = text("20 seconds");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last 6 hours");
+      t2 = claim_text(nodes, "20 seconds");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50538,10 +51513,10 @@ function create_default_slot_13$1(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last 24 hours");
+      t2 = text("30 seconds");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last 24 hours");
+      t2 = claim_text(nodes, "30 seconds");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50557,10 +51532,10 @@ function create_default_slot_12$1(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last 7 days");
+      t2 = text("1 min");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last 7 days");
+      t2 = claim_text(nodes, "1 min");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50576,10 +51551,10 @@ function create_default_slot_11$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last 14 days");
+      t2 = text("5 min");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last 14 days");
+      t2 = claim_text(nodes, "5 min");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50595,10 +51570,10 @@ function create_default_slot_10$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last 31 days");
+      t2 = text("10 min");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last 31 days");
+      t2 = claim_text(nodes, "10 min");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50614,10 +51589,10 @@ function create_default_slot_9$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Today");
+      t2 = text("15 min");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Today");
+      t2 = claim_text(nodes, "15 min");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50633,10 +51608,10 @@ function create_default_slot_8$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("This week");
+      t2 = text("20 min");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "This week");
+      t2 = claim_text(nodes, "20 min");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50652,10 +51627,10 @@ function create_default_slot_7$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("This month");
+      t2 = text("30 min");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "This month");
+      t2 = claim_text(nodes, "30 min");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50671,10 +51646,10 @@ function create_default_slot_6$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("This year");
+      t2 = text("1 hour");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "This year");
+      t2 = claim_text(nodes, "1 hour");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50690,10 +51665,10 @@ function create_default_slot_5$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Yesterday");
+      t2 = text("2 hours");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Yesterday");
+      t2 = claim_text(nodes, "2 hours");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50709,10 +51684,10 @@ function create_default_slot_4$2(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last week");
+      t2 = text("3 hours");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last week");
+      t2 = claim_text(nodes, "3 hours");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50728,10 +51703,10 @@ function create_default_slot_3$3(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last month");
+      t2 = text("6 hours");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last month");
+      t2 = claim_text(nodes, "6 hours");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50747,10 +51722,10 @@ function create_default_slot_2$4(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last year");
+      t2 = text("12 hours");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last year");
+      t2 = claim_text(nodes, "12 hours");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50766,10 +51741,10 @@ function create_default_slot_1$4(ctx) {
   let t2;
   return {
     c() {
-      t2 = text("Last 2 years");
+      t2 = text("24 hours");
     },
     l(nodes) {
-      t2 = claim_text(nodes, "Last 2 years");
+      t2 = claim_text(nodes, "24 hours");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -50814,105 +51789,105 @@ function create_default_slot$4(ctx) {
   let current;
   option0 = new Option({
     props: {
-      value: "lastHour",
+      value: "10",
       $$slots: { default: [create_default_slot_15$1] },
       $$scope: { ctx }
     }
   });
   option1 = new Option({
     props: {
-      value: "last6Hours",
+      value: "20",
       $$slots: { default: [create_default_slot_14$1] },
       $$scope: { ctx }
     }
   });
   option2 = new Option({
     props: {
-      value: "last24Hours",
+      value: "30",
       $$slots: { default: [create_default_slot_13$1] },
       $$scope: { ctx }
     }
   });
   option3 = new Option({
     props: {
-      value: "last7Days",
+      value: "60",
       $$slots: { default: [create_default_slot_12$1] },
       $$scope: { ctx }
     }
   });
   option4 = new Option({
     props: {
-      value: "last14Days",
+      value: "300",
       $$slots: { default: [create_default_slot_11$2] },
       $$scope: { ctx }
     }
   });
   option5 = new Option({
     props: {
-      value: "last31Days",
+      value: "600",
       $$slots: { default: [create_default_slot_10$2] },
       $$scope: { ctx }
     }
   });
   option6 = new Option({
     props: {
-      value: "today",
+      value: "900",
       $$slots: { default: [create_default_slot_9$2] },
       $$scope: { ctx }
     }
   });
   option7 = new Option({
     props: {
-      value: "thisWeek",
+      value: "1200",
       $$slots: { default: [create_default_slot_8$2] },
       $$scope: { ctx }
     }
   });
   option8 = new Option({
     props: {
-      value: "thisMonth",
+      value: "1800",
       $$slots: { default: [create_default_slot_7$2] },
       $$scope: { ctx }
     }
   });
   option9 = new Option({
     props: {
-      value: "thisYear",
+      value: "3600",
       $$slots: { default: [create_default_slot_6$2] },
       $$scope: { ctx }
     }
   });
   option10 = new Option({
     props: {
-      value: "yesterday",
+      value: "7200",
       $$slots: { default: [create_default_slot_5$2] },
       $$scope: { ctx }
     }
   });
   option11 = new Option({
     props: {
-      value: "lastWeek",
+      value: "10800",
       $$slots: { default: [create_default_slot_4$2] },
       $$scope: { ctx }
     }
   });
   option12 = new Option({
     props: {
-      value: "lastMonth",
+      value: "21600",
       $$slots: { default: [create_default_slot_3$3] },
       $$scope: { ctx }
     }
   });
   option13 = new Option({
     props: {
-      value: "lastYear",
+      value: "43200",
       $$slots: { default: [create_default_slot_2$4] },
       $$scope: { ctx }
     }
   });
   option14 = new Option({
     props: {
-      value: "last2Years",
+      value: "86400",
       $$slots: { default: [create_default_slot_1$4] },
       $$scope: { ctx }
     }
@@ -51015,91 +51990,91 @@ function create_default_slot$4(ctx) {
     p(ctx2, dirty) {
       const option0_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option0_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option0.$set(option0_changes);
       const option1_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option1.$set(option1_changes);
       const option2_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option2_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option2.$set(option2_changes);
       const option3_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option3_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option3.$set(option3_changes);
       const option4_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option4_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option4.$set(option4_changes);
       const option5_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option5_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option5.$set(option5_changes);
       const option6_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option6_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option6.$set(option6_changes);
       const option7_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option7_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option7.$set(option7_changes);
       const option8_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option8_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option8.$set(option8_changes);
       const option9_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option9_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option9.$set(option9_changes);
       const option10_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option10_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option10.$set(option10_changes);
       const option11_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option11_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option11.$set(option11_changes);
       const option12_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option12_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option12.$set(option12_changes);
       const option13_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option13_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option13.$set(option13_changes);
       const option14_changes = {};
       if (dirty & /*$$scope*/
-      2097152) {
+      1073741824) {
         option14_changes.$$scope = { dirty, ctx: ctx2 };
       }
       option14.$set(option14_changes);
@@ -51184,32 +52159,32 @@ function create_fragment$7(ctx) {
   let t0;
   let div1;
   let t1;
-  let div2;
+  let if_block1_anchor;
   let current;
   function select_value_binding(value) {
-    ctx[7](value);
+    ctx[11](value);
   }
   let select_props = {
-    label: "Device",
-    $$slots: { default: [create_default_slot_18$1] },
+    label: "Source",
+    $$slots: { default: [create_default_slot_42] },
     $$scope: { ctx }
   };
   if (
-    /*deviceId*/
+    /*selectedOwnerUri*/
     ctx[0] !== void 0
   ) {
-    select_props.value = /*deviceId*/
+    select_props.value = /*selectedOwnerUri*/
     ctx[0];
   }
   select = new Select({ props: select_props });
   binding_callbacks.push(() => bind(select, "value", select_value_binding));
   let if_block0 = (
-    /*deviceId*/
-    ctx[0] && create_if_block_1$1(ctx)
+    /*ownerUri*/
+    ctx[6] && create_if_block_2$1(ctx)
   );
   let if_block1 = (
-    /*deviceId*/
-    ctx[0] && /*insightId*/
+    /*ownerUri*/
+    ctx[6] && /*insightId*/
     ctx[1] && create_if_block$4(ctx)
   );
   return {
@@ -51221,9 +52196,9 @@ function create_fragment$7(ctx) {
       if (if_block0)
         if_block0.c();
       t1 = space();
-      div2 = element("div");
       if (if_block1)
         if_block1.c();
+      if_block1_anchor = empty();
     },
     l(nodes) {
       div0 = claim_element(nodes, "DIV", {});
@@ -51237,11 +52212,9 @@ function create_fragment$7(ctx) {
         if_block0.l(div1_nodes);
       div1_nodes.forEach(detach);
       t1 = claim_space(nodes);
-      div2 = claim_element(nodes, "DIV", {});
-      var div2_nodes = children(div2);
       if (if_block1)
-        if_block1.l(div2_nodes);
-      div2_nodes.forEach(detach);
+        if_block1.l(nodes);
+      if_block1_anchor = empty();
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
@@ -51251,37 +52224,37 @@ function create_fragment$7(ctx) {
       if (if_block0)
         if_block0.m(div1, null);
       insert_hydration(target, t1, anchor);
-      insert_hydration(target, div2, anchor);
       if (if_block1)
-        if_block1.m(div2, null);
+        if_block1.m(target, anchor);
+      insert_hydration(target, if_block1_anchor, anchor);
       current = true;
     },
     p(ctx2, [dirty]) {
       const select_changes = {};
-      if (dirty & /*$$scope, flatDevices*/
-      2097168) {
+      if (dirty & /*$$scope, owners*/
+      1073741952) {
         select_changes.$$scope = { dirty, ctx: ctx2 };
       }
-      if (!updating_value && dirty & /*deviceId*/
+      if (!updating_value && dirty & /*selectedOwnerUri*/
       1) {
         updating_value = true;
-        select_changes.value = /*deviceId*/
+        select_changes.value = /*selectedOwnerUri*/
         ctx2[0];
         add_flush_callback(() => updating_value = false);
       }
       select.$set(select_changes);
       if (
-        /*deviceId*/
-        ctx2[0]
+        /*ownerUri*/
+        ctx2[6]
       ) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
-          if (dirty & /*deviceId*/
-          1) {
+          if (dirty & /*ownerUri*/
+          64) {
             transition_in(if_block0, 1);
           }
         } else {
-          if_block0 = create_if_block_1$1(ctx2);
+          if_block0 = create_if_block_2$1(ctx2);
           if_block0.c();
           transition_in(if_block0, 1);
           if_block0.m(div1, null);
@@ -51294,21 +52267,21 @@ function create_fragment$7(ctx) {
         check_outros();
       }
       if (
-        /*deviceId*/
-        ctx2[0] && /*insightId*/
+        /*ownerUri*/
+        ctx2[6] && /*insightId*/
         ctx2[1]
       ) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
-          if (dirty & /*deviceId, insightId*/
-          3) {
+          if (dirty & /*ownerUri, insightId*/
+          66) {
             transition_in(if_block1, 1);
           }
         } else {
           if_block1 = create_if_block$4(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
-          if_block1.m(div2, null);
+          if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
         }
       } else if (if_block1) {
         group_outros();
@@ -51338,37 +52311,47 @@ function create_fragment$7(ctx) {
         detach(t0);
         detach(div1);
         detach(t1);
-        detach(div2);
+        detach(if_block1_anchor);
       }
       destroy_component(select);
       if (if_block0)
         if_block0.d();
       if (if_block1)
-        if_block1.d();
+        if_block1.d(detaching);
     }
   };
 }
 function instance$4($$self, $$props, $$invalidate) {
-  let flatDevices;
-  let insights;
+  let ownerLogs;
+  let owners;
   let $devices;
-  component_subscribe($$self, devices, ($$value) => $$invalidate(6, $devices = $$value));
+  let $insights;
+  component_subscribe($$self, devices, ($$value) => $$invalidate(16, $devices = $$value));
+  component_subscribe($$self, insights, ($$value) => $$invalidate(10, $insights = $$value));
   let { settings } = $$props;
   const dispatch2 = createEventDispatcher();
-  let deviceId;
+  let selectedOwnerUri;
+  let ownerUri;
   let insightId;
   let resolution;
+  let aggregation;
+  let sampleRate;
   function onSettings(s3) {
-    $$invalidate(0, deviceId = settings == null ? void 0 : settings.deviceId);
     $$invalidate(1, insightId = settings == null ? void 0 : settings.insightId);
     $$invalidate(2, resolution = (settings == null ? void 0 : settings.resolution) ?? "today");
+    $$invalidate(3, aggregation = (settings == null ? void 0 : settings.aggregation) ?? "none");
+    $$invalidate(4, sampleRate = (settings == null ? void 0 : settings.sampleRate) ?? 60);
+    if (insightId !== void 0) {
+      $$invalidate(6, ownerUri = $insights[insightId].ownerUri);
+      $$invalidate(0, selectedOwnerUri = ownerUri);
+    }
   }
-  function onDevice(value) {
-    if (value === void 0 || value === settings.deviceId) {
+  function onOwner(value) {
+    if (value === ownerUri) {
       return;
     }
+    $$invalidate(6, ownerUri = value);
     $$invalidate(1, insightId = void 0);
-    dispatch2("settings", { ...settings, deviceId, insightId });
   }
   function onInsight(value) {
     if (value == void 0 || value === settings.insightId) {
@@ -51382,44 +52365,83 @@ function instance$4($$self, $$props, $$invalidate) {
     }
     dispatch2("settings", { ...settings, resolution });
   }
+  function onAggregation(value) {
+    if (value == void 0 || value === settings.aggregation) {
+      return;
+    }
+    dispatch2("settings", { ...settings, aggregation });
+  }
+  function onSampleRate(value) {
+    if (value == void 0 || value === settings.sampleRate) {
+      return;
+    }
+    dispatch2("settings", { ...settings, sampleRate });
+  }
+  function getOwnerUriName(uri) {
+    if (uri.startsWith("homey:device:")) {
+      const prefix = "homey:device:";
+      const id = uri.slice(prefix.length);
+      return $devices[id].name;
+    } else if (uri.startsWith("homey:manager:apps")) {
+      return "Homey Apps";
+    } else if (uri.startsWith("homey:manager:system")) {
+      return "Homey System";
+    } else if (uri.startsWith("homey:manager:weather")) {
+      return "Homey Weather";
+    } else if (uri.startsWith("homey:manager:logic")) {
+      return "Homey Logic";
+    } else {
+      return uri;
+    }
+  }
   function select_value_binding(value) {
-    deviceId = value;
-    $$invalidate(0, deviceId);
+    selectedOwnerUri = value;
+    $$invalidate(0, selectedOwnerUri);
   }
   function select_value_binding_1(value) {
     insightId = value;
     $$invalidate(1, insightId);
   }
-  function select_value_binding_2(value) {
+  function select0_value_binding(value) {
     resolution = value;
     $$invalidate(2, resolution);
   }
+  function select1_value_binding(value) {
+    aggregation = value;
+    $$invalidate(3, aggregation);
+  }
+  function select_value_binding_2(value) {
+    sampleRate = value;
+    $$invalidate(4, sampleRate);
+  }
   $$self.$$set = ($$props2) => {
     if ("settings" in $$props2)
-      $$invalidate(5, settings = $$props2.settings);
+      $$invalidate(9, settings = $$props2.settings);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*settings*/
-    32) {
+    512) {
       onSettings();
     }
-    if ($$self.$$.dirty & /*$devices*/
-    64) {
-      $$invalidate(4, flatDevices = Object.values($devices).sort((a3, b2) => {
-        if (a3.name === b2.name)
-          return 0;
-        if (a3.name < b2.name)
-          return -1;
-        return 1;
-      }));
+    if ($$self.$$.dirty & /*$insights*/
+    1024) {
+      $$invalidate(5, ownerLogs = Object.values($insights).reduce(
+        (groups, log) => {
+          const ownerUri2 = log.ownerUri;
+          const group = groups[ownerUri2] = groups[ownerUri2] ?? [];
+          group.push(log);
+          return groups;
+        },
+        {}
+      ));
     }
-    if ($$self.$$.dirty & /*deviceId, $devices*/
-    65) {
-      $$invalidate(3, insights = deviceId ? $devices[deviceId].insights : []);
+    if ($$self.$$.dirty & /*ownerLogs*/
+    32) {
+      $$invalidate(7, owners = Object.keys(ownerLogs));
     }
-    if ($$self.$$.dirty & /*deviceId*/
+    if ($$self.$$.dirty & /*selectedOwnerUri*/
     1) {
-      onDevice(deviceId);
+      onOwner(selectedOwnerUri);
     }
     if ($$self.$$.dirty & /*insightId*/
     2) {
@@ -51429,24 +52451,38 @@ function instance$4($$self, $$props, $$invalidate) {
     4) {
       onResolution(resolution);
     }
+    if ($$self.$$.dirty & /*aggregation*/
+    8) {
+      onAggregation(aggregation);
+    }
+    if ($$self.$$.dirty & /*sampleRate*/
+    16) {
+      onSampleRate(sampleRate);
+    }
   };
   return [
-    deviceId,
+    selectedOwnerUri,
     insightId,
     resolution,
-    insights,
-    flatDevices,
+    aggregation,
+    sampleRate,
+    ownerLogs,
+    ownerUri,
+    owners,
+    getOwnerUriName,
     settings,
-    $devices,
+    $insights,
     select_value_binding,
     select_value_binding_1,
+    select0_value_binding,
+    select1_value_binding,
     select_value_binding_2
   ];
 }
 class InsightEditor extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$4, create_fragment$7, safe_not_equal, { settings: 5 });
+    init(this, options, instance$4, create_fragment$7, safe_not_equal, { settings: 9 });
   }
 }
 function create_fragment$6(ctx) {
@@ -54106,7 +55142,7 @@ function create_if_block_1(ctx) {
   let appcontent;
   let current;
   function drawer_open_binding(value) {
-    ctx[15](value);
+    ctx[16](value);
   }
   let drawer_props = {
     variant: "modal",
@@ -54154,9 +55190,9 @@ function create_if_block_1(ctx) {
     },
     p(ctx2, dirty) {
       const drawer_changes = {};
-      if (dirty[0] & /*editItem*/
-      32 | dirty[1] & /*$$scope*/
-      16) {
+      if (dirty[0] & /*editItem, editOpen*/
+      48 | dirty[1] & /*$$scope*/
+      512) {
         drawer_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_open && dirty[0] & /*editOpen*/
@@ -54170,7 +55206,7 @@ function create_if_block_1(ctx) {
       const appcontent_changes = {};
       if (dirty[0] & /*addOpen, error, topAppBar, topAppBarCollapsed, $editing*/
       203 | dirty[1] & /*$$scope*/
-      16) {
+      512) {
         appcontent_changes.$$scope = { dirty, ctx: ctx2 };
       }
       appcontent.$set(appcontent_changes);
@@ -54349,14 +55385,14 @@ function create_default_slot_17(ctx) {
     p(ctx2, dirty) {
       const title_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         title_changes.$$scope = { dirty, ctx: ctx2 };
       }
       title.$set(title_changes);
       const subtitle_changes = {};
       if (dirty[0] & /*editItem*/
       32 | dirty[1] & /*$$scope*/
-      16) {
+      512) {
         subtitle_changes.$$scope = { dirty, ctx: ctx2 };
       }
       subtitle.$set(subtitle_changes);
@@ -54382,7 +55418,7 @@ function create_default_slot_17(ctx) {
     }
   };
 }
-function create_default_slot_16(ctx) {
+function create_if_block_6(ctx) {
   let editview;
   let current;
   editview = new EditView({ props: { item: (
@@ -54392,7 +55428,7 @@ function create_default_slot_16(ctx) {
   editview.$on(
     "settings",
     /*settings_handler*/
-    ctx[14]
+    ctx[15]
   );
   return {
     c() {
@@ -54425,6 +55461,74 @@ function create_default_slot_16(ctx) {
     },
     d(detaching) {
       destroy_component(editview, detaching);
+    }
+  };
+}
+function create_default_slot_16(ctx) {
+  let if_block_anchor;
+  let current;
+  let if_block = (
+    /*editOpen*/
+    ctx[4] && create_if_block_6(ctx)
+  );
+  return {
+    c() {
+      if (if_block)
+        if_block.c();
+      if_block_anchor = empty();
+    },
+    l(nodes) {
+      if (if_block)
+        if_block.l(nodes);
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (
+        /*editOpen*/
+        ctx2[4]
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty[0] & /*editOpen*/
+          16) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block_6(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if (if_block)
+        if_block.d(detaching);
     }
   };
 }
@@ -54466,14 +55570,14 @@ function create_default_slot_15(ctx) {
       const header_changes = {};
       if (dirty[0] & /*editItem*/
       32 | dirty[1] & /*$$scope*/
-      16) {
+      512) {
         header_changes.$$scope = { dirty, ctx: ctx2 };
       }
       header.$set(header_changes);
       const content_changes = {};
-      if (dirty[0] & /*editItem*/
-      32 | dirty[1] & /*$$scope*/
-      16) {
+      if (dirty[0] & /*editItem, editOpen*/
+      48 | dirty[1] & /*$$scope*/
+      512) {
         content_changes.$$scope = { dirty, ctx: ctx2 };
       }
       content.$set(content_changes);
@@ -54531,7 +55635,7 @@ function create_default_slot_13(ctx) {
   iconbutton.$on(
     "click",
     /*click_handler*/
-    ctx[16]
+    ctx[17]
   );
   return {
     c() {
@@ -54547,7 +55651,7 @@ function create_default_slot_13(ctx) {
     p(ctx2, dirty) {
       const iconbutton_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         iconbutton_changes.$$scope = { dirty, ctx: ctx2 };
       }
       iconbutton.$set(iconbutton_changes);
@@ -54593,7 +55697,7 @@ function create_if_block_4(ctx) {
       const section_changes = {};
       if (dirty[0] & /*$editing, addOpen*/
       192 | dirty[1] & /*$$scope*/
-      16) {
+      512) {
         section_changes.$$scope = { dirty, ctx: ctx2 };
       }
       section.$set(section_changes);
@@ -54627,7 +55731,7 @@ function create_else_block(ctx) {
   button0.$on(
     "click",
     /*click_handler_2*/
-    ctx[18]
+    ctx[19]
   );
   button1 = new Button({
     props: {
@@ -54638,7 +55742,7 @@ function create_else_block(ctx) {
   button1.$on(
     "click",
     /*click_handler_3*/
-    ctx[19]
+    ctx[20]
   );
   return {
     c() {
@@ -54660,13 +55764,13 @@ function create_else_block(ctx) {
     p(ctx2, dirty) {
       const button0_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         button0_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button0.$set(button0_changes);
       const button1_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         button1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button1.$set(button1_changes);
@@ -54704,7 +55808,7 @@ function create_if_block_5(ctx) {
   button.$on(
     "click",
     /*click_handler_1*/
-    ctx[17]
+    ctx[18]
   );
   return {
     c() {
@@ -54720,7 +55824,7 @@ function create_if_block_5(ctx) {
     p(ctx2, dirty) {
       const button_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         button_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button.$set(button_changes);
@@ -54816,13 +55920,13 @@ function create_default_slot_10(ctx) {
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const label_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         label_changes.$$scope = { dirty, ctx: ctx2 };
       }
       label.$set(label_changes);
@@ -54924,13 +56028,13 @@ function create_default_slot_7(ctx) {
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const label_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         label_changes.$$scope = { dirty, ctx: ctx2 };
       }
       label.$set(label_changes);
@@ -55032,13 +56136,13 @@ function create_default_slot_4(ctx) {
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const label_changes = {};
       if (dirty[1] & /*$$scope*/
-      16) {
+      512) {
         label_changes.$$scope = { dirty, ctx: ctx2 };
       }
       label.$set(label_changes);
@@ -55173,7 +56277,7 @@ function create_default_slot_2(ctx) {
       const section_changes = {};
       if (dirty[0] & /*topAppBarCollapsed*/
       2 | dirty[1] & /*$$scope*/
-      16) {
+      512) {
         section_changes.$$scope = { dirty, ctx: ctx2 };
       }
       section.$set(section_changes);
@@ -55246,7 +56350,7 @@ function create_default_slot_1(ctx) {
       const row_changes = {};
       if (dirty[0] & /*$editing, addOpen, topAppBarCollapsed*/
       194 | dirty[1] & /*$$scope*/
-      16) {
+      512) {
         row_changes.$$scope = { dirty, ctx: ctx2 };
       }
       row.$set(row_changes);
@@ -55360,7 +56464,7 @@ function create_default_slot(ctx) {
   let t0;
   let t1;
   let t2;
-  let dashboard;
+  let dashboard_1;
   let t3;
   let adddialog;
   let updating_open;
@@ -55375,21 +56479,21 @@ function create_default_slot(ctx) {
     $$scope: { ctx }
   };
   topappbar = new TopAppBar({ props: topappbar_props });
-  ctx[20](topappbar);
+  ctx[21](topappbar);
   let if_block0 = !/*topAppBarCollapsed*/
   ctx[1] && create_if_block_3(ctx);
   let if_block1 = (
     /*error*/
     ctx[3] !== void 0 && create_if_block_2(ctx)
   );
-  dashboard = new Dashboard({});
-  dashboard.$on(
+  dashboard_1 = new Dashboard({});
+  dashboard_1.$on(
     "edit",
     /*edit_handler*/
-    ctx[21]
+    ctx[22]
   );
   function adddialog_open_binding(value) {
-    ctx[22](value);
+    ctx[23](value);
   }
   let adddialog_props = {};
   if (
@@ -55404,7 +56508,7 @@ function create_default_slot(ctx) {
   adddialog.$on(
     "selected",
     /*selected_handler*/
-    ctx[23]
+    ctx[24]
   );
   return {
     c() {
@@ -55416,7 +56520,7 @@ function create_default_slot(ctx) {
       if (if_block1)
         if_block1.c();
       t2 = space();
-      create_component(dashboard.$$.fragment);
+      create_component(dashboard_1.$$.fragment);
       t3 = space();
       create_component(adddialog.$$.fragment);
     },
@@ -55429,7 +56533,7 @@ function create_default_slot(ctx) {
       if (if_block1)
         if_block1.l(nodes);
       t2 = claim_space(nodes);
-      claim_component(dashboard.$$.fragment, nodes);
+      claim_component(dashboard_1.$$.fragment, nodes);
       t3 = claim_space(nodes);
       claim_component(adddialog.$$.fragment, nodes);
     },
@@ -55442,7 +56546,7 @@ function create_default_slot(ctx) {
       if (if_block1)
         if_block1.m(target, anchor);
       insert_hydration(target, t2, anchor);
-      mount_component(dashboard, target, anchor);
+      mount_component(dashboard_1, target, anchor);
       insert_hydration(target, t3, anchor);
       mount_component(adddialog, target, anchor);
       current = true;
@@ -55455,7 +56559,7 @@ function create_default_slot(ctx) {
         ctx2[1];
       if (dirty[0] & /*$editing, addOpen, topAppBarCollapsed*/
       194 | dirty[1] & /*$$scope*/
-      16) {
+      512) {
         topappbar_changes.$$scope = { dirty, ctx: ctx2 };
       }
       topappbar.$set(topappbar_changes);
@@ -55510,14 +56614,14 @@ function create_default_slot(ctx) {
         return;
       transition_in(topappbar.$$.fragment, local);
       transition_in(if_block0);
-      transition_in(dashboard.$$.fragment, local);
+      transition_in(dashboard_1.$$.fragment, local);
       transition_in(adddialog.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(topappbar.$$.fragment, local);
       transition_out(if_block0);
-      transition_out(dashboard.$$.fragment, local);
+      transition_out(dashboard_1.$$.fragment, local);
       transition_out(adddialog.$$.fragment, local);
       current = false;
     },
@@ -55528,13 +56632,13 @@ function create_default_slot(ctx) {
         detach(t2);
         detach(t3);
       }
-      ctx[20](null);
+      ctx[21](null);
       destroy_component(topappbar, detaching);
       if (if_block0)
         if_block0.d(detaching);
       if (if_block1)
         if_block1.d(detaching);
-      destroy_component(dashboard, detaching);
+      destroy_component(dashboard_1, detaching);
       destroy_component(adddialog, detaching);
     }
   };
@@ -55647,14 +56751,16 @@ function instance($$self, $$props, $$invalidate) {
   let $homey;
   let $scopes;
   let $items;
+  let $dashboards;
   let $apiKey;
   let $baseUrl;
   component_subscribe($$self, editing, ($$value) => $$invalidate(7, $editing = $$value));
   component_subscribe($$self, homey, ($$value) => $$invalidate(8, $homey = $$value));
-  component_subscribe($$self, scopes, ($$value) => $$invalidate(24, $scopes = $$value));
-  component_subscribe($$self, items, ($$value) => $$invalidate(25, $items = $$value));
-  component_subscribe($$self, apiKey, ($$value) => $$invalidate(26, $apiKey = $$value));
-  component_subscribe($$self, baseUrl, ($$value) => $$invalidate(27, $baseUrl = $$value));
+  component_subscribe($$self, scopes, ($$value) => $$invalidate(26, $scopes = $$value));
+  component_subscribe($$self, items, ($$value) => $$invalidate(27, $items = $$value));
+  component_subscribe($$self, dashboards, ($$value) => $$invalidate(14, $dashboards = $$value));
+  component_subscribe($$self, apiKey, ($$value) => $$invalidate(28, $apiKey = $$value));
+  component_subscribe($$self, baseUrl, ($$value) => $$invalidate(29, $baseUrl = $$value));
   let topAppBar;
   let topAppBarCollapsed = true;
   let loading = true;
@@ -55668,6 +56774,7 @@ function instance($$self, $$props, $$invalidate) {
     await loadDevices();
     await loadFlows();
     await loadZones();
+    await loadInsights();
     await loadAppSettings();
     await migrateAppSettings();
     $$invalidate(2, loading = false);
@@ -55703,6 +56810,9 @@ function instance($$self, $$props, $$invalidate) {
   async function loadAppSettings() {
     let app;
     let result = [];
+    if ($dashboards.length > 0) {
+      console.log($dashboards);
+    }
     try {
       if ($scopes.includes("homey") || $scopes.includes("homey.app")) {
         try {
@@ -55789,6 +56899,17 @@ function instance($$self, $$props, $$invalidate) {
       $$invalidate(3, error = "Flows: " + e2);
     }
   }
+  async function loadInsights() {
+    try {
+      if ($scopes.includes("homey") || $scopes.includes("homey.insights") || $scopes.includes("homey.insights.readonly")) {
+        await $homey.insights.connect();
+        const logs = await $homey.insights.getLogs();
+        insights.set(logs);
+      }
+    } catch (e2) {
+      $$invalidate(3, error = "Flows: " + e2);
+    }
+  }
   async function loadZones() {
     try {
       if ($scopes.includes("homey") || $scopes.includes("homey.zone") || $scopes.includes("homey.zone.readonly")) {
@@ -55845,6 +56966,12 @@ function instance($$self, $$props, $$invalidate) {
     $$invalidate(6, addOpen);
   }
   const selected_handler = (e2) => addWidget(e2.detail);
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty[0] & /*$dashboards*/
+    16384) {
+      [...$dashboards];
+    }
+  };
   return [
     topAppBar,
     topAppBarCollapsed,
@@ -55860,6 +56987,7 @@ function instance($$self, $$props, $$invalidate) {
     addWidget,
     editWidget,
     saveWidget,
+    $dashboards,
     settings_handler,
     drawer_open_binding,
     click_handler,

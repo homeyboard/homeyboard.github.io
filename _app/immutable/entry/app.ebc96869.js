@@ -1,5 +1,5 @@
-import { s as safe_not_equal, a as space, e as empty, c as claim_space, i as insert_hydration, d as detach, b as afterUpdate, o as onMount, f as element, g as claim_element, h as children, j as attr, k as set_style, l as text, m as claim_text, n as set_data, p as binding_callbacks, q as construct_svelte_component } from "../chunks/scheduler.98e41e63.js";
-import { S as SvelteComponent, i as init, t as transition_out, c as check_outros, a as transition_in, g as group_outros, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "../chunks/index.5f86484a.js";
+import { s as safe_not_equal, a as space, e as empty, c as claim_space, i as insert_hydration, d as detach, b as afterUpdate, o as onMount, f as element, g as claim_element, h as children, j as attr, k as set_style, l as text, m as claim_text, n as set_data, p as binding_callbacks, q as construct_svelte_component } from "../chunks/scheduler.8ee754c3.js";
+import { S as SvelteComponent, i as init, t as transition_out, c as check_outros, a as transition_in, g as group_outros, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "../chunks/index.09d54507.js";
 const scriptRel = "modulepreload";
 const assetsURL = function(dep, importerUrl) {
   return new URL(dep, importerUrl).href;
@@ -639,16 +639,16 @@ class Root extends SvelteComponent {
   }
 }
 const nodes = [
-  () => __vitePreload(() => import("../nodes/0.def8ea3c.js"), true ? ["..\\nodes\\0.def8ea3c.js","..\\chunks\\scheduler.98e41e63.js","..\\chunks\\index.5f86484a.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/1.d3b3a2fc.js"), true ? ["..\\nodes\\1.d3b3a2fc.js","..\\chunks\\scheduler.98e41e63.js","..\\chunks\\index.5f86484a.js","..\\chunks\\stores.b5dfaa6a.js","..\\chunks\\singletons.e78ae40c.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/2.e4833acd.js"), true ? ["..\\nodes\\2.e4833acd.js","..\\chunks\\scheduler.98e41e63.js","..\\chunks\\index.5f86484a.js","..\\chunks\\AthomCloudAPI.6af6ad9f.js","..\\chunks\\singletons.e78ae40c.js","..\\chunks\\stores.b5dfaa6a.js","..\\chunks\\HomeyAPI.2d1cb0d4.js","..\\assets\\2.27c3626e.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/3.6924b6d4.js"), true ? ["..\\nodes\\3.6924b6d4.js","..\\chunks\\scheduler.98e41e63.js","..\\chunks\\HomeyAPI.2d1cb0d4.js","..\\chunks\\index.5f86484a.js","..\\chunks\\singletons.e78ae40c.js","..\\chunks\\AthomCloudAPI.6af6ad9f.js","..\\chunks\\stores.b5dfaa6a.js","..\\assets\\3.59c38c74.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/4.9ff389f7.js"), true ? ["..\\nodes\\4.9ff389f7.js","..\\chunks\\scheduler.98e41e63.js","..\\chunks\\index.5f86484a.js","..\\chunks\\stores.b5dfaa6a.js","..\\chunks\\singletons.e78ae40c.js","..\\chunks\\AthomCloudAPI.6af6ad9f.js"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("../nodes/0.62e74b9d.js"), true ? ["..\\nodes\\0.62e74b9d.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\Textfield.6dc24502.js","..\\chunks\\singletons.0aae1b48.js","..\\chunks\\homey.dcb48ed1.js","..\\chunks\\stores.2bbe4c5c.js","..\\chunks\\Actions.9e42e5d8.js","..\\chunks\\HomeyAPI.4690fa1f.js","..\\chunks\\AthomCloudAPI.cd8078a7.js","..\\assets\\0.405e751e.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/1.b29f54e4.js"), true ? ["..\\nodes\\1.b29f54e4.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\stores.2bbe4c5c.js","..\\chunks\\singletons.0aae1b48.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/2.6117c81c.js"), true ? ["..\\nodes\\2.6117c81c.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\ActionIcons.876507b2.js","..\\chunks\\index.09d54507.js","..\\chunks\\Textfield.6dc24502.js","..\\chunks\\singletons.0aae1b48.js","..\\chunks\\homey.dcb48ed1.js","..\\chunks\\stores.2bbe4c5c.js","..\\chunks\\HomeyAPI.4690fa1f.js","..\\chunks\\AthomCloudAPI.cd8078a7.js","..\\assets\\2.ffac3891.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/3.548314f2.js"), true ? ["..\\nodes\\3.548314f2.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\Textfield.6dc24502.js","..\\chunks\\singletons.0aae1b48.js","..\\chunks\\homey.dcb48ed1.js","..\\chunks\\stores.2bbe4c5c.js","..\\chunks\\Actions.9e42e5d8.js","..\\chunks\\ActionIcons.876507b2.js","..\\assets\\3.60e1e740.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/4.4419270e.js"), true ? ["..\\nodes\\4.4419270e.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\stores.2bbe4c5c.js","..\\chunks\\singletons.0aae1b48.js","..\\chunks\\AthomCloudAPI.cd8078a7.js","..\\chunks\\homey.dcb48ed1.js"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {
   "/": [2],
-  "/login": [3],
+  "/board": [3],
   "/oauth2/callback": [4]
 };
 const hooks = {

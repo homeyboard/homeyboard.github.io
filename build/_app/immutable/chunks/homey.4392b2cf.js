@@ -1,5 +1,5 @@
-import { j as client_method, k as derived, w as writable } from "./singletons.0aae1b48.js";
-import { p as page } from "./stores.2bbe4c5c.js";
+import { j as client_method, k as derived, w as writable } from "./singletons.8357046b.js";
+import { p as page } from "./stores.38c3cb09.js";
 const goto = /* @__PURE__ */ client_method("goto");
 const driverId = "homey:app:skogsaas.dashboards:dashboard";
 const webhookUrl = "https://webhooks.athom.com/webhook/";

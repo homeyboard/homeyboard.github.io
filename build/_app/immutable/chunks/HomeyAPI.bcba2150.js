@@ -1,5 +1,5 @@
-import { w as writable } from "./singletons.0aae1b48.js";
-import { g as getDefaultExportFromCjs, r as requireHomeyAPI } from "./AthomCloudAPI.cd8078a7.js";
+import { w as writable } from "./singletons.8357046b.js";
+import { g as getDefaultExportFromCjs, r as requireHomeyAPI } from "./AthomCloudAPI.7aecdafb.js";
 function createApiKey() {
   const { subscribe, set } = writable(localStorage.apikey);
   return {

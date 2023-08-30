@@ -1,13 +1,13 @@
 import { s as safe_not_equal, r as create_slot, u as assign, f as element, g as claim_element, h as children, d as detach, v as set_attributes, i as insert_hydration, w as listen, x as action_destroyer, y as update_slot_base, z as get_all_dirty_from_scope, A as get_slot_changes, B as is_function, C as run_all, D as compute_rest_props, E as get_current_component, o as onMount, F as exclude_internal_props, p as binding_callbacks, G as setContext, q as construct_svelte_component, e as empty, H as noop, I as subscribe, J as add_flush_callback, K as createEventDispatcher, a as space, c as claim_space, l as text, m as claim_text, L as head_selector, M as component_subscribe, j as attr, N as append_hydration, n as set_data, O as destroy_each } from "../chunks/scheduler.9514346f.js";
 import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.6fa96164.js";
-import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, T as Textfield, B as Button, C as CommonLabel, h as dashboards, v as v4, i as CircularProgress, j as ensure_array_like } from "../chunks/Textfield.a5c52319.js";
-import { g as goto } from "../chunks/navigation.f8f7a854.js";
-import { r as readable, e as base } from "../chunks/singletons.dbc3066f.js";
-import { c as clientId, a as clientSecret, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as basicFlows, j as advancedFlows, k as insights, z as zones } from "../chunks/homey.aff21b99.js";
-import { g as globals, D as Dialog, T as Title, C as Content, A as Actions, d as dashboard, e as editing, a as CommonIcon } from "../chunks/Actions.9aed29c1.js";
-import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.405327a5.js";
-import { I as IconButton, M as Menu } from "../chunks/SelectionGroupIcon.b66d0d0e.js";
-import { T as Text, L as List, I as Item } from "../chunks/Subheader.de0367f9.js";
+import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, T as Textfield, B as Button, C as CommonLabel, h as dashboards, v as v4, i as CircularProgress, j as ensure_array_like } from "../chunks/Textfield.6c50af22.js";
+import { g as goto } from "../chunks/navigation.c450f20f.js";
+import { r as readable, e as base } from "../chunks/singletons.4364c006.js";
+import { c as clientId, a as clientSecret, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as basicFlows, j as advancedFlows, k as insights, z as zones } from "../chunks/homey.e14f3803.js";
+import { g as globals, D as Dialog, T as Title, C as Content, A as Actions, d as dashboard, e as editing, a as CommonIcon } from "../chunks/Actions.0ba66c30.js";
+import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.6ae5a9ae.js";
+import { I as IconButton, M as Menu } from "../chunks/SelectionGroupIcon.9bece819.js";
+import { T as Text, L as List, I as Item } from "../chunks/Subheader.d19cab98.js";
 import { A as AthomCloudAPI } from "../chunks/AthomCloudAPI.7aecdafb.js";
 const ssr = false;
 const trailingSlash = "always";
@@ -1917,6 +1917,75 @@ function get_each_context(ctx, list, i) {
   child_ctx[36] = list[i];
   return child_ctx;
 }
+function create_else_block(ctx) {
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[14].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[26],
+    null
+  );
+  return {
+    c() {
+      if (default_slot)
+        default_slot.c();
+    },
+    l(nodes) {
+      if (default_slot)
+        default_slot.l(nodes);
+    },
+    m(target, anchor) {
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty[0] & /*$$scope*/
+        67108864)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[26],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[26]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[26],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (default_slot)
+        default_slot.d(detaching);
+    }
+  };
+}
 function create_if_block_1(ctx) {
   let topappbar;
   let t0;
@@ -3542,7 +3611,7 @@ function create_fragment(ctx) {
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block, create_if_block_1];
+  const if_block_creators = [create_if_block, create_if_block_1, create_else_block];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -3555,16 +3624,14 @@ function create_fragment(ctx) {
       ctx2[7] !== void 0
     )
       return 1;
-    return -1;
+    return 2;
   }
-  if (~(current_block_type_index = select_block_type(ctx))) {
-    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-  }
+  current_block_type_index = select_block_type(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
   return {
     c() {
       t = space();
-      if (if_block)
-        if_block.c();
+      if_block.c();
       if_block_anchor = empty();
       this.h();
     },
@@ -3572,8 +3639,7 @@ function create_fragment(ctx) {
       const head_nodes = head_selector("svelte-t9xcep", document.head);
       head_nodes.forEach(detach);
       t = claim_space(nodes);
-      if (if_block)
-        if_block.l(nodes);
+      if_block.l(nodes);
       if_block_anchor = empty();
       this.h();
     },
@@ -3582,9 +3648,7 @@ function create_fragment(ctx) {
     },
     m(target, anchor) {
       insert_hydration(target, t, anchor);
-      if (~current_block_type_index) {
-        if_blocks[current_block_type_index].m(target, anchor);
-      }
+      if_blocks[current_block_type_index].m(target, anchor);
       insert_hydration(target, if_block_anchor, anchor);
       current = true;
     },
@@ -3592,30 +3656,22 @@ function create_fragment(ctx) {
       let previous_block_index = current_block_type_index;
       current_block_type_index = select_block_type(ctx2);
       if (current_block_type_index === previous_block_index) {
-        if (~current_block_type_index) {
-          if_blocks[current_block_type_index].p(ctx2, dirty);
-        }
+        if_blocks[current_block_type_index].p(ctx2, dirty);
       } else {
-        if (if_block) {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-        }
-        if (~current_block_type_index) {
-          if_block = if_blocks[current_block_type_index];
-          if (!if_block) {
-            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-            if_block.c();
-          } else {
-            if_block.p(ctx2, dirty);
-          }
-          transition_in(if_block, 1);
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
         } else {
-          if_block = null;
+          if_block.p(ctx2, dirty);
         }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
       }
     },
     i(local) {
@@ -3633,9 +3689,7 @@ function create_fragment(ctx) {
         detach(t);
         detach(if_block_anchor);
       }
-      if (~current_block_type_index) {
-        if_blocks[current_block_type_index].d(detaching);
-      }
+      if_blocks[current_block_type_index].d(detaching);
     }
   };
 }

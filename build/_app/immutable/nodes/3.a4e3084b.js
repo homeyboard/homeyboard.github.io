@@ -5,14 +5,16 @@ var __publicField = (obj, key, value) => {
   return value;
 };
 var _a, _b;
-import { s as safe_not_equal, r as create_slot, u as assign$1, f as element, g as claim_element, h as children, d as detach, v as set_attributes, i as insert_hydration, x as action_destroyer, w as listen, y as update_slot_base, z as get_all_dirty_from_scope, A as get_slot_changes, B as is_function, C as run_all, D as compute_rest_props, E as get_current_component, G as setContext, o as onMount, R as onDestroy, F as exclude_internal_props, p as binding_callbacks, q as construct_svelte_component, e as empty, J as add_flush_callback, K as createEventDispatcher, a as space, c as claim_space, l as text, m as claim_text, n as set_data, S as init_binding_group, Q as get_svelte_dataset, j as attr, N as append_hydration, H as noop$1, P as getContext, T as bubble, U as svg_element, V as claim_svg_element, W as set_data_maybe_contenteditable, X as compute_slots, M as component_subscribe, Y as set_store_value, O as destroy_each, k as set_style, Z as to_number, _ as set_input_value, $ as src_url_equal, a0 as toggle_class, a1 as current_component, b as afterUpdate } from "../chunks/scheduler.8ee754c3.js";
-import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.09d54507.js";
-import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, B as Button, C as CommonLabel, p as prefixFilter, m as exclude, R as Ripple, s as normalizeKey, K as KEY, F as FloatingLabel, N as NotchedOutline, t as LineRipple, L as List, I as Item, k as ensure_array_like, j as Text, l as __values, w as __spreadArray, n as __read, v as v4, T as Textfield, q as update_keyed_each, r as outro_and_destroy_block, h as dashboards, i as CircularProgress } from "../chunks/Textfield.d6643f18.js";
-import { g as devices, s as scopes, b as homey, j as advancedFlows, i as basicFlows, k as insights, w as webhookUrl, m as webhookId, e as dashboards$1, l as goto } from "../chunks/homey.4392b2cf.js";
-import { w as writable, e as base } from "../chunks/singletons.8357046b.js";
-import { p as page } from "../chunks/stores.38c3cb09.js";
-import { b as domFocusTrap, D as Dialog, T as Title$2, C as Content$1, A as Actions, c as Corner, M as Menu, I as IconButton, f as AnimationFrame, e as editing, a as CommonIcon, G as Graphic, h as grid, d as dashboard } from "../chunks/Actions.7e157a1c.js";
-import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/ActionIcons.8d3833e6.js";
+import { s as safe_not_equal, r as create_slot, u as assign$1, f as element, g as claim_element, h as children, d as detach, v as set_attributes, i as insert_hydration, x as action_destroyer, w as listen, y as update_slot_base, z as get_all_dirty_from_scope, A as get_slot_changes, B as is_function, C as run_all, D as compute_rest_props, E as get_current_component, G as setContext, o as onMount, R as onDestroy, F as exclude_internal_props, p as binding_callbacks, q as construct_svelte_component, e as empty, S as init_binding_group, a as space, c as claim_space, Q as get_svelte_dataset, j as attr, N as append_hydration, H as noop$1, P as getContext, T as bubble, l as text, m as claim_text, n as set_data, U as svg_element, V as claim_svg_element, W as set_data_maybe_contenteditable, J as add_flush_callback, X as compute_slots, M as component_subscribe, Y as set_store_value, K as createEventDispatcher, O as destroy_each, k as set_style, Z as to_number, _ as set_input_value, $ as src_url_equal, a0 as toggle_class, a1 as current_component, b as afterUpdate } from "../chunks/scheduler.9514346f.js";
+import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.6fa96164.js";
+import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, p as prefixFilter, l as exclude, R as Ripple, F as FloatingLabel, N as NotchedOutline, L as LineRipple, j as ensure_array_like, k as __values, r as __spreadArray, m as __read, B as Button, C as CommonLabel, v as v4, T as Textfield, o as update_keyed_each, q as outro_and_destroy_block, h as dashboards, i as CircularProgress } from "../chunks/Textfield.d226c201.js";
+import { w as writable } from "../chunks/singletons.f80bfd01.js";
+import { p as page } from "../chunks/stores.67d0b73f.js";
+import { g as devices, s as scopes, b as homey, j as advancedFlows, i as basicFlows, k as insights, w as webhookUrl, l as webhookId, e as dashboards$1 } from "../chunks/homey.2e577cb9.js";
+import { b as domFocusTrap, c as AnimationFrame, e as editing, a as CommonIcon, D as Dialog, T as Title$2, C as Content$1, A as Actions, f as grid, d as dashboard } from "../chunks/Actions.88e01790.js";
+import { C as Corner, M as Menu, I as IconButton, G as Graphic } from "../chunks/SelectionGroupIcon.4dfdb9ee.js";
+import { n as normalizeKey, K as KEY, L as List, I as Item, T as Text } from "../chunks/Subheader.f7cf0a21.js";
+import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/ActionIcons.6f4031dd.js";
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -317,7 +319,7 @@ var MDCModalDrawerFoundation = (
     return MDCModalDrawerFoundation2;
   }(MDCDismissibleDrawerFoundation)
 );
-function create_fragment$y(ctx) {
+function create_fragment$x(ctx) {
   let aside;
   let aside_class_value;
   let useActions_action;
@@ -692,7 +694,7 @@ function instance_1$7($$self, $$props, $$invalidate) {
 class Drawer extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance_1$7, create_fragment$y, safe_not_equal, {
+    init(this, options, instance_1$7, create_fragment$x, safe_not_equal, {
       use: 0,
       class: 1,
       variant: 2,
@@ -733,7 +735,7 @@ const Subtitle = classAdderBuilder({
   class: "mdc-drawer__subtitle",
   tag: "h2"
 });
-function create_default_slot$h(ctx) {
+function create_default_slot$g(ctx) {
   let current;
   const default_slot_template = (
     /*#slots*/
@@ -802,7 +804,7 @@ function create_default_slot$h(ctx) {
     }
   };
 }
-function create_fragment$x(ctx) {
+function create_fragment$w(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -839,7 +841,7 @@ function create_fragment$x(ctx) {
   );
   function switch_props(ctx2) {
     let switch_instance_props = {
-      $$slots: { default: [create_default_slot$h] },
+      $$slots: { default: [create_default_slot$g] },
       $$scope: { ctx: ctx2 }
     };
     for (let i2 = 0; i2 < switch_instance_spread_levels.length; i2 += 1) {
@@ -963,7 +965,7 @@ function create_fragment$x(ctx) {
     }
   };
 }
-function instance$o($$self, $$props, $$invalidate) {
+function instance$n($$self, $$props, $$invalidate) {
   const omit_props_names = ["use", "class", "fixed", "component", "tag", "getElement"];
   let $$restProps = compute_rest_props($$props, omit_props_names);
   let { $$slots: slots = {}, $$scope } = $$props;
@@ -1021,7 +1023,7 @@ function instance$o($$self, $$props, $$invalidate) {
 class Scrim extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$o, create_fragment$x, safe_not_equal, {
+    init(this, options, instance$n, create_fragment$w, safe_not_equal, {
       use: 0,
       class: 1,
       fixed: 2,
@@ -1032,484 +1034,6 @@ class Scrim extends SvelteComponent {
   }
   get getElement() {
     return this.$$.ctx[9];
-  }
-}
-function create_default_slot_7$6(ctx) {
-  let t2;
-  return {
-    c() {
-      t2 = text("Create local dashboard");
-    },
-    l(nodes) {
-      t2 = claim_text(nodes, "Create local dashboard");
-    },
-    m(target, anchor) {
-      insert_hydration(target, t2, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-    }
-  };
-}
-function create_default_slot_6$7(ctx) {
-  let t2;
-  return {
-    c() {
-      t2 = text(
-        /*text*/
-        ctx[1]
-      );
-    },
-    l(nodes) {
-      t2 = claim_text(
-        nodes,
-        /*text*/
-        ctx[1]
-      );
-    },
-    m(target, anchor) {
-      insert_hydration(target, t2, anchor);
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*text*/
-      2)
-        set_data(
-          t2,
-          /*text*/
-          ctx2[1]
-        );
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-    }
-  };
-}
-function create_default_slot_5$8(ctx) {
-  let t2;
-  return {
-    c() {
-      t2 = text(
-        /*cancelText*/
-        ctx[2]
-      );
-    },
-    l(nodes) {
-      t2 = claim_text(
-        nodes,
-        /*cancelText*/
-        ctx[2]
-      );
-    },
-    m(target, anchor) {
-      insert_hydration(target, t2, anchor);
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*cancelText*/
-      4)
-        set_data(
-          t2,
-          /*cancelText*/
-          ctx2[2]
-        );
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-    }
-  };
-}
-function create_default_slot_4$8(ctx) {
-  let label;
-  let current;
-  label = new CommonLabel({
-    props: {
-      $$slots: { default: [create_default_slot_5$8] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      create_component(label.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(label.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(label, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const label_changes = {};
-      if (dirty & /*$$scope, cancelText*/
-      132) {
-        label_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      label.$set(label_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(label.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(label.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(label, detaching);
-    }
-  };
-}
-function create_default_slot_3$8(ctx) {
-  let t2;
-  return {
-    c() {
-      t2 = text(
-        /*confirmText*/
-        ctx[3]
-      );
-    },
-    l(nodes) {
-      t2 = claim_text(
-        nodes,
-        /*confirmText*/
-        ctx[3]
-      );
-    },
-    m(target, anchor) {
-      insert_hydration(target, t2, anchor);
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*confirmText*/
-      8)
-        set_data(
-          t2,
-          /*confirmText*/
-          ctx2[3]
-        );
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-    }
-  };
-}
-function create_default_slot_2$a(ctx) {
-  let label;
-  let current;
-  label = new CommonLabel({
-    props: {
-      $$slots: { default: [create_default_slot_3$8] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      create_component(label.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(label.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(label, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const label_changes = {};
-      if (dirty & /*$$scope, confirmText*/
-      136) {
-        label_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      label.$set(label_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(label.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(label.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(label, detaching);
-    }
-  };
-}
-function create_default_slot_1$d(ctx) {
-  let button0;
-  let t2;
-  let button1;
-  let current;
-  button0 = new Button({
-    props: {
-      action: "cancel",
-      $$slots: { default: [create_default_slot_4$8] },
-      $$scope: { ctx }
-    }
-  });
-  button1 = new Button({
-    props: {
-      action: "confirm",
-      $$slots: { default: [create_default_slot_2$a] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      create_component(button0.$$.fragment);
-      t2 = space();
-      create_component(button1.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(button0.$$.fragment, nodes);
-      t2 = claim_space(nodes);
-      claim_component(button1.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(button0, target, anchor);
-      insert_hydration(target, t2, anchor);
-      mount_component(button1, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const button0_changes = {};
-      if (dirty & /*$$scope, cancelText*/
-      132) {
-        button0_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      button0.$set(button0_changes);
-      const button1_changes = {};
-      if (dirty & /*$$scope, confirmText*/
-      136) {
-        button1_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      button1.$set(button1_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(button0.$$.fragment, local);
-      transition_in(button1.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(button0.$$.fragment, local);
-      transition_out(button1.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-      destroy_component(button0, detaching);
-      destroy_component(button1, detaching);
-    }
-  };
-}
-function create_default_slot$g(ctx) {
-  let title;
-  let t0;
-  let content;
-  let t1;
-  let actions;
-  let current;
-  title = new Title$2({
-    props: {
-      $$slots: { default: [create_default_slot_7$6] },
-      $$scope: { ctx }
-    }
-  });
-  content = new Content$1({
-    props: {
-      style: "margin: 5px;",
-      $$slots: { default: [create_default_slot_6$7] },
-      $$scope: { ctx }
-    }
-  });
-  actions = new Actions({
-    props: {
-      $$slots: { default: [create_default_slot_1$d] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      create_component(title.$$.fragment);
-      t0 = space();
-      create_component(content.$$.fragment);
-      t1 = space();
-      create_component(actions.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(title.$$.fragment, nodes);
-      t0 = claim_space(nodes);
-      claim_component(content.$$.fragment, nodes);
-      t1 = claim_space(nodes);
-      claim_component(actions.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(title, target, anchor);
-      insert_hydration(target, t0, anchor);
-      mount_component(content, target, anchor);
-      insert_hydration(target, t1, anchor);
-      mount_component(actions, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const title_changes = {};
-      if (dirty & /*$$scope*/
-      128) {
-        title_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      title.$set(title_changes);
-      const content_changes = {};
-      if (dirty & /*$$scope, text*/
-      130) {
-        content_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      content.$set(content_changes);
-      const actions_changes = {};
-      if (dirty & /*$$scope, confirmText, cancelText*/
-      140) {
-        actions_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      actions.$set(actions_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(title.$$.fragment, local);
-      transition_in(content.$$.fragment, local);
-      transition_in(actions.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(title.$$.fragment, local);
-      transition_out(content.$$.fragment, local);
-      transition_out(actions.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t0);
-        detach(t1);
-      }
-      destroy_component(title, detaching);
-      destroy_component(content, detaching);
-      destroy_component(actions, detaching);
-    }
-  };
-}
-function create_fragment$w(ctx) {
-  let dialog;
-  let updating_open;
-  let current;
-  function dialog_open_binding(value) {
-    ctx[5](value);
-  }
-  let dialog_props = {
-    selection: true,
-    $$slots: { default: [create_default_slot$g] },
-    $$scope: { ctx }
-  };
-  if (
-    /*open*/
-    ctx[0] !== void 0
-  ) {
-    dialog_props.open = /*open*/
-    ctx[0];
-  }
-  dialog = new Dialog({ props: dialog_props });
-  binding_callbacks.push(() => bind(dialog, "open", dialog_open_binding));
-  dialog.$on(
-    "SMUIDialog:closed",
-    /*closeHandler*/
-    ctx[4]
-  );
-  return {
-    c() {
-      create_component(dialog.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(dialog.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(dialog, target, anchor);
-      current = true;
-    },
-    p(ctx2, [dirty]) {
-      const dialog_changes = {};
-      if (dirty & /*$$scope, confirmText, cancelText, text*/
-      142) {
-        dialog_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      if (!updating_open && dirty & /*open*/
-      1) {
-        updating_open = true;
-        dialog_changes.open = /*open*/
-        ctx2[0];
-        add_flush_callback(() => updating_open = false);
-      }
-      dialog.$set(dialog_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(dialog.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(dialog.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(dialog, detaching);
-    }
-  };
-}
-function instance$n($$self, $$props, $$invalidate) {
-  let { open } = $$props;
-  let { text: text2 } = $$props;
-  let { cancelText = "Cancel" } = $$props;
-  let { confirmText = "Confirm" } = $$props;
-  const dispatch2 = createEventDispatcher();
-  function closeHandler(e2) {
-    dispatch2(e2.detail.action, true);
-  }
-  function dialog_open_binding(value) {
-    open = value;
-    $$invalidate(0, open);
-  }
-  $$self.$$set = ($$props2) => {
-    if ("open" in $$props2)
-      $$invalidate(0, open = $$props2.open);
-    if ("text" in $$props2)
-      $$invalidate(1, text2 = $$props2.text);
-    if ("cancelText" in $$props2)
-      $$invalidate(2, cancelText = $$props2.cancelText);
-    if ("confirmText" in $$props2)
-      $$invalidate(3, confirmText = $$props2.confirmText);
-  };
-  return [open, text2, cancelText, confirmText, closeHandler, dialog_open_binding];
-}
-class ConfirmDialog extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$n, create_fragment$w, safe_not_equal, {
-      open: 0,
-      text: 1,
-      cancelText: 2,
-      confirmText: 3
-    });
   }
 }
 /**
@@ -3318,7 +2842,7 @@ function create_if_block_6(ctx) {
     }
   };
 }
-function create_if_block_5$3(ctx) {
+function create_if_block_5$2(ctx) {
   let span;
   return {
     c() {
@@ -4265,7 +3789,7 @@ function create_fragment$t(ctx) {
   );
   let if_block1 = (
     /*variant*/
-    ctx[7] === "filled" && create_if_block_5$3()
+    ctx[7] === "filled" && create_if_block_5$2()
   );
   let if_block2 = (
     /*variant*/
@@ -4897,7 +4421,7 @@ function create_fragment$t(ctx) {
         if (if_block1)
           ;
         else {
-          if_block1 = create_if_block_5$3();
+          if_block1 = create_if_block_5$2();
           if_block1.c();
           if_block1.m(div0, t1);
         }
@@ -8611,7 +8135,7 @@ function create_else_block_1$3(ctx) {
     }
   };
 }
-function create_if_block_5$2(ctx) {
+function create_if_block_5$1(ctx) {
   let input0;
   let input0_class_value;
   let t2;
@@ -9700,7 +9224,7 @@ function create_fragment$q(ctx) {
       /*range*/
       ctx2[6]
     )
-      return create_if_block_5$2;
+      return create_if_block_5$1;
     return create_else_block_1$3;
   }
   let current_block_type = select_block_type(ctx);
@@ -12897,7 +12421,7 @@ class Button_1 extends SvelteComponent {
 const CapabilityWidget_svelte_svelte_type_style_lang = "";
 function get_each_context$6(ctx, list, i2) {
   const child_ctx = ctx.slice();
-  child_ctx[10] = list[i2];
+  child_ctx[13] = list[i2];
   return child_ctx;
 }
 function create_else_block_1$1(ctx) {
@@ -12918,7 +12442,7 @@ function create_else_block_1$1(ctx) {
     pending: create_pending_block$1,
     then: create_then_block$1,
     catch: create_catch_block$1,
-    value: 13
+    value: 16
   };
   handle_promise(promise = /*$homey*/
   ctx[4].baseUrl, info);
@@ -13053,7 +12577,7 @@ function create_then_block$1(ctx) {
       var _a2, _b2;
       attr(img, "class", "device-icon widget-icon-theme svelte-1e1mgjm");
       if (!src_url_equal(img.src, img_src_value = /*url*/
-      ctx[13] + /*device*/
+      ctx[16] + /*device*/
       ((_a2 = ctx[1]) == null ? void 0 : _a2.iconObj.url)))
         attr(img, "src", img_src_value);
       attr(img, "alt", img_alt_value = /*device*/
@@ -13066,7 +12590,7 @@ function create_then_block$1(ctx) {
       var _a2, _b2;
       if (dirty & /*$homey, device*/
       18 && !src_url_equal(img.src, img_src_value = /*url*/
-      ctx2[13] + /*device*/
+      ctx2[16] + /*device*/
       ((_a2 = ctx2[1]) == null ? void 0 : _a2.iconObj.url))) {
         attr(img, "src", img_src_value);
       }
@@ -13131,7 +12655,7 @@ function create_else_block$4(ctx) {
   let current;
   let each_value = ensure_array_like(
     /*capabilities*/
-    ctx[3]
+    ctx[2]
   );
   let each_blocks = [];
   for (let i2 = 0; i2 < each_value.length; i2 += 1) {
@@ -13174,7 +12698,7 @@ function create_else_block$4(ctx) {
       108) {
         each_value = ensure_array_like(
           /*capabilities*/
-          ctx2[3]
+          ctx2[2]
         );
         let i2;
         for (i2 = 0; i2 < each_value.length; i2 += 1) {
@@ -13274,7 +12798,7 @@ function create_if_block_2$5(ctx) {
   let span;
   let t0_value = (
     /*capability*/
-    ctx[10].title + ""
+    ctx[13].title + ""
   );
   let t0;
   let t1;
@@ -13284,9 +12808,9 @@ function create_if_block_2$5(ctx) {
   function value_handler(...args) {
     return (
       /*value_handler*/
-      ctx[9](
+      ctx[10](
         /*capability*/
-        ctx[10],
+        ctx[13],
         ...args
       )
     );
@@ -13295,7 +12819,7 @@ function create_if_block_2$5(ctx) {
     /*getComponent*/
     ctx[6](
       /*capability*/
-      ctx[10].id
+      ctx[13].id
     )
   );
   function switch_props(ctx2) {
@@ -13303,11 +12827,11 @@ function create_if_block_2$5(ctx) {
       props: {
         capability: (
           /*capability*/
-          ctx2[10]
+          ctx2[13]
         ),
         controllable: (
           /*controllable*/
-          ctx2[2]
+          ctx2[3]
         )
       }
     };
@@ -13358,23 +12882,23 @@ function create_if_block_2$5(ctx) {
     p(new_ctx, dirty) {
       ctx = new_ctx;
       if ((!current || dirty & /*capabilities*/
-      8) && t0_value !== (t0_value = /*capability*/
-      ctx[10].title + ""))
+      4) && t0_value !== (t0_value = /*capability*/
+      ctx[13].title + ""))
         set_data(t0, t0_value);
       const switch_instance_changes = {};
       if (dirty & /*capabilities*/
-      8)
-        switch_instance_changes.capability = /*capability*/
-        ctx[10];
-      if (dirty & /*controllable*/
       4)
+        switch_instance_changes.capability = /*capability*/
+        ctx[13];
+      if (dirty & /*controllable*/
+      8)
         switch_instance_changes.controllable = /*controllable*/
-        ctx[2];
+        ctx[3];
       if (dirty & /*capabilities*/
-      8 && switch_value !== (switch_value = /*getComponent*/
+      4 && switch_value !== (switch_value = /*getComponent*/
       ctx[6](
         /*capability*/
-        ctx[10].id
+        ctx[13].id
       ))) {
         if (switch_instance) {
           group_outros();
@@ -13423,7 +12947,7 @@ function create_each_block$6(ctx) {
   let current;
   let if_block = (
     /*capability*/
-    ctx[10] !== void 0 && create_if_block_2$5(ctx)
+    ctx[13] !== void 0 && create_if_block_2$5(ctx)
   );
   return {
     c() {
@@ -13445,12 +12969,12 @@ function create_each_block$6(ctx) {
     p(ctx2, dirty) {
       if (
         /*capability*/
-        ctx2[10] !== void 0
+        ctx2[13] !== void 0
       ) {
         if (if_block) {
           if_block.p(ctx2, dirty);
           if (dirty & /*capabilities*/
-          8) {
+          4) {
             transition_in(if_block, 1);
           }
         } else {
@@ -13630,16 +13154,35 @@ function create_fragment$k(ctx) {
   };
 }
 function instance$g($$self, $$props, $$invalidate) {
-  let capabilities;
+  let latestDevice;
   let controllable;
   let $scopes;
   let $devices;
   let $homey;
-  component_subscribe($$self, scopes, ($$value) => $$invalidate(7, $scopes = $$value));
-  component_subscribe($$self, devices, ($$value) => $$invalidate(8, $devices = $$value));
+  component_subscribe($$self, scopes, ($$value) => $$invalidate(8, $scopes = $$value));
+  component_subscribe($$self, devices, ($$value) => $$invalidate(9, $devices = $$value));
   component_subscribe($$self, homey, ($$value) => $$invalidate(4, $homey = $$value));
   let { settings } = $$props;
   let device;
+  let capabilities = [];
+  function onDevice(d3) {
+    if (device !== void 0) {
+      d3.off("capability", updateCapability);
+    }
+    if (d3 !== void 0) {
+      $$invalidate(1, device = d3);
+      $$invalidate(2, capabilities = (settings == null ? void 0 : settings.capabilityIds) !== void 0 ? settings.capabilityIds.map((cId) => device.capabilitiesObj[cId]) : []);
+      d3.on("capability", updateCapability);
+    }
+  }
+  function updateCapability(event) {
+    if (device !== void 0) {
+      const capability = device.capabilitiesObj[event.capabilityId];
+      if (capability !== void 0) {
+        $$invalidate(2, capabilities = [...capabilities]);
+      }
+    }
+  }
   async function setCapabilityValue(capabilityId, value) {
     await device.setCapabilityValue({ deviceId: device.id, capabilityId, value });
   }
@@ -13676,26 +13219,27 @@ function instance$g($$self, $$props, $$invalidate) {
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*$devices, settings*/
-    257) {
-      $$invalidate(1, device = $devices[settings.deviceId ?? ""]);
-    }
-    if ($$self.$$.dirty & /*device, settings*/
-    3) {
-      $$invalidate(3, capabilities = device && (settings == null ? void 0 : settings.capabilityIds) ? settings.capabilityIds.map((cId) => device.capabilitiesObj[cId]) : []);
+    513) {
+      $$invalidate(7, latestDevice = $devices[settings.deviceId ?? ""]);
     }
     if ($$self.$$.dirty & /*$scopes*/
+    256) {
+      $$invalidate(3, controllable = $scopes.includes("homey") || $scopes.includes("homey.device") || $scopes.includes("homey.device.control"));
+    }
+    if ($$self.$$.dirty & /*latestDevice*/
     128) {
-      $$invalidate(2, controllable = $scopes.includes("homey") || $scopes.includes("homey.device") || $scopes.includes("homey.device.control"));
+      onDevice(latestDevice);
     }
   };
   return [
     settings,
     device,
-    controllable,
     capabilities,
+    controllable,
     $homey,
     setCapabilityValue,
     getComponent,
+    latestDevice,
     $scopes,
     $devices,
     value_handler
@@ -17115,7 +16659,7 @@ function create_if_block$9(ctx) {
   }
   let select_props = {
     label: "Image",
-    $$slots: { default: [create_default_slot_23$2] },
+    $$slots: { default: [create_default_slot_23$1] },
     $$scope: { ctx }
   };
   if (
@@ -17248,7 +16792,7 @@ function create_each_block$4(ctx) {
     }
   };
 }
-function create_default_slot_23$2(ctx) {
+function create_default_slot_23$1(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
@@ -17334,7 +16878,7 @@ function create_default_slot_23$2(ctx) {
     }
   };
 }
-function create_default_slot_22$2(ctx) {
+function create_default_slot_22$1(ctx) {
   let t2;
   return {
     c() {
@@ -17353,7 +16897,7 @@ function create_default_slot_22$2(ctx) {
     }
   };
 }
-function create_default_slot_21$2(ctx) {
+function create_default_slot_21$1(ctx) {
   let t2;
   return {
     c() {
@@ -17380,7 +16924,7 @@ function create_default_slot_20$2(ctx) {
     props: {
       class: "material-icons",
       style: "margin-left: 5px;",
-      $$slots: { default: [create_default_slot_21$2] },
+      $$slots: { default: [create_default_slot_21$1] },
       $$scope: { ctx }
     }
   });
@@ -17663,7 +17207,7 @@ function create_default_slot_8$4(ctx) {
   option0 = new Option({
     props: {
       value: "0",
-      $$slots: { default: [create_default_slot_22$2] },
+      $$slots: { default: [create_default_slot_22$1] },
       $$scope: { ctx }
     }
   });
@@ -19760,12 +19304,12 @@ function listenArrayEvents(array, listener) {
   });
   arrayEvents.forEach((key) => {
     const method = "_onData" + _capitalize(key);
-    const base2 = array[key];
+    const base = array[key];
     Object.defineProperty(array, key, {
       configurable: true,
       enumerable: false,
       value(...args) {
-        const res = base2.apply(this, args);
+        const res = base.apply(this, args);
         array._chartjs.listeners.forEach((object) => {
           if (typeof object[method] === "function") {
             object[method](...args);
@@ -23155,15 +22699,15 @@ class BarController extends DatasetController {
   updateElements(bars, start, count, mode) {
     const reset = mode === "reset";
     const { index: index2, _cachedMeta: { vScale } } = this;
-    const base2 = vScale.getBasePixel();
+    const base = vScale.getBasePixel();
     const horizontal = vScale.isHorizontal();
     const ruler = this._getRuler();
     const { sharedOptions, includeOptions } = this._getSharedOptions(start, mode);
     for (let i2 = start; i2 < start + count; i2++) {
       const parsed = this.getParsed(i2);
       const vpixels = reset || isNullOrUndef(parsed[vScale.axis]) ? {
-        base: base2,
-        head: base2
+        base,
+        head: base
       } : this._calculateBarValuePixels(i2);
       const ipixels = this._calculateBarIndexPixels(i2, ruler);
       const stack = (parsed._stacks || {})[vScale.axis];
@@ -23266,36 +22810,36 @@ class BarController extends DatasetController {
       start += value;
     }
     const startValue = !isNullOrUndef(baseValue) && !floating ? baseValue : start;
-    let base2 = vScale.getPixelForValue(startValue);
+    let base = vScale.getPixelForValue(startValue);
     if (this.chart.getDataVisibility(index2)) {
       head = vScale.getPixelForValue(start + length);
     } else {
-      head = base2;
+      head = base;
     }
-    size = head - base2;
+    size = head - base;
     if (Math.abs(size) < minBarLength) {
       size = barSign(size, vScale, actualBase) * minBarLength;
       if (value === actualBase) {
-        base2 -= size / 2;
+        base -= size / 2;
       }
       const startPixel = vScale.getPixelForDecimal(0);
       const endPixel = vScale.getPixelForDecimal(1);
       const min = Math.min(startPixel, endPixel);
       const max = Math.max(startPixel, endPixel);
-      base2 = Math.max(Math.min(base2, max), min);
-      head = base2 + size;
+      base = Math.max(Math.min(base, max), min);
+      head = base + size;
       if (_stacked && !floating) {
-        parsed._stacks[vScale.axis]._visualValues[datasetIndex] = vScale.getValueForPixel(head) - vScale.getValueForPixel(base2);
+        parsed._stacks[vScale.axis]._visualValues[datasetIndex] = vScale.getValueForPixel(head) - vScale.getValueForPixel(base);
       }
     }
-    if (base2 === vScale.getPixelForValue(actualBase)) {
+    if (base === vScale.getPixelForValue(actualBase)) {
       const halfGrid = sign(size) * vScale.getLineWidthForValue(actualBase) / 2;
-      base2 += halfGrid;
+      base += halfGrid;
       size -= halfGrid;
     }
     return {
       size,
-      base: base2,
+      base,
       head,
       center: head + size / 2
     };
@@ -28753,7 +28297,7 @@ __publicField(PointElement, "defaultRoutes", {
   borderColor: "borderColor"
 });
 function getBarBounds(bar, useFinalPosition) {
-  const { x: x2, y: y3, base: base2, width, height } = bar.getProps([
+  const { x: x2, y: y3, base, width, height } = bar.getProps([
     "x",
     "y",
     "base",
@@ -28763,16 +28307,16 @@ function getBarBounds(bar, useFinalPosition) {
   let left, right, top, bottom, half;
   if (bar.horizontal) {
     half = height / 2;
-    left = Math.min(x2, base2);
-    right = Math.max(x2, base2);
+    left = Math.min(x2, base);
+    right = Math.max(x2, base);
     top = y3 - half;
     bottom = y3 + half;
   } else {
     half = width / 2;
     left = x2 - half;
     right = x2 + half;
-    top = Math.min(y3, base2);
-    bottom = Math.max(y3, base2);
+    top = Math.min(y3, base);
+    bottom = Math.max(y3, base);
   }
   return {
     left,
@@ -28907,15 +28451,15 @@ class BarElement extends Element$1 {
     return inRange(this, null, mouseY, useFinalPosition);
   }
   getCenterPoint(useFinalPosition) {
-    const { x: x2, y: y3, base: base2, horizontal } = this.getProps([
+    const { x: x2, y: y3, base, horizontal } = this.getProps([
       "x",
       "y",
       "base",
       "horizontal"
     ], useFinalPosition);
     return {
-      x: horizontal ? (x2 + base2) / 2 : x2,
-      y: horizontal ? y3 : (y3 + base2) / 2
+      x: horizontal ? (x2 + base) / 2 : x2,
+      y: horizontal ? y3 : (y3 + base) / 2
     };
   }
   getRange(axis) {
@@ -30573,15 +30117,15 @@ const positioners = {
     };
   }
 };
-function pushOrConcat(base2, toPush) {
+function pushOrConcat(base, toPush) {
   if (toPush) {
     if (isArray(toPush)) {
-      Array.prototype.push.apply(base2, toPush);
+      Array.prototype.push.apply(base, toPush);
     } else {
-      base2.push(toPush);
+      base.push(toPush);
     }
   }
-  return base2;
+  return base;
 }
 function splitNewlines(str) {
   if ((typeof str === "string" || str instanceof String) && str.indexOf("\n") > -1) {
@@ -31906,11 +31450,11 @@ function generateTicks(generationOptions, { min, max }) {
   let exp = startExp(min, max);
   let precision = exp < 0 ? Math.pow(10, Math.abs(exp)) : 1;
   const stepSize = Math.pow(10, exp);
-  const base2 = minExp > exp ? Math.pow(10, minExp) : 0;
-  const start = Math.round((min - base2) * precision) / precision;
-  const offset = Math.floor((min - base2) / stepSize / 10) * stepSize * 10;
+  const base = minExp > exp ? Math.pow(10, minExp) : 0;
+  const start = Math.round((min - base) * precision) / precision;
+  const offset = Math.floor((min - base) / stepSize / 10) * stepSize * 10;
   let significand = Math.floor((start - offset) / Math.pow(10, exp));
-  let value = finiteOrDefault(generationOptions.min, Math.round((base2 + offset + significand * Math.pow(10, exp)) * precision) / precision);
+  let value = finiteOrDefault(generationOptions.min, Math.round((base + offset + significand * Math.pow(10, exp)) * precision) / precision);
   while (value < max) {
     ticks.push({
       value,
@@ -31927,7 +31471,7 @@ function generateTicks(generationOptions, { min, max }) {
       significand = 2;
       precision = exp >= 0 ? 1 : precision;
     }
-    value = Math.round((base2 + offset + significand * Math.pow(10, exp)) * precision) / precision;
+    value = Math.round((base + offset + significand * Math.pow(10, exp)) * precision) / precision;
   }
   const lastTick = finiteOrDefault(generationOptions.max, value);
   ticks.push({
@@ -38117,7 +37661,6 @@ function create_fragment$b(ctx) {
   };
 }
 function instance$9($$self, $$props, $$invalidate) {
-  let options;
   let $devices;
   let $homey;
   let $insights;
@@ -38134,6 +37677,7 @@ function instance$9($$self, $$props, $$invalidate) {
   let timeout;
   let chart;
   let data = { datasets: [] };
+  let options;
   onDestroy(() => {
     if (timeout !== void 0) {
       clearTimeout(timeout);
@@ -38261,6 +37805,8 @@ function instance$9($$self, $$props, $$invalidate) {
       return "Homey Weather";
     } else if (uri.startsWith("homey:manager:logic")) {
       return "Homey Logic";
+    } else if (uri.startsWith("homey:manager:user")) {
+      return "Homey Users";
     } else {
       return uri;
     }
@@ -39563,7 +39109,7 @@ function create_default_slot_24(ctx) {
     }
   };
 }
-function create_default_slot_23$1(ctx) {
+function create_default_slot_23(ctx) {
   let t2;
   return {
     c() {
@@ -39582,7 +39128,7 @@ function create_default_slot_23$1(ctx) {
     }
   };
 }
-function create_default_slot_22$1(ctx) {
+function create_default_slot_22(ctx) {
   let t2;
   return {
     c() {
@@ -39601,7 +39147,7 @@ function create_default_slot_22$1(ctx) {
     }
   };
 }
-function create_default_slot_21$1(ctx) {
+function create_default_slot_21(ctx) {
   let t2;
   return {
     c() {
@@ -39714,21 +39260,21 @@ function create_default_slot_16$1(ctx) {
   option0 = new Option({
     props: {
       value: "none",
-      $$slots: { default: [create_default_slot_23$1] },
+      $$slots: { default: [create_default_slot_23] },
       $$scope: { ctx }
     }
   });
   option1 = new Option({
     props: {
       value: "min",
-      $$slots: { default: [create_default_slot_22$1] },
+      $$slots: { default: [create_default_slot_22] },
       $$scope: { ctx }
     }
   });
   option2 = new Option({
     props: {
       value: "max",
-      $$slots: { default: [create_default_slot_21$1] },
+      $$slots: { default: [create_default_slot_21] },
       $$scope: { ctx }
     }
   });
@@ -41490,7 +41036,7 @@ function create_else_block(ctx) {
     }
   };
 }
-function create_if_block_5$1(ctx) {
+function create_if_block_5(ctx) {
   let h6;
   let t2;
   return {
@@ -41798,7 +41344,7 @@ function create_fragment$8(ctx) {
       /*size*/
       ctx2[0] == 6
     )
-      return create_if_block_5$1;
+      return create_if_block_5;
     return create_else_block;
   }
   let current_block_type = select_block_type(ctx);
@@ -45925,7 +45471,7 @@ class WidgetContainer extends SvelteComponent {
 const _page_svelte_svelte_type_style_lang = "";
 function get_each_context(ctx, list, i2) {
   const child_ctx = ctx.slice();
-  child_ctx[62] = list[i2];
+  child_ctx[58] = list[i2];
   return child_ctx;
 }
 function create_if_block(ctx) {
@@ -45937,11 +45483,11 @@ function create_if_block(ctx) {
   let appcontent;
   let current;
   function drawer_open_binding(value) {
-    ctx[32](value);
+    ctx[29](value);
   }
   let drawer_props = {
     variant: "modal",
-    $$slots: { default: [create_default_slot_19] },
+    $$slots: { default: [create_default_slot_16] },
     $$scope: { ctx }
   };
   if (
@@ -45986,8 +45532,8 @@ function create_if_block(ctx) {
     p(ctx2, dirty) {
       const drawer_changes = {};
       if (dirty[0] & /*editItem, editOpen*/
-      192 | dirty[2] & /*$$scope*/
-      8) {
+      192 | dirty[1] & /*$$scope*/
+      1073741824) {
         drawer_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_open && dirty[0] & /*editOpen*/
@@ -45999,9 +45545,9 @@ function create_if_block(ctx) {
       }
       drawer.$set(drawer_changes);
       const appcontent_changes = {};
-      if (dirty[0] & /*addWidgetOpen, viewOpen, viewComponent, viewItem, $grid, items, deleteDashboardOpen, dashboard, savingDashboard, $editing*/
-      12094 | dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[0] & /*addWidgetOpen, viewOpen, viewComponent, viewItem, $grid, items, savingDashboard, $editing*/
+      2878 | dirty[1] & /*$$scope*/
+      1073741824) {
         appcontent_changes.$$scope = { dirty, ctx: ctx2 };
       }
       appcontent.$set(appcontent_changes);
@@ -46031,7 +45577,7 @@ function create_if_block(ctx) {
     }
   };
 }
-function create_default_slot_23(ctx) {
+function create_default_slot_20(ctx) {
   let t2;
   return {
     c() {
@@ -46050,7 +45596,7 @@ function create_default_slot_23(ctx) {
     }
   };
 }
-function create_default_slot_22(ctx) {
+function create_default_slot_19(ctx) {
   var _a2, _b2;
   let t0;
   let t1_value = findLabel(
@@ -46093,20 +45639,20 @@ function create_default_slot_22(ctx) {
     }
   };
 }
-function create_default_slot_21(ctx) {
+function create_default_slot_18(ctx) {
   let title;
   let t2;
   let subtitle;
   let current;
   title = new Title$1({
     props: {
-      $$slots: { default: [create_default_slot_23] },
+      $$slots: { default: [create_default_slot_20] },
       $$scope: { ctx }
     }
   });
   subtitle = new Subtitle({
     props: {
-      $$slots: { default: [create_default_slot_22] },
+      $$slots: { default: [create_default_slot_19] },
       $$scope: { ctx }
     }
   });
@@ -46129,15 +45675,15 @@ function create_default_slot_21(ctx) {
     },
     p(ctx2, dirty) {
       const title_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         title_changes.$$scope = { dirty, ctx: ctx2 };
       }
       title.$set(title_changes);
       const subtitle_changes = {};
       if (dirty[0] & /*editItem*/
-      128 | dirty[2] & /*$$scope*/
-      8) {
+      128 | dirty[1] & /*$$scope*/
+      1073741824) {
         subtitle_changes.$$scope = { dirty, ctx: ctx2 };
       }
       subtitle.$set(subtitle_changes);
@@ -46163,7 +45709,7 @@ function create_default_slot_21(ctx) {
     }
   };
 }
-function create_if_block_5(ctx) {
+function create_if_block_4(ctx) {
   let editwidgetview;
   let current;
   editwidgetview = new EditWidgetView({ props: { item: (
@@ -46173,7 +45719,7 @@ function create_if_block_5(ctx) {
   editwidgetview.$on(
     "settings",
     /*settings_handler*/
-    ctx[31]
+    ctx[28]
   );
   return {
     c() {
@@ -46209,12 +45755,12 @@ function create_if_block_5(ctx) {
     }
   };
 }
-function create_default_slot_20(ctx) {
+function create_default_slot_17(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*editOpen*/
-    ctx[6] && create_if_block_5(ctx)
+    ctx[6] && create_if_block_4(ctx)
   );
   return {
     c() {
@@ -46245,7 +45791,7 @@ function create_default_slot_20(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block_5(ctx2);
+          if_block = create_if_block_4(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -46277,20 +45823,20 @@ function create_default_slot_20(ctx) {
     }
   };
 }
-function create_default_slot_19(ctx) {
+function create_default_slot_16(ctx) {
   let header;
   let t2;
   let content;
   let current;
   header = new Header({
     props: {
-      $$slots: { default: [create_default_slot_21] },
+      $$slots: { default: [create_default_slot_18] },
       $$scope: { ctx }
     }
   });
   content = new Content({
     props: {
-      $$slots: { default: [create_default_slot_20] },
+      $$slots: { default: [create_default_slot_17] },
       $$scope: { ctx }
     }
   });
@@ -46314,15 +45860,15 @@ function create_default_slot_19(ctx) {
     p(ctx2, dirty) {
       const header_changes = {};
       if (dirty[0] & /*editItem*/
-      128 | dirty[2] & /*$$scope*/
-      8) {
+      128 | dirty[1] & /*$$scope*/
+      1073741824) {
         header_changes.$$scope = { dirty, ctx: ctx2 };
       }
       header.$set(header_changes);
       const content_changes = {};
       if (dirty[0] & /*editItem, editOpen*/
-      192 | dirty[2] & /*$$scope*/
-      8) {
+      192 | dirty[1] & /*$$scope*/
+      1073741824) {
         content_changes.$$scope = { dirty, ctx: ctx2 };
       }
       content.$set(content_changes);
@@ -46349,7 +45895,6 @@ function create_default_slot_19(ctx) {
   };
 }
 function create_if_block_2(ctx) {
-  var _a2;
   let div0;
   let t0;
   let div1;
@@ -46358,8 +45903,6 @@ function create_if_block_2(ctx) {
   let button1;
   let t2;
   let button2;
-  let t3;
-  let if_block_anchor;
   let current;
   let each_value = ensure_array_like(widgets);
   let each_blocks = [];
@@ -46372,42 +45915,38 @@ function create_if_block_2(ctx) {
   button0 = new Button({
     props: {
       color: "secondary",
-      $$slots: { default: [create_default_slot_14] },
+      $$slots: { default: [create_default_slot_11] },
       $$scope: { ctx }
     }
   });
   button0.$on(
     "click",
     /*click_handler_1*/
-    ctx[34]
+    ctx[31]
   );
   button1 = new Button({
-    props: {
-      color: "secondary",
-      $$slots: { default: [create_default_slot_11] },
-      $$scope: { ctx }
-    }
-  });
-  button1.$on(
-    "click",
-    /*click_handler_2*/
-    ctx[35]
-  );
-  button2 = new Button({
     props: {
       color: "secondary",
       $$slots: { default: [create_default_slot_8] },
       $$scope: { ctx }
     }
   });
+  button1.$on(
+    "click",
+    /*click_handler_2*/
+    ctx[32]
+  );
+  button2 = new Button({
+    props: {
+      color: "secondary",
+      $$slots: { default: [create_default_slot_5] },
+      $$scope: { ctx }
+    }
+  });
   button2.$on(
     "click",
     /*click_handler_3*/
-    ctx[36]
-  );
-  let if_block = (
-    /*dashboard*/
-    ((_a2 = ctx[10]) == null ? void 0 : _a2.source) === "localstorage" && create_if_block_3(ctx)
+    ctx[33]
   );
   return {
     c() {
@@ -46422,10 +45961,6 @@ function create_if_block_2(ctx) {
       create_component(button1.$$.fragment);
       t2 = space();
       create_component(button2.$$.fragment);
-      t3 = space();
-      if (if_block)
-        if_block.c();
-      if_block_anchor = empty();
     },
     l(nodes) {
       div0 = claim_element(nodes, "DIV", {});
@@ -46443,10 +45978,6 @@ function create_if_block_2(ctx) {
       t2 = claim_space(div1_nodes);
       claim_component(button2.$$.fragment, div1_nodes);
       div1_nodes.forEach(detach);
-      t3 = claim_space(nodes);
-      if (if_block)
-        if_block.l(nodes);
-      if_block_anchor = empty();
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
@@ -46462,16 +45993,11 @@ function create_if_block_2(ctx) {
       mount_component(button1, div1, null);
       append_hydration(div1, t2);
       mount_component(button2, div1, null);
-      insert_hydration(target, t3, anchor);
-      if (if_block)
-        if_block.m(target, anchor);
-      insert_hydration(target, if_block_anchor, anchor);
       current = true;
     },
     p(ctx2, dirty) {
-      var _a3;
       if (dirty[0] & /*addWidget*/
-      16384) {
+      4096) {
         each_value = ensure_array_like(widgets);
         let i2;
         for (i2 = 0; i2 < each_value.length; i2 += 1) {
@@ -46493,47 +46019,24 @@ function create_if_block_2(ctx) {
         check_outros();
       }
       const button0_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         button0_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button0.$set(button0_changes);
       const button1_changes = {};
       if (dirty[0] & /*savingDashboard*/
-      2048 | dirty[2] & /*$$scope*/
-      8) {
+      512 | dirty[1] & /*$$scope*/
+      1073741824) {
         button1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button1.$set(button1_changes);
       const button2_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         button2_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button2.$set(button2_changes);
-      if (
-        /*dashboard*/
-        ((_a3 = ctx2[10]) == null ? void 0 : _a3.source) === "localstorage"
-      ) {
-        if (if_block) {
-          if_block.p(ctx2, dirty);
-          if (dirty[0] & /*dashboard*/
-          1024) {
-            transition_in(if_block, 1);
-          }
-        } else {
-          if_block = create_if_block_3(ctx2);
-          if_block.c();
-          transition_in(if_block, 1);
-          if_block.m(if_block_anchor.parentNode, if_block_anchor);
-        }
-      } else if (if_block) {
-        group_outros();
-        transition_out(if_block, 1, 1, () => {
-          if_block = null;
-        });
-        check_outros();
-      }
     },
     i(local) {
       if (current)
@@ -46544,7 +46047,6 @@ function create_if_block_2(ctx) {
       transition_in(button0.$$.fragment, local);
       transition_in(button1.$$.fragment, local);
       transition_in(button2.$$.fragment, local);
-      transition_in(if_block);
       current = true;
     },
     o(local) {
@@ -46555,7 +46057,6 @@ function create_if_block_2(ctx) {
       transition_out(button0.$$.fragment, local);
       transition_out(button1.$$.fragment, local);
       transition_out(button2.$$.fragment, local);
-      transition_out(if_block);
       current = false;
     },
     d(detaching) {
@@ -46563,22 +46064,18 @@ function create_if_block_2(ctx) {
         detach(div0);
         detach(t0);
         detach(div1);
-        detach(t3);
-        detach(if_block_anchor);
       }
       destroy_each(each_blocks, detaching);
       destroy_component(button0);
       destroy_component(button1);
       destroy_component(button2);
-      if (if_block)
-        if_block.d(detaching);
     }
   };
 }
-function create_default_slot_18(ctx) {
+function create_default_slot_15(ctx) {
   let t_value = (
     /*widget*/
-    ctx[62].icon + ""
+    ctx[58].icon + ""
   );
   let t2;
   return {
@@ -46599,14 +46096,14 @@ function create_default_slot_18(ctx) {
     }
   };
 }
-function create_default_slot_17(ctx) {
+function create_default_slot_14(ctx) {
   let icon;
   let t2;
   let current;
   icon = new CommonIcon({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_18] },
+      $$slots: { default: [create_default_slot_15] },
       $$scope: { ctx }
     }
   });
@@ -46626,8 +46123,8 @@ function create_default_slot_17(ctx) {
     },
     p(ctx2, dirty) {
       const icon_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
@@ -46656,9 +46153,9 @@ function create_each_block(ctx) {
   function click_handler() {
     return (
       /*click_handler*/
-      ctx[33](
+      ctx[30](
         /*widget*/
-        ctx[62]
+        ctx[58]
       )
     );
   }
@@ -46668,9 +46165,9 @@ function create_each_block(ctx) {
       color: "secondary",
       title: (
         /*widget*/
-        ctx[62].label
+        ctx[58].label
       ),
-      $$slots: { default: [create_default_slot_17] },
+      $$slots: { default: [create_default_slot_14] },
       $$scope: { ctx }
     }
   });
@@ -46689,8 +46186,8 @@ function create_each_block(ctx) {
     p(new_ctx, dirty) {
       ctx = new_ctx;
       const button_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         button_changes.$$scope = { dirty, ctx };
       }
       button.$set(button_changes);
@@ -46710,7 +46207,7 @@ function create_each_block(ctx) {
     }
   };
 }
-function create_default_slot_16(ctx) {
+function create_default_slot_13(ctx) {
   let t2;
   return {
     c() {
@@ -46729,7 +46226,7 @@ function create_default_slot_16(ctx) {
     }
   };
 }
-function create_default_slot_15(ctx) {
+function create_default_slot_12(ctx) {
   let t2;
   return {
     c() {
@@ -46748,7 +46245,7 @@ function create_default_slot_15(ctx) {
     }
   };
 }
-function create_default_slot_14(ctx) {
+function create_default_slot_11(ctx) {
   let icon;
   let t2;
   let label;
@@ -46756,13 +46253,13 @@ function create_default_slot_14(ctx) {
   icon = new CommonIcon({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_16] },
+      $$slots: { default: [create_default_slot_13] },
       $$scope: { ctx }
     }
   });
   label = new CommonLabel({
     props: {
-      $$slots: { default: [create_default_slot_15] },
+      $$slots: { default: [create_default_slot_12] },
       $$scope: { ctx }
     }
   });
@@ -46785,14 +46282,14 @@ function create_default_slot_14(ctx) {
     },
     p(ctx2, dirty) {
       const icon_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const label_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         label_changes.$$scope = { dirty, ctx: ctx2 };
       }
       label.$set(label_changes);
@@ -46818,7 +46315,7 @@ function create_default_slot_14(ctx) {
     }
   };
 }
-function create_if_block_4(ctx) {
+function create_if_block_3(ctx) {
   let circularprogress;
   let current;
   circularprogress = new CircularProgress({
@@ -46853,7 +46350,7 @@ function create_if_block_4(ctx) {
     }
   };
 }
-function create_default_slot_13(ctx) {
+function create_default_slot_10(ctx) {
   let t2;
   return {
     c() {
@@ -46872,7 +46369,7 @@ function create_default_slot_13(ctx) {
     }
   };
 }
-function create_default_slot_12(ctx) {
+function create_default_slot_9(ctx) {
   let t2;
   return {
     c() {
@@ -46891,7 +46388,7 @@ function create_default_slot_12(ctx) {
     }
   };
 }
-function create_default_slot_11(ctx) {
+function create_default_slot_8(ctx) {
   let t0;
   let icon;
   let t1;
@@ -46899,18 +46396,18 @@ function create_default_slot_11(ctx) {
   let current;
   let if_block = (
     /*savingDashboard*/
-    ctx[11] && create_if_block_4()
+    ctx[9] && create_if_block_3()
   );
   icon = new CommonIcon({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_13] },
+      $$slots: { default: [create_default_slot_10] },
       $$scope: { ctx }
     }
   });
   label = new CommonLabel({
     props: {
-      $$slots: { default: [create_default_slot_12] },
+      $$slots: { default: [create_default_slot_9] },
       $$scope: { ctx }
     }
   });
@@ -46943,15 +46440,15 @@ function create_default_slot_11(ctx) {
     p(ctx2, dirty) {
       if (
         /*savingDashboard*/
-        ctx2[11]
+        ctx2[9]
       ) {
         if (if_block) {
           if (dirty[0] & /*savingDashboard*/
-          2048) {
+          512) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block_4();
+          if_block = create_if_block_3();
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(t0.parentNode, t0);
@@ -46964,14 +46461,14 @@ function create_default_slot_11(ctx) {
         check_outros();
       }
       const icon_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const label_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         label_changes.$$scope = { dirty, ctx: ctx2 };
       }
       label.$set(label_changes);
@@ -47002,7 +46499,7 @@ function create_default_slot_11(ctx) {
     }
   };
 }
-function create_default_slot_10(ctx) {
+function create_default_slot_7(ctx) {
   let t2;
   return {
     c() {
@@ -47021,7 +46518,7 @@ function create_default_slot_10(ctx) {
     }
   };
 }
-function create_default_slot_9(ctx) {
+function create_default_slot_6(ctx) {
   let t2;
   return {
     c() {
@@ -47029,227 +46526,6 @@ function create_default_slot_9(ctx) {
     },
     l(nodes) {
       t2 = claim_text(nodes, "Cancel");
-    },
-    m(target, anchor) {
-      insert_hydration(target, t2, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-    }
-  };
-}
-function create_default_slot_8(ctx) {
-  let icon;
-  let t2;
-  let label;
-  let current;
-  icon = new CommonIcon({
-    props: {
-      class: "material-icons",
-      $$slots: { default: [create_default_slot_10] },
-      $$scope: { ctx }
-    }
-  });
-  label = new CommonLabel({
-    props: {
-      $$slots: { default: [create_default_slot_9] },
-      $$scope: { ctx }
-    }
-  });
-  return {
-    c() {
-      create_component(icon.$$.fragment);
-      t2 = space();
-      create_component(label.$$.fragment);
-    },
-    l(nodes) {
-      claim_component(icon.$$.fragment, nodes);
-      t2 = claim_space(nodes);
-      claim_component(label.$$.fragment, nodes);
-    },
-    m(target, anchor) {
-      mount_component(icon, target, anchor);
-      insert_hydration(target, t2, anchor);
-      mount_component(label, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const icon_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
-        icon_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      icon.$set(icon_changes);
-      const label_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
-        label_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      label.$set(label_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(icon.$$.fragment, local);
-      transition_in(label.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(icon.$$.fragment, local);
-      transition_out(label.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-      destroy_component(icon, detaching);
-      destroy_component(label, detaching);
-    }
-  };
-}
-function create_if_block_3(ctx) {
-  let div1;
-  let div0;
-  let t0;
-  let button;
-  let t1;
-  let confirmdialog;
-  let updating_open;
-  let current;
-  button = new Button({
-    props: {
-      color: "secondary",
-      $$slots: { default: [create_default_slot_5] },
-      $$scope: { ctx }
-    }
-  });
-  button.$on(
-    "click",
-    /*click_handler_4*/
-    ctx[37]
-  );
-  function confirmdialog_open_binding(value) {
-    ctx[38](value);
-  }
-  let confirmdialog_props = {
-    text: "Are you sure you want to delete this dashboard?"
-  };
-  if (
-    /*deleteDashboardOpen*/
-    ctx[9] !== void 0
-  ) {
-    confirmdialog_props.open = /*deleteDashboardOpen*/
-    ctx[9];
-  }
-  confirmdialog = new ConfirmDialog({ props: confirmdialog_props });
-  binding_callbacks.push(() => bind(confirmdialog, "open", confirmdialog_open_binding));
-  confirmdialog.$on(
-    "confirm",
-    /*confirm_handler*/
-    ctx[39]
-  );
-  return {
-    c() {
-      div1 = element("div");
-      div0 = element("div");
-      t0 = space();
-      create_component(button.$$.fragment);
-      t1 = space();
-      create_component(confirmdialog.$$.fragment);
-      this.h();
-    },
-    l(nodes) {
-      div1 = claim_element(nodes, "DIV", {});
-      var div1_nodes = children(div1);
-      div0 = claim_element(div1_nodes, "DIV", { class: true });
-      children(div0).forEach(detach);
-      t0 = claim_space(div1_nodes);
-      claim_component(button.$$.fragment, div1_nodes);
-      t1 = claim_space(div1_nodes);
-      claim_component(confirmdialog.$$.fragment, div1_nodes);
-      div1_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div0, "class", "toolbar-spacer svelte-3bg1v");
-    },
-    m(target, anchor) {
-      insert_hydration(target, div1, anchor);
-      append_hydration(div1, div0);
-      append_hydration(div1, t0);
-      mount_component(button, div1, null);
-      append_hydration(div1, t1);
-      mount_component(confirmdialog, div1, null);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const button_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
-        button_changes.$$scope = { dirty, ctx: ctx2 };
-      }
-      button.$set(button_changes);
-      const confirmdialog_changes = {};
-      if (!updating_open && dirty[0] & /*deleteDashboardOpen*/
-      512) {
-        updating_open = true;
-        confirmdialog_changes.open = /*deleteDashboardOpen*/
-        ctx2[9];
-        add_flush_callback(() => updating_open = false);
-      }
-      confirmdialog.$set(confirmdialog_changes);
-    },
-    i(local) {
-      if (current)
-        return;
-      transition_in(button.$$.fragment, local);
-      transition_in(confirmdialog.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(button.$$.fragment, local);
-      transition_out(confirmdialog.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      destroy_component(button);
-      destroy_component(confirmdialog);
-    }
-  };
-}
-function create_default_slot_7(ctx) {
-  let t2;
-  return {
-    c() {
-      t2 = text("delete");
-    },
-    l(nodes) {
-      t2 = claim_text(nodes, "delete");
-    },
-    m(target, anchor) {
-      insert_hydration(target, t2, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t2);
-      }
-    }
-  };
-}
-function create_default_slot_6(ctx) {
-  let t2;
-  return {
-    c() {
-      t2 = text("Delete dashboard");
-    },
-    l(nodes) {
-      t2 = claim_text(nodes, "Delete dashboard");
     },
     m(target, anchor) {
       insert_hydration(target, t2, anchor);
@@ -47298,14 +46574,14 @@ function create_default_slot_5(ctx) {
     },
     p(ctx2, dirty) {
       const icon_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const label_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         label_changes.$$scope = { dirty, ctx: ctx2 };
       }
       label.$set(label_changes);
@@ -47337,13 +46613,13 @@ function create_default_slot_4(ctx) {
   let current;
   var switch_value = findWidget(
     /*dataItem*/
-    ctx[61].settings.type
+    ctx[57].settings.type
   );
   function switch_props(ctx2) {
     return {
       props: { settings: (
         /*dataItem*/
-        ctx2[61].settings
+        ctx2[57].settings
       ) }
     };
   }
@@ -47370,13 +46646,13 @@ function create_default_slot_4(ctx) {
     p(ctx2, dirty) {
       const switch_instance_changes = {};
       if (dirty[1] & /*dataItem*/
-      1073741824)
+      67108864)
         switch_instance_changes.settings = /*dataItem*/
-        ctx2[61].settings;
+        ctx2[57].settings;
       if (dirty[1] & /*dataItem*/
-      1073741824 && switch_value !== (switch_value = findWidget(
+      67108864 && switch_value !== (switch_value = findWidget(
         /*dataItem*/
-        ctx2[61].settings.type
+        ctx2[57].settings.type
       ))) {
         if (switch_instance) {
           group_outros();
@@ -47425,9 +46701,9 @@ function create_default_slot_3(ctx) {
   function fixed_handler(...args) {
     return (
       /*fixed_handler*/
-      ctx[40](
+      ctx[34](
         /*dataItem*/
-        ctx[61],
+        ctx[57],
         ...args
       )
     );
@@ -47435,27 +46711,27 @@ function create_default_slot_3(ctx) {
   function edit_handler() {
     return (
       /*edit_handler*/
-      ctx[41](
+      ctx[35](
         /*dataItem*/
-        ctx[61]
+        ctx[57]
       )
     );
   }
   function delete_handler() {
     return (
       /*delete_handler*/
-      ctx[42](
+      ctx[36](
         /*dataItem*/
-        ctx[61]
+        ctx[57]
       )
     );
   }
-  function click_handler_5() {
+  function click_handler_4() {
     return (
-      /*click_handler_5*/
-      ctx[43](
+      /*click_handler_4*/
+      ctx[37](
         /*dataItem*/
-        ctx[61]
+        ctx[57]
       )
     );
   }
@@ -47463,7 +46739,7 @@ function create_default_slot_3(ctx) {
     props: {
       fixed: (
         /*item*/
-        ctx[60].fixed ?? false
+        ctx[56].fixed ?? false
       ),
       $$slots: { default: [create_default_slot_4] },
       $$scope: { ctx }
@@ -47472,7 +46748,7 @@ function create_default_slot_3(ctx) {
   widgetcontainer.$on("fixed", fixed_handler);
   widgetcontainer.$on("edit", edit_handler);
   widgetcontainer.$on("delete", delete_handler);
-  widgetcontainer.$on("click", click_handler_5);
+  widgetcontainer.$on("click", click_handler_4);
   return {
     c() {
       create_component(widgetcontainer.$$.fragment);
@@ -47488,12 +46764,11 @@ function create_default_slot_3(ctx) {
       ctx = new_ctx;
       const widgetcontainer_changes = {};
       if (dirty[1] & /*item*/
-      536870912)
+      33554432)
         widgetcontainer_changes.fixed = /*item*/
-        ctx[60].fixed ?? false;
-      if (dirty[1] & /*dataItem*/
-      1073741824 | dirty[2] & /*$$scope*/
-      8) {
+        ctx[56].fixed ?? false;
+      if (dirty[1] & /*$$scope, dataItem*/
+      1140850688) {
         widgetcontainer_changes.$$scope = { dirty, ctx };
       }
       widgetcontainer.$set(widgetcontainer_changes);
@@ -47669,8 +46944,8 @@ function create_default_slot_1(ctx) {
     },
     p(ctx2, dirty) {
       const iconbutton_changes = {};
-      if (dirty[2] & /*$$scope*/
-      8) {
+      if (dirty[1] & /*$$scope*/
+      1073741824) {
         iconbutton_changes.$$scope = { dirty, ctx: ctx2 };
       }
       iconbutton.$set(iconbutton_changes);
@@ -47738,7 +47013,7 @@ function create_default_slot(ctx) {
     ctx[1] && create_if_block_2(ctx)
   );
   function grid_1_items_binding(value) {
-    ctx[44](value);
+    ctx[38](value);
   }
   let grid_1_props = {
     fastStart: true,
@@ -47748,14 +47023,14 @@ function create_default_slot(ctx) {
     ),
     gap: (
       /*$grid*/
-      ctx[13].gaps
+      ctx[11].gaps
     ),
     rowHeight: 50,
     $$slots: {
       default: [
         create_default_slot_3,
-        ({ item, dataItem }) => ({ 60: item, 61: dataItem }),
-        ({ item, dataItem }) => [0, (item ? 536870912 : 0) | (dataItem ? 1073741824 : 0)]
+        ({ item, dataItem }) => ({ 56: item, 57: dataItem }),
+        ({ item, dataItem }) => [0, (item ? 33554432 : 0) | (dataItem ? 67108864 : 0)]
       ]
     },
     $$scope: { ctx }
@@ -47772,15 +47047,15 @@ function create_default_slot(ctx) {
   grid_1.$on(
     "mount",
     /*mount_handler*/
-    ctx[45]
+    ctx[39]
   );
   grid_1.$on(
     "resize",
     /*resize_handler*/
-    ctx[46]
+    ctx[40]
   );
   function dialog_open_binding(value) {
-    ctx[47](value);
+    ctx[41](value);
   }
   let dialog_props = {
     fullscreen: true,
@@ -47799,7 +47074,7 @@ function create_default_slot(ctx) {
   dialog = new Dialog({ props: dialog_props });
   binding_callbacks.push(() => bind(dialog, "open", dialog_open_binding));
   function addwidgetdialog_open_binding(value) {
-    ctx[48](value);
+    ctx[42](value);
   }
   let addwidgetdialog_props = {};
   if (
@@ -47814,7 +47089,7 @@ function create_default_slot(ctx) {
   addwidgetdialog.$on(
     "selected",
     /*selected_handler*/
-    ctx[49]
+    ctx[43]
   );
   return {
     c() {
@@ -47844,7 +47119,7 @@ function create_default_slot(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "align-center overflow-wrap svelte-3bg1v");
+      attr(div, "class", "align-center overflow-wrap svelte-hh8u1");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);
@@ -47884,12 +47159,11 @@ function create_default_slot(ctx) {
       }
       const grid_1_changes = {};
       if (dirty[0] & /*$grid*/
-      8192)
+      2048)
         grid_1_changes.gap = /*$grid*/
-        ctx2[13].gaps;
-      if (dirty[1] & /*item, dataItem*/
-      1610612736 | dirty[2] & /*$$scope*/
-      8) {
+        ctx2[11].gaps;
+      if (dirty[1] & /*$$scope, item, dataItem*/
+      1174405120) {
         grid_1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_items && dirty[0] & /*items*/
@@ -47902,8 +47176,8 @@ function create_default_slot(ctx) {
       grid_1.$set(grid_1_changes);
       const dialog_changes = {};
       if (dirty[0] & /*viewComponent, viewItem*/
-      48 | dirty[2] & /*$$scope*/
-      8) {
+      48 | dirty[1] & /*$$scope*/
+      1073741824) {
         dialog_changes.$$scope = { dirty, ctx: ctx2 };
       }
       if (!updating_open && dirty[0] & /*viewOpen*/
@@ -47960,7 +47234,7 @@ function create_fragment(ctx) {
   let current;
   let if_block = (
     /*$homey*/
-    ctx[12] !== void 0 && create_if_block(ctx)
+    ctx[10] !== void 0 && create_if_block(ctx)
   );
   return {
     c() {
@@ -47982,12 +47256,12 @@ function create_fragment(ctx) {
     p(ctx2, dirty) {
       if (
         /*$homey*/
-        ctx2[12] !== void 0
+        ctx2[10] !== void 0
       ) {
         if (if_block) {
           if_block.p(ctx2, dirty);
           if (dirty[0] & /*$homey*/
-          4096) {
+          1024) {
             transition_in(if_block, 1);
           }
         } else {
@@ -48043,14 +47317,14 @@ function instance($$self, $$props, $$invalidate) {
   let $localDashboards;
   let $homeyDashboards;
   let $grid;
-  component_subscribe($$self, homey, ($$value) => $$invalidate(12, $homey = $$value));
-  component_subscribe($$self, scopes, ($$value) => $$invalidate(51, $scopes = $$value));
-  component_subscribe($$self, devices, ($$value) => $$invalidate(52, $devices = $$value));
+  component_subscribe($$self, homey, ($$value) => $$invalidate(10, $homey = $$value));
+  component_subscribe($$self, scopes, ($$value) => $$invalidate(46, $scopes = $$value));
+  component_subscribe($$self, devices, ($$value) => $$invalidate(47, $devices = $$value));
   component_subscribe($$self, editing, ($$value) => $$invalidate(1, $editing = $$value));
-  component_subscribe($$self, page, ($$value) => $$invalidate(28, $page = $$value));
-  component_subscribe($$self, dashboards, ($$value) => $$invalidate(29, $localDashboards = $$value));
-  component_subscribe($$self, dashboards$1, ($$value) => $$invalidate(30, $homeyDashboards = $$value));
-  component_subscribe($$self, grid, ($$value) => $$invalidate(13, $grid = $$value));
+  component_subscribe($$self, page, ($$value) => $$invalidate(25, $page = $$value));
+  component_subscribe($$self, dashboards, ($$value) => $$invalidate(26, $localDashboards = $$value));
+  component_subscribe($$self, dashboards$1, ($$value) => $$invalidate(27, $homeyDashboards = $$value));
+  component_subscribe($$self, grid, ($$value) => $$invalidate(11, $grid = $$value));
   const breakpoints = [smallBreakpoint, mediumBreakpoint, largeBreakpoint, xlargeBreakpoint];
   const columns = [smallColumns, mediumColumns, largeColumns, xlargeColumns];
   const breakpointColumns = [
@@ -48066,7 +47340,6 @@ function instance($$self, $$props, $$invalidate) {
   let editOpen = false;
   let editItem;
   let addWidgetOpen = false;
-  let deleteDashboardOpen = false;
   let dashboard$1;
   let savingDashboard = false;
   let heartbeat;
@@ -48081,7 +47354,7 @@ function instance($$self, $$props, $$invalidate) {
   function onDashboard(d3) {
     if (d3 !== void 0 && !$editing && d3.items !== items) {
       dashboard.set(d3);
-      $$invalidate(10, dashboard$1 = d3);
+      dashboard$1 = d3;
       $$invalidate(2, items = migrateWidgets(d3.items));
     }
   }
@@ -48186,8 +47459,8 @@ function instance($$self, $$props, $$invalidate) {
       editing.set(false);
       return;
     } else {
-      $$invalidate(11, savingDashboard = true);
-      $$invalidate(10, dashboard$1.items = items, dashboard$1);
+      $$invalidate(9, savingDashboard = true);
+      dashboard$1.items = items;
       if (dashboard$1.source === "localstorage") {
         const d3 = { ...dashboard$1, items: stripGrid(items) };
         dashboards.update(d3);
@@ -48226,7 +47499,7 @@ function instance($$self, $$props, $$invalidate) {
         }
       }
     }
-    $$invalidate(11, savingDashboard = false);
+    $$invalidate(9, savingDashboard = false);
     editing.set(false);
   }
   function cancelDashboard() {
@@ -48235,14 +47508,6 @@ function instance($$self, $$props, $$invalidate) {
     }
     $$invalidate(2, items = migrateWidgets(dashboard$1.items ?? []));
     editing.set(false);
-  }
-  async function deleteDashboard() {
-    if (dashboard$1 === void 0) {
-      return;
-    }
-    dashboards.delete(dashboard$1);
-    editing.set(false);
-    await goto(base + "/");
   }
   function stripGrid(i2) {
     const result = [...i2];
@@ -48279,16 +47544,10 @@ function instance($$self, $$props, $$invalidate) {
   const click_handler_1 = () => $$invalidate(8, addWidgetOpen = true);
   const click_handler_2 = () => saveDashboard();
   const click_handler_3 = () => cancelDashboard();
-  const click_handler_4 = () => $$invalidate(9, deleteDashboardOpen = true);
-  function confirmdialog_open_binding(value) {
-    deleteDashboardOpen = value;
-    $$invalidate(9, deleteDashboardOpen);
-  }
-  const confirm_handler = async () => deleteDashboard();
   const fixed_handler = (dataItem, e2) => setItemFixed(dataItem.id, e2.detail);
   const edit_handler = (dataItem) => editWidget(dataItem);
   const delete_handler = (dataItem) => removeItem(dataItem.id);
-  const click_handler_5 = (dataItem) => openView(dataItem);
+  const click_handler_4 = (dataItem) => openView(dataItem);
   function grid_1_items_binding(value) {
     items = value;
     $$invalidate(2, items);
@@ -48306,19 +47565,19 @@ function instance($$self, $$props, $$invalidate) {
   const selected_handler = (e2) => addWidget(e2.detail);
   $$self.$$.update = () => {
     if ($$self.$$.dirty[0] & /*$homeyDashboards, $localDashboards*/
-    1610612736) {
-      $$invalidate(27, dashboards$2 = { ...$homeyDashboards, ...$localDashboards });
+    201326592) {
+      $$invalidate(24, dashboards$2 = { ...$homeyDashboards, ...$localDashboards });
     }
     if ($$self.$$.dirty[0] & /*$page*/
-    268435456) {
-      $$invalidate(26, dashboardId = $page.url.searchParams.get("id"));
+    33554432) {
+      $$invalidate(23, dashboardId = $page.url.searchParams.get("id"));
     }
     if ($$self.$$.dirty[0] & /*dashboardId, dashboards*/
-    201326592) {
-      $$invalidate(25, resolvedDashboard = dashboardId !== null ? dashboards$2[dashboardId] : void 0);
+    25165824) {
+      $$invalidate(22, resolvedDashboard = dashboardId !== null ? dashboards$2[dashboardId] : void 0);
     }
     if ($$self.$$.dirty[0] & /*resolvedDashboard*/
-    33554432) {
+    4194304) {
       onDashboard(resolvedDashboard);
     }
     if ($$self.$$.dirty[0] & /*$editing*/
@@ -48336,8 +47595,6 @@ function instance($$self, $$props, $$invalidate) {
     editOpen,
     editItem,
     addWidgetOpen,
-    deleteDashboardOpen,
-    dashboard$1,
     savingDashboard,
     $homey,
     $grid,
@@ -48349,7 +47606,6 @@ function instance($$self, $$props, $$invalidate) {
     setItemFixed,
     saveDashboard,
     cancelDashboard,
-    deleteDashboard,
     breakpoints,
     columns,
     resolvedDashboard,
@@ -48364,13 +47620,10 @@ function instance($$self, $$props, $$invalidate) {
     click_handler_1,
     click_handler_2,
     click_handler_3,
-    click_handler_4,
-    confirmdialog_open_binding,
-    confirm_handler,
     fixed_handler,
     edit_handler,
     delete_handler,
-    click_handler_5,
+    click_handler_4,
     grid_1_items_binding,
     mount_handler,
     resize_handler,
@@ -48389,19 +47642,19 @@ class Page extends SvelteComponent {
       create_fragment,
       safe_not_equal,
       {
-        breakpoints: 23,
-        columns: 24,
+        breakpoints: 20,
+        columns: 21,
         breakpointColumns: 0
       },
       null,
-      [-1, -1, -1]
+      [-1, -1]
     );
   }
   get breakpoints() {
-    return this.$$.ctx[23];
+    return this.$$.ctx[20];
   }
   get columns() {
-    return this.$$.ctx[24];
+    return this.$$.ctx[21];
   }
   get breakpointColumns() {
     return this.$$.ctx[0];

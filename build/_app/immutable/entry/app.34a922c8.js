@@ -1,5 +1,5 @@
-import { s as safe_not_equal, a as space, e as empty, c as claim_space, i as insert_hydration, d as detach, b as afterUpdate, o as onMount, f as element, g as claim_element, h as children, j as attr, k as set_style, l as text, m as claim_text, n as set_data, p as binding_callbacks, q as construct_svelte_component } from "../chunks/scheduler.8ee754c3.js";
-import { S as SvelteComponent, i as init, t as transition_out, c as check_outros, a as transition_in, g as group_outros, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "../chunks/index.09d54507.js";
+import { s as safe_not_equal, a as space, e as empty, c as claim_space, i as insert_hydration, d as detach, b as afterUpdate, o as onMount, f as element, g as claim_element, h as children, j as attr, k as set_style, l as text, m as claim_text, n as set_data, p as binding_callbacks, q as construct_svelte_component } from "../chunks/scheduler.9514346f.js";
+import { S as SvelteComponent, i as init, t as transition_out, c as check_outros, a as transition_in, g as group_outros, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "../chunks/index.6fa96164.js";
 const scriptRel = "modulepreload";
 const assetsURL = function(dep, importerUrl) {
   return new URL(dep, importerUrl).href;
@@ -639,17 +639,19 @@ class Root extends SvelteComponent {
   }
 }
 const nodes = [
-  () => __vitePreload(() => import("../nodes/0.bcab1cc0.js"), true ? ["..\\nodes\\0.bcab1cc0.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\Textfield.d6643f18.js","..\\chunks\\singletons.8357046b.js","..\\chunks\\homey.4392b2cf.js","..\\chunks\\stores.38c3cb09.js","..\\chunks\\Actions.7e157a1c.js","..\\chunks\\HomeyAPI.bcba2150.js","..\\chunks\\AthomCloudAPI.7aecdafb.js","..\\assets\\0.405e751e.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/1.35889fe4.js"), true ? ["..\\nodes\\1.35889fe4.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\stores.38c3cb09.js","..\\chunks\\singletons.8357046b.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/2.e83118e7.js"), true ? ["..\\nodes\\2.e83118e7.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\ActionIcons.8d3833e6.js","..\\chunks\\index.09d54507.js","..\\chunks\\Textfield.d6643f18.js","..\\chunks\\singletons.8357046b.js","..\\chunks\\homey.4392b2cf.js","..\\chunks\\stores.38c3cb09.js","..\\chunks\\HomeyAPI.bcba2150.js","..\\chunks\\AthomCloudAPI.7aecdafb.js","..\\assets\\2.ffac3891.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/3.22fa3e22.js"), true ? ["..\\nodes\\3.22fa3e22.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\Textfield.d6643f18.js","..\\chunks\\singletons.8357046b.js","..\\chunks\\homey.4392b2cf.js","..\\chunks\\stores.38c3cb09.js","..\\chunks\\Actions.7e157a1c.js","..\\chunks\\ActionIcons.8d3833e6.js","..\\assets\\3.60e1e740.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/4.37b7561b.js"), true ? ["..\\nodes\\4.37b7561b.js","..\\chunks\\scheduler.8ee754c3.js","..\\chunks\\index.09d54507.js","..\\chunks\\stores.38c3cb09.js","..\\chunks\\singletons.8357046b.js","..\\chunks\\AthomCloudAPI.7aecdafb.js","..\\chunks\\homey.4392b2cf.js"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("../nodes/0.0f4a95c8.js"), true ? ["..\\nodes\\0.0f4a95c8.js","..\\chunks\\scheduler.9514346f.js","..\\chunks\\index.6fa96164.js","..\\chunks\\Textfield.d226c201.js","..\\chunks\\singletons.f80bfd01.js","..\\chunks\\navigation.772a0448.js","..\\chunks\\homey.2e577cb9.js","..\\chunks\\stores.67d0b73f.js","..\\chunks\\Actions.88e01790.js","..\\chunks\\HomeyAPI.e6434c35.js","..\\chunks\\AthomCloudAPI.26f1365a.js","..\\chunks\\SelectionGroupIcon.4dfdb9ee.js","..\\chunks\\Subheader.f7cf0a21.js","..\\assets\\0.405e751e.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/1.2a116694.js"), true ? ["..\\nodes\\1.2a116694.js","..\\chunks\\scheduler.9514346f.js","..\\chunks\\index.6fa96164.js","..\\chunks\\stores.67d0b73f.js","..\\chunks\\singletons.f80bfd01.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/2.8a1e48b5.js"), true ? ["..\\nodes\\2.8a1e48b5.js","..\\chunks\\scheduler.9514346f.js","..\\chunks\\ActionIcons.6f4031dd.js","..\\chunks\\index.6fa96164.js","..\\chunks\\Textfield.d226c201.js","..\\chunks\\singletons.f80bfd01.js","..\\chunks\\Subheader.f7cf0a21.js","..\\chunks\\homey.2e577cb9.js","..\\chunks\\stores.67d0b73f.js","..\\chunks\\HomeyAPI.e6434c35.js","..\\chunks\\AthomCloudAPI.26f1365a.js","..\\chunks\\navigation.772a0448.js","..\\assets\\2.ffac3891.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/3.a4e3084b.js"), true ? ["..\\nodes\\3.a4e3084b.js","..\\chunks\\scheduler.9514346f.js","..\\chunks\\index.6fa96164.js","..\\chunks\\Textfield.d226c201.js","..\\chunks\\singletons.f80bfd01.js","..\\chunks\\stores.67d0b73f.js","..\\chunks\\homey.2e577cb9.js","..\\chunks\\Actions.88e01790.js","..\\chunks\\SelectionGroupIcon.4dfdb9ee.js","..\\chunks\\Subheader.f7cf0a21.js","..\\chunks\\ActionIcons.6f4031dd.js","..\\assets\\3.98e0ff6c.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/4.844c58fd.js"), true ? ["..\\nodes\\4.844c58fd.js","..\\chunks\\scheduler.9514346f.js","..\\chunks\\index.6fa96164.js","..\\chunks\\navigation.772a0448.js","..\\chunks\\singletons.f80bfd01.js","..\\chunks\\stores.67d0b73f.js","..\\chunks\\homey.2e577cb9.js","..\\chunks\\Textfield.d226c201.js","..\\chunks\\Actions.88e01790.js","..\\assets\\4.de788269.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/5.3527a750.js"), true ? ["..\\nodes\\5.3527a750.js","..\\chunks\\scheduler.9514346f.js","..\\chunks\\index.6fa96164.js","..\\chunks\\stores.67d0b73f.js","..\\chunks\\singletons.f80bfd01.js","..\\chunks\\AthomCloudAPI.26f1365a.js","..\\chunks\\navigation.772a0448.js","..\\chunks\\homey.2e577cb9.js"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {
   "/": [2],
   "/board": [3],
-  "/oauth2/callback": [4]
+  "/board/settings": [4],
+  "/oauth2/callback": [5]
 };
 const hooks = {
   handleError: ({ error }) => {

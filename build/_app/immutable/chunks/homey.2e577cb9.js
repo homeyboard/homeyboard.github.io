@@ -1,6 +1,5 @@
-import { j as client_method, k as derived, w as writable } from "./singletons.8357046b.js";
-import { p as page } from "./stores.38c3cb09.js";
-const goto = /* @__PURE__ */ client_method("goto");
+import { k as derived, w as writable } from "./singletons.f80bfd01.js";
+import { p as page } from "./stores.67d0b73f.js";
 const driverId = "homey:app:skogsaas.dashboards:dashboard";
 const webhookUrl = "https://webhooks.athom.com/webhook/";
 const webhookId = "64e39774cf7cc10b916174a7";
@@ -34,8 +33,8 @@ function createDevices() {
   return {
     subscribe,
     set,
-    onDevice: (patch) => update((existing) => onDevice(existing, patch)),
-    onCapability: (deviceId, event) => update((existing) => onCapability(existing, deviceId, event))
+    onDevice: (patch) => update((existing) => onDevice(existing, patch))
+    //onCapability: (deviceId: string, event: CapabilityEvent) => update((existing: DeviceMap) => onCapability(existing, deviceId, event))
   };
 }
 function onDevice(existing, patch) {
@@ -43,13 +42,6 @@ function onDevice(existing, patch) {
   const copy = { ...existing };
   copy[deviceId] = { ...existing[deviceId], ...patch };
   return copy;
-}
-function onCapability(existing, deviceId, event) {
-  const device = existing[deviceId];
-  const capability = device.capabilitiesObj[event.capabilityId];
-  capability.value = event.value;
-  capability.lastUpdated.setUTCMilliseconds(event.transactionTime);
-  return { ...existing };
 }
 function createBasicFlows() {
   const { subscribe, set, update } = writable({});
@@ -121,8 +113,7 @@ export {
   basicFlows as i,
   advancedFlows as j,
   insights as k,
-  goto as l,
-  webhookId as m,
+  webhookId as l,
   scopes as s,
   webhookUrl as w,
   zones as z

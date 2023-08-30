@@ -1,11 +1,14 @@
-import { s as safe_not_equal, r as create_slot, u as assign, f as element, g as claim_element, h as children, d as detach, v as set_attributes, i as insert_hydration, w as listen, x as action_destroyer, y as update_slot_base, z as get_all_dirty_from_scope, A as get_slot_changes, B as is_function, C as run_all, D as compute_rest_props, E as get_current_component, o as onMount, F as exclude_internal_props, p as binding_callbacks, G as setContext, q as construct_svelte_component, e as empty, H as noop, I as subscribe, J as add_flush_callback, K as createEventDispatcher, a as space, c as claim_space, l as text, m as claim_text, L as head_selector, M as component_subscribe, j as attr, N as append_hydration, n as set_data, O as destroy_each } from "../chunks/scheduler.8ee754c3.js";
-import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.09d54507.js";
-import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, T as Textfield, B as Button, C as CommonLabel, h as dashboards, v as v4, i as CircularProgress, j as Text, L as List, k as ensure_array_like, I as Item } from "../chunks/Textfield.d6643f18.js";
-import { c as clientId, a as clientSecret, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as basicFlows, j as advancedFlows, k as insights, z as zones, l as goto } from "../chunks/homey.4392b2cf.js";
-import { r as readable, e as base } from "../chunks/singletons.8357046b.js";
-import { g as globals, D as Dialog, T as Title, C as Content, A as Actions, d as dashboard, e as editing, I as IconButton, M as Menu, a as CommonIcon } from "../chunks/Actions.7e157a1c.js";
-import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.bcba2150.js";
-import { A as AthomCloudAPI } from "../chunks/AthomCloudAPI.7aecdafb.js";
+import { s as safe_not_equal, r as create_slot, u as assign, f as element, g as claim_element, h as children, d as detach, v as set_attributes, i as insert_hydration, w as listen, x as action_destroyer, y as update_slot_base, z as get_all_dirty_from_scope, A as get_slot_changes, B as is_function, C as run_all, D as compute_rest_props, E as get_current_component, o as onMount, F as exclude_internal_props, p as binding_callbacks, G as setContext, q as construct_svelte_component, e as empty, H as noop, I as subscribe, J as add_flush_callback, K as createEventDispatcher, a as space, c as claim_space, l as text, m as claim_text, L as head_selector, M as component_subscribe, j as attr, N as append_hydration, n as set_data, O as destroy_each } from "../chunks/scheduler.9514346f.js";
+import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.6fa96164.js";
+import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, T as Textfield, B as Button, C as CommonLabel, h as dashboards, v as v4, i as CircularProgress, j as ensure_array_like } from "../chunks/Textfield.d226c201.js";
+import { g as goto } from "../chunks/navigation.772a0448.js";
+import { r as readable, e as base } from "../chunks/singletons.f80bfd01.js";
+import { c as clientId, a as clientSecret, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as basicFlows, j as advancedFlows, k as insights, z as zones } from "../chunks/homey.2e577cb9.js";
+import { g as globals, D as Dialog, T as Title, C as Content, A as Actions, d as dashboard, e as editing, a as CommonIcon } from "../chunks/Actions.88e01790.js";
+import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.e6434c35.js";
+import { I as IconButton, M as Menu } from "../chunks/SelectionGroupIcon.4dfdb9ee.js";
+import { T as Text, L as List, I as Item } from "../chunks/Subheader.f7cf0a21.js";
+import { A as AthomCloudAPI } from "../chunks/AthomCloudAPI.26f1365a.js";
 const ssr = false;
 const trailingSlash = "always";
 const prerender = true;
@@ -1732,7 +1735,7 @@ function create_default_slot$1(ctx) {
   });
   content = new Content({
     props: {
-      style: "margin: 5px;",
+      style: "margin: 10px;",
       $$slots: { default: [create_default_slot_6$1] },
       $$scope: { ctx }
     }
@@ -1911,7 +1914,7 @@ class AddDashboardDialog extends SvelteComponent {
 const _layout_svelte_svelte_type_style_lang = "";
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[34] = list[i];
+  child_ctx[36] = list[i];
   return child_ctx;
 }
 function create_if_block_1(ctx) {
@@ -1930,7 +1933,7 @@ function create_if_block_1(ctx) {
     $$scope: { ctx }
   };
   topappbar = new TopAppBar({ props: topappbar_props });
-  ctx[23](topappbar);
+  ctx[25](topappbar);
   let if_block0 = !/*topBarCollapsed*/
   ctx[1] && create_if_block_3(ctx);
   let if_block1 = (
@@ -1945,7 +1948,7 @@ function create_if_block_1(ctx) {
     default_slot_template,
     ctx,
     /*$$scope*/
-    ctx[24],
+    ctx[26],
     null
   );
   return {
@@ -1993,8 +1996,8 @@ function create_if_block_1(ctx) {
       2)
         topappbar_changes.collapsed = /*topBarCollapsed*/
         ctx2[1];
-      if (dirty[0] & /*$$scope, addDashboardOpen, topBarCollapsed, $editing, $dashboard, dashboardMenu, dashboards*/
-      16778098) {
+      if (dirty[0] & /*$$scope, addDashboardOpen, $dashboard, topBarCollapsed, $editing, dashboardMenu, dashboards*/
+      67109746) {
         topappbar_changes.$$scope = { dirty, ctx: ctx2 };
       }
       topappbar.$set(topappbar_changes);
@@ -2036,20 +2039,20 @@ function create_if_block_1(ctx) {
       }
       if (default_slot) {
         if (default_slot.p && (!current || dirty[0] & /*$$scope*/
-        16777216)) {
+        67108864)) {
           update_slot_base(
             default_slot,
             default_slot_template,
             ctx2,
             /*$$scope*/
-            ctx2[24],
+            ctx2[26],
             !current ? get_all_dirty_from_scope(
               /*$$scope*/
-              ctx2[24]
+              ctx2[26]
             ) : get_slot_changes(
               default_slot_template,
               /*$$scope*/
-              ctx2[24],
+              ctx2[26],
               dirty,
               null
             ),
@@ -2078,7 +2081,7 @@ function create_if_block_1(ctx) {
         detach(t1);
         detach(t2);
       }
-      ctx[23](null);
+      ctx[25](null);
       destroy_component(topappbar, detaching);
       if (if_block0)
         if_block0.d(detaching);
@@ -2139,7 +2142,7 @@ function create_if_block(ctx) {
     }
   };
 }
-function create_default_slot_16(ctx) {
+function create_default_slot_19(ctx) {
   let t;
   return {
     c() {
@@ -2158,7 +2161,7 @@ function create_default_slot_16(ctx) {
     }
   };
 }
-function create_if_block_5(ctx) {
+function create_if_block_6(ctx) {
   let iconbutton;
   let t0;
   let menu;
@@ -2168,7 +2171,7 @@ function create_if_block_5(ctx) {
   iconbutton = new IconButton({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_15] },
+      $$slots: { default: [create_default_slot_18] },
       $$scope: { ctx }
     }
   });
@@ -2178,14 +2181,14 @@ function create_if_block_5(ctx) {
     ctx[16]
   );
   let menu_props = {
-    $$slots: { default: [create_default_slot_11] },
+    $$slots: { default: [create_default_slot_14] },
     $$scope: { ctx }
   };
   menu = new Menu({ props: menu_props });
   ctx[18](menu);
   let if_block = (
     /*$dashboard*/
-    ctx[8] !== void 0 && create_if_block_6(ctx)
+    ctx[8] !== void 0 && create_if_block_7(ctx)
   );
   return {
     c() {
@@ -2219,13 +2222,13 @@ function create_if_block_5(ctx) {
     p(ctx2, dirty) {
       const iconbutton_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         iconbutton_changes.$$scope = { dirty, ctx: ctx2 };
       }
       iconbutton.$set(iconbutton_changes);
       const menu_changes = {};
       if (dirty[0] & /*$$scope, dashboards*/
-      16777280) {
+      67108928) {
         menu_changes.$$scope = { dirty, ctx: ctx2 };
       }
       menu.$set(menu_changes);
@@ -2240,7 +2243,7 @@ function create_if_block_5(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block_6(ctx2);
+          if_block = create_if_block_7(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -2281,7 +2284,7 @@ function create_if_block_5(ctx) {
     }
   };
 }
-function create_default_slot_15(ctx) {
+function create_default_slot_18(ctx) {
   let t;
   return {
     c() {
@@ -2300,10 +2303,10 @@ function create_default_slot_15(ctx) {
     }
   };
 }
-function create_default_slot_14(ctx) {
+function create_default_slot_17(ctx) {
   let t_value = (
-    /*dashboard*/
-    ctx[34].title + ""
+    /*d*/
+    ctx[36].title + ""
   );
   let t;
   return {
@@ -2318,8 +2321,8 @@ function create_default_slot_14(ctx) {
     },
     p(ctx2, dirty) {
       if (dirty[0] & /*dashboards*/
-      64 && t_value !== (t_value = /*dashboard*/
-      ctx2[34].title + ""))
+      64 && t_value !== (t_value = /*d*/
+      ctx2[36].title + ""))
         set_data(t, t_value);
     },
     d(detaching) {
@@ -2329,13 +2332,13 @@ function create_default_slot_14(ctx) {
     }
   };
 }
-function create_default_slot_13(ctx) {
+function create_default_slot_16(ctx) {
   let text_1;
   let t;
   let current;
   text_1 = new Text({
     props: {
-      $$slots: { default: [create_default_slot_14] },
+      $$slots: { default: [create_default_slot_17] },
       $$scope: { ctx }
     }
   });
@@ -2356,7 +2359,7 @@ function create_default_slot_13(ctx) {
     p(ctx2, dirty) {
       const text_1_changes = {};
       if (dirty[0] & /*$$scope, dashboards*/
-      16777280) {
+      67108928) {
         text_1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       text_1.$set(text_1_changes);
@@ -2386,14 +2389,14 @@ function create_each_block(ctx) {
     return (
       /*SMUI_action_handler*/
       ctx[17](
-        /*dashboard*/
-        ctx[34]
+        /*d*/
+        ctx[36]
       )
     );
   }
   item = new Item({
     props: {
-      $$slots: { default: [create_default_slot_13] },
+      $$slots: { default: [create_default_slot_16] },
       $$scope: { ctx }
     }
   });
@@ -2413,7 +2416,7 @@ function create_each_block(ctx) {
       ctx = new_ctx;
       const item_changes = {};
       if (dirty[0] & /*$$scope, dashboards*/
-      16777280) {
+      67108928) {
         item_changes.$$scope = { dirty, ctx };
       }
       item.$set(item_changes);
@@ -2433,7 +2436,7 @@ function create_each_block(ctx) {
     }
   };
 }
-function create_default_slot_12(ctx) {
+function create_default_slot_15(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
@@ -2519,12 +2522,12 @@ function create_default_slot_12(ctx) {
     }
   };
 }
-function create_default_slot_11(ctx) {
+function create_default_slot_14(ctx) {
   let list;
   let current;
   list = new List({
     props: {
-      $$slots: { default: [create_default_slot_12] },
+      $$slots: { default: [create_default_slot_15] },
       $$scope: { ctx }
     }
   });
@@ -2542,7 +2545,7 @@ function create_default_slot_11(ctx) {
     p(ctx2, dirty) {
       const list_changes = {};
       if (dirty[0] & /*$$scope, dashboards*/
-      16777280) {
+      67108928) {
         list_changes.$$scope = { dirty, ctx: ctx2 };
       }
       list.$set(list_changes);
@@ -2562,15 +2565,21 @@ function create_default_slot_11(ctx) {
     }
   };
 }
-function create_if_block_6(ctx) {
+function create_if_block_7(ctx) {
   let text_1;
   let current;
   text_1 = new Text({
     props: {
-      $$slots: { default: [create_default_slot_10] },
+      style: "cursor: pointer;",
+      $$slots: { default: [create_default_slot_13] },
       $$scope: { ctx }
     }
   });
+  text_1.$on(
+    "click",
+    /*click_handler_2*/
+    ctx[19]
+  );
   return {
     c() {
       create_component(text_1.$$.fragment);
@@ -2585,7 +2594,7 @@ function create_if_block_6(ctx) {
     p(ctx2, dirty) {
       const text_1_changes = {};
       if (dirty[0] & /*$$scope, $dashboard*/
-      16777472) {
+      67109120) {
         text_1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       text_1.$set(text_1_changes);
@@ -2605,7 +2614,7 @@ function create_if_block_6(ctx) {
     }
   };
 }
-function create_default_slot_10(ctx) {
+function create_default_slot_13(ctx) {
   let t_value = (
     /*$dashboard*/
     ctx[8].title + ""
@@ -2634,7 +2643,7 @@ function create_default_slot_10(ctx) {
     }
   };
 }
-function create_default_slot_9(ctx) {
+function create_default_slot_12(ctx) {
   let iconbutton;
   let t;
   let if_block_anchor;
@@ -2642,7 +2651,7 @@ function create_default_slot_9(ctx) {
   iconbutton = new IconButton({
     props: {
       class: "material-icons",
-      $$slots: { default: [create_default_slot_16] },
+      $$slots: { default: [create_default_slot_19] },
       $$scope: { ctx }
     }
   });
@@ -2652,7 +2661,7 @@ function create_default_slot_9(ctx) {
     ctx[15]
   );
   let if_block = !/*topBarCollapsed*/
-  ctx[1] && create_if_block_5(ctx);
+  ctx[1] && create_if_block_6(ctx);
   return {
     c() {
       create_component(iconbutton.$$.fragment);
@@ -2679,7 +2688,7 @@ function create_default_slot_9(ctx) {
     p(ctx2, dirty) {
       const iconbutton_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         iconbutton_changes.$$scope = { dirty, ctx: ctx2 };
       }
       iconbutton.$set(iconbutton_changes);
@@ -2692,7 +2701,7 @@ function create_default_slot_9(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block_5(ctx2);
+          if_block = create_if_block_6(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -2733,33 +2742,38 @@ function create_if_block_4(ctx) {
   let t0;
   let button1;
   let t1;
+  let t2;
   let adddashboarddialog;
   let updating_open;
   let current;
   button0 = new Button({
     props: {
-      $$slots: { default: [create_default_slot_6] },
+      $$slots: { default: [create_default_slot_9] },
       $$scope: { ctx }
     }
   });
   button0.$on(
     "click",
-    /*click_handler_2*/
-    ctx[19]
+    /*click_handler_3*/
+    ctx[20]
   );
   button1 = new Button({
     props: {
-      $$slots: { default: [create_default_slot_3] },
+      $$slots: { default: [create_default_slot_6] },
       $$scope: { ctx }
     }
   });
   button1.$on(
     "click",
-    /*click_handler_3*/
-    ctx[20]
+    /*click_handler_4*/
+    ctx[21]
+  );
+  let if_block = (
+    /*$dashboard*/
+    ctx[8] !== void 0 && create_if_block_5(ctx)
   );
   function adddashboarddialog_open_binding(value) {
-    ctx[21](value);
+    ctx[23](value);
   }
   let adddashboarddialog_props = {};
   if (
@@ -2774,7 +2788,7 @@ function create_if_block_4(ctx) {
   adddashboarddialog.$on(
     "value",
     /*value_handler*/
-    ctx[22]
+    ctx[24]
   );
   return {
     c() {
@@ -2782,6 +2796,9 @@ function create_if_block_4(ctx) {
       t0 = space();
       create_component(button1.$$.fragment);
       t1 = space();
+      if (if_block)
+        if_block.c();
+      t2 = space();
       create_component(adddashboarddialog.$$.fragment);
     },
     l(nodes) {
@@ -2789,6 +2806,9 @@ function create_if_block_4(ctx) {
       t0 = claim_space(nodes);
       claim_component(button1.$$.fragment, nodes);
       t1 = claim_space(nodes);
+      if (if_block)
+        if_block.l(nodes);
+      t2 = claim_space(nodes);
       claim_component(adddashboarddialog.$$.fragment, nodes);
     },
     m(target, anchor) {
@@ -2796,22 +2816,48 @@ function create_if_block_4(ctx) {
       insert_hydration(target, t0, anchor);
       mount_component(button1, target, anchor);
       insert_hydration(target, t1, anchor);
+      if (if_block)
+        if_block.m(target, anchor);
+      insert_hydration(target, t2, anchor);
       mount_component(adddashboarddialog, target, anchor);
       current = true;
     },
     p(ctx2, dirty) {
       const button0_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         button0_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button0.$set(button0_changes);
       const button1_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         button1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       button1.$set(button1_changes);
+      if (
+        /*$dashboard*/
+        ctx2[8] !== void 0
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty[0] & /*$dashboard*/
+          256) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block_5(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(t2.parentNode, t2);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
       const adddashboarddialog_changes = {};
       if (!updating_open && dirty[0] & /*addDashboardOpen*/
       32) {
@@ -2827,12 +2873,14 @@ function create_if_block_4(ctx) {
         return;
       transition_in(button0.$$.fragment, local);
       transition_in(button1.$$.fragment, local);
+      transition_in(if_block);
       transition_in(adddashboarddialog.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(button0.$$.fragment, local);
       transition_out(button1.$$.fragment, local);
+      transition_out(if_block);
       transition_out(adddashboarddialog.$$.fragment, local);
       current = false;
     },
@@ -2840,14 +2888,17 @@ function create_if_block_4(ctx) {
       if (detaching) {
         detach(t0);
         detach(t1);
+        detach(t2);
       }
       destroy_component(button0, detaching);
       destroy_component(button1, detaching);
+      if (if_block)
+        if_block.d(detaching);
       destroy_component(adddashboarddialog, detaching);
     }
   };
 }
-function create_default_slot_8(ctx) {
+function create_default_slot_11(ctx) {
   let t;
   return {
     c() {
@@ -2866,7 +2917,7 @@ function create_default_slot_8(ctx) {
     }
   };
 }
-function create_default_slot_7(ctx) {
+function create_default_slot_10(ctx) {
   let t;
   return {
     c() {
@@ -2874,6 +2925,114 @@ function create_default_slot_7(ctx) {
     },
     l(nodes) {
       t = claim_text(nodes, "Edit");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+    }
+  };
+}
+function create_default_slot_9(ctx) {
+  let icon;
+  let t;
+  let text_1;
+  let current;
+  icon = new CommonIcon({
+    props: {
+      class: "material-icons",
+      $$slots: { default: [create_default_slot_11] },
+      $$scope: { ctx }
+    }
+  });
+  text_1 = new Text({
+    props: {
+      $$slots: { default: [create_default_slot_10] },
+      $$scope: { ctx }
+    }
+  });
+  return {
+    c() {
+      create_component(icon.$$.fragment);
+      t = space();
+      create_component(text_1.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(icon.$$.fragment, nodes);
+      t = claim_space(nodes);
+      claim_component(text_1.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(icon, target, anchor);
+      insert_hydration(target, t, anchor);
+      mount_component(text_1, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const icon_changes = {};
+      if (dirty[0] & /*$$scope*/
+      67108864) {
+        icon_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      icon.$set(icon_changes);
+      const text_1_changes = {};
+      if (dirty[0] & /*$$scope*/
+      67108864) {
+        text_1_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      text_1.$set(text_1_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(icon.$$.fragment, local);
+      transition_in(text_1.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(icon.$$.fragment, local);
+      transition_out(text_1.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+      destroy_component(icon, detaching);
+      destroy_component(text_1, detaching);
+    }
+  };
+}
+function create_default_slot_8(ctx) {
+  let t;
+  return {
+    c() {
+      t = text("add");
+    },
+    l(nodes) {
+      t = claim_text(nodes, "add");
+    },
+    m(target, anchor) {
+      insert_hydration(target, t, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+    }
+  };
+}
+function create_default_slot_7(ctx) {
+  let t;
+  return {
+    c() {
+      t = text("New");
+    },
+    l(nodes) {
+      t = claim_text(nodes, "New");
     },
     m(target, anchor) {
       insert_hydration(target, t, anchor);
@@ -2923,13 +3082,13 @@ function create_default_slot_6(ctx) {
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const text_1_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         text_1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       text_1.$set(text_1_changes);
@@ -2955,14 +3114,62 @@ function create_default_slot_6(ctx) {
     }
   };
 }
+function create_if_block_5(ctx) {
+  let button;
+  let current;
+  button = new Button({
+    props: {
+      $$slots: { default: [create_default_slot_3] },
+      $$scope: { ctx }
+    }
+  });
+  button.$on(
+    "click",
+    /*click_handler_5*/
+    ctx[22]
+  );
+  return {
+    c() {
+      create_component(button.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(button.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(button, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const button_changes = {};
+      if (dirty[0] & /*$$scope*/
+      67108864) {
+        button_changes.$$scope = { dirty, ctx: ctx2 };
+      }
+      button.$set(button_changes);
+    },
+    i(local) {
+      if (current)
+        return;
+      transition_in(button.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(button.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(button, detaching);
+    }
+  };
+}
 function create_default_slot_5(ctx) {
   let t;
   return {
     c() {
-      t = text("add");
+      t = text("settings");
     },
     l(nodes) {
-      t = claim_text(nodes, "add");
+      t = claim_text(nodes, "settings");
     },
     m(target, anchor) {
       insert_hydration(target, t, anchor);
@@ -2978,10 +3185,10 @@ function create_default_slot_4(ctx) {
   let t;
   return {
     c() {
-      t = text("New");
+      t = text("Settings");
     },
     l(nodes) {
-      t = claim_text(nodes, "New");
+      t = claim_text(nodes, "Settings");
     },
     m(target, anchor) {
       insert_hydration(target, t, anchor);
@@ -3031,13 +3238,13 @@ function create_default_slot_3(ctx) {
     p(ctx2, dirty) {
       const icon_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         icon_changes.$$scope = { dirty, ctx: ctx2 };
       }
       icon.$set(icon_changes);
       const text_1_changes = {};
       if (dirty[0] & /*$$scope*/
-      16777216) {
+      67108864) {
         text_1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       text_1.$set(text_1_changes);
@@ -3136,7 +3343,7 @@ function create_default_slot_1(ctx) {
   let current;
   section0 = new Section({
     props: {
-      $$slots: { default: [create_default_slot_9] },
+      $$slots: { default: [create_default_slot_12] },
       $$scope: { ctx }
     }
   });
@@ -3167,13 +3374,13 @@ function create_default_slot_1(ctx) {
     p(ctx2, dirty) {
       const section0_changes = {};
       if (dirty[0] & /*$$scope, $dashboard, dashboardMenu, dashboards, topBarCollapsed*/
-      16777554) {
+      67109202) {
         section0_changes.$$scope = { dirty, ctx: ctx2 };
       }
       section0.$set(section0_changes);
       const section1_changes = {};
-      if (dirty[0] & /*$$scope, addDashboardOpen, topBarCollapsed, $editing*/
-      16777762) {
+      if (dirty[0] & /*$$scope, addDashboardOpen, $dashboard, topBarCollapsed, $editing*/
+      67109666) {
         section1_changes.$$scope = { dirty, ctx: ctx2 };
       }
       section1.$set(section1_changes);
@@ -3221,8 +3428,8 @@ function create_default_slot(ctx) {
     },
     p(ctx2, dirty) {
       const row_changes = {};
-      if (dirty[0] & /*$$scope, addDashboardOpen, topBarCollapsed, $editing, $dashboard, dashboardMenu, dashboards*/
-      16778098) {
+      if (dirty[0] & /*$$scope, addDashboardOpen, $dashboard, topBarCollapsed, $editing, dashboardMenu, dashboards*/
+      67109746) {
         row_changes.$$scope = { dirty, ctx: ctx2 };
       }
       row.$set(row_changes);
@@ -3443,9 +3650,9 @@ function instance($$self, $$props, $$invalidate) {
   let $dashboard;
   let $editing;
   component_subscribe($$self, homey, ($$value) => $$invalidate(7, $homey = $$value));
-  component_subscribe($$self, scopes, ($$value) => $$invalidate(25, $scopes = $$value));
-  component_subscribe($$self, apiKey, ($$value) => $$invalidate(26, $apiKey = $$value));
-  component_subscribe($$self, baseUrl, ($$value) => $$invalidate(27, $baseUrl = $$value));
+  component_subscribe($$self, scopes, ($$value) => $$invalidate(27, $scopes = $$value));
+  component_subscribe($$self, apiKey, ($$value) => $$invalidate(28, $apiKey = $$value));
+  component_subscribe($$self, baseUrl, ($$value) => $$invalidate(29, $baseUrl = $$value));
   component_subscribe($$self, dashboards, ($$value) => $$invalidate(12, $localDashboards = $$value));
   component_subscribe($$self, dashboards$1, ($$value) => $$invalidate(13, $homeyDashboards = $$value));
   component_subscribe($$self, dashboard, ($$value) => $$invalidate(8, $dashboard = $$value));
@@ -3504,7 +3711,11 @@ function instance($$self, $$props, $$invalidate) {
         $homey.devices.on("device.update", (patch) => devices.onDevice(patch));
         Object.values(d).forEach(async (device) => {
           await device.connect();
-          device.on("capability", (event) => devices.onCapability(device.id, event));
+          device.on("capability", (event) => {
+            const capability = device.capabilitiesObj[event.capabilityId];
+            capability.value = event.value;
+            capability.lastUpdated.setUTCMilliseconds(event.transactionTime);
+          });
         });
         devices.set(d);
       }
@@ -3554,7 +3765,7 @@ function instance($$self, $$props, $$invalidate) {
   function toggleEdit() {
     editing.toggle();
   }
-  function addDashboard(title) {
+  async function addDashboard(title) {
     const d = {
       id: v4(),
       source: "localstorage",
@@ -3562,18 +3773,21 @@ function instance($$self, $$props, $$invalidate) {
       items: []
     };
     dashboards.update(d);
+    await goto(base + "/board?id=" + d.id);
   }
   const click_handler = () => $$invalidate(1, topBarCollapsed = !topBarCollapsed);
   const click_handler_1 = () => dashboardMenu.setOpen(true);
-  const SMUI_action_handler = (dashboard2) => goto(base + "/board?id=" + dashboard2.id);
+  const SMUI_action_handler = (d) => goto(base + "/board?id=" + d.id);
   function menu_binding($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
       dashboardMenu = $$value;
       $$invalidate(4, dashboardMenu);
     });
   }
-  const click_handler_2 = () => toggleEdit();
-  const click_handler_3 = () => $$invalidate(5, addDashboardOpen = true);
+  const click_handler_2 = () => goto(base + "/board?id=" + $dashboard.id);
+  const click_handler_3 = () => toggleEdit();
+  const click_handler_4 = () => $$invalidate(5, addDashboardOpen = true);
+  const click_handler_5 = () => goto(base + "/board/settings?id=" + $dashboard.id);
   function adddashboarddialog_open_binding(value) {
     addDashboardOpen = value;
     $$invalidate(5, addDashboardOpen);
@@ -3587,7 +3801,7 @@ function instance($$self, $$props, $$invalidate) {
   }
   $$self.$$set = ($$props2) => {
     if ("$$scope" in $$props2)
-      $$invalidate(24, $$scope = $$props2.$$scope);
+      $$invalidate(26, $$scope = $$props2.$$scope);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty[0] & /*$homeyDashboards, $localDashboards*/
@@ -3617,6 +3831,8 @@ function instance($$self, $$props, $$invalidate) {
     menu_binding,
     click_handler_2,
     click_handler_3,
+    click_handler_4,
+    click_handler_5,
     adddashboarddialog_open_binding,
     value_handler,
     topappbar_binding,

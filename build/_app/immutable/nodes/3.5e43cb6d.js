@@ -7,14 +7,14 @@ var __publicField = (obj, key, value) => {
 var _a, _b;
 import { s as safe_not_equal, r as create_slot, u as assign$1, f as element, g as claim_element, h as children, d as detach, v as set_attributes, i as insert_hydration, x as action_destroyer, w as listen, y as update_slot_base, z as get_all_dirty_from_scope, A as get_slot_changes, B as is_function, C as run_all, D as compute_rest_props, E as get_current_component, G as setContext, o as onMount, R as onDestroy, F as exclude_internal_props, p as binding_callbacks, q as construct_svelte_component, e as empty, S as init_binding_group, a as space, c as claim_space, Q as get_svelte_dataset, j as attr, N as append_hydration, H as noop$1, P as getContext, T as bubble, l as text, m as claim_text, n as set_data, U as svg_element, V as claim_svg_element, W as set_data_maybe_contenteditable, J as add_flush_callback, X as compute_slots, M as component_subscribe, Y as set_store_value, K as createEventDispatcher, O as destroy_each, k as set_style, Z as to_number, _ as set_input_value, $ as src_url_equal, a0 as toggle_class, a1 as current_component, b as afterUpdate } from "../chunks/scheduler.9514346f.js";
 import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, b as create_component, d as claim_component, m as mount_component, g as group_outros, e as destroy_component, c as check_outros, f as bind } from "../chunks/index.6fa96164.js";
-import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, p as prefixFilter, l as exclude, R as Ripple, F as FloatingLabel, N as NotchedOutline, L as LineRipple, j as ensure_array_like, k as __values, r as __spreadArray, m as __read, B as Button, C as CommonLabel, v as v4, T as Textfield, o as update_keyed_each, q as outro_and_destroy_block, h as dashboards, i as CircularProgress } from "../chunks/Textfield.d226c201.js";
-import { w as writable } from "../chunks/singletons.f80bfd01.js";
-import { p as page } from "../chunks/stores.67d0b73f.js";
-import { g as devices, s as scopes, b as homey, j as advancedFlows, i as basicFlows, k as insights, w as webhookUrl, l as webhookId, e as dashboards$1 } from "../chunks/homey.2e577cb9.js";
-import { b as domFocusTrap, c as AnimationFrame, e as editing, a as CommonIcon, D as Dialog, T as Title$2, C as Content$1, A as Actions, f as grid, d as dashboard } from "../chunks/Actions.88e01790.js";
-import { C as Corner, M as Menu, I as IconButton, G as Graphic } from "../chunks/SelectionGroupIcon.4dfdb9ee.js";
-import { n as normalizeKey, K as KEY, L as List, I as Item, T as Text } from "../chunks/Subheader.f7cf0a21.js";
-import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/ActionIcons.6f4031dd.js";
+import { _ as __extends, a as __assign, M as MDCFoundation, c as classMap, u as useActions, g as get_spread_update, f as forwardEventsBuilder, d as dispatch, b as classAdderBuilder, e as get_spread_object, S as SmuiElement, p as prefixFilter, l as exclude, R as Ripple, F as FloatingLabel, N as NotchedOutline, L as LineRipple, j as ensure_array_like, k as __values, r as __spreadArray, m as __read, B as Button, C as CommonLabel, v as v4, T as Textfield, o as update_keyed_each, q as outro_and_destroy_block, h as dashboards, i as CircularProgress } from "../chunks/Textfield.a5c52319.js";
+import { w as writable } from "../chunks/singletons.dbc3066f.js";
+import { p as page } from "../chunks/stores.75a8315b.js";
+import { g as devices, s as scopes, b as homey, j as advancedFlows, i as basicFlows, k as insights, w as webhookUrl, l as webhookId, e as dashboards$1 } from "../chunks/homey.aff21b99.js";
+import { b as domFocusTrap, c as AnimationFrame, e as editing, a as CommonIcon, D as Dialog, T as Title$2, C as Content$1, A as Actions, f as grid, d as dashboard } from "../chunks/Actions.9aed29c1.js";
+import { C as Corner, M as Menu, I as IconButton, G as Graphic } from "../chunks/SelectionGroupIcon.b66d0d0e.js";
+import { n as normalizeKey, K as KEY, L as List, I as Item, T as Text } from "../chunks/Subheader.de0367f9.js";
+import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/ActionIcons.0472c22b.js";
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -37407,7 +37407,7 @@ function create_else_block$1(ctx) {
   let updating_chart;
   let current;
   function chart_1_chart_binding(value) {
-    ctx[7](value);
+    ctx[8](value);
   }
   let chart_1_props = {
     type: "line",
@@ -37664,9 +37664,9 @@ function instance$9($$self, $$props, $$invalidate) {
   let $devices;
   let $homey;
   let $insights;
-  component_subscribe($$self, devices, ($$value) => $$invalidate(14, $devices = $$value));
-  component_subscribe($$self, homey, ($$value) => $$invalidate(15, $homey = $$value));
-  component_subscribe($$self, insights, ($$value) => $$invalidate(16, $insights = $$value));
+  component_subscribe($$self, devices, ($$value) => $$invalidate(15, $devices = $$value));
+  component_subscribe($$self, homey, ($$value) => $$invalidate(16, $homey = $$value));
+  component_subscribe($$self, insights, ($$value) => $$invalidate(7, $insights = $$value));
   let { settings } = $$props;
   let insightId;
   let resolution;
@@ -37702,6 +37702,12 @@ function instance$9($$self, $$props, $$invalidate) {
       load = true;
     }
     if (load && insightId) {
+      $$invalidate(1, log = $insights[insightId]);
+      reload();
+    }
+  }
+  function onInsights(logs) {
+    if (log === void 0 && insightId !== void 0) {
       $$invalidate(1, log = $insights[insightId]);
       reload();
     }
@@ -37824,6 +37830,10 @@ function instance$9($$self, $$props, $$invalidate) {
     64) {
       onSettings(settings);
     }
+    if ($$self.$$.dirty & /*$insights*/
+    128) {
+      onInsights();
+    }
   };
   $$invalidate(4, options = {
     plugins: { legend: { display: false } },
@@ -37841,6 +37851,7 @@ function instance$9($$self, $$props, $$invalidate) {
     options,
     getOwnerUriName,
     settings,
+    $insights,
     chart_1_chart_binding
   ];
 }

@@ -1,5 +1,5 @@
-import { k as derived, w as writable } from "./singletons.f80bfd01.js";
-import { p as page } from "./stores.67d0b73f.js";
+import { k as derived, w as writable } from "./singletons.dbc3066f.js";
+import { p as page } from "./stores.75a8315b.js";
 const driverId = "homey:app:skogsaas.dashboards:dashboard";
 const webhookUrl = "https://webhooks.athom.com/webhook/";
 const webhookId = "64e39774cf7cc10b916174a7";

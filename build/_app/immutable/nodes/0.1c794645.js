@@ -1,13 +1,13 @@
 import { s as safe_not_equal, r as createEventDispatcher, e as empty, i as insert_hydration, d as detach, l as text, m as claim_text, p as binding_callbacks, a as space, f as element, c as claim_space, g as claim_element, u as get_svelte_dataset, j as attr, v as add_flush_callback, w as head_selector, h as children, x as component_subscribe, o as onMount, y as create_slot, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, C as noop, D as append_hydration, n as set_data, E as destroy_each } from "../chunks/scheduler.3830f32a.js";
 import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, a as transition_in, t as transition_out, e as destroy_component, g as group_outros, c as check_outros, f as bind } from "../chunks/index.9ba3e62c.js";
-import { m as mdiMenu, a as mdiPlus, b as mdiViewDashboardEdit, c as mdiCog, L as List, e as ensure_array_like, d as mdiViewDashboard, f as mdiDeathStarVariant } from "../chunks/index.b1c24bf3.js";
-import { A as AthomCloudAPI, g as goto } from "../chunks/AthomCloudAPI.ec6ec160.js";
-import { e as base } from "../chunks/singletons.7b97aaa6.js";
-import { c as clientId, a as clientSecret, u as user, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as flowFolders, j as basicFlows, k as advancedFlows, l as insights, z as zones } from "../chunks/homey.f340e58b.js";
-import { I as Input, B as Button, d as dashboards, v as v4, P as Progress } from "../chunks/Progress.0c68521e.js";
-import { M as Modal, d as dashboard, e as editing } from "../chunks/index.e3bc9f01.js";
-import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.ecdc60ff.js";
-import { P as Portal, D as Drawer, a as Dropdown, b as Divider, T as Toggle, M as Media } from "../chunks/index.ee9f90fc.js";
+import { m as mdiMenu, a as mdiPlus, b as mdiViewDashboardEdit, c as mdiCog, L as List, e as ensure_array_like, d as mdiViewDashboard, f as mdiDeathStarVariant } from "../chunks/index.b33fa9e1.js";
+import { A as AthomCloudAPI, g as goto } from "../chunks/AthomCloudAPI.93840f42.js";
+import { e as base } from "../chunks/singletons.5608acee.js";
+import { c as clientId, a as clientSecret, u as user, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as flowFolders, j as basicFlows, k as advancedFlows, l as insights, z as zones } from "../chunks/homey.c1ff599f.js";
+import { I as Input, B as Button, d as dashboards, v as v4, P as Progress } from "../chunks/Progress.6247a021.js";
+import { M as Modal, d as dashboard, e as editing } from "../chunks/index.fb849005.js";
+import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.c11b483d.js";
+import { P as Portal, D as Drawer, a as Dropdown, b as Divider, T as Toggle, M as Media } from "../chunks/index.0fc8ffc7.js";
 const ssr = false;
 const trailingSlash = "always";
 const prerender = true;
@@ -1083,7 +1083,7 @@ function create_if_block_7(ctx) {
   });
   let if_block = (
     /*$user*/
-    ctx[7].homeys.length > 0 && create_if_block_8(ctx)
+    ctx[7].homeys.length > 1 && create_if_block_8(ctx)
   );
   return {
     c() {
@@ -1118,7 +1118,7 @@ function create_if_block_7(ctx) {
       media.$set(media_changes);
       if (
         /*$user*/
-        ctx2[7].homeys.length > 0
+        ctx2[7].homeys.length > 1
       ) {
         if (if_block) {
           if_block.p(ctx2, dirty);

@@ -8,7 +8,7 @@ var __publicField = (obj, key, value) => {
 };
 var __superGet = (cls, obj, key) => __reflectGet(__getProtoOf(cls), key, obj);
 var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-import { k as client_method } from "./singletons.7b97aaa6.js";
+import { k as client_method } from "./singletons.5608acee.js";
 import { c as commonjsGlobal, a as getAugmentedNamespace, g as getDefaultExportFromCjs } from "./_commonjsHelpers.7a7fcd32.js";
 const goto = /* @__PURE__ */ client_method("goto");
 let APIError$5 = class APIError extends Error {

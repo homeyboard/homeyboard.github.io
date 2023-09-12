@@ -1,5 +1,5 @@
-import { k as derived, w as writable } from "./singletons.4364c006.js";
-import { p as page } from "./stores.16dfa41c.js";
+import { j as derived, w as writable } from "./singletons.7b97aaa6.js";
+import { p as page } from "./stores.79d9739b.js";
 const driverId = "homey:app:skogsaas.dashboards:dashboard";
 const webhookUrl = "https://webhooks.athom.com/webhook/";
 const webhookId = "64e39774cf7cc10b916174a7";
@@ -76,12 +76,14 @@ function createZones() {
     set
   };
 }
+const user = writable(void 0);
 const homeys = createHomeys();
 const homey = writable(void 0);
 const baseUrl = createBaseUrl();
 const session = writable(void 0);
 const scopes = derived(session, (s) => (s == null ? void 0 : s.scopes) ?? [], []);
 const devices = createDevices();
+const flowFolders = writable({});
 const basicFlows = createBasicFlows();
 const advancedFlows = createAdvancedFlows();
 const zones = createZones();
@@ -110,11 +112,13 @@ export {
   session as f,
   devices as g,
   homeys as h,
-  basicFlows as i,
-  advancedFlows as j,
-  insights as k,
-  webhookId as l,
+  flowFolders as i,
+  basicFlows as j,
+  advancedFlows as k,
+  insights as l,
+  webhookId as m,
   scopes as s,
+  user as u,
   webhookUrl as w,
   zones as z
 };

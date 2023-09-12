@@ -1,47 +1,17 @@
 var __defProp = Object.defineProperty;
 var __getProtoOf = Object.getPrototypeOf;
 var __reflectGet = Reflect.get;
-var __defNormalProp = (obj2, key, value) => key in obj2 ? __defProp(obj2, key, { enumerable: true, configurable: true, writable: true, value }) : obj2[key] = value;
-var __publicField = (obj2, key, value) => {
-  __defNormalProp(obj2, typeof key !== "symbol" ? key + "" : key, value);
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => {
+  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-var __superGet = (cls, obj2, key) => __reflectGet(__getProtoOf(cls), key, obj2);
+var __superGet = (cls, obj, key) => __reflectGet(__getProtoOf(cls), key, obj);
 var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
-function getDefaultExportFromCjs(x) {
-  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
-}
-function getAugmentedNamespace(n) {
-  if (n.__esModule)
-    return n;
-  var f = n.default;
-  if (typeof f == "function") {
-    var a = function a2() {
-      if (this instanceof a2) {
-        var args = [null];
-        args.push.apply(args, arguments);
-        var Ctor = Function.bind.apply(f, args);
-        return new Ctor();
-      }
-      return f.apply(this, arguments);
-    };
-    a.prototype = f.prototype;
-  } else
-    a = {};
-  Object.defineProperty(a, "__esModule", { value: true });
-  Object.keys(n).forEach(function(k) {
-    var d2 = Object.getOwnPropertyDescriptor(n, k);
-    Object.defineProperty(a, k, d2.get ? d2 : {
-      enumerable: true,
-      get: function() {
-        return n[k];
-      }
-    });
-  });
-  return a;
-}
-let APIError$5 = class APIError2 extends Error {
+import { k as client_method } from "./singletons.7b97aaa6.js";
+import { c as commonjsGlobal, a as getAugmentedNamespace, g as getDefaultExportFromCjs } from "./_commonjsHelpers.7a7fcd32.js";
+const goto = /* @__PURE__ */ client_method("goto");
+let APIError$5 = class APIError extends Error {
   /**
    *
    * @param {string} message
@@ -54,7 +24,7 @@ let APIError$5 = class APIError2 extends Error {
 };
 var APIError_1 = APIError$5;
 const APIError$4 = APIError_1;
-let APIErrorTimeout$1 = class APIErrorTimeout2 extends APIError$4 {
+let APIErrorTimeout$1 = class APIErrorTimeout extends APIError$4 {
   constructor(message, statusCode = 408) {
     super(message, statusCode);
   }
@@ -90,8 +60,8 @@ function requireBrowser() {
   })(browser$5, browser$5.exports);
   return browser$5.exports;
 }
-const APIErrorTimeout = APIErrorTimeout_1;
-let Util$5 = class Util2 {
+const APIErrorTimeout2 = APIErrorTimeout_1;
+let Util$5 = class Util {
   /**
    * Makes a call using `window.fetch` or `node-fetch`.
    * @param  {...any} args
@@ -129,7 +99,7 @@ let Util$5 = class Util2 {
    * @returns {Promise}
    */
   static async timeout(promise, timeoutMillis = 5e3, message = `Timeout after ${timeoutMillis}ms`) {
-    const timeoutError = new APIErrorTimeout(message);
+    const timeoutError = new APIErrorTimeout2(message);
     let timeoutRef;
     return Promise.race([
       promise,
@@ -201,9 +171,9 @@ let Util$5 = class Util2 {
    * @param {object} object - Query parameter object
    * @returns {string}
    */
-  static stringifyQuery(obj2) {
+  static stringifyQuery(obj) {
     const searchParams = new URLSearchParams();
-    for (const [key, value] of Object.entries(obj2)) {
+    for (const [key, value] of Object.entries(obj)) {
       searchParams.append(key, value);
     }
     return searchParams.toString();
@@ -326,7 +296,7 @@ var parts = [
   "query",
   "anchor"
 ];
-var parseuri$2 = function parseuri2(str) {
+var parseuri$2 = function parseuri(str) {
   var src = str, b = str.indexOf("["), e = str.indexOf("]");
   if (b != -1 && e != -1) {
     str = str.substring(0, b) + str.substring(b, e).replace(/:/g, ";") + str.substring(e, str.length);
@@ -345,7 +315,7 @@ var parseuri$2 = function parseuri2(str) {
   uri.queryKey = queryKey(uri, uri["query"]);
   return uri;
 };
-function pathNames(obj2, path) {
+function pathNames(obj, path) {
   var regx = /\/{2,9}/g, names = path.replace(regx, "/").split("/");
   if (path.substr(0, 1) == "/" || path.length === 0) {
     names.splice(0, 1);
@@ -750,7 +720,7 @@ var parseuri$1 = parseuri$2;
 var debug$7 = browserExports$2("socket.io-client:url");
 var url_1 = url;
 function url(uri, loc) {
-  var obj2 = uri;
+  var obj = uri;
   loc = loc || typeof location !== "undefined" && location;
   if (null == uri)
     uri = loc.protocol + "//" + loc.host;
@@ -771,21 +741,21 @@ function url(uri, loc) {
       }
     }
     debug$7("parse %s", uri);
-    obj2 = parseuri$1(uri);
+    obj = parseuri$1(uri);
   }
-  if (!obj2.port) {
-    if (/^(http|ws)$/.test(obj2.protocol)) {
-      obj2.port = "80";
-    } else if (/^(http|ws)s$/.test(obj2.protocol)) {
-      obj2.port = "443";
+  if (!obj.port) {
+    if (/^(http|ws)$/.test(obj.protocol)) {
+      obj.port = "80";
+    } else if (/^(http|ws)s$/.test(obj.protocol)) {
+      obj.port = "443";
     }
   }
-  obj2.path = obj2.path || "/";
-  var ipv6 = obj2.host.indexOf(":") !== -1;
-  var host2 = ipv6 ? "[" + obj2.host + "]" : obj2.host;
-  obj2.id = obj2.protocol + "://" + host2 + ":" + obj2.port;
-  obj2.href = obj2.protocol + "://" + host2 + (loc && loc.port === obj2.port ? "" : ":" + obj2.port);
-  return obj2;
+  obj.path = obj.path || "/";
+  var ipv6 = obj.host.indexOf(":") !== -1;
+  var host2 = ipv6 ? "[" + obj.host + "]" : obj.host;
+  obj.id = obj.protocol + "://" + host2 + ":" + obj.port;
+  obj.href = obj.protocol + "://" + host2 + (loc && loc.port === obj.port ? "" : ":" + obj.port);
+  return obj;
 }
 var socket_ioParser = {};
 var browser$3 = { exports: {} };
@@ -1175,15 +1145,15 @@ var componentEmitter = { exports: {} };
   {
     module.exports = Emitter2;
   }
-  function Emitter2(obj2) {
-    if (obj2)
-      return mixin(obj2);
+  function Emitter2(obj) {
+    if (obj)
+      return mixin(obj);
   }
-  function mixin(obj2) {
+  function mixin(obj) {
     for (var key in Emitter2.prototype) {
-      obj2[key] = Emitter2.prototype[key];
+      obj[key] = Emitter2.prototype[key];
     }
-    return obj2;
+    return obj;
   }
   Emitter2.prototype.on = Emitter2.prototype.addEventListener = function(event, fn) {
     this._callbacks = this._callbacks || {};
@@ -1256,11 +1226,11 @@ var isarray = Array.isArray || function(arr) {
 var isBuffer = isBuf$1;
 var withNativeBuffer = typeof Buffer === "function" && typeof Buffer.isBuffer === "function";
 var withNativeArrayBuffer = typeof ArrayBuffer === "function";
-var isView = function(obj2) {
-  return typeof ArrayBuffer.isView === "function" ? ArrayBuffer.isView(obj2) : obj2.buffer instanceof ArrayBuffer;
+var isView = function(obj) {
+  return typeof ArrayBuffer.isView === "function" ? ArrayBuffer.isView(obj) : obj.buffer instanceof ArrayBuffer;
 };
-function isBuf$1(obj2) {
-  return withNativeBuffer && Buffer.isBuffer(obj2) || withNativeArrayBuffer && (obj2 instanceof ArrayBuffer || isView(obj2));
+function isBuf$1(obj) {
+  return withNativeBuffer && Buffer.isBuffer(obj) || withNativeArrayBuffer && (obj instanceof ArrayBuffer || isView(obj));
 }
 var isArray$1 = isarray;
 var isBuf = isBuffer;
@@ -1324,10 +1294,10 @@ function _reconstructPacket(data, buffers) {
   return data;
 }
 binary.removeBlobs = function(data, callback) {
-  function _removeBlobs(obj2, curKey, containingObject) {
-    if (!obj2)
-      return obj2;
-    if (withNativeBlob$1 && obj2 instanceof Blob || withNativeFile$1 && obj2 instanceof File) {
+  function _removeBlobs(obj, curKey, containingObject) {
+    if (!obj)
+      return obj;
+    if (withNativeBlob$1 && obj instanceof Blob || withNativeFile$1 && obj instanceof File) {
       pendingBlobs++;
       var fileReader = new FileReader();
       fileReader.onload = function() {
@@ -1340,14 +1310,14 @@ binary.removeBlobs = function(data, callback) {
           callback(bloblessData);
         }
       };
-      fileReader.readAsArrayBuffer(obj2);
-    } else if (isArray$1(obj2)) {
-      for (var i2 = 0; i2 < obj2.length; i2++) {
-        _removeBlobs(obj2[i2], i2, obj2);
+      fileReader.readAsArrayBuffer(obj);
+    } else if (isArray$1(obj)) {
+      for (var i2 = 0; i2 < obj.length; i2++) {
+        _removeBlobs(obj[i2], i2, obj);
       }
-    } else if (typeof obj2 === "object" && !isBuf(obj2)) {
-      for (var key in obj2) {
-        _removeBlobs(obj2[key], key, obj2);
+    } else if (typeof obj === "object" && !isBuf(obj)) {
+      for (var key in obj) {
+        _removeBlobs(obj[key], key, obj);
       }
     }
   }
@@ -1386,35 +1356,35 @@ binary.removeBlobs = function(data, callback) {
   function Encoder() {
   }
   var ERROR_PACKET = exports.ERROR + '"encode error"';
-  Encoder.prototype.encode = function(obj2, callback) {
-    debug2("encoding packet %j", obj2);
-    if (exports.BINARY_EVENT === obj2.type || exports.BINARY_ACK === obj2.type) {
-      encodeAsBinary(obj2, callback);
+  Encoder.prototype.encode = function(obj, callback) {
+    debug2("encoding packet %j", obj);
+    if (exports.BINARY_EVENT === obj.type || exports.BINARY_ACK === obj.type) {
+      encodeAsBinary(obj, callback);
     } else {
-      var encoding = encodeAsString(obj2);
+      var encoding = encodeAsString(obj);
       callback([encoding]);
     }
   };
-  function encodeAsString(obj2) {
-    var str = "" + obj2.type;
-    if (exports.BINARY_EVENT === obj2.type || exports.BINARY_ACK === obj2.type) {
-      str += obj2.attachments + "-";
+  function encodeAsString(obj) {
+    var str = "" + obj.type;
+    if (exports.BINARY_EVENT === obj.type || exports.BINARY_ACK === obj.type) {
+      str += obj.attachments + "-";
     }
-    if (obj2.nsp && "/" !== obj2.nsp) {
-      str += obj2.nsp + ",";
+    if (obj.nsp && "/" !== obj.nsp) {
+      str += obj.nsp + ",";
     }
-    if (null != obj2.id) {
-      str += obj2.id;
+    if (null != obj.id) {
+      str += obj.id;
     }
-    if (null != obj2.data) {
-      var payload = tryStringify(obj2.data);
+    if (null != obj.data) {
+      var payload = tryStringify(obj.data);
       if (payload !== false) {
         str += payload;
       } else {
         return ERROR_PACKET;
       }
     }
-    debug2("encoded %j as %s", obj2, str);
+    debug2("encoded %j as %s", obj, str);
     return str;
   }
   function tryStringify(str) {
@@ -1424,7 +1394,7 @@ binary.removeBlobs = function(data, callback) {
       return false;
     }
   }
-  function encodeAsBinary(obj2, callback) {
+  function encodeAsBinary(obj, callback) {
     function writeEncoding(bloblessData) {
       var deconstruction = binary$1.deconstructPacket(bloblessData);
       var pack = encodeAsString(deconstruction.packet);
@@ -1432,19 +1402,19 @@ binary.removeBlobs = function(data, callback) {
       buffers.unshift(pack);
       callback(buffers);
     }
-    binary$1.removeBlobs(obj2, writeEncoding);
+    binary$1.removeBlobs(obj, writeEncoding);
   }
   function Decoder() {
     this.reconstructor = null;
   }
   Emitter2(Decoder.prototype);
-  Decoder.prototype.add = function(obj2) {
+  Decoder.prototype.add = function(obj) {
     var packet;
-    if (typeof obj2 === "string") {
+    if (typeof obj === "string") {
       if (this.reconstructor) {
         throw new Error("got plaintext data when reconstructing a packet");
       }
-      packet = decodeString(obj2);
+      packet = decodeString(obj);
       if (exports.BINARY_EVENT === packet.type || exports.BINARY_ACK === packet.type) {
         this.reconstructor = new BinaryReconstructor(packet);
         if (this.reconstructor.reconPack.attachments === 0) {
@@ -1453,18 +1423,18 @@ binary.removeBlobs = function(data, callback) {
       } else {
         this.emit("decoded", packet);
       }
-    } else if (isBuf2(obj2) || obj2.base64) {
+    } else if (isBuf2(obj) || obj.base64) {
       if (!this.reconstructor) {
         throw new Error("got binary data when not reconstructing a packet");
       } else {
-        packet = this.reconstructor.takeBinaryData(obj2);
+        packet = this.reconstructor.takeBinaryData(obj);
         if (packet) {
           this.reconstructor = null;
           this.emit("decoded", packet);
         }
       }
     } else {
-      throw new Error("Unknown type: " + obj2);
+      throw new Error("Unknown type: " + obj);
     }
   };
   function decodeString(str) {
@@ -1579,7 +1549,7 @@ var globalThis_browser = function() {
   }
 }();
 var hasCORS = hasCorsExports;
-var globalThis$3 = globalThis_browser;
+var globalThis$2 = globalThis_browser;
 var xmlhttprequest_browser = function(opts) {
   var xdomain = opts.xdomain;
   var xscheme = opts.xscheme;
@@ -1598,18 +1568,18 @@ var xmlhttprequest_browser = function(opts) {
   }
   if (!xdomain) {
     try {
-      return new globalThis$3[["Active"].concat("Object").join("X")]("Microsoft.XMLHTTP");
+      return new globalThis$2[["Active"].concat("Object").join("X")]("Microsoft.XMLHTTP");
     } catch (e) {
     }
   }
 };
 var pollingXhr = { exports: {} };
 var browser$2 = {};
-var keys = Object.keys || function keys2(obj2) {
+var keys = Object.keys || function keys2(obj) {
   var arr = [];
   var has2 = Object.prototype.hasOwnProperty;
-  for (var i2 in obj2) {
-    if (has2.call(obj2, i2)) {
+  for (var i2 in obj) {
+    if (has2.call(obj, i2)) {
       arr.push(i2);
     }
   }
@@ -1620,26 +1590,26 @@ var toString = Object.prototype.toString;
 var withNativeBlob = typeof Blob === "function" || typeof Blob !== "undefined" && toString.call(Blob) === "[object BlobConstructor]";
 var withNativeFile = typeof File === "function" || typeof File !== "undefined" && toString.call(File) === "[object FileConstructor]";
 var hasBinary2 = hasBinary;
-function hasBinary(obj2) {
-  if (!obj2 || typeof obj2 !== "object") {
+function hasBinary(obj) {
+  if (!obj || typeof obj !== "object") {
     return false;
   }
-  if (isArray(obj2)) {
-    for (var i2 = 0, l = obj2.length; i2 < l; i2++) {
-      if (hasBinary(obj2[i2])) {
+  if (isArray(obj)) {
+    for (var i2 = 0, l = obj.length; i2 < l; i2++) {
+      if (hasBinary(obj[i2])) {
         return true;
       }
     }
     return false;
   }
-  if (typeof Buffer === "function" && Buffer.isBuffer && Buffer.isBuffer(obj2) || typeof ArrayBuffer === "function" && obj2 instanceof ArrayBuffer || withNativeBlob && obj2 instanceof Blob || withNativeFile && obj2 instanceof File) {
+  if (typeof Buffer === "function" && Buffer.isBuffer && Buffer.isBuffer(obj) || typeof ArrayBuffer === "function" && obj instanceof ArrayBuffer || withNativeBlob && obj instanceof Blob || withNativeFile && obj instanceof File) {
     return true;
   }
-  if (obj2.toJSON && typeof obj2.toJSON === "function" && arguments.length === 1) {
-    return hasBinary(obj2.toJSON(), true);
+  if (obj.toJSON && typeof obj.toJSON === "function" && arguments.length === 1) {
+    return hasBinary(obj.toJSON(), true);
   }
-  for (var key in obj2) {
-    if (Object.prototype.hasOwnProperty.call(obj2, key) && hasBinary(obj2[key])) {
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key) && hasBinary(obj[key])) {
       return true;
     }
   }
@@ -2419,13 +2389,13 @@ function requireTransport() {
   return transport;
 }
 var parseqs$3 = {};
-parseqs$3.encode = function(obj2) {
+parseqs$3.encode = function(obj) {
   var str = "";
-  for (var i2 in obj2) {
-    if (obj2.hasOwnProperty(i2)) {
+  for (var i2 in obj) {
+    if (obj.hasOwnProperty(i2)) {
       if (str.length)
         str += "&";
-      str += encodeURIComponent(i2) + "=" + encodeURIComponent(obj2[i2]);
+      str += encodeURIComponent(i2) + "=" + encodeURIComponent(obj[i2]);
     }
   }
   return str;
@@ -2989,7 +2959,7 @@ var Polling$1 = polling$1;
 var Emitter$2 = componentEmitterExports;
 var inherit$2 = componentInherit;
 var debug$3 = browserExports("engine.io-client:polling-xhr");
-var globalThis$2 = globalThis_browser;
+var globalThis$1 = globalThis_browser;
 pollingXhr.exports = XHR$1;
 pollingXhr.exports.Request = Request;
 function empty$1() {
@@ -3227,7 +3197,7 @@ if (typeof document !== "undefined") {
   if (typeof attachEvent === "function") {
     attachEvent("onunload", unloadHandler);
   } else if (typeof addEventListener === "function") {
-    var terminationEvent = "onpagehide" in globalThis$2 ? "pagehide" : "unload";
+    var terminationEvent = "onpagehide" in globalThis$1 ? "pagehide" : "unload";
     addEventListener(terminationEvent, unloadHandler, false);
   }
 }
@@ -3241,7 +3211,7 @@ function unloadHandler() {
 var pollingXhrExports = pollingXhr.exports;
 var Polling = polling$1;
 var inherit$1 = componentInherit;
-var globalThis$1 = globalThis_browser;
+var globalThis = globalThis_browser;
 var pollingJsonp = JSONPPolling;
 var rNewline = /\n/g;
 var rEscapedNewline = /\\n/g;
@@ -3252,7 +3222,7 @@ function JSONPPolling(opts) {
   Polling.call(this, opts);
   this.query = this.query || {};
   if (!callbacks) {
-    callbacks = globalThis$1.___eio = globalThis$1.___eio || [];
+    callbacks = globalThis.___eio = globalThis.___eio || [];
   }
   this.index = callbacks.length;
   var self2 = this;
@@ -3571,11 +3541,11 @@ function polling(opts) {
   }
 }
 var indexOf$1 = [].indexOf;
-var indexof = function(arr, obj2) {
+var indexof = function(arr, obj) {
   if (indexOf$1)
-    return arr.indexOf(obj2);
+    return arr.indexOf(obj);
   for (var i2 = 0; i2 < arr.length; ++i2) {
-    if (arr[i2] === obj2)
+    if (arr[i2] === obj)
       return i2;
   }
   return -1;
@@ -3585,7 +3555,7 @@ var Emitter$1 = componentEmitterExports;
 var debug$1 = browserExports("engine.io-client:socket");
 var index = indexof;
 var parser$1 = browser$2;
-var parseuri = parseuri$2;
+var parseuri2 = parseuri$2;
 var parseqs = parseqs$3;
 var socket$1 = Socket$1;
 function Socket$1(uri, opts) {
@@ -3597,14 +3567,14 @@ function Socket$1(uri, opts) {
     uri = null;
   }
   if (uri) {
-    uri = parseuri(uri);
+    uri = parseuri2(uri);
     opts.hostname = uri.host;
     opts.secure = uri.protocol === "https" || uri.protocol === "wss";
     opts.port = uri.port;
     if (uri.query)
       opts.query = uri.query;
   } else if (opts.host) {
-    opts.hostname = parseuri(opts.host).host;
+    opts.hostname = parseuri2(opts.host).host;
   }
   this.secure = null != opts.secure ? opts.secure : typeof location !== "undefined" && "https:" === location.protocol;
   if (opts.hostname && !opts.port) {
@@ -3713,11 +3683,11 @@ Socket$1.prototype.createTransport = function(name) {
   });
   return transport2;
 };
-function clone(obj2) {
+function clone(obj) {
   var o = {};
-  for (var i2 in obj2) {
-    if (obj2.hasOwnProperty(i2)) {
-      o[i2] = obj2[i2];
+  for (var i2 in obj) {
+    if (obj.hasOwnProperty(i2)) {
+      o[i2] = obj[i2];
     }
   }
   return o;
@@ -4055,23 +4025,23 @@ function toArray(list, index2) {
   return array;
 }
 var on_1 = on$1;
-function on$1(obj2, ev, fn) {
-  obj2.on(ev, fn);
+function on$1(obj, ev, fn) {
+  obj.on(ev, fn);
   return {
     destroy: function() {
-      obj2.removeListener(ev, fn);
+      obj.removeListener(ev, fn);
     }
   };
 }
 var slice = [].slice;
-var componentBind = function(obj2, fn) {
+var componentBind = function(obj, fn) {
   if ("string" == typeof fn)
-    fn = obj2[fn];
+    fn = obj[fn];
   if ("function" != typeof fn)
     throw new Error("bind() requires a function");
   var args = slice.call(arguments, 2);
   return function() {
-    return fn.apply(obj2, args.concat(slice.call(arguments)));
+    return fn.apply(obj, args.concat(slice.call(arguments)));
   };
 };
 (function(module, exports) {
@@ -4353,10 +4323,10 @@ var debug = browserExports$2("socket.io-client:manager");
 var indexOf = indexof;
 var Backoff = backo2;
 var has = Object.prototype.hasOwnProperty;
-var manager = Manager$9;
-function Manager$9(uri, opts) {
-  if (!(this instanceof Manager$9))
-    return new Manager$9(uri, opts);
+var manager = Manager$a;
+function Manager$a(uri, opts) {
+  if (!(this instanceof Manager$a))
+    return new Manager$a(uri, opts);
   if (uri && "object" === typeof uri) {
     opts = uri;
     uri = void 0;
@@ -4390,7 +4360,7 @@ function Manager$9(uri, opts) {
   if (this.autoConnect)
     this.open();
 }
-Manager$9.prototype.emitAll = function() {
+Manager$a.prototype.emitAll = function() {
   this.emit.apply(this, arguments);
   for (var nsp in this.nsps) {
     if (has.call(this.nsps, nsp)) {
@@ -4398,62 +4368,62 @@ Manager$9.prototype.emitAll = function() {
     }
   }
 };
-Manager$9.prototype.updateSocketIds = function() {
+Manager$a.prototype.updateSocketIds = function() {
   for (var nsp in this.nsps) {
     if (has.call(this.nsps, nsp)) {
       this.nsps[nsp].id = this.generateId(nsp);
     }
   }
 };
-Manager$9.prototype.generateId = function(nsp) {
+Manager$a.prototype.generateId = function(nsp) {
   return (nsp === "/" ? "" : nsp + "#") + this.engine.id;
 };
-Emitter(Manager$9.prototype);
-Manager$9.prototype.reconnection = function(v) {
+Emitter(Manager$a.prototype);
+Manager$a.prototype.reconnection = function(v) {
   if (!arguments.length)
     return this._reconnection;
   this._reconnection = !!v;
   return this;
 };
-Manager$9.prototype.reconnectionAttempts = function(v) {
+Manager$a.prototype.reconnectionAttempts = function(v) {
   if (!arguments.length)
     return this._reconnectionAttempts;
   this._reconnectionAttempts = v;
   return this;
 };
-Manager$9.prototype.reconnectionDelay = function(v) {
+Manager$a.prototype.reconnectionDelay = function(v) {
   if (!arguments.length)
     return this._reconnectionDelay;
   this._reconnectionDelay = v;
   this.backoff && this.backoff.setMin(v);
   return this;
 };
-Manager$9.prototype.randomizationFactor = function(v) {
+Manager$a.prototype.randomizationFactor = function(v) {
   if (!arguments.length)
     return this._randomizationFactor;
   this._randomizationFactor = v;
   this.backoff && this.backoff.setJitter(v);
   return this;
 };
-Manager$9.prototype.reconnectionDelayMax = function(v) {
+Manager$a.prototype.reconnectionDelayMax = function(v) {
   if (!arguments.length)
     return this._reconnectionDelayMax;
   this._reconnectionDelayMax = v;
   this.backoff && this.backoff.setMax(v);
   return this;
 };
-Manager$9.prototype.timeout = function(v) {
+Manager$a.prototype.timeout = function(v) {
   if (!arguments.length)
     return this._timeout;
   this._timeout = v;
   return this;
 };
-Manager$9.prototype.maybeReconnectOnOpen = function() {
+Manager$a.prototype.maybeReconnectOnOpen = function() {
   if (!this.reconnecting && this._reconnection && this.backoff.attempts === 0) {
     this.reconnect();
   }
 };
-Manager$9.prototype.open = Manager$9.prototype.connect = function(fn, opts) {
+Manager$a.prototype.open = Manager$a.prototype.connect = function(fn, opts) {
   debug("readyState %s", this.readyState);
   if (~this.readyState.indexOf("open"))
     return this;
@@ -4503,7 +4473,7 @@ Manager$9.prototype.open = Manager$9.prototype.connect = function(fn, opts) {
   this.subs.push(errorSub);
   return this;
 };
-Manager$9.prototype.onopen = function() {
+Manager$a.prototype.onopen = function() {
   debug("open");
   this.cleanup();
   this.readyState = "open";
@@ -4516,24 +4486,24 @@ Manager$9.prototype.onopen = function() {
   this.subs.push(on(socket2, "close", bind(this, "onclose")));
   this.subs.push(on(this.decoder, "decoded", bind(this, "ondecoded")));
 };
-Manager$9.prototype.onping = function() {
+Manager$a.prototype.onping = function() {
   this.lastPing = /* @__PURE__ */ new Date();
   this.emitAll("ping");
 };
-Manager$9.prototype.onpong = function() {
+Manager$a.prototype.onpong = function() {
   this.emitAll("pong", /* @__PURE__ */ new Date() - this.lastPing);
 };
-Manager$9.prototype.ondata = function(data) {
+Manager$a.prototype.ondata = function(data) {
   this.decoder.add(data);
 };
-Manager$9.prototype.ondecoded = function(packet) {
+Manager$a.prototype.ondecoded = function(packet) {
   this.emit("packet", packet);
 };
-Manager$9.prototype.onerror = function(err) {
+Manager$a.prototype.onerror = function(err) {
   debug("error", err);
   this.emitAll("error", err);
 };
-Manager$9.prototype.socket = function(nsp, opts) {
+Manager$a.prototype.socket = function(nsp, opts) {
   var socket2 = this.nsps[nsp];
   if (!socket2) {
     socket2 = new Socket(this, nsp, opts);
@@ -4554,7 +4524,7 @@ Manager$9.prototype.socket = function(nsp, opts) {
   }
   return socket2;
 };
-Manager$9.prototype.destroy = function(socket2) {
+Manager$a.prototype.destroy = function(socket2) {
   var index2 = indexOf(this.connecting, socket2);
   if (~index2)
     this.connecting.splice(index2, 1);
@@ -4562,7 +4532,7 @@ Manager$9.prototype.destroy = function(socket2) {
     return;
   this.close();
 };
-Manager$9.prototype.packet = function(packet) {
+Manager$a.prototype.packet = function(packet) {
   debug("writing packet %j", packet);
   var self2 = this;
   if (packet.query && packet.type === 0)
@@ -4580,13 +4550,13 @@ Manager$9.prototype.packet = function(packet) {
     self2.packetBuffer.push(packet);
   }
 };
-Manager$9.prototype.processPacketQueue = function() {
+Manager$a.prototype.processPacketQueue = function() {
   if (this.packetBuffer.length > 0 && !this.encoding) {
     var pack = this.packetBuffer.shift();
     this.packet(pack);
   }
 };
-Manager$9.prototype.cleanup = function() {
+Manager$a.prototype.cleanup = function() {
   debug("cleanup");
   var subsLength = this.subs.length;
   for (var i2 = 0; i2 < subsLength; i2++) {
@@ -4598,7 +4568,7 @@ Manager$9.prototype.cleanup = function() {
   this.lastPing = null;
   this.decoder.destroy();
 };
-Manager$9.prototype.close = Manager$9.prototype.disconnect = function() {
+Manager$a.prototype.close = Manager$a.prototype.disconnect = function() {
   debug("disconnect");
   this.skipReconnect = true;
   this.reconnecting = false;
@@ -4610,7 +4580,7 @@ Manager$9.prototype.close = Manager$9.prototype.disconnect = function() {
   if (this.engine)
     this.engine.close();
 };
-Manager$9.prototype.onclose = function(reason) {
+Manager$a.prototype.onclose = function(reason) {
   debug("onclose");
   this.cleanup();
   this.backoff.reset();
@@ -4620,7 +4590,7 @@ Manager$9.prototype.onclose = function(reason) {
     this.reconnect();
   }
 };
-Manager$9.prototype.reconnect = function() {
+Manager$a.prototype.reconnect = function() {
   if (this.reconnecting || this.skipReconnect)
     return this;
   var self2 = this;
@@ -4660,7 +4630,7 @@ Manager$9.prototype.reconnect = function() {
     });
   }
 };
-Manager$9.prototype.onreconnect = function() {
+Manager$a.prototype.onreconnect = function() {
   var attempt = this.backoff.attempts;
   this.reconnecting = false;
   this.backoff.reset();
@@ -4720,7 +4690,7 @@ class APIErrorHomeyOffline extends APIError$3 {
 }
 var APIErrorHomeyOffline_1 = APIErrorHomeyOffline;
 const APIError$2 = APIError_1;
-let HomeyAPIError$1 = class HomeyAPIError2 extends APIError$2 {
+let HomeyAPIError$1 = class HomeyAPIError extends APIError$2 {
   constructor({
     error,
     error_description = null,
@@ -4732,7 +4702,7 @@ let HomeyAPIError$1 = class HomeyAPIError2 extends APIError$2 {
   }
 };
 var HomeyAPIError_1 = HomeyAPIError$1;
-let EventEmitter$3 = class EventEmitter2 {
+let EventEmitter$3 = class EventEmitter {
   constructor() {
     Object.defineProperty(this, "__listeners", {
       value: {},
@@ -4787,6 +4757,7 @@ let EventEmitter$3 = class EventEmitter2 {
    * @param {function} callback
    */
   off(event, callback) {
+    this.__listeners[event] = this.__listeners[event] || [];
     this.__listeners[event] = this.__listeners[event].filter((cb) => cb !== callback);
     return this;
   }
@@ -4808,8 +4779,8 @@ let EventEmitter$3 = class EventEmitter2 {
 };
 var EventEmitter_1 = EventEmitter$3;
 const EventEmitter$2 = EventEmitter_1;
-let Item$a = (_a = class extends EventEmitter$2 {
-  constructor({ id, homey: homey2, manager: manager2, properties }) {
+let Item$b = (_a = class extends EventEmitter$2 {
+  constructor({ id, homey, manager: manager2, properties }) {
     super();
     // Set by Manager.js
     /**
@@ -4833,7 +4804,7 @@ let Item$a = (_a = class extends EventEmitter$2 {
       writable: false
     });
     Object.defineProperty(this, "__homey", {
-      value: homey2,
+      value: homey,
       enumerable: false,
       writable: false
     });
@@ -4960,22 +4931,23 @@ let Item$a = (_a = class extends EventEmitter$2 {
     this.disconnect().catch(() => {
     });
   }
-  static transformGet(item2) {
-    return item2;
+  static transformGet(item) {
+    return item;
   }
-  static transformSet(item2) {
-    return item2;
+  static transformSet(item) {
+    return item;
   }
 }, __publicField(_a, "ID", null), _a);
-var Item_1 = Item$a;
+var Item_1 = Item$b;
 const EventEmitter$1 = EventEmitter_1;
 const Util$4 = Util_1;
-const HomeyAPIError = HomeyAPIError_1;
-let Manager$8 = (_b = class extends EventEmitter$1 {
+const HomeyAPIError2 = HomeyAPIError_1;
+const Item$a = Item_1;
+let Manager$9 = (_b = class extends EventEmitter$1 {
   constructor({
     homey,
     items,
-    operations
+    operations: operations2
   }) {
     super();
     Object.defineProperty(this, "__homey", {
@@ -4983,11 +4955,22 @@ let Manager$8 = (_b = class extends EventEmitter$1 {
       enumerable: false,
       writable: false
     });
-    Object.defineProperty(this, "items", {
+    Object.defineProperty(this, "itemClasses", {
       value: Object.entries(items).reduce((obj, [itemName, item]) => {
-        const ItemClass = this.constructor.CRUD[itemName] ? this.constructor.CRUD[itemName] : eval(`(class ${itemName} extends Item {})`);
+        const ItemClass = this.constructor.CRUD[itemName] ? this.constructor.CRUD[itemName] : (() => {
+          return class extends Item$a {
+          };
+        })();
         ItemClass.ID = item.id;
-        obj[item.id] = ItemClass;
+        obj[itemName] = ItemClass;
+        return obj;
+      }, {}),
+      enumerable: false,
+      writable: false
+    });
+    Object.defineProperty(this, "itemNames", {
+      value: Object.entries(items).reduce((obj, [itemName, item]) => {
+        obj[item.id] = itemName;
         return obj;
       }, {}),
       enumerable: false,
@@ -4999,22 +4982,27 @@ let Manager$8 = (_b = class extends EventEmitter$1 {
       writable: true
     });
     Object.defineProperty(this, "__cache", {
-      value: Object.values(items).reduce((obj2, item2) => ({
-        ...obj2,
-        [item2.id]: {}
+      value: Object.values(items).reduce((obj, item) => ({
+        ...obj,
+        [item.id]: {}
       }), {}),
       enumerable: false,
       writable: false
     });
     Object.defineProperty(this, "__cacheAllComplete", {
-      value: Object.values(items).reduce((obj2, item2) => ({
-        ...obj2,
-        [item2.id]: false
+      value: Object.values(items).reduce((obj, item) => ({
+        ...obj,
+        [item.id]: false
       }), {}),
       enumerable: false,
       writable: false
     });
-    for (const [operationId, operation] of Object.entries(operations)) {
+    Object.defineProperty(this, "__pendingCalls", {
+      value: {},
+      enumerable: false,
+      writable: false
+    });
+    for (const [operationId, operation] of Object.entries(operations2)) {
       Object.defineProperty(
         this,
         // Name method __super__foo if there's an override method
@@ -5098,144 +5086,170 @@ let Manager$8 = (_b = class extends EventEmitter$1 {
               }).join("&");
               path = `${path}?${queryString}`;
             }
-            let result;
-            const benchmark = Util$4.benchmark();
-            if (this.isConnected() && operation.crud && $cache === true) {
-              const itemId = items[operation.crud.item].id;
-              switch (operation.crud.type) {
-                case "getOne": {
-                  if (this.__cache[itemId][args.id]) {
-                    return this.__cache[itemId][args.id];
-                  }
-                  break;
-                }
-                case "getAll": {
-                  if (this.__cache[itemId] && this.__cacheAllComplete[itemId]) {
-                    return this.__cache[itemId];
-                  }
-                  break;
-                }
-              }
+            if (operation.method.toLowerCase() === "get" && $cache === true && this.__pendingCalls[path] != null && Object.keys(body).length === 0) {
+              this.__debug(`Reusing pending call ${operationId}`);
+              const result2 = await this.__pendingCalls[path];
+              return result2;
             }
-            if (this.homey.isConnected() && $socket === true) {
-              result = await Util$4.timeout(new Promise((resolve, reject) => {
-                this.__debug(`IO ${operationId}`);
-                this.homey.__ioNamespace.emit("api", {
-                  args,
-                  operation: operationId,
-                  uri: this.uri
-                }, (err, result2) => {
-                  if (typeof err === "string") {
-                    err = new HomeyAPIError({
-                      error: err
-                    }, 500);
-                    return reject(err);
-                  }
-                  if (typeof err === "object" && err !== null) {
-                    err = new HomeyAPIError({
-                      stack: err.stack,
-                      error: err.error,
-                      error_description: err.error_description
-                    }, err.statusCode || err.code || 500);
-                    return reject(err);
-                  }
-                  return resolve(result2);
-                });
-              }), $timeout);
-            } else {
-              result = await this.homey.call({
+            this.__pendingCalls[path] = (async () => {
+              const result2 = await this.__request({
+                $validate,
+                $cache,
                 $timeout,
-                headers,
+                $socket,
+                operationId,
+                operation,
+                path,
                 body,
-                path: `/api/manager/${this.constructor.ID}${path}`,
-                method: operation.method
+                query,
+                headers,
+                ...args
               });
-            }
-            if (operation.crud) {
-              const itemId = items[operation.crud.item].id;
-              const Item2 = this.items[itemId];
-              switch (operation.crud.type) {
-                case "getOne": {
-                  let item2 = { ...result };
-                  item2 = Item2.transformGet(item2);
-                  item2 = new Item2({
-                    id: item2.id,
-                    homey: this.homey,
-                    manager: this,
-                    properties: { ...item2 }
-                  });
-                  if (this.isConnected()) {
-                    this.__cache[itemId][item2.id] = item2;
-                  }
-                  return item2;
-                }
-                case "getAll": {
-                  const items2 = {};
-                  for (let item2 of Object.values(result)) {
-                    item2 = Item2.transformGet(item2);
-                    if (this.isConnected() && this.__cache[itemId][item2.id]) {
-                      items2[item2.id] = this.__cache[itemId][item2.id];
-                      items2[item2.id].__update(item2);
-                    } else {
-                      items2[item2.id] = new Item2({
-                        id: item2.id,
-                        homey: this.homey,
-                        manager: this,
-                        properties: { ...item2 }
-                      });
-                      if (this.isConnected()) {
-                        this.__cache[itemId][item2.id] = items2[item2.id];
-                      }
-                    }
-                  }
-                  if (this.__cache[itemId]) {
-                    for (const cachedItem of Object.values(this.__cache[itemId])) {
-                      if (!items2[cachedItem.id]) {
-                        delete this.__cache[itemId][cachedItem.id];
-                      }
-                    }
-                  }
-                  if (this.isConnected()) {
-                    this.__cacheAllComplete[itemId] = true;
-                  }
-                  return items2;
-                }
-                case "createOne":
-                case "updateOne": {
-                  let item2 = { ...result };
-                  item2 = Item2.transformGet(item2);
-                  if (this.isConnected() && this.__cache[itemId][item2.id]) {
-                    item2 = this.__cache[itemId][item2.id];
-                    item2.__update(item2);
-                  } else {
-                    item2 = Item2.transformGet(item2);
-                    item2 = new Item2({
-                      id: item2.id,
-                      homey: this.homey,
-                      manager: this,
-                      properties: { ...item2 }
-                    });
-                    if (this.isConnected()) {
-                      this.__cache[itemId][item2.id] = item2;
-                    }
-                  }
-                  return item2;
-                }
-                case "deleteOne": {
-                  if (this.isConnected() && this.__cache[itemId][args.id]) {
-                    this.__cache[itemId][args.id].destroy();
-                    delete this.__cache[itemId][args.id];
-                  }
-                  return void 0;
-                }
-              }
-            }
-            this.__debug(`${operationId} took ${benchmark()}ms`);
+              return result2;
+            })().finally(() => {
+              delete this.__pendingCalls[path];
+            });
+            const result = await this.__pendingCalls[path];
             return result;
           }
         }
       );
     }
+  }
+  async __request({ $cache, $timeout, $socket, operationId, operation, path, body, headers, ...args }) {
+    let result;
+    const benchmark = Util$4.benchmark();
+    if (this.isConnected() && operation.crud && $cache === true) {
+      const itemId = this.itemClasses[operation.crud.item].ID;
+      switch (operation.crud.type) {
+        case "getOne": {
+          if (this.__cache[itemId][args.id]) {
+            return this.__cache[itemId][args.id];
+          }
+          break;
+        }
+        case "getAll": {
+          if (this.__cache[itemId] && this.__cacheAllComplete[itemId]) {
+            return this.__cache[itemId];
+          }
+          break;
+        }
+      }
+    }
+    if (this.homey.isConnected() && $socket === true) {
+      result = await Util$4.timeout(new Promise((resolve, reject) => {
+        this.__debug(`IO ${operationId}`);
+        this.homey.__ioNamespace.emit("api", {
+          args,
+          operation: operationId,
+          uri: this.uri
+        }, (err, result2) => {
+          if (typeof err === "string") {
+            err = new HomeyAPIError2({
+              error: err
+            }, 500);
+            return reject(err);
+          }
+          if (typeof err === "object" && err !== null) {
+            err = new HomeyAPIError2({
+              stack: err.stack,
+              error: err.error,
+              error_description: err.error_description
+            }, err.statusCode || err.code || 500);
+            return reject(err);
+          }
+          return resolve(result2);
+        });
+      }), $timeout);
+    } else {
+      result = await this.homey.call({
+        $timeout,
+        headers,
+        body,
+        path: `/api/manager/${this.constructor.ID}${path}`,
+        method: operation.method
+      });
+    }
+    if (operation.crud) {
+      const ItemClass = this.itemClasses[operation.crud.item];
+      switch (operation.crud.type) {
+        case "getOne": {
+          let props = { ...result };
+          props = ItemClass.transformGet(props);
+          const item = new ItemClass({
+            id: props.id,
+            homey: this.homey,
+            manager: this,
+            properties: props
+          });
+          if (this.isConnected()) {
+            this.__cache[ItemClass.ID][item.id] = item;
+          }
+          return item;
+        }
+        case "getAll": {
+          const items = {};
+          for (let props of Object.values(result)) {
+            props = ItemClass.transformGet(props);
+            if (this.isConnected() && this.__cache[ItemClass.ID][props.id]) {
+              items[props.id] = this.__cache[ItemClass.ID][props.id];
+              items[props.id].__update(props);
+            } else {
+              items[props.id] = new ItemClass({
+                id: props.id,
+                homey: this.homey,
+                manager: this,
+                properties: props
+              });
+              if (this.isConnected()) {
+                this.__cache[ItemClass.ID][props.id] = items[props.id];
+              }
+            }
+          }
+          if (this.__cache[ItemClass.ID]) {
+            for (const cachedItem of Object.values(this.__cache[ItemClass.ID])) {
+              if (!items[cachedItem.id]) {
+                delete this.__cache[ItemClass.ID][cachedItem.id];
+              }
+            }
+          }
+          if (this.isConnected()) {
+            this.__cacheAllComplete[ItemClass.ID] = true;
+          }
+          return items;
+        }
+        case "createOne":
+        case "updateOne": {
+          let item = null;
+          let props = { ...result };
+          props = ItemClass.transformGet(props);
+          if (this.isConnected() && this.__cache[ItemClass.ID][props.id]) {
+            item = this.__cache[ItemClass.ID][props.id];
+            item.__update(props);
+          } else {
+            item = new ItemClass({
+              id: props.id,
+              homey: this.homey,
+              manager: this,
+              properties: { ...props }
+            });
+            if (this.isConnected()) {
+              this.__cache[ItemClass.ID][props.id] = item;
+            }
+          }
+          return item;
+        }
+        case "deleteOne": {
+          if (this.isConnected() && this.__cache[ItemClass.ID][args.id]) {
+            this.__cache[ItemClass.ID][args.id].destroy();
+            delete this.__cache[ItemClass.ID][args.id];
+          }
+          return void 0;
+        }
+      }
+    }
+    this.__debug(`${operationId} took ${benchmark()}ms`);
+    return result;
   }
   /**
    * The Homey of the Manager.
@@ -5290,36 +5304,37 @@ let Manager$8 = (_b = class extends EventEmitter$1 {
             this.__debug("onEvent", event);
             if (event.endsWith(".create") || event.endsWith(".update") || event.endsWith(".delete")) {
               const [itemId, operation] = event.split(".");
-              const Item2 = this.items[itemId];
+              const itemName = this.itemNames[itemId];
+              const ItemClass = this.itemClasses[itemName];
               switch (operation) {
                 case "create": {
-                  data = Item2.transformGet(data);
-                  const item2 = new Item2({
-                    id: data.id,
+                  const props = ItemClass.transformGet(data);
+                  const item = new ItemClass({
+                    id: props.id,
                     homey: this.homey,
                     manager: this,
-                    properties: { ...data }
+                    properties: props
                   });
-                  this.__cache[itemId][data.id] = item2;
-                  return this.emit(event, item2);
+                  this.__cache[ItemClass.ID][props.id] = item;
+                  return this.emit(event, item);
                 }
                 case "update": {
-                  data = Item2.transformGet(data);
-                  if (this.__cache[itemId][data.id]) {
-                    const item2 = this.__cache[itemId][data.id];
-                    item2.__update(data);
-                    return this.emit(event, item2);
+                  const props = ItemClass.transformGet(data);
+                  if (this.__cache[ItemClass.ID][props.id]) {
+                    const item = this.__cache[ItemClass.ID][props.id];
+                    item.__update(props);
+                    return this.emit(event, item);
                   }
                   break;
                 }
                 case "delete": {
-                  data = Item2.transformGet(data);
-                  if (this.__cache[itemId][data.id]) {
-                    const item2 = this.__cache[itemId][data.id];
-                    item2.__delete();
-                    delete this.__cache[itemId][item2.id];
+                  const props = ItemClass.transformGet(data);
+                  if (this.__cache[ItemClass.ID][props.id]) {
+                    const item = this.__cache[ItemClass.ID][props.id];
+                    item.__delete();
+                    delete this.__cache[ItemClass.ID][item.id];
                     return this.emit(event, {
-                      id: item2.id
+                      id: item.id
                     });
                   }
                   break;
@@ -5377,9 +5392,9 @@ let Manager$8 = (_b = class extends EventEmitter$1 {
   }
 }, __publicField(_b, "ID", null), // Set by HomeyAPIV3.js
 __publicField(_b, "CRUD", {}), _b);
-var Manager_1$1 = Manager$8;
+var Manager_1$1 = Manager$9;
 const Item$9 = Item_1;
-let App$1 = class App2 extends Item$9 {
+let App$1 = class App extends Item$9 {
   /**
    * Call the app's API endpoint.
    * @param {Object} opts
@@ -5463,28 +5478,41 @@ let App$1 = class App2 extends Item$9 {
   }
 };
 var App_1 = App$1;
-const Manager$7 = Manager_1$1;
-const App = App_1;
-const _ManagerApps = class extends Manager$7 {
+const Manager$8 = Manager_1$1;
+const App2 = App_1;
+const _ManagerApps = class extends Manager$8 {
 };
 let ManagerApps = _ManagerApps;
 __publicField(ManagerApps, "CRUD", {
   ...__superGet(_ManagerApps, _ManagerApps, "CRUD"),
-  App
+  App: App2
 });
 var ManagerApps_1 = ManagerApps;
 const Item$8 = Item_1;
-let Driver$3 = class Driver2 extends Item$8 {
+let Driver$3 = class Driver extends Item$8 {
+  get uri() {
+    console.warn("Driver.uri is deprecated. Please use Driver.ownerUri instead.");
+    return void 0;
+  }
+  get uriObj() {
+    console.warn("Driver.uriObj is deprecated.");
+    return void 0;
+  }
 };
 var Driver_1$1 = Driver$3;
 const Item$7 = Item_1;
-let PairSession$3 = class PairSession2 extends Item$7 {
+let PairSession$3 = class PairSession extends Item$7 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    delete item.uri;
+    return item;
+  }
 };
 var PairSession_1$1 = PairSession$3;
-const Manager$6 = Manager_1$1;
+const Manager$7 = Manager_1$1;
 const Driver$2 = Driver_1$1;
 const PairSession$2 = PairSession_1$1;
-let ManagerDrivers$1 = (_c = class extends Manager$6 {
+let ManagerDrivers$1 = (_c = class extends Manager$7 {
 }, __publicField(_c, "CRUD", {
   ...__superGet(_c, _c, "CRUD"),
   Driver: Driver$2,
@@ -5492,12 +5520,16 @@ let ManagerDrivers$1 = (_c = class extends Manager$6 {
 }), _c);
 var ManagerDrivers_1$1 = ManagerDrivers$1;
 const Item$6 = Item_1;
-let Capability$3 = class Capability2 extends Item$6 {
+let Capability$3 = class Capability extends Item$6 {
+  get uri() {
+    console.warn("Capability.uri is deprecated. Please use Capability.ownerUri instead.");
+    return void 0;
+  }
 };
 var Capability_1$1 = Capability$3;
 const Util$3 = Util_1;
-const EventEmitter = EventEmitter_1;
-let DeviceCapability$1 = class DeviceCapability2 extends EventEmitter {
+const EventEmitter2 = EventEmitter_1;
+let DeviceCapability$1 = class DeviceCapability extends EventEmitter2 {
   constructor({
     id,
     device,
@@ -5572,7 +5604,7 @@ let DeviceCapability$1 = class DeviceCapability2 extends EventEmitter {
       capabilityReference.value = value;
       capabilityReference.lastUpdated = this.__lastChanged;
     }
-    this.__listener(value);
+    this.__listener(value, this);
   }
   __onDeviceDelete() {
     this.destroy();
@@ -5607,7 +5639,7 @@ let DeviceCapability$1 = class DeviceCapability2 extends EventEmitter {
       capabilityId: this.id
     });
     this.__value = value;
-    this.__lastChanged = /* @__PURE__ */ new Date();
+    this.__lastChanged = transactionTime;
     const capabilityReference = this.device.capabilitiesObj && this.device.capabilitiesObj[this.id];
     if (capabilityReference) {
       capabilityReference.value = value;
@@ -5618,8 +5650,8 @@ let DeviceCapability$1 = class DeviceCapability2 extends EventEmitter {
 var DeviceCapability_1 = DeviceCapability$1;
 const Util$2 = Util_1;
 const Item$5 = Item_1;
-const DeviceCapability = DeviceCapability_1;
-let Device$5 = class Device2 extends Item$5 {
+const DeviceCapability2 = DeviceCapability_1;
+let Device$5 = class Device extends Item$5 {
   constructor(...props) {
     super(...props);
     Object.defineProperty(this, "__capabilityInstances", {
@@ -5645,10 +5677,11 @@ let Device$5 = class Device2 extends Item$5 {
    * onOffInstance.setValue(true).catch(console.error);
    */
   makeCapabilityInstance(capabilityId, listener) {
+    this.__debug("Creating capability instance for: ", capabilityId);
     this.connect().catch((err) => {
       this.__debug(err);
     });
-    const instance = new DeviceCapability({
+    const instance = new DeviceCapability2({
       listener,
       id: capabilityId,
       device: this
@@ -5712,13 +5745,15 @@ let Device$5 = class Device2 extends Item$5 {
       this.manager.getDevice({
         id: this.id
       }).then(async (device) => {
-        Object.entries(this.__capabilityInstances).forEach(([capabilityId, capabilityInstance]) => {
+        Object.entries(this.__capabilityInstances).forEach(([capabilityId, capabilityInstances]) => {
           const value = device.capabilitiesObj ? typeof device.capabilitiesObj[capabilityId] !== "undefined" ? device.capabilitiesObj[capabilityId].value : null : null;
-          capabilityInstance.__onCapabilityValue({
-            capabilityId,
-            value,
-            transactionId: Util$2.uuid()
-          });
+          for (const capabilityInstance of capabilityInstances) {
+            capabilityInstance.__onCapabilityValue({
+              capabilityId,
+              value,
+              transactionId: Util$2.uuid()
+            });
+          }
         });
       }).catch((err) => this.__debug(`Device[${this.id}].onReconnectError:`, err));
     }
@@ -5747,10 +5782,10 @@ let Device$5 = class Device2 extends Item$5 {
    */
   async getLogs() {
     const logs = await this.homey.insights.getLogs();
-    return Object.values(logs).filter((log) => log.ownerUri === this.uri).reduce((result, log) => ({
-      ...result,
-      [log.id]: log
-    }), {});
+    return Object.values(logs).filter((log) => log.ownerUri === this.uri).reduce((accumulator, log) => {
+      accumulator[log.id] = log;
+      return accumulator;
+    }, {});
   }
   /**
    * Get the device's flows.
@@ -5787,24 +5822,32 @@ let Device$5 = class Device2 extends Item$5 {
       [advancedFlow.id]: advancedFlow
     }), {});
   }
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    delete item2.driverUri;
-    if (item2.capabilitiesObj) {
-      for (const capabilityObj of Object.values(item2.capabilitiesObj)) {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    delete item.driverUri;
+    if (item.capabilitiesObj) {
+      for (const capabilityObj of Object.values(item.capabilitiesObj)) {
         if (capabilityObj.lastUpdated) {
           capabilityObj.lastUpdated = new Date(capabilityObj.lastUpdated);
         }
       }
     }
-    return item2;
+    return item;
+  }
+  get driverUri() {
+    console.warn("Device.driverUri is deprecated. Please use Device.driverId instead.");
+    return void 0;
+  }
+  get zoneName() {
+    console.warn("Device.zoneName is deprecated.");
+    return void 0;
   }
 };
 var Device_1$2 = Device$5;
-const Manager$5 = Manager_1$1;
+const Manager$6 = Manager_1$1;
 const Capability$2 = Capability_1$1;
 const Device$4 = Device_1$2;
-let ManagerDevices$1 = (_d = class extends Manager$5 {
+let ManagerDevices$1 = (_d = class extends Manager$6 {
 }, __publicField(_d, "CRUD", {
   ...__superGet(_d, _d, "CRUD"),
   Capability: Capability$2,
@@ -5812,7 +5855,7 @@ let ManagerDevices$1 = (_d = class extends Manager$5 {
 }), _d);
 var ManagerDevices_1$1 = ManagerDevices$1;
 const Item$4 = Item_1;
-let Flow$3 = class Flow2 extends Item$4 {
+let Flow$3 = class Flow extends Item$4 {
   /**
    * Check whether this Flow misses one or more {@link FlowCard} or {@link FlowToken}.
    * @returns Promise<Boolean> - A boolean whether this Flow is broken.
@@ -5897,7 +5940,7 @@ let Flow$3 = class Flow2 extends Item$4 {
 };
 var Flow_1$1 = Flow$3;
 const Item$3 = Item_1;
-let AdvancedFlow$3 = class AdvancedFlow2 extends Item$3 {
+let AdvancedFlow$3 = class AdvancedFlow extends Item$3 {
   /**
    * Check whether this Flow misses one or more {@link FlowCard} or {@link FlowToken}.
    * @returns Promise<Boolean> - A boolean whether this Flow is broken.
@@ -5992,33 +6035,57 @@ let AdvancedFlow$3 = class AdvancedFlow2 extends Item$3 {
 };
 var AdvancedFlow_1$1 = AdvancedFlow$3;
 const Item$2 = Item_1;
-let FlowCard$3 = class FlowCard2 extends Item$2 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    delete item2.ownerName;
-    return item2;
+let FlowCard$3 = class FlowCard extends Item$2 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    delete item.ownerName;
+    return item;
   }
 };
 var FlowCard_1 = FlowCard$3;
 const FlowCard$2 = FlowCard_1;
-let FlowCardTrigger$3 = class FlowCardTrigger2 extends FlowCard$2 {
+let FlowCardTrigger$3 = class FlowCardTrigger extends FlowCard$2 {
+  get uri() {
+    console.warn("FlowCardTrigger.uri is deprecated. Use FlowCardTrigger.ownerUri instead.");
+    return void 0;
+  }
+  get uriObj() {
+    console.warn("FlowCardTrigger.uriObj is deprecated.");
+    return void 0;
+  }
 };
 var FlowCardTrigger_1$1 = FlowCardTrigger$3;
 const FlowCard$1 = FlowCard_1;
-let FlowCardCondition$3 = class FlowCardCondition2 extends FlowCard$1 {
+let FlowCardCondition$3 = class FlowCardCondition extends FlowCard$1 {
+  get uri() {
+    console.warn("FlowCardCondition.uri is deprecated. Use FlowCardCondition.ownerUri instead.");
+    return void 0;
+  }
+  get uriObj() {
+    console.warn("FlowCardCondition.uriObj is deprecated.");
+    return void 0;
+  }
 };
 var FlowCardCondition_1$1 = FlowCardCondition$3;
-const FlowCard = FlowCard_1;
-let FlowCardAction$3 = class FlowCardAction2 extends FlowCard {
+const FlowCard2 = FlowCard_1;
+let FlowCardAction$3 = class FlowCardAction extends FlowCard2 {
+  get uri() {
+    console.warn("FlowCardAction.uri is deprecated. Use FlowCardAction.ownerUri instead.");
+    return void 0;
+  }
+  get uriObj() {
+    console.warn("FlowCardAction.uriObj is deprecated.");
+    return void 0;
+  }
 };
 var FlowCardAction_1$1 = FlowCardAction$3;
-const Manager$4 = Manager_1$1;
+const Manager$5 = Manager_1$1;
 const Flow$2 = Flow_1$1;
 const AdvancedFlow$2 = AdvancedFlow_1$1;
 const FlowCardTrigger$2 = FlowCardTrigger_1$1;
 const FlowCardCondition$2 = FlowCardCondition_1$1;
 const FlowCardAction$2 = FlowCardAction_1$1;
-let ManagerFlow$1 = (_e = class extends Manager$4 {
+let ManagerFlow$1 = (_e = class extends Manager$5 {
 }, __publicField(_e, "CRUD", {
   ...__superGet(_e, _e, "CRUD"),
   Flow: Flow$2,
@@ -6029,49 +6096,114 @@ let ManagerFlow$1 = (_e = class extends Manager$4 {
 }), _e);
 var ManagerFlow_1$1 = ManagerFlow$1;
 const Item$1 = Item_1;
-let FlowToken$3 = class FlowToken2 extends Item$1 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    if (item2.uri) {
-      item2.id = `${item2.uri}:${item2.id}`;
-      delete item2.uri;
+let FlowToken$3 = class FlowToken extends Item$1 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    if (item.uri) {
+      item.id = `${item.uri}:${item.id}`;
+      delete item.uri;
     }
-    delete item2.uriObj;
-    delete item2.ownerName;
-    return item2;
+    delete item.uriObj;
+    delete item.ownerName;
+    return item;
+  }
+  get uri() {
+    console.warn("FlowToken.uri is deprecated. Use FlowToken.ownerUri instead.");
+    return void 0;
+  }
+  get uriObj() {
+    console.warn("FlowToken.uriObj is deprecated.");
+    return void 0;
+  }
+  get ownerName() {
+    console.warn("FlowToken.ownerName is deprecated.");
+    return void 0;
   }
 };
 var FlowToken_1$1 = FlowToken$3;
-const Manager$3 = Manager_1$1;
+const Manager$4 = Manager_1$1;
 const FlowToken$2 = FlowToken_1$1;
-let ManagerFlowToken$1 = (_f = class extends Manager$3 {
+let ManagerFlowToken$1 = (_f = class extends Manager$4 {
 }, __publicField(_f, "CRUD", {
   ...__superGet(_f, _f, "CRUD"),
   FlowToken: FlowToken$2
 }), _f);
 var ManagerFlowToken_1$1 = ManagerFlowToken$1;
 const Item = Item_1;
-let Log$3 = class Log2 extends Item {
+let Log$3 = class Log extends Item {
   async getEntries() {
     return this.manager.getLogEntries({
       id: this.id
     });
   }
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    delete item2.ownerName;
-    return item2;
+  static transformGet(item) {
+    item = super.transformGet(item);
+    delete item.ownerName;
+    return item;
+  }
+  get uri() {
+    console.warn("Log.uri is deprecated. Use Log.ownerUri instead.");
+    return void 0;
+  }
+  get uriObj() {
+    console.warn("Log.uriObj is deprecated.");
+    return void 0;
+  }
+  get ownerName() {
+    console.warn("Log.ownerName is deprecated.");
+    return void 0;
   }
 };
 var Log_1$1 = Log$3;
-const Manager$2 = Manager_1$1;
+const Manager$3 = Manager_1$1;
 const Log$2 = Log_1$1;
-let ManagerInsights$1 = (_g = class extends Manager$2 {
+let ManagerInsights$1 = (_g = class extends Manager$3 {
 }, __publicField(_g, "CRUD", {
   ...__superGet(_g, _g, "CRUD"),
   Log: Log$2
 }), _g);
 var ManagerInsights_1$1 = ManagerInsights$1;
+const Manager$2 = Manager_1$1;
+class ManagerUsers extends Manager$2 {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "__userMe", null);
+  }
+  async getUserMe(...args) {
+    const options = args[0] ?? {};
+    if (this.__userMe != null && options.$cache !== false) {
+      return await this.__userMe;
+    }
+    this.__userMe = this.__super__getUserMe(...args).then((result) => {
+      const ItemClass = this.itemClasses.User;
+      const props = ItemClass.transformGet(result);
+      if (this.isConnected()) {
+        if (this.__cache[ItemClass.ID][props.id] != null) {
+          this.__cache[ItemClass.ID][props.id].__update(props);
+        } else {
+          this.__cache[ItemClass.ID][props.id] = new ItemClass({
+            id: props.id,
+            homey: this.homey,
+            manager: this,
+            properties: props
+          });
+        }
+        return this.__cache[ItemClass.ID][props.id];
+      }
+      return new ItemClass({
+        id: props.id,
+        homey: this.homey,
+        manager: this,
+        properties: props
+      });
+    }).catch((err) => {
+      this.__userMe = null;
+      throw err;
+    });
+    return await this.__userMe;
+  }
+}
+var ManagerUsers_1 = ManagerUsers;
 const managers$2 = {
   ManagerAlarms: {
     id: "alarms",
@@ -12286,7 +12418,7 @@ const managers$2 = {
     }
   }
 };
-const require$$12 = {
+const require$$13 = {
   managers: managers$2
 };
 var HomeyAPIV3_1;
@@ -12296,25 +12428,27 @@ function requireHomeyAPIV3() {
     return HomeyAPIV3_1;
   hasRequiredHomeyAPIV3 = 1;
   const SocketIOClient = libExports;
-  const APIErrorHomeyOffline = APIErrorHomeyOffline_1;
-  const Util = Util_1;
-  const HomeyAPI = requireHomeyAPI();
-  const HomeyAPIError = HomeyAPIError_1;
-  const ManagerApps = ManagerApps_1;
-  const ManagerDrivers = ManagerDrivers_1$1;
-  const ManagerDevices = ManagerDevices_1$1;
-  const ManagerFlow = ManagerFlow_1$1;
-  const ManagerFlowToken = ManagerFlowToken_1$1;
-  const ManagerInsights = ManagerInsights_1$1;
-  class HomeyAPIV3 extends HomeyAPI {
+  const APIErrorHomeyOffline2 = APIErrorHomeyOffline_1;
+  const Util3 = Util_1;
+  const HomeyAPI2 = requireHomeyAPI();
+  const HomeyAPIError3 = HomeyAPIError_1;
+  const ManagerApps2 = ManagerApps_1;
+  const ManagerDrivers2 = ManagerDrivers_1$1;
+  const ManagerDevices2 = ManagerDevices_1$1;
+  const ManagerFlow2 = ManagerFlow_1$1;
+  const ManagerFlowToken2 = ManagerFlowToken_1$1;
+  const ManagerInsights2 = ManagerInsights_1$1;
+  const ManagerUsers2 = ManagerUsers_1;
+  const Manager3 = Manager_1$1;
+  class HomeyAPIV3 extends HomeyAPI2 {
     constructor({
       properties,
       strategy = [
-        HomeyAPI.DISCOVERY_STRATEGIES.MDNS,
-        HomeyAPI.DISCOVERY_STRATEGIES.CLOUD,
-        HomeyAPI.DISCOVERY_STRATEGIES.LOCAL,
-        HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE,
-        HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED
+        HomeyAPI2.DISCOVERY_STRATEGIES.MDNS,
+        HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD,
+        HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL,
+        HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE,
+        HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED
       ],
       baseUrl = null,
       token = null,
@@ -12384,24 +12518,27 @@ function requireHomeyAPIV3() {
      * A manager instance is created when it's first accessed
      */
     getSpecification() {
-      return require$$12;
+      return require$$13;
     }
     generateManagersFromSpecification() {
       const { managers: managers2 } = this.getSpecification();
-      Object.entries(managers2).forEach(([managerName2, manager2]) => {
-        this.generateManagerFromSpecification(managerName2, manager2);
+      Object.entries(managers2).forEach(([managerName, manager2]) => {
+        this.generateManagerFromSpecification(managerName, manager2);
       });
     }
-    generateManagerFromSpecification(managerName, manager) {
-      Object.defineProperty(this, manager.idCamelCase, {
+    generateManagerFromSpecification(managerName, manager2) {
+      Object.defineProperty(this, manager2.idCamelCase, {
         get: () => {
           if (!this.__managers[managerName]) {
-            const ManagerClass = this.constructor.MANAGERS[managerName] ? this.constructor.MANAGERS[managerName] : eval(`(class ${managerName} extends Manager {})`);
-            ManagerClass.ID = manager.id;
+            const ManagerClass = this.constructor.MANAGERS[managerName] ? this.constructor.MANAGERS[managerName] : (() => {
+              return class extends Manager3 {
+              };
+            })();
+            ManagerClass.ID = manager2.id;
             this.__managers[managerName] = new ManagerClass({
               homey: this,
-              items: manager.items || {},
-              operations: manager.operations || {}
+              items: manager2.items || {},
+              operations: manager2.operations || {}
             });
           }
           return this.__managers[managerName];
@@ -12417,29 +12554,29 @@ function requireHomeyAPIV3() {
      */
     async discoverBaseUrl() {
       const urls = {};
-      if (this.__strategies.includes(HomeyAPI.DISCOVERY_STRATEGIES.MDNS)) {
-        if (Util.isHTTPUnsecureSupported()) {
-          urls[HomeyAPI.DISCOVERY_STRATEGIES.MDNS] = `http://homey-${this.id}.local`;
+      if (this.__strategies.includes(HomeyAPI2.DISCOVERY_STRATEGIES.MDNS)) {
+        if (Util3.isHTTPUnsecureSupported()) {
+          urls[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS] = `http://homey-${this.id}.local`;
         }
       }
-      if (this.__strategies.includes(HomeyAPI.DISCOVERY_STRATEGIES.LOCAL)) {
-        if (Util.isHTTPUnsecureSupported() && this.__properties.localUrl) {
-          urls[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL] = `${this.__properties.localUrl}`;
+      if (this.__strategies.includes(HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL)) {
+        if (Util3.isHTTPUnsecureSupported() && this.__properties.localUrl) {
+          urls[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL] = `${this.__properties.localUrl}`;
         }
       }
-      if (this.__strategies.includes(HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE)) {
+      if (this.__strategies.includes(HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE)) {
         if (this.__properties.localUrlSecure) {
-          urls[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE] = `${this.__properties.localUrlSecure}`;
+          urls[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE] = `${this.__properties.localUrlSecure}`;
         }
       }
-      if (this.__strategies.includes(HomeyAPI.DISCOVERY_STRATEGIES.CLOUD)) {
+      if (this.__strategies.includes(HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD)) {
         if (this.__properties.remoteUrl) {
-          urls[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD] = `${this.__properties.remoteUrl}`;
+          urls[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD] = `${this.__properties.remoteUrl}`;
         }
       }
-      if (this.__strategies.includes(HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED)) {
+      if (this.__strategies.includes(HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED)) {
         if (this.__properties.remoteUrlForwarded) {
-          urls[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED] = `${this.__properties.remoteUrlForwarded}`;
+          urls[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED] = `${this.__properties.remoteUrlForwarded}`;
         }
       }
       if (!Object.keys(urls).length) {
@@ -12469,7 +12606,7 @@ function requireHomeyAPIV3() {
         let pingTimeout;
         const baseUrl = urls[strategyId];
         return Promise.race([
-          Util.fetch(`${baseUrl}/api/manager/system/ping?id=${this.id}`, {
+          Util3.fetch(`${baseUrl}/api/manager/system/ping?id=${this.id}`, {
             headers: {
               "X-Homey-ID": this.id
             }
@@ -12499,68 +12636,68 @@ function requireHomeyAPIV3() {
         ]).finally(() => clearTimeout(pingTimeout));
       };
       const pings = {};
-      if (urls[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE] = ping(HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE, 1200);
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE].catch((err) => this.__debug(`Ping ${HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE} Error:`, err && err.message));
+      if (urls[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE] = ping(HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE, 1200);
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE].catch((err) => this.__debug(`Ping ${HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE} Error:`, err && err.message));
       }
-      if (urls[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL] = ping(HomeyAPI.DISCOVERY_STRATEGIES.LOCAL, 1e3);
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL].catch((err) => this.__debug(`Ping ${HomeyAPI.DISCOVERY_STRATEGIES.LOCAL} Error:`, err && err.message));
+      if (urls[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL] = ping(HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL, 1e3);
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL].catch((err) => this.__debug(`Ping ${HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL} Error:`, err && err.message));
       }
-      if (urls[HomeyAPI.DISCOVERY_STRATEGIES.MDNS]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.MDNS] = ping(HomeyAPI.DISCOVERY_STRATEGIES.MDNS, 3e3);
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.MDNS].catch((err) => this.__debug(`Ping ${HomeyAPI.DISCOVERY_STRATEGIES.MDNS} Error:`, err && err.message));
+      if (urls[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS] = ping(HomeyAPI2.DISCOVERY_STRATEGIES.MDNS, 3e3);
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS].catch((err) => this.__debug(`Ping ${HomeyAPI2.DISCOVERY_STRATEGIES.MDNS} Error:`, err && err.message));
       }
-      if (urls[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD] = ping(HomeyAPI.DISCOVERY_STRATEGIES.CLOUD, 5e3);
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD].catch((err) => this.__debug(`Ping ${HomeyAPI.DISCOVERY_STRATEGIES.CLOUD} Error:`, err && err.message));
+      if (urls[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD] = ping(HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD, 5e3);
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD].catch((err) => this.__debug(`Ping ${HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD} Error:`, err && err.message));
       }
-      if (urls[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED] = ping(HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED, 2e3);
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED].catch((err) => this.__debug(`Ping ${HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED} Error:`, err && err.message));
+      if (urls[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED] = ping(HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED, 2e3);
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED].catch((err) => this.__debug(`Ping ${HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED} Error:`, err && err.message));
       }
-      if (pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE].then((result) => resolve(result)).catch(() => {
+      if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL_SECURE].then((result) => resolve(result)).catch(() => {
           const promises = [];
-          if (pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL]) {
-            promises.push(pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL]);
+          if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL]) {
+            promises.push(pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL]);
           }
-          if (pings[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]) {
-            promises.push(pings[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]);
+          if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]) {
+            promises.push(pings[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]);
           }
-          if (pings[HomeyAPI.DISCOVERY_STRATEGIES.MDNS]) {
-            promises.push(pings[HomeyAPI.DISCOVERY_STRATEGIES.MDNS]);
+          if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS]) {
+            promises.push(pings[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS]);
           }
-          if (pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD]) {
-            promises.push(pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD]);
+          if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD]) {
+            promises.push(pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD]);
           }
           if (!promises.length) {
-            throw new APIErrorHomeyOffline();
+            throw new APIErrorHomeyOffline2();
           }
-          return Util.promiseAny(promises);
-        }).then((result) => resolve(result)).catch(() => reject(new APIErrorHomeyOffline()));
-      } else if (pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.LOCAL].then((result) => resolve(result)).catch(() => {
-          if (pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD]) {
-            pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline(err)));
-          }
-        });
-      } else if (pings[HomeyAPI.DISCOVERY_STRATEGIES.MDNS]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.MDNS].then((result) => resolve(result)).catch(() => {
-          if (pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD]) {
-            pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline(err)));
+          return Util3.promiseAny(promises);
+        }).then((result) => resolve(result)).catch(() => reject(new APIErrorHomeyOffline2()));
+      } else if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.LOCAL].then((result) => resolve(result)).catch(() => {
+          if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD]) {
+            pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline2(err)));
           }
         });
-      } else if (pings[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED].then((result) => resolve(result)).catch(() => {
-          if (pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD]) {
-            pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline(err)));
+      } else if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.MDNS].then((result) => resolve(result)).catch(() => {
+          if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD]) {
+            pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline2(err)));
           }
         });
-      } else if (pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD]) {
-        pings[HomeyAPI.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline(err)));
+      } else if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.REMOTE_FORWARDED].then((result) => resolve(result)).catch(() => {
+          if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD]) {
+            pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline2(err)));
+          }
+        });
+      } else if (pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD]) {
+        pings[HomeyAPI2.DISCOVERY_STRATEGIES.CLOUD].then((result) => resolve(result)).catch((err) => reject(new APIErrorHomeyOffline2(err)));
       } else {
-        reject(new APIErrorHomeyOffline());
+        reject(new APIErrorHomeyOffline2());
       }
       return promise;
     }
@@ -12591,7 +12728,7 @@ function requireHomeyAPIV3() {
         body = void 0;
       }
       this.__debug(method, `${baseUrl}${path}`);
-      const res = await Util.timeout(Util.fetch(`${baseUrl}${path}`, {
+      const res = await Util3.timeout(Util3.fetch(`${baseUrl}${path}`, {
         method,
         headers,
         body
@@ -12601,6 +12738,12 @@ function requireHomeyAPIV3() {
         return void 0;
       const resStatusText = res.status;
       const resHeadersContentType = res.headers.get("Content-Type");
+      const version = res.headers.get("x-homey-version");
+      if (version)
+        this.version = version;
+      const tier = res.headers.get("x-homey-tier");
+      if (tier)
+        this.tier = tier;
       const resBodyText = await res.text();
       let resBodyJson;
       if (resHeadersContentType && resHeadersContentType.startsWith("application/json")) {
@@ -12626,18 +12769,18 @@ function requireHomeyAPIV3() {
               retryAfterRefresh: true
             });
           }
-          throw new HomeyAPIError({
+          throw new HomeyAPIError3({
             error: resBodyJson.error,
             error_description: resBodyJson.error_description,
             stack: resBodyJson.stack
           }, resStatusCode);
         }
         if (resBodyText) {
-          throw new HomeyAPIError({
+          throw new HomeyAPIError3({
             error: resBodyText
           }, resStatusCode);
         }
-        throw new HomeyAPIError({
+        throw new HomeyAPIError3({
           error: resStatusText
         }, resStatusCode);
       }
@@ -12707,8 +12850,10 @@ function requireHomeyAPIV3() {
       await new Promise((resolve, reject) => {
         this.__ioNamespace.once("disconnect", reject);
         this.__ioNamespace.emit("subscribe", uri, (err) => {
-          if (err)
+          if (err) {
+            this.__debug("Failed to subscribe", uri, err);
             return reject(err);
+          }
           return resolve();
         });
       });
@@ -12726,8 +12871,10 @@ function requireHomeyAPIV3() {
           await this.connect();
           await new Promise((resolve, reject) => {
             this.__ioNamespace.emit("subscribe", uri, (err) => {
-              if (err)
+              if (err) {
+                this.__debug("Failed to subscribe", uri, err);
                 return reject(err);
+              }
               return resolve();
             });
           });
@@ -12888,143 +13035,144 @@ function requireHomeyAPIV3() {
     }
   }
   __publicField(HomeyAPIV3, "MANAGERS", {
-    ManagerApps,
-    ManagerDrivers,
-    ManagerDevices,
-    ManagerFlow,
-    ManagerFlowToken,
-    ManagerInsights
+    ManagerApps: ManagerApps2,
+    ManagerDrivers: ManagerDrivers2,
+    ManagerDevices: ManagerDevices2,
+    ManagerFlow: ManagerFlow2,
+    ManagerFlowToken: ManagerFlowToken2,
+    ManagerInsights: ManagerInsights2,
+    ManagerUsers: ManagerUsers2
   });
   HomeyAPIV3_1 = HomeyAPIV3;
   return HomeyAPIV3_1;
 }
 const FlowV3 = Flow_1$1;
-let Flow$1 = class Flow3 extends FlowV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    if (item2.trigger) {
-      item2.trigger.id = `${item2.trigger.uri}:${item2.trigger.id}`;
-      delete item2.trigger.uri;
+let Flow$1 = class Flow2 extends FlowV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    if (item.trigger) {
+      item.trigger.id = `${item.trigger.uri}:${item.trigger.id}`;
+      delete item.trigger.uri;
     }
-    if (Array.isArray(item2.conditions)) {
-      item2.conditions.forEach((card) => {
+    if (Array.isArray(item.conditions)) {
+      item.conditions.forEach((card) => {
         card.id = `${card.uri}:${card.id}`;
         delete card.uri;
       });
     }
-    if (Array.isArray(item2.actions)) {
-      item2.actions.forEach((card) => {
+    if (Array.isArray(item.actions)) {
+      item.actions.forEach((card) => {
         card.id = `${card.uri}:${card.id}`;
         delete card.uri;
       });
     }
-    delete item2.broken;
-    return item2;
+    delete item.broken;
+    return item;
   }
-  static transformSet(item2) {
-    if (item2.trigger) {
-      item2.trigger.uri = item2.trigger.id.split(":", 3).join(":");
-      item2.trigger.id = item2.trigger.id.split(":").reverse()[0];
+  static transformSet(item) {
+    if (item.trigger) {
+      item.trigger.uri = item.trigger.id.split(":", 3).join(":");
+      item.trigger.id = item.trigger.id.split(":").reverse()[0];
     }
-    if (Array.isArray(item2.conditions)) {
-      item2.conditions.forEach((card) => {
+    if (Array.isArray(item.conditions)) {
+      item.conditions.forEach((card) => {
         card.uri = card.id.split(":", 3).join(":");
         card.id = card.id.split(":").reverse()[0];
       });
     }
-    if (Array.isArray(item2.actions)) {
-      item2.actions.forEach((card) => {
+    if (Array.isArray(item.actions)) {
+      item.actions.forEach((card) => {
         card.uri = card.id.split(":", 3).join(":");
         card.id = card.id.split(":").reverse()[0];
       });
     }
-    return item2;
+    return item;
   }
 };
 var Flow_1 = Flow$1;
 const AdvancedFlowV3 = AdvancedFlow_1$1;
-let AdvancedFlow$1 = class AdvancedFlow3 extends AdvancedFlowV3 {
-  static transformGet(item2) {
-    if (item2.cards) {
-      for (const card of Object.values(item2.cards)) {
+let AdvancedFlow$1 = class AdvancedFlow2 extends AdvancedFlowV3 {
+  static transformGet(item) {
+    if (item.cards) {
+      for (const card of Object.values(item.cards)) {
         card.id = `${card.ownerUri}:${card.id}`;
       }
     }
-    delete item2.broken;
-    return item2;
+    delete item.broken;
+    return item;
   }
-  static transformSet(item2) {
-    if (item2.cards) {
-      for (const card of Object.values(item2.cards)) {
+  static transformSet(item) {
+    if (item.cards) {
+      for (const card of Object.values(item.cards)) {
         card.ownerUri = card.id.split(":", 3).join(":");
         card.id = card.id.split(":").reverse()[0];
       }
     }
-    return item2;
+    return item;
   }
 };
 var AdvancedFlow_1 = AdvancedFlow$1;
 const FlowCardTriggerV3 = FlowCardTrigger_1$1;
-let FlowCardTrigger$1 = class FlowCardTrigger3 extends FlowCardTriggerV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    item2.id = `${item2.uri}:${item2.id}`;
-    item2.ownerUri = item2.uri;
-    item2.ownerId = item2.uriObj.id;
-    item2.ownerName = item2.uriObj.name;
-    item2.color = item2.uriObj.color;
-    item2.iconObj = item2.uriObj.iconObj;
-    delete item2.uri;
-    delete item2.uriObj;
-    return item2;
+let FlowCardTrigger$1 = class FlowCardTrigger2 extends FlowCardTriggerV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    item.id = `${item.uri}:${item.id}`;
+    item.ownerUri = item.uri;
+    item.ownerId = item.uriObj.id;
+    item.ownerName = item.uriObj.name;
+    item.color = item.uriObj.color;
+    item.iconObj = item.uriObj.iconObj;
+    delete item.uri;
+    delete item.uriObj;
+    return item;
   }
 };
 var FlowCardTrigger_1 = FlowCardTrigger$1;
 const FlowCardConditionV3 = FlowCardCondition_1$1;
-let FlowCardCondition$1 = class FlowCardCondition3 extends FlowCardConditionV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    item2.id = `${item2.uri}:${item2.id}`;
-    item2.ownerUri = item2.uri;
-    item2.ownerId = item2.uriObj.id;
-    item2.ownerName = item2.uriObj.name;
-    item2.color = item2.uriObj.color;
-    item2.iconObj = item2.uriObj.iconObj;
-    delete item2.uri;
-    delete item2.uriObj;
-    return item2;
+let FlowCardCondition$1 = class FlowCardCondition2 extends FlowCardConditionV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    item.id = `${item.uri}:${item.id}`;
+    item.ownerUri = item.uri;
+    item.ownerId = item.uriObj.id;
+    item.ownerName = item.uriObj.name;
+    item.color = item.uriObj.color;
+    item.iconObj = item.uriObj.iconObj;
+    delete item.uri;
+    delete item.uriObj;
+    return item;
   }
 };
 var FlowCardCondition_1 = FlowCardCondition$1;
 const FlowCardActionV3 = FlowCardAction_1$1;
-let FlowCardAction$1 = class FlowCardAction3 extends FlowCardActionV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    item2.id = `${item2.uri}:${item2.id}`;
-    item2.ownerUri = item2.uri;
-    item2.ownerId = item2.uriObj.id;
-    item2.ownerName = item2.uriObj.name;
-    item2.color = item2.uriObj.color;
-    item2.iconObj = item2.uriObj.iconObj;
-    delete item2.uri;
-    delete item2.uriObj;
-    return item2;
+let FlowCardAction$1 = class FlowCardAction2 extends FlowCardActionV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    item.id = `${item.uri}:${item.id}`;
+    item.ownerUri = item.uri;
+    item.ownerId = item.uriObj.id;
+    item.ownerName = item.uriObj.name;
+    item.color = item.uriObj.color;
+    item.iconObj = item.uriObj.iconObj;
+    delete item.uri;
+    delete item.uriObj;
+    return item;
   }
 };
 var FlowCardAction_1 = FlowCardAction$1;
 const ManagerFlowV3 = ManagerFlow_1$1;
-const Flow = Flow_1;
-const AdvancedFlow = AdvancedFlow_1;
-const FlowCardTrigger = FlowCardTrigger_1;
-const FlowCardCondition = FlowCardCondition_1;
-const FlowCardAction = FlowCardAction_1;
+const Flow3 = Flow_1;
+const AdvancedFlow3 = AdvancedFlow_1;
+const FlowCardTrigger3 = FlowCardTrigger_1;
+const FlowCardCondition3 = FlowCardCondition_1;
+const FlowCardAction3 = FlowCardAction_1;
 const _ManagerFlow = class extends ManagerFlowV3 {
   async createFlow({
     flow,
     ...props
   }) {
     return this.__super__.createFlow({
-      flow: Flow.transformSet(flow),
+      flow: Flow3.transformSet(flow),
       ...props
     });
   }
@@ -13033,7 +13181,7 @@ const _ManagerFlow = class extends ManagerFlowV3 {
     ...props
   }) {
     return this.__super__.updateFlow({
-      flow: Flow.transformSet(flow),
+      flow: Flow3.transformSet(flow),
       ...props
     });
   }
@@ -13042,7 +13190,7 @@ const _ManagerFlow = class extends ManagerFlowV3 {
     ...props
   }) {
     return this.__super__.createAdvancedFlow({
-      advancedflow: AdvancedFlow.transformSet(advancedflow),
+      advancedflow: AdvancedFlow3.transformSet(advancedflow),
       ...props
     });
   }
@@ -13051,7 +13199,7 @@ const _ManagerFlow = class extends ManagerFlowV3 {
     ...props
   }) {
     return this.__super__.updateAdvancedFlow({
-      advancedflow: AdvancedFlow.transformSet(advancedflow),
+      advancedflow: AdvancedFlow3.transformSet(advancedflow),
       ...props
     });
   }
@@ -13115,28 +13263,28 @@ const _ManagerFlow = class extends ManagerFlowV3 {
 let ManagerFlow = _ManagerFlow;
 __publicField(ManagerFlow, "CRUD", {
   ...__superGet(_ManagerFlow, _ManagerFlow, "CRUD"),
-  Flow,
-  AdvancedFlow,
-  FlowCardTrigger,
-  FlowCardCondition,
-  FlowCardAction
+  Flow: Flow3,
+  AdvancedFlow: AdvancedFlow3,
+  FlowCardTrigger: FlowCardTrigger3,
+  FlowCardCondition: FlowCardCondition3,
+  FlowCardAction: FlowCardAction3
 });
 var ManagerFlow_1 = ManagerFlow;
 const FlowTokenV3 = FlowToken_1$1;
-let FlowToken$1 = class FlowToken3 extends FlowTokenV3 {
-  static transformGet(item2) {
-    item2.ownerUri = item2.uri;
-    item2.ownerId = item2.id;
-    item2.id = `${item2.ownerUri}:${item2.ownerId}`;
-    delete item2.ownerName;
-    delete item2.uri;
-    delete item2.uriObj;
-    return item2;
+let FlowToken$1 = class FlowToken2 extends FlowTokenV3 {
+  static transformGet(item) {
+    item.ownerUri = item.uri;
+    item.ownerId = item.id;
+    item.id = `${item.ownerUri}:${item.ownerId}`;
+    delete item.ownerName;
+    delete item.uri;
+    delete item.uriObj;
+    return item;
   }
 };
 var FlowToken_1 = FlowToken$1;
 const ManagerFlowTokenV3 = ManagerFlowToken_1$1;
-const FlowToken = FlowToken_1;
+const FlowToken3 = FlowToken_1;
 const _ManagerFlowToken = class extends ManagerFlowTokenV3 {
   async getFlowToken({
     $cache = true,
@@ -13154,73 +13302,73 @@ const _ManagerFlowToken = class extends ManagerFlowTokenV3 {
 let ManagerFlowToken = _ManagerFlowToken;
 __publicField(ManagerFlowToken, "CRUD", {
   ...__superGet(_ManagerFlowToken, _ManagerFlowToken, "CRUD"),
-  FlowToken
+  FlowToken: FlowToken3
 });
 var ManagerFlowToken_1 = ManagerFlowToken;
 const CapabilityV3 = Capability_1$1;
-let Capability$1 = class Capability3 extends CapabilityV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    item2.id = `${item2.uri}:${item2.id}`;
-    item2.ownerUri = item2.uri;
-    delete item2.uri;
-    return item2;
+let Capability$1 = class Capability2 extends CapabilityV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    item.id = `${item.uri}:${item.id}`;
+    item.ownerUri = item.uri;
+    delete item.uri;
+    return item;
   }
 };
 var Capability_1 = Capability$1;
 const DeviceV3 = Device_1$2;
-let Device$3 = class Device3 extends DeviceV3 {
-  static transformGet(item2) {
-    item2.driverId = `${item2.driverUri}:${item2.driverId}`;
-    item2 = super.transformGet(item2);
-    delete item2.driverUri;
-    delete item2.zoneName;
-    return item2;
+let Device$3 = class Device2 extends DeviceV3 {
+  static transformGet(item) {
+    item.driverId = `${item.driverUri}:${item.driverId}`;
+    item = super.transformGet(item);
+    delete item.driverUri;
+    delete item.zoneName;
+    return item;
   }
 };
 var Device_1$1 = Device$3;
 const ManagerDevicesV3 = ManagerDevices_1$1;
-const Capability = Capability_1;
+const Capability3 = Capability_1;
 const Device$2 = Device_1$1;
 const _ManagerDevices = class extends ManagerDevicesV3 {
 };
 let ManagerDevices = _ManagerDevices;
 __publicField(ManagerDevices, "CRUD", {
   ...__superGet(_ManagerDevices, _ManagerDevices, "CRUD"),
-  Capability,
+  Capability: Capability3,
   Device: Device$2
 });
 var ManagerDevices_1 = ManagerDevices;
 const DriverV3 = Driver_1$1;
-let Driver$1 = class Driver3 extends DriverV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    item2.ownerId = item2.id;
-    item2.ownerUri = item2.uri;
-    item2.ownerName = item2.uriObj.name;
-    item2.ownerIconObj = item2.uriObj.iconObj;
-    item2.color = item2.uriObj.color;
-    item2.id = `${item2.uri}:${item2.id}`;
-    delete item2.uri;
-    delete item2.uriObj;
-    return item2;
+let Driver$1 = class Driver2 extends DriverV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    item.ownerId = item.id;
+    item.ownerUri = item.uri;
+    item.ownerName = item.uriObj.name;
+    item.ownerIconObj = item.uriObj.iconObj;
+    item.color = item.uriObj.color;
+    item.id = `${item.uri}:${item.id}`;
+    delete item.uri;
+    delete item.uriObj;
+    return item;
   }
 };
 var Driver_1 = Driver$1;
 const PairSessionV3 = PairSession_1$1;
-let PairSession$1 = class PairSession3 extends PairSessionV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    item2.driverId = `${item2.driverUri}:${item2.driverId}`;
-    item2.ownerUri = item2.driverUri;
-    delete item2.driverUri;
-    return item2;
+let PairSession$1 = class PairSession2 extends PairSessionV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    item.driverId = `${item.driverUri}:${item.driverId}`;
+    item.ownerUri = item.driverUri;
+    delete item.driverUri;
+    return item;
   }
 };
 var PairSession_1 = PairSession$1;
 const ManagerDriversV3 = ManagerDrivers_1$1;
-const Driver = Driver_1;
-const PairSession = PairSession_1;
+const Driver3 = Driver_1;
+const PairSession3 = PairSession_1;
 const _ManagerDrivers = class extends ManagerDriversV3 {
   async getDriver({
     $cache = true,
@@ -13251,18 +13399,18 @@ const _ManagerDrivers = class extends ManagerDriversV3 {
 let ManagerDrivers = _ManagerDrivers;
 __publicField(ManagerDrivers, "CRUD", {
   ...__superGet(_ManagerDrivers, _ManagerDrivers, "CRUD"),
-  Driver,
-  PairSession
+  Driver: Driver3,
+  PairSession: PairSession3
 });
 var ManagerDrivers_1 = ManagerDrivers;
 var browser = typeof self == "object" ? self.FormData : window.FormData;
 const HomeyAPIV3Manager = Manager_1$1;
-let Manager$1 = class Manager2 extends HomeyAPIV3Manager {
+let Manager$1 = class Manager extends HomeyAPIV3Manager {
 };
 var Manager_1 = Manager$1;
 const FormData = browser;
-const Manager = Manager_1;
-let ManagerDevkit$1 = class ManagerDevkit2 extends Manager {
+const Manager2 = Manager_1;
+let ManagerDevkit$1 = class ManagerDevkit extends Manager2 {
   /**
    * Upload & run an app on Homey Pro.
    * @param {Object} opts
@@ -13296,24 +13444,24 @@ let ManagerDevkit$1 = class ManagerDevkit2 extends Manager {
 };
 var ManagerDevkit_1$1 = ManagerDevkit$1;
 const ManagerDevkitV3 = ManagerDevkit_1$1;
-class ManagerDevkit extends ManagerDevkitV3 {
+class ManagerDevkit2 extends ManagerDevkitV3 {
 }
-var ManagerDevkit_1 = ManagerDevkit;
+var ManagerDevkit_1 = ManagerDevkit2;
 const LogV3 = Log_1$1;
-let Log$1 = class Log3 extends LogV3 {
-  static transformGet(item2) {
-    item2 = super.transformGet(item2);
-    item2.ownerId = item2.id;
-    item2.ownerUri = item2.uri;
-    item2.id = `${item2.uri}:${item2.id}`;
-    delete item2.uri;
-    delete item2.uriObj;
-    return item2;
+let Log$1 = class Log2 extends LogV3 {
+  static transformGet(item) {
+    item = super.transformGet(item);
+    item.ownerId = item.id;
+    item.ownerUri = item.uri;
+    item.id = `${item.uri}:${item.id}`;
+    delete item.uri;
+    delete item.uriObj;
+    return item;
   }
 };
 var Log_1 = Log$1;
 const ManagerInsightsV3 = ManagerInsights_1$1;
-const Log = Log_1;
+const Log3 = Log_1;
 const _ManagerInsights = class extends ManagerInsightsV3 {
   async getLog({
     $cache = true,
@@ -13346,7 +13494,7 @@ const _ManagerInsights = class extends ManagerInsightsV3 {
 let ManagerInsights = _ManagerInsights;
 __publicField(ManagerInsights, "CRUD", {
   ...__superGet(_ManagerInsights, _ManagerInsights, "CRUD"),
-  Log
+  Log: Log3
 });
 var ManagerInsights_1 = ManagerInsights;
 var HomeyAPIV2_1;
@@ -13355,14 +13503,14 @@ function requireHomeyAPIV2() {
   if (hasRequiredHomeyAPIV2)
     return HomeyAPIV2_1;
   hasRequiredHomeyAPIV2 = 1;
-  const HomeyAPIV32 = requireHomeyAPIV3();
+  const HomeyAPIV3 = requireHomeyAPIV3();
   const ManagerFlow2 = ManagerFlow_1;
   const ManagerFlowToken2 = ManagerFlowToken_1;
   const ManagerDevices2 = ManagerDevices_1;
   const ManagerDrivers2 = ManagerDrivers_1;
   const ManagerDevkit3 = ManagerDevkit_1;
   const ManagerInsights2 = ManagerInsights_1;
-  const _HomeyAPIV2 = class extends HomeyAPIV32 {
+  const _HomeyAPIV2 = class extends HomeyAPIV3 {
     get platform() {
       return "local";
     }
@@ -15088,16 +15236,20 @@ const managers$1 = {
         method: "get",
         path: "/experiment",
         "private": false,
-        scopes: [],
+        scopes: [
+          "homey.system"
+        ],
         parameters: {}
       },
       enableExperiment: {
         method: "put",
-        path: "/experiment/:experimentId/enable",
+        path: "/experiment/:id/enable",
         "private": false,
-        scopes: [],
+        scopes: [
+          "homey.system"
+        ],
         parameters: {
-          experimentId: {
+          id: {
             "in": "path",
             type: "string",
             required: true
@@ -15106,11 +15258,13 @@ const managers$1 = {
       },
       disableExperiment: {
         method: "put",
-        path: "/experiment/:experimentId/disable",
+        path: "/experiment/:id/disable",
         "private": false,
-        scopes: [],
+        scopes: [
+          "homey.system"
+        ],
         parameters: {
-          experimentId: {
+          id: {
             "in": "path",
             type: "string",
             required: true
@@ -16550,6 +16704,33 @@ const managers$1 = {
     idCamelCase: "matter",
     items: {},
     operations: {
+      getOptionPaaSettings: {
+        method: "GET",
+        path: "/option/paaSettings",
+        scopes: [
+          "homey.system"
+        ]
+      },
+      setOptionPaaSettings: {
+        method: "PUT",
+        path: "/option/paaSettings",
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {
+          value: {
+            "in": "body",
+            required: true
+          }
+        }
+      },
+      unsetOptionPaaSettings: {
+        method: "DELETE",
+        path: "/option/paaSettings",
+        scopes: [
+          "homey.system"
+        ]
+      },
       getState: {
         method: "get",
         path: "/state",
@@ -16558,6 +16739,79 @@ const managers$1 = {
           "homey.system.readonly"
         ],
         parameters: {}
+      },
+      pairApi: {
+        method: "post",
+        path: "/pair",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {
+          code: {
+            "in": "body",
+            type: "string",
+            required: true
+          },
+          zone: {
+            "in": "body",
+            type: "string"
+          }
+        }
+      },
+      updateDCLPaaCerts: {
+        method: "get",
+        path: "/update-dcl-paa-certs",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {}
+      },
+      interview: {
+        method: "get",
+        path: "/interview",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {
+          nodeId: {
+            "in": "query",
+            type: "string",
+            required: true
+          }
+        }
+      },
+      makeDeviceApi: {
+        method: "get",
+        path: "/make-device",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {
+          nodeId: {
+            "in": "query",
+            type: "string",
+            required: true
+          }
+        }
+      },
+      readBasicInformation: {
+        method: "get",
+        path: "/read-basic-info",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {
+          nodeId: {
+            "in": "query",
+            type: "string",
+            required: true
+          }
+        }
       }
     }
   },
@@ -17237,6 +17491,24 @@ const managers$1 = {
             required: true
           }
         }
+      },
+      enableWifi: {
+        method: "post",
+        path: "/enable-wifi",
+        "private": false,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {}
+      },
+      disableWifi: {
+        method: "post",
+        path: "/disable-wifi",
+        "private": false,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {}
       }
     }
   },
@@ -17808,6 +18080,28 @@ const managers$1 = {
             }
           }
         }
+      },
+      VirtualDriverMatter: {
+        id: "virtualdrivermatter",
+        schema: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string"
+            }
+          }
+        }
+      },
+      VirtualDeviceMatter: {
+        id: "virtualdevicematter",
+        schema: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string"
+            }
+          }
+        }
       }
     },
     operations: {
@@ -18121,6 +18415,21 @@ const managers$1 = {
             required: true
           }
         }
+      },
+      setLBTThreshold: {
+        method: "put",
+        path: "/lbt-threshold",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {
+          threshold: {
+            "in": "body",
+            type: "number",
+            required: true
+          }
+        }
       }
     }
   }
@@ -18134,9 +18443,9 @@ function requireHomeyAPIV3Local() {
   if (hasRequiredHomeyAPIV3Local)
     return HomeyAPIV3Local_1;
   hasRequiredHomeyAPIV3Local = 1;
-  const HomeyAPIV32 = requireHomeyAPIV3();
+  const HomeyAPIV3 = requireHomeyAPIV3();
   const ManagerDevkit3 = ManagerDevkit_1$1;
-  class HomeyAPIV3Local2 extends HomeyAPIV32 {
+  class HomeyAPIV3Local2 extends HomeyAPIV3 {
     get platform() {
       return "local";
     }
@@ -18148,7 +18457,7 @@ function requireHomeyAPIV3Local() {
     }
   }
   __publicField(HomeyAPIV3Local2, "MANAGERS", {
-    ...HomeyAPIV32.MANAGERS,
+    ...HomeyAPIV3.MANAGERS,
     ManagerDevkit: ManagerDevkit3
   });
   HomeyAPIV3Local_1 = HomeyAPIV3Local2;
@@ -18333,7 +18642,6 @@ const managers = {
           },
           value: {
             "in": "body",
-            type: "object",
             required: true
           }
         }
@@ -19246,8 +19554,7 @@ const managers = {
             required: true
           },
           data: {
-            "in": "body",
-            type: "object"
+            "in": "body"
           }
         }
       },
@@ -19270,8 +19577,7 @@ const managers = {
             required: true
           },
           data: {
-            "in": "body",
-            type: "object"
+            "in": "body"
           }
         }
       },
@@ -19773,6 +20079,30 @@ const managers = {
           }
         }
       },
+      getFlowCardTrigger: {
+        method: "get",
+        path: "/flowcardtrigger/:uri/:id",
+        "private": false,
+        scopes: [
+          "homey.flow.readonly"
+        ],
+        crud: {
+          type: "getOne",
+          item: "FlowCardTrigger"
+        },
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          },
+          uri: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
+      },
       getFlowCardTriggers: {
         method: "get",
         path: "/flowcardtrigger",
@@ -19785,6 +20115,30 @@ const managers = {
           item: "FlowCardTrigger"
         },
         parameters: {}
+      },
+      getFlowCardCondition: {
+        method: "get",
+        path: "/flowcardcondition/:uri/:id",
+        "private": false,
+        scopes: [
+          "homey.flow.readonly"
+        ],
+        crud: {
+          type: "getOne",
+          item: "FlowCardCondition"
+        },
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          },
+          uri: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
       },
       getFlowCardConditions: {
         method: "get",
@@ -19804,7 +20158,7 @@ const managers = {
         path: "/flowcardcondition/:uri/:id/run",
         "private": false,
         scopes: [
-          "homey.flow.start"
+          "homey.flow"
         ],
         parameters: {
           id: {
@@ -19835,6 +20189,30 @@ const managers = {
           }
         }
       },
+      getFlowCardAction: {
+        method: "get",
+        path: "/flowcardaction/:uri/:id",
+        "private": false,
+        scopes: [
+          "homey.flow.readonly"
+        ],
+        crud: {
+          type: "getOne",
+          item: "FlowCardAction"
+        },
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          },
+          uri: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
+      },
       getFlowCardActions: {
         method: "get",
         path: "/flowcardaction",
@@ -19853,7 +20231,7 @@ const managers = {
         path: "/flowcardaction/:uri/:id/run",
         "private": false,
         scopes: [
-          "homey.flow.start"
+          "homey.flow"
         ],
         parameters: {
           id: {
@@ -20074,6 +20452,40 @@ const managers = {
           item: "FlowToken"
         },
         parameters: {}
+      },
+      getFlowToken: {
+        method: "get",
+        path: "/flowtoken/:id",
+        "private": false,
+        scopes: [
+          "homey.flow.readonly"
+        ],
+        crud: {
+          type: "getOne",
+          item: "FlowToken"
+        },
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
+      },
+      getFlowTokenValue: {
+        method: "get",
+        path: "/flowtoken/:id/value",
+        "private": false,
+        scopes: [
+          "homey.flow.readonly"
+        ],
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
       }
     }
   },
@@ -20132,33 +20544,6 @@ const managers = {
       unsetOptionLocation: {
         method: "DELETE",
         path: "/option/location",
-        scopes: [
-          "homey.geolocation"
-        ]
-      },
-      getOptionMode: {
-        method: "GET",
-        path: "/option/mode",
-        scopes: [
-          "homey.geolocation.readonly"
-        ]
-      },
-      setOptionMode: {
-        method: "PUT",
-        path: "/option/mode",
-        scopes: [
-          "homey.geolocation"
-        ],
-        parameters: {
-          value: {
-            "in": "body",
-            required: true
-          }
-        }
-      },
-      unsetOptionMode: {
-        method: "DELETE",
-        path: "/option/mode",
         scopes: [
           "homey.geolocation"
         ]
@@ -20494,6 +20879,25 @@ const managers = {
           "homey.system.readonly"
         ],
         parameters: {}
+      },
+      getVariable: {
+        method: "get",
+        path: "/variable/:id",
+        "private": false,
+        scopes: [
+          "homey.logic.readonly"
+        ],
+        crud: {
+          type: "getOne",
+          item: "Variable"
+        },
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
       },
       getVariables: {
         method: "get",
@@ -20853,6 +21257,21 @@ const managers = {
           }
         }
       },
+      getPresent: {
+        method: "get",
+        path: "/:id/present",
+        "private": false,
+        scopes: [
+          "homey.presence.readonly"
+        ],
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
+      },
       setAsleepMe: {
         method: "put",
         path: "/me/asleep",
@@ -20892,6 +21311,21 @@ const managers = {
           value: {
             "in": "body",
             type: "boolean"
+          }
+        }
+      },
+      getAsleep: {
+        method: "get",
+        path: "/:id/asleep",
+        "private": false,
+        scopes: [
+          "homey.presence.readonly"
+        ],
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
           }
         }
       }
@@ -21090,7 +21524,8 @@ const managers = {
               type: "string",
               "enum": [
                 "OAUTH",
-                "APP"
+                "APP",
+                "PAT"
               ]
             },
             scopes: {
@@ -21680,12 +22115,33 @@ const managers = {
         method: "get",
         path: "/zone",
         "private": false,
-        scopes: [],
+        scopes: [
+          "homey.zone.readonly"
+        ],
         crud: {
           type: "getAll",
           item: "Zone"
         },
         parameters: {}
+      },
+      getZone: {
+        method: "get",
+        path: "/zone/:id",
+        "private": false,
+        scopes: [
+          "homey.zone.readonly"
+        ],
+        crud: {
+          type: "getOne",
+          item: "Zone"
+        },
+        parameters: {
+          id: {
+            "in": "path",
+            type: "string",
+            required: true
+          }
+        }
       },
       createZone: {
         method: "post",
@@ -21845,6 +22301,48 @@ const managers = {
             type: "object"
           }
         }
+      },
+      verifyFirmware: {
+        method: "get",
+        path: "/verify-firmware",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {}
+      },
+      flashFirmware: {
+        method: "put",
+        path: "/flash-firmware",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {
+          keepNV: {
+            "in": "body",
+            type: "boolean",
+            required: true
+          }
+        }
+      },
+      getLastFlashResult: {
+        method: "get",
+        path: "/get-last-flash-result",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {}
+      },
+      eraseNV: {
+        method: "put",
+        path: "/erase-nv",
+        "private": true,
+        scopes: [
+          "homey.system"
+        ],
+        parameters: {}
       }
     }
   }
@@ -21858,8 +22356,8 @@ function requireHomeyAPIV3Cloud() {
   if (hasRequiredHomeyAPIV3Cloud)
     return HomeyAPIV3Cloud_1;
   hasRequiredHomeyAPIV3Cloud = 1;
-  const HomeyAPIV32 = requireHomeyAPIV3();
-  const _HomeyAPIV3Cloud = class extends HomeyAPIV32 {
+  const HomeyAPIV3 = requireHomeyAPIV3();
+  const _HomeyAPIV3Cloud = class extends HomeyAPIV3 {
     constructor({
       strategy = [
         _HomeyAPIV3Cloud.DISCOVERY_STRATEGIES.CLOUD
@@ -22038,39 +22536,39 @@ function requireHomeyAPI() {
      * }
      */
     static async createAppAPI({
-      homey: homey2,
+      homey,
       debug: debug2 = null
     } = {}) {
-      if (!homey2) {
+      if (!homey) {
         throw new Error("Invalid Homey");
       }
       if (debug2 === true) {
-        debug2 = (...props2) => homey2.app.log("[homey-api]", ...props2);
+        debug2 = (...props2) => homey.app.log("[homey-api]", ...props2);
       }
       const props = {
         debug: debug2 ?? function debug3() {
         },
-        token: await homey2.api.getOwnerApiToken(),
-        baseUrl: await homey2.api.getLocalUrl(),
+        token: await homey.api.getOwnerApiToken(),
+        baseUrl: await homey.api.getLocalUrl(),
         strategy: [],
         properties: {
-          id: await homey2.cloud.getHomeyId(),
-          softwareVersion: homey2.version
+          id: await homey.cloud.getHomeyId(),
+          softwareVersion: homey.version
         }
       };
-      if (homey2.platform === "local" && homey2.platformVersion === 1) {
+      if (homey.platform === "local" && homey.platformVersion === 1) {
         const HomeyAPIV22 = requireHomeyAPIV2();
         return new HomeyAPIV22(props);
       }
-      if (homey2.platform === "local" && homey2.platformVersion === 2) {
+      if (homey.platform === "local" && homey.platformVersion === 2) {
         const HomeyAPIV3Local2 = requireHomeyAPIV3Local();
         return new HomeyAPIV3Local2(props);
       }
-      if (homey2.platform === "cloud" && homey2.platformVersion === 2) {
+      if (homey.platform === "cloud" && homey.platformVersion === 2) {
         const HomeyAPIV3Cloud2 = requireHomeyAPIV3Cloud();
         return new HomeyAPIV3Cloud2(props);
       }
-      throw new Error(`Invalid Homey Platform Version: ${homey2.platformVersion}`);
+      throw new Error(`Invalid Homey Platform Version: ${homey.platformVersion}`);
     }
     /**
      * Creates a {@link HomeyAPIV3Local} instance for use in a project.
@@ -22389,7 +22887,7 @@ let API$1 = (_h = class {
   }
 }, __publicField(_h, "SPECIFICATION", null), __publicField(_h, "SPECIFICATION_URL", null), __publicField(_h, "DEFINITION_CLASSES", {}), __publicField(_h, "JSDOC_PARAMS", null), __publicField(_h, "JSDOC_DESCRIPTION", null), __publicField(_h, "JSDOC_PRIVATE", null), __publicField(_h, "JSDOC_EXAMPLE", null), _h);
 var API_1 = API$1;
-let APIDefinition$3 = class APIDefinition2 {
+let APIDefinition$3 = class APIDefinition {
   /**
    *
    * @param {object} opts
@@ -22425,7 +22923,7 @@ let APIDefinition$3 = class APIDefinition2 {
 };
 var APIDefinition_1 = APIDefinition$3;
 const HomeyAPI = requireHomeyAPI();
-let HomeyAPIV1$1 = class HomeyAPIV12 extends HomeyAPI {
+let HomeyAPIV1$1 = class HomeyAPIV1 extends HomeyAPI {
   constructor({ properties, ...props }) {
     super({ properties, ...props });
     __publicField(this, "updates", {
@@ -22456,11 +22954,11 @@ let HomeyAPIV1$1 = class HomeyAPIV12 extends HomeyAPI {
 };
 var HomeyAPIV1_1 = HomeyAPIV1$1;
 const APIDefinition$2 = APIDefinition_1;
-const HomeyAPIV1 = HomeyAPIV1_1;
+const HomeyAPIV12 = HomeyAPIV1_1;
 const HomeyAPIV2 = requireHomeyAPIV2();
 const HomeyAPIV3Local = requireHomeyAPIV3Local();
 const HomeyAPIV3Cloud = requireHomeyAPIV3Cloud();
-let Homey$2 = class Homey2 extends APIDefinition$2 {
+let Homey$2 = class Homey extends APIDefinition$2 {
   /**
    * @type string
    */
@@ -22477,7 +22975,7 @@ let Homey$2 = class Homey2 extends APIDefinition$2 {
   async authenticate({ strategy } = {}) {
     const HomeyAPI2 = (() => {
       if (this.apiVersion === 1)
-        return HomeyAPIV1;
+        return HomeyAPIV12;
       if (this.apiVersion === 2)
         return HomeyAPIV2;
       if (this.apiVersion === 3 && this.platform === "local")
@@ -22486,7 +22984,7 @@ let Homey$2 = class Homey2 extends APIDefinition$2 {
         return HomeyAPIV3Cloud;
       throw new Error(`Unsupported Homey API Version: ${this.apiVersion}`);
     })();
-    const homey2 = new HomeyAPI2({
+    const homey = new HomeyAPI2({
       strategy,
       api: this.__api,
       properties: this.__properties,
@@ -22494,13 +22992,13 @@ let Homey$2 = class Homey2 extends APIDefinition$2 {
         return this.__api.__debug(`[${HomeyAPI2.name}:${this.__properties.id}]`, ...props);
       }
     });
-    await homey2.login();
-    return homey2;
+    await homey.login();
+    return homey;
   }
 };
 var Homey_1 = Homey$2;
 const APIDefinition$1 = APIDefinition_1;
-let Device$1 = class Device4 extends APIDefinition$1 {
+let Device$1 = class Device3 extends APIDefinition$1 {
   /**
    * @type string
    */
@@ -22509,14 +23007,14 @@ let Device$1 = class Device4 extends APIDefinition$1 {
   }
 };
 var Device_1 = Device$1;
-const APIDefinition = APIDefinition_1;
+const APIDefinition2 = APIDefinition_1;
 const Homey$1 = Homey_1;
-const Device = Device_1;
-let User$1 = class User2 extends APIDefinition {
+const Device4 = Device_1;
+let User$1 = class User extends APIDefinition2 {
   constructor({ ...props }) {
     super({ ...props });
-    this.homeys = this.homeys.map((item2) => this.__makeClass(Homey$1, item2));
-    this.devices = this.devices.map((item2) => this.__makeClass(Device, item2));
+    this.homeys = this.homeys.map((item) => this.__makeClass(Homey$1, item));
+    this.devices = this.devices.map((item) => this.__makeClass(Device4, item));
   }
   /**
    * @type {string}
@@ -22535,28 +23033,28 @@ let User$1 = class User2 extends APIDefinition {
    * @returns {AthomCloudAPI.Homey}
    */
   getHomeyById(id) {
-    const homey2 = this.homeys.find((homey3) => homey3.id === id);
-    if (!homey2) {
+    const homey = this.homeys.find((homey2) => homey2.id === id);
+    if (!homey) {
       throw new Error(`Homey Not Found: ${id}`);
     }
-    return homey2;
+    return homey;
   }
   /**
    * @returns {AthomCloudAPI.Homey}
    */
   getFirstHomey() {
-    const homey2 = this.homeys[0];
-    if (!homey2) {
+    const homey = this.homeys[0];
+    if (!homey) {
       throw new Error("No Homey Available");
     }
-    return homey2;
+    return homey;
   }
   hasRole(roleId) {
     return this.roleIds.includes(roleId);
   }
 };
 var User_1 = User$1;
-let Token$1 = class Token2 {
+let Token$1 = class Token {
   constructor({
     token_type,
     access_token,
@@ -22581,7 +23079,7 @@ let Token$1 = class Token2 {
   }
 };
 var Token_1 = Token$1;
-let StorageAdapter$3 = class StorageAdapter2 {
+let StorageAdapter$3 = class StorageAdapter {
   /**
    * @returns {Promise<object>}
    */
@@ -22620,7 +23118,7 @@ let StorageAdapterBrowser$1 = (_i = class extends StorageAdapter$2 {
 }, __publicField(_i, "LOCAL_STORAGE_KEY", "homey-api"), _i);
 var StorageAdapterBrowser_1 = StorageAdapterBrowser$1;
 const StorageAdapter$1 = StorageAdapter_1;
-let StorageAdapterMemory$1 = class StorageAdapterMemory2 extends StorageAdapter$1 {
+let StorageAdapterMemory$1 = class StorageAdapterMemory extends StorageAdapter$1 {
   constructor() {
     super();
     this.__store = "{}";
@@ -23825,14 +24323,14 @@ const require$$9 = {
   operations
 };
 const API = API_1;
-const APIError = APIError_1;
-const Util = Util_1;
-const User = User_1;
-const Homey = Homey_1;
-const Token = Token_1;
-const StorageAdapter = StorageAdapter_1;
+const APIError2 = APIError_1;
+const Util2 = Util_1;
+const User2 = User_1;
+const Homey2 = Homey_1;
+const Token2 = Token_1;
+const StorageAdapter2 = StorageAdapter_1;
 const StorageAdapterBrowser = StorageAdapterBrowser_1;
-const StorageAdapterMemory = StorageAdapterMemory_1;
+const StorageAdapterMemory2 = StorageAdapterMemory_1;
 class AthomCloudAPI extends API {
   constructor({
     clientId,
@@ -23840,7 +24338,7 @@ class AthomCloudAPI extends API {
     redirectUrl,
     autoRefreshTokens = true,
     token = null,
-    store = Util.isBrowser() ? new StorageAdapterBrowser() : new StorageAdapterMemory(),
+    store = Util2.isBrowser() ? new StorageAdapterBrowser() : new StorageAdapterMemory2(),
     ...args
   } = {}) {
     super({ ...args });
@@ -23848,11 +24346,11 @@ class AthomCloudAPI extends API {
     this.__clientSecret = clientSecret;
     this.__redirectUrl = redirectUrl;
     this.__autoRefreshTokens = autoRefreshTokens;
-    if (!(store instanceof StorageAdapter)) {
+    if (!(store instanceof StorageAdapter2)) {
       throw new Error("Invalid `store`. Must extend AthomCloudAPI/StorageAdapter.");
     }
     this.__store = store;
-    if (token && !(token instanceof Token)) {
+    if (token && !(token instanceof Token2)) {
       throw new Error("Invalid `token`. Must extend AthomCloudAPI/Token.");
     }
     this.__token = token;
@@ -23869,14 +24367,7 @@ class AthomCloudAPI extends API {
     const store = await this.__getStore();
     if (!store.token || !store.token.access_token)
       return false;
-    try {
-      this.__user = await this.getAuthenticatedUser({
-        $cache: false
-      });
-      return true;
-    } catch (err) {
-      return false;
-    }
+    return true;
   }
   /**
    * Get the current authenticated {@link AthomCloudAPI.User}
@@ -23884,18 +24375,44 @@ class AthomCloudAPI extends API {
    * @param {object} [opts.$cache=true] - Use the cache
    * @returns {Promise<AthomCloudAPI.User>}
    */
-  async getAuthenticatedUser({
-    $cache = true
-  } = {}) {
-    if ($cache === true && this.__user instanceof User) {
+  async getAuthenticatedUser({ $cache = true } = {}) {
+    if ($cache === true && this.__user instanceof User2) {
       return this.__user;
     }
-    this.__user = new User({
+    const properties = await this.call({
+      method: "get",
+      path: "/user/me"
+    });
+    this.__user = new User2({
       api: this,
-      properties: await this.call({
-        method: "get",
-        path: "/user/me"
-      })
+      properties
+    });
+    return this.__user;
+  }
+  async getAuthenticatedUserFromStore({ $cache = true } = {}) {
+    if ($cache === true && this.__user instanceof User2) {
+      return this.__user;
+    }
+    if ($cache === true && this.__user == null) {
+      const store = await this.__getStore();
+      if (store.user) {
+        this.__user = new User2({
+          api: this,
+          properties: store.user
+        });
+        return this.__user;
+      }
+    }
+    const properties = await this.call({
+      method: "get",
+      path: "/user/me"
+    });
+    this.__user = new User2({
+      api: this,
+      properties
+    });
+    await this.__setStore({
+      user: properties
     });
     return this.__user;
   }
@@ -23904,7 +24421,7 @@ class AthomCloudAPI extends API {
    * @returns {boolean}
    */
   hasAuthorizationCode() {
-    return !!(Util.isBrowser() && Util.getSearchParameter("code"));
+    return !!(Util2.isBrowser() && Util2.getSearchParameter("code"));
   }
   /**
    * Get a login URL to redirect the user to (MyApp wants access to ...).
@@ -23931,6 +24448,25 @@ class AthomCloudAPI extends API {
       search.append("scope", scopes.join(","));
     }
     return `${this.baseUrl}/oauth2/authorise?${search.toString()}`;
+  }
+  async getDelegatedLoginUrl(args = {}) {
+    if (args.baseUrl == null) {
+      throw new TypeError("baseUrl is required");
+    }
+    const token = await this.createDelegationToken({
+      audience: args.audience,
+      meta: args.meta
+    });
+    const search = new URLSearchParams();
+    search.append("user_token", token);
+    if (typeof args.state === "string") {
+      search.append("state", args.state);
+    }
+    if (typeof args.resource === "string") {
+      search.append("resource", args.resource);
+    }
+    const seperator = args.baseUrl.indexOf("?") >= 0 ? "&" : "?";
+    return args.baseUrl + seperator + search.toString();
   }
   /**
    * Logout and delete the local token.
@@ -23971,7 +24507,7 @@ class AthomCloudAPI extends API {
     if (!this.__token) {
       const store = await this.__getStore();
       if (store.token) {
-        this.__token = new Token(store.token);
+        this.__token = new Token2(store.token);
       }
     }
     if (this.__token && this.__token.access_token) {
@@ -24005,7 +24541,7 @@ class AthomCloudAPI extends API {
       const message = Object.entries(body.error_description).map(([key, value]) => {
         return `${key}: ${value}`;
       }).join(", ");
-      throw new APIError(message, statusCode);
+      throw new APIError2(message, statusCode);
     }
     return super.onCallResponseNotOK({
       body,
@@ -24025,19 +24561,19 @@ class AthomCloudAPI extends API {
     }
     const body = new URLSearchParams();
     body.append("grant_type", "client_credentials");
-    const response = await Util.fetch(`${this.baseUrl}/oauth2/token`, {
+    const response = await Util2.fetch(`${this.baseUrl}/oauth2/token`, {
       body: body.toString(),
       method: "post",
       headers: {
-        Authorization: `Basic ${Util.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
+        Authorization: `Basic ${Util2.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
         "Content-Type": "application/x-www-form-urlencoded"
       }
     });
     const responseBody = await response.json();
     if (!response.ok) {
-      throw new APIError(responseBody.error_description || responseBody.error, response.status);
+      throw new APIError2(responseBody.error_description || responseBody.error, response.status);
     }
-    this.__token = new Token({
+    this.__token = new Token2({
       token_type: responseBody.token_type,
       access_token: responseBody.access_token,
       refresh_token: responseBody.refresh_token,
@@ -24060,8 +24596,8 @@ class AthomCloudAPI extends API {
     code,
     removeCodeFromHistory = true
   } = {}) {
-    if (!code && Util.isBrowser()) {
-      code = Util.getSearchParameter("code");
+    if (!code && Util2.isBrowser()) {
+      code = Util2.getSearchParameter("code");
     }
     if (!code) {
       throw new Error("Missing Code");
@@ -24075,19 +24611,19 @@ class AthomCloudAPI extends API {
     const body = new URLSearchParams();
     body.append("grant_type", "authorization_code");
     body.append("code", code);
-    const response = await Util.fetch(`${this.baseUrl}/oauth2/token`, {
+    const response = await Util2.fetch(`${this.baseUrl}/oauth2/token`, {
       body: body.toString(),
       method: "post",
       headers: {
-        Authorization: `Basic ${Util.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
+        Authorization: `Basic ${Util2.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
         "Content-Type": "application/x-www-form-urlencoded"
       }
     });
     const responseBody = await response.json();
     if (!response.ok) {
-      throw new APIError(responseBody.error_description || responseBody.error, response.status);
+      throw new APIError2(responseBody.error_description || responseBody.error, response.status);
     }
-    this.__token = new Token({
+    this.__token = new Token2({
       token_type: responseBody.token_type,
       access_token: responseBody.access_token,
       refresh_token: responseBody.refresh_token,
@@ -24097,7 +24633,7 @@ class AthomCloudAPI extends API {
     this.__setStore({
       token: this.__token
     });
-    if (Util.isBrowser() && removeCodeFromHistory) {
+    if (Util2.isBrowser() && removeCodeFromHistory) {
       const url2 = new URL(window.location.href);
       url2.searchParams.delete("code");
       window.history.pushState(void 0, void 0, url2.toString());
@@ -24121,19 +24657,19 @@ class AthomCloudAPI extends API {
     body.append("grant_type", "password");
     body.append("username", username);
     body.append("password", password);
-    const response = await Util.fetch(`${this.baseUrl}/oauth2/token`, {
+    const response = await Util2.fetch(`${this.baseUrl}/oauth2/token`, {
       body: body.toString(),
       method: "post",
       headers: {
-        Authorization: `Basic ${Util.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
+        Authorization: `Basic ${Util2.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
         "Content-Type": "application/x-www-form-urlencoded"
       }
     });
     const responseBody = await response.json();
     if (!response.ok) {
-      throw new APIError(responseBody.error_description || responseBody.error, response.status);
+      throw new APIError2(responseBody.error_description || responseBody.error, response.status);
     }
-    this.__token = new Token({
+    this.__token = new Token2({
       token_type: responseBody.token_type,
       access_token: responseBody.access_token,
       refresh_token: responseBody.refresh_token,
@@ -24157,19 +24693,19 @@ class AthomCloudAPI extends API {
         const body = new URLSearchParams();
         body.append("grant_type", "refresh_token");
         body.append("refresh_token", this.__token.refresh_token);
-        const response = await Util.fetch(`${this.baseUrl}/oauth2/token`, {
+        const response = await Util2.fetch(`${this.baseUrl}/oauth2/token`, {
           body: body.toString(),
           method: "post",
           headers: {
-            Authorization: `Basic ${Util.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
+            Authorization: `Basic ${Util2.base64(`${this.__clientId}:${this.__clientSecret}`)}`,
             "Content-Type": "application/x-www-form-urlencoded"
           }
         });
         const responseBody = await response.json();
         if (!response.ok) {
-          throw new APIError(responseBody.error_description || responseBody.error, response.status);
+          throw new APIError2(responseBody.error_description || responseBody.error, response.status);
         }
-        this.__token = new Token({
+        this.__token = new Token2({
           token_type: responseBody.token_type,
           access_token: responseBody.access_token,
           refresh_token: responseBody.refresh_token,
@@ -24256,17 +24792,17 @@ Content-Type: image/${imageType}\r
     });
   }
 }
-__publicField(AthomCloudAPI, "User", User);
-__publicField(AthomCloudAPI, "Homey", Homey);
-__publicField(AthomCloudAPI, "Token", Token);
-__publicField(AthomCloudAPI, "StorageAdapter", StorageAdapter);
+__publicField(AthomCloudAPI, "User", User2);
+__publicField(AthomCloudAPI, "Homey", Homey2);
+__publicField(AthomCloudAPI, "Token", Token2);
+__publicField(AthomCloudAPI, "StorageAdapter", StorageAdapter2);
 __publicField(AthomCloudAPI, "StorageAdapterBrowser", StorageAdapterBrowser);
-__publicField(AthomCloudAPI, "StorageAdapterMemory", StorageAdapterMemory);
+__publicField(AthomCloudAPI, "StorageAdapterMemory", StorageAdapterMemory2);
 __publicField(AthomCloudAPI, "SPECIFICATION", require$$9);
 __publicField(AthomCloudAPI, "SPECIFICATION_URL", "https://api.athom.com/specification.json");
 __publicField(AthomCloudAPI, "DEFINITION_CLASSES", {
-  User,
-  Homey
+  User: User2,
+  Homey: Homey2
 });
 __publicField(AthomCloudAPI, "JSDOC_DESCRIPTION", `
 The AthomCloudAPI class can be used to authenticate a user with your client,
@@ -24327,6 +24863,6 @@ var AthomCloudAPI_1 = AthomCloudAPI;
 const AthomCloudAPI$1 = /* @__PURE__ */ getDefaultExportFromCjs(AthomCloudAPI_1);
 export {
   AthomCloudAPI$1 as A,
-  getDefaultExportFromCjs as g,
+  goto as g,
   requireHomeyAPI as r
 };

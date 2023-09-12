@@ -1,5 +1,5 @@
 var _a, _b;
-import { H as noop, I as subscribe, C as run_all, s as safe_not_equal, B as is_function } from "./scheduler.9514346f.js";
+import { C as noop, ac as subscribe, O as run_all, s as safe_not_equal, S as is_function } from "./scheduler.3830f32a.js";
 const subscriber_queue = [];
 function readable(value, start) {
   return {
@@ -95,9 +95,9 @@ function derived(stores2, fn, initial_value) {
     };
   });
 }
-const base = ((_a = globalThis.__sveltekit_1muzmd5) == null ? void 0 : _a.base) ?? "";
-const assets = ((_b = globalThis.__sveltekit_1muzmd5) == null ? void 0 : _b.assets) ?? base;
-const version = "1693422575389";
+const base = ((_a = globalThis.__sveltekit_grhl5m) == null ? void 0 : _a.base) ?? "";
+const assets = ((_b = globalThis.__sveltekit_grhl5m) == null ? void 0 : _b.assets) ?? base;
+const version = "1694547216042";
 const SNAPSHOT_KEY = "sveltekit:snapshot";
 const SCROLL_KEY = "sveltekit:scroll";
 const INDEX_KEY = "sveltekit:index";
@@ -299,9 +299,8 @@ export {
   get_base_uri as g,
   init as h,
   is_external_url as i,
-  client_method as j,
-  derived as k,
-  readable as r,
+  derived as j,
+  client_method as k,
   stores as s,
   writable as w
 };

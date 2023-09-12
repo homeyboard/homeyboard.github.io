@@ -1,5 +1,12 @@
+var __defProp = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => {
+  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 function noop() {
 }
+const identity = (x) => x;
 function assign(tar, src) {
   for (const k in src)
     tar[k] = src[k];
@@ -102,20 +109,15 @@ function exclude_internal_props(props) {
       result[k] = props[k];
   return result;
 }
-function compute_rest_props(props, keys) {
-  const rest = {};
-  keys = new Set(keys);
-  for (const k in props)
-    if (!keys.has(k) && k[0] !== "$")
-      rest[k] = props[k];
-  return rest;
-}
 function compute_slots(slots) {
   const result = {};
   for (const key in slots) {
     result[key] = true;
   }
   return result;
+}
+function null_to_empty(value) {
+  return value == null ? "" : value;
 }
 function set_store_value(store, ret, value) {
   store.set(value);
@@ -124,7 +126,14 @@ function set_store_value(store, ret, value) {
 function action_destroyer(action_result) {
   return action_result && is_function(action_result.destroy) ? action_result.destroy : noop;
 }
-const contenteditable_truthy_values = ["", true, 1, "true", "contenteditable"];
+function split_css_unit(value) {
+  const split = typeof value === "string" && value.match(/^\s*(-?[\d.]+)([^\s]*)\s*$/);
+  return split ? [parseFloat(split[1]), split[2] || "px"] : [
+    /** @type {number} */
+    value,
+    "px"
+  ];
+}
 let is_hydrating = false;
 function start_hydrating() {
   is_hydrating = true;
@@ -196,6 +205,36 @@ function init_hydrate(target) {
     target.insertBefore(toMove[i], anchor);
   }
 }
+function append(target, node) {
+  target.appendChild(node);
+}
+function get_root_for_style(node) {
+  if (!node)
+    return document;
+  const root = node.getRootNode ? node.getRootNode() : node.ownerDocument;
+  if (root && /** @type {ShadowRoot} */
+  root.host) {
+    return (
+      /** @type {ShadowRoot} */
+      root
+    );
+  }
+  return node.ownerDocument;
+}
+function append_empty_stylesheet(node) {
+  const style_element = element("style");
+  style_element.textContent = "/* empty */";
+  append_stylesheet(get_root_for_style(node), style_element);
+  return style_element.sheet;
+}
+function append_stylesheet(node, style) {
+  append(
+    /** @type {Document} */
+    node.head || node,
+    style
+  );
+  return style.sheet;
+}
 function append_hydration(target, node) {
   if (is_hydrating) {
     init_hydrate(target);
@@ -215,6 +254,9 @@ function append_hydration(target, node) {
   } else if (node.parentNode !== target || node.nextSibling !== null) {
     target.appendChild(node);
   }
+}
+function insert(target, node, anchor) {
+  target.insertBefore(node, anchor || null);
 }
 function insert_hydration(target, node, anchor) {
   if (is_hydrating && !anchor) {
@@ -252,6 +294,18 @@ function empty() {
 function listen(node, event, handler, options) {
   node.addEventListener(event, handler, options);
   return () => node.removeEventListener(event, handler, options);
+}
+function prevent_default(fn) {
+  return function(event) {
+    event.preventDefault();
+    return fn.call(this, event);
+  };
+}
+function stop_propagation(fn) {
+  return function(event) {
+    event.stopPropagation();
+    return fn.call(this, event);
+  };
 }
 function attr(node, attribute, value) {
   if (value == null)
@@ -415,26 +469,38 @@ function claim_text(nodes, data) {
 function claim_space(nodes) {
   return claim_text(nodes, " ");
 }
+function find_comment(nodes, text2, start) {
+  for (let i = start; i < nodes.length; i += 1) {
+    const node = nodes[i];
+    if (node.nodeType === 8 && node.textContent.trim() === text2) {
+      return i;
+    }
+  }
+  return nodes.length;
+}
+function claim_html_tag(nodes, is_svg) {
+  const start_index = find_comment(nodes, "HTML_TAG_START", 0);
+  const end_index = find_comment(nodes, "HTML_TAG_END", start_index);
+  if (start_index === end_index) {
+    return new HtmlTagHydration(void 0, is_svg);
+  }
+  init_claim_info(nodes);
+  const html_tag_nodes = nodes.splice(start_index, end_index - start_index + 1);
+  detach(html_tag_nodes[0]);
+  detach(html_tag_nodes[html_tag_nodes.length - 1]);
+  const claimed_nodes = html_tag_nodes.slice(1, html_tag_nodes.length - 1);
+  for (const n of claimed_nodes) {
+    n.claim_order = nodes.claim_info.total_claimed;
+    nodes.claim_info.total_claimed += 1;
+  }
+  return new HtmlTagHydration(claimed_nodes, is_svg);
+}
 function set_data(text2, data) {
   data = "" + data;
   if (text2.data === data)
     return;
   text2.data = /** @type {string} */
   data;
-}
-function set_data_contenteditable(text2, data) {
-  data = "" + data;
-  if (text2.wholeText === data)
-    return;
-  text2.data = /** @type {string} */
-  data;
-}
-function set_data_maybe_contenteditable(text2, data, attr_value) {
-  if (~contenteditable_truthy_values.indexOf(attr_value)) {
-    set_data_contenteditable(text2, data);
-  } else {
-    set_data(text2, data);
-  }
 }
 function set_input_value(input, value) {
   input.value = value == null ? "" : value;
@@ -470,6 +536,121 @@ function head_selector(nodeId, head) {
     }
   }
   return result;
+}
+class HtmlTag {
+  constructor(is_svg = false) {
+    /**
+     * @private
+     * @default false
+     */
+    __publicField(this, "is_svg", false);
+    // parent for creating node
+    /** */
+    __publicField(this, "e");
+    // html tag nodes
+    /** */
+    __publicField(this, "n");
+    // target
+    /** */
+    __publicField(this, "t");
+    // anchor
+    /** */
+    __publicField(this, "a");
+    this.is_svg = is_svg;
+    this.e = this.n = null;
+  }
+  /**
+   * @param {string} html
+   * @returns {void}
+   */
+  c(html) {
+    this.h(html);
+  }
+  /**
+   * @param {string} html
+   * @param {HTMLElement | SVGElement} target
+   * @param {HTMLElement | SVGElement} anchor
+   * @returns {void}
+   */
+  m(html, target, anchor = null) {
+    if (!this.e) {
+      if (this.is_svg)
+        this.e = svg_element(
+          /** @type {keyof SVGElementTagNameMap} */
+          target.nodeName
+        );
+      else
+        this.e = element(
+          /** @type {keyof HTMLElementTagNameMap} */
+          target.nodeType === 11 ? "TEMPLATE" : target.nodeName
+        );
+      this.t = target.tagName !== "TEMPLATE" ? target : (
+        /** @type {HTMLTemplateElement} */
+        target.content
+      );
+      this.c(html);
+    }
+    this.i(anchor);
+  }
+  /**
+   * @param {string} html
+   * @returns {void}
+   */
+  h(html) {
+    this.e.innerHTML = html;
+    this.n = Array.from(
+      this.e.nodeName === "TEMPLATE" ? this.e.content.childNodes : this.e.childNodes
+    );
+  }
+  /**
+   * @returns {void} */
+  i(anchor) {
+    for (let i = 0; i < this.n.length; i += 1) {
+      insert(this.t, this.n[i], anchor);
+    }
+  }
+  /**
+   * @param {string} html
+   * @returns {void}
+   */
+  p(html) {
+    this.d();
+    this.h(html);
+    this.i(this.a);
+  }
+  /**
+   * @returns {void} */
+  d() {
+    this.n.forEach(detach);
+  }
+}
+class HtmlTagHydration extends HtmlTag {
+  constructor(claimed_nodes, is_svg = false) {
+    super(is_svg);
+    // hydration claimed nodes
+    /** */
+    __publicField(this, "l");
+    this.e = this.n = null;
+    this.l = claimed_nodes;
+  }
+  /**
+   * @param {string} html
+   * @returns {void}
+   */
+  c(html) {
+    if (this.l) {
+      this.n = this.l;
+    } else {
+      super.c(html);
+    }
+  }
+  /**
+   * @returns {void} */
+  i(anchor) {
+    for (let i = 0; i < this.n.length; i += 1) {
+      insert_hydration(this.t, this.n[i], anchor);
+    }
+  }
 }
 function construct_svelte_component(component, props) {
   return new component(props);
@@ -605,51 +786,59 @@ function flush_render_callbacks(fns) {
   render_callbacks = filtered;
 }
 export {
-  src_url_equal as $,
-  get_slot_changes as A,
-  is_function as B,
-  run_all as C,
-  compute_rest_props as D,
-  get_current_component as E,
-  exclude_internal_props as F,
-  setContext as G,
-  noop as H,
-  subscribe as I,
-  add_flush_callback as J,
-  createEventDispatcher as K,
-  head_selector as L,
-  component_subscribe as M,
-  append_hydration as N,
-  destroy_each as O,
-  getContext as P,
-  get_svelte_dataset as Q,
-  onDestroy as R,
-  init_binding_group as S,
-  bubble as T,
-  svg_element as U,
-  claim_svg_element as V,
-  set_data_maybe_contenteditable as W,
-  compute_slots as X,
-  set_store_value as Y,
-  to_number as Z,
-  set_input_value as _,
+  svg_element as $,
+  get_all_dirty_from_scope as A,
+  get_slot_changes as B,
+  noop as C,
+  append_hydration as D,
+  destroy_each as E,
+  identity as F,
+  listen as G,
+  add_render_callback as H,
+  getContext as I,
+  assign as J,
+  exclude_internal_props as K,
+  null_to_empty as L,
+  toggle_class as M,
+  action_destroyer as N,
+  run_all as O,
+  compute_slots as P,
+  setContext as Q,
+  set_attributes as R,
+  is_function as S,
+  get_current_component as T,
+  src_url_equal as U,
+  set_input_value as V,
+  to_number as W,
+  stop_propagation as X,
+  prevent_default as Y,
+  set_store_value as Z,
+  bubble as _,
   space as a,
-  toggle_class as a0,
-  current_component as a1,
-  is_promise as a2,
-  set_current_component as a3,
-  flush as a4,
-  set_svg_attributes as a5,
-  set_dynamic_element_data as a6,
-  blank_object as a7,
-  is_empty as a8,
-  add_render_callback as a9,
-  flush_render_callbacks as aa,
-  run as ab,
-  dirty_components as ac,
-  schedule_update as ad,
-  start_hydrating as ae,
-  end_hydrating as af,
+  claim_svg_element as a0,
+  set_svg_attributes as a1,
+  init_binding_group as a2,
+  HtmlTagHydration as a3,
+  claim_html_tag as a4,
+  onDestroy as a5,
+  current_component as a6,
+  is_promise as a7,
+  set_current_component as a8,
+  flush as a9,
+  split_css_unit as aa,
+  set_dynamic_element_data as ab,
+  subscribe as ac,
+  get_root_for_style as ad,
+  append_empty_stylesheet as ae,
+  custom_event as af,
+  blank_object as ag,
+  is_empty as ah,
+  flush_render_callbacks as ai,
+  run as aj,
+  dirty_components as ak,
+  schedule_update as al,
+  start_hydrating as am,
+  end_hydrating as an,
   afterUpdate as b,
   claim_space as c,
   detach as d,
@@ -666,13 +855,13 @@ export {
   onMount as o,
   binding_callbacks as p,
   construct_svelte_component as q,
-  create_slot as r,
+  createEventDispatcher as r,
   safe_not_equal as s,
   tick as t,
-  assign as u,
-  set_attributes as v,
-  listen as w,
-  action_destroyer as x,
-  update_slot_base as y,
-  get_all_dirty_from_scope as z
+  get_svelte_dataset as u,
+  add_flush_callback as v,
+  head_selector as w,
+  component_subscribe as x,
+  create_slot as y,
+  update_slot_base as z
 };

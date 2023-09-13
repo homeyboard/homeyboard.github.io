@@ -7,14 +7,14 @@ var __publicField = (obj, key, value) => {
 var _a, _b;
 import { C as noop$1, F as identity, s as safe_not_equal, f as element, g as claim_element, h as children, d as detach, j as attr, i as insert_hydration, G as listen, H as add_render_callback, I as getContext, J as assign$1, K as exclude_internal_props, y as create_slot, a as space, c as claim_space, L as null_to_empty, M as toggle_class, k as set_style, D as append_hydration, N as action_destroyer, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, O as run_all, P as compute_slots, Q as setContext, o as onMount, R as set_attributes, S as is_function, T as get_current_component, x as component_subscribe, r as createEventDispatcher, e as empty, l as text, m as claim_text, n as set_data, U as src_url_equal, p as binding_callbacks, v as add_flush_callback, E as destroy_each, V as set_input_value, W as to_number, u as get_svelte_dataset, q as construct_svelte_component, X as stop_propagation, Y as prevent_default, Z as set_store_value, _ as bubble, $ as svg_element, a0 as claim_svg_element, a1 as set_svg_attributes, a2 as init_binding_group, a3 as HtmlTagHydration, a4 as claim_html_tag, a5 as onDestroy, a6 as current_component, b as afterUpdate } from "../chunks/scheduler.3830f32a.js";
 import { n as now, l as loop, h as create_rule, j as delete_rule, S as SvelteComponent, i as init, k as create_bidirectional_transition, g as group_outros, t as transition_out, c as check_outros, a as transition_in, b as create_component, d as claim_component, m as mount_component, e as destroy_component, f as bind, o as create_in_transition, p as create_out_transition } from "../chunks/index.9ba3e62c.js";
-import { L as List$1, e as ensure_array_like, h as mdiArrowUp, i as mdiDelete, j as mdiArrowDown, k as mdiCheck, l as mdiAlert, n as mdiPlay, u as update_keyed_each, o as fix_and_outro_and_destroy_block, p as mdiTune, q as mdiImage, r as mdiChartLine, s as mdiTextBoxEdit, t as outro_and_destroy_block, m as mdiMenu, c as mdiCog, v as mdiLock, w as mdiLockOpenVariant } from "../chunks/index.cb5b4111.js";
-import { w as writable, j as derived } from "../chunks/singletons.6f8d8b14.js";
-import { p as page } from "../chunks/stores.8b51f397.js";
-import { b as homey, g as devices, s as scopes, i as flowFolders, k as advancedFlows, j as basicFlows, l as insights, w as webhookUrl, m as webhookId, e as dashboards$1 } from "../chunks/homey.af377a25.js";
-import { t as twMerge, f as fade, b as trapFocus, c as fly, e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, B as Button$1, i as close, I as Input, a as Icon$7, v as v4, j as chevron_down, s as slide, k as scale, l as unfold_more_horizontal, m as error, H as HoverBackground, n as check, o as account, S as Swap, p as upload, q as alert_circle, r as crossfade$1, w as arrow_back, x as arrow_forward, y as undo, z as redo, A as print, C as download, D as info, E as warn, F as check_circle, G as thumb_up, P as Progress$1, J as trending_neutral, K as trending_down, L as trending_up, M as sort, N as comment, O as cubicOut, d as dashboards } from "../chunks/Progress.d91f04b0.js";
-import { M as Modal, e as editing, g as grid, d as dashboard } from "../chunks/index.53830c1e.js";
-import { P as Portal, b as Divider$2, T as Toggle, c as clickOutside, f as floatingUI, a as Dropdown, D as Drawer$2 } from "../chunks/index.c5cb94ea.js";
-import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/index.e825b877.js";
+import { L as List$1, e as ensure_array_like, h as mdiArrowUp, i as mdiDelete, j as mdiArrowDown, k as mdiCheck, l as mdiAlert, n as mdiPlay, u as update_keyed_each, o as fix_and_outro_and_destroy_block, p as mdiTune, q as mdiImage, r as mdiChartLine, s as mdiTextBoxEdit, t as outro_and_destroy_block, m as mdiMenu, c as mdiCog, v as mdiLock, w as mdiLockOpenVariant } from "../chunks/index.e65992db.js";
+import { w as writable, j as derived } from "../chunks/singletons.5c7e3f39.js";
+import { p as page } from "../chunks/stores.b6b002cf.js";
+import { b as homey, g as devices, s as scopes, i as flowFolders, k as advancedFlows, j as basicFlows, l as insights, w as webhookUrl, m as webhookId, e as dashboards$1 } from "../chunks/homey.5e8ce930.js";
+import { t as twMerge, f as fade, b as trapFocus, c as fly, e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, B as Button$1, i as close, I as Input, a as Icon$7, v as v4, j as chevron_down, s as slide, k as scale, l as unfold_more_horizontal, m as error, H as HoverBackground, n as check, o as account, S as Swap, p as upload, q as alert_circle, r as crossfade$1, w as arrow_back, x as arrow_forward, y as undo, z as redo, A as print, C as download, D as info, E as warn, F as check_circle, G as thumb_up, P as Progress$1, J as trending_neutral, K as trending_down, L as trending_up, M as sort, N as comment, O as cubicOut, d as dashboards } from "../chunks/Progress.157241c8.js";
+import { M as Modal, e as editing, g as grid, d as dashboard } from "../chunks/index.5612947e.js";
+import { P as Portal, b as Divider$2, T as Toggle, c as clickOutside, f as floatingUI, a as Dropdown, D as Drawer$2 } from "../chunks/index.a1b1182c.js";
+import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/index.77c9f90d.js";
 import { c as commonjsGlobal, g as getDefaultExportFromCjs } from "../chunks/_commonjsHelpers.7a7fcd32.js";
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
   // @ts-ignore Node typings have this
@@ -9132,7 +9132,6 @@ class Button_1 extends SvelteComponent {
     init(this, options, instance$2R, create_fragment$2T, safe_not_equal, { capability: 0, controllable: 3 });
   }
 }
-const CapabilityWidget_svelte_svelte_type_style_lang = "";
 function get_each_context$e(ctx, list, i2) {
   const child_ctx = ctx.slice();
   child_ctx[13] = list[i2];
@@ -9365,7 +9364,7 @@ function create_if_block_4$l(ctx) {
   };
 }
 function create_else_block$v(ctx) {
-  let div2;
+  let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
     /*capabilities*/
@@ -9380,31 +9379,24 @@ function create_else_block$v(ctx) {
   });
   return {
     c() {
-      div2 = element("div");
       for (let i2 = 0; i2 < each_blocks.length; i2 += 1) {
         each_blocks[i2].c();
       }
-      this.h();
+      each_1_anchor = empty();
     },
     l(nodes) {
-      div2 = claim_element(nodes, "DIV", { class: true });
-      var div_nodes = children(div2);
       for (let i2 = 0; i2 < each_blocks.length; i2 += 1) {
-        each_blocks[i2].l(div_nodes);
+        each_blocks[i2].l(nodes);
       }
-      div_nodes.forEach(detach);
-      this.h();
-    },
-    h() {
-      attr(div2, "class", "flex flex-col w-full");
+      each_1_anchor = empty();
     },
     m(target, anchor) {
-      insert_hydration(target, div2, anchor);
       for (let i2 = 0; i2 < each_blocks.length; i2 += 1) {
         if (each_blocks[i2]) {
-          each_blocks[i2].m(div2, null);
+          each_blocks[i2].m(target, anchor);
         }
       }
+      insert_hydration(target, each_1_anchor, anchor);
       current = true;
     },
     p(ctx2, dirty) {
@@ -9424,7 +9416,7 @@ function create_else_block$v(ctx) {
             each_blocks[i2] = create_each_block$e(child_ctx);
             each_blocks[i2].c();
             transition_in(each_blocks[i2], 1);
-            each_blocks[i2].m(div2, null);
+            each_blocks[i2].m(each_1_anchor.parentNode, each_1_anchor);
           }
         }
         group_outros();
@@ -9451,7 +9443,7 @@ function create_else_block$v(ctx) {
     },
     d(detaching) {
       if (detaching) {
-        detach(div2);
+        detach(each_1_anchor);
       }
       destroy_each(each_blocks, detaching);
     }
@@ -9581,7 +9573,7 @@ function create_if_block_2$t(ctx) {
     },
     h() {
       attr(div0, "class", "font-extralight overflow-clip overflow-ellipsis whitespace-nowrap");
-      attr(div1, "class", "flex items-center justify-between w-full pl-1 pr-1");
+      attr(div1, "class", "flex items-center justify-between w-full pl-1 pr-1 leading-none");
     },
     m(target, anchor) {
       insert_hydration(target, div1, anchor);
@@ -9735,12 +9727,12 @@ function create_if_block_1$K(ctx) {
     },
     l(nodes) {
       span = claim_element(nodes, "SPAN", { class: true, ["data-svelte-h"]: true });
-      if (get_svelte_dataset(span) !== "svelte-vrzews")
+      if (get_svelte_dataset(span) !== "svelte-1kvxnjf")
         span.textContent = textContent;
       this.h();
     },
     h() {
-      attr(span, "class", "w-full overflow-hidden overflow-ellipsis");
+      attr(span, "class", "w-full h-8 overflow-hidden overflow-ellipsis");
     },
     m(target, anchor) {
       insert_hydration(target, span, anchor);
@@ -9803,8 +9795,8 @@ function create_fragment$2S(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "widget-header svelte-zhv4hi");
-      attr(div1, "class", "flex flex-grow");
+      attr(div0, "class", "flex items-center h-12");
+      attr(div1, "class", "flex flex-col flex-grow w-full justify-evenly");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
@@ -112033,7 +112025,7 @@ function create_fragment$1(ctx) {
   let current;
   card = new Card({
     props: {
-      class: "h-full w-full overflow-hidden",
+      class: "h-full w-full overflow-hidden flex flex-col justify-start",
       $$slots: { default: [create_default_slot$1] },
       $$scope: { ctx }
     }

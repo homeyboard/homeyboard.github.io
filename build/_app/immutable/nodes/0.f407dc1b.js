@@ -1,13 +1,13 @@
 import { s as safe_not_equal, r as createEventDispatcher, e as empty, i as insert_hydration, d as detach, l as text, m as claim_text, p as binding_callbacks, a as space, f as element, c as claim_space, g as claim_element, u as get_svelte_dataset, j as attr, v as add_flush_callback, w as head_selector, h as children, x as component_subscribe, o as onMount, y as create_slot, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, C as noop, D as append_hydration, n as set_data, E as destroy_each } from "../chunks/scheduler.3830f32a.js";
 import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, a as transition_in, t as transition_out, e as destroy_component, g as group_outros, c as check_outros, f as bind } from "../chunks/index.9ba3e62c.js";
-import { m as mdiMenu, a as mdiPlus, b as mdiViewDashboardEdit, c as mdiCog, L as List, e as ensure_array_like, d as mdiViewDashboard, f as mdiDeathStarVariant } from "../chunks/index.cb5b4111.js";
-import { A as AthomCloudAPI, g as goto } from "../chunks/AthomCloudAPI.059adac0.js";
-import { e as base } from "../chunks/singletons.6f8d8b14.js";
-import { c as clientId, a as clientSecret, u as user, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as flowFolders, j as basicFlows, k as advancedFlows, l as insights, z as zones } from "../chunks/homey.af377a25.js";
-import { I as Input, B as Button, d as dashboards, v as v4, P as Progress } from "../chunks/Progress.d91f04b0.js";
-import { M as Modal, d as dashboard, e as editing } from "../chunks/index.53830c1e.js";
-import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.dfc07346.js";
-import { P as Portal, D as Drawer, a as Dropdown, b as Divider, T as Toggle, M as Media } from "../chunks/index.c5cb94ea.js";
+import { m as mdiMenu, a as mdiPlus, b as mdiViewDashboardEdit, c as mdiCog, L as List, e as ensure_array_like, d as mdiViewDashboard, f as mdiDeathStarVariant } from "../chunks/index.e65992db.js";
+import { A as AthomCloudAPI, g as goto } from "../chunks/AthomCloudAPI.02de7c56.js";
+import { e as base } from "../chunks/singletons.5c7e3f39.js";
+import { c as clientId, a as clientSecret, u as user, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as flowFolders, j as basicFlows, k as advancedFlows, l as insights, z as zones } from "../chunks/homey.5e8ce930.js";
+import { I as Input, B as Button, d as dashboards, v as v4, P as Progress } from "../chunks/Progress.157241c8.js";
+import { M as Modal, d as dashboard, e as editing } from "../chunks/index.5612947e.js";
+import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.24102eb6.js";
+import { P as Portal, D as Drawer, a as Dropdown, b as Divider, T as Toggle, M as Media } from "../chunks/index.a1b1182c.js";
 const ssr = false;
 const trailingSlash = "always";
 const prerender = true;
@@ -4428,7 +4428,7 @@ function instance($$self, $$props, $$invalidate) {
       if ($scopes.includes("homey") || $scopes.includes("homey.device") || $scopes.includes("homey.device.readonly") || $scopes.includes("homey.device.control")) {
         await $homey.devices.connect();
         const d = await $homey.devices.getDevices();
-        console.log(d["0c3df5e7-e95e-45b4-aee8-8924421f7316"]);
+        console.log(d["34e4a4ad-dc09-4c51-8591-7f7612b46a84"]);
         $homey.devices.on("device.update", (patch) => devices.onDevice(patch));
         Object.values(d).forEach(async (device) => {
           await device.connect();

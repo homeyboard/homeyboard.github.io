@@ -7,14 +7,14 @@ var __publicField = (obj, key, value) => {
 var _a, _b;
 import { C as noop$1, F as identity, s as safe_not_equal, f as element, g as claim_element, h as children, d as detach, j as attr, i as insert_hydration, G as listen, H as add_render_callback, I as getContext, J as assign$1, K as exclude_internal_props, y as create_slot, a as space, c as claim_space, L as null_to_empty, M as toggle_class, k as set_style, D as append_hydration, N as action_destroyer, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, O as run_all, P as compute_slots, Q as setContext, o as onMount, R as set_attributes, S as is_function, T as get_current_component, x as component_subscribe, r as createEventDispatcher, e as empty, l as text, m as claim_text, n as set_data, U as src_url_equal, p as binding_callbacks, v as add_flush_callback, E as destroy_each, V as set_input_value, W as to_number, u as get_svelte_dataset, q as construct_svelte_component, X as stop_propagation, Y as prevent_default, Z as set_store_value, _ as bubble, $ as svg_element, a0 as claim_svg_element, a1 as set_svg_attributes, a2 as init_binding_group, a3 as HtmlTagHydration, a4 as claim_html_tag, a5 as onDestroy, a6 as current_component, b as afterUpdate } from "../chunks/scheduler.3830f32a.js";
 import { n as now, l as loop, h as create_rule, j as delete_rule, S as SvelteComponent, i as init, k as create_bidirectional_transition, g as group_outros, t as transition_out, c as check_outros, a as transition_in, b as create_component, d as claim_component, m as mount_component, e as destroy_component, f as bind, o as create_in_transition, p as create_out_transition } from "../chunks/index.9ba3e62c.js";
-import { L as List$1, e as ensure_array_like, h as mdiArrowUp, i as mdiDelete, j as mdiArrowDown, k as mdiCheck, l as mdiAlert, n as mdiPlay, u as update_keyed_each, o as fix_and_outro_and_destroy_block, p as mdiTune, q as mdiImage, r as mdiChartLine, s as mdiTextBoxEdit, t as outro_and_destroy_block, m as mdiMenu, c as mdiCog, v as mdiLock, w as mdiLockOpenVariant } from "../chunks/index.b33fa9e1.js";
-import { w as writable, j as derived } from "../chunks/singletons.5608acee.js";
-import { p as page } from "../chunks/stores.c1febb7e.js";
-import { b as homey, g as devices, s as scopes, i as flowFolders, k as advancedFlows, j as basicFlows, l as insights, w as webhookUrl, m as webhookId, e as dashboards$1 } from "../chunks/homey.c1ff599f.js";
-import { t as twMerge, f as fade, b as trapFocus, c as fly, e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, B as Button$1, i as close, I as Input, a as Icon$7, v as v4, j as chevron_down, s as slide, k as scale, l as unfold_more_horizontal, m as error, H as HoverBackground, n as check, o as account, S as Swap, p as upload, q as alert_circle, r as crossfade$1, w as arrow_back, x as arrow_forward, y as undo, z as redo, A as print, C as download, D as info, E as warn, F as check_circle, G as thumb_up, P as Progress$1, J as trending_neutral, K as trending_down, L as trending_up, M as sort, N as comment, O as cubicOut, d as dashboards } from "../chunks/Progress.6247a021.js";
-import { M as Modal, e as editing, g as grid, d as dashboard } from "../chunks/index.fb849005.js";
-import { P as Portal, b as Divider$2, T as Toggle, c as clickOutside, f as floatingUI, a as Dropdown, D as Drawer$2 } from "../chunks/index.0fc8ffc7.js";
-import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/index.baea7d35.js";
+import { L as List$1, e as ensure_array_like, h as mdiArrowUp, i as mdiDelete, j as mdiArrowDown, k as mdiCheck, l as mdiAlert, n as mdiPlay, u as update_keyed_each, o as fix_and_outro_and_destroy_block, p as mdiTune, q as mdiImage, r as mdiChartLine, s as mdiTextBoxEdit, t as outro_and_destroy_block, m as mdiMenu, c as mdiCog, v as mdiLock, w as mdiLockOpenVariant } from "../chunks/index.cb5b4111.js";
+import { w as writable, j as derived } from "../chunks/singletons.6f8d8b14.js";
+import { p as page } from "../chunks/stores.8b51f397.js";
+import { b as homey, g as devices, s as scopes, i as flowFolders, k as advancedFlows, j as basicFlows, l as insights, w as webhookUrl, m as webhookId, e as dashboards$1 } from "../chunks/homey.af377a25.js";
+import { t as twMerge, f as fade, b as trapFocus, c as fly, e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, B as Button$1, i as close, I as Input, a as Icon$7, v as v4, j as chevron_down, s as slide, k as scale, l as unfold_more_horizontal, m as error, H as HoverBackground, n as check, o as account, S as Swap, p as upload, q as alert_circle, r as crossfade$1, w as arrow_back, x as arrow_forward, y as undo, z as redo, A as print, C as download, D as info, E as warn, F as check_circle, G as thumb_up, P as Progress$1, J as trending_neutral, K as trending_down, L as trending_up, M as sort, N as comment, O as cubicOut, d as dashboards } from "../chunks/Progress.d91f04b0.js";
+import { M as Modal, e as editing, g as grid, d as dashboard } from "../chunks/index.53830c1e.js";
+import { P as Portal, b as Divider$2, T as Toggle, c as clickOutside, f as floatingUI, a as Dropdown, D as Drawer$2 } from "../chunks/index.c5cb94ea.js";
+import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/index.e825b877.js";
 import { c as commonjsGlobal, g as getDefaultExportFromCjs } from "../chunks/_commonjsHelpers.7a7fcd32.js";
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
   // @ts-ignore Node typings have this
@@ -8139,7 +8139,7 @@ function create_if_block$18(ctx) {
     ctx[5](value);
   }
   let slider_props = {
-    style: "flex-grow: 1; align-self: center;",
+    style: "flex-grow: 1; align-self: center; max-width: 100px;",
     min: (
       /*capability*/
       ctx[0].min
@@ -8438,9 +8438,10 @@ function create_else_block_1$7(ctx) {
       );
       t1 = space();
       t2 = text(t2_value);
+      this.h();
     },
     l(nodes) {
-      span = claim_element(nodes, "SPAN", {});
+      span = claim_element(nodes, "SPAN", { class: true });
       var span_nodes = children(span);
       t0 = claim_text(
         span_nodes,
@@ -8450,6 +8451,10 @@ function create_else_block_1$7(ctx) {
       t1 = claim_space(span_nodes);
       t2 = claim_text(span_nodes, t2_value);
       span_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(span, "class", "whitespace-nowrap");
     },
     m(target, anchor) {
       insert_hydration(target, span, anchor);
@@ -9173,7 +9178,7 @@ function create_else_block_1$6(ctx) {
       this.h();
     },
     h() {
-      attr(span, "class", "device-title svelte-1e1mgjm");
+      attr(span, "class", "w-full overflow-hidden overflow-ellipsis");
     },
     m(target, anchor) {
       info2.block.m(target, info2.anchor = anchor);
@@ -9284,7 +9289,7 @@ function create_then_block$1(ctx) {
     },
     h() {
       var _a2, _b2;
-      attr(img, "class", "device-icon widget-icon-theme svelte-1e1mgjm");
+      attr(img, "class", "w-8 h-8 m-1");
       if (!src_url_equal(img.src, img_src_value = /*url*/
       ctx[16] + /*device*/
       ((_a2 = ctx[1]) == null ? void 0 : _a2.iconObj.url)))
@@ -9391,7 +9396,7 @@ function create_else_block$v(ctx) {
       this.h();
     },
     h() {
-      attr(div2, "class", "capabilities svelte-1e1mgjm");
+      attr(div2, "class", "flex flex-col w-full");
     },
     m(target, anchor) {
       insert_hydration(target, div2, anchor);
@@ -9503,8 +9508,8 @@ function create_if_block$14(ctx) {
   };
 }
 function create_if_block_2$t(ctx) {
-  let div2;
-  let span;
+  let div1;
+  let div0;
   let t0_value = (
     /*capability*/
     ctx[13].title + ""
@@ -9551,8 +9556,8 @@ function create_if_block_2$t(ctx) {
   }
   return {
     c() {
-      div2 = element("div");
-      span = element("span");
+      div1 = element("div");
+      div0 = element("div");
       t0 = text(t0_value);
       t1 = space();
       if (switch_instance)
@@ -9561,31 +9566,31 @@ function create_if_block_2$t(ctx) {
       this.h();
     },
     l(nodes) {
-      div2 = claim_element(nodes, "DIV", { class: true });
-      var div_nodes = children(div2);
-      span = claim_element(div_nodes, "SPAN", { class: true });
-      var span_nodes = children(span);
-      t0 = claim_text(span_nodes, t0_value);
-      span_nodes.forEach(detach);
-      t1 = claim_space(div_nodes);
+      div1 = claim_element(nodes, "DIV", { class: true });
+      var div1_nodes = children(div1);
+      div0 = claim_element(div1_nodes, "DIV", { class: true });
+      var div0_nodes = children(div0);
+      t0 = claim_text(div0_nodes, t0_value);
+      div0_nodes.forEach(detach);
+      t1 = claim_space(div1_nodes);
       if (switch_instance)
-        claim_component(switch_instance.$$.fragment, div_nodes);
-      t2 = claim_space(div_nodes);
-      div_nodes.forEach(detach);
+        claim_component(switch_instance.$$.fragment, div1_nodes);
+      t2 = claim_space(div1_nodes);
+      div1_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(span, "class", "capability-title svelte-1e1mgjm");
-      attr(div2, "class", "capability svelte-1e1mgjm");
+      attr(div0, "class", "font-extralight overflow-clip overflow-ellipsis whitespace-nowrap");
+      attr(div1, "class", "flex items-center justify-between w-full pl-1 pr-1");
     },
     m(target, anchor) {
-      insert_hydration(target, div2, anchor);
-      append_hydration(div2, span);
-      append_hydration(span, t0);
-      append_hydration(div2, t1);
+      insert_hydration(target, div1, anchor);
+      append_hydration(div1, div0);
+      append_hydration(div0, t0);
+      append_hydration(div1, t1);
       if (switch_instance)
-        mount_component(switch_instance, div2, null);
-      append_hydration(div2, t2);
+        mount_component(switch_instance, div1, null);
+      append_hydration(div1, t2);
       current = true;
     },
     p(new_ctx, dirty) {
@@ -9622,7 +9627,7 @@ function create_if_block_2$t(ctx) {
           switch_instance.$on("value", value_handler);
           create_component(switch_instance.$$.fragment);
           transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, div2, t2);
+          mount_component(switch_instance, div1, t2);
         } else {
           switch_instance = null;
         }
@@ -9644,7 +9649,7 @@ function create_if_block_2$t(ctx) {
     },
     d(detaching) {
       if (detaching) {
-        detach(div2);
+        detach(div1);
       }
       if (switch_instance)
         destroy_component(switch_instance);
@@ -9730,12 +9735,12 @@ function create_if_block_1$K(ctx) {
     },
     l(nodes) {
       span = claim_element(nodes, "SPAN", { class: true, ["data-svelte-h"]: true });
-      if (get_svelte_dataset(span) !== "svelte-rqxwc5")
+      if (get_svelte_dataset(span) !== "svelte-vrzews")
         span.textContent = textContent;
       this.h();
     },
     h() {
-      attr(span, "class", "device-title svelte-1e1mgjm");
+      attr(span, "class", "w-full overflow-hidden overflow-ellipsis");
     },
     m(target, anchor) {
       insert_hydration(target, span, anchor);
@@ -9798,8 +9803,8 @@ function create_fragment$2S(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "widget-header svelte-1e1mgjm");
-      attr(div1, "class", "widget-body svelte-1e1mgjm");
+      attr(div0, "class", "widget-header svelte-zhv4hi");
+      attr(div1, "class", "flex flex-grow");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);

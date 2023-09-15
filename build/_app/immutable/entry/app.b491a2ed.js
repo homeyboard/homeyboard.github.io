@@ -1,5 +1,5 @@
-import { s as safe_not_equal, a as space, e as empty, c as claim_space, i as insert_hydration, d as detach, b as afterUpdate, o as onMount, f as element, g as claim_element, h as children, j as attr, k as set_style, l as text, m as claim_text, n as set_data, p as binding_callbacks, q as construct_svelte_component } from "../chunks/scheduler.3830f32a.js";
-import { S as SvelteComponent, i as init, t as transition_out, c as check_outros, a as transition_in, g as group_outros, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "../chunks/index.9ba3e62c.js";
+import { s as safe_not_equal, a as space, e as empty, c as claim_space, i as insert_hydration, d as detach, b as afterUpdate, o as onMount, f as element, g as claim_element, h as children, j as attr, k as set_style, l as text, m as claim_text, n as set_data, t as tick, p as binding_callbacks, q as construct_svelte_component } from "../chunks/scheduler.c054974b.js";
+import { S as SvelteComponent, i as init, t as transition_out, c as check_outros, a as transition_in, g as group_outros, b as create_component, d as claim_component, m as mount_component, e as destroy_component } from "../chunks/index.036fb736.js";
 const scriptRel = "modulepreload";
 const assetsURL = function(dep, importerUrl) {
   return new URL(dep, importerUrl).href;
@@ -53,7 +53,7 @@ function create_else_block(ctx) {
     /*constructors*/
     ctx[1][0]
   );
-  function switch_props(ctx2) {
+  function switch_props(ctx2, dirty) {
     let switch_instance_props = {
       data: (
         /*data_0*/
@@ -88,15 +88,6 @@ function create_else_block(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const switch_instance_changes = {};
-      if (dirty & /*data_0*/
-      8)
-        switch_instance_changes.data = /*data_0*/
-        ctx2[3];
-      if (dirty & /*form*/
-      4)
-        switch_instance_changes.form = /*form*/
-        ctx2[2];
       if (dirty & /*constructors*/
       2 && switch_value !== (switch_value = /*constructors*/
       ctx2[1][0])) {
@@ -118,6 +109,15 @@ function create_else_block(ctx) {
           switch_instance = null;
         }
       } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*data_0*/
+        8)
+          switch_instance_changes.data = /*data_0*/
+          ctx2[3];
+        if (dirty & /*form*/
+        4)
+          switch_instance_changes.form = /*form*/
+          ctx2[2];
         switch_instance.$set(switch_instance_changes);
       }
     },
@@ -151,7 +151,7 @@ function create_if_block_2(ctx) {
     /*constructors*/
     ctx[1][0]
   );
-  function switch_props(ctx2) {
+  function switch_props(ctx2, dirty) {
     let switch_instance_props = {
       data: (
         /*data_0*/
@@ -184,15 +184,6 @@ function create_if_block_2(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const switch_instance_changes = {};
-      if (dirty & /*data_0*/
-      8)
-        switch_instance_changes.data = /*data_0*/
-        ctx2[3];
-      if (dirty & /*$$scope, constructors, data_1, form, components*/
-      8215) {
-        switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
-      }
       if (dirty & /*constructors*/
       2 && switch_value !== (switch_value = /*constructors*/
       ctx2[1][0])) {
@@ -214,6 +205,15 @@ function create_if_block_2(ctx) {
           switch_instance = null;
         }
       } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*data_0*/
+        8)
+          switch_instance_changes.data = /*data_0*/
+          ctx2[3];
+        if (dirty & /*$$scope, constructors, data_1, form, components*/
+        8215) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
         switch_instance.$set(switch_instance_changes);
       }
     },
@@ -247,7 +247,7 @@ function create_default_slot(ctx) {
     /*constructors*/
     ctx[1][1]
   );
-  function switch_props(ctx2) {
+  function switch_props(ctx2, dirty) {
     let switch_instance_props = {
       data: (
         /*data_1*/
@@ -282,15 +282,6 @@ function create_default_slot(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      const switch_instance_changes = {};
-      if (dirty & /*data_1*/
-      16)
-        switch_instance_changes.data = /*data_1*/
-        ctx2[4];
-      if (dirty & /*form*/
-      4)
-        switch_instance_changes.form = /*form*/
-        ctx2[2];
       if (dirty & /*constructors*/
       2 && switch_value !== (switch_value = /*constructors*/
       ctx2[1][1])) {
@@ -312,6 +303,15 @@ function create_default_slot(ctx) {
           switch_instance = null;
         }
       } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*data_1*/
+        16)
+          switch_instance_changes.data = /*data_1*/
+          ctx2[4];
+        if (dirty & /*form*/
+        4)
+          switch_instance_changes.form = /*form*/
+          ctx2[2];
         switch_instance.$set(switch_instance_changes);
       }
     },
@@ -562,7 +562,9 @@ function instance($$self, $$props, $$invalidate) {
     const unsubscribe = stores.page.subscribe(() => {
       if (mounted) {
         $$invalidate(6, navigated = true);
-        $$invalidate(7, title = document.title || "untitled page");
+        tick().then(() => {
+          $$invalidate(7, title = document.title || "untitled page");
+        });
       }
     });
     $$invalidate(5, mounted = true);
@@ -639,12 +641,12 @@ class Root extends SvelteComponent {
   }
 }
 const nodes = [
-  () => __vitePreload(() => import("../nodes/0.f407dc1b.js"), true ? ["..\\nodes\\0.f407dc1b.js","..\\chunks\\scheduler.3830f32a.js","..\\chunks\\index.9ba3e62c.js","..\\chunks\\index.e65992db.js","..\\chunks\\Progress.157241c8.js","..\\chunks\\singletons.5c7e3f39.js","..\\assets\\Progress.a3ac9dc2.css","..\\assets\\index.dfe52db0.css","..\\chunks\\AthomCloudAPI.02de7c56.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\chunks\\homey.5e8ce930.js","..\\chunks\\stores.b6b002cf.js","..\\chunks\\index.5612947e.js","..\\chunks\\HomeyAPI.24102eb6.js","..\\chunks\\index.a1b1182c.js","..\\assets\\0.1efef008.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/1.33ab0b16.js"), true ? ["..\\nodes\\1.33ab0b16.js","..\\chunks\\scheduler.3830f32a.js","..\\chunks\\index.9ba3e62c.js","..\\chunks\\stores.b6b002cf.js","..\\chunks\\singletons.5c7e3f39.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/2.9da422fb.js"), true ? ["..\\nodes\\2.9da422fb.js","..\\chunks\\scheduler.3830f32a.js","..\\chunks\\index.77c9f90d.js","..\\chunks\\index.9ba3e62c.js","..\\chunks\\Progress.157241c8.js","..\\chunks\\singletons.5c7e3f39.js","..\\assets\\Progress.a3ac9dc2.css","..\\chunks\\index.e65992db.js","..\\assets\\index.dfe52db0.css","..\\chunks\\homey.5e8ce930.js","..\\chunks\\stores.b6b002cf.js","..\\chunks\\HomeyAPI.24102eb6.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\chunks\\AthomCloudAPI.02de7c56.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/3.8f950350.js"), true ? ["..\\nodes\\3.8f950350.js","..\\chunks\\scheduler.3830f32a.js","..\\chunks\\index.9ba3e62c.js","..\\chunks\\index.e65992db.js","..\\chunks\\Progress.157241c8.js","..\\chunks\\singletons.5c7e3f39.js","..\\assets\\Progress.a3ac9dc2.css","..\\assets\\index.dfe52db0.css","..\\chunks\\stores.b6b002cf.js","..\\chunks\\homey.5e8ce930.js","..\\chunks\\index.5612947e.js","..\\chunks\\index.a1b1182c.js","..\\chunks\\index.77c9f90d.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\assets\\3.d79b8820.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/4.a019a2dc.js"), true ? ["..\\nodes\\4.a019a2dc.js","..\\chunks\\scheduler.3830f32a.js","..\\chunks\\index.9ba3e62c.js","..\\chunks\\singletons.5c7e3f39.js","..\\chunks\\stores.b6b002cf.js","..\\chunks\\homey.5e8ce930.js","..\\chunks\\Progress.157241c8.js","..\\assets\\Progress.a3ac9dc2.css","..\\chunks\\index.5612947e.js"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("../nodes/5.f2c65f09.js"), true ? ["..\\nodes\\5.f2c65f09.js","..\\chunks\\scheduler.3830f32a.js","..\\chunks\\index.9ba3e62c.js","..\\chunks\\stores.b6b002cf.js","..\\chunks\\singletons.5c7e3f39.js","..\\chunks\\AthomCloudAPI.02de7c56.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\chunks\\homey.5e8ce930.js"] : void 0, import.meta.url)
+  () => __vitePreload(() => import("../nodes/0.540dbd20.js"), true ? ["..\\nodes\\0.540dbd20.js","..\\chunks\\scheduler.c054974b.js","..\\chunks\\index.036fb736.js","..\\chunks\\index.73e9a964.js","..\\chunks\\Progress.d36a0724.js","..\\chunks\\singletons.20061ed7.js","..\\assets\\Progress.a3ac9dc2.css","..\\assets\\index.dfe52db0.css","..\\chunks\\AthomCloudAPI.e9445f4c.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\chunks\\homey.3813e625.js","..\\chunks\\stores.f900d548.js","..\\chunks\\index.39cac0c2.js","..\\chunks\\HomeyAPI.66affcf9.js","..\\chunks\\index.899ac5cd.js","..\\assets\\0.70e230bb.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/1.2b97520e.js"), true ? ["..\\nodes\\1.2b97520e.js","..\\chunks\\scheduler.c054974b.js","..\\chunks\\index.036fb736.js","..\\chunks\\stores.f900d548.js","..\\chunks\\singletons.20061ed7.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/2.6de6fa79.js"), true ? ["..\\nodes\\2.6de6fa79.js","..\\chunks\\scheduler.c054974b.js","..\\chunks\\index.7a46b533.js","..\\chunks\\index.036fb736.js","..\\chunks\\Progress.d36a0724.js","..\\chunks\\singletons.20061ed7.js","..\\assets\\Progress.a3ac9dc2.css","..\\chunks\\index.73e9a964.js","..\\assets\\index.dfe52db0.css","..\\chunks\\homey.3813e625.js","..\\chunks\\stores.f900d548.js","..\\chunks\\HomeyAPI.66affcf9.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\chunks\\AthomCloudAPI.e9445f4c.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/3.ff39e8fc.js"), true ? ["..\\nodes\\3.ff39e8fc.js","..\\chunks\\scheduler.c054974b.js","..\\chunks\\index.036fb736.js","..\\chunks\\index.73e9a964.js","..\\chunks\\Progress.d36a0724.js","..\\chunks\\singletons.20061ed7.js","..\\assets\\Progress.a3ac9dc2.css","..\\assets\\index.dfe52db0.css","..\\chunks\\stores.f900d548.js","..\\chunks\\homey.3813e625.js","..\\chunks\\index.39cac0c2.js","..\\chunks\\index.899ac5cd.js","..\\chunks\\index.7a46b533.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\assets\\3.d79b8820.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/4.6d7dab07.js"), true ? ["..\\nodes\\4.6d7dab07.js","..\\chunks\\scheduler.c054974b.js","..\\chunks\\index.036fb736.js","..\\chunks\\singletons.20061ed7.js","..\\chunks\\stores.f900d548.js","..\\chunks\\homey.3813e625.js","..\\chunks\\Progress.d36a0724.js","..\\assets\\Progress.a3ac9dc2.css","..\\chunks\\index.39cac0c2.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("../nodes/5.994ed18c.js"), true ? ["..\\nodes\\5.994ed18c.js","..\\chunks\\scheduler.c054974b.js","..\\chunks\\index.036fb736.js","..\\chunks\\stores.f900d548.js","..\\chunks\\singletons.20061ed7.js","..\\chunks\\AthomCloudAPI.e9445f4c.js","..\\chunks\\_commonjsHelpers.7a7fcd32.js","..\\chunks\\homey.3813e625.js"] : void 0, import.meta.url)
 ];
 const server_loads = [];
 const dictionary = {

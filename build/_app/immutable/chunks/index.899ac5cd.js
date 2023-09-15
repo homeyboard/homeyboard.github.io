@@ -1,6 +1,6 @@
-import { s as safe_not_equal, e as empty, i as insert_hydration, d as detach, y as create_slot, f as element, g as claim_element, h as children, j as attr, M as toggle_class, k as set_style, D as append_hydration, G as listen, X as stop_propagation, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, O as run_all, _ as bubble, N as action_destroyer, S as is_function, t as tick, J as assign, a as space, c as claim_space, R as set_attributes, T as get_current_component, Q as setContext, K as exclude_internal_props, Y as prevent_default, H as add_render_callback, I as getContext, o as onMount, p as binding_callbacks, l as text, m as claim_text, n as set_data, P as compute_slots, u as get_svelte_dataset, C as noop, $ as svg_element, a0 as claim_svg_element, a1 as set_svg_attributes, L as null_to_empty, U as src_url_equal } from "./scheduler.3830f32a.js";
-import { S as SvelteComponent, i as init, a as transition_in, g as group_outros, t as transition_out, c as check_outros, p as create_out_transition, o as create_in_transition, b as create_component, d as claim_component, m as mount_component, e as destroy_component, k as create_bidirectional_transition } from "./index.9ba3e62c.js";
-import { e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, t as twMerge, k as scale, H as HoverBackground, a as Icon$1, s as slide, f as fade, o as account } from "./Progress.157241c8.js";
+import { s as safe_not_equal, e as empty, i as insert_hydration, d as detach, y as create_slot, f as element, g as claim_element, h as children, j as attr, M as toggle_class, k as set_style, D as append_hydration, G as listen, a0 as stop_propagation, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, O as run_all, a3 as bubble, N as action_destroyer, S as is_function, t as tick, J as assign, a as space, c as claim_space, R as set_attributes, T as get_current_component, Q as setContext, K as exclude_internal_props, a1 as prevent_default, H as add_render_callback, I as getContext, o as onMount, p as binding_callbacks, l as text, m as claim_text, n as set_data, P as compute_slots, u as get_svelte_dataset, C as noop, X as svg_element, _ as HtmlTagHydration, Y as claim_svg_element, $ as claim_html_tag, Z as set_svg_attributes, L as null_to_empty, U as src_url_equal } from "./scheduler.c054974b.js";
+import { S as SvelteComponent, i as init, a as transition_in, g as group_outros, t as transition_out, c as check_outros, p as create_out_transition, o as create_in_transition, b as create_component, d as claim_component, m as mount_component, e as destroy_component, k as create_bidirectional_transition } from "./index.036fb736.js";
+import { e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, t as twMerge, s as scale, H as HoverBackground, a as Icon$1, k as slide, f as fade, o as account } from "./Progress.d36a0724.js";
 function create_if_block$5(ctx) {
   let div1;
   let div0;
@@ -1048,16 +1048,19 @@ function getNearestOverflowAncestor(node) {
   }
   return getNearestOverflowAncestor(parentNode);
 }
-function getOverflowAncestors(node, list) {
+function getOverflowAncestors(node, list, traverseIframes) {
   var _node$ownerDocument2;
   if (list === void 0) {
     list = [];
+  }
+  if (traverseIframes === void 0) {
+    traverseIframes = true;
   }
   const scrollableAncestor = getNearestOverflowAncestor(node);
   const isBody = scrollableAncestor === ((_node$ownerDocument2 = node.ownerDocument) == null ? void 0 : _node$ownerDocument2.body);
   const win = getWindow(scrollableAncestor);
   if (isBody) {
-    return list.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : []);
+    return list.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : [], win.frameElement && traverseIframes ? getOverflowAncestors(win.frameElement) : []);
   }
   return list.concat(scrollableAncestor, getOverflowAncestors(scrollableAncestor));
 }
@@ -1305,7 +1308,7 @@ function getClippingElementAncestors(element2, cache) {
   if (cachedResult) {
     return cachedResult;
   }
-  let result = getOverflowAncestors(element2).filter((el) => isElement(el) && getNodeName(el) !== "body");
+  let result = getOverflowAncestors(element2, [], false).filter((el) => isElement(el) && getNodeName(el) !== "body");
   let currentContainingBlockComputedStyle = null;
   const elementIsFixed = getComputedStyle(element2).position === "fixed";
   let currentNode = elementIsFixed ? getParentNode(element2) : element2;
@@ -3020,6 +3023,7 @@ let Divider$1 = class Divider2 extends SvelteComponent {
 function create_fragment$c(ctx) {
   let span;
   let svg;
+  let html_tag;
   let useActions_action;
   let span_style_value;
   let mounted;
@@ -3074,6 +3078,7 @@ function create_fragment$c(ctx) {
     c() {
       span = element("span");
       svg = svg_element("svg");
+      html_tag = new HtmlTagHydration(true);
       this.h();
     },
     l(nodes) {
@@ -3089,11 +3094,13 @@ function create_fragment$c(ctx) {
         color: true
       });
       var svg_nodes = children(svg);
+      html_tag = claim_html_tag(svg_nodes, true);
       svg_nodes.forEach(detach);
       span_nodes.forEach(detach);
       this.h();
     },
     h() {
+      html_tag.a = null;
       set_svg_attributes(svg, svg_data);
       attr(
         span,
@@ -3107,8 +3114,11 @@ function create_fragment$c(ctx) {
     m(target, anchor) {
       insert_hydration(target, span, anchor);
       append_hydration(span, svg);
-      svg.innerHTML = /*elements*/
-      ctx[8];
+      html_tag.m(
+        /*elements*/
+        ctx[8],
+        svg
+      );
       if (!mounted) {
         dispose = [
           action_destroyer(useActions_action = useActions.call(
@@ -3128,8 +3138,10 @@ function create_fragment$c(ctx) {
     p(ctx2, [dirty]) {
       if (dirty & /*elements*/
       256)
-        svg.innerHTML = /*elements*/
-        ctx2[8];
+        html_tag.p(
+          /*elements*/
+          ctx2[8]
+        );
       set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
         { xmlns: "http://www.w3.org/2000/svg" },
         dirty & /*width*/

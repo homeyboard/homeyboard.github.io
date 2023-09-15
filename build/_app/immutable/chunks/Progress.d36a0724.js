@@ -1,6 +1,6 @@
-import { w as writable } from "./singletons.5c7e3f39.js";
-import { F as identity, aa as split_css_unit, J as assign, S as is_function, G as listen, _ as bubble, Y as prevent_default, X as stop_propagation, s as safe_not_equal, y as create_slot, f as element, a as space, g as claim_element, h as children, c as claim_space, d as detach, j as attr, R as set_attributes, M as toggle_class, i as insert_hydration, D as append_hydration, N as action_destroyer, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, O as run_all, T as get_current_component, K as exclude_internal_props, $ as svg_element, a0 as claim_svg_element, a1 as set_svg_attributes, C as noop, V as set_input_value, P as compute_slots, Q as setContext, H as add_render_callback, l as text, m as claim_text, n as set_data, p as binding_callbacks, I as getContext, x as component_subscribe, e as empty, ab as set_dynamic_element_data, k as set_style } from "./scheduler.3830f32a.js";
-import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, g as group_outros, c as check_outros, b as create_component, d as claim_component, m as mount_component, k as create_bidirectional_transition, e as destroy_component } from "./index.9ba3e62c.js";
+import { w as writable } from "./singletons.20061ed7.js";
+import { F as identity, aa as split_css_unit, J as assign, S as is_function, G as listen, a3 as bubble, a1 as prevent_default, a0 as stop_propagation, s as safe_not_equal, y as create_slot, f as element, a as space, g as claim_element, h as children, c as claim_space, d as detach, j as attr, R as set_attributes, M as toggle_class, i as insert_hydration, D as append_hydration, N as action_destroyer, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, O as run_all, T as get_current_component, K as exclude_internal_props, X as svg_element, _ as HtmlTagHydration, Y as claim_svg_element, $ as claim_html_tag, Z as set_svg_attributes, C as noop, V as set_input_value, P as compute_slots, Q as setContext, H as add_render_callback, l as text, m as claim_text, n as set_data, p as binding_callbacks, I as getContext, x as component_subscribe, e as empty, ab as set_dynamic_element_data, k as set_style } from "./scheduler.c054974b.js";
+import { S as SvelteComponent, i as init, a as transition_in, t as transition_out, g as group_outros, c as check_outros, b as create_component, d as claim_component, m as mount_component, k as create_bidirectional_transition, e as destroy_component } from "./index.036fb736.js";
 function get_spread_update(levels, updates) {
   const update = {};
   const to_null_out = {};
@@ -3193,6 +3193,7 @@ class Swap extends SvelteComponent {
 }
 function create_fragment$7(ctx) {
   let svg;
+  let html_tag;
   let useActions_action;
   let mounted;
   let dispose;
@@ -3235,6 +3236,7 @@ function create_fragment$7(ctx) {
   return {
     c() {
       svg = svg_element("svg");
+      html_tag = new HtmlTagHydration(true);
       this.h();
     },
     l(nodes) {
@@ -3248,16 +3250,21 @@ function create_fragment$7(ctx) {
         color: true
       });
       var svg_nodes = children(svg);
+      html_tag = claim_html_tag(svg_nodes, true);
       svg_nodes.forEach(detach);
       this.h();
     },
     h() {
+      html_tag.a = null;
       set_svg_attributes(svg, svg_data);
     },
     m(target, anchor) {
       insert_hydration(target, svg, anchor);
-      svg.innerHTML = /*elements*/
-      ctx[7];
+      html_tag.m(
+        /*elements*/
+        ctx[7],
+        svg
+      );
       if (!mounted) {
         dispose = [
           action_destroyer(useActions_action = useActions.call(
@@ -3277,8 +3284,10 @@ function create_fragment$7(ctx) {
     p(ctx2, [dirty]) {
       if (dirty & /*elements*/
       128)
-        svg.innerHTML = /*elements*/
-        ctx2[7];
+        html_tag.p(
+          /*elements*/
+          ctx2[7]
+        );
       set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
         { xmlns: "http://www.w3.org/2000/svg" },
         dirty & /*width*/
@@ -7588,6 +7597,7 @@ let Button$1 = class Button extends SvelteComponent {
 };
 function create_fragment$1(ctx) {
   let svg;
+  let html_tag;
   let useActions_action;
   let mounted;
   let dispose;
@@ -7640,6 +7650,7 @@ function create_fragment$1(ctx) {
   return {
     c() {
       svg = svg_element("svg");
+      html_tag = new HtmlTagHydration(true);
       this.h();
     },
     l(nodes) {
@@ -7653,16 +7664,21 @@ function create_fragment$1(ctx) {
         color: true
       });
       var svg_nodes = children(svg);
+      html_tag = claim_html_tag(svg_nodes, true);
       svg_nodes.forEach(detach);
       this.h();
     },
     h() {
+      html_tag.a = null;
       set_svg_attributes(svg, svg_data);
     },
     m(target, anchor) {
       insert_hydration(target, svg, anchor);
-      svg.innerHTML = /*elements*/
-      ctx[7];
+      html_tag.m(
+        /*elements*/
+        ctx[7],
+        svg
+      );
       if (!mounted) {
         dispose = [
           action_destroyer(useActions_action = useActions.call(
@@ -7682,8 +7698,10 @@ function create_fragment$1(ctx) {
     p(ctx2, [dirty]) {
       if (dirty & /*elements*/
       128)
-        svg.innerHTML = /*elements*/
-        ctx2[7];
+        html_tag.p(
+          /*elements*/
+          ctx2[7]
+        );
       set_svg_attributes(svg, svg_data = get_spread_update(svg_levels, [
         { xmlns: "http://www.w3.org/2000/svg" },
         dirty & /*width*/
@@ -8731,7 +8749,7 @@ export {
   forwardEventsBuilder as h,
   close as i,
   chevron_down as j,
-  scale$1 as k,
+  slide as k,
   unfold_more_horizontal as l,
   error as m,
   check as n,
@@ -8739,7 +8757,7 @@ export {
   upload as p,
   alert_circle as q,
   crossfade as r,
-  slide as s,
+  scale$1 as s,
   twMerge as t,
   useActions as u,
   v4 as v,

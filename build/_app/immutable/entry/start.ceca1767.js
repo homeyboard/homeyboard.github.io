@@ -1,5 +1,5 @@
-import { o as onMount, t as tick } from "../chunks/scheduler.3830f32a.js";
-import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as stores, d as scroll_state, i as is_external_url, e as base, P as PRELOAD_PRIORITIES, h as init } from "../chunks/singletons.5c7e3f39.js";
+import { o as onMount, t as tick } from "../chunks/scheduler.c054974b.js";
+import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as scroll_state, i as is_external_url, d as stores, e as base, P as PRELOAD_PRIORITIES, h as init } from "../chunks/singletons.20061ed7.js";
 function normalize_path(path, trailing_slash) {
   if (path === "/" || trailing_slash === "ignore")
     return path;
@@ -57,19 +57,6 @@ function disable_hash(url) {
 const DATA_SUFFIX = "/__data.json";
 function add_data_suffix(pathname) {
   return pathname.replace(/\/$/, "") + DATA_SUFFIX;
-}
-function get(key) {
-  try {
-    return JSON.parse(sessionStorage[key]);
-  } catch {
-  }
-}
-function set(key, value) {
-  const json = JSON.stringify(value);
-  try {
-    sessionStorage[key] = json;
-  } catch {
-  }
 }
 function hash(...values) {
   let hash2 = 5381;
@@ -282,45 +269,18 @@ function parse({ nodes, server_loads, dictionary, matchers }) {
     return id === void 0 ? id : [layouts_with_server_load.has(id), nodes[id]];
   }
 }
-class HttpError {
-  /**
-   * @param {number} status
-   * @param {{message: string} extends App.Error ? (App.Error | string | undefined) : App.Error} body
-   */
-  constructor(status, body) {
-    this.status = status;
-    if (typeof body === "string") {
-      this.body = { message: body };
-    } else if (body) {
-      this.body = body;
-    } else {
-      this.body = { message: `Error: ${status}` };
-    }
-  }
-  toString() {
-    return JSON.stringify(this.body);
+function get(key) {
+  try {
+    return JSON.parse(sessionStorage[key]);
+  } catch {
   }
 }
-class Redirect {
-  /**
-   * @param {300 | 301 | 302 | 303 | 304 | 305 | 306 | 307 | 308} status
-   * @param {string} location
-   */
-  constructor(status, location2) {
-    this.status = status;
-    this.location = location2;
+function set(key, value) {
+  const json = JSON.stringify(value);
+  try {
+    sessionStorage[key] = json;
+  } catch {
   }
-}
-async function unwrap_promises(object) {
-  var _a;
-  for (const key in object) {
-    if (typeof ((_a = object[key]) == null ? void 0 : _a.then) === "function") {
-      return Object.fromEntries(
-        await Promise.all(Object.entries(object).map(async ([key2, value]) => [key2, await value]))
-      );
-    }
-  }
-  return object;
 }
 const UNDEFINED = -1;
 const HOLE = -2;
@@ -423,6 +383,12 @@ function unflatten(parsed, revivers) {
   }
   return hydrate(0);
 }
+function compact(arr) {
+  return arr.filter(
+    /** @returns {val is NonNullable<T>} */
+    (val) => val != null
+  );
+}
 const valid_layout_exports = /* @__PURE__ */ new Set([
   "load",
   "prerender",
@@ -434,13 +400,48 @@ const valid_layout_exports = /* @__PURE__ */ new Set([
 /* @__PURE__ */ new Set([...valid_layout_exports, "entries"]);
 const valid_layout_server_exports = /* @__PURE__ */ new Set([...valid_layout_exports]);
 /* @__PURE__ */ new Set([...valid_layout_server_exports, "actions", "entries"]);
-function compact(arr) {
-  return arr.filter(
-    /** @returns {val is NonNullable<T>} */
-    (val) => val != null
-  );
+async function unwrap_promises(object) {
+  var _a;
+  for (const key in object) {
+    if (typeof ((_a = object[key]) == null ? void 0 : _a.then) === "function") {
+      return Object.fromEntries(
+        await Promise.all(Object.entries(object).map(async ([key2, value]) => [key2, await value]))
+      );
+    }
+  }
+  return object;
+}
+class HttpError {
+  /**
+   * @param {number} status
+   * @param {{message: string} extends App.Error ? (App.Error | string | undefined) : App.Error} body
+   */
+  constructor(status, body) {
+    this.status = status;
+    if (typeof body === "string") {
+      this.body = { message: body };
+    } else if (body) {
+      this.body = body;
+    } else {
+      this.body = { message: `Error: ${status}` };
+    }
+  }
+  toString() {
+    return JSON.stringify(this.body);
+  }
+}
+class Redirect {
+  /**
+   * @param {300 | 301 | 302 | 303 | 304 | 305 | 306 | 307 | 308} status
+   * @param {string} location
+   */
+  constructor(status, location2) {
+    this.status = status;
+    this.location = location2;
+  }
 }
 const INVALIDATED_PARAM = "x-sveltekit-invalidated";
+const TRAILING_SLASH_PARAM = "x-sveltekit-trailing-slash";
 const scroll_positions = get(SCROLL_KEY) ?? {};
 const snapshots = get(SNAPSHOT_KEY) ?? {};
 function update_scroll_positions(index) {
@@ -460,6 +461,8 @@ function create_client(app, target) {
   const callbacks = {
     /** @type {Array<(navigation: import('@sveltejs/kit').BeforeNavigate) => void>} */
     before_navigate: [],
+    /** @type {Array<(navigation: import('@sveltejs/kit').OnNavigate) => import('types').MaybePromise<(() => void) | void>>} */
+    on_navigate: [],
     /** @type {Array<(navigation: import('@sveltejs/kit').AfterNavigate) => void>} */
     after_navigate: []
   };
@@ -610,7 +613,8 @@ function create_client(app, target) {
         url: new URL(location.href)
       },
       willUnload: false,
-      type: "enter"
+      type: "enter",
+      complete: Promise.resolve()
     };
     callbacks.after_navigate.forEach((fn) => fn(navigation));
     started = true;
@@ -700,12 +704,15 @@ function create_client(app, target) {
         }
       };
       const load_input = {
-        route: {
-          get id() {
+        route: new Proxy(route, {
+          get: (target2, key) => {
             uses.route = true;
-            return route.id;
+            return target2[
+              /** @type {'id'} */
+              key
+            ];
           }
-        },
+        }),
         params: new Proxy(params, {
           get: (target2, key) => {
             uses.params.add(
@@ -1027,35 +1034,22 @@ function create_client(app, target) {
     return decode_pathname(url.pathname.slice(base.length) || "/");
   }
   function before_navigate({ url, type, intent, delta }) {
-    var _a2, _b;
     let should_block = false;
-    const navigation = {
-      from: {
-        params: current.params,
-        route: { id: ((_a2 = current.route) == null ? void 0 : _a2.id) ?? null },
-        url: current.url
-      },
-      to: {
-        params: (intent == null ? void 0 : intent.params) ?? null,
-        route: { id: ((_b = intent == null ? void 0 : intent.route) == null ? void 0 : _b.id) ?? null },
-        url
-      },
-      willUnload: !intent,
-      type
-    };
+    const nav = create_navigation(current, intent, url, type);
     if (delta !== void 0) {
-      navigation.delta = delta;
+      nav.navigation.delta = delta;
     }
     const cancellable = {
-      ...navigation,
+      ...nav.navigation,
       cancel: () => {
         should_block = true;
+        nav.reject(new Error("navigation was cancelled"));
       }
     };
     if (!navigating) {
       callbacks.before_navigate.forEach((fn) => fn(cancellable));
     }
-    return should_block ? null : navigation;
+    return should_block ? null : nav;
   }
   async function navigate({
     url,
@@ -1071,8 +1065,8 @@ function create_client(app, target) {
   }) {
     var _a2, _b, _c;
     const intent = get_navigation_intent(url, false);
-    const navigation = before_navigate({ url, type, delta, intent });
-    if (!navigation) {
+    const nav = before_navigate({ url, type, delta, intent });
+    if (!nav) {
       blocked();
       return;
     }
@@ -1080,7 +1074,7 @@ function create_client(app, target) {
     accepted();
     navigating = true;
     if (started) {
-      stores.navigating.set(navigation);
+      stores.navigating.set(nav.navigation);
     }
     token = nav_token;
     let navigation_result = intent && await load_route(intent);
@@ -1100,8 +1094,10 @@ function create_client(app, target) {
       );
     }
     url = (intent == null ? void 0 : intent.url) || url;
-    if (token !== nav_token)
+    if (token !== nav_token) {
+      nav.reject(new Error("navigation was aborted"));
       return false;
+    }
     if (navigation_result.type === "redirect") {
       if (redirect_chain.length > 10 || redirect_chain.includes(url.pathname)) {
         navigation_result = await load_root_error_page({
@@ -1159,6 +1155,24 @@ function create_client(app, target) {
       if (navigation_result.props.page) {
         navigation_result.props.page.url = url;
       }
+      const after_navigate = (await Promise.all(
+        callbacks.on_navigate.map(
+          (fn) => fn(
+            /** @type {import('@sveltejs/kit').OnNavigate} */
+            nav.navigation
+          )
+        )
+      )).filter((value) => typeof value === "function");
+      if (after_navigate.length > 0) {
+        let cleanup = function() {
+          callbacks.after_navigate = callbacks.after_navigate.filter(
+            // @ts-ignore
+            (fn) => !after_navigate.includes(fn)
+          );
+        };
+        after_navigate.push(cleanup);
+        callbacks.after_navigate.push(...after_navigate);
+      }
       root.$set(navigation_result.props);
     } else {
       initialize(navigation_result);
@@ -1192,10 +1206,11 @@ function create_client(app, target) {
     if (type === "popstate") {
       restore_snapshot(current_history_index);
     }
+    nav.fulfil(void 0);
     callbacks.after_navigate.forEach(
       (fn) => fn(
         /** @type {import('@sveltejs/kit').AfterNavigate} */
-        navigation
+        nav.navigation
       )
     );
     stores.navigating.set(null);
@@ -1331,6 +1346,15 @@ function create_client(app, target) {
         };
       });
     },
+    on_navigate: (fn) => {
+      onMount(() => {
+        callbacks.on_navigate.push(fn);
+        return () => {
+          const i = callbacks.on_navigate.indexOf(fn);
+          callbacks.on_navigate.splice(i, 1);
+        };
+      });
+    },
     disable_scroll_handling: () => {
       if (updating || !started) {
         autoscroll = false;
@@ -1405,20 +1429,16 @@ function create_client(app, target) {
       var _a2;
       history.scrollRestoration = "manual";
       addEventListener("beforeunload", (e) => {
-        var _a3;
         let should_block = false;
         persist_state();
         if (!navigating) {
+          const nav = create_navigation(current, void 0, null, "leave");
           const navigation = {
-            from: {
-              params: current.params,
-              route: { id: ((_a3 = current.route) == null ? void 0 : _a3.id) ?? null },
-              url: current.url
-            },
-            to: null,
-            willUnload: true,
-            type: "leave",
-            cancel: () => should_block = true
+            ...nav.navigation,
+            cancel: () => {
+              should_block = true;
+              nav.reject(new Error("navigation was cancelled"));
+            }
           };
           callbacks.before_navigate.forEach((fn) => fn(navigation));
         }
@@ -1484,9 +1504,7 @@ function create_client(app, target) {
           }
           hash_navigating = true;
           update_scroll_positions(current_history_index);
-          current.url = url;
-          stores.page.set({ ...page, url });
-          stores.page.notify();
+          update_url(url);
           if (!options.replace_state)
             return;
           hash_navigating = false;
@@ -1585,6 +1603,11 @@ function create_client(app, target) {
             type: "popstate",
             delta
           });
+        } else {
+          if (!hash_navigating) {
+            const url = new URL(location.href);
+            update_url(url);
+          }
         }
       });
       addEventListener("hashchange", () => {
@@ -1606,6 +1629,11 @@ function create_client(app, target) {
           stores.navigating.set(null);
         }
       });
+      function update_url(url) {
+        current.url = url;
+        stores.page.set({ ...page, url });
+        stores.page.notify();
+      }
     },
     _hydrate: async ({
       status = 200,
@@ -1681,6 +1709,9 @@ function create_client(app, target) {
 async function load_data(url, invalid) {
   const data_url = new URL(url);
   data_url.pathname = add_data_suffix(url.pathname);
+  if (url.pathname.endsWith("/")) {
+    data_url.searchParams.append(TRAILING_SLASH_PARAM, "1");
+  }
   data_url.searchParams.append(INVALIDATED_PARAM, invalid.map((i) => i ? "1" : "0").join(""));
   const res = await native_fetch(data_url.href);
   if (!res.ok) {
@@ -1787,6 +1818,39 @@ function reset_focus() {
       });
     }
   }
+}
+function create_navigation(current, intent, url, type) {
+  var _a, _b;
+  let fulfil;
+  let reject;
+  const complete = new Promise((f, r) => {
+    fulfil = f;
+    reject = r;
+  });
+  complete.catch(() => {
+  });
+  const navigation = {
+    from: {
+      params: current.params,
+      route: { id: ((_a = current.route) == null ? void 0 : _a.id) ?? null },
+      url: current.url
+    },
+    to: url && {
+      params: (intent == null ? void 0 : intent.params) ?? null,
+      route: { id: ((_b = intent == null ? void 0 : intent.route) == null ? void 0 : _b.id) ?? null },
+      url
+    },
+    willUnload: !intent,
+    type,
+    complete
+  };
+  return {
+    navigation,
+    // @ts-expect-error
+    fulfil,
+    // @ts-expect-error
+    reject
+  };
 }
 async function start(app, target, hydrate) {
   const client = create_client(app, target);

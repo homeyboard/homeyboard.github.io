@@ -36,6 +36,8 @@ function safe_not_equal(a, b) {
 }
 let src_url_equal_anchor;
 function src_url_equal(element_src, url) {
+  if (element_src === url)
+    return true;
   if (!src_url_equal_anchor) {
     src_url_equal_anchor = document.createElement("a");
   }
@@ -469,20 +471,20 @@ function claim_text(nodes, data) {
 function claim_space(nodes) {
   return claim_text(nodes, " ");
 }
-function find_comment(nodes, text2, start) {
+function get_comment_idx(nodes, text2, start) {
   for (let i = start; i < nodes.length; i += 1) {
     const node = nodes[i];
     if (node.nodeType === 8 && node.textContent.trim() === text2) {
       return i;
     }
   }
-  return nodes.length;
+  return -1;
 }
 function claim_html_tag(nodes, is_svg) {
-  const start_index = find_comment(nodes, "HTML_TAG_START", 0);
-  const end_index = find_comment(nodes, "HTML_TAG_END", start_index);
-  if (start_index === end_index) {
-    return new HtmlTagHydration(void 0, is_svg);
+  const start_index = get_comment_idx(nodes, "HTML_TAG_START", 0);
+  const end_index = get_comment_idx(nodes, "HTML_TAG_END", start_index + 1);
+  if (start_index === -1 || end_index === -1) {
+    return new HtmlTagHydration(is_svg);
   }
   init_claim_info(nodes);
   const html_tag_nodes = nodes.splice(start_index, end_index - start_index + 1);
@@ -493,7 +495,7 @@ function claim_html_tag(nodes, is_svg) {
     n.claim_order = nodes.claim_info.total_claimed;
     nodes.claim_info.total_claimed += 1;
   }
-  return new HtmlTagHydration(claimed_nodes, is_svg);
+  return new HtmlTagHydration(is_svg, claimed_nodes);
 }
 function set_data(text2, data) {
   data = "" + data;
@@ -544,17 +546,13 @@ class HtmlTag {
      * @default false
      */
     __publicField(this, "is_svg", false);
-    // parent for creating node
-    /** */
+    /** parent for creating node */
     __publicField(this, "e");
-    // html tag nodes
-    /** */
+    /** html tag nodes */
     __publicField(this, "n");
-    // target
-    /** */
+    /** target */
     __publicField(this, "t");
-    // anchor
-    /** */
+    /** anchor */
     __publicField(this, "a");
     this.is_svg = is_svg;
     this.e = this.n = null;
@@ -625,10 +623,9 @@ class HtmlTag {
   }
 }
 class HtmlTagHydration extends HtmlTag {
-  constructor(claimed_nodes, is_svg = false) {
+  constructor(is_svg = false, claimed_nodes) {
     super(is_svg);
-    // hydration claimed nodes
-    /** */
+    /** @type {Element[]} hydration claimed nodes */
     __publicField(this, "l");
     this.e = this.n = null;
     this.l = claimed_nodes;
@@ -786,7 +783,7 @@ function flush_render_callbacks(fns) {
   render_callbacks = filtered;
 }
 export {
-  svg_element as $,
+  claim_html_tag as $,
   get_all_dirty_from_scope as A,
   get_slot_changes as B,
   noop as C,
@@ -810,16 +807,16 @@ export {
   src_url_equal as U,
   set_input_value as V,
   to_number as W,
-  stop_propagation as X,
-  prevent_default as Y,
-  set_store_value as Z,
-  bubble as _,
+  svg_element as X,
+  claim_svg_element as Y,
+  set_svg_attributes as Z,
+  HtmlTagHydration as _,
   space as a,
-  claim_svg_element as a0,
-  set_svg_attributes as a1,
-  init_binding_group as a2,
-  HtmlTagHydration as a3,
-  claim_html_tag as a4,
+  stop_propagation as a0,
+  prevent_default as a1,
+  set_store_value as a2,
+  bubble as a3,
+  init_binding_group as a4,
   onDestroy as a5,
   current_component as a6,
   is_promise as a7,

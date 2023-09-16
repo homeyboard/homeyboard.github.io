@@ -1,13 +1,13 @@
 import { s as safe_not_equal, r as createEventDispatcher, e as empty, i as insert_hydration, d as detach, l as text, m as claim_text, p as binding_callbacks, a as space, f as element, c as claim_space, g as claim_element, u as get_svelte_dataset, j as attr, v as add_flush_callback, w as head_selector, h as children, x as component_subscribe, o as onMount, y as create_slot, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, C as noop, D as append_hydration, n as set_data, E as destroy_each } from "../chunks/scheduler.c054974b.js";
 import { S as SvelteComponent, i as init, b as create_component, d as claim_component, m as mount_component, a as transition_in, t as transition_out, e as destroy_component, g as group_outros, c as check_outros, f as bind } from "../chunks/index.036fb736.js";
-import { m as mdiMenu, a as mdiPlus, b as mdiViewDashboardEdit, c as mdiCog, L as List, e as ensure_array_like, d as mdiViewDashboard, f as mdiDeathStarVariant } from "../chunks/index.73e9a964.js";
-import { A as AthomCloudAPI, g as goto } from "../chunks/AthomCloudAPI.e9445f4c.js";
-import { e as base } from "../chunks/singletons.20061ed7.js";
-import { c as clientId, a as clientSecret, u as user, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as flowFolders, j as basicFlows, k as advancedFlows, l as insights, z as zones } from "../chunks/homey.3813e625.js";
-import { I as Input, B as Button, d as dashboards, v as v4, P as Progress } from "../chunks/Progress.d36a0724.js";
-import { M as Modal, d as dashboard, e as editing } from "../chunks/index.39cac0c2.js";
-import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.66affcf9.js";
-import { P as Portal, D as Drawer, a as Dropdown, b as Divider, T as Toggle, M as Media } from "../chunks/index.899ac5cd.js";
+import { m as mdiMenu, a as mdiPlus, b as mdiViewDashboardEdit, c as mdiCog, L as List, e as ensure_array_like, d as mdiViewDashboard, f as mdiDeathStarVariant } from "../chunks/index.1e076659.js";
+import { A as AthomCloudAPI, g as goto } from "../chunks/AthomCloudAPI.ff7cf0cf.js";
+import { e as base } from "../chunks/singletons.524b2ef1.js";
+import { c as clientId, a as clientSecret, u as user, h as homeys, b as homey, s as scopes, d as baseUrl, e as dashboards$1, f as session, g as devices, i as flowFolders, j as basicFlows, k as advancedFlows, l as insights, z as zones } from "../chunks/homey.4fd8cabd.js";
+import { I as Input, B as Button, d as dashboards, v as v4, P as Progress } from "../chunks/Progress.a7487f94.js";
+import { M as Modal, d as dashboard, e as editing } from "../chunks/index.64d4d3eb.js";
+import { a as apiKey, H as HomeyAPI } from "../chunks/HomeyAPI.5612b6f0.js";
+import { P as Portal, D as Drawer, a as Dropdown, b as Divider, T as Toggle, M as Media } from "../chunks/index.d7a1f219.js";
 const ssr = false;
 const trailingSlash = "always";
 const prerender = true;
@@ -4434,7 +4434,7 @@ function instance($$self, $$props, $$invalidate) {
           device.on("capability", (event) => {
             const capability = device.capabilitiesObj[event.capabilityId];
             capability.value = event.value;
-            capability.lastUpdated.setUTCMilliseconds(event.transactionTime);
+            capability.lastUpdated = event.transactionTime;
           });
         });
         devices.set(d);

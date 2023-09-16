@@ -7,14 +7,14 @@ var __publicField = (obj, key, value) => {
 var _a, _b;
 import { C as noop$1, F as identity, s as safe_not_equal, f as element, g as claim_element, h as children, d as detach, j as attr, i as insert_hydration, G as listen, H as add_render_callback, I as getContext, J as assign$1, K as exclude_internal_props, y as create_slot, a as space, c as claim_space, L as null_to_empty, M as toggle_class, k as set_style, D as append_hydration, N as action_destroyer, z as update_slot_base, A as get_all_dirty_from_scope, B as get_slot_changes, O as run_all, P as compute_slots, Q as setContext, o as onMount, R as set_attributes, S as is_function, T as get_current_component, x as component_subscribe, r as createEventDispatcher, e as empty, l as text, m as claim_text, n as set_data, U as src_url_equal, p as binding_callbacks, v as add_flush_callback, E as destroy_each, V as set_input_value, W as to_number, X as svg_element, Y as claim_svg_element, Z as set_svg_attributes, _ as HtmlTagHydration, $ as claim_html_tag, u as get_svelte_dataset, q as construct_svelte_component, a0 as stop_propagation, a1 as prevent_default, a2 as set_store_value, a3 as bubble, a4 as init_binding_group, a5 as onDestroy, a6 as current_component, b as afterUpdate } from "../chunks/scheduler.c054974b.js";
 import { n as now, l as loop, h as create_rule, j as delete_rule, S as SvelteComponent, i as init, k as create_bidirectional_transition, g as group_outros, t as transition_out, c as check_outros, a as transition_in, b as create_component, d as claim_component, m as mount_component, e as destroy_component, f as bind, o as create_in_transition, p as create_out_transition } from "../chunks/index.036fb736.js";
-import { L as List$1, e as ensure_array_like, h as mdiArrowUp, i as mdiDelete, j as mdiArrowDown, k as mdiCheck, l as mdiAlert, n as mdiArrowRight, o as mdiPlay, u as update_keyed_each, p as fix_and_outro_and_destroy_block, q as mdiTune, r as mdiImage, s as mdiChartLine, t as mdiTextBoxEdit, v as outro_and_destroy_block, m as mdiMenu, c as mdiCog, w as mdiLock, x as mdiLockOpenVariant } from "../chunks/index.73e9a964.js";
-import { w as writable, j as derived } from "../chunks/singletons.20061ed7.js";
-import { p as page } from "../chunks/stores.f900d548.js";
-import { b as homey, g as devices, s as scopes, i as flowFolders, k as advancedFlows, j as basicFlows, l as insights, w as webhookUrl, m as webhookId, e as dashboards$1 } from "../chunks/homey.3813e625.js";
-import { t as twMerge, f as fade, b as trapFocus, c as fly, e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, B as Button$1, i as close, I as Input, a as Icon$7, H as HoverBackground, S as Swap, s as scale, v as v4, j as chevron_down, k as slide, l as unfold_more_horizontal, m as error, n as check, o as account, p as upload, q as alert_circle, r as crossfade$1, w as arrow_back, x as arrow_forward, y as undo, z as redo, A as print, C as download, D as info, E as warn, F as check_circle, G as thumb_up, P as Progress$1, J as trending_neutral, K as trending_down, L as trending_up, M as sort, N as comment, O as cubicOut, d as dashboards } from "../chunks/Progress.d36a0724.js";
-import { M as Modal, e as editing, g as grid, d as dashboard } from "../chunks/index.39cac0c2.js";
-import { P as Portal, b as Divider$2, T as Toggle, c as clickOutside, f as floatingUI, a as Dropdown, D as Drawer$2 } from "../chunks/index.899ac5cd.js";
-import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/index.7a46b533.js";
+import { L as List$1, e as ensure_array_like, h as mdiArrowUp, i as mdiDelete, j as mdiArrowDown, k as mdiCheck, l as mdiAlert, n as mdiArrowRight, o as mdiPlay, u as update_keyed_each, p as fix_and_outro_and_destroy_block, q as mdiTune, r as mdiImage, s as mdiChartLine, t as mdiTextBoxEdit, v as outro_and_destroy_block, m as mdiMenu, c as mdiCog, w as mdiLock, x as mdiLockOpenVariant } from "../chunks/index.1e076659.js";
+import { w as writable, j as derived } from "../chunks/singletons.524b2ef1.js";
+import { p as page } from "../chunks/stores.b655ad31.js";
+import { b as homey, g as devices, s as scopes, i as flowFolders, k as advancedFlows, j as basicFlows, l as insights, w as webhookUrl, m as webhookId, e as dashboards$1 } from "../chunks/homey.4fd8cabd.js";
+import { t as twMerge, f as fade, b as trapFocus, c as fly, e as exclude, u as useActions, g as get_spread_update, h as forwardEventsBuilder, B as Button$1, i as close, I as Input, a as Icon$7, H as HoverBackground, S as Swap, s as scale, v as v4, j as chevron_down, k as slide, l as unfold_more_horizontal, m as error, n as check, o as account, p as upload, q as alert_circle, r as crossfade$1, w as arrow_back, x as arrow_forward, y as undo, z as redo, A as print, C as download, D as info, E as warn, F as check_circle, G as thumb_up, P as Progress$1, J as trending_neutral, K as trending_down, L as trending_up, M as sort, N as comment, O as cubicOut, d as dashboards } from "../chunks/Progress.a7487f94.js";
+import { M as Modal, e as editing, g as grid, d as dashboard } from "../chunks/index.64d4d3eb.js";
+import { P as Portal, b as Divider$2, T as Toggle, c as clickOutside, f as floatingUI, a as Dropdown, D as Drawer$2 } from "../chunks/index.d7a1f219.js";
+import { h as handle_promise, u as update_await_block_branch, C as Card } from "../chunks/index.1ded90d9.js";
 import { c as commonjsGlobal, g as getDefaultExportFromCjs } from "../chunks/_commonjsHelpers.7a7fcd32.js";
 const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : (
   // @ts-ignore Node typings have this
@@ -13312,25 +13312,17 @@ function create_else_block_2$3(ctx) {
   let div2;
   let show_if;
   let current_block_type_index;
-  let if_block;
+  let if_block0;
   let t0;
-  let span0;
+  let span;
   let t1_value = (
     /*capability*/
     ctx[0].title + ""
   );
   let t1;
   let t2;
-  let span1;
-  let t3_value = formatDistance$2(
-    /*capability*/
-    ctx[0].lastUpdated,
-    /* @__PURE__ */ new Date(),
-    { addSuffix: true }
-  ) + "";
-  let t3;
   let current;
-  const if_block_creators = [create_if_block_6$9, create_if_block_8$7, create_if_block_9$6, create_else_block_4];
+  const if_block_creators = [create_if_block_7$8, create_if_block_9$6, create_if_block_10$5, create_else_block_4];
   const if_blocks = [];
   function select_block_type_3(ctx2, dirty) {
     if (dirty & /*capability*/
@@ -13354,49 +13346,50 @@ function create_else_block_2$3(ctx) {
     return 3;
   }
   current_block_type_index = select_block_type_3(ctx, -1);
-  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  let if_block1 = (
+    /*capability*/
+    ctx[0].lastUpdated && create_if_block_6$9(ctx)
+  );
   return {
     c() {
       div2 = element("div");
-      if_block.c();
+      if_block0.c();
       t0 = space();
-      span0 = element("span");
+      span = element("span");
       t1 = text(t1_value);
       t2 = space();
-      span1 = element("span");
-      t3 = text(t3_value);
+      if (if_block1)
+        if_block1.c();
       this.h();
     },
     l(nodes) {
       div2 = claim_element(nodes, "DIV", { class: true });
       var div_nodes = children(div2);
-      if_block.l(div_nodes);
+      if_block0.l(div_nodes);
       t0 = claim_space(div_nodes);
-      span0 = claim_element(div_nodes, "SPAN", {});
-      var span0_nodes = children(span0);
-      t1 = claim_text(span0_nodes, t1_value);
-      span0_nodes.forEach(detach);
+      span = claim_element(div_nodes, "SPAN", {});
+      var span_nodes = children(span);
+      t1 = claim_text(span_nodes, t1_value);
+      span_nodes.forEach(detach);
       t2 = claim_space(div_nodes);
-      span1 = claim_element(div_nodes, "SPAN", { class: true });
-      var span1_nodes = children(span1);
-      t3 = claim_text(span1_nodes, t3_value);
-      span1_nodes.forEach(detach);
+      if (if_block1)
+        if_block1.l(div_nodes);
       div_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(span1, "class", "font-extralight");
       attr(div2, "class", "flex flex-col w-full");
     },
     m(target, anchor) {
       insert_hydration(target, div2, anchor);
       if_blocks[current_block_type_index].m(div2, null);
       append_hydration(div2, t0);
-      append_hydration(div2, span0);
-      append_hydration(span0, t1);
+      append_hydration(div2, span);
+      append_hydration(span, t1);
       append_hydration(div2, t2);
-      append_hydration(div2, span1);
-      append_hydration(span1, t3);
+      if (if_block1)
+        if_block1.m(div2, null);
       current = true;
     },
     p(ctx2, dirty) {
@@ -13410,37 +13403,44 @@ function create_else_block_2$3(ctx) {
           if_blocks[previous_block_index] = null;
         });
         check_outros();
-        if_block = if_blocks[current_block_type_index];
-        if (!if_block) {
-          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-          if_block.c();
+        if_block0 = if_blocks[current_block_type_index];
+        if (!if_block0) {
+          if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block0.c();
         } else {
-          if_block.p(ctx2, dirty);
+          if_block0.p(ctx2, dirty);
         }
-        transition_in(if_block, 1);
-        if_block.m(div2, t0);
+        transition_in(if_block0, 1);
+        if_block0.m(div2, t0);
       }
       if ((!current || dirty & /*capability*/
       1) && t1_value !== (t1_value = /*capability*/
       ctx2[0].title + ""))
         set_data(t1, t1_value);
-      if ((!current || dirty & /*capability*/
-      1) && t3_value !== (t3_value = formatDistance$2(
+      if (
         /*capability*/
-        ctx2[0].lastUpdated,
-        /* @__PURE__ */ new Date(),
-        { addSuffix: true }
-      ) + ""))
-        set_data(t3, t3_value);
+        ctx2[0].lastUpdated
+      ) {
+        if (if_block1) {
+          if_block1.p(ctx2, dirty);
+        } else {
+          if_block1 = create_if_block_6$9(ctx2);
+          if_block1.c();
+          if_block1.m(div2, null);
+        }
+      } else if (if_block1) {
+        if_block1.d(1);
+        if_block1 = null;
+      }
     },
     i(local) {
       if (current)
         return;
-      transition_in(if_block);
+      transition_in(if_block0);
       current = true;
     },
     o(local) {
-      transition_out(if_block);
+      transition_out(if_block0);
       current = false;
     },
     d(detaching) {
@@ -13448,6 +13448,8 @@ function create_else_block_2$3(ctx) {
         detach(div2);
       }
       if_blocks[current_block_type_index].d();
+      if (if_block1)
+        if_block1.d();
     }
   };
 }
@@ -13602,7 +13604,7 @@ function create_else_block_4(ctx) {
     }
   };
 }
-function create_if_block_9$6(ctx) {
+function create_if_block_10$5(ctx) {
   var _a2;
   let h12;
   let t_value = (
@@ -13649,7 +13651,7 @@ function create_if_block_9$6(ctx) {
     }
   };
 }
-function create_if_block_8$7(ctx) {
+function create_if_block_9$6(ctx) {
   let h12;
   let t_value = (
     /*value*/
@@ -13686,12 +13688,12 @@ function create_if_block_8$7(ctx) {
     }
   };
 }
-function create_if_block_6$9(ctx) {
+function create_if_block_7$8(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block_7$8, create_else_block_3$2];
+  const if_block_creators = [create_if_block_8$7, create_else_block_3$2];
   const if_blocks = [];
   function select_block_type_4(ctx2, dirty) {
     if (
@@ -13783,7 +13785,7 @@ function create_else_block_3$2(ctx) {
     }
   };
 }
-function create_if_block_7$8(ctx) {
+function create_if_block_8$7(ctx) {
   let icon;
   let current;
   icon = new Icon$7({
@@ -13812,6 +13814,48 @@ function create_if_block_7$8(ctx) {
     },
     d(detaching) {
       destroy_component(icon, detaching);
+    }
+  };
+}
+function create_if_block_6$9(ctx) {
+  let span;
+  let t_value = formatDistance$2(new Date(
+    /*capability*/
+    ctx[0].lastUpdated
+  ), /* @__PURE__ */ new Date(), { addSuffix: true }) + "";
+  let t2;
+  return {
+    c() {
+      span = element("span");
+      t2 = text(t_value);
+      this.h();
+    },
+    l(nodes) {
+      span = claim_element(nodes, "SPAN", { class: true });
+      var span_nodes = children(span);
+      t2 = claim_text(span_nodes, t_value);
+      span_nodes.forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(span, "class", "font-extralight");
+    },
+    m(target, anchor) {
+      insert_hydration(target, span, anchor);
+      append_hydration(span, t2);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*capability*/
+      1 && t_value !== (t_value = formatDistance$2(new Date(
+        /*capability*/
+        ctx2[0].lastUpdated
+      ), /* @__PURE__ */ new Date(), { addSuffix: true }) + ""))
+        set_data(t2, t_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
     }
   };
 }
@@ -14283,12 +14327,10 @@ function create_else_block$y(ctx) {
   let t1;
   let t2;
   let span1;
-  let t3_value = formatDistance$2(
+  let t3_value = formatDistance$2(new Date(
     /*capability*/
-    ctx[0].lastUpdated,
-    /* @__PURE__ */ new Date(),
-    { addSuffix: true }
-  ) + "";
+    ctx[0].lastUpdated
+  ), /* @__PURE__ */ new Date(), { addSuffix: true }) + "";
   let t3;
   let current;
   function toggle_on_binding_1(value) {
@@ -14363,12 +14405,10 @@ function create_else_block$y(ctx) {
       ctx2[0].title + ""))
         set_data(t1, t1_value);
       if ((!current || dirty & /*capability*/
-      1) && t3_value !== (t3_value = formatDistance$2(
+      1) && t3_value !== (t3_value = formatDistance$2(new Date(
         /*capability*/
-        ctx2[0].lastUpdated,
-        /* @__PURE__ */ new Date(),
-        { addSuffix: true }
-      ) + ""))
+        ctx2[0].lastUpdated
+      ), /* @__PURE__ */ new Date(), { addSuffix: true }) + ""))
         set_data(t3, t3_value);
     },
     i(local) {
@@ -18499,14 +18539,15 @@ function instance$2N($$self, $$props, $$invalidate) {
   let { mode } = $$props;
   let targetValue;
   onMount(() => {
-    if (thermostatMode !== void 0) {
-      onThermostatMode(thermostatMode);
-    }
+    onThermostatMode(thermostatMode);
   });
   function onTargetTemperature(c2) {
     $$invalidate(2, targetValue = c2.value);
   }
   function onThermostatMode(c2) {
+    if (thermostatMode === void 0) {
+      return;
+    }
     if (c2.value === "cool") {
       dispatcher("style", "bg-gradient-to-r from-cyan-400 to-cyan-600 border-none");
     } else if (c2.value === "heat") {
@@ -18553,7 +18594,7 @@ function instance$2N($$self, $$props, $$invalidate) {
     }
     if ($$self.$$.dirty & /*capability*/
     1) {
-      $$invalidate(10, postfix = capability.id.indexOf(".") > -1 ? capability.id.slice(capability.id.indexOf(".") + 1) : "");
+      $$invalidate(10, postfix = capability.id.indexOf(".") > -1 ? capability.id.slice(capability.id.indexOf(".")) : "");
     }
     if ($$self.$$.dirty & /*capability, postfix, device*/
     1281) {
@@ -107804,12 +107845,12 @@ function create_fragment$d(ctx) {
 }
 function resample(entries, aggregation, sampleRate, decimals) {
   if (aggregation === void 0 || aggregation === "none" || entries.step / 1e3 >= sampleRate) {
-    return entries.values.map((entry) => ({
+    return entries.values.filter((entry) => entry.v !== null && entry.v !== void 0).map((entry) => ({
       x: new Date(entry.t).getTime(),
       y: round(entry.v, decimals)
     }));
   } else {
-    const buckets = entries.values.reduce(
+    const buckets = entries.values.filter((entry) => entry.v !== null && entry.v !== void 0).reduce(
       (timeBuckets, entry) => {
         const time = new Date(entry.t);
         const value = entry.v;

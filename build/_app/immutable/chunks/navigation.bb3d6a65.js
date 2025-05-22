@@ -1,5 +1,0 @@
-import { k as client_method } from "./singletons.75e21b2d.js";
-const goto = /* @__PURE__ */ client_method("goto");
-export {
-  goto as g
-};

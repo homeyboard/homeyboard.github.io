@@ -87,31 +87,31 @@ define(['./workbox-54d0af47'], (function (workbox) { 'use strict';
     "url": "_app/immutable/assets/StoreDialog.6c80fa96.css",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/alerting.1ec0368e.js",
+    "url": "_app/immutable/chunks/alerting.aeabfc87.js",
     "revision": null
   }, {
     "url": "_app/immutable/chunks/AthomCloudAPI.75f5d69d.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/DashboardListHero.2741f617.js",
+    "url": "_app/immutable/chunks/DashboardListHero.89d47a8e.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/editing.4e6f3a10.js",
+    "url": "_app/immutable/chunks/editing.4c31298d.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/favorite.0da53c0d.js",
+    "url": "_app/immutable/chunks/favorite.c2c4616e.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/HomeyAPIV3Local.cbe0ec92.js",
+    "url": "_app/immutable/chunks/HomeyAPIV3Local.5898e255.js",
     "revision": null
   }, {
     "url": "_app/immutable/chunks/index.b52a7f1f.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/localstorage.5e5670ac.js",
+    "url": "_app/immutable/chunks/localstorage.672ead33.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/navigation.d8976ee0.js",
+    "url": "_app/immutable/chunks/navigation.6eae7c83.js",
     "revision": null
   }, {
     "url": "_app/immutable/chunks/preload-helper.60b963d6.js",
@@ -120,13 +120,13 @@ define(['./workbox-54d0af47'], (function (workbox) { 'use strict';
     "url": "_app/immutable/chunks/scheduler.eb13839d.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/singletons.7956b62b.js",
+    "url": "_app/immutable/chunks/singletons.2584eb3f.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/StoreDialog.ed6ed57c.js",
+    "url": "_app/immutable/chunks/StoreDialog.134a2e47.js",
     "revision": null
   }, {
-    "url": "_app/immutable/chunks/stores.72899cda.js",
+    "url": "_app/immutable/chunks/stores.ea1ed521.js",
     "revision": null
   }, {
     "url": "_app/immutable/chunks/utils.01552eec.js",
@@ -138,31 +138,31 @@ define(['./workbox-54d0af47'], (function (workbox) { 'use strict';
     "url": "_app/immutable/chunks/workbox-window.prod.es5.8a799e1d.js",
     "revision": null
   }, {
-    "url": "_app/immutable/entry/app.41cc3f65.js",
+    "url": "_app/immutable/entry/app.3c525cf8.js",
     "revision": null
   }, {
-    "url": "_app/immutable/entry/start.bdd38af8.js",
+    "url": "_app/immutable/entry/start.b2348ea2.js",
     "revision": null
   }, {
-    "url": "_app/immutable/nodes/0.4e3789ab.js",
+    "url": "_app/immutable/nodes/0.0a0852ce.js",
     "revision": null
   }, {
-    "url": "_app/immutable/nodes/1.2df95268.js",
+    "url": "_app/immutable/nodes/1.cd73d9a0.js",
     "revision": null
   }, {
-    "url": "_app/immutable/nodes/2.b384a1d9.js",
+    "url": "_app/immutable/nodes/2.ce047d18.js",
     "revision": null
   }, {
-    "url": "_app/immutable/nodes/3.35586135.js",
+    "url": "_app/immutable/nodes/3.0596be5b.js",
     "revision": null
   }, {
-    "url": "_app/immutable/nodes/4.eaab6614.js",
+    "url": "_app/immutable/nodes/4.0e841dfd.js",
     "revision": null
   }, {
-    "url": "_app/immutable/nodes/5.f3d36379.js",
+    "url": "_app/immutable/nodes/5.dc2323df.js",
     "revision": null
   }, {
-    "url": "_app/immutable/nodes/6.3b4a1678.js",
+    "url": "_app/immutable/nodes/6.c1033e24.js",
     "revision": null
   }, {
     "url": "128.png",
@@ -184,19 +184,19 @@ define(['./workbox-54d0af47'], (function (workbox) { 'use strict';
     "revision": "d41aaf173a02e96aadd984a64e10df3b"
   }, {
     "url": "board",
-    "revision": "835a825cde18175cb30148c5954a324e"
+    "revision": "092287412efd888da9085aa844900663"
   }, {
     "url": "favorite",
-    "revision": "835a825cde18175cb30148c5954a324e"
+    "revision": "092287412efd888da9085aa844900663"
   }, {
     "url": "/",
-    "revision": "adc3974eab49e279c08b8207ea2b4d5d"
+    "revision": "6c655ff492b5dee9d6bc1d632bbc3d42"
   }, {
     "url": "oauth2/callback",
-    "revision": "9cdda7ae82447250499a8c2dd49d4895"
+    "revision": "743e3bf3d9af60599d7e8fbcd769a322"
   }, {
     "url": "template",
-    "revision": "835a825cde18175cb30148c5954a324e"
+    "revision": "092287412efd888da9085aa844900663"
   }, {
     "url": "manifest.webmanifest",
     "revision": "55ca7a1572dc825286f4dcd2ba68196c"
